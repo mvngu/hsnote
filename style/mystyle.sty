@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+\usepackage{mathtools}
+
+%% Language and encoding
+\usepackage[utf8]{inputenc}
+
+%% Figures and tables
+\usepackage{booktabs}
+\usepackage[font=normal,justification=justified,singlelinecheck=false]{caption}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{subfigure}
+
+%% Miscellaneous
+\usepackage{enumerate}
+\usepackage{xparse}
+
+%% Customized page geometry
+\textheight=700pt
+\topmargin=-30pt
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+%% \renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font
+\normalfont\selectfont
+
+%% Format date in the ISO format 2007 March 12, for example.
+\usepackage{datetime}
+\newdateformat{isoDateFormat}{%
+  \THEYEAR~\monthname[\THEMONTH]~\twodigit{\THEDAY}
+}
+\isoDateFormat
+
+%% Customize existing commands
+\renewcommand{\_}{\underline{{\color{white}w}}}  %% a long underscore
+\renewcommand{\MakeUppercase}{}  %% no all-caps in page headers
+
+%% Usual sets of numbers.
+\newcommand{\RR}{\mathbf{R}}  %% the real numbers
+\newcommand{\ZZ}{\mathbf{Z}}  %% the integers
+
+%% Custom environments
+%%
+%% Pack together the items of an enumeration.  Remove extraneous
+%% vertical spacing between items.  Use lower-case alphabetic
+%% characters for enumeration.
+\newenvironment{packedenum}{
+\setlength{\parskip}{-5pt}
+\begin{enumerate}[(a)]
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{2pt}
+  \setlength{\parsep}{0pt}
+}{
+  \end{enumerate}
+  \vspace{-6pt}
+}
+%%
+%%
+%% Enumeration via numerals.
+\newenvironment{packedenumeral}{
+\begin{enumerate}[(1)]
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{2pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+%%
+%%
+%% Pack together the items of an itemize.  Remove extraneous
+%% vertical spacing between items.
+\newenvironment{packeditem}{
+\setlength{\parskip}{-5pt}
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{2pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+%%
+%%
+%% For listing problem sets.  A problem set is placed at the end of
+%% each article.
+\newcounter{problemcounter}
+\newenvironment{problem}{%%
+  \setcounter{problemcounter}{1}
+  \begin{list}
+    {\arabic{problemcounter}}
+    {\usecounter{problemcounter}}
+    \let\olditem\item
+    \renewcommand{\item}{%%
+      \setlength{\itemsep}{-2pt}\olditem
+    }
+    \setlength{\parskip}{4pt}
+    \setlength{\parsep}{0pt}
+}{%%
+  \end{list}
+}
+%%
+%%
+%% A solution environment for examples and problems.
+\NewDocumentEnvironment{solution}{}{
+  \begin{proof}[Solution]
+}{\end{proof}}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Some notes for high school mathematics},%%
+  pdfauthor={Minh Van Nguyen},%%
+  pdfsubject={mathematics},%%
+  pdfkeywords={algebra},%%
+  colorlinks=true,%%
+  linkcolor=black,%%
+  citecolor=black,%%
+  urlcolor=black
+}
