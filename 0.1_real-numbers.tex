@@ -1,0 +1,470 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,oneside,12pt]{article}
+\usepackage{mystyle}
+
+\begin{document}
+
+\title{\Large\bf Real numbers}
+\author{%%
+  Minh Van Nguyen \\
+  \url{mvngu@gmx.com}
+}
+\date{\today}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The real numbers}
+
+A \emph{set} is a bunch or collection of objects.  The objects of a
+set are called its \emph{elements}, which must all be different.  For
+example, the set of all rubbish bins at your house, the set of all
+fingers on your two hands, and the set of all whole numbers from $1$
+to $10$.  You use curly braces to represent a set.  The set of all
+even whole numbers from $1$ to $10$ can be written as
+$\set{\quintuple{2}{4}{6}{8}{10}}$, the set of whole numbers from $1$
+to $5$ can be written as $\set{\quintuple{1}{2}{3}{4}{5}}$, and the
+set of the first four prime numbers is $\set{\quadruple{2}{3}{5}{7}}$.
+The set $\set{\triple{1}{2}{1}}$ is the same as the set
+$\set{\pair{1}{2}}$ because the elements of a set must all be
+distinct.
+
+\begin{exercise}
+Write out the set of all odd whole numbers from $1$ to $10$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The set of all odd whole numbers from $1$ up to and including $10$ can
+be written as $\set{\quintuple{1}{3}{5}{7}{9}}$.
+\end{solution}
+}{}
+
+\begin{exercise}
+Give two more examples of sets.  The sets do not have to be
+collections of numbers.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The set of all pens in your pencil case.  The set of all cars that you
+own.  If you do not own a car, then this set of cars has zero
+elements.  The set that has zero elements is called the \emph{empty}
+set and is written as $\emptyset$.
+\end{solution}
+}{}
+
+An \emph{integer} is a whole number such as $3$, $7$, $\the\year$,
+$-5$, or $-9$.  The set of all integers is written as
+$\ZZ = \set{\dots,\, -3,\, -2,\, -1,\, 0,\, 1,\, 2,\, 3,\dots}$.  You
+write $2 \in \ZZ$ to mean that the number $2$ belongs to the set of
+integers.  A \emph{rational} number is a ratio of two integers.  A
+rational number is also known as a fraction.  These are rational
+numbers: $1/2$, $3/4$, $11/9$, and $-10/2$.  You write $5/2 \in \QQ$
+to mean that $5/2$ belongs to the set of rational numbers.  The set of
+all rational numbers is written as
+\[
+\QQ
+=
+\setdes{
+  \frac{a}{b}
+}{
+  \pair{a}{b} \in \ZZ
+  \text{ and }
+  b \neq 0
+}.
+\]
+This means that the set of rational numbers consists of all numbers of
+the form $a/b$ such that $a$ and $b$ are integers, but $b$ cannot be
+zero.  The top integer $a$ is called the \emph{numerator} and the
+bottom integer $b$ is called the \emph{denominator}.  If $b = 1$, then
+$a/b = a/1 = a$ and consequently any integer is also a rational
+number.
+
+\begin{exercise}
+Provide an example of a rational number that is also an integer.
+Explain why your number is an integer.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The rational number $2/1$ is also an integer because it can be written
+as $2/1 = 2$ and $2$ is an integer.
+\end{solution}
+}{}
+
+\begin{exercise}
+Give an example of a rational number that is not an integer.  Explain
+why your number is not an integer.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The ratio $1/2$ is not an integer because $1/2$ cannot be simplified
+to any integer.
+\end{solution}
+}{}
+
+\begin{exercise}
+If $a/b$ is a rational number, why can't $b$ be zero?  Consider the
+examples of $1/4$ and $1/0$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+If in the rational number $a/b$ you have $b = 0$, then the ratio
+$a / 0$ is not defined.  This means that as $b$ comes closer and
+closer to zero, the value of the ratio $a/b$ does not come to a fixed
+number.
+\end{solution}
+}{}
+
+An \emph{irrational} number is any number that cannot be written as a
+ratio of two integers.  The number $\sqrt{2}$ is an irrational number.
+
+\begin{exercise}
+Provide another example of an irrational number.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The number $\pi = 3.141592\dots$ is an irrational number.
+\end{solution}
+}{}
+
+The set of \emph{real} numbers is made up of all rational and all
+irrational numbers.  The set of real numbers is written as $\RR$.  For
+example, the ratio $3/7$ is a real number, the square root $\sqrt{2}$
+is a real number, and the integer $42$ is a real number.
+
+\begin{exercise}
+Explain why any integer is a real number.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Any integer is also a rational number.  Since a rational number is
+also a real number, it follows that any integer is also a real
+number.
+\end{solution}
+}{}
+
+\begin{exercise}
+How can a number be represented as a picture?
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+A real number can be represented as a point on the number line.
+\end{solution}
+}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Order of operations}
+
+There are four main operations that are defined on real numbers.
+These operations are summarised below:
+%%
+\begin{packedenumeral}
+\item Addition is when you add two numbers together.  If $a$ and $b$
+  are real numbers, you write $a + b$ to mean that you want to sum $a$
+  and $b$.
+
+\item Subtraction is finding the difference between one number and
+  another number.  You write $a - b$ to mean that you subtract $b$
+  from $a$.
+
+\item Multiplication is when you multiply two numbers together.  The
+  product of $a$ and $b$ can be written as $a \times b$ or $ab$.
+
+\item Division is finding the ratio of two numbers.  The ratio of $a$
+  over $b$ is written as the fraction $\frac{a}{b}$ or $a/b$, but $b$
+  must not be zero.
+\end{packedenumeral}
+
+When you want to simplify a complicated expression, you should follow
+a number of rules to help you.  These rules are called the
+\emph{order of operations} and are listed below in the order in which
+they should be followed.
+%%
+\begin{packedenumeral}
+\item If numbers are grouped together with parentheses, you start from
+  the innermost parentheses and work outward.
+
+\item If there are multiplications and/or divisions, work from left to
+  right to simplify the multiplications and/or division.
+
+\item If there are additions and/or subtractions, work from left to
+  right to simplify the additions and/or subtractions.
+\end{packedenumeral}
+
+\begin{exercise}
+Let $p$ denote Patrick's age, $m$ be Marcus' age, and $u$ be your
+uncle's age.  The sum of all these ages is $p + m + u$.  How would you
+simplify this expression?
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Working from left to right, you can write $(p + m) + u$ to indicate
+that you want to first simplify the sum $p + m$.  Use your result to
+then simplify $(p + m) + u$.  On the other hand, you can write
+$p + (m + u)$ to mean that you want to first simplify the sum
+$m + u$.  You then use this result to simplify the expression
+$p + (m + u)$.
+\end{solution}
+}{}
+
+\begin{exercise}
+Simplify the expression $3 + 2 \times 4 - 8/4 + 9$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The expression $3 + 2 \times 4 - 8/4 + 9$ can be simplified as
+%%
+\begin{align*}
+3 + 2 \times 4 - 8/4 + 9
+&=
+3 + 8 - 8/4 + 9 \\[4pt]
+&=
+3 + 8 - 2 + 9 \\[4pt]
+&=
+11 - 2 + 9 \\[4pt]
+&=
+9 + 9 \\[4pt]
+&=
+18.
+\end{align*}
+\end{solution}
+}{}
+
+\begin{exercise}
+Simplify the expression
+$\displaystyle{
+  \frac{
+    3 \times 2 + (11 - 5)
+  }{
+    2 \times (3 + 7)
+  }
+}$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The expression
+$\displaystyle{
+  \frac{
+    3 \times 2 + (11 - 5)
+  }{
+    2 \times (3 + 7)
+  }
+}$
+can be simplified as
+%%
+\begin{align*}
+\frac{
+  3 \times 2 + (11 - 5)
+}{
+  2 \times (3 + 7)
+}
+&=
+\frac{
+  3 \times 2 + 6
+}{
+  2 \times (3 + 7)
+} \\[4pt]
+&=
+\frac{
+  3 \times 2 + 6
+}{
+  2 \times 10
+} \\[4pt]
+&=
+\frac{
+  6 + 6
+}{
+  20
+} \\[4pt]
+&=
+\frac{
+  12
+}{
+  20
+} \\[4pt]
+&=
+\frac{
+  3
+}{
+  5
+}.
+\end{align*}
+\end{solution}
+}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Problems}
+
+\begin{problem}
+\item What sort of things can be represented as positive integers?
+\ifbool{showSolution}{
+  \begin{solution}
+  Money, the number of hair on your head~(if you are not bald), the
+  number of toes on your feet~(if you have toes), the number of houses
+  in Melbourne.
+  \end{solution}
+}{}
+
+\item What sort of things can be represented as negative integers?
+\ifbool{showSolution}{
+  \begin{solution}
+  The temperature below zero can be represented as a negative
+  integer.
+  \end{solution}
+}{}
+
+\item Give an example of something that can be represented as a
+  rational number.
+\ifbool{showSolution}{
+  \begin{solution}
+  The number of oranges you have eaten divided by the number of
+  oranges you have altogether.
+  \end{solution}
+}{}
+
+\item Provide an example of something that can be represented as a
+  real number.
+\ifbool{showSolution}{
+  \begin{solution}
+  The area of your house.
+  \end{solution}
+}{}
+
+\item Simplify the expression
+  \[
+  E
+  =
+  \frac{
+    3 m c^2
+  }{
+    (6 - 4) + 1
+  }.
+  \]
+\ifbool{showSolution}{
+  \begin{solution}
+  \begin{align*}
+  E
+  &=
+  \frac{
+    3 m c^2
+  }{
+    (6 - 4) + 1
+  } \\[4pt]
+  &=
+  \frac{
+    3 m c^2
+  }{
+    2 + 1
+  } \\[4pt]
+  &=
+  \frac{
+    3 m c^2
+  }{
+    3
+  } \\[4pt]
+  &=
+  m c^2.
+  \end{align*}
+  \end{solution}
+}{}
+
+\item The number $e = 2.71828\dots$ is called \emph{Euler's constant}.
+  Read about $e$ on Wikipedia or search on the Internet for
+  ``Euler's constant.''  Is $e$ a rational number?  Is $e$ an
+  irrational number?  Is $e$ an integer?  Does $e$ belong to the set
+  $\RR$ of real numbers?  Where can you find a use for the number $e$?
+\ifbool{showSolution}{
+  \begin{solution}
+  Euler's constant $e = 2.71828\dots$ is an irrational number, which
+  means that $e$ also belongs to the set of real numbers.  The number
+  $e$ is used as the base of the \emph{natural logarithm},
+  i.e.~logarithm to the base $e$.  The number $e$ is also used in the
+  calculation of compound interest.
+  \end{solution}
+}{}
+
+\item Write out the set of the first five prime numbers.
+\ifbool{showSolution}{
+  \begin{solution}
+  The set of the first five prime numbers is
+  $\set{\quintuple{2}{3}{5}{7}{11}}$.
+  \end{solution}
+}{}
+
+\item Explain what is wrong with the following simplification:
+  %%
+  \begin{align*}
+  2 \times (1 + 3)
+  &=
+  2 \times 1 + 3 \\[4pt]
+  &=
+  2 + 3 \\[4pt]
+  &=
+  5.
+  \end{align*}
+\ifbool{showSolution}{
+  \begin{solution}
+  The addition inside the parentheses should be simplified first.  The
+  simplification should be:
+  %%
+  \begin{align*}
+  2 \times (1 + 3)
+  &=
+  2 \times 4 \\[4pt]
+  &=
+  8.
+  \end{align*}
+  \end{solution}
+}{}
+
+\item Is the square root $\sqrt{4 \times 16}$ an integer, rational
+  number, or irrational number?
+\ifbool{showSolution}{
+  \begin{solution}
+  The square root $\sqrt{4 \times 16}$ can be simplified as
+  %%
+  \begin{align*}
+  \sqrt{4 \times 16}
+  &=
+  \sqrt{4} \times \sqrt{16} \\[4pt]
+  &=
+  2 \times 4 \\[4pt]
+  &=
+  8.
+  \end{align*}
+  %%
+  Therefore $\sqrt{4 \times 16}$ is an integer.
+  \end{solution}
+}{}
+
+\item This project requires you to measure the amount of time that you
+  spend showering.  For example, suppose you will shower this Saturday
+  evening.  Before you turn on the shower water, write down the
+  current date and time~(e.g.~Saturday~13th~January~2018, start at
+  5:30~pm).  After you have showered and turned off the shower water,
+  write down the time that you turned off the water~(e.g.~end at
+  5:37~pm).  The difference between these two times is the amount of
+  time that you spent showering during that evening.  In the above
+  example times, the amount of time spent showering would be seven
+  minutes.  Record the amount of time you spent showering for each day
+  that you shower.  It's like keeping a shower diary.  Bring along
+  your shower diary next week and show me.
+\end{problem}
+
+\end{document}
