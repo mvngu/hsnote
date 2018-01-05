@@ -40,13 +40,39 @@
 }
 \isoDateFormat
 
+%% Switches; adjust these switches for custom effect.
+%% Solutions to exercises.
+\newboolean{showSolution}
+\setboolean{showSolution}{false}
+
+%% Customized numbering for corollary, lemma, theorem, etc.
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
 %% Customize existing commands
 \renewcommand{\_}{\underline{{\color{white}w}}}  %% a long underscore
 \renewcommand{\MakeUppercase}{}  %% no all-caps in page headers
+\renewcommand{\qed}{\hfill \mbox{\raggedright \rule{0.1in}{0.1in}}}
+
+%% Paired delimiters
+\DeclarePairedDelimiter{\curlyBrace}{\lbrace}{\rbrace}
 
 %% Usual sets of numbers.
+\newcommand{\QQ}{\mathbf{Q}}  %% the rational numbers
 \newcommand{\RR}{\mathbf{R}}  %% the real numbers
 \newcommand{\ZZ}{\mathbf{Z}}  %% the integers
+
+%% Set theory.
+\newcommand{\set}[1]{\curlyBrace*{#1}}
+\newcommand{\setdes}[2]{\set{{#1} : {#2}}}  %% describe a set
+
+%% Pairs, triples, etc.
+\newcommand{\pair}[2]{{#1},\, {#2}}  %% 2 numbers
+\newcommand{\quadruple}[4]{{#1},\, {#2},\, {#3},\, {#4}}  %% 4 numbers
+\newcommand{\quintuple}[5]{{#1},\, {#2},\, {#3},\, {#4},\, {#5}}  %% 5 numbers
+\newcommand{\triple}[3]{{#1},\, {#2},\, {#3}}  %% 3 numbers
 
 %% Custom environments
 %%
