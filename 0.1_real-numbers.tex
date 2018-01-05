@@ -92,6 +92,32 @@ $51 = 2 \times 25 + 1$.
 \end{solution}
 }{}
 
+\begin{theorem}
+\label{thm:product_of_two_evens_is_even}
+If $n$ and $r$ are even integers, then $nr = n \times r$ is even.
+\end{theorem}
+
+\begin{proof}
+Since $n$ and $r$ are even, then you can write each of them as
+$n = 2k$ and $r = 2s$, where $k$ and $s$ are integers.  Then the
+product $nr$ can be written as
+%%
+\begin{align*}
+nr
+&=
+(2k) \times (2s) \\[4pt]
+&=
+2 \times (k \times 2 \times s) \\[4pt]
+&=
+2 (2ks).
+\end{align*}
+%%
+Whatever the number $2ks$ is, it will be an integer because the
+multiplication of any three integers is an integer.  Make the
+substitution $t = 2ks$ and you have $nr = 2t$, where $t = 2ks$ is an
+integer.  Therefore $nr$ is even.
+\end{proof}
+
 A \emph{rational} number is a ratio of two integers.  A
 rational number is also known as a fraction.  These are rational
 numbers: $1/2$, $3/4$, $11/9$, and $-10/2$.  You write $5/2 \in \QQ$
