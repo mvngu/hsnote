@@ -1,0 +1,140 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,oneside,12pt]{article}
+\usepackage{mystyle}
+
+\begin{document}
+
+\title{\Large\bf Rational numbers}
+\author{%%
+  Minh Van Nguyen \\
+  \url{mvngu@gmx.com}
+}
+\date{\today}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Rational and irrational numbers}
+
+A \emph{rational} number is a ratio of two integers.  A
+rational number is also known as a fraction.  These are rational
+numbers: $1/2$, $3/4$, $11/9$, and $-10/2$.  You write $5/2 \in \QQ$
+to mean that $5/2$ belongs to the set of rational numbers.  The set of
+all rational numbers is written as
+\[
+\QQ
+=
+\setdes{
+  \frac{a}{b}
+}{
+  \pair{a}{b} \in \ZZ
+  \text{ and }
+  b \neq 0
+}.
+\]
+This means that the set of rational numbers consists of all numbers of
+the form $a/b$ such that $a$ and $b$ are integers, but $b$ cannot be
+zero.  The top integer $a$ is called the \emph{numerator} and the
+bottom integer $b$ is called the \emph{denominator}.  If $b = 1$, then
+$a/b = a/1 = a$ and consequently any integer is also a rational
+number.
+
+\begin{exercise}
+Provide an example of a rational number that is also an integer.
+Explain why your number is an integer.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The rational number $2/1$ is also an integer because it can be written
+as $2/1 = 2$ and $2$ is an integer.
+\end{solution}
+}{}
+
+\begin{exercise}
+Give an example of a rational number that is not an integer.  Explain
+why your number is not an integer.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The ratio $1/2$ is not an integer because $1/2$ cannot be simplified
+to any integer.
+\end{solution}
+}{}
+
+\begin{exercise}
+If $a/b$ is a rational number, why can't $b$ be zero?  Consider the
+examples of $1/4$ and $1/0$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+If in the rational number $a/b$ you have $b = 0$, then the ratio
+$a / 0$ is not defined.  This means that as $b$ comes closer and
+closer to zero, the value of the ratio $a/b$ does not come to a fixed
+number.
+\end{solution}
+}{}
+
+An \emph{irrational} number is any number that cannot be written as a
+ratio of two integers.  The number $\sqrt{2}$ is an irrational number
+so it cannot be an integer and therefore the expression
+$\displaystyle{\frac{\sqrt{2}}{2}}$ is not a fraction.  But how did
+you know that $\sqrt{2}$ is irrational?  How can you prove that
+$\sqrt{2}$ is irrational?
+
+\begin{theorem}
+The number $\sqrt{2}$ is irrational.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+Provide another example of an irrational number.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The number $\pi = 3.141592\dots$ is an irrational number.
+\end{solution}
+}{}
+
+The number $\pi = 3.141592\dots$ is often used to measure the area and
+circumference of a circular region.  Since $\pi$ is irrational, the
+number cannot be written as a ratio of integers.  So for practical
+purposes, you must approximate $\pi$ as closely as you can.  The Greek
+mathematician Archimedes used the fraction $22 / 7$ to approximate
+$\pi$.
+
+The set of \emph{real} numbers is made up of all rational and all
+irrational numbers.  The set of real numbers is written as $\RR$.  For
+example, the ratio $3/7$ is a real number, the square root $\sqrt{2}$
+is a real number, and the integer $42$ is a real number.
+
+\begin{exercise}
+Explain why any integer is a real number.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Any integer is also a rational number.  Since a rational number is
+also a real number, it follows that any integer is also a real
+number.
+\end{solution}
+}{}
+
+\begin{exercise}
+How can a number be represented as a picture?
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+A real number can be represented as a point on the number line.
+\end{solution}
+}{}
+
+\end{document}
