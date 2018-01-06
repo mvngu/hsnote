@@ -16,9 +16,9 @@ all:
 
 # Compile a document with solutions to the problems.
 solution:
-	sed -i s/'\\setboolean{showSolution}{false}'/'\\setboolean{showSolution}{true}'/g style/mystyle.sty
+	sed -i s/'\\setbool{showSolution}{false}'/'\\setbool{showSolution}{true}'/g style/mystyle.sty
 	make all
-	sed -i s/'\\setboolean{showSolution}{true}'/'\\setboolean{showSolution}{false}'/g style/mystyle.sty
+	sed -i s/'\\setbool{showSolution}{true}'/'\\setbool{showSolution}{false}'/g style/mystyle.sty
 
 latex:
 	(TEXINPUTS=.:style:${TEXINPUTS:-:}                                 \

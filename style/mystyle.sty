@@ -39,8 +39,9 @@
 
 %% Switches; adjust these switches for custom effect.
 %% Solutions to exercises.
-\newboolean{showSolution}
-\setboolean{showSolution}{false}
+\usepackage{etoolbox}
+\newbool{showSolution}
+\setbool{showSolution}{false}
 
 %% Customized numbering for corollary, lemma, theorem, etc.
 \newtheorem{theorem}{Theorem}
