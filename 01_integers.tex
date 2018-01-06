@@ -659,14 +659,29 @@ integer is even.  Therefore $xy$ is even.
 \end{solution}
 }{}
 
-\item Let $n$ be any even integer. Explain why the square number
-  $n^2 = n \times n$ is also an even integer.
+\item Let $n$ be any even integer.  Explain why the square number
+  $n^2 = n \times n$ is also an even integer.  Provide another
+  explanation of why $n^2$ is even.
 \ifbool{showSolution}{
   \begin{solution}
   Since $n$ is an even integer, then $n^2 = n \times n$ is the product
   of two even integers.  You can use
   \Theorem{thm:product_of_two_evens_is_even} to conclude that the
-  square number $n^2$ is also even.
+  square number $n^2$ is also even.  On the other hand, because $n$ is
+  even you can write it as $n = 2k$, where $k$ is another integer.
+  Then you can use the associative laws to write $n^2$ as
+  %%
+  \begin{align*}
+  n^2
+  &=
+  n \times n \\[4pt]
+  &=
+  (2k) \times (2k) \\[4pt]
+  &=
+  2 (2k^2)
+  \end{align*}
+  %%
+  which is an even integer.
   \end{solution}
 }{}
 
