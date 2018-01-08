@@ -111,9 +111,95 @@ number of rational numbers that have the same value as $a/b$.  The
 above is summarised as:
 
 \begin{theorem}
+\label{thm:infinitely_many_rationals_same_value}
 If $a/b$ is a rational number such that $b \neq 0$, then there are
 infinitely many rational numbers that have the same value as $a/b$.
 \end{theorem}
+
+It is because of \Theorem{thm:infinitely_many_rationals_same_value}
+that you can simplify a fraction.  If a rational number $a/b$ can be
+simplified, then there must be a rational number $c/d$ that has the
+same value as $a/b$ but the numerator
+$\absoluteValue{c} < \absoluteValue{a}$ and the denominator
+$\absoluteValue{d} < \absoluteValue{b}$.  If $x$ is any number, the
+expression $\absoluteValue{x}$ is called the \emph{absolute value} of
+$x$ and is defined as
+\[
+\absoluteValue{x}
+=
+\begin{cases}
+x,  & \text{if $x \geq 0$}, \\[4pt]
+-x, & \text{otherwise}.
+\end{cases}
+\]
+For example, the absolute value of $0$ is $0$, the absolute value of
+$3$ is $3$, and the absolute value of any positive number $y$ is $y$
+itself.  You obtain the absolute value of a negative number by
+multiplying the number by $-1$.  For example, the absolute value of
+$-7$ is $\absoluteValue{-7} = -1 \times (-7) = 7$.
+
+\begin{exercise}
+Can the rational number $15 / 21$ be simplified any further?  If yes,
+provide a simplified version of $15 / 21$.  If no, explain why not.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The numerator $15$ and the denominator $21$ both have $3$ as a common
+factor.  Then the rational number $15 / 21$ can be simplified as:
+%%
+\begin{align*}
+\frac{15}{21}
+&=
+\frac{
+  3 \times 5
+}{
+  3 \times 7
+} \\[4pt]
+&=
+\frac{5}{7}.
+\end{align*}
+\end{solution}
+}{}
+
+\begin{exercise}
+Simplify the fraction $-28 / 35$ as much as possible.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The numerator and denominator both have $7$ as a common factor so the
+fraction $-28 / 35$ can be simplified as:
+%%
+\begin{align*}
+-\frac{28}{35}
+&=
+-\frac{
+  7 \times 4
+}{
+  7 \times 5
+} \\[4pt]
+&=
+-\frac{4}{5}.
+\end{align*}
+%%
+Note that $\absoluteValue{-4} = 4$ and $\absoluteValue{-28} = 28$ and
+so $\absoluteValue{-4} < \absoluteValue{-28}$ even though
+$-28 < -4$.
+\end{solution}
+}{}
+
+\begin{exercise}
+Explain why the rational number $3/7$ cannot be simplified any
+further.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The only factor that $3$ and $7$ have in common is $1$.  Therefore the
+rational number $3/7$ cannot be simplified any further.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
