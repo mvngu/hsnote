@@ -640,6 +640,33 @@ can be simplified as
   an integer.
   \end{solution}
 }{}
+
+\item Suppose $n$ is an even integer such that $n < 0$.  Explain why
+  the number $(\sqrt{2})^n$ is rational.
+\ifbool{showSolution}{
+  \begin{solution}
+  As the integer $n < 0$ is even, then it can be written as $n = -2k$
+  with $k > 0$ being an integer.  Then $(\sqrt{2})^n$ can be written
+  as
+  %%
+  \begin{align*}
+  (\sqrt{2})^n
+  &=
+  (\sqrt{2})^{-2k} \\[4pt]
+  &=
+  \parenthesis*{
+    (\sqrt{2})^2
+  }^{-k} \\[4pt]
+  &=
+  2^{-k} \\[4pt]
+  &=
+  \frac{1}{2^k}
+  \end{align*}
+  %%
+  which is a rational number.  Therefore $(\sqrt{2})^n$ is a rational
+  number.
+  \end{solution}
+}{}
 \end{problem}
 
 \end{document}
