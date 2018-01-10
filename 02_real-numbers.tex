@@ -610,6 +610,30 @@ can be simplified as
   calculation of compound interest.
   \end{solution}
 }{}
+
+\item Let $n$ be an even integer such that $n \geq 0$.  Prove that the
+  number $(\sqrt{2})^n$ is an integer.
+\ifbool{showSolution}{
+  \begin{solution}
+  Since $n \geq 0$ is even, then $n$ can be written as $n = 2k$, where
+  $k \geq 0$ is another integer.  Now write $(\sqrt{2})^n$ as
+  %%
+  \begin{align*}
+  (\sqrt{2})^n
+  &=
+  (\sqrt{2})^{2k} \\[4pt]
+  &=
+  \parenthesis*{
+    (\sqrt{2})^2
+  }^k \\[4pt]
+  &=
+  2^k.
+  \end{align*}
+  %%
+  The number $2^k$ is an integer and therefore $(\sqrt{2})^n$ is also
+  an integer.
+  \end{solution}
+}{}
 \end{problem}
 
 \end{document}
