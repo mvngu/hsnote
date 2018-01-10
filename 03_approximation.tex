@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,oneside,12pt]{article}
+\usepackage{mystyle}
+
+\begin{document}
+
+\title{\Large\bf Approximation}
+\author{%%
+  Minh Van Nguyen \\
+  \url{mvngu@gmx.com}
+}
+\date{\today}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Approximating $\pi$}
+
+The number $\pi = 3.141592\dots$ is another example of an irrational
+number.  The number $\pi$ is often used to measure the area and
+circumference of a circle; see \Figure{fig:general_circle}.  Since
+$\pi$ is irrational, the number cannot be written as a ratio of
+integers.  So for practical purposes, you must approximate $\pi$ as
+closely as you can.  The Greek mathematician Archimedes used the
+fraction $22 / 7$ to approximate $\pi$.  The fraction $22 / 7$ can be
+written as $22 / 7 = 3.142857$, correct to six decimal digits.  This
+is not a good approximation to $\pi$ because the value of $22 / 7$
+differs from $\pi$ from the third decimal digit onwards.  If a number
+$p$ is to be a good approximation of $\pi$, then it should be
+possible to make $p$ as close to $\pi$ as you want.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/02/circle.pdf}
+\caption{%%
+  A circle with radius $r$.  Since the radius cannot be negative or
+  zero, you must have $r > 0$.  The \emph{radius} of a circle is
+  defined as the distance from the centre of the circle to any point
+  on the circle.  The \emph{diameter}, denoted $d$, is then defined as
+  twice the radius, i.e.~$d = 2r$.  The distance around the circle is
+  called its \emph{circumference}.
+}
+\label{fig:general_circle}
+\end{figure}
+
+In order to approximate $\pi$ as closely as possible, you must know
+how $\pi$ is defined.  Let $c$ be the circumference of a circle and
+let $d$ be the diameter of the same circle.  Then the value of $\pi$
+is defined as the ratio
+%%
+\begin{equation}
+\label{eqn:define_pi_as_ratio_of_c_over_d}
+\pi
+=
+\frac{c}{d}.
+\end{equation}
+%%
+But now you have two problems:
+%%
+\begin{packedenumeral}
+\item How is the value of the diameter $d$ determined?
+
+\item How do you calculate the value of the circumference $c$?
+\end{packedenumeral}
+%%
+The short answer is: You approximate the values of $d$ and $c$ and
+then substitute those values into
+\Equation{eqn:define_pi_as_ratio_of_c_over_d} to obtain an
+approximation for $\pi$.  What follows is the long answer.
+
+\end{document}
