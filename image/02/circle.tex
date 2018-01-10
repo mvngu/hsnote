@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{circle}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+%% A general circle, where we label its circumference and diameter.
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  lineStyle/.style={-,very thick},%%
+  originStyle/.style={draw,inner sep=1.5pt,circle,fill=black,black}
+]
+%%
+%%
+\pgfmathsetmacro{\radius}{2}
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\ylow}{0}
+\coordinate (centre) at (\xlow,\ylow);
+%%
+%% Draw a general circle.
+%%
+%% The circle and its centre.
+\draw[lineStyle] (centre) circle[radius=\radius];
+\node[originStyle] at (centre) {};
+%% The radius of the circle.
+\draw[lineStyle] (centre) -- (\radius,0);
+\node at (\radius/2,\ylow) [above] {$r$};
+\end{tikzpicture}
+
+\end{document}
