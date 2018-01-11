@@ -44,22 +44,13 @@
 
 \begin{tikzpicture}[%%
   axisStyle/.style={->,very thick},%%
-  lineStyle/.style={-,very thick},%%
   nodeStyle/.style={circle,inner sep=1.5pt,fill=black,black},%%
   tickStyle/.style={-,thick}
 ]
 %%
 %%
-% \pgfmathsetmacro{\radius}{4}
-% \pgfmathsetmacro{\dx}{\radius}
-% \pgfmathsetmacro{\dy}{\dx}
 \pgfmathsetmacro{\tickdx}{0.1}
-\pgfmathsetmacro{\xlow}{0}
 \pgfmathsetmacro{\ylow}{0}
-% \coordinate (A) at (\xlow+\dx,\ylow);
-% \coordinate (B) at (\xlow,\ylow+\dy);
-\coordinate (origin) at (\xlow,\ylow);
-\coordinate (one) at (\xlow+1,\ylow);
 %%
 %% The number line.
 \xAxis
