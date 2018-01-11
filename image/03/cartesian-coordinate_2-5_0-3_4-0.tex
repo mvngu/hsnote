@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{cartesian-coordinate_2-5_0-3_4-0}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{(#1\comma #2)}
+
+%% A tick on the x-axis.
+%%
+%% #1 -- A point on the x-axis.
+\newcommand{\xtick}[1]{%%
+  \draw[tickStyle] (#1,\tickdx) -- (#1,-\tickdx);
+  \node at (#1,-\tickdx) [below] {$#1$};
+}
+
+%% A tick on the y-axis.
+%%
+%% #1 -- A point on the y-axis.
+\newcommand{\ytick}[1]{%%
+  \draw[tickStyle] (-\tickdx,#1) -- (\tickdx,#1);
+  \node at (-\tickdx,#1) [left] {$#1$};
+}
+
+%% The Cartesian coordinate system.
+\newcommand{\cartesianCoordinate}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \foreach \x in {-4,-3,-2,-1,1,2,3}{
+    \xtick{\x}
+  };
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \foreach \y in {-3,-2,-1,1,2,3,4}{
+    \ytick{\y}
+  };
+  \node at (yend) [above] {$y$};
+}
+
+%% A point on the Cartesian plane.
+%%
+%% #1 -- The x-coordinate of the point.
+%% #2 -- The y-coordinate of the point.
+%% #3 -- Label the point with this name.
+%% #4 -- Where to place the label relative to the point.
+\newcommand{\xyPoint}[4]{%%
+  \node[nodeStyle] at (#1,#2) {};
+  \node at (#1,#2) [#4] {$#3$};
+}
+
+%% Represent the following coordinates as points on the Cartesian
+%% coordinate system:
+%%
+%% * (2, 4)
+%% * (0, -3)
+%% * (-4, 0)
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  axisStyle/.style={->,thick},%%
+  nodeStyle/.style={circle,inner sep=1.5pt,fill=black,black},%%
+  tickStyle/.style={-,thick}
+]
+%%
+%%
+\pgfmathsetmacro{\tickdx}{0.1}
+\pgfmathsetmacro{\xhigh}{3.5}
+\pgfmathsetmacro{\xlow}{-4.5}
+\pgfmathsetmacro{\yhigh}{4.5}
+\pgfmathsetmacro{\ylow}{-3.5}
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+%% The Cartesian coordinate system.
+\cartesianCoordinate
+%% Some points on the Cartesian plane.
+%% (2, 4)
+\xyPoint{2}{4}{\tuple{2}{4}}{above}
+%% (0, -3)
+\xyPoint{0}{-3}{\tuple{0}{-3}}{right}
+%% (-4, 0)
+\xyPoint{-4}{0}{\tuple{-4}{0}}{above}
+\end{tikzpicture}
+
+\end{document}
