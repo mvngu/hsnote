@@ -224,6 +224,7 @@ c
 which proves the following theorem.
 
 \begin{theorem}
+\label{thm:distance_between_two_points}
 Let $A = \tuple{x_1}{y_1}$ and $B = \tuple{x_2}{y_2}$ be two points in
 the Cartesian coordinate system.  If $A \neq B$, then the distance
 between $A$ and $B$ can be written as
@@ -235,6 +236,36 @@ between $A$ and $B$ can be written as
 }.
 \]
 \end{theorem}
+
+\begin{exercise}
+Consider the points $(\sqrt{2}\comma 0)$ and $\tuple{2}{1}$ from
+\Figure{fig:Cartesian_coordinate_system}.  Determine the distance
+between those two points.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Use \Theorem{thm:distance_between_two_points} to write
+%%
+\begin{align*}
+\sqrt{
+  (1 - 0)^2
+  +
+  (2 - \sqrt{2})^2
+}
+&=
+\sqrt{
+  1^2 + (2 - \sqrt{2})^2
+} \\[4pt]
+&\approx
+1.3431
+\end{align*}
+%%
+correct to four decimal places.  In other words, the distance between
+the points $(\sqrt{2}\comma 0)$ and $\tuple{2}{1}$ is approximately
+$1.3431$.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
