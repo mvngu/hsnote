@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{square-shifted}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{(#1\comma #2)}
+
+%% The Cartesian coordinate system.
+\newcommand{\cartesianCoordinate}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \node at (yend) [above] {$y$};
+}
+
+%% A point on the Cartesian plane.
+%%
+%% #1 -- The x-coordinate of the point.
+%% #2 -- The y-coordinate of the point.
+%% #3 -- Label the point with this name.
+%% #4 -- Where to place the label relative to the point.
+\newcommand{\xyPoint}[4]{%%
+  \node[nodeStyle] at (#1,#2) {};
+  \node at (#1,#2) [#4] {$#3$};
+}
+
+%% Shifting a square.
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  axisStyle/.style={->,thick},%%
+  dashStyle/.style={-,thick,dashed},%%
+  nodeStyle/.style={circle,inner sep=1.5pt,fill=black,black}
+]
+%%
+%%
+\pgfmathsetmacro{\dx}{3}
+\pgfmathsetmacro{\dy}{\dx}
+\pgfmathsetmacro{\x}{4.5}
+\pgfmathsetmacro{\xhigh}{9}
+\pgfmathsetmacro{\xlow}{-0.5}
+\pgfmathsetmacro{\y}{\x}
+\pgfmathsetmacro{\yhigh}{\xhigh}
+\pgfmathsetmacro{\ylow}{\xlow}
+\coordinate (A) at (\x+\dx,\y+\dy);
+\coordinate (B) at (\x-\dx,\y+\dy);
+\coordinate (C) at (\x-\dx,\y-\dy);
+\coordinate (D) at (\x+\dx,\y-\dy);
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+%% The Cartesian coordinate system.
+\cartesianCoordinate
+%%
+%% Reflections of the point (x,y).
+%% The centre of the square.
+\xyPoint{\x}{\y}{\tuple{b}{b}}{above}
+%% The original point (x,y).
+\xyPoint{\x+\dx}{\y+\dy}{\tuple{\frac{a}{2}+b}{\frac{a}{2}+b}}{above}
+%% Reflection with respect to the x-axis.
+\xyPoint{\x+\dx}{\y-\dy}{\tuple{\frac{a}{2}+b}{-\frac{a}{2}+b}}{below}
+%% Reflection with respect to the y-axis.
+\xyPoint{\x-\dx}{\y+\dy}{\tuple{-\frac{a}{2}+b}{\frac{a}{2}+b}}{above}
+%% Diagonal reflection.
+\xyPoint{\x-\dx}{\y-\dy}{\tuple{-\frac{a}{2}+b}{-\frac{a}{2}+b}}{below}
+%%
+%% Connect the corners to form a square.
+\draw[dashStyle] (A) -- (B);
+\draw[dashStyle] (B) -- (C);
+\draw[dashStyle] (C) -- (D);
+\draw[dashStyle] (D) -- (A);
+\end{tikzpicture}
+
+\end{document}
