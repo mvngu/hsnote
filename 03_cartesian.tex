@@ -215,4 +215,29 @@ $(\sqrt{2}\comma 0)$ and $\tuple{2}{1}$ is approximately $1.3431$.
 \end{solution}
 }{}
 
+\begin{exercise}
+Let $\tuple{a}{b}$ be any point in the Cartesian coordinate system
+such that $\tuple{a}{b} \neq \tuple{0}{0}$.  Calculate the distance
+from $\tuple{a}{b}$ to the origin.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since the point $\tuple{a}{b}$ is different from the origin, use
+\Theorem{thm:distance_between_two_points} to write
+%%
+\begin{align*}
+\sqrt{
+  (a - 0)^2 + (b - 0)^2
+}
+&=
+\sqrt{
+  a^2 + b^2
+}
+\end{align*}
+%%
+which is the distance from the origin to $\tuple{a}{b}$.
+\end{solution}
+}{}
+
 \end{document}
