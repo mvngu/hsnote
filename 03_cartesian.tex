@@ -243,4 +243,33 @@ which is the distance from the origin to $\tuple{a}{b}$.
 
 \section*{Problem}
 
+\begin{problem}
+\item If $A = \tuple{a}{b}$ is any point in the Cartesian coordinate
+  system, explain why the distance from $A$ to itself is zero.
+\ifbool{showSolution}{
+  \begin{solution}
+  \Theorem{thm:distance_between_two_points} does not assume that any
+  two points must be distinct in order to compute the distance between
+  the points.  You can use \Theorem{thm:distance_between_two_points}
+  to write
+  %%
+  \begin{align*}
+  \sqrt{
+    (b - b)^2 + (a - a)^2
+  }
+  &=
+  \sqrt{
+    0^2 + 0^2
+  } \\[4pt]
+  &=
+  \sqrt{0} \\[4pt]
+  &=
+  0
+  \end{align*}
+  %%
+  which shows that the distance from any point to itself is zero.
+  \end{solution}
+}{}
+\end{problem}
+
 \end{document}
