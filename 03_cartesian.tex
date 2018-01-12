@@ -378,6 +378,101 @@ reflection is $\tuple{2}{-4}$.
   point midway between $A$ and $B$.
   \end{solution}
 }{}
+
+\item Let $\pair{a}{b} > 0$ be real numbers such that $a \leq b$.  Let
+  $A = \tuple{a}{0}$ and $B = \tuple{b}{0}$ be two points, where the
+  segment $L$ is the line from $A$ to $B$.  Suppose you want to break
+  up the segment $L$ into four pieces of equal length.  Determine the
+  coordinates of each of the four pieces.
+\ifbool{showSolution}{
+  \begin{solution}
+  The distance between $A$ and $B$ is $b - a \geq 0$.  If the line
+  segment $L$ is broken up into four pieces of equal length, then each
+  piece will have a length of $\ell = \frac{b - a}{4}$.  The first
+  piece ends at the coordinates $\tuple{a + \ell}{0}$, where
+  $a + \ell$ can be written as
+  %%
+  \begin{align*}
+  a + \ell
+  &=
+  a + \frac{b - a}{4} \\[4pt]
+  &=
+  \frac{4a}{4} + \frac{b - a}{4} \\[4pt]
+  &=
+  \frac{
+    4a + b - a
+  }{
+    4
+  } \\[4pt]
+  &=
+  \frac{
+    3a + b
+  }{
+    4
+  }.
+  \end{align*}
+  %%
+  In other words, the first piece has coordinates from $\tuple{a}{0}$
+  to $\tuple{\frac{3a + b}{4}}{0}$.  The second piece ends at the
+  coordinates $\tuple{a + 2\ell}{0}$, where $a + 2\ell$ can be written
+  as
+  %%
+  \begin{align*}
+  a + 2\ell
+  &=
+  a + 2 \times \frac{b - a}{4} \\[4pt]
+  &=
+  a + \frac{b - a}{2} \\[4pt]
+  &=
+  \frac{2a}{2} + \frac{b - a}{2} \\[4pt]
+  &=
+  \frac{
+    2a + b - a
+  }{
+    2
+  } \\[4pt]
+  &=
+  \frac{
+    a + b
+  }{
+    2
+  }.
+  \end{align*}
+  %%
+  Then the second piece has coordinates from
+  $\tuple{\frac{3a + b}{4}}{0}$ to $\tuple{\frac{a + b}{2}}{0}$.  The
+  third piece ends at the coordinates $\tuple{a + 3\ell}{0}$, where
+  $a + 3\ell$ can be written as
+  %%
+  \begin{align*}
+  a + 3\ell
+  &=
+  a + 3 \times \frac{b - a}{4} \\[4pt]
+  &=
+  a + \frac{3(b - a)}{4} \\[4pt]
+  &=
+  \frac{4a}{4} + \frac{3b - 3a}{4} \\[4pt]
+  &=
+  \frac{
+    4a + 3b - 3a
+  }{
+    4
+  } \\[4pt]
+  &=
+  \frac{
+    a + 3b
+  }{
+    4
+  }.
+  \end{align*}
+  %%
+  So the third piece has coordinates from $\tuple{\frac{a + b}{2}}{0}$
+  to $\tuple{\frac{a + 3b}{4}}{0}$.  Finally, the fourth piece ends at
+  the coordinates $\tuple{a + 4\ell}{0} = \tuple{b}{0}$.  That is, the
+  fourth piece has coordinates from $\tuple{\frac{a + 3b}{4}}{0}$ to
+  $\tuple{b}{0}$.
+  \end{solution}
+}{}
 \end{problem}
 
 \end{document}
