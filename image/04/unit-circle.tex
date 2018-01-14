@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{unit-circle}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{(#1\comma #2)}
+
+%% The Cartesian coordinate system.
+\newcommand{\cartesianCoordinate}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \node at (yend) [above] {$y$};
+}
+
+%% A generic point on the unit circle.
+\newcommand{\genericPoint}{%%
+  \xyPoint{\xa}{\yb}{\tuple{a}{b}}{above right}
+  \radiusLine
+  %% A vertical line meets at the generic point.
+  \draw[dashStyle] (\xa,0) -- (\xa,\yb);
+  \node at (\xa,\yb/2) [below,rotate=90] {$\sin\varphi$};
+  %% A horizontal line meets at the generic point.
+  \node at (\xa/2,0) [below] {$\cos\varphi$};
+}
+
+%% The radius.
+\newcommand{\radiusLine}{%%
+  %% A line as the radius
+  \draw[dashStyle] (origin) -- (\xa,\yb);
+  %% Label the angle.
+  \draw[->,thick] (0.5,0) +(0:0.5cm) arc[start angle=0,radius=1,delta angle=45];
+  \node at (0.9,0.4) [right] {$\varphi$};
+}
+
+%% Some special points on the unit circle.
+\newcommand{\specialPoints}{%%
+  \xyPoint{\radius}{0}{\tuple{1}{0}}{below right}
+  \xyPoint{0}{\radius}{\tuple{0}{1}}{above right}
+  \xyPoint{-\radius}{0}{\tuple{-1}{0}}{below right}
+  \xyPoint{0}{-\radius}{\tuple{0}{-1}}{below right}
+}
+
+%% The unit circle centred at the origin.
+\newcommand{\unitCircle}{%%
+  \draw[lineStyle] (origin) circle [radius=\radius];
+}
+
+%% A point on the Cartesian plane.
+%%
+%% #1 -- The x-coordinate of the point.
+%% #2 -- The y-coordinate of the point.
+%% #3 -- Label the point with this name.
+%% #4 -- Where to place the label relative to the point.
+\newcommand{\xyPoint}[4]{%%
+  \node[nodeStyle] at (#1,#2) {};
+  \node at (#1,#2) [#4] {$#3$};
+}
+
+%% Values of sine and cosine in the unit circle.
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  axisStyle/.style={->,thick},%%
+  dashStyle/.style={-,thick,dashed},%%
+  lineStyle/.style={-,thick},%%
+  nodeStyle/.style={draw,inner sep=1.7pt,circle,fill=black,black}
+]
+%%
+%%
+\pgfmathsetmacro{\radius}{3.5}
+\pgfmathsetmacro{\xa}{2.47487373415292}
+\pgfmathsetmacro{\xhigh}{4}
+\pgfmathsetmacro{\xlow}{-4}
+\pgfmathsetmacro{\yb}{\xa}
+\pgfmathsetmacro{\yhigh}{\xhigh}
+\pgfmathsetmacro{\ylow}{\xlow}
+\coordinate (origin) at (0,0);
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+%%
+%% Illustrate the unit circle.
+\cartesianCoordinate
+\unitCircle
+\genericPoint
+\specialPoints
+\end{tikzpicture}
+
+\end{document}
