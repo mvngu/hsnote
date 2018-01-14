@@ -14,5 +14,114 @@
 \maketitle
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Degrees and radians}
+
+Before discussing how to get a better approximation of $\pi$, you need
+to know about radians.  Angular degrees, or degrees, are used to
+measure angles.  Another way to measure angles is to use
+\emph{radians}, which are defined as follows.  A unit circle has a
+radius of $r = 1$ so its circumference is $2 \pi r = 2 \pi$.  So the
+value of $2 \pi$ is the distance around the unit circle.  The value of
+$2\pi$ is also used as the angle of a circle and you say that a circle
+has $2\pi$ radians.  Since any circle has $360$ degrees~(or
+$\degree{360}$), then $\degree{360} = 2\pi$ radians.  The last
+equation can be simplified to $\degree{180} = \pi$, which means that
+$\degree{180}$ is equivalent to $\pi$ radians.
+
+\begin{exercise}
+Explain how you would define one radian.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since $\degree{180} = \pi$ radians, divide both sides by $\pi$ to get
+$\degree{180} / \pi = 1$ radian.  Therefore one radian is
+approximately $57.3$ degrees.
+\end{solution}
+}{}
+
+\begin{exercise}
+Write $\degree{90}$ in terms of radians.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You know that $\degree{180} = \pi$ radians.  Divide both sides of the
+equation by $2$ to see that $\degree{90} = \pi / 2$ radians.
+\end{solution}
+}{}
+
+\Figure{fig:convert_from_polar_to_Cartesian_coordinates} illustrates
+how a point $\tuple{a}{b}$ in the Cartesian coordinate system can be
+represented in terms of radius and angle.  The coordinate system that
+uses radius and angle is known as the \emph{polar coordinate system}.
+Suppose you want to convert the Cartesian coordinates $\tuple{a}{b}$
+to polar coordinates.  To do so, you assume that $\tuple{a}{b}$ is a
+point on a circle that is centred at the origin.  Then the distance
+from $\tuple{a}{b}$ to the origin is the radius of the circle so the
+radius can be calculated as:
+%%
+\begin{align*}
+r
+&=
+\sqrt{
+  (b - 0)^2 + (a - 0)^2
+} \\[4pt]
+&=
+\sqrt{
+  a^2 + b^2
+}.
+\end{align*}
+%%
+To calculate the angle $\varphi$ in
+\Figure{fig:convert_from_polar_to_Cartesian_coordinates}, you use a
+rule called the \emph{law of sines}.  From
+\Figure{fig:convert_from_polar_to_Cartesian_coordinates} you see that
+the dashed vertical line has a length of $b$ and the angle opposite
+the radius is $\degree{90}$ or $\pi / 2$ radians.  Use the law of
+sines to write
+%%
+\begin{equation}
+\label{eqn:law_of_sines}
+\frac{b}{\sin \varphi}
+=
+\frac{r}{\sin \frac{\pi}{2}}.
+\end{equation}
+%%
+Since $\sin \frac{\pi}{2} = 1$, \Equation{eqn:law_of_sines} can be
+simplified to
+\[
+\frac{b}{\sin \varphi}
+=
+r.
+\]
+Solve the last equation for $\sin \varphi$ and you get
+$\frac{b}{r} = \sin \varphi$.  Now solve for the angle $\varphi$ and
+you get
+\[
+\varphi
+=
+\arcsin\parenthesis*{\frac{b}{r}}.
+\]
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/05/polar-cartesian.pdf}
+\caption{%%
+  Any point $\tuple{a}{b}$ in the Cartesian coordinate system can be
+  represented as a point $\tuple{r}{\varphi}$ on a circle.  The circle
+  is centred at the origin and has a radius of $r$.  The value of
+  $\varphi$ radians measures the angle that spans from the $x$-axis to
+  the radius of the circle, going anti-clockwise.  The point
+  $\tuple{r}{\varphi}$ is known as the \emph{polar coordinates} of
+  $\tuple{a}{b}$.  In other words, the Cartesian coordinates
+  $\tuple{a}{b}$ and the polar coordinates $\tuple{r}{\varphi}$ both
+  describe the same point.
+}
+\label{fig:convert_from_polar_to_Cartesian_coordinates}
+\end{figure}
+
 
 \end{document}
