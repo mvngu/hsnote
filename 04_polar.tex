@@ -291,4 +291,22 @@ you get
 
 \section*{Problem}
 
+\begin{problem}
+\item Let $n \geq 0$ be an even integer.  Explain why
+  $\cos(n\pi) = 1$ and $\sin(n\pi) = 0$.
+\ifbool{showSolution}{
+  \begin{solution}
+  Since $n \geq 0$ is even, it can be written as $n = 2k$ for some
+  integer $k \geq 0$.  Then $n\pi = 2k\pi = k(2\pi)$, where $2\pi$
+  radians is equivalent to $\degree{360}$.  So $k (2\pi)$ means,
+  starting from the point $\tuple{1}{0}$ on the unit circle of
+  \Figure{fig:point_on_unit_circle}, you go anti-clockwise $k$ times
+  around the unit circle.  One complete trip around the unit circle
+  spans $2\pi$ radians, so $k (2\pi)$ radians mean you do $k$ complete
+  trips around the unit circle, thus ending up at the point
+  $\tuple{1}{0}$.  Therefore $\cos(n\pi) = 1$ and $\sin(n\pi) = 0$.
+\end{solution}
+}{}
+\end{problem}
+
 \end{document}
