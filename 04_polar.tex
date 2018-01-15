@@ -224,15 +224,16 @@ $\sin(-\frac{\pi}{2}) = -1$.
 
 \section{Cartesian to polar}
 
+Let's now discuss how to convert a point $\tuple{a}{b}$ in the
+Cartesian coordinate system to the polar coordinate system.
 \Figure{fig:convert_from_polar_to_Cartesian_coordinates} illustrates
-how a point $\tuple{a}{b}$ in the Cartesian coordinate system can be
-represented in terms of radius and angle.  The coordinate system that
-uses radius and angle is known as the \emph{polar coordinate system}.
-Suppose you want to convert the Cartesian coordinates $\tuple{a}{b}$
-to polar coordinates.  To do so, you assume that $\tuple{a}{b}$ is a
-point on a circle that is centred at the origin.  Then the distance
-from $\tuple{a}{b}$ to the origin is the radius of the circle so the
-radius can be calculated as:
+how the point $\tuple{a}{b}$ can be represented in terms of radius and
+angle.  The coordinate system that uses radius and angle is known as
+the \emph{polar coordinate system}.  Suppose you want to convert the
+Cartesian coordinates $\tuple{a}{b}$ to polar coordinates.  To do so,
+you assume that $\tuple{a}{b}$ is a point on a circle that is centred
+at the origin.  Then the distance from $\tuple{a}{b}$ to the origin is
+the radius of the circle so the radius can be calculated as:
 %%
 \begin{align*}
 r
@@ -245,10 +246,33 @@ r
   a^2 + b^2
 }.
 \end{align*}
-%%
+
 To calculate the angle $\varphi$ in
 \Figure{fig:convert_from_polar_to_Cartesian_coordinates}, you use a
-rule called the \emph{law of sines}.  From
+rule called the \emph{law of sines}.  For the triangle in
+\Figure{fig:law_of_sines}, the law of sines states that
+\[
+\frac{a}{\sin\alpha}
+=
+\frac{b}{\sin\beta}
+=
+\frac{c}{\sin\gamma}.
+\]
+This equation is true no matter what the triangle is.  The triangle
+can be right-angled, isoceles, or scalene.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/04/law-sines.pdf}
+\caption{%%
+  A triangle with sides $a$, $b$, and $c$.  The angle opposite side
+  $a$ is $\alpha$, the angle opposite side $b$ is $\beta$, and the
+  angle opposite side $c$ is $\gamma$.
+}
+\label{fig:law_of_sines}
+\end{figure}
+
+From
 \Figure{fig:convert_from_polar_to_Cartesian_coordinates} you see that
 the dashed vertical line has a length of $b$ and the angle opposite
 the radius is $\degree{90}$ or $\pi / 2$ radians.  Use the law of
@@ -269,8 +293,7 @@ simplified to
 r.
 \]
 Solve the last equation for $\sin \varphi$ and you get
-$\frac{b}{r} = \sin \varphi$.  Now solve for the angle $\varphi$ and
-you get
+$b/r = \sin \varphi$.  Now solve for the angle $\varphi$ and you get
 \[
 \varphi
 =
