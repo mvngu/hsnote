@@ -137,11 +137,14 @@ $\tuple{a}{b}$ be a point on the circle.  Let $\varphi$ be the angle
 from the positive half of the $x$-axis to the point $\tuple{a}{b}$,
 going anti-clockwise from the $x$-axis.  Then the values of $a$ and
 $b$ can be written in terms of sine and cosine as
-\[
+%%
+\begin{equation}
+\label{eqn:value_of_x_y_on_unit_circle}
 a = \cos\varphi
 \qquad\text{and}\qquad
 b = \sin\varphi.
-\]
+\end{equation}
+%%
 For example, consider the point $\tuple{1}{0}$ in
 \Figure{fig:point_on_unit_circle}.  This point lies on the positive
 half of the $x$-axis so the angle is $\varphi = 0$ radians.  In other
@@ -440,6 +443,42 @@ $(1\comma \frac{3\pi}{2})$.
   anti-clockwise from $\tuple{1}{0}$ by $\pi$ radians.  Your
   destination is now the point $\tuple{-1}{0}$ and therefore
   $\cos(n\pi) = -1$ and $\sin(n\pi) = 0$.
+  \end{solution}
+}{}
+
+\item Explain why
+  $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \sqrt{2} / 2$.
+\ifbool{showSolution}{
+  \begin{solution}
+  The point $(\frac{\sqrt{2}}{2}\comma \frac{\sqrt{2}}{2})$ in the
+  Cartesian coordinate system makes an angle of
+  $\degree{45}$~(or $\varphi = \pi / 4$ radians) with the positive
+  half of the $x$-axis.  The distance from the point to the origin is
+  %%
+  \begin{align*}
+  r
+  &=
+  \sqrt{
+    \parenthesis*{\frac{\sqrt{2}}{2}}^2
+    +
+    \parenthesis*{\frac{\sqrt{2}}{2}}^2
+  } \\[4pt]
+  &=
+  \sqrt{
+    \frac{2}{4}
+    +
+    \frac{2}{4}
+  } \\[4pt]
+  &=
+  1
+  \end{align*}
+  %%
+  and so the point $(\frac{\sqrt{2}}{2}\comma \frac{\sqrt{2}}{2})$
+  lies on the unit circle.  Now use
+  \Equation{eqn:value_of_x_y_on_unit_circle} to write
+  $\sqrt{2} / 2 = \cos\frac{\pi}{4}$ and
+  $\sqrt{2} / 2 = \sin\frac{\pi}{4}$, which can also be written as
+  $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \sqrt{2} / 2$.
   \end{solution}
 }{}
 \end{problem}
