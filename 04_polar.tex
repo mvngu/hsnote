@@ -307,6 +307,33 @@ you get
   $\tuple{1}{0}$.  Therefore $\cos(n\pi) = 1$ and $\sin(n\pi) = 0$.
 \end{solution}
 }{}
+
+\item Let $n > 0$ be an odd integer.  Explain why $\cos(n\pi) = -1$
+  and $\sin(n\pi) = 0$.
+\ifbool{showSolution}{
+  \begin{solution}
+  Since $n > 0$ is odd, it can be written as $n = 2k + 1$ for some
+  integer $k \geq 0$.  Note that you can write
+  %%
+  \begin{align*}
+  n\pi
+  &=
+  (2k + 1) \pi \\[4pt]
+  &=
+  2k\pi + \pi \\[4pt]
+  &=
+  k(2\pi) + \pi.
+  \end{align*}
+  %%
+  In other words, starting from the point $\tuple{1}{0}$ on the unit
+  circle of \Figure{fig:point_on_unit_circle}, you make $k$ complete
+  trips around the unit circle~(going anti-clockwise) and end up at
+  the starting point of $\tuple{1}{0}$.  Finally, you go
+  anti-clockwise from $\tuple{1}{0}$ by $\pi$ radians.  Your
+  destination is now the point $\tuple{-1}{0}$ and therefore
+  $\cos(n\pi) = -1$ and $\sin(n\pi) = 0$.
+  \end{solution}
+}{}
 \end{problem}
 
 \end{document}
