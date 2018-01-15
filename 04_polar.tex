@@ -302,6 +302,7 @@ $b/r = \sin \varphi$.  Now solve for the angle $\varphi$ and you get
 The above is summarised as:
 
 \begin{theorem}
+\label{thm:convert_Cartesian_to_polar_coordinates}
 Let $\tuple{a}{b}$ be a point in the Cartesian coordinate system.
 Then $\tuple{a}{b}$ can be written in polar coordinates as
 $\tuple{r}{\varphi}$, where
@@ -336,6 +337,39 @@ r
 }
 \label{fig:convert_from_polar_to_Cartesian_coordinates}
 \end{figure}
+
+Let's put \Theorem{thm:convert_Cartesian_to_polar_coordinates} to some
+use.  Any point $\tuple{a}{a}$ in the Cartesian coordinate system
+makes an angle of $\degree{45}$~(or $\pi / 4$ radians) with respect to
+the positive half of the $x$-axis.  In particular, let's convert the
+Cartesian coordinates $(\sqrt{2}\comma \sqrt{2})$ to polar
+coordinates.  The radius $r$ is
+%%
+\begin{align*}
+r
+&=
+\sqrt{
+  (\sqrt{2})^2 + (\sqrt{2})^2
+} \\[4pt]
+&=
+\sqrt{2 + 2} \\[4pt]
+&=
+2.
+\end{align*}
+%%
+Since the point $(\sqrt{2}\comma \sqrt{2})$ makes an angle of
+$\pi / 4$ radians, then you can write $\varphi$ as
+%%
+\begin{align*}
+\varphi
+&=
+\arcsin\frac{\sqrt{2}}{2} \\[4pt]
+&=
+\frac{\pi}{4}.
+\end{align*}
+%%
+Therefore the Cartesian coordinates $(\sqrt{2}\comma \sqrt{2})$ can be
+represented as the polar coordinates $(2\comma \frac{\pi}{4})$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
