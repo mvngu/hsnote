@@ -458,8 +458,8 @@ $(1\comma \frac{3\pi}{2})$.
   \end{solution}
 }{}
 
-\item Explain why
-  $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \sqrt{2} / 2$.
+\item\label{prob:cosine_sine_45_degrees}
+  Explain why $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \sqrt{2} / 2$.
 \ifbool{showSolution}{
   \begin{solution}
   The point $(\frac{\sqrt{2}}{2}\comma \frac{\sqrt{2}}{2})$ in the
@@ -491,6 +491,36 @@ $(1\comma \frac{3\pi}{2})$.
   $\sqrt{2} / 2 = \cos\frac{\pi}{4}$ and
   $\sqrt{2} / 2 = \sin\frac{\pi}{4}$, which can also be written as
   $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \sqrt{2} / 2$.
+  \end{solution}
+}{}
+
+\item For which values of $\varphi$ would $\cos\varphi = \sin\varphi$?
+\ifbool{showSolution}{
+  \begin{solution}
+  From \Problem{prob:cosine_sine_45_degrees} you know that the point
+  $(\frac{\sqrt{2}}{2}\comma \frac{\sqrt{2}}{2})$ makes an angle of
+  $\degree{45}$~(or $\pi / 4$ radians) with the positive half of the
+  $x$-axis.  The diagonal reflection of
+  $(\frac{\sqrt{2}}{2}\comma \frac{\sqrt{2}}{2})$ is the point
+  $(-\frac{\sqrt{2}}{2}\comma -\frac{\sqrt{2}}{2})$, which makes an
+  angle of $\pi / 4$ radians with the negative half of the $x$-axis.
+  In other words, the point
+  $(-\frac{\sqrt{2}}{2}\comma -\frac{\sqrt{2}}{2})$ makes an angle of
+  \[
+  \pi + \frac{\pi}{4}
+  =
+  \frac{5\pi}{4}
+  \]
+  radians with the positive half of the $x$-axis and so
+  $\cos\frac{5\pi}{4} = \sin\frac{5\pi}{4} = -\sqrt{2} / 2$.  Note
+  that if $k \geq 0$ is an integer, then $\frac{\pi}{4} + 2k\pi$
+  radians is equivalent to $\pi / 4$ radians.  The reason is that
+  $2k\pi = k(2\pi)$ radians is the same as making $k$ complete trips
+  around the unit circle and ending up at where you started.  For the
+  same reason $\frac{5\pi}{4} + 2k\pi$ radians is equivalent to
+  $\frac{5\pi}{4}$ radians.  Therefore $\cos\varphi = \sin\varphi$
+  whenever you have $\varphi = \frac{\pi}{4} + 2k\pi$ or
+  $\varphi = \frac{5\pi}{4} + 2k\pi$, where $k \geq 0$ is an integer.
   \end{solution}
 }{}
 
