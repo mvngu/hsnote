@@ -370,7 +370,8 @@ reflection is $\tuple{2}{-4}$.
   \end{solution}
 }{}
 
-\item If $A = \tuple{a}{b}$ is any point in the Cartesian coordinate
+\item\label{prob:distance_from_point_to_itself_is_zero}
+  If $A = \tuple{a}{b}$ is any point in the Cartesian coordinate
   system, explain why the distance from $A$ to itself is zero.
 \ifbool{showSolution}{
   \begin{solution}
@@ -394,6 +395,23 @@ reflection is $\tuple{2}{-4}$.
   \end{align*}
   %%
   which shows that the distance from any point to itself is zero.
+  \end{solution}
+}{}
+
+\item Let $a$ be a real number.  Explain why the distance from the
+  point $\tuple{a}{0}$ to the origin is the absolute value
+  $\absoluteValue{a}$.
+\ifbool{showSolution}{
+  \begin{solution}
+  You have three cases: (1)~$a > 0$, (2)~$a < 0$, and (3)~$a = 0$.  If
+  $a > 0$, then the point $\tuple{a}{0}$ has a distance of $a$ to the
+  origin.  Note that $\absoluteValue{a} = a$ because you assumed that
+  $a > 0$.  If $a < 0$, then $\tuple{a}{0}$ has a distance of
+  $\absoluteValue{a}$ to the origin.  If $a = 0$, then from
+  \Problem{prob:distance_from_point_to_itself_is_zero} you know that
+  the distance from $\tuple{0}{0}$ to itself is zero.  Note that
+  $\absoluteValue{0} = 0$.  In all of the above three cases, you have
+  a distance of $\absoluteValue{a}$ from $\tuple{a}{0}$ to the origin.
   \end{solution}
 }{}
 
