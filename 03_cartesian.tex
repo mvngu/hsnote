@@ -644,6 +644,81 @@ reflection is $\tuple{2}{-4}$.
   \end{solution}
 }{}
 
+\item Let $a > 0$ be a real number.  An ant starts at the point
+  $\tuple{a}{0}$ in the Cartesian coordinate system and moves in a
+  straight to the point $\tuple{a}{a}$.  From $\tuple{a}{a}$ the ant
+  moves in a straight line to $\tuple{0}{a}$.  The ant then moves in a
+  straight line to its starting position.  If the ant travelled a
+  total distance of $d$, explain why the total distance is
+  \[
+  d
+  =
+  a(2 + \sqrt{2}).
+  \]
+\ifbool{showSolution}{
+  \begin{solution}
+  The distance from $\tuple{a}{0}$ to $\tuple{a}{a}$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (a - 0)^2 + (a - a)^2
+  }
+  &=
+  \sqrt{a^2 + 0^2} \\[4pt]
+  &=
+  \sqrt{a^2} \\[4pt]
+  &=
+  a.
+  \end{align*}
+  %%
+  The distance from $\tuple{a}{a}$ to $\tuple{0}{a}$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (a - a)^2 + (0 - a)^2
+  }
+  &=
+  \sqrt{0^2 + (-a)^2} \\[4pt]
+  &=
+  \sqrt{(-1)^2 \times a^2} \\[4pt]
+  &=
+  \sqrt{a^2} \\[4pt]
+  &=
+  a.
+  \end{align*}
+  %%
+  The distance from $\tuple{0}{a}$ to $\tuple{a}{0}$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (0 - a)^2 + (a - 0)^2
+  }
+  &=
+  \sqrt{(-a)^2 + a^2} \\[4pt]
+  &=
+  \sqrt{(-1)^2 \times a^2 + a^2} \\[4pt]
+  &=
+  \sqrt{a^2 + a^2} \\[4pt]
+  &=
+  \sqrt{2a^2} \\[4pt]
+  &=
+  \sqrt{2} \times \sqrt{a^2} \\[4pt]
+  &=
+  a\sqrt{2}.
+  \end{align*}
+  %%
+  The total distance that the ant travelled is
+  %%
+  \begin{align*}
+  a + a + a\sqrt{2}
+  &=
+  2a + a\sqrt{2} \\[4pt]
+  &=
+  a(2 + \sqrt{2}).
+  \end{align*}
+  \end{solution}
+}{}
+
 \item Consider the right-angled triangle in
   \Figure{fig:right_angled_triangle}.  Compute the value of the
   hypotenuse.
