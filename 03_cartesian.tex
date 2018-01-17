@@ -719,6 +719,32 @@ reflection is $\tuple{2}{-4}$.
   \end{solution}
 }{}
 
+\item Let $a > 0$ be a real number.  An ant starts at the origin and
+  moves in a straight line to the point $\tuple{a}{a}$.  The ant then
+  moves in a straight line to its starting position.  Explain why the
+  total distance that the ant travelled is $2a\sqrt{2}$.
+\ifbool{showSolution}{
+  \begin{solution}
+  The distance from $\tuple{0}{0}$ to $\tuple{a}{a}$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (a - 0)^2 + (a - 0)^2
+  }
+  &=
+  \sqrt{a^2 + a^2} \\[4pt]
+  &=
+  \sqrt{2a^2} \\[4pt]
+  &=
+  a\sqrt{2}.
+  \end{align*}
+  %%
+  Since the ant then returns to its starting position, the total
+  distance travelled is twice the distance $a\sqrt{2}$.  Therefore the
+  ant travelled a total distance of $2a\sqrt{2}$.
+  \end{solution}
+}{}
+
 \item Consider the right-angled triangle in
   \Figure{fig:right_angled_triangle}.  Suppose that each of the
   triangle's base and height is $1$ unit. Compute the value of the
