@@ -298,6 +298,78 @@ reflection is $\tuple{2}{-4}$.
 \section*{Problem}
 
 \begin{problem}
+\item Suppose $a \geq 0$ is a real number.  Let $A$ be the distance
+  from the point $\tuple{a}{0}$ to the origin, let $B$ be the distance
+  from the point $\tuple{-a}{0}$ to the origin, $C$ the distance from
+  $\tuple{0}{a}$ to the origin, and $D$ the distance from
+  $\tuple{0}{-a}$ to the origin.  Explain why $A = B = C = D$.
+\ifbool{showSolution}{
+  \begin{solution}
+  The four points $\tuple{a}{0}$, $\tuple{-a}{0}$, $\tuple{0}{a}$, and
+  $\tuple{0}{-a}$ lie on a circle of radius $a$, where the circle is
+  centred at the origin; see \Figure{fig:four_points_on_a_circle}.
+  Therefore each of the points is the same distance from the origin.
+  On the other hand, you can use
+  \Theorem{thm:distance_between_two_points} to calculate the
+  distances.  The distance $A$ is
+  \[
+  A
+  =
+  \sqrt{
+    (0 - 0)^2 + (a - 0)^2
+  }
+  =
+  \sqrt{a^2}.
+  \]
+  The distance $B$ is
+  \[
+  B
+  =
+  \sqrt{
+    (0 - 0)^2 + (-a - 0)^2
+  }
+  =
+  \sqrt{(-a)^2}
+  =
+  \sqrt{a^2}.
+  \]
+  The distance $C$ is
+  \[
+  C
+  =
+  \sqrt{
+    (a - 0)^2 + (0 - 0)^2
+  }
+  =
+  \sqrt{a^2}.
+  \]
+  The distance $D$ is
+  \[
+  D
+  =
+  \sqrt{
+    (-a - 0)^2 + (0 - 0)^2
+  }
+  =
+  \sqrt{(-a)^2}
+  =
+  \sqrt{a^2}.
+  \]
+  Since $a \geq 0$, each of the above distances simplify to $a$ and
+  therefore $A = B = C = D$.
+
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=1.1]{image/03/circle.pdf}
+  \caption{%%
+    A circle of radius $a \geq 0$ and centred at the origin
+    $\tuple{0}{0}$.
+  }
+  \label{fig:four_points_on_a_circle}
+  \end{figure}
+  \end{solution}
+}{}
+
 \item If $A = \tuple{a}{b}$ is any point in the Cartesian coordinate
   system, explain why the distance from $A$ to itself is zero.
 \ifbool{showSolution}{
