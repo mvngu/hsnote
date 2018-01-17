@@ -648,6 +648,75 @@ reflection is $\tuple{2}{-4}$.
   \end{solution}
 }{}
 
+\item Each side of a triangle has a length of one unit.  You draw the
+  triangle in the Cartesian coordinate system.  Calculate the
+  coordinates of each of the three corners of the triangle.
+\ifbool{showSolution}{
+  \begin{solution}
+  Let $a \geq 0$ and $b \geq 0$ be real numbers.  You can draw the
+  triangle in such a way that its base is on the $x$-axis with the
+  middle of the base being the origin.  So two corner points of the
+  triangle lie on the $x$-axis.  Let those corner points be
+  $\tuple{a}{0}$ and $\tuple{-a}{0}$.  The third point is the
+  coordinates $\tuple{0}{b}$.  Since the base is one unit, the
+  distance from $\tuple{a}{0}$ to the origin must be $1 / 2$.  The
+  distance from $\tuple{-a}{0}$ to the origin is also $1 / 2$ and so
+  the length of the base is $\frac{1}{2} + \frac{1}{2} = 1$ unit.  In
+  other words, the value of $a$ is $a = 1 / 2$.  The three corners of
+  the triangle are $(-\frac{1}{2}\comma 0)$, $(\frac{1}{2}\comma 0)$,
+  and $\tuple{0}{b}$.
+
+  Let's now calculate the value of $b$.  Note that the points
+  $\tuple{0}{0}$, $(\frac{1}{2}\comma 0)$, and $\tuple{0}{b}$ form
+  the corners of a right-angled triangle.  The distance from
+  $(\frac{1}{2}\comma 0)$ to the origin is $1 / 2$ and so the
+  right-angled triangle has a base of $1 / 2$ units.  The height of
+  the triangle is $b$ and the hypotenuse is one unit.  Now use
+  Pythagoras' theorem to write
+  \[
+  \parenthesis*{\frac{1}{2}}^2 + b^2
+  =
+  1^2.
+  \]
+  Solve the last equation for $b^2$ to get
+  %%
+  \begin{align*}
+  b^2
+  &=
+  1 - \frac{1}{4} \\[4pt]
+  &=
+  \frac{3}{4}.
+  \end{align*}
+  %%
+  Solve the latter equation for $b$ to get
+  %%
+  \begin{align*}
+  b
+  &=
+  \sqrt{\frac{3}{4}} \\[4pt]
+  &=
+  \frac{\sqrt{3}}{\sqrt{4}} \\[4pt]
+  &=
+  \frac{\sqrt{3}}{2}.
+  \end{align*}
+  %%
+  Therefore the three points $(-\frac{1}{2}\comma 0)$,
+  $(\frac{1}{2}\comma 0)$, and $(0\comma \frac{\sqrt{3}}{2})$ are the
+  corners of a triangle each of whose sides has a length of one unit.
+  See \Figure{fig:unit_triangle}.
+
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=1.1]{image/03/unit-triangle.pdf}
+  \caption{%%
+    The three corners of a triangle.  Each side of the triangle has a
+    length of one unit.
+  }
+  \label{fig:unit_triangle}
+  \end{figure}
+  \end{solution}
+}{}
+
 \item Let $a > 0$ be a real number.  An ant starts at the point
   $\tuple{a}{0}$ in the Cartesian coordinate system and moves in a
   straight line to the point $\tuple{a}{a}$.  From $\tuple{a}{a}$ the
