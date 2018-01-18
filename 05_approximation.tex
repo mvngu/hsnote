@@ -129,7 +129,9 @@ this value to be an approximation of the circumference of the unit
 circle.  Using \Equation{eqn:define_pi_as_ratio_of_c_over_d} you see
 that the value of $\pi$ can be approximated as
 %%
-\begin{align*}
+\begin{equation}
+\label{eqn:approximate_pi_inscribed_square}
+\begin{aligned}
 \pi
 &\approx
 \frac{4\sqrt{2}}{2} \\[4pt]
@@ -137,7 +139,8 @@ that the value of $\pi$ can be approximated as
 2\sqrt{2} \\[4pt]
 &\approx
 2.828427
-\end{align*}
+\end{aligned}
+\end{equation}
 %%
 correct to six decimal places.  The approximation of $2\sqrt{2}$ is
 worst than Archimedes' approximate value of $22/7$.  Is there a way to
@@ -178,6 +181,116 @@ Any two neighbouring corners of the square in
 radians.  If you decrease the angle that separates two neighbouring
 corners, then you would expect to get a better approximation to the
 value of $\pi$.  Let's put the above strategy into practice.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/05/circle-octagon.pdf}
+\caption{%%
+  A unit circle centred at the origin and having an inscribed
+  octagon.  Except for the origin $\tuple{0}{0}$, the indicated points
+  are where the octagon touches the unit circle.  Any two neighbouring
+  points are $\degree{45}$~(or $\pi / 4$ radians) apart.
+}
+\label{fig:circle_inscribed_octagon}
+\end{figure}
+
+\Figure{fig:circle_inscribed_octagon} shows an octagon drawn inside a
+unit circle.  Except for the origin $\tuple{0}{0}$, the eight labelled
+points on the circle are where the octagon touches the circle.  Note
+that any two neighbouring points are separated by
+\[
+\frac{\pi}{2} \times \frac{1}{2}
+=
+\frac{\pi}{4}
+\]
+radians.  The length of each side of the octagon is the length of the
+line segment $AB$.  The distance from $A$ to $B$ is
+%%
+\begin{align*}
+\sqrt{
+  \parenthesis*{\frac{\sqrt{2}}{2} - 0}^2
+  +
+  \parenthesis*{\frac{\sqrt{2}}{2} - 1}^2
+}
+&=
+\sqrt{
+  \parenthesis*{\frac{\sqrt{2}}{2}}^2
+  +
+  \parenthesis*{\frac{\sqrt{2}}{2} - \frac{2}{2}}^2
+} \\[4pt]
+&=
+\sqrt{
+  \parenthesis*{\frac{\sqrt{2}}{2}}^2
+  +
+  \parenthesis*{\frac{\sqrt{2} - 2}{2}}^2
+} \\[4pt]
+&=
+\sqrt{
+  \frac{2}{4}
+  +
+  \frac{(\sqrt{2} - 2)^2}{4}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{2}{4}
+  +
+  \frac{6 - 4\sqrt{2}}{4}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{
+    2 + 6 - 4\sqrt{2}
+  }{
+    4
+  }
+} \\[4pt]
+&=
+\sqrt{
+  \frac{
+    8 - 4\sqrt{2}
+  }{
+    4
+  }
+} \\[4pt]
+&=
+\sqrt{
+  \frac{
+    4(2 - \sqrt{2})
+  }{
+    4
+  }
+} \\[4pt]
+&=
+\sqrt{
+  2 - \sqrt{2}
+}.
+\end{align*}
+%%
+In other words, each side of the octagon has a length of
+$\ell = \sqrt{2 - \sqrt{2}}$.  Since the octagon has eight sides, then
+the octagon has a perimeter of $8\ell = 8\sqrt{2 - \sqrt{2}}$ and you
+can take this value to be an approximation of the circumference of the
+unit circle.  Use \Equation{eqn:define_pi_as_ratio_of_c_over_d} to see
+that the value of $\pi$ can be approximated as
+%%
+\begin{align*}
+\pi
+&\approx
+\frac{
+  8\sqrt{2 - \sqrt{2}}
+}{
+  2
+} \\[4pt]
+&\approx
+4\sqrt{2 - \sqrt{2}} \\[4pt]
+&\approx
+3.061467
+\end{align*}
+%%
+correct to six decimal places.  This is better than the
+approximation~\eqref{eqn:approximate_pi_inscribed_square}, but is
+worst than $22 / 7$.  You need to further decrease the angle that
+separates two neighbouring points.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
