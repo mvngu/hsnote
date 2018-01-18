@@ -30,13 +30,19 @@
   %% Draw the inscribed square.
   \draw[lineStyle] (\xlow+\dx,\ylow) -- ++(-\dx,\dy) -- ++(-\dx,-\dy)
   -- ++(\dx,-\dy) -- ++(\dx,\dy) -- cycle;
-  %% Label two points where the circle meet the square.
+  %% Label the points where the circle meet the square.
   %% Point A.
   \node[nodeStyle] at (A) {};
   \node at (A) [right] {$A = \tuple{1}{0}$};
   %% Point B.
   \node[nodeStyle] at (B) {};
   \node at (B) [above] {$B = \tuple{0}{1}$};
+  %% Point C.
+  \node[nodeStyle] at (C) {};
+  \node at (C) [left] {$C$};
+  %% Point D.
+  \node[nodeStyle] at (D) {};
+  \node at (D) [below] {$D$};
 }
 
 %% Approximating pi with an inscribed square.
@@ -54,14 +60,18 @@
 \pgfmathsetmacro{\dy}{\dx}
 \pgfmathsetmacro{\xlow}{0}
 \pgfmathsetmacro{\ylow}{0}
+%%
+%% Coordinates of where the square touches the circle.
 \coordinate (A) at (\xlow+\dx,\ylow);
 \coordinate (B) at (\xlow,\ylow+\dy);
+\coordinate (C) at (\xlow-\dx,\ylow);
+\coordinate (D) at (\xlow,\ylow-\dy);
+%%
 \coordinate (centre) at (\xlow,\ylow);
 %%
 %% Draw a circle with an inscribed square.
 \myCircle
 \mySquare
-
 \end{tikzpicture}
 
 \end{document}
