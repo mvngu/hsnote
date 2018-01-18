@@ -190,6 +190,7 @@ triangle is $2 / 4 = 1 / 2$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Approximate $\pi$ with an octagon}
+\label{sec:approximate_pi_with_an_octagon}
 
 Any two neighbouring corners of the square in
 \Figure{fig:circle_inscribed_square} are separated by $\pi / 2$
@@ -330,6 +331,74 @@ $F = (\frac{\sqrt{2}}{2}\comma -\frac{\sqrt{2}}{2})$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Better approximations of $\pi$}
+
+\Figure{fig:quadrant_inscribed_quarter_polygon_22_degrees} shows one
+squarter of a unit circle.  The arc is divided into four equal parts,
+which means that the whole unit circle is divided into
+$4 \times 4 = 16$ equal parts.  The distance between the points $A$
+and $B$ is
+\[
+\ell
+=
+\sqrt{
+  2
+  -
+  \sqrt{2 + \sqrt{2}}
+}
+\]
+and so the circumference of the unit circle can be approximated as
+\[
+16\ell
+=
+16
+\sqrt{
+  2
+  -
+  \sqrt{2 + \sqrt{2}}
+}.
+\]
+Use \Equation{eqn:define_pi_as_ratio_of_c_over_d} to approximate $\pi$
+as
+%%
+\begin{align*}
+\pi
+&\approx
+\frac{
+  16
+  \sqrt{
+    2
+    -
+    \sqrt{2 + \sqrt{2}}
+  }
+}{
+  2
+} \\[4pt]
+&=
+8
+\sqrt{
+  2
+  -
+  \sqrt{2 + \sqrt{2}}
+} \\[4pt]
+&\approx
+3.121445
+\end{align*}
+%%
+correct to six decimal places.  This is better than the approximation
+from \Section{sec:approximate_pi_with_an_octagon}, but is worst than
+$22 / 7$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/05/quadrant.pdf}
+\caption{%%
+  A quadrant of the unit circle.  Inscribed in the quadrant is one
+  quarter of a polygon that has $16$ sides.  The angle that separates
+  two neighbouring points is $\degree{90} / 4 = \degree{22.5}$ or
+  $\frac{\pi}{2} \times \frac{1}{4} = \pi / 8$ radians.
+}
+\label{fig:quadrant_inscribed_quarter_polygon_22_degrees}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
