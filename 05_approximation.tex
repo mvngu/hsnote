@@ -305,6 +305,63 @@ separates two neighbouring points.
   \item Determine the coordinates of each of the five points of the
     pentagon.
   \end{packedenum}
+
+\item A common formula for the area of a triangle is $\frac{1}{2} bh$,
+  where $b$ is the length of the base of the triangle and $h$ is the
+  triangle's height.  Another formula to calculate the area is
+  \emph{Heron's formula}.  Heron's formula requires you to know the
+  length of each side of the triangle.  Suppose that
+  $\triple{a}{b}{c}$ are the lengths of the three sides of a triangle.
+  Then the area of the triangle is
+  \[
+  \sqrt{
+    s (s - a) (s - b) (s - c)
+  }
+  \]
+  where $s$ is the fraction
+  \[
+  s
+  =
+  \frac{a + b + c}{2}.
+  \]
+  Let $O = \tuple{0}{0}$ be the origin.  In
+  \Figure{fig:circle_inscribed_octagon}, compute the area of the
+  triangle whose three corners are $\triple{O}{A}{B}$.
+\ifbool{showSolution}{
+\begin{solution}
+The line segment $AB$ has a length of $\sqrt{2 - \sqrt{2}}$.  Since
+each of the points $A$ and $B$ lie on a unit circle, the distance from
+$A$ to the origin~(and the distance from $B$ to the origin) is the
+radius of the circle, which is $1$.  In other words, each of the line
+segments $AO$ and $BO$ has a length of $1$.  Write
+%%
+\begin{align*}
+s
+&=
+\frac{
+  1 + 1 + \sqrt{2 - \sqrt{2}}
+}{
+  2
+} \\[4pt]
+&=
+\frac{
+  2 + \sqrt{2 - \sqrt{2}}
+}{
+  2
+}.
+\end{align*}
+%%
+Use Heron's formula to see that the triangle with corners
+$\triple{O}{A}{B}$ has an area of
+\[
+\sqrt{
+  s (s - 1) (s - 1) \parenthesis*{s - \sqrt{2 - \sqrt{2}}}
+}
+=
+\frac{\sqrt{2}}{4}.
+\]
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
