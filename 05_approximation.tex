@@ -345,6 +345,10 @@ separates two neighbouring points.
     Let $O = \tuple{0}{0}$ be the origin.  In
     \Figure{fig:circle_inscribed_octagon}, compute the area of the
     triangle whose three corners are $\triple{O}{A}{B}$.
+
+  \item\label{subprob:area_of_octagon}
+    Compute the area of the octagon in
+    \Figure{fig:circle_inscribed_octagon}.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -380,6 +384,19 @@ $\triple{O}{A}{B}$ has an area of
 =
 \frac{\sqrt{2}}{4}.
 \]
+
+\solutionpart{subprob:area_of_octagon}
+The area of the octagon is just the area of the triangle $OAB$
+repeated eight times.  Since the triangle $OAB$ has an area of
+$\sqrt{2} / 4$, the area of the octagon is
+%%
+\begin{align*}
+8 \times \frac{\sqrt{2}}{4}
+&=
+\frac{8 \sqrt{2}}{4} \\[4pt]
+&=
+2\sqrt{2}.
+\end{align*}
 \end{solution}
 }{}
 \end{problem}
