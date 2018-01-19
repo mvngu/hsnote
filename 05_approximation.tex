@@ -532,9 +532,52 @@ which has the first six decimal digits of $\pi$.
   each of the five sides of the pentagon has the same length.
   %%
   \begin{packedenum}
-  \item Determine the coordinates of each of the five points of the
-    pentagon.
+  \item\label{subprob:inscribed_pentagon_B_coordinates}
+    Let $A = \tuple{1}{0}$ be a point on the unit circle such that $A$
+    is a corner of the pentagon.  Suppose $B$ is another point on the
+    unit circle such that $A$ and $B$ are neighbouring points.
+    Determine the coordinates of $B$.
+
+  \item\label{subprob:inscribed_pentagon_approximate_pi}
+    The line segment $AB$ has a length of
+    \[
+    \ell
+    =
+    \sqrt{
+      \frac{5 - \sqrt{5}}{2}
+    }.
+    \]
+    Use the value of $\ell$ to approximate the value of $\pi$.
   \end{packedenum}
+\ifbool{showSolution}{
+  \begin{solution}
+  \solutionpart{subprob:inscribed_pentagon_B_coordinates}
+  The point $B$ makes an angle of $2\pi / 5$ radians with the positive
+  half of the $x$-axis.  Then the coordinates of $B$ are
+  $\big( \cos\frac{2\pi}{5}\comma \sin\frac{2\pi}{5} \big)$.
+
+  \solutionpart{subprob:inscribed_pentagon_approximate_pi}
+  Since the pentagon has five sides, the perimeter of the pentagon is
+  \[
+  5\ell
+  =
+  5\sqrt{
+    \frac{5 - \sqrt{5}}{2}
+  }
+  \]
+  and you can use this as an approximation of the circumference of the
+  unit circle.  Now use \Equation{eqn:define_pi_as_ratio_of_c_over_d}
+  to approximate $\pi$ as
+  \[
+  \pi
+  \approx
+  \frac{5}{2}
+  \sqrt{
+    \frac{5 - \sqrt{5}}{2}
+  }.
+  \]
+  \end{solution}
+}{}
 
 \item A common formula for the area of a triangle is $\frac{1}{2} bh$,
   where $b$ is the length of the base of the triangle and $h$ is the
