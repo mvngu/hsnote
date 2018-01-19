@@ -400,6 +400,97 @@ $22 / 7$.
 \label{fig:quadrant_inscribed_quarter_polygon_22_degrees}
 \end{figure}
 
+Let's generalise the above strategies for approximating the value of
+$\pi$.  First, you consider a quadrant of the unit circle centred at
+the origin.  Any quadrant has an angle of $\degree{90}$ or
+$\pi / 2$ radians.  So you decide on an integer $k \geq 1$ to be used
+for dividing $\degree{90}$.  Then the angle that separates any two
+neighbouring points on the unit circle is $\pi / 2k$ radians; see
+\Figure{fig:quadrant_generic_point}.  In particular, the point $B$
+makes an angle of $\pi / 2k$ radians with the positive half of the
+$x$-axis.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/05/quadrant-generic-point.pdf}
+\caption{%%
+  A quadrant of the unit circle that is centred at the origin.  The
+  point $B$ on the unit circle makes an angle of $\pi / 2k$ radians
+  with the positive half of the $x$-axis, where $k \geq 1$ is an
+  integer.
+}
+\label{fig:quadrant_generic_point}
+\end{figure}
+
+Second, you calculate the length of the line segment $AB$, where
+$A = \tuple{1}{0}$.  Note that the point $B$ has coordinates
+$\big( \cos\frac{\pi}{2k}\comma \sin\frac{\pi}{2k} \big)$.  The
+distance between $A$ and $B$ is
+%%
+\begin{align*}
+\ell
+&=
+\sqrt{
+  \parenthesis*{\sin\frac{\pi}{2k} - 0}^2
+  +
+  \parenthesis*{\cos\frac{\pi}{2k} -1}^2
+} \\[4pt]
+&=
+\sqrt{
+  \parenthesis*{\sin\frac{\pi}{2k}}^2
+  +
+  \parenthesis*{\cos\frac{\pi}{2k} -1}^2
+} \\[4pt]
+&=
+\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2k}}
+}.
+\end{align*}
+
+Third, you determine the perimeter of the polygon that is drawn inside
+the unit circle.  Since each quadrant is now divided into $k$ equal
+parts, the whole unit circle is divided into $4k$ equal parts.  In
+other words, you can draw inside the unit circle a polygon of $4k$
+equal sides such that each corner of the polygon touches the unit
+circle.  The polygon has a perimeter of
+\[
+4k\ell
+=
+4k\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2k}}
+}.
+\]
+You can use the perimeter of the polygon to approximate the
+circumference of the unit circle.
+
+Finally, you use the perimeter that you calculated above to
+approximate the value of $\pi$.  Use
+\Equation{eqn:define_pi_as_ratio_of_c_over_d} to approximate $\pi$ as
+%%
+\begin{align*}
+\pi
+&\approx
+\frac{
+  4k\sqrt{
+    2
+    -
+    2\cos\parenthesis*{\frac{\pi}{2k}}
+  }
+}{
+  2
+} \\[4pt]
+&=
+2k\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2k}}
+}.
+\end{align*}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
