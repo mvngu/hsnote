@@ -705,6 +705,10 @@ $\sqrt{2} / 4$, the area of the octagon is
 
   \item\label{subprob:hexagon_area}
     Calculate the area of the hexagon.
+
+  \item\label{subprob:hexagon_approximate_pi}
+    Use the perimeter of the hexagon to approximate the value of
+    $\pi$.
   \end{packedenum}
 \ifbool{showSolution}{
   \begin{solution}
@@ -802,6 +806,22 @@ $\sqrt{2} / 4$, the area of the octagon is
   %%
   Therefore the hexagon has an area of
   $\frac{6\sqrt{3}}{4} = \frac{3\sqrt{3}}{2}$.
+
+  \solutionpart{subprob:hexagon_approximate_pi}
+  From \Part{subprob:hexagon_area} you know that each side of the
+  hexagon has length $1$.  Then the hexagon has a perimeter of
+  $6 \times 1 = 6$, which you can use as an approximation of the
+  circumference of the unit circle.  Use
+  \Equation{eqn:define_pi_as_ratio_of_c_over_d} to see that the value
+  of $\pi$ can be approximated as
+  %%
+  \begin{align*}
+  \pi
+  &\approx
+  \frac{6}{2} \\[4pt]
+  &=
+  3.
+  \end{align*}
   \end{solution}
 }{}
 
