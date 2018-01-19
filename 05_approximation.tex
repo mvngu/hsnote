@@ -702,6 +702,9 @@ $\sqrt{2} / 4$, the area of the octagon is
   \item\label{subprob:hexagon_coordinates}
     Let $A = \tuple{1}{0}$ be a corner of the hexagon.  Determine the
     coordinates of each of the remaining corners of the hexagon.
+
+  \item\label{subprob:hexagon_area}
+    Calculate the area of the hexagon.
   \end{packedenum}
 \ifbool{showSolution}{
   \begin{solution}
@@ -716,6 +719,89 @@ $\sqrt{2} / 4$, the area of the octagon is
   }
   \label{fig:inscribed_hexagon_coordinates}
   \end{figure}
+
+  \solutionpart{subprob:hexagon_area}
+  Consider the triangle whose corners have the coordinates
+  $O = \tuple{0}{0}$, $A = \tuple{1}{0}$, and
+  $B = \tuple{\frac{1}{2}}{\frac{\sqrt{3}}{2}}$.  The hexagon is made
+  up of six copies of this triangle.  Use Heron's formula to calculate
+  the area of the triangle $OAB$ and then multiply the result by six.
+  The line segment segment $OA$ has a length of $1$.  The line segment
+  $AB$ has length
+  %%
+  \begin{align*}
+  \sqrt{
+    \parenthesis*{\frac{\sqrt{3}}{2} - 0}^2
+    +
+    \parenthesis*{\frac{1}{2} - 1}^2
+  }
+  &=
+  \sqrt{
+    \parenthesis*{\frac{\sqrt{3}}{2}}^2
+    +
+    \parenthesis*{-\frac{1}{2}}^2
+  } \\[4pt]
+  &=
+  \sqrt{
+    \frac{3}{4} + \frac{1}{4}
+  } \\[4pt]
+  &=
+  1.
+  \end{align*}
+  %%
+  The line segment $OB$ also has length $1$ because
+  %%
+  \begin{align*}
+  \sqrt{
+    \parenthesis*{\frac{\sqrt{3}}{2} - 0}^2
+    +
+    \parenthesis*{\frac{1}{2} - 0}^2
+  }
+  &=
+  \sqrt{
+    \parenthesis*{\frac{\sqrt{3}}{2}}^2
+    +
+    \parenthesis*{\frac{1}{2}}^2
+  } \\[4pt]
+  &=
+  \sqrt{
+    \frac{3}{4}
+    +
+    \frac{1}{4}
+  } \\[4pt]
+  &=
+  1.
+  \end{align*}
+  %%
+  Using Heron's formula, write $s = 3 / 2$ and so the area of the
+  triangle $OAB$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    s (s - 1) (s - 1) (s - 1)
+  }
+  &=
+  \sqrt{
+    \frac{3}{2} \parenthesis*{\frac{3}{2} - 1}^3
+  } \\[4pt]
+  &=
+  \sqrt{
+    \frac{3}{2} \parenthesis*{\frac{1}{2}}^3
+  } \\[4pt]
+  &=
+  \sqrt{
+    \frac{3}{2} \times \frac{1}{8}
+  } \\[4pt]
+  &=
+  \sqrt{\frac{3}{16}} \\[4pt]
+  &=
+  \frac{\sqrt{3}}{\sqrt{16}} \\[4pt]
+  &=
+  \frac{\sqrt{3}}{4}
+  \end{align*}
+  %%
+  Therefore the hexagon has an area of
+  $\frac{6\sqrt{3}}{4} = \frac{3\sqrt{3}}{2}$.
   \end{solution}
 }{}
 
