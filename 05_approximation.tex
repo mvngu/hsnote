@@ -471,7 +471,9 @@ Finally, you use the perimeter that you calculated above to
 approximate the value of $\pi$.  Use
 \Equation{eqn:define_pi_as_ratio_of_c_over_d} to approximate $\pi$ as
 %%
-\begin{align*}
+\begin{equation}
+\label{eqn:formula_approximate_pi}
+\begin{aligned}
 \pi
 &\approx
 \frac{
@@ -489,7 +491,35 @@ approximate the value of $\pi$.  Use
   -
   2\cos\parenthesis*{\frac{\pi}{2k}}
 }.
-\end{align*}
+\end{aligned}
+\end{equation}
+
+From \Equation{eqn:formula_approximate_pi}, you see that each specific
+value of the integer $k \geq 1$ determines an approximation of the
+value of $\pi$.  You would expect that as the integer $k$ gets larger
+and larger, the approximation gets better and better.  Let's see if
+this is the case.  For $k = 50$, \Equation{eqn:formula_approximate_pi}
+gives the approximation
+\[
+\pi
+\approx
+3.14146346236400
+\]
+which is better than Archimedes' approximation of $22 / 7$.  For
+$k = 100$, you have
+\[
+\pi
+\approx
+3.14156035548467
+\]
+which agrees with the first four decimal digits of $\pi$.  For
+$k = 1000$, you have
+\[
+\pi
+\approx
+3.14159233062070
+\]
+which has the first six decimal digits of $\pi$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
