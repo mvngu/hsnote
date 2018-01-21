@@ -4,7 +4,9 @@
 
 \usepackage{mathptmx}
 \usepackage{tikz}
+\usetikzlibrary{angles}
 \usetikzlibrary{external}
+\usetikzlibrary{quotes}
 \tikzexternalize{unit-circle}
 
 %% We default to Times.
@@ -31,7 +33,7 @@
   \xyPoint{\xa}{\yb}{\tuple{a}{b}}{above right}
   \radiusLine
   %% A vertical line meets at the generic point.
-  \draw[dashStyle] (\xa,0) -- (\xa,\yb);
+  \draw[dashStyle] (\xa,0) -- (point);
   \node at (\xa,\yb/2) [below,rotate=90] {$\sin\varphi$};
   %% A horizontal line meets at the generic point.
   \node at (\xa/2,0) [below] {$\cos\varphi$};
@@ -40,10 +42,9 @@
 %% The radius.
 \newcommand{\radiusLine}{%%
   %% A line as the radius
-  \draw[dashStyle] (origin) -- (\xa,\yb);
+  \draw[dashStyle] (origin) -- (point);
   %% Label the angle.
-  \draw[->,thick] (0.5,0) +(0:0.5cm) arc[start angle=0,radius=1,delta angle=45];
-  \node at (0.9,0.4) [right] {$\varphi$};
+  \path pic["$\varphi$",draw,->,thick,angle radius=1cm] {angle=xyRadius--origin--point};
 }
 
 %% Some special points on the unit circle.
@@ -70,7 +71,9 @@
   \node at (#1,#2) [#4] {$#3$};
 }
 
-%% Values of sine and cosine in the unit circle.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Generic values of sine and cosine in the unit circle.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -78,7 +81,7 @@
   axisStyle/.style={->,thick},%%
   dashStyle/.style={-,thick,dashed},%%
   lineStyle/.style={-,thick},%%
-  nodeStyle/.style={draw,inner sep=1.7pt,circle,fill=black,black}
+  nodeStyle/.style={draw,inner sep=1.7pt,circle,fill=black,black}%%
 ]
 %%
 %%
@@ -89,11 +92,15 @@
 \pgfmathsetmacro{\yb}{\xa}
 \pgfmathsetmacro{\yhigh}{\xhigh}
 \pgfmathsetmacro{\ylow}{\xlow}
+%% The Cartesian coordinate system.
 \coordinate (origin) at (0,0);
 \coordinate (xend) at (\xhigh,0);
 \coordinate (xstart) at (\xlow,0);
 \coordinate (yend) at (0,\yhigh);
 \coordinate (ystart) at (0,\ylow);
+%% The generic angle.
+\coordinate (point) at (\xa,\yb);
+\coordinate (xyRadius) at (\radius,0);
 %%
 %%
 %% Illustrate the unit circle.
