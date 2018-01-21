@@ -4,7 +4,9 @@
 
 \usepackage{mathptmx}
 \usepackage{tikz}
+\usetikzlibrary{angles}
 \usetikzlibrary{external}
+\usetikzlibrary{quotes}
 \tikzexternalize{quadrant-generic-point}
 
 %% We default to Times.
@@ -29,8 +31,7 @@
 %% A quadrant of the unit circle.
 \newcommand{\myQuadrant}{%%
   %% Draw the quadrant.
-  \draw[lineStyle] (A) arc (\angleStart:\angleEnd:\radius) -- (origin)
-  -- cycle;
+  \draw[lineStyle] (A) arc (\angleStart:\angleEnd:\radius) -- (origin) -- cycle;
   %% Label some special points.
   \xyPoint{origin}{\tuple{0}{0}}{below right}
   \xyPoint{A}{A = \tuple{1}{0}}{below left}
@@ -48,8 +49,7 @@
   \xyPoint{C}{\tuple{0}{1}}{below right}
   %% A generic angle.
   \draw[dashStyle] (origin) -- (B);
-  \draw[->,thick] (0.5,0) +(0:0.5cm) arc[start angle=0,radius=1,delta angle=45];
-  \node at (0.9,0.4) [right] {$\frac{\pi}{2k}$};
+  \path pic["$\frac{\pi}{2k}$",draw,->,thick,angle radius=1.3cm] {angle=A--origin--B};
 }
 
 %% Label a point.
@@ -62,7 +62,9 @@
   \node at (#1) [#3] {$#2$};
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% A generic angle in a quadrant of a unit circle.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
