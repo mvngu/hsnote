@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{ax-large}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+%% Graphs of some functions of the form f(x) = ax, where a >= 1.
+\newcommand{\graphFunctions}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \xtick{\x}
+  };
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \foreach \y in {-3,-2,-1,1,2,3}{
+    \ytick{\y}
+  }
+  \node at (yend) [above] {$y$};
+  %% Some functions.
+  \draw[lineStyle] (\xlow,\ylow) -- (\xhigh,\yhigh);
+  \node at (\xhigh,\yhigh) [right] {$f(x) = x$};
+  \draw[lineStyle] (\xlow/2,\ylow) -- (\xhigh/2,\yhigh);
+  \node (twoX) at (\xhigh/3-2,\yhigh-2) [left] {$f(x) = 2x$};
+  \draw[arrowStyle] (twoX) -- (1.5/2,1.5);
+  \draw[lineStyle] (\xlow/3,\ylow) -- (\xhigh/3,\yhigh);
+  \node (threeX) at (\xhigh/3-2,\yhigh-1) [left] {$f(x) = 3x$};
+  \draw[arrowStyle] (threeX) -- (2.5/3,2.5);
+  \draw[lineStyle] (\xlow/10,\xlow) -- (\xhigh/10,\xhigh);
+  \node (tenX) at (\xhigh/3-2,\yhigh-0.2) [left] {$f(x) = 10x$};
+  \draw[arrowStyle] (tenX) -- (3.3/10,3.3);
+}
+
+%% A tick on the x-axis.
+%%
+%% #1 -- A point on the x-axis.
+\newcommand{\xtick}[1]{%%
+  \draw[tickStyle] (#1,\tickdx) -- (#1,-\tickdx);
+  \node at (#1,-\tickdx) [below] {$#1$};
+}
+
+%% A tick on the y-axis.
+%%
+%% #1 -- A point on the y-axis.
+\newcommand{\ytick}[1]{%%
+  \draw[tickStyle] (-\tickdx,#1) -- (\tickdx,#1);
+  \node at (-\tickdx,#1) [left] {$#1$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plot some constant functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  arrowStyle/.style={->,thick},%%
+  axisStyle/.style={->,thick},%%
+  lineStyle/.style={-,thick,blue},%%
+  tickStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\dy}{0.5}
+\pgfmathsetmacro{\tickdx}{0.1}
+\pgfmathsetmacro{\xhigh}{3.5}
+\pgfmathsetmacro{\xlow}{-3.5}
+\pgfmathsetmacro{\yhigh}{3.5}
+\pgfmathsetmacro{\ylow}{-3.5}
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+\graphFunctions
+\end{tikzpicture}
+
+\end{document}

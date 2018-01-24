@@ -24,6 +24,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{General form}
+\label{sec:general_form}
 
 A \emph{linear function} is an expression of the form
 %%
@@ -231,6 +232,7 @@ function $f(x)$.
 }{}
 
 \begin{exercise}
+\label{ex:constant_function_zero}
 Describe the graph of the expression $f(x) = 0$.
 \end{exercise}
 
@@ -241,5 +243,55 @@ horizontal line through the point $0$ on the $y$-axis.  In other
 words, the function $f(x) = 0$ describes the $x$-axis.
 \end{solution}
 }{}
+
+Now consider the case of $b = 0$ in
+\Equation{eqn:linear_function_general} so that you have
+$f(x) = ax$.  If you also have $a = 0$, then $f(x)$ is reduced to the
+function in \Exercise{ex:constant_function_zero}.  Otherwise assume
+that $a \neq 0$.  What does the graph of $f(x) = ax$ look like?
+
+Let's use the strategy from \Section{sec:general_form} to graph
+$f(x) = ax$.  Set $f(x) = 0$ and solving the equation $0 = ax$ for $x$
+results in $x = 0$.  You have the point $A = \tuple{0}{0}$.  Next, set
+$x = 0$ and solving the equation $y = a \times 0$ for $y$ shows that
+$y = 0$.  You also have the point $B = \tuple{0}{0}$.  Both of $A$ and
+$B$ are the same point and that point is the origin.  You need another
+way to determine a second and different point of the function
+$f(x) = ax$.
+
+Instead of setting $x = 0$, you can try setting $x = 1$.  Simplify the
+equation $y = a \times 1$ and you obtain $y = a$.  Hence the
+second~(and different) point is $\tuple{1}{a}$.  In other words, if
+$a \neq 0$ then the graph of $f(x) = ax$ is a straight line that
+passes through the origin.  \Figure{fig:function_ax_positive_rational}
+shows some graphs of $f(x) = ax$, where $a$ is a positive real number
+that is at most $1$, i.e.~$0 < a \leq 1$.
+\Figure{fig:function_ax_positive_at_least_one} shows some graphs of
+$f(x) = ax$ for the case where $a \geq 1$.  Notice that in both of
+these figures, the graphs of $f(x) = ax$ pass through the point
+$\tuple{0}{0}$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/06/ax-small.pdf}
+\caption{%%
+  Graphs of the function $f(x) = ax$ for various values of $a$, where
+  it is assumed that $0 < a \leq 1$.  As the value of $a$ becomes
+  smaller and smaller, the graph of $f(x) = ax$ becomes more and more
+  like a horizontal line.
+}
+\label{fig:function_ax_positive_rational}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/06/ax-large.pdf}
+\caption{%%
+  Graphs of the function $f(x) = ax$ for various values of $a$, where
+  $a \geq 1$.  As the value of $a$ becomes larger and larger, the
+  graph of $f(x) = ax$ becomes more and more like a vertical line.
+}
+\label{fig:function_ax_positive_at_least_one}
+\end{figure}
 
 \end{document}
