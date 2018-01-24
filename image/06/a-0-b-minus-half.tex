@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{a-0-b-minus-half}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+%% The constant function f(x) = 2.
+\newcommand{\constantFunction}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \xtick{\x}
+  };
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (0,-2-\dy) -- (0,1+\dy);
+  \foreach \y in {-2,-1,1}{
+    \ytick{\y}
+  }
+  \node at (0,1+\dy) [above] {$y$};
+  %% The constant function.
+  \draw[lineStyle] (\xlow,-1/2) -- (\xhigh,-1/2);
+}
+
+%% A tick on the x-axis.
+%%
+%% #1 -- A point on the x-axis.
+\newcommand{\xtick}[1]{%%
+  \draw[tickStyle] (#1,\tickdx) -- (#1,-\tickdx);
+  \node at (#1,-\tickdx) [below] {$#1$};
+}
+
+%% A tick on the y-axis.
+%%
+%% #1 -- A point on the y-axis.
+\newcommand{\ytick}[1]{%%
+  \draw[tickStyle] (-\tickdx,#1) -- (\tickdx,#1);
+  \node at (-\tickdx,#1) [left] {$#1$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plot some constant functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  axisStyle/.style={->,thick},%%
+  lineStyle/.style={-,thick,blue},%%
+  tickStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\dy}{0.5}
+\pgfmathsetmacro{\tickdx}{0.1}
+\pgfmathsetmacro{\xhigh}{3.5}
+\pgfmathsetmacro{\xlow}{-3.5}
+\pgfmathsetmacro{\yhigh}{4.5}
+\pgfmathsetmacro{\ylow}{-4.5}
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+\constantFunction
+\end{tikzpicture}
+
+\end{document}
