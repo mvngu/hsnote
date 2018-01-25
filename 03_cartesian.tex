@@ -127,13 +127,6 @@ points $\triple{A}{B}{C}$ are the three corners of a right-angled
 triangle, you can use Pythagoras' theorem to determine the length of
 the hypotenuse $AB$.
 
-\begin{theorem}
-\textbf{Pythagoras' theorem.}
-Let $\triple{a}{b}{c}$ be the lengths of the three sides of a
-right-angled triangle, where $c$ is the length of the hypotenuse.
-Then $c$ can be written as $a^2 + b^2 = c^2$.
-\end{theorem}
-
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=1.1]{image/03/distance-two-points.pdf}
@@ -144,6 +137,45 @@ Then $c$ can be written as $a^2 + b^2 = c^2$.
 }
 \label{fig:distance_between_two_points}
 \end{figure}
+
+\begin{theorem}
+\textbf{Pythagoras' theorem.}
+Let $\triple{a}{b}{c}$ be the lengths of the three sides of a
+right-angled triangle, where $c$ is the length of the hypotenuse.
+Then $c$ can be written as $a^2 + b^2 = c^2$.
+\end{theorem}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/03/triangle.pdf}
+\caption{%%
+  A right-angled triangle each of whose base and height is one unit.
+  The value of the hypotenuse is denoted $c$.
+}
+\label{fig:right_angled_triangle}
+\end{figure}
+
+\begin{exercise}
+Consider the right-angled triangle in
+\Figure{fig:right_angled_triangle}.  Suppose that each of the
+triangle's base and height is $1$ unit. Compute the value of the
+hypotenuse.
+\end{exercise}
+\ifbool{showSolution}{
+  \begin{solution}
+  Use Pythagoras' theorem to write the value of the hypotenuse $c$ as
+  %%
+  \begin{align*}
+  c^2
+  &=
+  1^2 + 1^2 \\[4pt]
+  &=
+  2.
+  \end{align*}
+  %%
+  Solve the last equation for $c$ to get $c = \sqrt{2}$.
+  \end{solution}
+}{}
 
 Let $c$ be the length of the hypotenuse $AB$ in
 \Figure{fig:distance_between_two_points}.  Use Pythagoras' theorem to
@@ -817,36 +849,6 @@ reflection is $\tuple{2}{-4}$.
   ant travelled a total distance of $2a\sqrt{2}$.
   \end{solution}
 }{}
-
-\item Consider the right-angled triangle in
-  \Figure{fig:right_angled_triangle}.  Suppose that each of the
-  triangle's base and height is $1$ unit. Compute the value of the
-  hypotenuse.
-\ifbool{showSolution}{
-  \begin{solution}
-  Use Pythagoras' theorem to write the value of the hypotenuse $c$ as
-  %%
-  \begin{align*}
-  c^2
-  &=
-  1^2 + 1^2 \\[4pt]
-  &=
-  2.
-  \end{align*}
-  %%
-  Solve the last equation for $c$ to get $c = \sqrt{2}$.
-  \end{solution}
-}{}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[scale=1.1]{image/03/triangle.pdf}
-\caption{%%
-  A right-angled triangle each of whose base and height is one unit.
-  The value of the hypotenuse is denoted $c$.
-}
-\label{fig:right_angled_triangle}
-\end{figure}
 \end{problem}
 
 \end{document}
