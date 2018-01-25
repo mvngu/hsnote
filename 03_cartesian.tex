@@ -849,6 +849,52 @@ reflection is $\tuple{2}{-4}$.
   ant travelled a total distance of $2a\sqrt{2}$.
   \end{solution}
 }{}
+
+\item Read about chess on Wikipedia or elsewhere on the Internet.
+  \begin{packedenum}
+  \item\label{subprob:chessboard}
+    Draw the chessboard.  Label its horizontal and vertical
+    coordinates.
+
+  \item\label{subprob:chessboard_coordinate_system}
+    Explain the coordinate system that is used to name each of the
+    $64$ squares of a chessboard.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:chessboard}
+See \Figure{fig:empty_chessboard}.
+
+\solutionpart{subprob:chessboard_coordinate_system}
+Chess uses a coordinate system to name each of the $64$ squares of a
+chessboard.  Starting from the bottom of the board and going to the
+top, the rows are numbered as $\seq{1}{2}{8}$.  Starting from the left
+of the board and going to the right, the columns are labelled as
+$\seq{{\rm a}}{{\rm b}}{{\rm h}}$.  To specify a square of the
+chessboard, you write the column name followed by the row number.  For
+example, in \Figure{fig:chessboard_queen_knight} the queen is at the
+square d4 and the knight is at the square g7.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=1]{image/03/chessboard.pdf}
+  \label{fig:empty_chessboard}
+}
+%%
+\qquad
+%%
+\subfigure[]{
+  \includegraphics[scale=1]{image/03/chessboard-pieces.pdf}
+  \label{fig:chessboard_queen_knight}
+}
+\caption{%%
+  Two $8 \times 8$ chessboards.
+}
+\label{fig:chessboard}
+\end{figure}
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}

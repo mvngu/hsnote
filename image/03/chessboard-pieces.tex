@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{chessboard}
+\usepackage{mathptmx}
+\usepackage{skak}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+%% An empty chessboard.  Just the chessboard, no chess pieces.
+
+\begin{document}
+
+\setchessboard{showmover=false,setpieces={Qd4,Ng7},labelfont=\normalfont}
+\chessboard
+
+\end{document}
