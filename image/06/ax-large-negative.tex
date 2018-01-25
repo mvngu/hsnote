@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{ax-large-negative}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+%% Graphs of some functions of the form f(x) = ax, where a >= 1.
+\newcommand{\graphFunctions}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \xtick{\x}
+  };
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \foreach \y in {-3,-2,-1,1,2,3}{
+    \ytick{\y}
+  }
+  \node at (yend) [above] {$y$};
+  %% Some functions.
+  \draw[lineStyle] (\xlow,-\ylow) -- (\xhigh,-\yhigh);
+  \node at (\xhigh,-\yhigh) [right] {$f(x) = -x$};
+  \draw[lineStyle] (\xlow/2,-\ylow) -- (\xhigh/2,-\yhigh);
+  \node (twoXR) at (3.4,-2.8) [right] {$f(x) = -2x$};
+  \draw[arrowStyle] (twoXR) -- (2.8/2,-2.8);
+  \draw[lineStyle] (\xlow/3,-\ylow) -- (\xhigh/3,-\yhigh);
+  \node (threeXR) at (3.4,-2) [right] {$f(x) = -3x$};
+  \draw[arrowStyle] (threeXR) -- (2/3,-2);
+  \draw[lineStyle] (\xlow/10,-\xlow) -- (\xhigh/10,-\xhigh);
+  \node (tenXR) at (3.4,-1.2) [right] {$f(x) = -10x$};
+  \draw[arrowStyle] (tenXR) -- (1.2/10,-1.2);
+  %% Reflection about the x-axis of the above functions.
+  \draw[reflectionStyle] (\xlow,\ylow) -- (\xhigh,\yhigh);
+  \node at (\xhigh,\yhigh) [right] {$f(x) = x$};
+  \draw[reflectionStyle] (\xlow/2,\ylow) -- (\xhigh/2,\yhigh);
+  \node (twoX) at (3.4,2.8) [right] {$f(x) = 2x$};
+  \draw[arrowStyle] (twoX) -- (2.8/2,2.8);
+  \draw[reflectionStyle] (\xlow/3,\ylow) -- (\xhigh/3,\yhigh);
+  \node (threeX) at (3.4,2) [right] {$f(x) = 3x$};
+  \draw[arrowStyle] (threeX) -- (2/3,2);
+  \draw[reflectionStyle] (\xlow/10,\xlow) -- (\xhigh/10,\xhigh);
+  \node (tenX) at (3.4,1.2) [right] {$f(x) = 10x$};
+  \draw[arrowStyle] (tenX) -- (1.2/10,1.2);
+}
+
+%% A tick on the x-axis.
+%%
+%% #1 -- A point on the x-axis.
+\newcommand{\xtick}[1]{%%
+  \draw[tickStyle] (#1,\tickdx) -- (#1,-\tickdx);
+  \node at (#1,-\tickdx) [below] {$#1$};
+}
+
+%% A tick on the y-axis.
+%%
+%% #1 -- A point on the y-axis.
+\newcommand{\ytick}[1]{%%
+  \draw[tickStyle] (-\tickdx,#1) -- (\tickdx,#1);
+  \node at (-\tickdx,#1) [left] {$#1$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plot some constant functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  arrowStyle/.style={->,thick},%%
+  axisStyle/.style={->,thick},%%
+  lineStyle/.style={-,thick,blue},%%
+  reflectionStyle/.style={-,thick,red},%%
+  tickStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\dy}{0.5}
+\pgfmathsetmacro{\tickdx}{0.1}
+\pgfmathsetmacro{\xhigh}{3.5}
+\pgfmathsetmacro{\xlow}{-3.5}
+\pgfmathsetmacro{\yhigh}{3.5}
+\pgfmathsetmacro{\ylow}{-3.5}
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+\graphFunctions
+\end{tikzpicture}
+
+\end{document}
