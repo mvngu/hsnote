@@ -124,14 +124,17 @@ $\absoluteValue{c} < \absoluteValue{a}$ and the denominator
 $\absoluteValue{d} < \absoluteValue{b}$.  Given any number $x$, the
 expression $\absoluteValue{x}$ is called the \emph{absolute value} of
 $x$ and is defined as
-\[
+%%
+\begin{equation}
+\label{eqn:define_absolute_value}
 \absoluteValue{x}
 =
 \begin{cases}
 x,  & \text{if $x \geq 0$}, \\[4pt]
 -x, & \text{otherwise}.
 \end{cases}
-\]
+\end{equation}
+%%
 For example, the absolute value of $0$ is $0$, the absolute value of
 $3$ is $3$, and the absolute value of any positive number $y$ is $y$
 itself.  You obtain the absolute value of a negative number by
@@ -594,6 +597,26 @@ powers:
 &=
 \frac{1}{8}.
 \end{align*}
+\end{solution}
+}{}
+
+\begin{exercise}
+If $x$ is any real number, explain why the absolute value
+$\absoluteValue{x} \geq 0$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since $x$ is any real number, you have two cases: either $x < 0$ or
+$x \geq 0$.  First, assume that $x < 0$.  From
+\Equation{eqn:define_absolute_value}, the absolute value
+$\absoluteValue{x} = -1 \times x$.  Since $x < 0$, multiplying both
+sides of the inequality by $-1$ reverses the inequality sign and
+you obtain $-x > 0$.  This means that $\absoluteValue{x} > 0$.
+Second, assume that $x \geq 0$.  Then
+\Equation{eqn:define_absolute_value} also shows that
+$\absoluteValue{x} \geq 0$.  Therefore you have
+$\absoluteValue{x} \geq 0$ for any $x \in \RR$.
 \end{solution}
 }{}
 
