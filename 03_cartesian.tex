@@ -194,6 +194,76 @@ $\absoluteValue{a - b} = \absoluteValue{b - a}$.
 \end{solution}
 }{}
 
+\begin{exercise}
+Let $a$ and $b$ be any real numbers.  Explain why
+$\absoluteValue{a - b}^2 = (a - b)^2$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since $\pair{a}{b} \in \RR$ you have three cases:
+%%
+\begin{packedenumeral}
+\item\label{case:a_less_than_b}
+  $a < b$,
+
+\item\label{case:a_equals_b}
+  $a = b$,
+
+\item\label{case:a_greater_than_b}
+  $a > b$.
+\end{packedenumeral}
+%%
+Note that
+$\absoluteValue{a - b}^2
+=
+\absoluteValue{a - b} \times \absoluteValue{a - b}$ and
+$(a - b)^2 = (a - b) (a - b)$.  Let's consider the above cases in
+turn.
+
+\solutionpart{case:a_less_than_b}
+Suppose $a < b$.  Then $a - b < 0$ and from the definition of absolute
+value you have $a - b = -\absoluteValue{a - b}$.  You can write
+$(a - b)^2$ as
+%%
+\begin{align*}
+(a - b)^2
+&=
+\bigparen{
+  -\absoluteValue{a - b}
+}^2 \\[4pt]
+&=
+\bigparen{
+  -\absoluteValue{a - b}
+}
+\times
+\bigparen{
+  -\absoluteValue{a - b}
+} \\[4pt]
+&=
+(-1) \times (-1)
+\times
+\absoluteValue{a - b} \times \absoluteValue{a - b} \\[4pt]
+&=
+\absoluteValue{a - b}^2.
+\end{align*}
+
+\solutionpart{case:a_equals_b}
+If $a = b$, then $a - b = 0$ and so you have
+$\absoluteValue{a - b}^2 = 0^2 = (a - b)^2$.
+
+\solutionpart{case:a_greater_than_b}
+Assume that $a > b$.  Then $a - b > 0$ and the absolute value of
+$a - b$ can be written as $\absoluteValue{a - b} = a - b$.  Square
+both sides of the latter equation to obtain
+$\absoluteValue{a - b}^2 = (a - b)^2$.
+
+In all of the above cases, you have
+$\absoluteValue{a - b}^2 = (a - b)^2$ no matter what the values of
+$a$ and $b$ are.
+\end{solution}
+}{}
+
 Let $c$ be the length of the hypotenuse $AB$ in
 \Figure{fig:distance_between_two_points}.  Use Pythagoras' theorem to
 write
