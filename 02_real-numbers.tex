@@ -601,6 +601,7 @@ powers:
 }{}
 
 \begin{exercise}
+\label{ex:absolute_value_is_nonnegative}
 If $x$ is any real number, explain why the absolute value
 $\absoluteValue{x} \geq 0$.
 \end{exercise}
@@ -703,6 +704,31 @@ $\absoluteValue{x} \geq 0$ for any $x \in \RR$.
   The expansion~\eqref{eqn:wrong_expansion} is wrong.  The last term
   should be $+8y$, not $-8y$.
   \end{solution}
+}{}
+
+\item Let $x$ be a real number such that $x \neq 0$.  The expression
+  $\absoluteValue{x} / x$ can take on two different values.  What are
+  those two values?
+\ifbool{showSolution}{
+\begin{solution}
+\Exercise{ex:absolute_value_is_nonnegative} shows that if
+$y \in \RR$ then $\absoluteValue{y} \geq 0$.  Since $x \neq 0$, then
+$\absoluteValue{x} > 0$.  In other words, the expression
+$\absoluteValue{x} / x$ means that you have a positive number divided
+by a number that can be either negative or positive.  If $x < 0$, then
+$x = -\absoluteValue{x}$ and you have
+$\frac{\absoluteValue{x}}{-\absoluteValue{x}} = -1$.  Otherwise
+$x > 0$ and you have
+$\frac{\absoluteValue{x}}{x} = \frac{x}{x} = 1$.  Therefore you have
+\[
+\frac{\absoluteValue{x}}{x}
+=
+\begin{cases}
+-1, & \text{if $x < 0$}, \\[4pt]
+1,  & \text{if $x > 0$}.
+\end{cases}
+\]
+\end{solution}
 }{}
 
 \item Let $a$ and $b$ be integers such that $b \neq 0$.  Suppose the
