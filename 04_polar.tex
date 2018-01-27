@@ -28,11 +28,12 @@ Another way to measure angles is to use radians, which are defined as
 follows.  A unit circle has a radius of $r = 1$ so its circumference
 is $2 \pi r = 2 \pi$.  So the value of $2 \pi$ is the distance around
 the unit circle.  The value of $2\pi$ is also used as the angle of a
-circle and you say that a circle has $2\pi$ radians.  Since any circle
-has $360$ degrees~(or $\degree{360}$), then $\degree{360} = 2\pi$
-radians.  Divide both sides of the last equation by $2$ and you get
-$\degree{180} = \pi$, which means that $\degree{180}$ is equivalent to
-$\pi$ radians.
+circle and you say that a circle has $2\pi$ radians.  You use the
+symbol $\radian{}$ for radians so that $\radian{2\pi}$ means $2\pi$
+radians.  Since any circle has $360$ degrees~(or $\degree{360}$), then
+$\degree{360} = \radian{2\pi}$.  Divide both sides of the last
+equation by $2$ and you get $\degree{180} = \radian{\pi}$, which means
+that $\degree{180}$ is equivalent to $\pi$ radians.
 
 \begin{exercise}
 Explain how you would define one radian.
@@ -40,31 +41,32 @@ Explain how you would define one radian.
 
 \ifbool{showSolution}{
 \begin{solution}
-Since $\degree{180} = \pi$ radians, divide both sides by $\pi$ to get
-$\degree{180} / \pi = 1$ radian.  Therefore one radian is
-approximately $57.3$ degrees.
+Since $\degree{180} = \radian{\pi}$, divide both sides by $\pi$ to get
+$\degree{180} / \pi = \radian{1}$.  Therefore one radian is
+approximately $57.2958$ degrees, rounded to four decimal places.
 \end{solution}
 }{}
 
-How would you convert $\degree{90}$ to radians?  You start with the
-expression $\degree{180} = \pi$ radians.  Divide both sides by $2$ to
-get $\degree{90} = \pi / 2$ radians.  As another example, suppose you
-want to convert $\degree{270}$ to radians.  You know that
+How would you convert $\degree{90}$ to radians?  Start with the
+expression $\degree{180} = \radian{\pi}$.  Divide both sides by $2$ to
+get $\degree{90} = \frac{\radian{\pi}}{2}$.  As another example,
+suppose you want to convert $\degree{270}$ to radians.  You know that
 $\degree{180} + \degree{90} = \degree{270}$.  Since
-$\degree{180} = \pi$ radians and $\degree{90} = \pi/2$ radians, then
-you can write
+$\degree{180} = \radian{\pi}$ and
+$\degree{90} = \frac{\radian{\pi}}{2}$, then you can write
 %%
 \begin{align*}
 \degree{270}
 &=
-\pi + \frac{\pi}{2} \\[4pt]
+\radian{\pi} + \frac{\radian{\pi}}{2} \\[4pt]
 &=
-\frac{2\pi}{2} + \frac{\pi}{2} \\[4pt]
+\frac{\radian{2\pi}}{2} + \frac{\radian{\pi}}{2} \\[4pt]
 &=
-\frac{3\pi}{2}
+\frac{\radian{3\pi}}{2}
 \end{align*}
 %%
-which means that $\degree{270} = \frac{3\pi}{2}$ radians.
+which means that $\degree{270}$ is equivalent to $\frac{3\pi}{2}$
+radians.
 
 \begin{exercise}
 Convert $\degree{45}$ to radians.
@@ -73,17 +75,17 @@ Convert $\degree{45}$ to radians.
 \ifbool{showSolution}{
 \begin{solution}
 You know that $\degree{90} / 2 = \degree{45}$ and
-$\degree{90} = \pi/2$ radians.  Then
+$\degree{90} = \frac{\radian{\pi}}{2}$.  Then
 %%
 \begin{align*}
 \degree{45}
 &=
-\frac{\pi}{2} \times \frac{1}{2} \\[4pt]
+\frac{\radian{\pi}}{2} \times \frac{1}{2} \\[4pt]
 &=
-\frac{\pi}{4}.
+\frac{\radian{\pi}}{4}.
 \end{align*}
 %%
-In other words, $\degree{45} = \pi / 4$ radians.
+In other words, $\degree{45}$ is equivalent to $\pi / 4$ radians.
 \end{solution}
 }{}
 
@@ -94,20 +96,21 @@ Convert $\degree{135}$ to radians.
 \ifbool{showSolution}{
 \begin{solution}
 You have $\degree{135} = \degree{90} + \degree{45}$.  Since
-$\degree{90} = \pi / 2$ radians and $\degree{45} = \pi / 4$ radians,
-it follows that
+$\degree{90} = \frac{\radian{\pi}}{2}$ and
+$\degree{45} = \frac{\radian{\pi}}{4}$, it follows that
 %%
 \begin{align*}
 \degree{135}
 &=
-\frac{\pi}{2} + \frac{\pi}{4} \\[4pt]
+\frac{\radian{\pi}}{2} + \frac{\radian{\pi}}{4} \\[4pt]
 &=
-\frac{2\pi}{4} + \frac{\pi}{4} \\[4pt]
+\frac{\radian{2\pi}}{4} + \frac{\radian{\pi}}{4} \\[4pt]
 &=
-\frac{3\pi}{4}.
+\frac{\radian{3\pi}}{4}.
 \end{align*}
 %%
-In other words, $\degree{135} = \frac{3\pi}{4}$ radians.
+In other words, $\degree{135}$ is equivalent to $\frac{3\pi}{4}$
+radians.
 \end{solution}
 }{}
 
@@ -117,8 +120,9 @@ Convert $\pi / 6$ radians to degrees.
 
 \ifbool{showSolution}{
 \begin{solution}
-You have $\degree{180} = \pi$ radians.  Then $\pi / 6$ radians is
-equivalent to $\degree{180} / 6 = \degree{30}$.
+You have $\degree{180} = \radian{\pi}$.  Divide both sides of the last
+equation by $6$ to see that $\frac{\radian{\pi}}{6}$ is equivalent to
+$\degree{180} / 6 = \degree{30}$.
 \end{solution}
 }{}
 
