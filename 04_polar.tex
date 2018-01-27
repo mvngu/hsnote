@@ -708,7 +708,8 @@ $(1\comma \frac{3\pi}{2})$.
   \end{solution}
 }{}
 
-\item Suppose that
+\item\label{prob:pythagoras_theorem_unit_circle}
+  Suppose that
   \[
   \cos^2\varphi
   =
@@ -741,6 +742,50 @@ Pythagoras' theorem to write the hypotenuse as
 \end{align*}
 %%
 where $1^2 = 1$.
+\end{solution}
+}{}
+
+\item Let $r > 0$ be a real number.  Present two explanations as to
+  why
+  %%
+  \begin{equation}
+  \label{eqn:pythagoras_theorem_sine_cosine}
+  (r \cos\varphi)^2 + (r \sin\varphi)^2
+  =
+  r^2.
+  \end{equation}
+\ifbool{showSolution}{
+\begin{solution}
+From \Figure{fig:convert_from_polar_to_Cartesian_coordinates}, you see
+that $r \cos\varphi$ and $r \sin\varphi$ are the lengths of two sides
+of a right-angled triangle.  The value of the hypotenuse is $r$.  Use
+Pythagoras' theorem to write the hypotenuse as
+\[
+r^2
+=
+(r \cos\varphi)^2 + (r \sin\varphi)^2
+\]
+which is \Equation{eqn:pythagoras_theorem_sine_cosine}.
+
+Here is another explanation.  Use
+\Problem{prob:pythagoras_theorem_unit_circle} to write
+$1 = \cos^2\varphi + \sin^2\varphi$.  Multiply both sides of the
+latter equation by $r^2$ to obtain
+%%
+\begin{align*}
+r^2
+&=
+r^2
+\parenthesis*{
+  \cos^2\varphi + \sin^2\varphi
+} \\[4pt]
+&=
+r^2 \cos^2\varphi + r^2 \sin^2\varphi \\[4pt]
+&=
+(r \cos\varphi)^2 + (r \sin\varphi)^2
+\end{align*}
+%%
+which is \Equation{eqn:pythagoras_theorem_sine_cosine}.
 \end{solution}
 }{}
 \end{problem}
