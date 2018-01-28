@@ -385,4 +385,42 @@ See \Table{tab:function_values_a_half_b_2}.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/06/a-3-b-half-incomplete.tex}
+\caption{%%
+  Some values of the function $f(x) = ax + b$.  Fill in the missing
+  entries.
+}
+\label{tab:function_values_a_3_b_half_incomplete}
+\end{table}
+
+\begin{exercise}
+\Table{tab:function_values_a_3_b_half_incomplete} provides some values
+of a linear function $f(x) = ax + b$.  Fill in the missing entries in
+the table.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You have the difference
+$f(1) - f(0) = \frac{7}{2} - \frac{1}{2} = 3$.  Note that you also
+have the differences $f(2) - f(1) = 3$ and $f(3) - f(2) = 3$.  Assume
+that each time you increase $x$ by one unit, you increase $f(x)$ by
+$3$ units to get $f(x + 1)$.  Based upon the latter assumption, you
+have $f(4) = f(3) + 3$, $f(5) = f(4) + 3$, and $f(6) = f(5) + 3$.  See
+\Table{tab:function_values_a_3_b_half_complete}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/06/a-3-b-half-complete.tex}
+\caption{%%
+  The same table as \Table{tab:function_values_a_3_b_half_incomplete},
+  but with missing values filled in.
+}
+\label{tab:function_values_a_3_b_half_complete}
+\end{table}
+\end{solution}
+}{}
+
 \end{document}
