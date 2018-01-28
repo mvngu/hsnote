@@ -27,7 +27,8 @@
 }
 %%
 \begin{axis}[%%
-  axis line style=very thick,%%
+  axis line style=thick,%%
+  axis lines=center,%%
   dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   height=7cm,%%
@@ -37,20 +38,17 @@
     smooth,%%
     thick%%
   },%%
-  tick style={grid=major},%%
   width=14cm,%%
   %%
   %% x-axis
   xlabel={\normalsize $x$},%%
+  xlabel style={right},%%
   xtick={-2,-1,0,1,2,3},%%
   xticklabels={$-2$,$-1$,$0$,$1$,$2$,$3$},%%
   %%
   %% y-axis
-  every axis y label/.style={%%
-    at={(axis description cs:0,1.1)},%%
-    anchor=north east%%
-  },%%
-  ylabel={\normalsize $y$}%%
+  ylabel={\normalsize $y$},%%
+  ylabel style={above}%%
 ]
 %%
 %%
