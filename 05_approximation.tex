@@ -857,26 +857,77 @@ $\sqrt{2} / 4$, the area of the octagon is
 \centering
 \includegraphics[scale=1]{image/05/square-inscribed-circle.pdf}
 \caption{%%
-  A unit circle drawn inside a square.  The circle touches the square
-  at the given four points.
+  A unit circle drawn inside a square.  The unit circle touches the
+  square at the given four points.  Inside the unit circle is an
+  inscribed square that touches the unit circle at the given four
+  points.  Finally, inside the inscribed square is an inscribed circle
+  that touches the inscribed square at four points.
 }
 \label{fig:square_inscribed_circle}
 \end{figure}
 
 \item A unit circle is inscribed within a square as shown in
-  \Figure{fig:square_inscribed_circle}.  The circle touches the square
-  at exactly the four points shown in the figure.  Calculate the area
-  of the shaded region in \Figure{fig:square_inscribed_circle}.
+  \Figure{fig:square_inscribed_circle}.  The unit circle touches the
+  square at exactly the four points shown in the figure.  Inside the
+  unit circle is an inscribed square, which contains an inscribed
+  circle that touches the inscribed square at four points.  Calculate
+  the area of the shaded region in
+  \Figure{fig:square_inscribed_circle}.
 \ifbool{showSolution}{
 \begin{solution}
-In \Figure{fig:square_inscribed_circle}, the area of the shaded region
-is the difference between the area of the square and the area of the
-circle.  A unit circle has a radius of $r = 1$ unit so the circle has
-an area of $\pi r^2 = \pi$ units.  Each side of the square has a
-length of $2$ units so the area of the square is $2^2 = 4$ units.
-Therefore the area $A$ of the shaded region is obtained by subtracting
-the area of the circle from the area of the square.  That is,
-$A = 4 - \pi$ units.
+First, consider the shaded area between the outer square and the unit
+circle.  The unit circle has a radius of $r = 1$ unit so the circle
+has an area of $\pi r^2 = \pi$ units.  Each side of the outer square
+has a length equal to the diameter of the unit circle.  Then each side
+of the outer square has a length of $2r = 2$ units so the area of the
+square is $2^2 = 4$ units.  The area of the shaded region between the
+outer square and the unit circle is $4 - \pi$ units.
+
+Second, consider the shaded region between the inner square and its
+inscribed circle.  Each side of the inner square has a length of
+%%
+\begin{align*}
+\sqrt{
+  (1 - 0)^2 + (0 - 1)^2
+}
+&=
+\sqrt{
+  1^2 + (-1)^2
+} \\[4pt]
+&=
+\sqrt{2}
+\end{align*}
+%%
+units, which is also the diameter of the inscribed inner circle.  The
+area of the inner square is $(\sqrt{2})^2 = 2$ units.  The circle
+within the inscribed square has a radius of $\sqrt{2} / 2$ units and
+hence the inner circle has an area of
+%%
+\begin{align*}
+\parenthesis*{\frac{\sqrt{2}}{2}}^2 \pi
+&=
+\frac{2}{4} \pi \\[4pt]
+&=
+\frac{\pi}{2}
+\end{align*}
+%%
+units.  The shaded region between the inner square and its inscribed
+circle is $2 - \frac{\pi}{2}$ units.  Therefore the area of the shaded
+region in \Figure{fig:square_inscribed_circle} is
+%%
+\begin{align*}
+(4 - \pi) + \parenthesis*{2 - \frac{\pi}{2}}
+&=
+4 - \pi + 2 - \frac{\pi}{2} \\[4pt]
+&=
+4 + 2 - \pi - \frac{\pi}{2} \\[4pt]
+&=
+6 - \frac{2\pi}{2} - \frac{\pi}{2} \\[4pt]
+&=
+6 - \frac{3\pi}{2}
+\end{align*}
+%%
+or approximately $1.287611$ units, rounded to six decimal places.
 \end{solution}
 }{}
 \end{problem}

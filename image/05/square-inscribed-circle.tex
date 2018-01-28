@@ -34,19 +34,21 @@
 
 \begin{tikzpicture}[%%
   circleStyle/.style={-,very thick,fill=white},%%
+  lineStyle/.style={-,very thick},%%
   nodeStyle/.style={draw,inner sep=1.5pt,circle,fill=black,black},%%
   squareStyle/.style={-,very thick,fill=gray!40}%%
 ]
 %%
 %%
-\pgfmathsetmacro{\radius}{2}
+\pgfmathsetmacro{\radius}{3}
+\pgfmathsetmacro{\smallRadius}{2.12132034355964}  %% 3*sqrt(2) / 2
 \pgfmathsetmacro{\xlow}{0}
 \pgfmathsetmacro{\ylow}{0}
 %%
 \coordinate (centre) at (\xlow,\ylow);
 \coordinate (lowerLeft) at (\xlow-\radius,\ylow-\radius);
 \coordinate (upperRight) at (\xlow+\radius,\ylow+\radius);
-%% Points on the circle.
+%% Points on the unit circle.
 \coordinate (pbottom) at (\xlow,\ylow-\radius);
 \coordinate (pleft) at (\xlow-\radius,\ylow);
 \coordinate (pright) at (\xlow+\radius,\ylow);
@@ -57,7 +59,11 @@
 \draw[squareStyle] (lowerLeft) rectangle (upperRight);
 %% The circle.
 \draw[circleStyle] (centre) circle[radius=\radius];
-%% Some points on the circle.
+%% A square inscribed within a unit circle.
+\draw[squareStyle] (pright) -- (ptop) -- (pleft) -- (pbottom) -- cycle;
+%% A circle inscribed within the inscribed square.
+\draw[circleStyle] (centre) circle[radius=\smallRadius];
+%% Some points on the unit circle.  Must be drawn last.
 \xyPoint{pright}{\tuple{1}{0}}{right}
 \xyPoint{pleft}{\tuple{-1}{0}}{left}
 \xyPoint{ptop}{\tuple{0}{1}}{above}
