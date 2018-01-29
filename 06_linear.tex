@@ -848,6 +848,55 @@ $g(x) = -x$.
 \end{figure}
 \end{solution}
 }{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/06/temperature.tex}
+\caption{%%
+  Temperature conversion from degree Celsius to degree Fahrenheit.
+}
+\label{tab:temperature_Celsius_to_Fahrenheit}
+\end{table}
+
+\item \Table{tab:temperature_Celsius_to_Fahrenheit} shows how to
+  convert between degrees Celsius and Fahrenheit.  Assume that the
+  conversion from Celsius to Fahrenheit is given by a linear function
+  of the form $F(C) = aC + b$, where $C$ represents the degree in
+  Celsius and $F(C)$ represents the degree in Fahrenheit.  Determine
+  the values of the constants $a$ and $b$.
+\ifbool{showSolution}{
+\begin{solution}
+First, determine the rate of change.
+\Table{tab:temperature_Celsius_to_Fahrenheit} shows that $F(10) = 50$
+and $F(15) = 59$.  Use \Equation{eqn:linear_function_rate_of_change}
+to write the rate of change as
+%%
+\begin{align*}
+a
+&=
+\frac{
+  F(15) - F(10)
+}{
+  15 - 10
+} \\[4pt]
+&=
+\frac{
+  59 - 50
+}{
+  15 - 10
+} \\[4pt]
+&=
+\frac{9}{5}.
+\end{align*}
+%%
+Next, determine the value of $b$.  Set $C = 10$ to get $F(10) = 50$.
+Use the value of $a$ to write $50 = \frac{9}{5} \times 10 + b$, which
+you can simplify to $50 = 9 \times 2 + b$ or $50 = 18 + b$.  Solving
+the last equation for $b$ shows that $b = 50 - 18 = 32$.  Therefore
+the conversion from degree Celsius to degree Fahrenheit is given by
+the linear function $F(C) = \frac{9}{5} C + 32$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
