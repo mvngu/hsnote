@@ -765,6 +765,89 @@ $b = y_1 - ax_1$ with $a$ as given in
 \Equation{eqn:derive_rate_of_change}.
 \end{solution}
 }{}
+
+\item Going anti-clockwise, there is a span of $\degree{45}$ from the
+  positive half of the $x$-axis to the point $A = \tuple{1}{1}$.
+  There is a span of $\degree{135}$ from the positive half of the
+  $x$-axis to the point $B = \tuple{-1}{1}$, also going
+  anti-clockwise.  Let $f(x) = a_1x + b_1$ be a function that passes
+  through the point $A$.  Let $g(x) = a_2x + b_2$ be a function that
+  passes through the point $B$ such that the straight lines in the
+  graphs of $f(x)$ and $g(x)$ are perpendicular to each other.
+  Determine two linear functions $f(x)$ and $g(x)$ that satisfy the
+  above conditions.
+\ifbool{showSolution}{
+\begin{solution}
+The points $A$ and $B$ are shown in
+\Figure{fig:two_points_reflection_each_other_y_axis}, from which you
+see that the line segments $OA$ and $OB$ are perpendicular to each
+other.  All that you need to do now is to determine a linear function
+$f(x)$ that goes through the origin $O$ and the point $A$, and another
+linear function $g(x)$ that goes through the origin and the point
+$B$.  Note that both linear functions will have the same
+$y$-intercept, i.e.~the origin $\tuple{0}{0}$ itself.  Use
+\Equation{eqn:derive_rate_of_change} to see that the rate of change of
+$f(x)$ is given by
+%%
+\begin{align*}
+a_1
+&=
+\frac{
+  f(1) - f(0)
+}{
+  1 - 0
+} \\[4pt]
+&=
+\frac{
+  1 - 0
+}{
+  1 - 0
+} \\[4pt]
+&=
+\frac{1}{1} \\[4pt]
+&=
+1.
+\end{align*}
+%%
+Similarly, the rate of change of $g(x)$ is
+%%
+\begin{align*}
+a_2
+&=
+\frac{
+  g(-1) - g(0)
+}{
+  -1 - 0
+} \\[4pt]
+&=
+\frac{
+  1 - 0
+}{
+  -1 - 0
+} \\[4pt]
+&=
+\frac{1}{-1} \\[4pt]
+&=
+-1.
+\end{align*}
+%%
+Therefore the required linear functions are $f(x) = x$ and
+$g(x) = -x$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.5]{image/06/perpendicular-lines-origin.pdf}
+\caption{%%
+  Two points that are reflections of each other with respect to the
+  $y$-axis.  The angle from the line segment $OA$ to the segment $OB$
+  is $\degree{135} - \degree{45} = \degree{90}$, going
+  anti-clockwise.  Thus the segments $OA$ and $OB$ are perpendicular
+  to each other.
+}
+\label{fig:two_points_reflection_each_other_y_axis}
+\end{figure}
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
