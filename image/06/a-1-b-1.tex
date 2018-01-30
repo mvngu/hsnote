@@ -15,6 +15,9 @@
 \renewcommand{\ttdefault}{pcr}
 \normalfont\selectfont
 
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{\left({#1}\comma {#2}\right)}
+
 \begin{document}
 
 \begin{tikzpicture}
@@ -58,6 +61,9 @@
   (0,1)
   (-1,0)
 };
+%% Label the above two points.
+\node[below right] at (axis cs:0,1) {$\tuple{0}{1}$};
+\node[above left] at (axis cs:-1,0) {$\tuple{-1}{0}$};
 \end{axis}
 \end{tikzpicture}
 
