@@ -862,6 +862,7 @@ not parallel and has a point of intersection.
 }{}
 
 \begin{example}
+\label{ex:3x_plus_1_3x_plus_2}
 Prove that the straight lines representing the linear functions
 $f(x) = 3x + 1$ and $g(x) = 3x + 2$ are parallel to each other.
 \end{example}
@@ -883,6 +884,54 @@ because you assumed that the lines representing $f(x)$ and $g(x)$
 intersect at a point.  Since your assumption leads to a contradiction,
 you conclude that $\ell_1$ and $\ell_2$ are parallel.
 \end{solution}
+
+\begin{exercise}
+Let $f(x)$ and $g(x)$ be as in \Example{ex:3x_plus_1_3x_plus_2} and
+consider the function $h(x) = 3x + 3$.  Prove that the straight lines
+that represent the functions $f(x)$, $g(x)$, and $h(x)$ are parallel
+to each other.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+Let $\triple{\ell_1}{\ell_2}{\ell_3}$ be straight lines that represent
+the graphs of the functions $\triple{f(x)}{g(x)}{h(x)}$,
+respectively.  You have three cases to consider.
+%%
+\begin{packedenumeral}
+\item\label{case:ell1_ell2_parallel}
+  Prove that $\ell_1$ and $\ell_2$ are parallel.
+
+\item\label{case:ell1_ell3_parallel}
+  Prove that $\ell_1$ and $\ell_3$ are parallel.
+
+\item\label{case:ell2_ell3_parallel}
+  Prove that $\ell_2$ and $\ell_3$ are parallel.
+\end{packedenumeral}
+%%
+The solution to \Example{ex:3x_plus_1_3x_plus_2} proves
+\Case{case:ell1_ell2_parallel}.  To prove
+\Case{case:ell1_ell3_parallel}, you use the same argument as in
+\Example{ex:3x_plus_1_3x_plus_2} by assuming that $\ell_1$ and
+$\ell_3$ are not parallel and attempt to calculate a point of
+intersection.  Equating the functions $f(x)$ and $h(x)$ results in the
+expression $3x + 1 = 3x + 3$, which can be written as
+$3x - 3x = 3 - 1$ and simplifies to $0 = 2$.  The contradiction
+$0 = 2$ arises because you assumed that $f(x)$ and $h(x)$ has a point
+of intersection.  Therefore $\ell_1$ and $\ell_3$ are parallel lines.
+
+You now use the same argument as above to prove
+\Case{case:ell2_ell3_parallel}.  Assume for contradiction that
+$\ell_2$ and $\ell_3$ are not parallel.  Then the functions $g(x)$ and
+$h(x)$ must have a point of intersection.  Equating $g(x)$ and $h(x)$
+results in the expression $3x + 2 = 3x + 3$, which you can also write
+as $3x - 3x = 3 - 2$ and simplify to $0 = 1$.  The contradiction
+$0 = 1$ comes about because you assumed that the functions $g(x)$ and
+$h(x)$ has a point of intersection.  Conclude that $\ell_2$ and
+$\ell_3$ are parallel lines and therefore the straight lines
+$\triple{\ell_1}{\ell_2}{\ell_3}$ are parallel to each other.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
