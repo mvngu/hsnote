@@ -1227,6 +1227,100 @@ and $g(x)$ do not have a point of intersection and therefore the lines
 $\pair{\ell_1}{\ell_2}$ are parallel to each other.
 \end{solution}
 }{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/06/height.tex}
+\caption{%%
+  The height of a child between the ages of $10$ and $15$.  Age is
+  measured in years and height is measured in metres.
+}
+\label{tab:children_height_by_age}
+\end{table}
+
+\item \Table{tab:children_height_by_age} tracks the height~(in metres)
+  of a child from when the child was ten years old to the age of $15$
+  years old.  Suppose that during the ages of ten to $15$ years old,
+  the child grew at a constant rate of $a$.  Let $x$ be the age~(in
+  years) of the child.  Suppose that the height of the child can be
+  written as a linear function of the form $h(x) = ax + b$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:height_function_rate_of_change}
+    Use \Table{tab:children_height_by_age} to calculate the rate $a$.
+    Explain the rate $a$ in terms of the height of the child.
+
+  \item\label{subprob:height_function_y_intercept}
+    Calculate the value of $b$.  Explain this value in terms of the
+    child's height.
+
+  \item\label{subprob:height_function_height_at_20_30}
+    Use your solutions
+    from \Parts{subprob:height_function_rate_of_change}{subprob:height_function_y_intercept}
+    to recover the function $h(x)$.  Use the function $h(x)$ to
+    calculate the child's height when the child is $20$ years old.
+    Again use the function $h(x)$ to determine the child's height at
+    $30$ years old.  Explain what is wrong with the two heights you
+    obtained.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:height_function_rate_of_change}
+From \Table{tab:children_height_by_age} you have the function values
+$h(10) = 1.38$ and $h(11) = 1.44$.  The rate of change is
+%%
+\begin{align*}
+a
+&=
+\frac{
+  h(11) - h(10)
+}{
+  11 - 10
+} \\[4pt]
+&=
+\frac{
+  1.44 - 1.38
+}{
+  1
+} \\[4pt]
+&=
+\frac{
+  0.06
+}{
+  1
+} \\[4pt]
+&=
+0.06.
+\end{align*}
+%%
+The rate $a = 0.06$ means that each year the child grew by $0.06$
+metres.  In other words, the child grew by $6$~cm per year.
+
+\solutionpart{subprob:height_function_y_intercept}
+You can use the function value $f(10) = 1.38$ to calculate the value
+of $b$.  Using the value $a = 0.06$ results in the expression
+$1.38 = 0.06 \times 10 + b$, which simplifies to $1.38 = 0.6 + b$.
+Solving the latter expression for $b$ to obtain
+$b = 1.38 - 0.6 = 0.78$.  Note that in the expression
+$h(x) = ax + b$, if $x = 0$ then you have $h(0) = b$.  In other words,
+the value $b = 0.78$ means that when the child was born~(zero years
+old) the height at birth was $b = 0.78$ metres~(or $78$~cm).
+
+\solutionpart{subprob:height_function_height_at_20_30}
+From \Parts{subprob:height_function_rate_of_change}{subprob:height_function_y_intercept},
+the height function can be written as $h(x) = 0.06x + 0.78$.  At the
+age of $x = 20$ years old, the child will be $h(20) = 1.98$ metres
+tall.  At the age of $x = 30$ years old, the child will be
+$h(30) = 2.58$ metres tall.  These two height numbers do not make
+sense because a human being usually stops getting taller after a
+certain age.  In other words, the height function $h(x)$ is only valid
+within a particular age range.  In the case of
+\Table{tab:children_height_by_age}, the function $h(x)$ is valid
+between the ages of $10$ and $15$ years old, inclusive.  Below ten
+years old~(or after $15$ years old), the function $h(x)$ can give a
+ridiculous height value.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
