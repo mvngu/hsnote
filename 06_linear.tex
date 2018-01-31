@@ -1321,6 +1321,202 @@ years old~(or after $15$ years old), the function $h(x)$ can give a
 ridiculous height value.
 \end{solution}
 }{}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.5]{image/06/points-unit-circle.pdf}
+\caption{%%
+  An ant starts at point $A$ and travels to point $B$.
+}
+\label{fig:unit_circle_A_30_degrees_B_135_degrees}
+\end{figure}
+
+\item The positions of an ant are illustrated in
+  \Figure{fig:unit_circle_A_30_degrees_B_135_degrees}.  The ant starts
+  at point $A$ and travels along a straight line to point $B$.
+  Suppose that the time required for the ant to reach its destination
+  $B$ is measured in seconds and the distance between $A$ and $B$ is
+  measured in metres.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:ant_distance_travelled}
+    Calculate the distance that the ant travelled.
+
+  \item\label{subprob:ant_rate_per_second}
+    Calculate the rate~(in metres per second) at which the ant
+    travelled from $A$ to $B$.
+
+  \item\label{subprob:ant_how_long_to_destination}
+    How long~(in seconds) did the ant take to travel from $A$ to $B$?
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:ant_distance_travelled}
+First, you need to know the Cartesian coordinates of the points $A$
+and $B$.  The point $A$ makes an angle of $\degree{30}$~(or $\pi / 6$
+radians) with respect to the positive half of the $x$-axis.  Since $A$
+lies on a unit circle that is centred at the origin, the circle has a
+radius of $1$ and so $A$ can be described by the polar coordinates
+$\tuple{1}{\frac{\pi}{6}}$.  In the Cartesian coordinate system, the
+$x$-coordinate of $A$ is
+%%
+\begin{align*}
+x
+&=
+\cos\frac{\pi}{6} \\[4pt]
+&=
+\frac{\sqrt{3}}{2}
+\end{align*}
+%%
+and the $y$-coordinate of $A$ is
+%%
+\begin{align*}
+y
+&=
+\sin\frac{\pi}{6} \\[4pt]
+&=
+\frac{1}{2}.
+\end{align*}
+%%
+The Cartesian coordinates of $A$ are
+$\tuple{\frac{\sqrt{3}}{2}}{\frac{1}{2}}$.  Similarly, the point $B$
+can be described by the polar coordinates $\tuple{1}{\frac{3\pi}{4}}$
+because $\degree{135}$ is equivalent to $\frac{3\pi}{4}$ radians.  The
+$x$-coordinate of $B$ is
+%%
+\begin{align*}
+x
+&=
+\cos\frac{3\pi}{4} \\[4pt]
+&=
+-\frac{\sqrt{2}}{2}
+\end{align*}
+%%
+and the $y$-coordinate of $B$ is
+%%
+\begin{align*}
+y
+&=
+\sin\frac{3\pi}{4} \\[4pt]
+&=
+\frac{\sqrt{2}}{2}.
+\end{align*}
+%%
+Thus $B$ has the Cartesian coordinates
+$\tuple{-\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}}$.
+
+The distance $d$ between points $A$ and $B$ can be calculated as
+%%
+\begin{align*}
+d
+&=
+\sqrt{
+  \parenthesis*{
+    \frac{\sqrt{2}}{2} - \frac{1}{2}
+  }^2
+  +
+  \parenthesis*{
+    -\frac{\sqrt{2}}{2} - \frac{\sqrt{3}}{2}
+  }^2
+} \\[4pt]
+&=
+\sqrt{
+  \parenthesis*{
+    \frac{\sqrt{2} - 1}{2}
+  }^2
+  +
+  \parenthesis*{
+    -
+    \parenthesis*{
+      \frac{\sqrt{2}}{2} + \frac{\sqrt{3}}{2}
+    }
+  }^2
+} \\[4pt]
+&=
+\sqrt{
+  \parenthesis*{
+    \frac{\sqrt{2} - 1}{2}
+  }^2
+  +
+  \parenthesis*{
+    - \frac{\sqrt{2} + \sqrt{3}}{2}
+  }^2
+} \\[4pt]
+&=
+\sqrt{
+  \frac{3 - 2\sqrt{2}}{4}
+  +
+  \frac{5 + 2\sqrt{6}}{4}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{
+    2\sqrt{6} - 2\sqrt{2} + 8
+  }{
+    4
+  }
+} \\[4pt]
+&=
+\frac{1}{2}
+\sqrt{
+  2\sqrt{6} - 2\sqrt{2} + 8
+}.
+\end{align*}
+%%
+The ant travelled approximately $d \approx 1.586707$ metres, rounded to
+six decimal places.
+
+\solutionpart{subprob:ant_rate_per_second}
+Since the ant is assumed to travel in a straight line from $A$ to $B$,
+the rate in metres per second at which the ant travelled can be
+obtained by first calculating the rate of change $a$ in the linear
+function $f(x) = ax + b$.  Here, you want the function $f(x)$ to pass
+through the points $A$ and $B$.  Using the Cartesian coordinates of
+the points $A$ and $B$, the rate of change $a$ is given by
+%%
+\begin{align*}
+a
+&=
+\frac{
+  \frac{\sqrt{2}}{2} - \frac{1}{2}
+}{
+  -\frac{\sqrt{2}}{2} - \frac{\sqrt{3}}{2}
+} \\[4pt]
+&=
+\frac{
+  -\frac{1}{4} \sqrt{2} (\sqrt{2} - 2)
+}{
+  -\frac{1}{4} \sqrt{2} (\sqrt{6} + 2)
+} \\[4pt]
+&=
+\frac{
+  \sqrt{2} - 2
+}{
+  \sqrt{6} + 2
+}.
+\end{align*}
+%%
+Note that $a < 0$ because the numerator $\sqrt{2} - 2 < 0$.  To
+convert $a$ to the rate at which the ant travelled, you take the
+absolute value of $a$.  Thus the ant travelled at a rate of
+approximately $\absoluteValue{a} \approx 0.131652$ metres per second,
+rounded to six decimal places.
+
+\solutionpart{subprob:ant_how_long_to_destination}
+The time $t$ in seconds that the ant took to travel from $A$ to $B$
+can be obtained by dividing the distance travelled by the rate of
+travel.  Using the approximate values of distance and rate
+in \Parts{subprob:ant_distance_travelled}{subprob:ant_rate_per_second},
+you can estimate the time required as
+\[
+t
+\approx
+\frac{1.586707}{0.131652}.
+\]
+In other words, the ant took approximately $t \approx 12.05$ seconds
+to travel from $A$ to $B$, rounded to two decimal places.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
