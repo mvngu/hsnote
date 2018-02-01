@@ -45,6 +45,7 @@ clean:
 	rm -rfv *~
 	rm -rfv *.aux
 	rm -rfv *.auxlock
+	rm -rfv *.bak
 	rm -rfv *.dpth
 	rm -rfv .gitignore~
 	rm -rfv *.log
