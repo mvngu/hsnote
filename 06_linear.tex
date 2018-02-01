@@ -1228,6 +1228,133 @@ $\pair{\ell_1}{\ell_2}$ are parallel to each other.
 \end{solution}
 }{}
 
+\item Let $\quadruple{a}{b}{c}{d} \in \RR$ be known constants.
+  Consider the linear functions $f(x) = ax + b$ and $g(x) = cx + d$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:intersection_point_x_y_coordinates}
+    Suppose that the functions $f(x)$ and $g(x)$ have a point of
+    intersection.  Prove that the $x$-coordinate of the point of
+    intersection is
+    %%
+    \begin{equation}
+    \label{eqn:intersection_point_x_coordinate}
+    x
+    =
+    \frac{d - b}{a - c}
+    \end{equation}
+    %%
+    and the $y$-coordinate of the point of intersection is
+    \[
+    y
+    =
+    \frac{a(d - b)}{a - c}
+    +
+    b.
+    \]
+
+  \item\label{subprob:intersection_point_undefined}
+    For which values of $a$ and $c$ would
+    \Equation{eqn:intersection_point_x_coordinate} not make sense?
+    Explain why \Equation{eqn:intersection_point_x_coordinate} would
+    not make sense for those particular values of $a$ and $c$.
+
+  \item\label{subprob:intersection_point_on_y_axis}
+    Suppose that $a \neq c$ and $d = b$.  Where would you expect to
+    find the point at which $f(x)$ and $g(x)$ intersect each other?
+
+  \item\label{subprob:intersection_point_on_x_axis}
+    Suppose that $a \neq c$ and $b = ad / c$.  Where would you expect
+    to find the point at which $f(x)$ and $g(x)$ intersect each other?
+
+  \item\label{subprob:intersection_point_origin}
+    Suppose that $a \neq c$ and $b = d = 0$.  Prove that $f(x)$ and
+    $g(x)$ intersect each other at the origin.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:intersection_point_x_y_coordinates}
+To determine the coordinates of the point at which $f(x)$ and $g(x)$
+intersect each other, you equate $f(x)$ and $g(x)$ to obtain the
+expression $ax + b = cx + d$.  Write the last expression as
+$ax - cx = d - b$, which can be factored as
+$x(a - c) = d - b$ and solving for $x$ results in
+\[
+x
+=
+\frac{d - b}{a - c}.
+\]
+This is the same as \Equation{eqn:intersection_point_x_coordinate}.
+To determine the $y$-coordinate of the point of intersection,
+substitute \Equation{eqn:intersection_point_x_coordinate} into
+$f(x) = ax + b$ to obtain
+%%
+\begin{align*}
+y
+&=
+a \times \frac{d - b}{a - c} + b \\[4pt]
+&=
+\frac{a(d - b)}{a - c} + b.
+\end{align*}
+
+\solutionpart{subprob:intersection_point_undefined}
+Equation~\eqref{eqn:intersection_point_x_coordinate} does not make
+sense whenever $a = c$.  This is because $a = c$ would mean that
+$a - c = 0$ and dividing by zero is undefined.
+
+\solutionpart{subprob:intersection_point_on_y_axis}
+If $a \neq c$ but $d = b$, then
+\Equation{eqn:intersection_point_x_coordinate} becomes $x = 0$ and the
+$y$-coordinate of the point of intersection is $y = b$.  Thus the
+point of intersection is $\tuple{0}{b}$ so you would expect to find
+the intersection point on the $y$-axis.
+
+\solutionpart{subprob:intersection_point_on_x_axis}
+If $a \neq c$ but $b = ad / c$, then
+\Equation{eqn:intersection_point_x_coordinate} can be written as
+%%
+\begin{align*}
+x
+&=
+\frac{d}{a - c} - \frac{b}{a - c} \\[4pt]
+&=
+\frac{d}{a - c} - \frac{ad / c}{a - c} \\[4pt]
+&=
+\frac{d}{a - c} - \frac{ad}{c} \times \frac{1}{a - c} \\[4pt]
+&=
+\frac{cd}{c(a - c)} - \frac{ad}{c(a - c)} \\[4pt]
+&=
+\frac{d(c - a)}{c(a - c)} \\[4pt]
+&=
+-\frac{d(a - c)}{c(a - c)} \\[4pt]
+&=
+-\frac{d}{c}.
+\end{align*}
+%%
+The $y$-coordinate of the point of intersection is
+%%
+\begin{align*}
+y
+&=
+a \times \parenthesis*{-\frac{d}{c}} + \frac{ad}{c} \\[4pt]
+&=
+-\frac{ad}{c} + \frac{ad}{c} \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Thus the point of intersection is $\tuple{-\frac{d}{c}}{0}$ and so you
+would expect to find the intersection point on the $x$-axis.
+
+\solutionpart{subprob:intersection_point_origin}
+If $b = d = 0$, then $d - b = 0$.
+From \Part{subprob:intersection_point_x_y_coordinates} the $x$- and
+$y$-coordinates of the point of intersection are $x = 0$ and $y = 0$,
+respectively.  In other words, the functions $f(x)$ and $g(x)$
+intersect each other at the origin $\tuple{0}{0}$.
+\end{solution}
+}{}
+
 \begin{table}[!htbp]
 \centering
 \input{table/06/height.tex}
