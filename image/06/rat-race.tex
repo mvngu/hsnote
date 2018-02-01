@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{rat-race}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  height=7cm,%%
+  legend cell align=left,%%
+  legend style={at={(1,0.15)},anchor=south east},%%
+  plotStyle/.style={%%
+    domain=0:8,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=14cm,%%
+  %%
+  %% x-axis
+  xlabel={time $t$},%%
+  xlabel style={at={(axis description cs:0.5,-0.01)},anchor=north},%%
+  %%
+  %% y-axis
+  ylabel={distance travelled},%%
+  ylabel style={at={(axis description cs:-0.01,0.5)},rotate=90,anchor=north}%%
+]
+%%
+%%
+%% The function f(x) = 2x + 3.
+\addplot+ [plotStyle]
+{2*x + 3};
+\addlegendentry{$f(t) = 2t + 3$}
+%%
+%% The function g(x) = 2.5x.
+\addplot+ [plotStyle]
+{2.5*x};
+\addlegendentry{$g(t) = 2.5t$}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

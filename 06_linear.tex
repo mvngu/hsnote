@@ -1228,7 +1228,8 @@ $\pair{\ell_1}{\ell_2}$ are parallel to each other.
 \end{solution}
 }{}
 
-\item Let $\quadruple{a}{b}{c}{d} \in \RR$ be known constants.
+\item\label{prob:linear_functions_intersection_point}
+  Let $\quadruple{a}{b}{c}{d} \in \RR$ be known constants.
   Consider the linear functions $f(x) = ax + b$ and $g(x) = cx + d$.
   %%
   \begin{packedenum}
@@ -1642,6 +1643,88 @@ t
 \]
 In other words, the ant took approximately $t \approx 12.05$ seconds
 to travel from $A$ to $B$, rounded to two decimal places.
+\end{solution}
+}{}
+
+\item Two animals $A$ and $B$ are running in a straight line along the
+  same direction.  Initially, animal $A$ was $3$ metres ahead of
+  animal $B$.  Animal $A$ runs at a constant rate of $2$ metres per
+  second and $B$ runs at a rate of $2.5$ metres per second.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:rat_race_linear_functions}
+    Let $f(t)$ and $g(t)$ be the distances in metres that animals $A$
+    and $B$ have travelled, respectively, after $t$ seconds.
+    Construct the functions $f(t)$ and $g(t)$.  Graph the functions on
+    the same set of coordinate axes from $t = 0$ to $t = 8$ seconds.
+
+  \item\label{subprob:rat_race_catch_up}
+    How long~(in seconds) does animal $B$ take to catch up to $A$?
+    When both animals meet, how far~(in metres) would each animal have
+    travelled?
+
+  \item\label{subprob:rat_race_any_head_start}
+    Suppose that animal $A$ is initially $s$ metres ahead of $B$,
+    where $s > 0$ is any real number.  Explain why $B$ would
+    eventually catch up to $A$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:rat_race_linear_functions}
+Suppose the function $f(t)$ is a linear function of the form
+$f(t) = at + b$.  At time $t = 0$, animal $A$ is $3$ metres ahead of
+$B$ so the $y$-intercept is $\tuple{0}{3}$ and hence $b = 3$.  Since
+$A$ runs at a constant rate of $2$ metres per second, then you have
+$a = 2$.  The function $f(t)$ can now be written as
+$f(t) = 2t + 3$.  You can use the same argument as above to construct
+the function $g(t)$.  First, you assume that $g(t)$ is a linear
+function of the form $g(t) = ct + d$.  At time $t = 0$, animal $B$ has
+not covered any amount of distance so $g(t) = 0$ and the $y$-intercept
+is $d = 0$.  You also have $c = 2.5$ because $B$ runs at a constant
+rate of $2.5$ metres per second.  In other words, the function $g(t)$
+can be written as $g(t) = 2.5t$.  See
+\Figure{fig:distances_as_functions_of_time} for the graphs of the
+above two functions.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/06/rat-race.pdf}
+\caption{%%
+  The distances that the animals $A$ and $B$ travelled as functions of
+  time.  Time is measured in seconds and distance is measured in
+  metres.  The distance functions of $A$ and $B$ are $f(t)$ and
+  $g(t)$, respectively.
+}
+\label{fig:distances_as_functions_of_time}
+\end{figure}
+
+\solutionpart{subprob:rat_race_catch_up}
+The point of intersection of the functions $f(t)$ and $g(t)$ should
+give you the time and distance at which the animals meet each other.
+Equate $f(t)$ and $g(t)$ to obtain the expression $2t + 3 = 2.5t$,
+which can be written as $2.5t - 2t = 3$ and simplified to
+$0.5t = 3$ or $\frac{1}{2}t = 3$.  Solving the last expression for $t$
+shows that animal $B$ catches up to animal $A$ after
+$t = 3 \times 2 = 6$ seconds.  Now let's calculate the distance that
+both animals would have travelled after six seconds.  Substitute
+$t = 6$ into the expression $f(t) = 2t + 3$ to get
+$f(6) = 2 \times 6 + 3$, which can be simplified to $f(6) = 12 + 3$ or
+$f(6) = 15$.  After $t = 6$ seconds, animal $B$ would have caught up
+to $A$ and each animal would have covered $15$ metres.
+
+\solutionpart{subprob:rat_race_any_head_start}
+Suppose that $A$ is initially $s > 0$ metres ahead of $B$.  The
+distance function of $B$ is still $g(t) = 2.5t$, but the distance
+function of $A$ is now $f(t) = 2t + s$.  Since both animals run at
+different rates, you may
+use \Parts{subprob:intersection_point_x_y_coordinates}{subprob:intersection_point_undefined}
+of \Problem{prob:linear_functions_intersection_point} to conclude that
+both animals will eventually meet each other.  The time at which the
+animals meet each other can be calculated as follows.  Equate $f(t)$
+and $g(t)$ to obtain the expression $2t + s = 2.5t$, which can be
+written as $2.5t - 2t = s$ and simplified to $0.5t = s$ or
+$\frac{1}{2} t = s$.  Solving the last equation for $t$ shows that
+animal $B$ will eventually catch up to $A$ after $t = 2s$ seconds.
 \end{solution}
 }{}
 \end{problem}
