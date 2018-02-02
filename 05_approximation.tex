@@ -521,6 +521,110 @@ $k = 1000$, you have
 \]
 which has the first six decimal digits of $\pi$.
 
+\begin{exercise}
+Use \Equation{eqn:formula_approximate_pi} to approximate the value of
+$\pi$ for $k = \triple{1}{2}{3}$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+For $k = 1$, \Equation{eqn:formula_approximate_pi} yields the
+approximation
+%%
+\begin{align*}
+\pi
+&\approx
+2 \sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2}}
+} \\[4pt]
+&=
+2 \sqrt{
+  2
+  -
+  2 \times 0
+} \\[4pt]
+&=
+2 \sqrt{2}
+\end{align*}
+%%
+which can be written as $\pi \approx 2.828427$, rounded to six decimal
+places.  When $k = 2$, you have the approximation
+%%
+\begin{align*}
+\pi
+&\approx
+2 \times 2
+\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2 \times 2}}
+} \\[4pt]
+&=
+4
+\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{4}}
+} \\[4pt]
+&=
+4
+\sqrt{
+  2
+  -
+  2 \times \frac{\sqrt{2}}{2}
+} \\[4pt]
+&=
+4
+\sqrt{
+  2
+  -
+  \sqrt{2}
+}
+\end{align*}
+%%
+which can be written as $\pi \approx 3.061467$, rounded to six decimal
+places.  In the case of $k = 3$, \Equation{eqn:formula_approximate_pi}
+yields the approximation
+%%
+\begin{align*}
+\pi
+&\approx
+2 \times 3
+\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{2 \times 3}}
+} \\[4pt]
+&=
+6
+\sqrt{
+  2
+  -
+  2\cos\parenthesis*{\frac{\pi}{6}}
+} \\[4pt]
+&=
+6
+\sqrt{
+  2
+  -
+  2 \times \frac{\sqrt{3}}{2}
+} \\[4pt]
+&=
+6
+\sqrt{
+  2
+  -
+  \sqrt{3}
+}
+\end{align*}
+%%
+which can be written as $\pi \approx 3.105829$, rounded to six decimal
+places.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
