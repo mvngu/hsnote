@@ -573,22 +573,32 @@ The expression $2 + 7 \times 3 - 1$ can be simplified as:
 }{}
 
 \begin{exercise}
-Let $p$ denote Patrick's age, $m$ be Marcus' age, and $u$ your uncle's
-age.  The sum of all these ages is $p + m + u$.  Plug in the values
-for each of $\triple{p}{m}{u}$.  How would you simplify the resulting
-expression?
+Let $p$ denote Patrick's age, $m$ be Marcus' age, $M$ your mum's age,
+and $d$ your dad's age.  The sum of all these ages is
+\[
+p + m + M + d.
+\]
+How would you simplify the expression?
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
-You can use the associative laws to write $p + m + u = (p + m) + u$.
-This indicates that you want to first simplify the sum $p + m$.  Use
-your result to then simplify $(p + m) + u$.  On the other hand, the
-associative laws also allow you to write $p + m + u = p + (m + u)$,
-which shows that you want to first simplify the sum $m + u$.  You then
-use this result to simplify the expression $p + (m + u)$.  Plug in the
-values for each of $\triple{p}{m}{u}$, simplify the sum within the
-parentheses, and finally simplify the resulting sum.
+You can use the associative laws to write
+%%
+\begin{align*}
+p + m + M + d
+&=
+(p + m) + M + d \\[4pt]
+&=
+p + m + (M + d) \\[4pt]
+&=
+p + (m + M) + d \\[4pt]
+&=
+(p + m) + (M + d).
+\end{align*}
+%%
+This indicates that you want to first simplify the sums within the
+parentheses.  Use your result to then simplify the whole expression.
 \end{solution}
 }{}
 
