@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\usetikzlibrary{matrix}
+\tikzexternalize{circle-polygon}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+%% A heptagon that is inscribed inside a circle.
+\newcommand{\myHeptagon}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (1.24697960371747,1.56366296493606);
+  \coordinate (C) at (-0.445041867912629,1.94985582436365);
+  \coordinate (D) at (-1.80193773580484,0.867767478235116);
+  \coordinate (E) at (-1.80193773580484,-0.867767478235116);
+  \coordinate (F) at (-0.445041867912629,-1.94985582436365);
+  \coordinate (G) at (1.24697960371747,-1.56366296493606);
+  %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 7$};
+}
+
+%% A hexagon that is inscribed inside a circle.
+\newcommand{\myHexagon}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (1,1.73205080756888);
+  \coordinate (C) at (-1,1.73205080756888);
+  \coordinate (D) at (-2,0);
+  \coordinate (E) at (-1,-1.73205080756888);
+  \coordinate (F) at (1,-1.73205080756888);
+  %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 6$};
+}
+
+%% An octagon that is inscribed inside a circle.
+\newcommand{\myOctagon}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (1.41421356237310,1.41421356237310);
+  \coordinate (C) at (0,2);
+  \coordinate (D) at (-1.41421356237310,1.41421356237310);
+  \coordinate (E) at (-2,0);
+  \coordinate (F) at (-1.41421356237310,-1.41421356237310);
+  \coordinate (G) at (0,-2);
+  \coordinate (H) at (1.41421356237310,-1.41421356237310);
+  %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 8$};
+}
+
+%% A pentagon that is inscribed inside a circle.
+\newcommand{\myPentagon}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (0.618033988749895,1.90211303259031);
+  \coordinate (C) at (-1.61803398874989,1.17557050458495);
+  \coordinate (D) at (-1.61803398874989,-1.17557050458495);
+  \coordinate (E) at (0.618033988749895,-1.90211303259031);
+  %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 5$};
+}
+
+%% A square that is inscribed inside a circle.
+\newcommand{\mySquare}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (0,\radius);
+  \coordinate (C) at (-\radius,0);
+  \coordinate (D) at (0,-\radius);
+  %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- (D) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 4$};
+}
+
+%% A triangle that is inscribed inside a circle.
+\newcommand{\myTriangle}{%%
+  %% Draw the circle.
+  \draw[lineStyle] (centre) circle[radius=\radius];
+  %% Coordinates of where the polygon touches the circle.
+  \coordinate (A) at (\radius,0);
+  \coordinate (B) at (-1,1.73205080756888);
+  \coordinate (C) at (-1,-1.73205080756888);
+  % %% Draw the inscribed polygon.
+  \draw[lineStyle] (A) -- (B) -- (C) -- cycle;
+  %% Label the number of sides.
+  \node[below] at (0,-\dy) {$n = 3$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Approximating pi with an inscribed regular polygon.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  lineStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\radius}{2}
+\pgfmathsetmacro{\dy}{\radius+0.1}
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\ylow}{0}
+%%
+\coordinate (centre) at (\xlow,\ylow);
+%%
+%% Draw a circle with an inscribed square.
+\matrix[column sep=1.5cm,row sep=20pt]{%%
+  \myTriangle & \mySquare  \\
+  \myPentagon & \myHexagon \\
+  \myHeptagon & \myOctagon \\
+};
+\end{tikzpicture}
+
+\end{document}
