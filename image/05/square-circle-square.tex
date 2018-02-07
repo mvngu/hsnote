@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{square-circle-square}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{\left({#1}\comma {#2}\right)}
+
+%% Draw a point and label it.
+%%
+%% #1 -- Coordinates of the point.
+%% #2 -- Label the point with this name.
+%% #3 -- Where to place the label.
+\newcommand{\xyPoint}[3]{%%
+  \node[nodeStyle] at (#1) {};
+  \node[#3] at (#1) {$#2$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A circle inscribed inside a square.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  lineStyle/.style={-,very thick},%%
+  nodeStyle/.style={draw,inner sep=1.5pt,circle,fill=black,black}%%
+]
+%%
+%%
+\pgfmathsetmacro{\radius}{3}
+\pgfmathsetmacro{\smallRadius}{2.12132034355964}  %% 3*sqrt(2) / 2
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\ylow}{0}
+%%
+\coordinate (centre) at (\xlow,\ylow);
+\coordinate (lowerLeft) at (\xlow-\radius,\ylow-\radius);
+\coordinate (upperRight) at (\xlow+\radius,\ylow+\radius);
+%% Points on the unit circle.
+\coordinate (pbottom) at (\xlow,\ylow-\radius);
+\coordinate (pleft) at (\xlow-\radius,\ylow);
+\coordinate (pright) at (\xlow+\radius,\ylow);
+\coordinate (ptop) at (\xlow,\ylow+\radius);
+%%
+%%
+%% The square.
+\draw[lineStyle] (lowerLeft) rectangle (upperRight);
+%% The circle.
+\draw[lineStyle] (centre) circle[radius=\radius];
+%% A square inscribed within a unit circle.
+\draw[lineStyle] (pright) -- (ptop) -- (pleft) -- (pbottom) -- cycle;
+%% Some points on the unit circle.  Must be drawn last.
+\xyPoint{pright}{\tuple{r}{0}}{right}
+\xyPoint{pleft}{\tuple{-r}{0}}{left}
+\xyPoint{ptop}{\tuple{0}{r}}{above}
+\xyPoint{pbottom}{\tuple{0}{-r}}{below}
+\end{tikzpicture}
+
+\end{document}

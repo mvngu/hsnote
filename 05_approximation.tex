@@ -1057,6 +1057,65 @@ region in \Figure{fig:square_inscribed_circle} is
 or approximately $1.287611$ units, rounded to six decimal places.
 \end{solution}
 }{}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/05/square-circle-square.pdf}
+\caption{%%
+  An outer square with an inscribed circle of radius $r > 0$.  Inside
+  the circle is a smaller square.
+}
+\label{fig:square_unit_circle_square}
+\end{figure}
+
+\item \Figure{fig:square_unit_circle_square} shows a square that has a
+  circle, which in turn has a square.  The three shapes touch each
+  other at the given four points.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:areas_big_square_circle_small_square}
+    Let $\triple{A}{B}{C}$ be the areas of the outer square, the
+    circle, and the inner square, respectively.  Prove that
+    $C < B < A$.
+
+  \item\label{subprob:bound_pi}
+    Prove that $2 < \pi < 4$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:areas_big_square_circle_small_square}
+Since the circle has a radius of $r > 0$, its diameter is $2r$ and so
+the area of the outer square is $A = (2r)^2 = 4r^2$.  The circle has
+an area of $B = \pi r^2$.  Each side of the inner square has a length
+of
+%%
+\begin{align*}
+\ell
+&=
+\sqrt{
+  (r - 0)^2 + (0 - r)^2
+} \\[4pt]
+&=
+\sqrt{
+  r^2 + r^2
+} \\[4pt]
+&=
+\sqrt{2r^2} \\[4pt]
+&=
+r\sqrt{2}
+\end{align*}
+%%
+so that the inner square has an area of $C = (r\sqrt{2})^2 = 2r^2$.
+The inner square is drawn inside the circle, so it must be that
+$C < B$.  Furthermore, the circle is drawn inside the outer square so
+it must be that $B < A$.
+
+\solutionpart{subprob:bound_pi}
+From \Part{subprob:areas_big_square_circle_small_square} you know that
+$2r^2 < \pi r^2 < 4 r^2$.  Divide each term by $r^2$ to see that
+$2 < \pi < 4$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
