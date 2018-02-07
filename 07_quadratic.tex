@@ -135,6 +135,7 @@ do not worry about how \Expression{eqn:parabola_tip_x_coordinate} was
 derived.  This will be shown later on.
 
 \begin{example}
+\label{ex:quadratic_graph_a1_b1_c1}
 Sketch the graph of the quadratic function $f(x) = x^2 + x + 1$.
 \end{example}
 
@@ -172,7 +173,9 @@ f(-1/2) \\[4pt]
 %%
 Thus the tip of the parabola is the point
 $\tuple{-\frac{1}{2}}{\frac{3}{4}}$.  Next, choose the $x$-coordinates
-\[
+%%
+\begin{equation}
+\label{eqn:a1_b1_c1_x_coordinates}
 \frac{1}{2} = -\frac{1}{2} + 1,
 %%
 \qquad
@@ -182,7 +185,8 @@ $\tuple{-\frac{1}{2}}{\frac{3}{4}}$.  Next, choose the $x$-coordinates
 \qquad
 %%
 \frac{5}{2} = -\frac{1}{2} + 3
-\]
+\end{equation}
+%%
 whose corresponding $y$-coordinates are
 $\triple{\frac{7}{4}}{\frac{19}{4}}{\frac{39}{4}}$.  These three
 $y$-coordinates also correspond to the $x$-coordinates
@@ -211,5 +215,60 @@ shown in \Figure{fig:quadratic_graph_a1_b1_c1}.
 }
 \label{fig:quadratic_graph_a1_b1_c1}
 \end{figure}
+
+\begin{exercise}
+For the $x$-coordinates~\eqref{eqn:a1_b1_c1_x_coordinates} in
+\Example{ex:quadratic_graph_a1_b1_c1}, verify that the corresponding
+$y$-coordinates are
+$\triple{\frac{7}{4}}{\frac{19}{4}}{\frac{39}{4}}$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+The quadratic function is $f(x) = x^2 + x + 1$.  For $x = 1/2$ you have
+%%
+\begin{align*}
+f(1/2)
+&=
+\parenthesis*{\frac{1}{2}}^2 + \frac{1}{2} + 1 \\[4pt]
+&=
+\frac{1}{4} + \frac{1}{2} + 1 \\[4pt]
+&=
+\frac{1}{4} + \frac{2}{4} + \frac{4}{4} \\[4pt]
+&=
+\frac{7}{4}.
+\end{align*}
+%%
+For $x = 3/2$ you have
+%%
+\begin{align*}
+f(3/2)
+&=
+\parenthesis*{\frac{3}{2}}^2 + \frac{3}{2} + 1 \\[4pt]
+&=
+\frac{9}{4} + \frac{3}{2} + 1 \\[4pt]
+&=
+\frac{9}{4} + \frac{6}{4} + \frac{4}{4} \\[4pt]
+&=
+\frac{19}{4}.
+\end{align*}
+%%
+For $x = 5/2$ you have
+%%
+\begin{align*}
+f(5/2)
+&=
+\parenthesis*{\frac{5}{2}}^2 + \frac{5}{2} + 1 \\[4pt]
+&=
+\frac{25}{4} + \frac{5}{2} + 1 \\[4pt]
+&=
+\frac{25}{4} + \frac{10}{4} + \frac{4}{4} \\[4pt]
+&=
+\frac{39}{4}.
+\end{align*}
+%%
+
+\end{solution}
+}{}
 
 \end{document}
