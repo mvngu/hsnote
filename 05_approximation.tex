@@ -1116,6 +1116,377 @@ $2r^2 < \pi r^2 < 4 r^2$.  Divide each term by $r^2$ to see that
 $2 < \pi < 4$.
 \end{solution}
 }{}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=1]{image/05/koch-snowflake-0.pdf}
+  \label{fig:Koch_snowflake_zeroth_iteration}
+}
+%%
+\qquad
+%%
+\subfigure[]{
+  \includegraphics[scale=1]{image/05/koch-snowflake-1.pdf}
+  \label{fig:Koch_snowflake_first_iteration}
+} \\[4pt]
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=1]{image/05/koch-snowflake-2.pdf}
+  \label{fig:Koch_snowflake_second_iteration}
+}
+%%
+\qquad
+%%
+\subfigure[]{
+  \includegraphics[scale=1]{image/05/koch-snowflake-3.pdf}
+  \label{fig:Koch_snowflake_third_iteration}
+}
+\caption{%%
+  The first four iterations of the Koch snowflake.
+}
+\label{fig:Koch_snowflake_first_4_iterations}
+\end{figure}
+
+\item The \emph{Koch snowflake} is a fractal curve that looks like a
+  snowflake.  The construction of the Koch snowflake starts with an
+  equilateral triangle.  Each line segment is modified according to
+  the following rules:
+  %%
+  \begin{packedenumeral}
+  \item Divide the line segment into three segments of equal length.
+    Let $\ell$ be the middle segment.
+
+  \item Construct an equilateral triangle whose base is $\ell$ and
+    points outward.
+
+  \item Remove the segment $\ell$.
+  \end{packedenumeral}
+  %%
+  The starting equilateral triangle is the result of the zeroth
+  iteration.  The first iteration consists in applying the above three
+  rules to each line segment of the equilateral triangle.  The second
+  iteration starts with the result of the first iteration and applies
+  the above three rules to each line segment.  And so on; see
+  \Figure{fig:Koch_snowflake_first_4_iterations}.  Suppose you start
+  with an equilateral triangle each of whose three sides has length
+  one.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:Koch_snowflake_zeroth_iteration}
+    Calculate the perimeter and area of the shape in
+    \Figure{fig:Koch_snowflake_zeroth_iteration}.
+
+  \item\label{subprob:Koch_snowflake_first_iteration}
+    Calculate the perimeter and area of the shape in
+    \Figure{fig:Koch_snowflake_first_iteration}.
+
+  \item\label{subprob:Koch_snowflake_second_iteration}
+    Calculate the perimeter and area of the shape in
+    \Figure{fig:Koch_snowflake_second_iteration}.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:Koch_snowflake_zeroth_iteration}
+\Figure{fig:Koch_snowflake_zeroth_iteration} is an equilateral
+triangle each of whose three sides has length one.  The triangle has a
+perimeter of $3$.  To calculate the area of the triangle, you can use
+Heron's formula because you already know the length of each side.  By
+Heron's formula, you have the value
+\[
+s
+=
+\frac{1 + 1 + 1}{2}
+=
+\frac{3}{2}
+\]
+and so the area of the triangle is given by
+%%
+\begin{align*}
+A
+&=
+\sqrt{
+  s (s - 1) (s - 1) (s - 1)
+} \\[4pt]
+&=
+\sqrt{
+  s (s - 1)^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{3}{2}
+  \parenthesis*{\frac{3}{2} - \frac{2}{2}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{3}{2}
+  \parenthesis*{\frac{1}{2}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{3}{2} \times \frac{1}{2^3}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{3}{16}
+} \\[4pt]
+&=
+\frac{\sqrt{3}}{4}.
+\end{align*}
+
+\solutionpart{subprob:Koch_snowflake_first_iteration}
+To get the shape in \Figure{fig:Koch_snowflake_first_iteration}, each
+line segment from the triangle of
+\Figure{fig:Koch_snowflake_zeroth_iteration} was first broken up into
+three segments of equal length.  In other words, each line segment of
+the shape in \Figure{fig:Koch_snowflake_first_iteration} has a length
+of $1/3$.  Since the shape has $12$ line segments, the perimeter of
+the shape is $\frac{1}{3} \times 12 = \frac{12}{3} = 4$.
+
+To calculate the area, note that you already know the area of the
+shaded triangle in
+\Figure{fig:Koch_snowflake_first_iteration_shaded_area}, which was
+calculated in \Part{subprob:Koch_snowflake_zeroth_iteration}.  All you
+need to do now is calculate the area of each unshaded triangle in
+\Figure{fig:Koch_snowflake_first_iteration_shaded_area}.  Each of the
+unshaded triangle in
+\Figure{fig:Koch_snowflake_first_iteration_shaded_area} is an
+equilateral triangle each of whose three sides has a length of $1/3$.
+Using Heron's formula, you have the value
+%%
+\begin{align*}
+s
+&=
+\frac{
+  \frac{1}{3} + \frac{1}{3} + \frac{1}{3}
+}{
+  2
+} \\[4pt]
+&=
+\frac{1}{2}
+\end{align*}
+%%
+and so each unshaded triangle has an area of
+%%
+\begin{align*}
+\sqrt{
+  s \parenthesis*{s - \frac{1}{3}}^3
+}
+&=
+\sqrt{
+  \frac{1}{2} \parenthesis*{\frac{1}{2} - \frac{1}{3}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{2} \parenthesis*{\frac{1}{6}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{2} \times \frac{1}{(2 \times 3)^3}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{2^4 \times 3^3}
+} \\[4pt]
+&=
+\frac{
+  1
+}{
+  4 \times 3 \sqrt{3}
+} \\[4pt]
+&=
+\frac{
+  1
+}{
+  12 \sqrt{3}
+} \\[4pt]
+&=
+\frac{
+  1
+}{
+  12 \sqrt{3}
+}
+\times
+\frac{\sqrt{3}}{\sqrt{3}} \\[4pt]
+&=
+\frac{
+  \sqrt{3}
+}{
+  36
+}.
+\end{align*}
+%%
+The area of the shape in \Figure{fig:Koch_snowflake_first_iteration}
+is therefore
+%%
+\begin{align*}
+B
+&=
+A + 3 \times \frac{\sqrt{3}}{36} \\[4pt]
+&=
+\frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{12} \\[4pt]
+&=
+\frac{\sqrt{3}}{4} \times \frac{3}{3} + \frac{\sqrt{3}}{12} \\[4pt]
+&=
+\frac{3\sqrt{3} + \sqrt{3}}{12} \\[4pt]
+&=
+\frac{4\sqrt{3}}{12} \\[4pt]
+&=
+\frac{\sqrt{3}}{3}.
+\end{align*}
+%%
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/05/koch-snowflake-1-area.pdf}
+\caption{%%
+  The first iteration of the Koch snowflake.  The shaded triangle is
+  the equilateral triangle with which you started.
+}
+\label{fig:Koch_snowflake_first_iteration_shaded_area}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/05/koch-snowflake-2-area.pdf}
+\caption{%%
+  The second iteration of the Koch snowflake.  The shaded region is
+  the shape from
+  \Figure{fig:Koch_snowflake_first_iteration_shaded_area}.
+}
+\label{fig:Koch_snowflake_second_iteration_shaded_area}
+\end{figure}
+
+\solutionpart{subprob:Koch_snowflake_second_iteration}
+The perimeter of the shape in
+\Figure{fig:Koch_snowflake_second_iteration} is calculated in the same
+way as you did for \Part{subprob:Koch_snowflake_first_iteration}.
+Each line segment of the shape in
+\Figure{fig:Koch_snowflake_second_iteration} is obtained by breaking
+up each line segment from \Figure{fig:Koch_snowflake_first_iteration}
+into three equal parts.  Thus each line segment in
+\Figure{fig:Koch_snowflake_second_iteration} has a length of
+$\frac{1}{3} \times \frac{1}{3} = \frac{1}{9}$.  As there are $48$
+line segments, the shape has a perimeter of
+%%
+\begin{align*}
+\frac{1}{9} \times 48
+&=
+\frac{1}{9} \times \frac{3 \times 16}{1} \\[4pt]
+&=
+\frac{16}{3}.
+\end{align*}
+
+To calculate the area, you do as you did
+in \Part{subprob:Koch_snowflake_first_iteration}.  You already know
+the area of the shaded region in
+\Figure{fig:Koch_snowflake_second_iteration_shaded_area} so what
+remains is to calculate the area of each unshaded triangle in
+\Figure{fig:Koch_snowflake_second_iteration_shaded_area}.  Using
+Heron's formula, you have the value
+%%
+\begin{align*}
+s
+&=
+\frac{
+  \frac{1}{9} + \frac{1}{9} + \frac{1}{9}
+}{
+  2
+} \\[4pt]
+&=
+\frac{3}{9} \times \frac{1}{2} \\[4pt]
+&=
+\frac{1}{3} \times \frac{1}{2} \\[4pt]
+&=
+\frac{1}{6}
+\end{align*}
+%%
+and so each unshaded triangle in
+\Figure{fig:Koch_snowflake_second_iteration_shaded_area} has an area
+of
+%%
+\begin{align*}
+\sqrt{
+  s \parenthesis*{s - \frac{1}{9}}^3
+}
+&=
+\sqrt{
+  \frac{1}{6} \parenthesis*{\frac{1}{6} - \frac{1}{9}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{6} \parenthesis*{\frac{1}{18}}^3
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{2 \times 3} \times \frac{1}{2^3 \times 3^6}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{2^4 \times 3^7}
+} \\[4pt]
+&=
+\sqrt{
+  \frac{1}{4^2 \times 9^2 \times 3^2 \times 3}
+} \\[4pt]
+&=
+\frac{1}{
+  4 \times 9 \times 3
+  \sqrt{
+    3
+  }
+} \\[4pt]
+&=
+\frac{1}{
+  4 \times 3^3
+  \sqrt{
+    3
+  }
+} \\[4pt]
+&=
+\frac{1}{
+  4 \times 3^3
+  \sqrt{
+    3
+  }
+}
+\times
+\frac{\sqrt{3}}{\sqrt{3}} \\[4pt]
+&=
+\frac{\sqrt{3}}{
+  4 \times 3^4
+}.
+\end{align*}
+%%
+Therefore the shape in \Figure{fig:Koch_snowflake_second_iteration}
+has an area of
+%%
+\begin{align*}
+C
+&=
+B
++
+12 \times \frac{\sqrt{3}}{
+  4 \times 3^4
+} \\[4pt]
+&=
+\frac{\sqrt{3}}{3}
++
+\frac{\sqrt{3}}{
+  3^3
+} \\[4pt]
+&=
+\frac{3^2 \sqrt{3}}{3^3}
++
+\frac{\sqrt{3}}{
+  3^3
+} \\[4pt]
+&=
+\frac{10\sqrt{3}}{27}.
+\end{align*}
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}

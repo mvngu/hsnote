@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{koch-snowflake-0}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+%% The zeroth iteration.  This is just a unit equilateral triangle.
+\newcommand{\zerothIteration}{%%
+  \draw[lineStyle] (origin) -- ++(\degree:\length)
+  -- ++(-\degree:\length) -- cycle;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The zeroth iteration of the Koch snowflake.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  lineStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\degree}{60}  %% Value of each internal angle.
+\pgfmathsetmacro{\length}{5}   %% Length of each side of triangle.
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\ylow}{\xlow}
+\coordinate (origin) at (\xlow,\ylow);
+%%
+%%
+%% The zeroth iteration of the Koch snowflake.
+\zerothIteration
+\end{tikzpicture}
+
+\end{document}
