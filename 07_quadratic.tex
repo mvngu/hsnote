@@ -134,4 +134,82 @@ function $f(x)$ to obtain the corresponding $y$-coordinate.  For now,
 do not worry about how \Expression{eqn:parabola_tip_x_coordinate} was
 derived.  This will be shown later on.
 
+\begin{example}
+Sketch the graph of the quadratic function $f(x) = x^2 + x + 1$.
+\end{example}
+
+\begin{solution}
+The first thing you should do is determine the tip point.  You have
+the values $a = 1$ and $b = 1$.  Use
+\Expression{eqn:parabola_tip_x_coordinate} to see that the
+$x$-coordinate of the tip point is
+%%
+\begin{align*}
+x
+&=
+-\frac{1}{2 \times 1} \\[4pt]
+&=
+-\frac{1}{2}
+\end{align*}
+%%
+and the $y$-coordinate of the tip point is
+%%
+\begin{align*}
+y
+&=
+f(-1/2) \\[4pt]
+&=
+\parenthesis*{-\frac{1}{2}}^2 + \parenthesis*{-\frac{1}{2}} + 1 \\[4pt]
+&=
+\frac{1}{4} - \frac{1}{2} + 1 \\[4pt]
+&=
+\frac{1}{4} - \frac{2}{4} + \frac{4}{4} \\[4pt]
+&=
+\frac{1 - 2 + 4}{4} \\[4pt]
+&=
+\frac{3}{4}.
+\end{align*}
+%%
+Thus the tip of the parabola is the point
+$\tuple{-\frac{1}{2}}{\frac{3}{4}}$.  Next, choose the $x$-coordinates
+\[
+\frac{1}{2} = -\frac{1}{2} + 1,
+%%
+\qquad
+%%
+\frac{3}{2} = -\frac{1}{2} + 2,
+%%
+\qquad
+%%
+\frac{5}{2} = -\frac{1}{2} + 3
+\]
+whose corresponding $y$-coordinates are
+$\triple{\frac{7}{4}}{\frac{19}{4}}{\frac{39}{4}}$.  These three
+$y$-coordinates also correspond to the $x$-coordinates
+$\triple{-\frac{3}{2}}{-\frac{5}{2}}{-\frac{7}{2}}$ and so you have
+\[
+f(1/2) = f(-3/2),
+%%
+\quad
+%%
+f(3/2) = f(-5/2),
+%%
+\quad
+%%
+f(5/2) = f(-7/2).
+\]
+Plot the above seven points, connect the dots, and you get the graph
+shown in \Figure{fig:quadratic_graph_a1_b1_c1}.
+\end{solution}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.2]{image/07/a1-b1-c1.pdf}
+\caption{%%
+  A graph of the quadratic function $f(x) = x^2 + x + 1$.  The tip of
+  the function is at the point $\tuple{-\frac{1}{2}}{\frac{3}{4}}$.
+}
+\label{fig:quadratic_graph_a1_b1_c1}
+\end{figure}
+
 \end{document}
