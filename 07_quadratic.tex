@@ -351,6 +351,7 @@ with at least one value of $x$ such that $f(x) = 0$.  But what is the
 quadratic formula and how is it derived?
 
 \begin{exercise}
+\label{ex:completing_the_square}
 Let $\pair{a}{b} \in \RR$ such that $a \neq 0$.  Show that
 \[
 \parenthesis*{x + \frac{b}{2a}}^2
@@ -443,6 +444,7 @@ $x = \pm\sqrt{a}$ then you have $x^2 = a$.
 }{}
 
 \begin{exercise}
+\label{ex:x_squared_a_implies_plus_minus_sqrt_a}
 If $a$ is a real number such that $x^2 = a$, prove that
 $x = \pm\sqrt{a}$.
 \end{exercise}
@@ -474,5 +476,136 @@ be written as $x^{2/2} = (-1)^{2/2} a^{1/2}$.  Use the fact that
 $(-1)^{2/2} = (-1)^1 = -1$ to write $x = -\sqrt{a}$.
 \end{solution}
 }{}
+
+First, let's derive the quadratic formula.  When you write $f(x) = 0$,
+it is equivalent to writing $ax^2 + bx + c = 0$.  When you require a
+value of $x$ such that $f(x) = 0$, what you really want is to solve
+the equation $ax^2 + bx + c = 0$ for $x$.  In the last equation, if
+you divide each term by $a$ then you obtain the equivalent expression
+\[
+x^2 + \frac{b}{a} x + \frac{c}{a}
+=
+0.
+\]
+Now move the term $c/a$ to the right-hand side to obtain
+%%
+\begin{equation}
+\label{eqn:quadratic_formula_factor_LHS}
+x^2 + \frac{b}{a} x
+=
+-\frac{c}{a}.
+\end{equation}
+%%
+The problem now is to factor the left-hand side of
+\Equation{eqn:quadratic_formula_factor_LHS}.  From
+\Exercise{ex:completing_the_square} you know that the square
+$\parenthesis*{x + \frac{b}{2a}}^2$ can be expanded to become
+\[
+\parenthesis*{x + \frac{b}{2a}}^2
+=
+x^2 + \frac{b}{a} x + \parenthesis*{\frac{b}{2a}}^2
+\]
+where the expression $x^2 + \frac{b}{a} x$ is the same as the
+left-hand side of \Equation{eqn:quadratic_formula_factor_LHS}.
+In other words, if you add the term $\parenthesis*{\frac{b}{2a}}^2$ to
+both sides of \Equation{eqn:quadratic_formula_factor_LHS}, then you
+can use \Exercise{ex:completing_the_square} to factor the left-hand
+side of \Equation{eqn:quadratic_formula_factor_LHS}.  Adding
+$\parenthesis*{\frac{b}{2a}}^2$ to both sides of
+\Equation{eqn:quadratic_formula_factor_LHS} results in
+%%
+\begin{align*}
+x^2 + \frac{b}{a} x + \parenthesis*{\frac{b}{2a}}^2
+&=
+-\frac{c}{a} + \parenthesis*{\frac{b}{2a}}^2 \\[4pt]
+&=
+-\frac{c}{a} + \frac{b^2}{4a^2} \\[4pt]
+&=
+-\frac{c}{a} \times \frac{4a}{4a} + \frac{b^2}{4a^2} \\[4pt]
+&=
+-\frac{4ac}{4a^2} + \frac{b^2}{4a^2} \\[4pt]
+&=
+\frac{
+  b^2 - 4ac
+}{
+  4a^2
+}
+\end{align*}
+%%
+where the left-hand side of the latter expression can be factored by
+using \Exercise{ex:completing_the_square}.  In other words,
+\Equation{eqn:quadratic_formula_factor_LHS} can also be written as
+\[
+\parenthesis*{x + \frac{b}{2a}}^2
+=
+\frac{
+  b^2 - 4ac
+}{
+  4a^2
+}.
+\]
+Use \Exercise{ex:x_squared_a_implies_plus_minus_sqrt_a} to write the
+last equation as
+%%
+\begin{equation}
+\label{eqn:quadratic_formula_completing_square_solve_for_x}
+\begin{aligned}
+x + \frac{b}{2a}
+&=
+\pm
+\sqrt{
+  \frac{
+    b^2 - 4ac
+  }{
+    4a^2
+  }
+} \\[4pt]
+&=
+\pm
+\frac{
+  \sqrt{b^2 - 4ac}
+}{
+  2a
+}
+\end{aligned}
+\end{equation}
+%%
+because the expression $\sqrt{4a^2}$ simplifies to
+%%
+\begin{align*}
+\sqrt{4a^2}
+&=
+\sqrt{4} \times \sqrt{a^2} \\[4pt]
+&=
+2 (a^2)^{1/2} \\[4pt]
+&=
+2 a^{2/2} \\[4pt]
+&=
+2a.
+\end{align*}
+%%
+Solve for $x$ in
+\Expression{eqn:quadratic_formula_completing_square_solve_for_x} and
+you obtain
+%%
+\begin{align*}
+x
+&=
+-\frac{b}{2a}
+\pm
+\frac{
+  \sqrt{b^2 - 4ac}
+}{
+  2a
+} \\[4pt]
+&=
+\frac{
+  -b \pm \sqrt{b^2 - 4ac}
+}{
+  2a
+}
+\end{align*}
+%%
+which is called the \emph{quadratic formula}.
 
 \end{document}
