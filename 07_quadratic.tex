@@ -351,6 +351,40 @@ with at least one value of $x$ such that $f(x) = 0$.  But what is the
 quadratic formula and how is it derived?
 
 \begin{exercise}
+Let $\pair{a}{b} \in \RR$ such that $a \neq 0$.  Show that
+\[
+\parenthesis*{x + \frac{b}{2a}}^2
+=
+x^2 + \frac{b}{a} x + \parenthesis*{\frac{b}{2a}}^2.
+\]
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+Use the distributive laws to expand
+$\parenthesis*{x + \frac{b}{2a}}^2$ and you get
+%%
+\begin{align*}
+\parenthesis*{x + \frac{b}{2a}}^2
+&=
+\parenthesis*{x + \frac{b}{2a}} \parenthesis*{x + \frac{b}{2a}} \\[4pt]
+&=
+x \parenthesis*{x + \frac{b}{2a}}
++
+\frac{b}{2a} \parenthesis*{x + \frac{b}{2a}} \\[4pt]
+&=
+x^2 + \frac{b}{2a} x + \frac{b}{2a} x + \parenthesis*{\frac{b}{2a}}^2 \\[4pt]
+&=
+x^2 + 2 \times \frac{b}{2a} x + \parenthesis*{\frac{b}{2a}}^2 \\[4pt]
+&=
+x^2 + \frac{b}{a} x + \parenthesis*{\frac{b}{2a}}^2
+\end{align*}
+%%
+as required.
+\end{solution}
+}{}
+
+\begin{exercise}
 Let $a \in \RR$ and consider the numbers $\pm\sqrt{a}$.  Here the
 symbol ``$\pm$'' means that you have both of $\sqrt{a}$ and
 $-\sqrt{a}$.  If $x = \pm\sqrt{a}$, prove that $x^2 = a$.
