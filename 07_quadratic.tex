@@ -780,4 +780,92 @@ through the points, and you obtain the graph in
 \label{fig:a1_bminus1_cminus2}
 \end{figure}
 
+\begin{exercise}
+Sketch the graph of $f(x) = -x^2 + 1$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You have the values $a = -1$ and $c = 1$.  The value of $b$ is
+$b = 0$ because $f(x) = -x^2 + 1 = -x^2 + 0x + 1$.  Again, you can use
+three points to draw the graph of $f(x)$.  Those three points are: the
+tip of the parabola and the two $x$-intercepts.
+
+Use \Equation{eqn:parabola_tip_x_coordinate} to see that the tip point
+occurs at the $x$-coordinate
+\[
+x
+=
+-\frac{0}{2(-1)}
+=
+0
+\]
+whose corresponding $y$-coordinate is
+\[
+y
+=
+f(0)
+=
+-0^2 + 1
+=
+1.
+\]
+Then the tip of the parabola occurs at the point $\tuple{0}{1}$.
+
+Let's calculate the $x$-intercepts.  Use
+\Equation{eqn:quadratic_formula} to obtain the $x$-intercept
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -0 + \sqrt{0^2 - 4(-1)(1)}
+}{
+  2(-1)
+} \\[4pt]
+&=
+\frac{
+  \sqrt{4}
+}{
+  -2
+} \\[4pt]
+&=
+-1.
+\end{align*}
+%%
+The other $x$-intercept occurs at
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -0 - \sqrt{0^2 - 4(-1)(1)}
+}{
+  2(-1)
+} \\[4pt]
+&=
+\frac{
+  -\sqrt{4}
+}{
+  -2
+} \\[4pt]
+&=
+1.
+\end{align*}
+%%
+Thus the $x$-intercepts are $\tuple{-1}{0}$ and $\tuple{1}{0}$.  Plot
+the three points and connect the dots to obtain the graph in
+\Figure{fig:aminus1_c1}.
+\end{solution}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/aminus1-c1.pdf}
+\caption{%%
+  Graph of the function $f(x) = -x^2 + 1$ through three points.
+}
+\label{fig:aminus1_c1}
+\end{figure}
+}{}
+
 \end{document}
