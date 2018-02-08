@@ -350,4 +350,62 @@ this case, the \emph{quadratic formula} is guaranteed to provide you
 with at least one value of $x$ such that $f(x) = 0$.  But what is the
 quadratic formula and how is it derived?
 
+\begin{exercise}
+Let $a \in \RR$ and consider the numbers $\pm\sqrt{a}$.  Here the
+symbol ``$\pm$'' means that you have both of $\sqrt{a}$ and
+$-\sqrt{a}$.  If $x = \pm\sqrt{a}$, prove that $x^2 = a$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+You must prove two statements:
+%%
+\begin{packedenumeral}
+\item\label{case:x_sqrt_a_implies_x_squared_a}
+  If $x = \sqrt{a}$ then $x^2 = a$.
+
+\item\label{case:x_minus_sqrt_a_implies_x_squared_a}
+  If $x = -\sqrt{a}$ then $x^2 = a$.
+\end{packedenumeral}
+%%
+First, let's prove \Statement{case:x_sqrt_a_implies_x_squared_a}.  If
+$x = \sqrt{a}$, then you can square both sides of the equation to get
+$x^2 = (\sqrt{a})^2$.  Since $\sqrt{a} = a^{1/2}$, then you can write
+the expression $x^2 = (\sqrt{a})^2$ as
+%%
+\begin{equation}
+\label{eqn:x_sqrt_a_implies_x_squared_a}
+\begin{aligned}
+x^2
+&=
+(\sqrt{a})^2 \\[4pt]
+&=
+(a^{1/2})^2 \\[4pt]
+&=
+a^{2/2} \\[4pt]
+&=
+a.
+\end{aligned}
+\end{equation}
+%%
+Finally, let's prove
+\Statement{case:x_minus_sqrt_a_implies_x_squared_a}.  If
+$x = -\sqrt{a}$, then squaring both sides of the equation results in
+%%
+\begin{align*}
+x^2
+&=
+\bigparen{(-1)\sqrt{a}}^2 \\[4pt]
+&=
+(-1)^2 (\sqrt{a})^2 \\[4pt]
+&=
+(\sqrt{a})^2.
+\end{align*}
+%%
+The latter equation can be simplied to $x^2 = a$ by using
+\Expression{eqn:x_sqrt_a_implies_x_squared_a}.  Therefore if
+$x = \pm\sqrt{a}$ then you have $x^2 = a$.
+\end{solution}
+}{}
+
 \end{document}
