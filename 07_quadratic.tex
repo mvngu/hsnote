@@ -610,11 +610,14 @@ which is called the \emph{quadratic formula}.  The above can be
 summarised as follows.
 
 \begin{theorem}
+\label{thm:quadratic_formula}
 \textbf{Quadratic formula.}
 Let $\triple{a}{b}{c} \in \RR$ such that $a \neq 0$ and consider the
 quadratic function $f(x) = ax^2 + bx + c$.  Then the solutions of the
 equation $f(x) = 0$ can be written as
-\[
+%%
+\begin{equation}
+\label{eqn:quadratic_formula}
 x
 =
 \frac{
@@ -622,7 +625,39 @@ x
 }{
   2a
 }.
-\]
+\end{equation}
 \end{theorem}
+
+What does the quadratic \Formula{eqn:quadratic_formula} mean?  How do
+you make sense of the equation?  Let's assume you have a quadratic
+function $f(x) = ax^2 + bx + c$ with $\triple{a}{b}{c}$ being real
+numbers such that $a \neq 0$.
+Expression~\eqref{eqn:quadratic_formula} states that there are values
+of $x$ such that $f(x) = 0$ and those values of $x$ can be written as
+\[
+x
+=
+\frac{
+  -b + \sqrt{b^2 - 4ac}
+}{
+  2a
+}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+x
+=
+\frac{
+  -b - \sqrt{b^2 - 4ac}
+}{
+  2a
+}.
+\]
+In the graph of $f(x)$, the $x$-intercept is obtained by setting
+$f(x) = 0$ and solving the last equation for $x$.  The whole point of
+\Theorem{thm:quadratic_formula} is to help you find the $x$-intercepts
+of a quadratic function.
 
 \end{document}
