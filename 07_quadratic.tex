@@ -442,4 +442,37 @@ $x = \pm\sqrt{a}$ then you have $x^2 = a$.
 \end{solution}
 }{}
 
+\begin{exercise}
+If $a$ is a real number such that $x^2 = a$, prove that
+$x = \pm\sqrt{a}$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+You have two statements to prove:
+%%
+\begin{packedenumeral}
+\item\label{case:x_squared_a_sqrt_a}
+  If $a \in \RR$ such that $x^2 = a$, then $x = \sqrt{a}$.
+
+\item\label{case:x_squared_a_minus_sqrt_a}
+  If $a \in \RR$ such that $x^2 = a$, then $x = -\sqrt{a}$.
+\end{packedenumeral}
+%%
+First, let's prove \Statement{case:x_squared_a_sqrt_a}.  You know that
+$x^2 = a$ and the square root of any number $c \in \RR$ can be written
+as $\sqrt{c} = c^{1/2}$.  Taking the square root of both sides of the
+equation $x^2 = a$ and you get $(x^2)^{1/2} = a^{1/2}$, which can also
+be written as $x^{2/2} = a^{1/2}$.  The latter equation simplifies to
+$x = \sqrt{a}$ because $x^{2/2} = x^1 = x$.
+
+Finally, let's prove \Statement{case:x_squared_a_minus_sqrt_a}.  You
+know that $x^2 = a$ and since $a = (-1)^2 a$, you can also write
+$x^2 = (-1)^2 a$.  Take the square root of both sides of the last
+equation to get $(x^2)^{1/2} = \bigparen{(-1)^2 a}^{1/2}$, which can
+be written as $x^{2/2} = (-1)^{2/2} a^{1/2}$.  Use the fact that
+$(-1)^{2/2} = (-1)^1 = -1$ to write $x = -\sqrt{a}$.
+\end{solution}
+}{}
+
 \end{document}
