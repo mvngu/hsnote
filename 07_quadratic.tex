@@ -1052,6 +1052,62 @@ function results in only one point, not the three that you require.
 In the case of the function $f(x) = x^2$, you should have used the
 strategy from \Section{sec:general_form}.
 
+\begin{exercise}
+Consider the function $f(x) = x^2 + 2x + 1$.  Explain why the graph
+drawing strategy from \Section{sec:quadratic_formula} cannot help you
+with sketching the graph of $f(x)$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+First, let's calculate the tip point of the parabola.  From
+\Equation{eqn:parabola_tip_x_coordinate}, the $x$-coordinate of the
+tip point is
+%%
+\begin{align*}
+x
+&=
+-\frac{2}{2(1)} \\[4pt]
+&=
+-1.
+\end{align*}
+%%
+The corresponding $y$-coordinate is $y = f(-1) = 0$.  The tip of the
+parabola is located at the point $\tuple{-1}{0}$.
+
+Next, you use the quadratic \Formula{thm:quadratic_formula} to
+determine the $x$-intercepts of $f(x)$.  The $x$-coordinates of the
+$x$-intercept are
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -2 \pm \sqrt{2^2 - 4(1)(1)}
+}{
+  2(1)
+} \\[4pt]
+&=
+\frac{
+  -2 \pm \sqrt{4 - 4}
+}{
+  2
+} \\[4pt]
+&=
+\frac{-2}{2} \\[4pt]
+&=
+-1.
+\end{align*}
+%%
+The corresponding $y$-coordinate is $y = f(-1) = 0$.  In other words,
+the function $f(x)$ has its $x$-intercepts at the point
+$\tuple{-1}{0}$, which is also the tip point of the parabola.  In the
+case of $f(x)$, the graph sketching strategy
+from \Section{sec:quadratic_formula} results in only one point, not
+the three that you need to draw the graph.
+\end{solution}
+}{}
+
 Is there a way to determine when to use the strategies
 from \Sections{sec:general_form}{sec:quadratic_formula} for graphing a
 quadratic function?  The answer is yes, but you need to understand a
