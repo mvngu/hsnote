@@ -1279,6 +1279,44 @@ from \Part{subprob:zero_discriminant_unique_root} is also the unique
 root of $f(x)$.
 \end{solution}
 }{}
+
+\item If $f(x)$ is a quadratic function with positive discriminant,
+  prove that $f(x)$ has two different roots.
+\ifbool{showSolution}{
+\begin{solution}
+Suppose that the quadratic function $f(x)$ can be written as
+$f(x) = ax^2 + bx + c$, where $\triple{a}{b}{c}$ are real numbers such
+that $a \neq 0$.  Use \Theorem{thm:quadratic_formula} to write the
+roots of $f(x)$ as
+\[
+x
+=
+\frac{
+  -b \pm \sqrt{b^2 - 4ac}
+}{
+  2a
+}.
+\]
+As the discriminant is assumed to be positive, the number
+$\Delta = b^2 - 4ac$ is positive and so the square root
+$\sqrt{\Delta}$ is also positive.  Thus the roots of $f(x)$ can be
+written as
+\[
+x
+=
+\frac{-b + \sqrt{\Delta}}{2a}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+x
+=
+\frac{-b - \sqrt{\Delta}}{2a}
+\]
+which are two different numbers because $\sqrt{\Delta} > 0$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
