@@ -1337,38 +1337,7 @@ discriminant.  The discriminant of $f(w)$ is $\Delta = 32$.  This is a
 positive number so there exists at least one real value of $w$ that
 solves \Equation{eqn:rectangular_region_equation}.  Using the
 quadratic formula, the roots of $f(w)$ can be written as
-%%
-\begin{align*}
-w
-&=
-\frac{
-  -2 \pm \sqrt{\Delta}
-}{
-  2(1)
-} \\[4pt]
-&=
-\frac{
-  -2 \pm \sqrt{2 \times 4^2}
-}{
-  2
-} \\[4pt]
-&=
-\frac{
-  -2 \pm 4\sqrt{2}
-}{
-  2
-} \\[4pt]
-&=
-\frac{
-  2(-1 \pm 2\sqrt{2})
-}{
-  2
-} \\[4pt]
-&=
--1 \pm 2\sqrt{2}.
-\end{align*}
-%%
-One root of $f(w)$ is given by
+$w = -1 \pm 2\sqrt{2}$.  One root of $f(w)$ is given by
 \[
 w_1
 =
@@ -1401,6 +1370,7 @@ rounded to four decimal places.
 \end{figure}
 
 \begin{exercise}
+\label{ex:rectangular_region_discriminant}
 In the solution of \Example{ex:fence_a_rectangular_region}, verify
 that the discriminant is $\Delta = 32$.
 \end{exercise}
@@ -1419,6 +1389,52 @@ the discriminant of $f(w)$ is
 4 + 28 \\[4pt]
 &=
 32
+\end{align*}
+%%
+as required.
+\end{solution}
+}{}
+
+\begin{exercise}
+In the solution of \Example{ex:fence_a_rectangular_region}, verify
+that the roots of $f(w)$ can be written as $w = -1 \pm 2\sqrt{2}$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+You have the equation $f(w) = w^2 + 2w - 7$, whose roots can be
+calculated by using the quadratic formula.  The discriminant of $f(w)$
+is known to be $\Delta = 32$, as verified in
+\Exercise{ex:rectangular_region_discriminant}, so the roots are
+%%
+\begin{align*}
+w
+&=
+\frac{
+  -2 \pm \sqrt{\Delta}
+}{
+  2(1)
+} \\[4pt]
+&=
+\frac{
+  -2 \pm \sqrt{2 \times 4^2}
+}{
+  2
+} \\[4pt]
+&=
+\frac{
+  -2 \pm 4\sqrt{2}
+}{
+  2
+} \\[4pt]
+&=
+\frac{
+  2(-1 \pm 2\sqrt{2})
+}{
+  2
+} \\[4pt]
+&=
+-1 \pm 2\sqrt{2}
 \end{align*}
 %%
 as required.
