@@ -1278,6 +1278,135 @@ This section will show you how the quadratic function can be used in a
 variety of situations.  The section consists of mostly worked examples
 and exercises.
 
+\begin{example}
+You want to put a fence around a rectangular region that has an area
+of $7$ metres squared.  You want the length of the rectangular region
+to be two metres longer than the width.  Calculate the width of the
+region.
+\end{example}
+
+\begin{solution}
+Whenever possible, you should first draw a picture to help you solve a
+problem.  In this example, the rectangular region and its dimensions
+can be illustrated as shown in
+\Figure{fig:rectangular_region_7_metres_squared}.  Since the width of
+the region is $w$ metres and its length is $w + 2$ metres, the area of
+the region is $(w + 2)w$ metres squared.  However, you also know that
+the region has an area of $7$~metres squared, which can be used to
+give you the equation
+%%
+\begin{equation}
+\label{eqn:rectangular_region_equation}
+(w + 2)w
+=
+7.
+\end{equation}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/rectangular-fence.pdf}
+\caption{%%
+  A rectangular region whose area is $7$ metres squared.  The width of
+  the region is denoted $w$.
+}
+\label{fig:rectangular_region_7_metres_squared}
+\end{figure}
+
+Let's determine all values of $w$ that satisfy
+\Equation{eqn:rectangular_region_equation}.  Expand the left-hand side
+of \Equation{eqn:rectangular_region_equation} to get $w^2 + 2w = 7$.
+Upon moving everything to the left-hand side, you end up with the
+quadratic equation
+%%
+\begin{equation}
+\label{eqn:rectangular_region_quadratic}
+w^2 + 2w - 7
+=
+0.
+\end{equation}
+%%
+Writing the left-hand side as $f(w) = w^2 + 2w - 7$,
+\Equation{eqn:rectangular_region_quadratic} can also be written as
+$f(w) = 0$.  This means that you want to determine all roots of
+$f(w)$.  Before calculating the roots of $f(w)$, you investigate
+whether $f(w)$ has a unique root, two different roots, or the graph of
+$f(w)$ does not intersect the horizontal axis.  This is a job for the
+discriminant.  The discriminant of $f(w)$ is
+%%
+\begin{align*}
+\Delta
+&=
+2^2 - 4(1)(-7) \\[4pt]
+&=
+32.
+\end{align*}
+%%
+This is a positive number so there exists at least one real value of
+$w$ that solves \Equation{eqn:rectangular_region_equation}.  Using the
+quadratic formula, the roots of $f(w)$ can be written as
+%%
+\begin{align*}
+w
+&=
+\frac{
+  -2 \pm \sqrt{\Delta}
+}{
+  2(1)
+} \\[4pt]
+&=
+\frac{
+  -2 \pm \sqrt{2 \times 4^2}
+}{
+  2
+} \\[4pt]
+&=
+\frac{
+  -2 \pm 4\sqrt{2}
+}{
+  2
+} \\[4pt]
+&=
+\frac{
+  2(-1 \pm 2\sqrt{2})
+}{
+  2
+} \\[4pt]
+&=
+-1 \pm 2\sqrt{2}.
+\end{align*}
+%%
+One root of $f(w)$ is given by
+\[
+w_1
+=
+2\sqrt{2} - 1
+\]
+which is positive.  The other root is given by
+\[
+w_2
+=
+-2\sqrt{2} - 1
+\]
+which is negative.  You reject the number $w_2$ because the width of
+the rectangular region cannot be a negative number.  To confirm your
+decision to reject the root $w_2$, you sketch the graph of $f(w)$ as
+shown in \Figure{fig:rectangular_region_quadratic_roots} and note that
+$w_2$ is located on the negative half of the $w$-axis, i.e.~the
+horizontal axis.  You conclude that the width of the rectangular
+region is approximately $2\sqrt{2} - 1 \approx 1.8284$ metres long,
+rounded to four decimal places.
+\end{solution}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/a1-b2-cminus7.pdf}
+\caption{%%
+  Graph of the function $f(w) = w^2 + 2w - 7$.  The two dots indicate
+  the two different roots of $f(w)$.
+}
+\label{fig:rectangular_region_quadratic_roots}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
