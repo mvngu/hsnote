@@ -1224,4 +1224,61 @@ discriminant?
 
 \section*{Problem}
 
+\begin{problem}
+\item Let $f(x)$ be a quadratic function whose discriminant is zero.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:zero_discriminant_unique_root}
+    Prove that $f(x)$ has a unique root.
+
+  \item\label{subprob:zero_discriminant_root_is_tip_point}
+    Prove that the root of $f(x)$ is also the tip point of the
+    parabola.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:zero_discriminant_unique_root}
+Suppose the quadratic function $f(x)$ can be written as
+$f(x) = ax^2 + bx + c$, where $\triple{a}{b}{c} \in \RR$ such that
+$a \neq 0$.  You need to show that there is only one value of $x$ such
+that $f(x) = 0$.  By \Theorem{thm:quadratic_formula} the roots of
+$f(x)$ are
+\[
+x
+=
+\frac{
+  -b \pm \sqrt{b^2 - 4ac}
+}{
+  2a
+}
+\]
+where the number $\Delta = b^2 - 4ac$ is the discriminant of $f(x)$.
+Since the discriminant is $\Delta = 0$, then the roots of $f(x)$ can
+be written as
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -b \pm \sqrt{0}
+}{
+  2a
+} \\[4pt]
+&=
+\frac{-b \pm 0}{2a} \\[4pt]
+&=
+-\frac{b}{2a}
+\end{align*}
+%%
+which is one number.  Therefore $f(x)$ has a unique root.
+
+\solutionpart{subprob:zero_discriminant_root_is_tip_point}
+From \Equation{eqn:parabola_tip_x_coordinate}, the tip of the parabola
+occurs at the $x$-coordinate $x = -b/2a$, which
+from \Part{subprob:zero_discriminant_unique_root} is also the unique
+root of $f(x)$.
+\end{solution}
+}{}
+\end{problem}
+
 \end{document}
