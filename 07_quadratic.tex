@@ -1557,6 +1557,45 @@ x
 which are two different numbers because $\sqrt{\Delta} > 0$.
 \end{solution}
 }{}
+
+\item If $a$ is any real number, its square root can be written as
+  $\sqrt{a} = a^{1/2}$.  Explain what is wrong with the following
+  expression:
+  %%
+  \begin{align*}
+  1
+  &=
+  \sqrt{1} \\[4pt]
+  &=
+  \sqrt{(-1)^2} \\[4pt]
+  &=
+  \bigparen{(-1)^2}^{1/2} \\[4pt]
+  &=
+  (-1)^{2/2} \\[4pt]
+  &=
+  (-1)^1 \\[4pt]
+  &=
+  -1.
+  \end{align*}
+\ifbool{showSolution}{
+\begin{solution}
+The number $\sqrt{(-1)^2}$ is the distance between the points
+$\tuple{0}{0}$ and $\tuple{-1}{0}$.  This is because you have
+%%
+\begin{align*}
+\sqrt{
+  (0 - 0)^2 + (-1 - 0)^2
+}
+&=
+\sqrt{0^2 + (-1)^2} \\[4pt]
+&=
+\sqrt{(-1)^2}.
+\end{align*}
+%%
+As the distance cannot be negative, you must first simplify the
+expression $(-1)^2$ before you take its square root.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
