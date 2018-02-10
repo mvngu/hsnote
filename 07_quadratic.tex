@@ -1685,12 +1685,112 @@ you must take into account the initial height of the ball, the upward
 distance it travels as time passes, and the downward force of gravity.
 The position of the ball above ground level can be approximated by the
 quadratic function
-\[
+%%
+\begin{equation}
+\label{eqn:position_of_object_under_free_fall}
 f(t)
 =
 -\frac{1}{2} gt^2 + vt + h.
-\]
+\end{equation}
 
+\begin{example}
+A spring is located at ground level and can shoot a ball upward at an
+initial velocity of $10$ metres per second.
+%%
+\begin{packedenum}
+\item\label{ex:spring_ball_graph}
+  Write down a function for the position of the ball and graph the
+  function.
+
+\item\label{ex:spring_ball_time_to_maximum_height}
+  Determine the amount of time~(in seconds) required for the ball to
+  reach maximum height.  Calculate the maximum height~(in metres) that
+  the ball reaches.
+
+\item\label{ex:spring_ball_time_hit_ground}
+  When will the ball reach the ground?
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{ex:spring_ball_graph}
+You know that the force of gravity is $g = 9.8$ metres per second
+squared.  The initial velocity is $v = 10$ metres per second.  Since
+the spring is located at ground level, let's assume that the initial
+height of the ball is $h = 0$ metres.  Substitute these values into
+\Equation{eqn:position_of_object_under_free_fall} and simplify the
+result to get $f(t) = -\frac{49}{10}t^2 + 10t$, whose graph is shown
+in \Figure{fig:spring_ball_graph}.  This is a rough sketch that
+illustrates three points on which you should concentrate.  First is
+the point at the origin $\tuple{0}{0}$ that tells you the initial
+height of the ball at time $t = 0$ before the ball is thrown upward.
+Next is the tip point, which in this example is the highest point
+$\tuple{a}{f(a)}$ of the graph of $f(t)$.  The tip point
+$\tuple{a}{f(a)}$ tells you that the ball reaches its maximum height
+of $f(a)$ metres above the ground at time $t = a$ seconds after being
+shot upward by the spring.  The third point $\tuple{b}{0}$ tells you
+approximately how long the ball is in the air before it lands on the
+ground.  You do not yet know the values of $a$ and $b$.  This is just
+a rough sketch to help you understand the example.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/spring-ball.pdf}
+\caption{%%
+  The height of a ball as a function of time.  Here, time $t$ is
+  measured in seconds and the height $f(t)$ of the ball is measured in
+  metres above the ground.
+}
+\label{fig:spring_ball_graph}
+\end{figure}
+
+\solutionpart{ex:spring_ball_time_to_maximum_height}
+From \Formula{eqn:parabola_tip_x_coordinate} you know that the tip
+point~(i.e. highest point) of the graph of $f(t)$ occurs at
+$t = 50/49$.  This means that the ball reaches its maximum height
+above the ground at approximately $t = 50/49 \approx 1.0204$
+seconds~(rounded to four decimal places) after being shot up by the
+spring.  The maximum height that the ball reaches is
+$f(50 / 49) = 250 / 49$, which is approximately $5.1020$ metres above
+the ground, rounded to four decimal places.
+
+\solutionpart{ex:spring_ball_time_hit_ground}
+You can use the quadratic formula to calculate the time at which the
+ball hits the ground.  However, the following is a simple method that
+does not use the quadratic formula.  Note that the function $f(t)$ can
+be factorised as
+%%
+\begin{align*}
+f(t)
+&=
+-\frac{49}{10} t^2 + 10t \\[4pt]
+&=
+\parenthesis*{-\frac{49}{10} t + 10} t \\[4pt]
+&=
+\parenthesis*{10 - \frac{49}{10} t} t.
+\end{align*}
+%%
+Since the roots of $f(t)$ are those values of $t$ such that the
+equation $f(t) = 0$ is true, this is the same as determining the
+values of $t$ such that the following equation is true:
+%%
+\begin{equation}
+\label{eqn:spring_ball_equation_factored}
+\parenthesis*{10 - \frac{49}{10} t} t
+=
+0.
+\end{equation}
+%%
+Equation~\eqref{eqn:spring_ball_equation_factored} is true when
+$t = 0$.  However, the point $\tuple{0}{0}$ is the starting position
+of the ball when it is initially on the ground.  So you can ignore the
+root $t = 0$ of $f(t)$.  If the factor $10 - \frac{49}{10} t = 0$,
+then \Equation{eqn:spring_ball_equation_factored} will also be true.
+You must solve the equation $10 - \frac{49}{10} t = 0$ for $t$.  Doing
+so gives you the root $t = 100 / 49$.  Therefore the ball will reach
+the ground at approximately $t = 100 / 49 \approx 2.0408$ seconds
+after being shot up by the spring.
+\end{solution}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
