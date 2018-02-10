@@ -261,6 +261,25 @@ If $a^2$ is even, is it true that $a$ is also even?  You can show that
 the last statement is true via proof by contradiction.
 
 \begin{theorem}
+Let $a$ be an integer.  If $a^2$ is even, then $a$ is even.
+\end{theorem}
+
+\begin{proof}
+The statement of the theorem tells you that $a^2$ is even so you can
+assume that $a^2$ is even.  Use the definition of even integers to
+write $a^2$ as $a^2 = 2k$, where $k$ is some other integer.  There are
+two possibilities for the integer $a$.  Either $a$ is even or it is
+odd.  To derive a contradiction, assume that $a$ is odd.  Use the
+definition of odd integers to write $a$ as $a = 2r + 1$, where $r$ is
+another integer.  You know that the product of two odd integers is
+also an odd integer.  Use this result to see that $a^2 = (2r + 1)^2$
+is odd.  However, you assumed above that $a^2$ is even.  You have a
+contradiction because $a^2$ cannot be both even and odd.  The
+contradiction arises becauase you assumed that $a$ is odd.  Therefore
+you conclude that $a$ is even.
+\end{proof}
+
+\begin{theorem}
 The number $\sqrt{2}$ is irrational.
 \end{theorem}
 
