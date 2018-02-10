@@ -388,6 +388,7 @@ as required.
 }{}
 
 \begin{exercise}
+\label{ex:completing_the_square_redux}
 Let $x$ be a real variable and suppose $\triple{a}{b}{c} \in \RR$ are
 constants such that $a \neq 0$.  Show that the expression
 \[
@@ -609,62 +610,16 @@ using \Exercise{ex:completing_the_square}.  In other words,
   b^2 - 4ac
 }{
   4a^2
-}.
-\]
-Use \Exercise{ex:x_squared_a_implies_plus_minus_sqrt_a} to write the
-last equation as
-%%
-\begin{equation}
-\label{eqn:quadratic_formula_completing_square_solve_for_x}
-\begin{aligned}
-x + \frac{b}{2a}
-&=
-\pm
-\sqrt{
-  \frac{
-    b^2 - 4ac
-  }{
-    4a^2
-  }
-} \\[4pt]
-&=
-\pm
-\frac{
-  \sqrt{b^2 - 4ac}
-}{
-  2a
 }
-\end{aligned}
-\end{equation}
-%%
-because the expression $\sqrt{4a^2}$ simplifies to
-%%
-\begin{align*}
-\sqrt{4a^2}
-&=
-\sqrt{4} \times \sqrt{a^2} \\[4pt]
-&=
-2 (a^2)^{1/2} \\[4pt]
-&=
-2 a^{2/2} \\[4pt]
-&=
-2a.
-\end{align*}
-%%
-Solve for $x$ in
-\Expression{eqn:quadratic_formula_completing_square_solve_for_x} and
-you obtain
+\]
+which by \Exercise{ex:completing_the_square_redux} is the same as the
+equation $(2ax + b)^2 = b^2 - 4ac$.  Use
+\Exercise{ex:x_squared_a_implies_plus_minus_sqrt_a} to write the last
+equation as $2ax + b = \pm\sqrt{b^2 - 4ac}$.  Solve for $x$ and you
+obtain
 %%
 \begin{align*}
 x
-&=
--\frac{b}{2a}
-\pm
-\frac{
-  \sqrt{b^2 - 4ac}
-}{
-  2a
-} \\[4pt]
 &=
 \frac{
   -b \pm \sqrt{b^2 - 4ac}
