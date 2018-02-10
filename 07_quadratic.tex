@@ -1523,7 +1523,9 @@ equation $f(t) = 0$, hence the values of $t$ that satisfy
 \Equation{eqn:running_ants_quadratic_equation} are the same as the
 roots of $f(t)$.  The quadratic formula shows that the roots of $f(t)$
 are
-\[
+%%
+\begin{equation}
+\label{eqn:running_ants_roots}
 t_1
 =
 \frac{1}{2}
@@ -1539,7 +1541,8 @@ t_2
 \frac{1}{2}
 -
 \frac{\sqrt{46}}{4}.
-\]
+\end{equation}
+%%
 You reject the root $t_2$ because it is negative.  A negative value of
 time does not make sense in the context of the problem.  Therefore the
 ants would be five centimetres apart after approximately
@@ -1586,6 +1589,64 @@ Expand the remaining pair of parentheses to get
 \]
 After collecting like terms, you end up with
 \Equation{eqn:running_ants_quadratic_equation}.
+\end{solution}
+}{}
+
+\begin{exercise}
+In the solution to \Example{ex:running_ants}, verify that the roots of
+$f(t)$ are those given by~\eqref{eqn:running_ants_roots}.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+You have the quadratic function $f(t) = 8t^2 - 8t - 21$.  Using the
+quadratic formula, the roots of $f(t)$ are
+%%
+\begin{align*}
+t
+&=
+\frac{
+  -(-8) \pm \sqrt{(-8)^2 - 4(8)(-21)}
+}{
+  2(8)
+} \\[4pt]
+&=
+\frac{
+  8 \pm \sqrt{736}
+}{
+  16
+} \\[4pt]
+&=
+\frac{
+  8 \pm \sqrt{4^2 \times 2 \times 23}
+}{
+  16
+} \\[4pt]
+&=
+\frac{
+  8 \pm 4\sqrt{46}
+}{
+  16
+} \\[4pt]
+&=
+\frac{
+  4 \parenthesis*{2 \pm \sqrt{46}}
+}{
+  4^2
+} \\[4pt]
+&=
+\frac{
+  2 \pm \sqrt{46}
+}{
+  4
+} \\[4pt]
+&=
+\frac{1}{2}
+\pm
+\frac{\sqrt{46}}{4}
+\end{align*}
+%%
+which are the same as those given by~\eqref{eqn:running_ants_roots}.
 \end{solution}
 }{}
 
