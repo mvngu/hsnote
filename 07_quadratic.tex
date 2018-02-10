@@ -1551,6 +1551,44 @@ $\frac{1}{2}
 seconds~(rounded to four decimal places) since ant $A$ started running.
 \end{solution}
 
+\begin{exercise}
+Explain why \Example{ex:running_ants} can be represented as
+\Equation{eqn:running_ants_quadratic_equation}.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+From \Figure{fig:running_ants_triangle} you know that after $t$
+seconds, ant $A$ would have travelled $2t$ centimetres and ant $B$
+would have travelled $2(t - 1)$ centimetres.  These numbers are the
+base and height, respectively, of a right-angled triangle.  After $t$
+seconds, the distance between the ants is represented by the  length
+of the hypotenuse in \Figure{fig:running_ants_triangle}.  You want to
+know when the ants are $5$ centimetres apart, so the hypotenuse is $5$
+centimetres.  By Pythagoras' theorem, the three sides of the
+right-angled triangle are related by the equation
+\[
+(2t)^2 + \bigparen{2 (t - 1)}^2
+=
+5^2.
+\]
+Upon expanding the parentheses, the equation can be written as
+\[
+4t^2 + (2t - 2)^2
+=
+25.
+\]
+Expand the remaining pair of parentheses to get
+\[
+4t^2 + 4t^2 - 8t + 4
+=
+25.
+\]
+After collecting like terms, you end up with
+\Equation{eqn:running_ants_quadratic_equation}.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
