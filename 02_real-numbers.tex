@@ -261,6 +261,7 @@ If $a^2$ is even, is it true that $a$ is also even?  You can show that
 the last statement is true via proof by contradiction.
 
 \begin{theorem}
+\label{thm:a_squared_even_implies_a_even}
 Let $a$ be an integer.  If $a^2$ is even, then $a$ is even.
 \end{theorem}
 
@@ -285,8 +286,8 @@ The number $\sqrt{2}$ is irrational.
 
 \begin{proof}
 The number $\sqrt{2}$ is either rational or irrational.  To derive a
-contradiction, you assume that $\sqrt{2}$ is a rational number.  Since
-$\sqrt{2}$ is rational, it can be written as a ratio
+contradiction, assume that $\sqrt{2}$ is rational.  Since $\sqrt{2}$
+is rational, it can be written as a ratio
 %%
 \begin{equation}
 \label{eqn:root_2_as_ratio}
@@ -295,8 +296,11 @@ $\sqrt{2}$ is rational, it can be written as a ratio
 \frac{a}{b}
 \end{equation}
 %%
-where $a$ and $b$ are integers such that $b \neq 0$.  Square both
-sides of \Equation{eqn:root_2_as_ratio} and you can write
+where $a$ and $b$ are positive integers with $b \neq 0$.  You may
+assume that the ratio $a / b$ cannot be simplified any further.  (If
+$a/b$ can be simplified, you simplify the ratio as much as possible
+until you cannot simplify any more.)  Square both sides of
+\Equation{eqn:root_2_as_ratio} and you can write
 \Equation{eqn:root_2_as_ratio} as
 \[
 (\sqrt{2})^2
@@ -315,11 +319,13 @@ which simplifies to $2 = a^2 / b^2$.  Now solve for $a^2$ to see that
 a^2.
 \end{equation}
 %%
-In other words, $a^2$ is even and $a$ must be even as well and so $a$
-can be written as $a = 2k$, where $k$ is some other integer.
-Substitute $a = 2k$ into \Equation{eqn:root_2_a_square_is_even} and
-you get $2b^2 = (2k)^2$.  Simplify the equation $2b^2 = (2k)^2$ and
-you see that \Equation{eqn:root_2_as_ratio} can also be written as
+In other words, $a^2$ is even and you may conclude by
+\Theorem{thm:a_squared_even_implies_a_even} that $a$ must be even as
+well.  Use the definition of even integers to write $a$ as $a = 2k$,
+where $k$ is some other integer.  Substitute $a = 2k$ into
+\Equation{eqn:root_2_a_square_is_even} and you get $2b^2 = (2k)^2$.
+Simplify the latter equation and you see that
+\Equation{eqn:root_2_as_ratio} can also be written as
 %%
 \begin{equation}
 \label{eqn:root_2_b_square_is_even}
@@ -328,38 +334,15 @@ b^2
 2k^2.
 \end{equation}
 %%
-Equation~\eqref{eqn:root_2_b_square_is_even} says that $b^2$ is even
-and so $b$ is also even.  In other words, you can write $b = 2\ell$
-for an integer $\ell$.  Substitute $b = 2\ell$ into
-\Equation{eqn:root_2_b_square_is_even} and you have
-$(2\ell)^2 = 2k^2$.  Simplify the last equation and you see that
-\Equation{eqn:root_2_as_ratio} can also be written as
-\[
-2\ell^2
-=
-k^2.
-\]
-Solve the last equation for $2$ and you have $2 = (k / \ell)^2$.  Take
-the square root of both sides of $2 = (k / \ell)^2$ and you get
-$\sqrt{2} = k / \ell$.  Now use \Equation{eqn:root_2_as_ratio} to
-write
-\[
-\sqrt{2}
-=
-\frac{a}{b}
-=
-\frac{k}{\ell}.
-\]
-The only way for the equation $a/b = k / \ell$ to be true is to have
-$a = k$ and $b = \ell$.  Since you also have $a = 2k$, the only way
-for the expression $a = k = 2k$ to be true is to have $a = 0$.
-Substitute $a = 0$ into \Equation{eqn:root_2_as_ratio} and you have
-$\sqrt{2} = 0 / b = 0$.  The contradiction is that $\sqrt{2} \neq 0$,
-but you have shown that $\sqrt{2} = 0$.  The expressions
-$\sqrt{2} \neq 0$ and $\sqrt{2} = 0$ cannot both be true at the same
-time.  So something must be wrong and that something is the assumption
-that $\sqrt{2}$ is a rational number.  Therefore you conclude that
-$\sqrt{2}$ must be an irrational number.
+Equation~\eqref{eqn:root_2_b_square_is_even} says that $b^2$ is even.
+You may conclude by \Theorem{thm:a_squared_even_implies_a_even} that
+$b$ is also even.  What you now have is that both $a$ and $b$ are
+even and so the ratio $a / b$ can be simplified by dividing each of
+the numerator and denominator by $2$.  You have a contradiction
+because you assumed above that $a / b$ cannot be simplified any
+further.  The contradiction comes about because you assumed that
+$\sqrt{2}$ is a rational number.  Therefore you may conclude that
+$\sqrt{2}$ is irrational.
 \end{proof}
 
 \begin{exercise}
