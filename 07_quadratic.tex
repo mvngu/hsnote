@@ -1457,6 +1457,100 @@ as required.
 \end{solution}
 }{}
 
+\begin{example}
+\label{ex:running_ants}
+Two ants are next to each other.  Ant $A$ runs eastward at a rate of
+two centimetres per second.  After one second since ant $A$ started
+running, ant $B$ runs northward also at the same rate.  How long since
+ant $A$ started running does it take for both ants to be five
+centimetres apart?
+\end{example}
+
+\begin{solution}
+As in \Example{ex:fence_a_rectangular_region}, you should first try to
+draw a picture that can help you in solving the problem.  Denote by
+$t$ the time in seconds and use $t$ to represent the amount of time
+that ant $A$ runs.  Since ant $A$ runs in the eastern direction at two
+centimetres per second, after $t$ seconds the ant would have covered a
+horizontal distance of $2t$ centimetres.  When ant $A$ starts running,
+ant $B$ is still at the starting position and must wait one second
+before it starts to run in the northern direction.  The amount of time
+that ant $B$ runs is one less than the amount of time that ant $A$
+runs.  In other words, the duration of time that ant $B$ runs can be
+written as $t - 1$ seconds, after which the ant would have travelled a
+vertical distance of $2(t - 1)$ centimetres.  The situation is
+illustrated in \Figure{fig:running_ants_triangle}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/running-ants.pdf}
+\caption{%%
+  A right-angled triangle that represents the directions in which two
+  ants run.  The dot indicates the starting position of the ants.  The
+  variable $t$ denotes time in seconds.  After $t$ seconds, the
+  distance between the ants is represented by the length of the
+  hypotenuse.
+}
+\label{fig:running_ants_triangle}
+\end{figure}
+
+Let's now formulate the problem as an equation.  The horizontal and
+vertical distances travelled by both ants can be represented as the
+base and height, respectively, of the right-angled triangle in
+\Figure{fig:running_ants_triangle}.  After $t$ seconds have passed,
+the distance between the ants is represented by the length of the
+hypotenuse of the triangle.  Using Pythagoras' theorem, the problem
+can be formulated as the quadratic equation
+%%
+\begin{equation}
+\label{eqn:running_ants_quadratic_equation}
+8t^2 - 8t + 4
+=
+25.
+\end{equation}
+
+The problem now is to determine all values of $t$ that satisfy
+\Equation{eqn:running_ants_quadratic_equation}.  Note that the
+equation can also be written as
+\[
+8t^2 - 8t - 21
+=
+0.
+\]
+Writing $f(t) = 8t^2 - 8t - 21$,
+\Equation{eqn:running_ants_quadratic_equation} is equivalent to the
+equation $f(t) = 0$, hence the values of $t$ that satisfy
+\Equation{eqn:running_ants_quadratic_equation} are the same as the
+roots of $f(t)$.  The quadratic formula shows that the roots of $f(t)$
+are
+\[
+t_1
+=
+\frac{1}{2}
++
+\frac{\sqrt{46}}{4}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+t_2
+=
+\frac{1}{2}
+-
+\frac{\sqrt{46}}{4}.
+\]
+You reject the root $t_2$ because it is negative.  A negative value of
+time does not make sense in the context of the problem.  Therefore the
+ants would be five centimetres apart after approximately
+$\frac{1}{2}
++
+\frac{\sqrt{46}}{4}
+\approx
+2.1956$
+seconds~(rounded to four decimal places) since ant $A$ started running.
+\end{solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
