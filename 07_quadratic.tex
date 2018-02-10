@@ -1801,6 +1801,13 @@ You will verify the solution of \Example{ex:spring_ball}.
   Show that the height of the ball can be written as
   $f(t) = -\frac{49}{10} t^2 + 10t$.
 
+\item\label{subex:spring_ball_highest_point}
+  Show that the ball reaches its highest point after $t = 50 / 49$
+  seconds after being shot up and that the highest point is
+  $f(50 / 49) = 250 / 49$ metres above the ground.
+
+\item\label{subex:spring_ball_quadratic_formula}
+  Use the quadratic formula to calculate the roots of $f(t)$.
 \end{packedenum}
 \end{exercise}
 %%
@@ -1816,10 +1823,107 @@ f(t)
 &=
 -\frac{49}{5} \times \frac{1}{2} t^2 + 10t + 0 \\[4pt]
 &=
--\frac{49}{10} t^2 + 10t
+-\frac{49}{10} t^2 + 10t.
+\end{align*}
+
+\solutionpart{subex:spring_ball_highest_point}
+Use \Expression{eqn:parabola_tip_x_coordinate} to get
+%%
+\begin{align*}
+t
+&=
+-\frac{10}{2 \times \parenthesis*{-\frac{49}{10}}} \\[4pt]
+&=
+\frac{10}{\frac{49}{5}} \\[4pt]
+&=
+10 \times \frac{5}{49} \\[4pt]
+&=
+\frac{50}{49}.
 \end{align*}
 %%
-as required.
+Then you have the function value
+%%
+\begin{align*}
+f(50 / 49)
+&=
+-\frac{49}{10} \parenthesis*{\frac{50}{49}}^2
++
+10\parenthesis*{\frac{50}{49}} \\[4pt]
+&=
+-\frac{49}{10} \times \frac{50^2}{49^2}
++
+\frac{10 \times 50}{49} \\[4pt]
+&=
+-\frac{5 \times 50}{49}
++
+\frac{10 \times 50}{49} \\[4pt]
+&=
+\frac{
+  50(10 - 5)
+}{
+  49
+} \\[4pt]
+&=
+\frac{
+  250
+}{
+  49
+}.
+\end{align*}
+%%
+
+\solutionpart{subex:spring_ball_quadratic_formula}
+Using the quadratic formula results in
+%%
+\begin{align*}
+t
+&=
+\frac{
+  -(10) \pm \sqrt{10^2 - 4\parenthesis*{-\frac{49}{10}} (0)}
+}{
+  2 \parenthesis*{-\frac{49}{10}}
+} \\[4pt]
+&=
+\frac{
+  -10 \pm \sqrt{10^2}
+}{
+  -\frac{49}{5}
+} \\[4pt]
+&=
+\frac{
+  -10 \pm 10
+}{
+  -\frac{49}{5}
+}.
+\end{align*}
+%%
+The roots of $f(t)$ are
+\[
+t_1
+=
+\frac{
+  -10 + 10
+}{
+  -\frac{49}{5}
+}
+=
+0
+%%
+\qquad
+\text{and}
+\qquad
+%%
+t_2
+=
+\frac{
+  -10 - 10
+}{
+  -\frac{49}{5}
+}
+=
+\frac{100}{49}.
+\]
+
 \end{solution}
 }{}
 
