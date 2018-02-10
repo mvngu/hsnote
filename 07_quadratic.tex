@@ -1694,6 +1694,7 @@ f(t)
 \end{equation}
 
 \begin{example}
+\label{ex:spring_ball}
 A spring is located at ground level and can shoot a ball upward at an
 initial velocity of $10$ metres per second.
 %%
@@ -1791,6 +1792,30 @@ so gives you the root $t = 100 / 49$.  Therefore the ball will reach
 the ground at approximately $t = 100 / 49 \approx 2.0408$ seconds
 after being shot up by the spring.
 \end{solution}
+
+\begin{exercise}
+In the solution of \Subexample{ex:spring_ball}{ex:spring_ball_graph},
+verify that the height~(above the ground) of the ball can be written
+as $f(t) = -\frac{49}{10} t^2 + 10t$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+You have the values $g = 9.8 = 49/5$, $v = 10$, and $h = 0$.
+Substitute these values into
+\Equation{eqn:position_of_object_under_free_fall} to obtain
+%%
+\begin{align*}
+f(t)
+&=
+-\frac{49}{5} \times \frac{1}{2} t^2 + 10t + 0 \\[4pt]
+&=
+-\frac{49}{10} t^2 + 10t
+\end{align*}
+%%
+as required.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
