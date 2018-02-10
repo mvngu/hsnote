@@ -388,6 +388,70 @@ as required.
 }{}
 
 \begin{exercise}
+Let $x$ be a real variable and suppose $\triple{a}{b}{c} \in \RR$ are
+constants such that $a \neq 0$.  Show that the expression
+\[
+\parenthesis*{
+  x + \frac{b}{2a}
+}^2
+=
+\frac{
+  b^2 - 4ac
+}{
+  4a^2
+}
+\]
+can also be written as $(2ax + b)^2 = b^2 - 4ac$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+The statement of the problem assumes that the expression
+\[
+\parenthesis*{
+  x + \frac{b}{2a}
+}^2
+=
+\frac{
+  b^2 - 4ac
+}{
+  4a^2
+}
+\]
+is true.  For the sake of argument, you can assume that the expression
+is true.  Multiplying both sides by $4a^2$ produces the expression
+%%
+\begin{equation}
+\label{eqn:complete_the_square_no_denominator}
+4a^2 \parenthesis*{x + \frac{b}{2a}}^2
+=
+b^2 - 4ac
+\end{equation}
+%%
+where the left-hand side can be factored as
+%%
+\begin{equation}
+\label{eqn:complete_the_square_factored}
+\begin{aligned}
+4a^2 \parenthesis*{x + \frac{b}{2a}}^2
+&=
+(2a)^2 \parenthesis*{x + \frac{b}{2a}}^2 \\[4pt]
+&=
+\squarebracket*{2a \parenthesis*{x + \frac{b}{2a}}}^2 \\[4pt]
+&=
+\parenthesis*{2ax + 2a \times \frac{b}{2a}}^2 \\[4pt]
+&=
+\parenthesis*{2ax + b}^2.
+\end{aligned}
+\end{equation}
+%%
+Conclude from
+\Expressions{eqn:complete_the_square_no_denominator}{eqn:complete_the_square_factored}
+that $(2ax + b)^2 = b^2 - 4ac$.
+\end{solution}
+}{}
+
+\begin{exercise}
 Let $a \in \RR$ and consider the numbers $\pm\sqrt{a}$.  Here the
 symbol ``$\pm$'' means that you have both of $\sqrt{a}$ and
 $-\sqrt{a}$.  If $x = \pm\sqrt{a}$, prove that $x^2 = a$.
