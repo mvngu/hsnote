@@ -32,7 +32,7 @@
   dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   plotStyle/.style={%%
-    domain=-3:4.5,%%
+    domain=-2:4,%%
     mark=none,%%
     smooth,%%
     thick%%
@@ -48,19 +48,17 @@
 ]
 %%
 %%
-%% The function f(x) = x^2 - 2x + 1.
+%% The function f(x).
 \addplot+ [plotStyle]
 {x^2 - 2*x + 2};
 %%
 %% Some points on the graph of f(x).
 \addplot[dotStyle] coordinates {
-  (-2,10)
   (-1,5)
   (0,2)
-  (1,1)  %% tip point
+  (1,1)  %% vertex of parabola
   (2,2)
   (3,5)
-  (4,10)
 };
 \end{axis}
 \end{tikzpicture}
