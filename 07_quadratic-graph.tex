@@ -1060,11 +1060,11 @@ strategy does not always work.
 
 To understand why the graph drawing strategy
 from \Section{sec:quadratic_formula} can fail, let's consider the
-example of the function $f(x) = x^2$.  According to the above
-strategy, you first need to calculate the tip point.  This is easy
-enough.  You have the values $a = 1$ and $b = c = 0$.  Just use
-\Equation{eqn:parabola_tip_x_coordinate} to see that the
-$x$-coordinate of the tip point is
+example of the function $f(x) = x^2$.  According to the strategy
+from \Section{sec:quadratic_formula}, you first need to calculate the
+vertex of $f(x)$.  This is easy.  You have the values $a = 1$ and
+$b = c = 0$.  Just use \Equation{eqn:parabola_tip_x_coordinate} to see
+that the $x$-coordinate of the vertex is
 %%
 \begin{align*}
 x
@@ -1083,12 +1083,12 @@ f(0) \\[4pt]
 &=
 0^2 \\[4pt]
 &=
-0
+0.
 \end{align*}
 %%
-and therefore the function $f(x) = x^2$ has its tip point at the
-origin.  Now use the quadratic \Formula{eqn:quadratic_formula} to see
-that the $x$-intercepts of $f(x)$ occur at the $x$-coordinate
+Therefore the function $f(x) = x^2$ has its vertex at the origin.  Now
+use the quadratic \Formula{eqn:quadratic_formula} to see that the
+$x$-intercepts of $f(x)$ occur at the $x$-coordinate
 %%
 \begin{align*}
 x
@@ -1110,11 +1110,12 @@ x
 \end{align*}
 %%
 with the corresponding $y$-coordinate being $y = f(0) = 0$.  The
-upshot is that the tip of $f(x)$ is also its $x$-intercept, i.e.~the
-point $\tuple{0}{0}$.  The above strategy for graphing a quadratic
-function results in only one point, not the three that you require.
-In the case of the function $f(x) = x^2$, you should have used the
-strategy from \Section{sec:general_form}.
+upshot is that the vertex of $f(x)$ is also its $x$-intercept,
+i.e.~the point $\tuple{0}{0}$.  The strategy
+from \Section{sec:quadratic_formula} for graphing a quadratic function
+results in only one point, not the three that you require.  In the
+case of the function $f(x) = x^2$, you should have used the strategy
+from \Section{sec:general_form}.
 
 \begin{exercise}
 Consider the function $f(x) = x^2 + 2x + 1$.  Explain why the graph
