@@ -51,27 +51,24 @@
 ]
 %%
 %%
-%% The function f(x) = x^2.
+%% The function f(x).
 \addplot+ [plotStyle]
 {x^2};
 %%
 %% Some points on the graph of f(x).
 \addplot[dotStyle] coordinates {
-  (-4,16)
   (-3,9)
   (-2,4)
+  (0,0)  %% vertex of parabola
   (2,4)
   (3,9)
-  (4,16)
 };
 %%
 %% Label the above points.
-\node[left] at (axis cs:-4,16) {$\tuple{-4}{16}$};
 \node[left] at (axis cs:-3,9) {$\tuple{-3}{9}$};
 \node[left] at (axis cs:-2,4) {$\tuple{-2}{4}$};
 \node[right] at (axis cs:2,4) {$\tuple{2}{4}$};
 \node[right] at (axis cs:3,9) {$\tuple{3}{9}$};
-\node[right] at (axis cs:4,16) {$\tuple{4}{16}$};
 \end{axis}
 \end{tikzpicture}
 
