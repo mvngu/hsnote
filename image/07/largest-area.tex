@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{largest-area}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The largest area of a rectangle.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  arrowStyle/.style={<->,thick},%%
+  labelStyle/.style={fill=white},%%
+  lineStyle/.style={-,thick}%%
+]
+%%
+%%
+\pgfmathsetmacro{\dx}{0.3}
+\pgfmathsetmacro{\dy}{\dx}
+\pgfmathsetmacro{\length}{5}
+\pgfmathsetmacro{\width}{3}
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\ylow}{\xlow}
+%%
+\coordinate (lowerLeft) at (\xlow,\ylow);
+\coordinate (upperRight) at (\length,\width);
+%%
+\normalsize
+%% Draw the rectangle.
+\draw[lineStyle] (lowerLeft) rectangle (upperRight);
+%% Label the length of the rectangle.
+\draw[arrowStyle] (\xlow,-\dy) -- (\length,-\dy);
+\node[labelStyle] at (\length/2,-\dy) {$5 - w$};
+%% Label the width of the rectangle.
+\draw[arrowStyle] (-\dx,\ylow) -- (-\dx,\width);
+\node[labelStyle,rotate=90] at (-\dx,\width/2) {$w$};
+%% Label the perimeter.
+\node[] at (\length/2,\width/2) {$\text{perimeter} = 10$ metres};
+\end{tikzpicture}
+
+\end{document}

@@ -1652,6 +1652,108 @@ which are the same as those given by~\eqref{eqn:running_ants_roots}.
 \end{solution}
 }{}
 
+\begin{example}
+\textbf{Largest area.}
+A rectangle has a perimeter of ten metres.
+%%
+\begin{packedenum}
+\item\label{subex:largest_area_perimeter_area}
+  Derive a function for the area of the rectangle.
+
+\item\label{subex:largest_area_of_rectangle}
+  Calculate the largest area that the rectangle can have.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:largest_area_perimeter_area}
+As in \Examples{ex:fence_a_rectangular_region}{ex:running_ants}, you
+should draw a picture to help you solve the problem.  Let $\ell$ and
+$w$ be the length and width, respectively, of the rectangle.  Since
+the rectangle has a perimeter of ten metres, the equation for the
+perimeter can be written as
+\[
+2\ell + 2w
+=
+10.
+\]
+You can also write the last equation as $2(\ell + w) = 10$, which can
+be simplified to $\ell + w = 5$.  The length of the rectangle can now
+be written as $\ell = 5 - w$.  The length and width of the rectangle
+are illustrated in \Figure{fig:largest_area_rectangle}.  Using the
+information from \Figure{fig:largest_area_rectangle}, the area of the
+rectangle can be written as the function
+\[
+f(w)
+=
+(5 - w)w.
+\]
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/largest-area.pdf}
+\caption{%%
+  A rectangle whose perimeter is ten metres.  The width is denoted as
+  $w$ and the length is $5 - w$.
+}
+\label{fig:largest_area_rectangle}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/rectangle-area.pdf}
+\caption{%%
+  The area $f(w) = (5 - w) w$ of a rectangle as a function of its
+  width $w$.  The tip of the parabola is the highest point in the
+  graph of $f(w)$.  Here, the tip point is also the point at which the
+  value of $f(w)$, or the area, is largest.
+}
+\label{fig:largest_area_graph_parabola}
+\end{figure}
+
+\solutionpart{subex:largest_area_of_rectangle}
+\Figure{fig:largest_area_graph_parabola} shows a graph of the function
+$f(w)$.  Note the highest point in the graph.  The horizontal
+coordinate~(i.e.~the value of $w$) gives you the width of the
+rectangle.  The vertical coordinate~(i.e.~the value of $f(w)$) gives
+you the corresponding area of the rectangle.  So the largest area of
+the rectangle must occur at the tip point in the graph of $f(w)$.  You
+know that \Equation{eqn:parabola_tip_x_coordinate} gives the
+horizontal coordinate of the tip point of a quadratic function.  Using
+\Equation{eqn:parabola_tip_x_coordinate} results in the horizontal
+coordinate
+%%
+\begin{align*}
+w
+&=
+-\frac{5}{2(-1)} \\[4pt]
+&=
+\frac{-5}{-2} \\[4pt]
+&=
+\frac{5}{2}
+\end{align*}
+%%
+for the highest point of $f(w)$.  That is, the largest value of the
+function $f(w)$ occurs when the width is $w = 5 / 2 = 2.5$ metres.
+What about the actual value of $f(w)$?  Substitute $w = 5 / 2$ into
+$f(w)$ to get
+%%
+\begin{align*}
+f(5/2)
+&=
+\parenthesis*{5 - \frac{5}{2}} \frac{5}{2} \\[4pt]
+&=
+\parenthesis*{\frac{10}{2} - \frac{5}{2}} \frac{5}{2} \\[4pt]
+&=
+\frac{5}{2} \times \frac{5}{2} \\[4pt]
+&=
+\frac{25}{4}.
+\end{align*}
+%%
+This tells you that the largest area the rectangle can have is
+$25 / 4 = 6.25$ metres squared.
+\end{solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
