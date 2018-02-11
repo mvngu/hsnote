@@ -35,7 +35,7 @@
   dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   plotStyle/.style={%%
-    domain=-2:2,%%
+    domain=-3/2:2,%%
     mark=none,%%
     smooth,%%
     thick%%
@@ -51,14 +51,14 @@
 ]
 %%
 %%
-%% The function f(x) = -2x^2 + x + 3.
+%% The function f(x).
 \addplot+ [plotStyle]
 {-2*x^2 + x + 3};
 %%
 %% Some points on the graph of f(x).
 \addplot[dotStyle] coordinates {
   (-1,0)
-  (1/4,25/8)  %% tip point
+  (1/4,25/8)  %% vertex of f(x)
   (3/2,0)
 };
 \end{axis}
