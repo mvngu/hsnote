@@ -52,43 +52,35 @@
 ]
 %%
 %%
-%% The function f(x) = x^2 - 4x + 10.
+%% The function f(x).
 \addplot+ [plotStyle]
 {x^2 - 4*x + 10};
 %%
 %% Some points on the graph of f(x).
 \addplot[dotStyle] coordinates {
-  (-1,15)  %% A
-  (0,10)   %% B
-  (1,7)    %% C
-  (2,6)    %% D
-  (3,7)    %% E
-  (4,10)   %% F
-  (5,15)   %% G
+  (-1,15)
+  (0.5,8.25)
+  (2,6)  %% vertex of parabola
+  (3.5,8.25)
+  (5,15)
 };
 %%
 %% Label the above points.
-\node[left] at (axis cs:-1,15) {$\tuple{a-3}{h}$};
+\node[left] (minusTwo) at (axis cs:-1,15) {$\tuple{a-2}{f}$};
+\node[] (B) at (-1,15) {};
 %%
-\node[left] (minusTwo) at (axis cs:-1,10) {$\tuple{a-2}{g}$};
-\node[] (B) at (0,10) {};
-\draw[->,thick] (minusTwo) -- (B);
-%%
-\node[left] (minusOne) at (axis cs:-1,7) {$\tuple{a-1}{f}$};
-\node[] (C) at (1,7) {};
+\node[left] (minusOne) at (axis cs:-1,8.25) {$\tuple{a-1}{e}$};
+\node[] (C) at (0.5,8.25) {};
 \draw[->,thick] (minusOne) -- (C);
 %%
 \node[below] at (axis cs:2,6) {$\tuple{a}{b}$};
 %%
-\node[right] (plusOne) at (axis cs:5,7) {$\tuple{a+1}{c}$};
-\node[] (E) at (3,7) {};
+\node[right] (plusOne) at (axis cs:5,8.25) {$\tuple{a+1}{c}$};
+\node[] (E) at (3.5,8.25) {};
 \draw[->,thick] (plusOne) -- (E);
 %%
-\node[right] (plusTwo) at (axis cs:5,10) {$\tuple{a+2}{d}$};
-\node[] (F) at (4,10) {};
-\draw[->,thick] (plusTwo) -- (F);
-%%
-\node[right] at (axis cs:5,15) {$\tuple{a+3}{e}$};
+\node[right] (plusTwo) at (axis cs:5,15) {$\tuple{a+2}{d}$};
+\node[] at (5,15) {};
 \end{axis}
 \end{tikzpicture}
 
