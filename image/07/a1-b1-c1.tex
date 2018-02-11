@@ -35,7 +35,7 @@
   dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   plotStyle/.style={%%
-    domain=-5:3.5,%%
+    domain=-4:3,%%
     mark=none,%%
     smooth,%%
     thick%%
@@ -51,28 +51,24 @@
 ]
 %%
 %%
-%% The function f(x) = x^2 + x + 1.
+%% The function f(x).
 \addplot+ [plotStyle]
 {x^2 + x + 1};
 %%
 %% Some points on the graph of f(x).
 \addplot[dotStyle] coordinates {
-  (-7/2,39/4)
   (-5/2,19/4)
   (-3/2,7/4)
-  (-1/2,3/4)  %% tip point
+  (-1/2,3/4)  %% vertex of parabola
   (1/2,7/4)
   (3/2,19/4)
-  (5/2,39/4)
 };
 %%
 %% Label the above points.
-\node[left] at (axis cs:-7/2,39/4) {$\tuple{-\frac{7}{2}}{\frac{39}{4}}$};
 \node[left] at (axis cs:-5/2,19/4) {$\tuple{-\frac{5}{2}}{\frac{19}{4}}$};
 \node[left] at (axis cs:-3/2,7/4) {$\tuple{-\frac{3}{2}}{\frac{7}{4}}$};
 \node[right] at (axis cs:1/2,7/4) {$\tuple{\frac{1}{2}}{\frac{7}{4}}$};
 \node[right] at (axis cs:3/2,19/4) {$\tuple{\frac{3}{2}}{\frac{19}{4}}$};
-\node[right] at (axis cs:5/2,39/4) {$\tuple{\frac{5}{2}}{\frac{39}{4}}$};
 \end{axis}
 \end{tikzpicture}
 
