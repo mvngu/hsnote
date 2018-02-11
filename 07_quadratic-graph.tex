@@ -941,18 +941,20 @@ axes.  Draw a line through the points and you get the graph in
 }{}
 
 \begin{exercise}
-Sketch the graph of $f(x) = -x^2 + 1$.
+Use the quadratic formula to sketch the graph of $f(x) = -x^2 + 1$.
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
 You have the values $a = -1$ and $c = 1$.  The value of $b$ is
 $b = 0$ because $f(x) = -x^2 + 1 = -x^2 + 0x + 1$.  Again, you can use
-three points to draw the graph of $f(x)$.  Those three points are: the
-tip of the parabola and the two $x$-intercepts.
+three points to draw the graph of $f(x)$.  Those three points are the
+vertex and $x$-intercepts of $f(x)$.  The $x$-intercepts of $f(x)$ are
+also called the roots of $f(x)$.
 
-Use \Equation{eqn:parabola_tip_x_coordinate} to see that the tip point
-occurs at the $x$-coordinate
+First, you calculate the vertex of $f(x)$.  Use
+\Equation{eqn:parabola_tip_x_coordinate} to see that the vertex of
+$f(x)$ occurs at the $x$-coordinate
 \[
 x
 =
@@ -970,10 +972,10 @@ f(0)
 =
 1.
 \]
-Then the tip of the parabola occurs at the point $\tuple{0}{1}$.
+The function $f(x)$ has its vertex at the point $\tuple{0}{1}$.
 
-Let's calculate the $x$-intercepts.  Use
-\Equation{eqn:quadratic_formula} to obtain the $x$-intercept
+Next, you calculate the roots of $f(x)$.  Use
+\Equation{eqn:quadratic_formula} to obtain the root
 %%
 \begin{align*}
 x
@@ -993,7 +995,7 @@ x
 -1.
 \end{align*}
 %%
-The other $x$-intercept occurs at
+The other root of $f(x)$ occurs at
 %%
 \begin{align*}
 x
@@ -1013,16 +1015,19 @@ x
 1.
 \end{align*}
 %%
-Thus the $x$-intercepts are $\tuple{-1}{0}$ and $\tuple{1}{0}$.  Plot
-the three points and connect the dots to obtain the graph in
-\Figure{fig:aminus1_c1}.
+Thus $f(x)$ has its $x$-intercepts at the points $\tuple{-1}{0}$ and
+$\tuple{1}{0}$.  Finally, you plot the three points and connect the
+dots to obtain the graph in \Figure{fig:aminus1_c1}.
 \end{solution}
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=1]{image/07/aminus1-c1.pdf}
 \caption{%%
-  Graph of the function $f(x) = -x^2 + 1$ through three points.
+  Graph of the function $f(x) = -x^2 + 1$ through three points.  The
+  three points are the vertex $\tuple{0}{1}$ and the $x$-intercepts
+  $\tuple{-1}{0}$ and $\tuple{1}{0}$.  Note that in this case, the
+  vertex of $f(x)$ is the highest point in the graph of $f(x)$.
 }
 \label{fig:aminus1_c1}
 \end{figure}
