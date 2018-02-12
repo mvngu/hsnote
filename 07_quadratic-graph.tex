@@ -1484,6 +1484,176 @@ As the distance cannot be negative, you must first simplify the
 expression $(-1)^2$ before you take its square root.
 \end{solution}
 }{}
+
+\item\label{prob:quadratic_symmetric_about_vertex}
+  Looking at the graph of any quadratic function, you see that the
+  graph is symmetric about the vertex.  What does it mean for a
+  quadratic function to be symmetric about its vertex?  Let
+  $x_0 = -\frac{b}{2a}$ be the $x$-coordinate of the vertex of the
+  quadratic function $f(x) = ax^2 + bx + c$, where $\triple{a}{b}{c}$
+  are any real numbers such that $a \neq 0$.  Saying that $f(x)$ is
+  symmetric about the vertex is equivalent to saying that
+  $f(x_0 + d) = f(x_0 - d)$ for any real number $d$.  Prove that if
+  $d$ is any real number, then $f(x_0 + d) = f(x_0 - d)$.
+\ifbool{showSolution}{
+\begin{solution}
+You know that the $x$-coordinate of the vertex of $f(x)$ is given by
+%%
+\begin{equation}
+\label{eqn:quadratic_function_vertex_x_coordinate}
+x_0
+=
+-\frac{b}{2a}
+\end{equation}
+%%
+and that $d$ is any real number.  Substitute $x = x_0 + d$ into
+$f(x)$, expand and collect like terms to get
+%%
+\begin{align*}
+f(x_0 + d)
+&=
+a(x_0 + d)^2 + b(x_0 + d) + c \\[4pt]
+&=
+a(x_0^2 + 2dx_0 + d^2) + bx_0 + bd + c \\[4pt]
+&=
+ax_0^2 + 2adx_0 + ad^2 + bx_0 + bd + c \\[4pt]
+&=
+ax_0^2 + 2adx_0 + bx_0 + ad^2 + bd + c \\[4pt]
+&=
+(ax_0 + 2ad + b)x_0 + ad^2 + bd + c.
+\end{align*}
+%%
+Use \Equation{eqn:quadratic_function_vertex_x_coordinate} to write the
+latter expression as
+%%
+\begin{align*}
+f(x_0 + d)
+&=
+\squarebracket*{
+  a \parenthesis*{-\frac{b}{2a}} + 2ad + b
+}
+\parenthesis*{-\frac{b}{2a}}
++ ad^2 + bd + c \\[4pt]
+&=
+\squarebracket*{
+  -\frac{b}{2} + 2ad + b
+}
+\parenthesis*{-\frac{b}{2a}}
++ ad^2 + bd + c \\[4pt]
+&=
+\parenthesis*{
+  \frac{b^2}{4a} - \frac{2abd}{2a} - \frac{b^2}{2a}
+}
++ ad^2 + bd + c.
+\end{align*}
+%%
+Now put each term under the same denominator and simplify:
+%%
+\begin{align*}
+f(x_0 + d)
+&=
+\parenthesis*{
+  \frac{b^2}{4a} - \frac{4abd}{4a} - \frac{2b^2}{4a}
+}
++ ad^2 + bd + c \\[4pt]
+&=
+\frac{b^2}{4a} - \frac{4abd}{4a} - \frac{2b^2}{4a}
++ \frac{4a^2d^2}{4a} + \frac{4abd}{4a} + \frac{4ac}{4a} \\[4pt]
+&=
+\frac{
+  b^2 - 4abd - 2b^2 + 4a^2d^2 + 4abd + 4ac
+}{
+  4a
+} \\[4pt]
+&=
+\frac{
+  b^2 - 2b^2 + 4a^2d^2 + 4ac
+}{
+  4a
+} \\[4pt]
+&=
+\frac{
+  4a^2d^2 + 4ac - b^2
+}{
+  4a
+}.
+\end{align*}
+%%
+You repeat the same process for the case of $x = x_0 - d$.  Substitute
+$x = x_0 - d$ into $f(x)$, expand and collect like terms to get
+%%
+\begin{align*}
+f(x_0 - d)
+&=
+a(x_0 - d)^2 + b(x_0 - d) + c \\[4pt]
+&=
+a(x_0^2 - 2dx_0 + d^2) + bx_0 - bd + c \\[4pt]
+&=
+ax_0^2 - 2adx_0 + ad^2 + bx_0 - bd + c \\[4pt]
+&=
+ax_0^2 - 2adx_0 + bx_0 + ad^2 - bd + c \\[4pt]
+&=
+(ax_0 - 2ad + b)x_0 + ad^2 - bd + c.
+\end{align*}
+%%
+Use \Equation{eqn:quadratic_function_vertex_x_coordinate} to write the
+latter expression as
+%%
+\begin{align*}
+f(x_0 - d)
+&=
+\squarebracket*{
+  a\parenthesis*{-\frac{b}{2a}} - 2ad + b
+}
+\parenthesis*{-\frac{b}{2a}} + ad^2 - bd + c \\[4pt]
+&=
+\squarebracket*{
+  -\frac{b}{2} - 2ad + b
+}
+\parenthesis*{-\frac{b}{2a}} + ad^2 - bd + c \\[4pt]
+&=
+\parenthesis*{
+  \frac{b^2}{4a} + \frac{2abd}{2a} - \frac{b^2}{2a}
+}
++ ad^2 - bd + c
+\end{align*}
+%%
+Put each term under the same denominator and simplify:
+%%
+\begin{align*}
+f(x_0 - d)
+&=
+\parenthesis*{
+  \frac{b^2}{4a} + \frac{4abd}{4a} - \frac{2b^2}{4a}
+}
++ ad^2 - bd + c \\[4pt]
+&=
+\frac{b^2}{4a} + \frac{4abd}{4a} - \frac{2b^2}{4a}
++ \frac{4a^2d^2}{4a} - \frac{4abd}{4a} + \frac{4ac}{4a} \\[4pt]
+&=
+\frac{
+  b^2 + 4abd - 2b^2 + 4a^2d^2 - 4abd + 4ac
+}{
+  4a
+} \\[4pt]
+&=
+\frac{
+  b^2 - 2b^2 + 4a^2d^2 + 4ac
+}{
+  4a
+} \\[4pt]
+&=
+\frac{
+  4a^2d^2 + 4ac - b^2
+}{
+  4a
+}.
+\end{align*}
+%%
+This is the same as what you got when you expanded and simplified the
+expression for $f(x_0 + d)$.  Therefore $f(x_0 + d) = f(x_0 - d)$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
