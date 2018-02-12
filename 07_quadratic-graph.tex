@@ -118,26 +118,27 @@ f(-3).
 Generally speaking, how would you draw the graph of
 \Equation{eqn:general_quadratic_function}?  One way is to start at the
 vertex of the parabola and choose a few values of $x$ that are equally
-spaced.  If the vertex of the parabola is $\tuple{a}{b}$, the
+spaced.  If the vertex of the parabola is $\tuple{\alpha}{\beta}$, the
 following values of $x$
 \[
-\quintuple{a-2}{a-1}{a}{a+1}{a+2}
+\quintuple{\alpha-2}{\alpha-1}{\alpha}{\alpha+1}{\alpha+2}
 \]
 should usually be good enough for a rough sketch of the graph of
 \Equation{eqn:general_quadratic_function}.  Of course, you still need
-to calculate the function values $f(a-2)$, $f(a-1)$, $f(a+1)$, and
-$f(a+2)$.  Note that the graph of the quadratic function $f(x)$ is
-symmetric about the vertex $\tuple{a}{b}$.
+to calculate the function values $f(\alpha-2)$, $f(\alpha-1)$,
+$f(\alpha+1)$, and $f(\alpha+2)$.  Note that the graph of the
+quadratic function $f(x)$ is symmetric about the vertex
+$\tuple{\alpha}{\beta}$.
 \Problem{prob:quadratic_symmetric_about_vertex} asks you to prove this
 fact.  This means that
 \[
-f(a+1) = f(a-1)
+f(\alpha+1) = f(\alpha-1)
 %%
 \qquad
 \text{and}
 \qquad
 %%
-f(a+2) = f(a-2).
+f(\alpha+2) = f(\alpha-2).
 \]
 Consequently, you need only to calculate two function values, not
 four.  The above strategy is illustrated in
@@ -148,9 +149,9 @@ four.  The above strategy is illustrated in
 \includegraphics[scale=1.2]{image/07/a1-bminus4-c10.pdf}
 \caption{%%
   Sketching the graph of a quadratic function.  First, locate the
-  vertex $\tuple{a}{b}$ of the function.  From there, spread outward
-  with a few points.  Finally, you connect the dots.  Note that the
-  graph is symmetric about the vertex point $\tuple{a}{b}$.
+  vertex $\tuple{\alpha}{\beta}$ of the function.  From there, spread
+  outward with a few points.  Finally, you connect the dots.  Note
+  that the graph is symmetric about the vertex.
 }
 \label{fig:sketch_parabola}
 \end{figure}
