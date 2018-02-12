@@ -1654,6 +1654,71 @@ This is the same as what you got when you expanded and simplified the
 expression for $f(x_0 + d)$.  Therefore $f(x_0 + d) = f(x_0 - d)$.
 \end{solution}
 }{}
+
+\item Let $w \geq 0$ be a real number.  A rectangle has a width and
+  length of $w$ and $4 - w$ centimetres, respectively.  Calculate the
+  largest area that the rectangle can have.
+\ifbool{showSolution}{
+\begin{solution}
+Since the width is $w$ and the length is $4 - w$, the area of the
+rectangle can be written as the quadratic function
+%%
+\begin{align*}
+f(w)
+&=
+(4 - w)w \\[4pt]
+&=
+-w^2 + 4w.
+\end{align*}
+%%
+\Figure{fig:rectangle_largest_area} shows a graph of $f(w)$ to help
+you understand how the area $f(w)$ of the rectangle changes as the
+width $w$ increases.  From the figure, note that the vertex of $f(w)$
+is the highest point in the graph of $f(w)$.  Using
+\Expression{eqn:parabola_tip_x_coordinate} the vertex of $f(w)$ occurs
+when the width is
+%%
+\begin{align*}
+w
+&=
+-\frac{4}{2(-1)} \\[4pt]
+&=
+2.
+\end{align*}
+%%
+The value of $f(w)$ when $w = 2$ is
+%%
+\begin{align*}
+f(2)
+&=
+2(4 - 2) \\[4pt]
+&=
+2(2) \\[4pt]
+&=
+4.
+\end{align*}
+%%
+Conclude that the largest area of the rectangle is $4$ centimetres
+squared and this maximum value occurs when the width is $2$
+centimetres.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/rectangle-largest-area.pdf}
+\caption{%%
+  Graph of the function $f(w) = (4 - w)w$.  Here, $w$ denotes the
+  width in centimetres of a rectangle and $f(w)$ represents the area
+  in centimetres squared of the rectangle.  Starting from $w = 0$, as
+  the width increases the area $f(w)$ also increases up to the highest
+  point in the graph.  The area then decreases no matter how much $w$
+  increases.  If the point $\tuple{\alpha}{\beta}$ is the vertex of
+  $f(w)$, then the largest value of $f(w)$ is $\beta$ and this value
+  occurs when $w = \alpha$.
+}
+\label{fig:rectangle_largest_area}
+\end{figure}
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
