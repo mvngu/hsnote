@@ -1656,6 +1656,97 @@ expression for $f(x_0 + d)$.  Therefore $f(x_0 + d) = f(x_0 - d)$.
 \end{solution}
 }{}
 
+\item Another way to sketch the graph of a quadratic function
+  $f(x) = ax^2 + bx + c$ is to use the vertex and the $y$-intercept.
+  The $y$-intercept is the point $\tuple{0}{c}$ because this is where
+  the graph of $f(x)$ intersects the $y$-axis.  Draw a line through
+  the vertex and $y$-intercept to get one half of the graph.  The
+  other half should be a reflection of the one you have because the
+  graph of a quadratic function is symmetric about its vertex.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:graph_sketch_vertex_y_intercept}
+    Use the vertex and $y$-intercept to sketch the graph of
+    $f(x) = x^2 + x + 1$.
+
+  \item\label{subprob:graph_sketch_vertex_y_intercept_fail}
+    Provide an example of a quadratic function for which the above
+    graph sketching technique fails.  Explain why the technique fails
+    for this particular function.
+
+  \item\label{subprob:graph_sketch_vertex_y_intercept_fail_generally}
+    Consider the quadratic function $f(x) = ax^2 + c$, where $a$ and
+    $c$ are real numbers such that $a \neq 0$.  Explain why the above
+    graph sketching technique fails for this function.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:graph_sketch_vertex_y_intercept}
+The $x$-coordinate of the vertex of $f(x) = x^2 + x + 1$ is
+\begin{align*}
+x
+&=
+-\frac{1}{2(1)} \\[4pt]
+&=
+-\frac{1}{2}
+\end{align*}
+%%
+whose corresponding $y$-coordinate is
+%%
+\begin{align*}
+y
+&=
+f(-1/2) \\[4pt]
+&=
+\parenthesis*{-\frac{1}{2}}^2 - \frac{1}{2} + 1 \\[4pt]
+&=
+\frac{1}{4} - \frac{1}{2} + 1 \\[4pt]
+&=
+\frac{3}{4}.
+\end{align*}
+%%
+Thus the function $f(x)$ has its vertex at the point
+$\tuple{-\frac{1}{2}}{\frac{3}{4}}$.  The $y$-intercept of $f(x)$ is
+at the point $\tuple{0}{1}$.  The vertex and $y$-intercept are used to
+draw the graph in \Figure{fig:graph_vertex_y_intercept}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/a1-b1-c1_vertex-y-intercept.pdf}
+\caption{%%
+  Graph of the function $f(x) = x^2 + x + 1$ through two points.  The
+  two points are the vertex and $y$-intercept of $f(x)$.
+}
+\label{fig:graph_vertex_y_intercept}
+\end{figure}
+
+\solutionpart{subprob:graph_sketch_vertex_y_intercept_fail}
+Consider the function $f(x) = x^2$.  The vertex and $y$-intercept of
+$f(x)$ are both the same point $\tuple{0}{0}$.  In this case, you have
+only one point, not two points required by the above technique for
+graph sketching.
+
+\solutionpart{subprob:graph_sketch_vertex_y_intercept_fail_generally}
+The function $f(x)$ can be written as
+$f(x) = ax^2 + c = ax^2 + 0x + c$.  So $f(x)$ has its vertex at the
+$x$-coordinate
+%%
+\begin{align*}
+x
+&=
+-\frac{0}{2a} \\[4pt]
+&=
+0.
+\end{align*}
+%%
+The corresponding $y$-coordinate is $y = f(0) = c$.  That is, the
+vertex of $f(x)$ is the point $\tuple{0}{c}$.  This point is also the
+$y$-intercept of $f(x)$.  If you were to use the above technique for
+graph sketching, you would have only one point, not the two required
+by the technique.
+\end{solution}
+}{}
+
 \item Let $w \geq 0$ be a real number.  A rectangle has a width and
   length of $w$ and $4 - w$ centimetres, respectively.  Calculate the
   largest area that the rectangle can have.
