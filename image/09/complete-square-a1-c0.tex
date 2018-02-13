@@ -22,6 +22,7 @@
 
 \begin{tikzpicture}[%%
   arrowStyle/.style={<->,thick},%%
+  dashStyle/.style={-,dashed,very thick},%%
   labelStyle/.style={fill=white},%%
   lineStyle/.style={-,very thick}%%
 ]
@@ -29,7 +30,7 @@
 %%
 \pgfmathsetmacro{\bside}{2}
 \pgfmathsetmacro{\dbx}{2}  %% the gap between x^2 and bx
-\pgfmathsetmacro{\dx}{0.3}
+\pgfmathsetmacro{\dx}{0.4}
 \pgfmathsetmacro{\dy}{\dx}
 \pgfmathsetmacro{\xlow}{0}
 \pgfmathsetmacro{\xside}{5}
@@ -65,6 +66,12 @@
 %% Label the width of the rectangle bx.
 \draw[arrowStyle] (\bend+\dx,\ylow) -- (\bend+\dx,\xside);
 \node[labelStyle,rotate=90] at (\bend+\dx,\xside/2) {$x$};
+%%
+%% Half the rectangle bx.
+\draw[dashStyle] (\bstart+\bside/2,\ylow) -- (\bstart+\bside/2,\xside);
+%% Label the half width of the rectangle.
+\draw[arrowStyle] (\bstart,-\dy) -- (\bstart+\bside/2,-\dy);
+\node[labelStyle] at (\bstart+\bside/4,-\dy) {$\frac{b}{2}$};
 \end{tikzpicture}
 
 \end{document}
