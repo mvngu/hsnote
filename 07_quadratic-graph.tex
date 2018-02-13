@@ -1938,6 +1938,180 @@ $b > 0$.  Therefore the quadratic function $f(x)$ has a maximum value
 of $b^2 / 4$, which occurs when $x = b / 2$.
 \end{solution}
 }{}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/arithmetic-geometric-inequality.pdf}
+\caption{%%
+  A square of side length $a + b$ is divided into four rectangles and
+  a smaller square.  Each of the four rectangles has a length and
+  width of $a$ and $b$, respectively.
+}
+\label{fig:arithmetic_mean_geometric_mean_inequality}
+\end{figure}
+
+\item Suppose $a \geq 0$ and $b \geq 0$ are fixed numbers.  You will
+  prove a special version of an inequality called the
+  \emph{arithmetic-mean geometric-mean inequality}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:AMGM_geometry}
+    Let $a + b$ be the side length of a square.  Divide the square
+    into smaller shapes as shown in
+    \Figure{fig:arithmetic_mean_geometric_mean_inequality}.  Prove
+    that
+    %%
+    \begin{equation}
+    \label{eqn:AMGM_geometry}
+    4ab
+    \leq
+    (a + b)^2.
+    \end{equation}
+
+  \item\label{subprob:AMGM_inequality}
+    Use the result from \Part{subprob:AMGM_geometry} to prove that
+    %%
+    \begin{equation}
+    \label{eqn:AMGM_inequality}
+    \sqrt{ab}
+    \leq
+    \frac{a + b}{2}.
+    \end{equation}
+
+  \item\label{subprob:AMGM_equality}
+    Determine all values of $a$ and $b$ for which both sides of
+    \Expression{eqn:AMGM_inequality} are equal.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:AMGM_geometry}
+First, you calculate the area of the larger square.  From
+\Figure{fig:arithmetic_mean_geometric_mean_inequality} you know that
+the larger square has a side length of $a + b$, hence the larger
+square has an area of $(a + b)^2$.
+
+Next, you calculate the total area of the four rectangles inside the
+larger square.  Each rectangle inside the larger square has a length
+and width of $a$ and $b$, respectively, so each rectangle has an area
+of $ab$.  Since there are four rectangles inside the larger square, it
+follows that the four rectangles have a combined area of
+\[
+ab + ab + ab + ab
+=
+4ab.
+\]
+
+Finally, you use the areas you calculated above to prove
+\Inequality{eqn:AMGM_geometry}.  Let's consider the smaller square at
+the centre of the larger square.  You have two cases for the smaller
+square:
+%%
+\begin{packedenumeral}
+\item either the smaller square has an area of zero; or
+
+\item the smaller square has an area greater than zero.
+\end{packedenumeral}
+%%
+If the smaller square has an area of zero, then the total area of the
+four rectangles is the same as the area of the larger square,
+i.e.~$4ab = (a + b)^2$.  If the area of the smaller square is greater
+than zero, then the combined area of the four rectangles is smaller
+than the area of the larger square, i.e.~$4ab \leq (a + b)^2$.
+Therefore no matter what the area of the smaller square is, you will
+have the inequality $4ab \leq (a + b)^2$.
+
+\solutionpart{subprob:AMGM_inequality}
+From \Part{subprob:AMGM_geometry} you know that $4ab \leq (a + b)^2$.
+Since $a + b \geq 0$ because $a \geq 0$ and $b \geq 0$, the square
+root of $(a + b)^2$ is the same as $a + b$.  That is, taking the
+square root of both sides of the inequality $4ab \leq (a + b)^2$
+results in the inequality
+\[
+\sqrt{4ab}
+\leq
+a + b.
+\]
+You know that $\sqrt{4ab} = \sqrt{4} \times \sqrt{ab}$.  Use the fact
+that $\sqrt{4} = 2$ to write $2\sqrt{ab} \leq a + b$.  Divide each
+side of the latter inequality by $2$ and you have
+\[
+\sqrt{ab}
+\leq
+\frac{a + b}{2}
+\]
+which is the same as \Inequality{eqn:AMGM_inequality}.
+
+\solutionpart{subprob:AMGM_equality}
+You have four cases to consider:
+%%
+\begin{packedenumeral}
+\item $a = 0$ and $b = 0$;
+
+\item $a = 0$ and $b > 0$;
+
+\item $a > 0$ and $b = 0$;
+
+\item $a > 0$ and $b > 0$.
+\end{packedenumeral}
+%%
+If $a = 0$ and $b = 0$, then \Inequality{eqn:AMGM_inequality} becomes
+\[
+\sqrt{0 \times 0}
+\leq
+\frac{0 + 0}{0}
+\]
+which simplifies to $0 \leq 0$.  Thus both sides of
+\Inequality{eqn:AMGM_inequality} are the same when $a = b = 0$.
+
+If $a = 0$ and $b > 0$, then \Inequality{eqn:AMGM_inequality} can be
+written as
+\[
+\sqrt{0 \times b}
+\leq
+\frac{0 + b}{2}
+\]
+which simplifies to $0 \leq \frac{b}{2}$.  Since $b > 0$, then you
+have $0 < \frac{b}{2}$.
+
+If $a > 0$ and $b = 0$, then \Inequality{eqn:AMGM_inequality} can be
+written as
+\[
+\sqrt{a \times 0}
+\leq
+\frac{a + 0}{2}
+\]
+which simplifies to $0 \leq \frac{a}{2}$.  Since $a > 0$, then you
+have $0 < \frac{a}{2}$.  In other words, if exactly one of $a$ and $b$
+is zero, then both sides of \Inequality{eqn:AMGM_inequality} are not
+the same.
+
+Finally, suppose that $a > 0$ and $b > 0$ and consider again
+\Figure{fig:arithmetic_mean_geometric_mean_inequality}.  Note that if
+$a = b$, then the area of the smaller square~(at the centre of the
+larger square) is zero.  In that case, the area of the larger square
+can be written as
+\[
+(a + b)^2
+=
+(a + a)^2
+=
+(2a)^2
+=
+4a^2.
+\]
+The length and width of each rectangle are now the same, i.e.~$a$.
+Each of the four rectangles has an area of $a^2$.  The total area of
+the four rectangles is
+\[
+a^2 + a^2 + a^2 + a^2
+=
+4a^2
+\]
+which is the same as the area of the larger square.  Therefore if
+$a = b$, then both sides of \Inequality{eqn:AMGM_inequality} are the
+same.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
