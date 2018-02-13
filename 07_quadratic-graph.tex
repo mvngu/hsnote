@@ -1813,6 +1813,85 @@ centimetres.
 \end{figure}
 \end{solution}
 }{}
+
+\item Provide two different proofs that
+  $(x - 1)(x - 2) \neq (x + 1)(x + 2)$.
+\ifbool{showSolution}{
+\begin{solution}
+One way is to use the distributive laws to expand both sides of the
+expression $(x - 1)(x - 2) \neq (x + 1)(x + 2)$.  Doing so for the
+left-hand side results in
+%%
+\begin{align*}
+(x - 1)(x - 2)
+&=
+x^2 -2x - x + 2 \\[4pt]
+&=
+x^2 - 3x + 2.
+\end{align*}
+%%
+Now expand the right-hand side of $(x - 1)(x - 2) \neq (x + 1)(x + 2)$
+to get
+%%
+\begin{align*}
+(x + 1)(x + 2)
+&=
+x^2 + 2x + x + 2 \\[4pt]
+&=
+x^2 + 3x + 2.
+\end{align*}
+%%
+Thus expanding the left- and right-hand sides of the expression
+\[
+(x - 1)(x - 2)
+\neq
+(x + 1)(x + 2)
+\]
+results in two different quadratic functions.
+
+Here is another way to prove that
+%%
+\begin{equation}
+\label{eqn:quadratic_inequality}
+(x - 1)(x - 2)
+\neq
+(x + 1)(x + 2).
+\end{equation}
+%%
+If you have the equality $(x - 1)(x - 2) = (x + 1)(x + 2)$, then the
+equality must be true no matter what the value of $x$ is.  However, to
+show that the \Inequality{eqn:quadratic_inequality} is true, you need
+only provide one value of $x$ such that the left- and right-hand sides
+of the expression are different.  Suppose you have $x = 1$.  The
+left-hand side of~\eqref{eqn:quadratic_inequality} is
+%%
+\begin{align*}
+(x - 1)(x - 2)
+&=
+(1 - 1)(1 - 2) \\[4pt]
+&=
+0(1 - 2) \\[4pt]
+&=
+0.
+\end{align*}
+%%
+For $x = 1$ the right-hand side of~\eqref{eqn:quadratic_inequality} is
+%%
+\begin{align*}
+(x + 1)(x + 2)
+&=
+(1 + 1)(1 + 2) \\[4pt]
+&=
+2(3) \\[4pt]
+&=
+6.
+\end{align*}
+%%
+In other words, you have shown that both sides
+of~\eqref{eqn:quadratic_inequality} are different when $x = 1$.
+Therefore \Inequality{eqn:quadratic_inequality} is true.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
