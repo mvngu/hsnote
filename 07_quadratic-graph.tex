@@ -30,7 +30,64 @@ ax^2 + bx + c
 %%
 where $\triple{a}{b}{c} \in \RR$ are known constants such that
 $a \neq 0$ and $x$ is a variable that can be any real number.  What
-does the function $f(x)$ look like?  You will explore a number of ways
+does the function $f(x)$ look like?
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/quadratic-as-square.pdf}
+\caption{%%
+  The quadratic function $f(x) = (x + a)(x + b)$ can be interpreted as
+  a rectangle whose bottom side has length $x + a$ and whose height is
+  $x + b$.
+}
+\label{fig:quadratic_as_rectangle}
+\end{figure}
+
+A quadratic function can be interpreted as a rectangle.  Suppose you
+have the quadratic function
+\[
+f(x)
+=
+(x + a)(x + b)
+\]
+where $x \geq 0$ is a real variable.  The numbers $a \geq 0$ and
+$b \geq 0$ are fixed constants.  You can use the distributive laws to
+expand the quadratic function $f(x)$ and get the equation
+$(x + a)(x + b) = x^2 + (a + b)x + ab$.  You can also prove the last
+equation by using geometry.
+
+To prove the equation $(x + a)(x + b) = x^2 + (a + b)x + ab$ by
+geometry, note that you can have $a = 0$ or $b = 0$ or even
+$a = b = 0$.  No matter what the values of $a \geq 0$ and $b \geq 0$
+are, the function $f(x)$ can be represented as the larger rectangle
+shown in \Figure{fig:quadratic_as_rectangle}.  The larger rectangle
+has a length and width of $x + a$ and $x + b$, respectively, and
+therefore an area of $f(x) = (x + a)(x + b)$.  Note that the larger
+rectangle can be divided into a number of smaller shapes: a smaller
+square and three smaller rectangles.  The smaller square has a side
+length of $x$, so the square has an area of $x^2$.  The top rectangle
+has a length and width of $x$ and $b$, respectively, so its area is
+$bx$.  The smaller rectangle in the top-right corner has a length and
+width of $a$ and $b$, respectively, hence its area is $ab$.  The
+rectangle to the right has a length and width of $a$ and $b$,
+respectively, thus an area of $ab$.  Adding together the area of the
+four smaller shapes shows that the total area is
+\[
+x^2 + ax + bx + ab
+=
+x^2 + (a + b)x + ab.
+\]
+The four smaller shapes result from cutting the larger rectangle in
+the way shown in \Figure{fig:quadratic_as_rectangle}.  In other words,
+the total area of the four smaller shapes is the same as the area of
+the larger rectangle.  Therefore you have proved that
+\[
+(x + a) (b + b)
+=
+x^2 + (a + b)x + ab.
+\]
+
+You will explore a number of ways
 to sketch the graph of a quadratic function.
 
 This section will show you a graph drawing technique that works for
