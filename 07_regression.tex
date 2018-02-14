@@ -146,4 +146,64 @@ The mean of the five numbers is
 which is $1.4 = 7 / 5$.
 \end{solution}
 
+\begin{exercise}
+Consider the first $12$ positive integers.
+%%
+\begin{packedenum}
+\item\label{subex:sigma_first_12_positive_integers}
+  Use the sigma notation to write the sum of the first $12$ positive
+  integers.
+
+\item\label{subex:sum_first_12_positive_integers}
+  Calculate the sum of the first $12$ positive integers.
+
+\item\label{subex:mean_first_12_positive_integers}
+  Calculate the mean of the first $12$ positive integers.
+\end{packedenum}
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:sigma_first_12_positive_integers}
+The first $12$ positive integers are $\seq{1}{2}{12}$.  The first
+number is $a_1 = 1$, the second is $a_2 = 2$, and so on, with the
+$12$-th number being $a_{12} = 12$.  The sum of the $12$ integers can
+be written as $\sum_{i=1}^{12} a_i$.
+
+\solutionpart{subex:sum_first_12_positive_integers}
+The sum of the $12$ integers is
+%%
+\begin{align*}
+\sum_{i=1}^{12} a_i
+&=
+\sumseq{1}{2}{12} \\[4pt]
+&=
+78.
+\end{align*}
+
+\solutionpart{subex:mean_first_12_positive_integers}
+The mean of the $12$ integers is
+%%
+\begin{align*}
+\frac{
+  \sum_{i=1}^{12} a_i
+}{
+  12
+}
+&=
+\frac{
+  \sumseq{1}{2}{12}
+}{
+  12
+} \\[4pt]
+&=
+\frac{78}{12} \\[4pt]
+&=
+\frac{13}{2}
+\end{align*}
+%%
+which is $6.5 = 13 / 2$.
+\end{solution}
+}{}
+
 \end{document}
