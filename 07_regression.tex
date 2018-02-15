@@ -353,4 +353,42 @@ older she lays fewer eggs per week.
 
 \section{Linear regression}
 
+The basic idea of linear regression is to fit a straight line to a
+data set.  The idea is best explained through an example.  Consider a
+brand of television that was sold at ten different stores.
+\Table{tab:tv_sold} shows the price of this brand of television and
+how many units of this brand was sold during a particular month.  The
+data in the table is graphed in the scatter plot of
+\Figure{fig:tv_sold}.  You can see in \Figure{fig:tv_sold} that there
+is a downward trend.  Without additional information, you might
+conclude that as the price of a brand of television increases the less
+units of this brand were sold.  To put it another way, the lower is
+the price of a TV, the more TVs are sold.  Another thing you might
+note is that you can draw a straight line through the dots in
+\Figure{fig:tv_sold}.  The problem now is: How can you draw a straight
+line that best fits the dots?
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/tv-sold.tex}
+\caption{%%
+  The price of a brand of television versus the number of units sold.
+  The price is measured in Australian dollars.  The number of units
+  sold is during a particular month.  The same brand was sold across
+  ten different stores.
+}
+\label{tab:tv_sold}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/tv-sold-scatterplot.pdf}
+\caption{%%
+  The price~(in Australian dollars) of a brand of television versus
+  how many were sold across ten different stores.  The data are from
+  \Table{tab:tv_sold}.
+}
+\label{fig:tv_sold}
+\end{figure}
+
 \end{document}
