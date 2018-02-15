@@ -278,4 +278,39 @@ that are not apparent from what is presented in a table of values.
 \label{fig:height_weight_scatterplot}
 \end{figure}
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/test-score.tex}
+\caption{%%
+  The number of hours that eleven students spent on studying for a
+  test versus their test scores.  The test is marked out of ten.
+}
+\label{tab:test_score}
+\end{table}
+
+\begin{exercise}
+\Table{tab:test_score} shows how many hours that students spent on
+studying for a test and their test scores.  Graph the data in the
+table as a scatter plot.  What can you conclude from the scatter plot?
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+\Figure{fig:test_score} shows a scatter plot of the data from
+\Table{tab:test_score}.  The scatter plot shows that the more time a
+student spent on studying for a test, the higher is the student's test
+score.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/test-score-scatterplot.pdf}
+\caption{%%
+  The number of hours that students spent studying for a test versus
+  their test scores.  The data are from \Table{tab:test_score}.
+}
+\label{fig:test_score}
+\end{figure}
+\end{solution}
+}{}
+
 \end{document}
