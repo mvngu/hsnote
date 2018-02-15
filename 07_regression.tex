@@ -313,4 +313,39 @@ score.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg.tex}
+\caption{%%
+  The age of a hen versus the number of eggs that she lay per week.
+  Age is measured in months.
+}
+\label{tab:age_egg}
+\end{table}
+
+\begin{exercise}
+\Table{tab:age_egg} shows the age of a hen and the number of eggs that
+she lay per week.  Graph the data in the table as a scatter plot.
+What can you conclude from the scatter plot?
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+\Figure{fig:age_egg} shows a scatter plot of the data in
+\Table{tab:age_egg}.  Without any additional information, apart from
+what is presented in the table, the graph shows that as the hen gets
+older she lays fewer eggs per week.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/age-eggs-scatterplot.pdf}
+\caption{%%
+  The number of eggs that a hen laid per week versus her age in
+  months.  The data are from \Table{tab:age_egg}.
+}
+\label{fig:age_egg}
+\end{figure}
+\end{solution}
+}{}
+
 \end{document}
