@@ -51,6 +51,7 @@ clean:
 	rm -rfv *.log
 	rm -rfv *.md5
 	rm -rfv *.out
+	rm -rfv data/07/*~
 	rm -rfv style/*~
 	rm -rfv table/06/*~
 	rm -rfv table/07/*~
