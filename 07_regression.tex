@@ -595,7 +595,77 @@ Use linear regression to model the data in \Table{tab:height_weight}.
 %%
 \ifbool{showSolution}{
 \begin{solution}
+Let $x_i$ and $y_i$ be the height and weight, respectively, of
+teenager $i$.  The mean height is
+\[
+\xbar
+=
+\frac{1738}{10}
+=
+173.8
+\]
+and the mean weight is
+\[
+\ybar
+=
+594
+=
+59.4.
+\]
+Use the formulae in~\eqref{eqn:linear_regression_alpha_hat_beta_hat}
+to produce the data in \Table{tab:height_weight_regression}.  The
+value of $\alphahat$ is obtained by summing the values along the
+column labelled $d(x_i) d(y_i)$ and divide the result by the sum of
+the values along the column labelled $d(x_i) d(x_i)$.  What you end up
+with is the approximation
+\[
+\alphahat
+=
+\frac{137.8}{153.6}
+\approx
+0.897135
+\]
+rounded to six decimal places.  The value of $\betahat$ can be
+approximated as
+\[
+\betahat
+=
+59.4 - (\alphahat \times 173.8)
+\approx
+-96.522135
+\]
+rounded to six decimal places.  Therefore the data in
+\Table{tab:height_weight} can be modelled as the linear function
+\[
+f(x)
+=
+0.897135 x -96.522135
+\]
+where $x$ represents the height~(in centimetres) of a teenager and
+$f(x)$ represents the weight~(in kilograms) of the teenager.
+\Figure{fig:height_weight_regression} shows a graph of the function
+together with a scatter plot of the data in
+\Table{tab:height_weight}.
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/height-weight-regression.tex}
+\caption{%%
+  Details of using the formulae
+  in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to calculate the
+  regression line for the data in \Table{tab:height_weight}.
+}
+\label{tab:height_weight_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/height-weight-regression.pdf}
+\caption{%%
+  A regression line for the data in \Table{tab:height_weight}.
+}
+\label{fig:height_weight_regression}
+\end{figure}
 \end{solution}
 }{}
 
