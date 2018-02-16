@@ -756,7 +756,81 @@ Use linear regression to model the data in \Table{tab:age_egg}.
 %%
 \ifbool{showSolution}{
 \begin{solution}
+Let $x$ be the age of the hen and let $y = f(x)$ be the number of eggs
+that the hen laid per week when she was at age $x$.  Using the data in
+\Table{tab:age_egg}, the mean age is
+\[
+\xbar
+=
+\frac{147}{14}
+=
+10.5
+\]
+months and the mean number of eggs is
+\[
+\ybar
+=
+\frac{54}{14}
+\approx
+3.857143
+\]
+per week, rounded to six decimal places.  Use the formulae
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to obtain the
+values in \Table{tab:age_egg_regression}.  To calculate the value of
+$\alphahat$, sum the values along the column labelled $d(x_i) d(y_i)$,
+do the same for the column labelled $d(x_i) d(x_i)$, and divide the
+first sum by the second sum to obtain the approximation
+\[
+\alphahat
+=
+\frac{-56}{227.5}
+\approx
+-0.246154
+\]
+rounded to six decimal places.  The value of $\betahat$ can be
+approximated as
+\[
+\betahat
+=
+\ybar - \alphahat \xbar
+\approx
+6.441758
+\]
+rounded to six decimal places.  Therefore the data in
+\Table{tab:age_egg} can be modelled as the linear function
+\[
+f(x)
+=
+-0.246154 x + 6.441758
+\]
+where $x$ represents the age~(in months) of a hen and $f(x)$
+represents the number of eggs that she lay per week at $x$ months
+old.  \Figure{fig:age_eggs_regression} shows a scatter plot of the
+data in \Table{tab:age_egg} together with a graph of the function
+$f(x)$.
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg-regression.tex}
+\caption{%%
+  Detailed calculation of the regression line for the data in
+  \Table{tab:age_egg}.  Note that most numbers have been rounded to
+  six decimal places in order to fit the table.  You should only do
+  the rounding for the final results.  Except for the first two
+  columns, the numbers in the table should be computed by using a
+  spreadsheet software package.
+}
+\label{tab:age_egg_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/age-eggs-regression.pdf}
+\caption{%%
+  A regression line through the data in \Table{tab:age_egg}.
+}
+\label{fig:age_eggs_regression}
+\end{figure}
 \end{solution}
 }{}
 
