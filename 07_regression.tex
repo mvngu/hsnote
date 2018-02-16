@@ -686,9 +686,9 @@ Use linear regression to model the data in \Table{tab:test_score}.
 %%
 \ifbool{showSolution}{
 \begin{solution}
-Let $x$ be the hours spent studying and let $y$ be the corresponding
-test score.  From \Table{tab:test_score}, the mean hours of studying
-is
+Let $x$ be the hours spent studying for a test and let $y = f(x)$ be
+the corresponding test score.  From \Table{tab:test_score}, the mean
+hours of studying is
 \[
 \xbar
 =
@@ -706,10 +706,11 @@ and the mean test score is
 \]
 both rounded to six decimal places.  Using the formulae
 in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} should result in
-something like the values of \Table{tab:study_hours_regression}.  Now
-sum the values along the column labelled $d(x_i) d(y_i)$, do the same
-for the column labelled $d(x_i) d(x_i)$, and divide the first sum by
-the second sum to get the approximation
+something like the values of \Table{tab:study_hours_regression}.  To
+approximate the value of $\alphahat$, sum the values along the column
+labelled $d(x_i) d(y_i)$, do the same for the column labelled
+$d(x_i) d(x_i)$, and divide the first sum by the second sum to get the
+approximation
 \[
 \alphahat
 \approx
@@ -718,8 +719,8 @@ the second sum to get the approximation
 0.876344
 \]
 rounded to six decimal places.  Note that you should only do the
-rounding for the final result.  The value of $\betahat$ can be written
-as
+rounding for the final result.  The value of $\betahat$ can be
+approximated as
 \[
 \betahat
 =
@@ -745,7 +746,10 @@ regression function $f(x)$.
 \input{table/07/test-score-regression.tex}
 \caption{%%
   Detailed calculation of the regression line for the data in
-  \Table{tab:test_score}.
+  \Table{tab:test_score}.  Most values have been rounded to six
+  decimal places so that the values can fit within the table.  The
+  values were calculated by a spreadsheet software package.  In
+  general, you should not round the values in the table.
 }
 \label{tab:study_hours_regression}
 \end{table}
