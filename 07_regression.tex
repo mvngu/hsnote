@@ -363,21 +363,24 @@ older she lays fewer eggs per week.
 \section{Linear regression}
 
 The basic idea of linear regression is to fit a straight line to a
-data set.  The idea is best explained through an example.  Consider a
-brand of televisions~(TVs) called FantasticTV that was sold at ten
-different stores.  Each store is known to sell other brands of TVs,
-but you are interested only in FantasticTV.  \Table{tab:tv_sold} shows
-the price of each unit of FantasticTV and how many units of this brand
-were sold during a particular month.  The data in the table is graphed
-in the scatter plot of \Figure{fig:tv_sold}.  You can see in
-\Figure{fig:tv_sold} that there is a downward trend.  Without
-additional information, you might conclude that as the price of each
-unit of FantasticTV increases the lower is the number of units of
-FantasticTV sold.  To put it another way, the lower is the price of
-each unit of FantasticTV, the more units of FantasticTV were sold.
-Another thing you might note is that you can draw a straight line
-through the dots in \Figure{fig:tv_sold}.  The problem now is: How can
-you draw a straight line that best fits the dots?
+data set.  The idea is best explained through an example.
+
+Consider a brand of televisions~(TVs) called FantasticTV that was sold
+at ten different stores.  Each store is known to sell other brands of
+TVs, but you are interested only in FantasticTV.  \Table{tab:tv_sold}
+shows the price of each unit of FantasticTV and how many units of this
+brand were sold during a particular month.  Note that each store set a
+different price for each unit of FantasticTV.  The data in
+\Table{tab:tv_sold} is graphed in the scatter plot of
+\Figure{fig:tv_sold}.  You can see in \Figure{fig:tv_sold} that there
+is a downward trend.  Without additional information, you might
+conclude that as the price of each unit of FantasticTV increases the
+lower is the number of units of FantasticTV sold.  To put it another
+way, the lower is the price of each unit of FantasticTV, the more
+units of FantasticTV were sold.  Another thing you might note is that
+you can draw a straight line through the dots in \Figure{fig:tv_sold}.
+The problem now is: How can you draw a straight line that best fits
+the dots?
 
 \begin{table}[!htbp]
 \centering
@@ -385,8 +388,9 @@ you draw a straight line that best fits the dots?
 \caption{%%
   The price of each unit of FantasticTV versus the number of units
   sold.  The price is measured in Australian dollars.  The number of
-  units sold is during a particular month.  The same brand of TVs was
-  sold across ten different stores.
+  units sold is during a particular month.  Units of FantasticTV were
+  sold across ten different stores, but each store set a different
+  price.
 }
 \label{tab:tv_sold}
 \end{table}
@@ -401,5 +405,67 @@ you draw a straight line that best fits the dots?
 }
 \label{fig:tv_sold}
 \end{figure}
+
+This is a job for linear regression.  Linear regression is a way to
+calculate the best linear function that fits a given data set.  As you
+know, a linear function has the form
+\[
+y
+=
+f(x)
+=
+ax + b.
+\]
+In the example on FantasticTV, the variable $x$ represents the price
+of each unit of FantasticTV and $y = f(x)$ represents how many units
+of FantasticTV were sold.
+
+Let's see how linear regression can help you to model the data set in
+\Table{tab:tv_sold}.  Denote by $x_i$ the price of each unit of
+FantasticTV at store $i$.  If $i = 1$, then $x_1 = 400$ because each
+unit of FantasticTV was sold for $\$400$ at store $i = 1$.  If
+$i = 2$, then $x_2 = 445$.  And so on.  Then $\xbar$ denotes the
+mean~(or average) price of each unit of FantasticTv across the ten
+stores.  Similarly, let $y_i$ be the number of units of FantasticTV
+sold at store $i$.  For $i = 1$, \Table{tab:tv_sold} shows that $y_1 =
+15$ units of FantasticTV were sold at store $i = 1$.  If $i = 2$, then
+$y_2 = 8$ units of FantasticTV were sold at store $i = 2$.  And so
+on.  You can denote by $\ybar$ the mean~(or average) number of units
+of FantasticTV sold across the ten stores.  The problem is to
+approximate as best as possible the values of $a$ and $b$ in the
+function $y = f(x)$.  Suppose the values of $a$ and $b$ are
+approximated by $\alphahat$ and $\betahat$, respectively.  Then it can
+be shown that you have the values
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+}{
+  \sum_{i=1}^n (x_i - \xbar)^2
+} \\[4pt]
+%%
+%%
+\betahat
+&=
+\ybar - \alphahat \xbar
+\end{align*}
+%%
+where $n$ represents the number of stores.  In particular, you have
+$n = 10$ because \Table{tab:tv_sold} shows ten stores.  You do not
+need to worry about how the formulae for $\alphahat$ and $\betahat$
+were derived.  You need only to worry about how to use these
+formulae.  The data in \Table{tab:tv_sold} can now be modelled as the
+linear function
+\[
+y
+=
+f(x)
+=
+\alphahat x + \betahat
+\]
+where $\alphahat$ is the rate of change of the function $y = f(x)$ and
+$\betahat$ is the $y$-intercept.
 
 \end{document}
