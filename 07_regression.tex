@@ -437,7 +437,9 @@ function $y = f(x)$.  Suppose the values of $a$ and $b$ are
 approximated by $\alphahat$ and $\betahat$, respectively.  Then it can
 be shown that you have the values
 %%
-\begin{align*}
+\begin{equation}
+\label{eqn:linear_regression_alpha_hat_beta_hat}
+\begin{aligned}
 \alphahat
 &=
 \frac{
@@ -450,7 +452,8 @@ be shown that you have the values
 \betahat
 &=
 \ybar - \alphahat \xbar
-\end{align*}
+\end{aligned}
+\end{equation}
 %%
 where $n$ represents the number of stores.  In particular, you have
 $n = 10$ because \Table{tab:tv_sold} shows ten stores.  You do not
@@ -467,5 +470,108 @@ f(x)
 \]
 where $\alphahat$ is the rate of change of the function $y = f(x)$ and
 $\betahat$ is the $y$-intercept.
+
+The next step is to use the formulae
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to calculate the
+rate of change and vertical intercept for the data in
+\Table{tab:tv_sold}.  In general, it is very boring to calculate the
+values of $\alphahat$ and $\betahat$ by hand.  You should invest some
+time into learning how to use a spreadsheet software package.  Here
+are the major steps to perform the computation as shown
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat}.  First, calculate
+the values of $\xbar$ and $\ybar$.  From \Table{tab:tv_sold}, you have
+\[
+\xbar
+=
+422.5
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\ybar
+=
+11.8.
+\]
+Next, calculate the value of $\alphahat$.  The expression
+$d(x_i) = x_i - \xbar$ tells you to subtract the mean value $\xbar$
+from the price of each unit of FantasticTV at store $i$.  Similarly,
+the expression $d(y_i) = y_i - \ybar$ states that you subtract the
+mean value $\ybar$ from the number of units sold at store $i$.
+Calculate the values of $d(x_i)$ and $d(y_i)$ for each of the ten
+stores.  Then for store $i$ you calculate the products
+$d(x_i) \times d(y_i)$ and $d(x_i) \times d(x_i)$.  The results should
+be something similar to
+\Table{tab:fantastic_tv_details_regression_line}.  In
+\Table{tab:fantastic_tv_details_regression_line}, sum the numbers
+along the column labelled $d(x_i) d(y_i)$ to get
+\[
+\sum_{i=1}^n d(x_i) d(y_i)
+=
+-855
+\]
+and sum the numbers along the column labelled $d(x_i) d(x_i)$ to get
+\[
+\sum_{i=1}^n d(x_i) \times d(x_i)
+=
+4612.5.
+\]
+The value of $\alphahat$ is
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{-855}{4612.5} \\[4pt]
+&\approx
+-0.185366
+\end{align*}
+%%
+rounded to six decimal places.  The final step is to calculate the
+value of $\betahat$, which can be written as
+%%
+\begin{align*}
+\betahat
+&=
+11.8 - (\alphahat \times 422.5) \\[4pt]
+&\approx
+90.117073
+\end{align*}
+%%
+rounded to six decimal places.  Therefore the number of units of
+FantasticTV sold can be modelled as the linear function
+\[
+f(x)
+=
+-0.185366 x + 90.117073.
+\]
+A graph of the function is shown in
+\Figure{fig:fantastic_tv_regression} together with a scatter plot of
+the data in \Table{tab:tv_sold}.  Note that the function $f(x)$ is a
+model of the data in \Table{tab:tv_sold}.  This means that the
+function approximates the data and the function gives you approximate
+values for each value of $x$.  For example, for $x = 400$ you have the
+approximate value of $f(400) \approx 15.97$, which is close to the
+actual value of $15$.  For $x = 445$ you have $f(445) \approx 7.63$,
+which is also close the actual value of $8$.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/fantastic-tv-regression.tex}
+\caption{%%
+  Details of how to use the formulae
+  in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to calculate the
+  regression line for the data in \Table{tab:tv_sold}.
+}
+\label{tab:fantastic_tv_details_regression_line}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/fantastic-tv-regression.pdf}
+\caption{%%
+  Model the data in \Table{tab:tv_sold} with a regression line.
+}
+\label{fig:fantastic_tv_regression}
+\end{figure}
 
 \end{document}
