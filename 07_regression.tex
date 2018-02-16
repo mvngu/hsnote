@@ -675,7 +675,78 @@ Use linear regression to model the data in \Table{tab:test_score}.
 %%
 \ifbool{showSolution}{
 \begin{solution}
+Let $x$ be the hours spent studying and let $y$ be the corresponding
+test score.  From \Table{tab:test_score}, the mean hours of studying
+is
+\[
+\xbar
+=
+\frac{59}{11}
+\approx
+5.363636
+\]
+and the mean test score is
+\[
+\ybar
+=
+\frac{74}{11}
+\approx
+6.727273
+\]
+both rounded to six decimal places.  Using the formulae
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} should result in
+something like the values of \Table{tab:study_hours_regression}.  Now
+sum the values along the column labelled $d(x_i) d(y_i)$, do the same
+for the column labelled $d(x_i) d(x_i)$, and divide the first sum by
+the second sum to get the approximation
+\[
+\alphahat
+\approx
+\frac{74.090909}{84.545455}
+\approx
+0.876344
+\]
+rounded to six decimal places.  Note that you should only do the
+rounding for the final result.  The value of $\betahat$ can be written
+as
+\[
+\betahat
+=
+\ybar - \alphahat\xbar
+\approx
+2.026882
+\]
+rounded to six decimal places.  Therefore the data in
+\Table{tab:height_weight} can be modelled as the linear function
+\[
+f(x)
+=
+0.876344 x + 2.026882
+\]
+where $x$ represents the number of hours that a student spent studying
+for a test and $f(x)$ represents the student's test score.
+\Figure{fig:test_score_regression} shows a graph of the scatter plot
+of the data in \Table{tab:test_score} together with the graph of the
+regression function $f(x)$.
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/study-hours-regression.tex}
+\caption{%%
+  Detailed calculation of the regression line for the data in
+  \Table{tab:test_score}.
+}
+\label{tab:study_hours_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/test-score-regression.pdf}
+\caption{%%
+  A regression line through the data in \Table{tab:test_score}.
+}
+\label{fig:test_score_regression}
+\end{figure}
 \end{solution}
 }{}
 
