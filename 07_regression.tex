@@ -229,15 +229,21 @@ during the evening.
 %%
 \ifbool{showSolution}{
 \begin{solution}
-The sum of the hours spent studying is
-\[
-3 + 3.5 + 4 + 2.5 + 4 + 4 + 4
-=
+Let $x_i$ be the number of hours spent studying during the evening of
+day $i$.  If $i = 1$, the first day is Monday.  If $i = 2$, the second
+day is Tuesday.  And so on.  The sum of the hours spent studying is
+%%
+\begin{align*}
+\sum_{i=1}^7 x_i
+&=
+3 + 3.5 + 4 + 2.5 + 4 + 4 + 4 \\[4pt]
+&=
 25.
-\]
-As there are seven numbers, the mean is $25 / 7 \approx 3.57$, rounded
-to two decimal places.  That is, during a particular week the student
-spent an average of $3.57$ hours studying during the evening.
+\end{align*}
+%%
+As there are seven numbers, the mean is $\xbar = 25 / 7 \approx 3.57$,
+rounded to two decimal places.  That is, during a particular week the
+student spent an average of $3.57$ hours studying during the evening.
 \end{solution}
 }{}
 
