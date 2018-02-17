@@ -864,4 +864,37 @@ approximate a data set, you might still ask yourself: How well does
 the function $f(x)$ fit the data?  The Pearson correlation coefficient
 is way to answer this question.
 
+The Pearson correlation coefficient is usually denoted by $r$ and
+defined as the number
+\[
+r
+=
+\frac{
+  \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+}{
+  \sqrt{
+    \sum_{i=1}^n (x_i - \xbar)^2 \sum_{i=1}^n (y_i - \ybar)^2
+  }
+}.
+\]
+You already know how to calculate the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2.
+\]
+Now you need to calculate a third sum:
+\[
+\sum_{i=1}^n (y_i - \ybar)^2.
+\]
+Multiply the third sum $\sum_{i=1}^n (y_i - \ybar)^2$ by
+$\sum_{i=1}^n (x_i - \xbar)^2$ and take the square root of the
+resulting product.  You then divide the sum
+$\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)$ by the square root to get
+the number $r$.
+
 \end{document}
