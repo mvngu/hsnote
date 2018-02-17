@@ -866,7 +866,9 @@ is way to answer this question.
 
 The Pearson correlation coefficient is usually denoted by $r$ and
 defined as the number
-\[
+%%
+\begin{equation}
+\label{eqn:Pearson_correlation_coefficient}
 r
 =
 \frac{
@@ -876,7 +878,8 @@ r
     \sum_{i=1}^n (x_i - \xbar)^2 \sum_{i=1}^n (y_i - \ybar)^2
   }
 }.
-\]
+\end{equation}
+%%
 You already know how to calculate the sums
 \[
 \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
@@ -896,5 +899,48 @@ $\sum_{i=1}^n (x_i - \xbar)^2$ and take the square root of the
 resulting product.  You then divide the sum
 $\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)$ by the square root to get
 the number $r$.
+
+How would you interpret the Pearson correlation coefficient as defined
+by \Expression{eqn:Pearson_correlation_coefficient}?  The Pearson
+correlation coefficient is a number between $-1$ and $1$, inclusive.
+That is, you have $-1 \leq r \leq 1$.  Suppose you have a data set and
+you have computed a regression function
+$f(x) = \alphahat x + \betahat$ that best fits the data.  There are
+three extreme cases to consider:
+%%
+\begin{packedenumeral}
+\item If $r = -1$, then the function $f(x)$ fits the data perfectly.
+  Every point of the data set lies on a straight line.  Furthermore,
+  the rate of change of $f(x)$ is negative, i.e.~$\alphahat < 0$.
+
+\item If $r = 1$, the function $f(x)$ fits the data perfectly.  Each
+  point of the data set lies on a straight line.  The rate of change
+  of $f(x)$ is positive, i.e.~$\alphahat > 0$.
+
+\item If $r = 0$, then there is no linear relationship in the data
+  set.  This does not mean that there is no relationship at all among
+  the data.  The scatter plot of the data might look like a circle or
+  a square or some other shape.  However, the value $r = 0$ means that
+  the relationship that exists in the data, whatever that is, cannot
+  be modelled as a linear function.
+\end{packedenumeral}
+%%
+You also have values of $r \neq 0$ that are strictly between $-1$ and
+$1$, i.e.~$-1 < r < 1$ and $r \neq 0$.  The following are some rough
+guidelines on how to interpret the value of $r$ for a given data set:
+%%
+\begin{packedenumeral}
+\item If $r \geq 0.9$ or $r \leq -0.9$, there is strong linear
+  correlation in the data.
+
+\item If $0.75 \leq r < 0.9$ or $-0.9 < r \leq -0.75$, there is
+  moderate linear correlation in the data.
+
+\item If $0.5 \leq r < 0.75$ or $-0.75 < r \leq -0.5$, there is weak
+  linear correlation in the data.
+
+\item If $r < 0.5$ or $r > -0.5$, there is very weak or poor linear
+  correlation in the data.
+\end{packedenumeral}
 
 \end{document}
