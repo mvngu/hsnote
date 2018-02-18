@@ -692,8 +692,12 @@ f(x)
 \end{equation}
 %%
 where $x$ represents a person's age~(in years) and $f(x)$ represents
-the person's systolic blood pressure.  If a person is $x = 70$ years
-old, the regression
+the person's systolic blood pressure.
+\Figure{fig:blood_pressure_regression} shows a scatter plot of the
+data in \Table{tab:blood_pressure} together with a graph of the
+regression model~\eqref{eqn:systolic_blood_pressure_regression}.
+
+If a person is $x = 70$ years old, the regression
 model~\eqref{eqn:systolic_blood_pressure_regression} predicts that the
 person would have a systolic blood pressure of
 %%
@@ -720,6 +724,15 @@ rounded to zero decimal places.
 }
 \label{tab:blood_pressure_regression}
 \end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/blood-pressure-regression.pdf}
+\caption{%%
+  A linear regression of the data in \Table{tab:blood_pressure}.
+}
+\label{fig:blood_pressure_regression}
+\end{figure}
 
 \solutionpart{subex:blood_pressure_nonsense}
 If a person is $x = -3$ years old, the regression
