@@ -599,6 +599,154 @@ which is also close the actual value of $8$.
 \label{fig:fantastic_tv_regression}
 \end{figure}
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/blood-pressure.tex}
+\caption{%%
+  The age~(in years) and systolic blood pressure of $30$ people.
+}
+\label{tab:blood_pressure}
+\end{table}
+
+\begin{example}
+\Table{tab:blood_pressure} shows the age and systolic blood pressure
+of $30$ people.
+%%
+\begin{packedenum}
+\item\label{subex:blood_pressure_mean_age_pressure}
+  Calculate the mean age and mean blood pressure.
+
+\item\label{subex:blood_pressure_linear_regression}
+  Use linear regression to model the data in
+  \Table{tab:blood_pressure}.  If a person is $70$ years old, what is
+  the person's systolic blood pressure as predicted by the linear
+  regression model?
+
+\item\label{subex:blood_pressure_nonsense}
+  Suppose you model the data in \Table{tab:blood_pressure} as the
+  linear function $f(x) = ax + b$, where $x$ represents the age~(in
+  years) of a person and $f(x)$ represents the person's systolic blood
+  pressure.  Set $x = -3$ and calculate the value of $f(-3)$.  What
+  does the value $f(-3)$ mean?  Explain why this value does not make
+  sense.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:blood_pressure_mean_age_pressure}
+Let $x$ be the age of a person and let $y$ be the person's systolic
+blood pressure.  Then the mean~(or average) age is
+\[
+\xbar
+=
+\frac{1354}{30}
+\approx
+45
+\]
+years old and the mean blood pressure is
+\[
+\ybar
+=
+\frac{4276}{30}
+\approx
+142.53
+\]
+rounded to two decimal places.
+
+\solutionpart{subex:blood_pressure_linear_regression}
+You want to model the data in \Table{tab:blood_pressure} by a linear
+function of the form $f(x) = ax + b$, where $x$ represents the age of
+a person and $y = f(x)$ represents the person's systolic blood
+pressure.  From the formulae
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} you can
+approximate the values of $a$ and $b$ by $\alphahat$ and $\betahat$,
+respectively.  \Table{tab:blood_pressure_regression} shows the
+detailed calculation of the regression line.  Now you can approximate
+$\alphahat$ as
+\[
+\alphahat
+\approx
+\frac{6585.866667}{6783.466667}
+\approx
+0.970870
+\]
+and $\betahat$ can be approximated as
+\[
+\betahat
+=
+\ybar - \alphahat \xbar
+\approx
+98.714718
+\]
+both rounded to six decimal places.  You should use a spreadsheet
+software package to calculate the values of $\alphahat$ and
+$\betahat$.  You should not round any number that you get during the
+calculation.  Only the final results should be rounded.  The data in
+\Table{tab:blood_pressure} can be modelled as the linear function
+%%
+\begin{equation}
+\label{eqn:systolic_blood_pressure_regression}
+f(x)
+=
+0.970870 x + 98.714718
+\end{equation}
+%%
+where $x$ represents a person's age~(in years) and $f(x)$ represents
+the person's systolic blood pressure.  If a person is $x = 70$ years
+old, the regression
+model~\eqref{eqn:systolic_blood_pressure_regression} predicts that the
+person would have a systolic blood pressure of
+%%
+\begin{align*}
+f(70)
+&=
+(0.970870 \times 70) + 98.714718 \\[4pt]
+&\approx
+167
+\end{align*}
+%%
+rounded to zero decimal places.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/blood-pressure-regression.tex}
+\caption{%%
+  Detailed calculation of the regression line for the data in
+  \Table{tab:blood_pressure}.  Most numbers have been rounded to six
+  decimal places so as to fit the table.  However, you should not
+  round numbers during the calculation.  For a big data set like
+  \Table{tab:blood_pressure}, you should use a spreadsheet software
+  package to calculate each number.
+}
+\label{tab:blood_pressure_regression}
+\end{table}
+
+\solutionpart{subex:blood_pressure_nonsense}
+If a person is $x = -3$ years old, the regression
+model~\eqref{eqn:systolic_blood_pressure_regression} predicts that the
+person would have a systolic blood pressure of
+%%
+\begin{align*}
+f(-3)
+&=
+\bigparen{0.970870 \times (-3)} + 98.714718 \\[4pt]
+&\approx
+96
+\end{align*}
+%%
+rounded to zero decimal places.  The value $f(-3) \approx 96$ does not
+make sense because it predicts the systolic blood pressure of someone
+who is years before being born.  The data in
+\Table{tab:blood_pressure} cover people who are from $17$ to $69$
+years old.  The best you can say is that the regression
+model~\eqref{eqn:systolic_blood_pressure_regression} is valid for
+people who are between $17$ and $69$ years old.  You can use the model
+to predict the systolic blood pressure of someone who is a few years
+outside of what the data show.  But you should not fully trust
+whatever number the regression model gives you.  The model is only an
+approximation of the data.
+\end{solution}
+
 \begin{exercise}
 Use linear regression to model the data in \Table{tab:height_weight}.
 \end{exercise}
