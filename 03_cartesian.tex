@@ -269,13 +269,62 @@ $\absoluteValue{a - b} = \absoluteValue{b - a}$.
 
 \begin{exercise}
 \label{ex:absolute_value_squared}
-Let $a$ and $b$ be any real numbers.  Explain why
-$\absoluteValue{a - b}^2 = (a - b)^2$.
+\begin{packedenum}
+\item\label{subex:absolute_value_squared_4_minus_5}
+  Show that $\absoluteValue{4 - 5}^2$ is the same as $(4 - 5)^2$.
+
+\item\label{subex:absolute_value_squared_7_minus_3}
+  Show that $\absoluteValue{7 - 3}^2$ is the same as $(7 - 3)^2$.
+
+\item\label{subex:absolute_value_squared_a_minus_b}
+  Let $a$ and $b$ be any numbers.  Explain why
+  $\absoluteValue{a - b}^2 = (a - b)^2$.
+\end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
-Since $\pair{a}{b} \in \RR$ you have three cases:
+\solutionpart{subex:absolute_value_squared_4_minus_5}
+The absolute value $\absoluteValue{4 - 5}^2$ can be written as
+%%
+\begin{align*}
+\absoluteValue{4 - 5}^2
+&=
+\absoluteValue{-1}^2 \\[4pt]
+&=
+\absoluteValue{-1} \times \absoluteValue{-1} \\[4pt]
+&=
+1 \times 1 \\[4pt]
+&=
+1^2 \\[4pt]
+&=
+1.
+\end{align*}
+%%
+Furthermore, you have $(4 - 5)^2 = (-1)^2 = 1$ and therefore
+$\absoluteValue{4 - 5}^2 = (4 - 5)^2$.
+
+\solutionpart{subex:absolute_value_squared_7_minus_3}
+You can write $\absoluteValue{7 - 3}^2$ as
+%%
+\begin{align*}
+\absoluteValue{7 - 3}^2
+&=
+\absoluteValue{-4}^2 \\[4pt]
+&=
+\absoluteValue{-4} \times \absoluteValue{-4} \\[4pt]
+&=
+4 \times 4 \\[4pt]
+&=
+16.
+\end{align*}
+%%
+Furthermore, you can write
+$(7 - 3)^2 = (-4)^2 = (-1)^2 \times 4^2 = 16$ and therefore you have
+$\absoluteValue{7 - 3}^2 = (7 - 3)^2$.
+
+\solutionpart{subex:absolute_value_squared_a_minus_b}
+Since $a$ and $b$ are any numbers, you have three cases:
 %%
 \begin{packedenumeral}
 \item\label{case:a_less_than_b}
