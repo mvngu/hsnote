@@ -227,12 +227,36 @@ hypotenuse.
 }{}
 
 \begin{exercise}
-Let $a$ and $b$ be any real numbers.  Explain why the absolute value
-$\absoluteValue{a - b} = \absoluteValue{b - a}$.
+\begin{packedenum}
+\item\label{subex:absolute_value_4_minus_5}
+  Show that the absolute value $\absoluteValue{4 - 5}$ is the same as
+  the absolute value $\absoluteValue{5 - 4}$.
+
+\item\label{subex:absolute_value_7_minus_3}
+  Show that $\absoluteValue{7 - 3} = \absoluteValue{3 - 7}$.
+
+\item\label{subex:absolute_value_a_minus_b}
+  Let $a$ and $b$ be any numbers.  Explain why
+  $\absoluteValue{a - b} = \absoluteValue{b - a}$.
+\end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subex:absolute_value_4_minus_5}
+You have $\absoluteValue{4 - 5} = \absoluteValue{-1} = 1$ and
+$\absoluteValue{5 - 4} = \absoluteValue{1} = 1$.  Therefore you have
+the equality
+$\absoluteValue{4 - 5} = \absoluteValue{5 - 4}$.
+
+\solutionpart{subex:absolute_value_7_minus_3}
+The solution is similar to \Part{subex:absolute_value_4_minus_5}.  You
+have the absolute value
+$\absoluteValue{7 - 3} = \absoluteValue{4} = 4$ and
+$\absoluteValue{3 - 7} = \absoluteValue{-4} = 4$.  Therefore you have
+$\absoluteValue{7 - 3} = \absoluteValue{3 - 7}$.
+
+\solutionpart{subex:absolute_value_a_minus_b}
 The numbers $a$ and $b$ can be represented as the points
 $\tuple{a}{0}$ and $\tuple{b}{0}$, respectively, in the Cartesian
 coordinate system.  The absolute value $\absoluteValue{a - b}$ is the
