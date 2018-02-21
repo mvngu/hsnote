@@ -741,16 +741,52 @@ reflection is $\tuple{2}{-4}$.
   %%
   Search for ``Ren\'e Descartes''.
 
-\item Let $a$ be a real number.  Explain why the distance from the
-  point $\tuple{a}{0}$ to the origin is the absolute value
-  $\absoluteValue{a}$.
+\item This problem tests your understanding of absolute value and
+  distance.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:point_on_axis_to_origin_2}
+    Show that the distance from the point $\tuple{2}{0}$ to the origin
+    is the absolute value $\absoluteValue{2}$.
+
+  \item\label{subprob:point_on_axis_to_origin_minus_3}
+    Show that the distance from the point $\tuple{-3}{0}$ to the
+    origin is the absolute value $\absoluteValue{-3}$.
+
+  \item\label{subprob:point_on_axis_to_origin_general}
+    Let $a$ be a real number.  Explain why the distance from the point
+    $\tuple{a}{0}$ to the origin is the absolute value
+    $\absoluteValue{a}$.
+  \end{packedenum}
 \ifbool{showSolution}{
   \begin{solution}
+  \solutionpart{subprob:point_on_axis_to_origin_2}
+  From the origin $\tuple{0}{0}$ you travel a distance of $2$ units to
+  the right in order to reach the point $\tuple{2}{0}$.  Thus the
+  distance between the points $\tuple{0}{0}$ and $\tuple{2}{0}$ is
+  $\absoluteValue{2} = 2$.
+
+  \solutionpart{subprob:point_on_axis_to_origin_minus_3}
+  Starting from the origin $\tuple{0}{0}$ you travel a distance of $3$
+  units to the left in order to reach the point $\tuple{-3}{0}$.  Thus
+  the distance between the points $\tuple{0}{0}$ and $\tuple{-3}{0}$
+  is $\absoluteValue{-3} = 3$.
+
+  \solutionpart{subprob:point_on_axis_to_origin_general}
   You have three cases: (1)~$a > 0$, (2)~$a < 0$, and (3)~$a = 0$.  If
-  $a > 0$, then the point $\tuple{a}{0}$ has a distance of $a$ to the
-  origin.  Note that $\absoluteValue{a} = a$ because you assumed that
-  $a > 0$.  If $a < 0$, then $\tuple{a}{0}$ has a distance of
-  $\absoluteValue{a}$ to the origin.  If $a = 0$, then from
+  $a > 0$, then the point $\tuple{a}{0}$ is to the right of the origin
+  $\tuple{0}{0}$.  Starting from the origin, you travel a distance of
+  $a$ units to the right to reach the point $\tuple{a}{0}$.  Note that
+  $\absoluteValue{a} = a$ because you assumed that $a > 0$.
+
+  If $a < 0$, then the point $\tuple{a}{0}$ is to the left of the
+  origin $\tuple{0}{0}$.  Starting from the origin, you travel a
+  distance of $\absoluteValue{a}$ units to the left in order to reach
+  the point $\tuple{a}{0}$.  Since you assumed that $a < 0$, then the
+  absolute value $\absoluteValue{a} = -a$.  Thus the point
+  $\tuple{a}{0}$ has a distance of $\absoluteValue{a}$ to the origin.
+
+  If $a = 0$, then from
   \Exercise{ex:distance_from_point_to_itself_is_zero} you know that
   the distance from $\tuple{0}{0}$ to itself is zero.  Note that
   $\absoluteValue{0} = 0$.  In each of the above three cases, you have
