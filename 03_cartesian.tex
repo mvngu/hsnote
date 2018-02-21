@@ -741,7 +741,8 @@ reflection is $\tuple{2}{-4}$.
   %%
   Search for ``Ren\'e Descartes''.
 
-\item This problem tests your understanding of absolute value and
+\item\label{prob:absolute_value_distance_on_x_axis}
+  This problem tests your understanding of absolute value and
   distance.
   %%
   \begin{packedenum}
@@ -795,26 +796,103 @@ reflection is $\tuple{2}{-4}$.
   \end{solution}
 }{}
 
-\item Let $a$ and $b$ be positive numbers such that $a \leq b$.
-  Suppose you have two points $A = \tuple{a}{0}$ and
-  $B = \tuple{b}{0}$.  If you now have a point $C$ defined by
-  \[
-  C
-  =
-  \tuple{
-    \frac{a + b}{2}
-  }{
-    0
-  }
-  \]
-  explain why $C$ is midway between $A$ and $B$.
+\item This problem is about calculating the midpoint between two given
+  points.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:midpoint_from_origin}
+    Consider the origin $O = \tuple{0}{0}$ and the point
+    $P = \tuple{4}{0}$.  The midpoint between $O$ and $P$ is the point
+    that lies halfway between $O$ and $P$.  That is, if $M$ is the
+    midpoint between $O$ and $P$, the distance from $O$ to $M$ is the
+    same as the distance from $M$ to $P$.  Show that $\tuple{2}{0}$ is
+    the midpoint between $O$ and $P$.
+
+  \item\label{subprob:midpoint_not_from_origin}
+    Consider the points $A = \tuple{2}{0}$ and $B = \tuple{8}{0}$.
+    Show that $\tuple{5}{0}$ is the midpoint between $A$ and $B$.
+
+  \item\label{subprob:midpoint_general_distinct_points}
+    Let $a$ and $b$ be positive numbers such that $a < b$.  Suppose
+    you have two points $A = \tuple{a}{0}$ and $B = \tuple{b}{0}$.  If
+    you now have a point $C$ defined by
+    \[
+    C
+    =
+    \tuple{
+      \frac{a + b}{2}
+    }{
+      0
+    }
+    \]
+    explain why $C$ is midway between $A$ and $B$.
+  \end{packedenum}
 \ifbool{showSolution}{
   \begin{solution}
+  \solutionpart{subprob:midpoint_from_origin}
+  You have the points $O = \tuple{0}{0}$, $M = \tuple{2}{0}$, and
+  $P = \tuple{4}{0}$.  From
+  \Problem{prob:absolute_value_distance_on_x_axis} you know that the
+  distance between $O$ and $M$ is $\absoluteValue{2} = 2$.  The
+  distance between $M$ and $P$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (0 - 0)^2 + (4 - 2)^2
+  }
+  &=
+  \sqrt{0^2 + 2^2} \\[4pt]
+  &=
+  \sqrt{4} \\[4pt]
+  &=
+  2.
+  \end{align*}
+  %%
+  Since the distance between $O$ and $M$ is the same as the distance
+  between $M$ and $P$, it follows that $M$ is the midpoint between $O$
+  and $P$.
+
+  \solutionpart{subprob:midpoint_not_from_origin}
+  You have the points $A = \tuple{2}{0}$, $M = \tuple{5}{0}$, and
+  $B = \tuple{8}{0}$.  The distance between $A$ and $M$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (0 - 0)^2 + (5 - 2)^2
+  }
+  &=
+  \sqrt{0^2 + 3^2} \\[4pt]
+  &=
+  \sqrt{9} \\[4pt]
+  &=
+  3.
+  \end{align*}
+  %%
+  The distance between $M$ and $B$ is
+  %%
+  \begin{align*}
+  \sqrt{
+    (0 - 0)^2 + (8 - 5)^2
+  }
+  &=
+  \sqrt{0^2 + 3^2} \\[4pt]
+  &=
+  \sqrt{9} \\[4pt]
+  &=
+  3.
+  \end{align*}
+  %%
+  Since the distance between $A$ and $M$ is the same as the distance
+  between $M$ and $B$, conclude that $M$ is the midpoint between $A$
+  and $B$.
+
+  \solutionpart{subprob:midpoint_general_distinct_points}
   Let $d$ be the distance between $A$ and $B$.  The distance midway
   between $A$ and $B$ is $d/2$.  Then the point
   $\tuple{a + \frac{d}{2}}{0}$ is midway between $A$ and $B$.  Let's
   verify that the above is true for the point $C$.  Use
-  \Theorem{thm:distance_between_two_points} to get
+  \Theorem{thm:distance_between_two_points} to see that the distance
+  between $A$ and $B$ is
   %%
   \begin{align*}
   d
@@ -826,8 +904,8 @@ reflection is $\tuple{2}{-4}$.
   \sqrt{(b - a)^2}.
   \end{align*}
   %%
-  Since $a$ and $b$ are positive with $a \leq b$, then the difference
-  $b - a$ satisfies $b - a \geq 0$.  In other words, the distance
+  Since $a$ and $b$ are positive with $a < b$, then the difference
+  $b - a$ satisfies $b - a > 0$.  In other words, the distance
   between $A$ and $B$ can be written as $d = b - a$.  The expression
   $a + \frac{d}{2}$ can be written as
   %%
