@@ -203,26 +203,37 @@ $\cos\varphi$.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=1]{image/04/right-triangle-30-degree.pdf}
-\caption{%%
-  A right-angled triangle with an internal angle of $\pi / 6$ radians
-  or $\degree{30}$.
+\subfigure[]{
+  \includegraphics[scale=1]{image/04/right-triangle-30-degree.pdf}
+  \label{fig:right_triangle_30_degrees}
 }
-\label{fig:right_triangle_30_degrees}
+%%
+\qquad\qquad
+%%
+\subfigure[]{
+  \includegraphics[scale=1]{image/04/right-triangle-45-degree.pdf}
+  \label{fig:right_triangle_45_degrees}
+}
+\caption{%%
+  (a)~A right-angled triangle with an internal angle of $\pi / 6$
+  radians or $\degree{30}$.  (b)~A right-triangle with an internal
+  angle of $\pi / 4$ radians or $\degree{45}$.
+}
+\label{fig:right_triangle_30_45_degrees}
 \end{figure}
 
 \begin{example}
 Consider the right-angled triangle in
-\Figure{fig:right_triangle_30_degrees}.  Calculate the exact values of
-$\sin\frac{\pi}{6}$ and $\cos\frac{\pi}{6}$.
+\Figure{fig:right_triangle_30_degrees}.  Calculate the exact values
+of $\sin\frac{\pi}{6}$ and $\cos\frac{\pi}{6}$.
 \end{example}
 
 \begin{solution}
 You can use \Equation{eqn:define_sine} to calculate
 $\sin\frac{\pi}{6}$.  Note that from
-\Figure{fig:right_triangle_30_degrees}, the side opposite the angle
-has a length of $1$.  The hypotenuse has a length of $2$.  Then you
-have the exact value $\sin\frac{\pi}{6} = 1 / 2$.
+\Figure{fig:right_triangle_30_degrees}, the side opposite the given
+angle has a length of $1$.  The hypotenuse has a length of $2$.  Then
+you have the exact value $\sin\frac{\pi}{6} = 1 / 2$.
 
 You can use \Equation{eqn:define_cosine} to calculate
 $\cos\frac{\pi}{6}$.  From \Figure{fig:right_triangle_30_degrees}, the
@@ -230,6 +241,24 @@ side that is adjacent to the given angle has a length of $\sqrt{3}$.
 It follows that you have the exact value
 $\cos\frac{\pi}{6} = \frac{\sqrt{3}}{2}$.
 \end{solution}
+
+\begin{exercise}
+Use the right-triangle in \Figure{fig:right_triangle_45_degrees} to
+calculate the exact values of $\sin\frac{\pi}{4}$ and
+$\cos\frac{\pi}{4}$.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+From \Figure{fig:right_triangle_45_degrees}, the side that is opposite
+to the given angle has a length of $\sqrt{2}$.  Since the hypotenuse
+has a length of $2$, it follows that you have the exact value
+$\sin\frac{\pi}{4} = \frac{\sqrt{2}}{2}$.
+\Figure{fig:right_triangle_45_degrees} also shows that the side that
+is adjacent to the given angle has a length of $\sqrt{2}$.  Thus you
+have the exact value $\cos\frac{\pi}{4} = \frac{\sqrt{2}}{2}$.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
