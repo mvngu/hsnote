@@ -151,18 +151,24 @@ trigonometric functions.  To define the values of $\sin\varphi$ and
 $\cos\varphi$, consider \Figure{fig:right_angled_triangle_angle_phi}.
 The value of $\sin\varphi$ is defined as the side opposite to
 $\varphi$~(i.e.~$b$) over the hypotenuse $c$:
-\[
+%%
+\begin{equation}
+\label{eqn:define_sine}
 \sin\varphi
 =
 \frac{b}{c}.
-\]
+\end{equation}
+%%
 The value of $\cos\varphi$ is defined as the side adjacent to
 $\varphi$~(i.e.~$a$) over the hypotenuse:
-\[
+%%
+\begin{equation}
+\label{eqn:define_cosine}
 \cos\varphi
 =
 \frac{a}{c}.
-\]
+\end{equation}
+%%
 \Figure{fig:cosine_sine} shows the plots of $\sin\varphi$ and
 $\cos\varphi$ for angles from $\varphi = -2\pi$ to
 $\varphi = 2\pi$.  For the moment, do not worry about how to calculate
@@ -194,6 +200,36 @@ $\cos\varphi$.
 }
 \label{fig:cosine_sine}
 \end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/04/right-triangle-30-degree.pdf}
+\caption{%%
+  A right-angled triangle with an internal angle of $\pi / 6$ radians
+  or $\degree{30}$.
+}
+\label{fig:right_triangle_30_degrees}
+\end{figure}
+
+\begin{example}
+Consider the right-angled triangle in
+\Figure{fig:right_triangle_30_degrees}.  Calculate the exact values of
+$\sin\frac{\pi}{6}$ and $\cos\frac{\pi}{6}$.
+\end{example}
+
+\begin{solution}
+You can use \Equation{eqn:define_sine} to calculate
+$\sin\frac{\pi}{6}$.  Note that from
+\Figure{fig:right_triangle_30_degrees}, the side opposite the angle
+has a length of $1$.  The hypotenuse has a length of $2$.  Then you
+have the exact value $\sin\frac{\pi}{6} = 1 / 2$.
+
+You can use \Equation{eqn:define_cosine} to calculate
+$\cos\frac{\pi}{6}$.  From \Figure{fig:right_triangle_30_degrees}, the
+side that is adjacent to the given angle has a length of $\sqrt{3}$.
+It follows that you have the exact value
+$\cos\frac{\pi}{6} = \frac{\sqrt{3}}{2}$.
+\end{solution}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
