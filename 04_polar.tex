@@ -622,50 +622,29 @@ $(1\comma \frac{3\pi}{2})$.
 \section*{Problem}
 
 \begin{problem}
-\item The point $(\frac{\sqrt{3}}{2}\comma \frac{1}{2})$ in the
+\item The point $A = (\frac{\sqrt{3}}{2}\comma \frac{1}{2})$ in the
   Cartesian coordinate system makes an angle of $\degree{30}$ with the
-  positive half of the $x$-axis.
-  %%
-  \begin{packedenum}
-  \item\label{subprob:30_degrees_to_radians}
-    Convert $\degree{30}$ to radians.
-
-  \item\label{subprob:cosine_sine_30_degrees}
-    If $\degree{30}$ is equivalent to $\varphi$ radians, compute the
-    values of $\cos\varphi$ and $\sin\varphi$.
-  \end{packedenum}
+  positive half of the $x$-axis.  Draw the unit circle centred at the
+  origin.  Mark the point $A$ on the unit circle.  Draw a straight
+  line from the origin to $A$.  Label the angle that the point $A$
+  makes with respect to the positive half of the $x$-axis.  Convert
+  $A$ to polar coordinates.
 \ifbool{showSolution}{
   \begin{solution}
-  \solutionpart{subprob:30_degrees_to_radians}
-  You know that $\degree{180} = \pi$ radians.  Divide both sides of
-  the equation by $6$ and you get $\degree{180} / 6 = \pi / 6$
-  radians, which simplifies to $\degree{30} = \pi / 6$ radians.
+  See \Figure{fig:unit_circle_30_degrees}.  Since any unit circle has
+  a radius of $r = 1$, the polar coordinates of $A$ are given by
+  $\tuple{1}{\frac{\pi}{6}}$.
 
-  \solutionpart{subprob:cosine_sine_30_degrees}
-  From \Part{subprob:30_degrees_to_radians} you have
-  $\varphi = \pi / 6$ radians.  The distance from the point
-  $(\frac{\sqrt{3}}{2}\comma \frac{1}{2})$ to the origin is
-  %%
-  \begin{align*}
-  r
-  &=
-  \sqrt{
-    \parenthesis*{\frac{\sqrt{3}}{2}}^2
-    +
-    \parenthesis*{\frac{1}{2}}^2
-  } \\[4pt]
-  &=
-  \sqrt{
-    \frac{3}{4} + \frac{1}{4}
-  } \\[4pt]
-  &=
-  1
-  \end{align*}
-  %%
-  so the point $(\frac{\sqrt{3}}{2}\comma \frac{1}{2})$ lies on the
-  unit circle.  Now use \Equation{eqn:value_of_x_y_on_unit_circle} to
-  write $\cos\frac{\pi}{6} = \sqrt{3} / 2$ and
-  $\sin\frac{\pi}{6} = 1 / 2$.
+  \begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=1]{image/04/unit-circle-30-degree.pdf}
+  \caption{%%
+    The point $(\frac{\sqrt{3}}{2}\comma \frac{1}{2})$ makes an angle
+    of $\degree{30}$~(or $\pi/6$ radians) with respect to the positive
+    half of the $x$-axis.
+  }
+  \label{fig:unit_circle_30_degrees}
+  \end{figure}
   \end{solution}
 }{}
 
