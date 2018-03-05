@@ -614,28 +614,43 @@ $(\sqrt{a})^2 = a$.
 \end{solution}
 }{}
 
-Let's put \Theorem{thm:convert_Cartesian_to_polar_coordinates} to some
-use.  Any point $\tuple{a}{a}$ in the Cartesian coordinate system
-makes an angle of $\degree{45}$~(or $\pi / 4$ radians) with respect to
-the positive half of the $x$-axis.  In particular, let's convert the
-Cartesian coordinates $(\sqrt{2}\comma \sqrt{2})$ to polar
-coordinates.  Use \Theorem{thm:convert_Cartesian_to_polar_coordinates}
-and \Exercise{ex:square_root_of_a_squared} to write the radius $r$ as
+\begin{example}
+If $a > 0$ is a positive number, any point $\tuple{a}{a}$ in the
+Cartesian coordinate system makes an angle of
+$\degree{45}$~(or $\pi / 4$ radians) with respect to the positive half
+of the $x$-axis.  Convert the Cartesian coordinates
+$(\sqrt{2}\comma \sqrt{2})$ to polar coordinates.
+\end{example}
+
+\begin{solution}
+You assume that the point $A = (\sqrt{2}\comma \sqrt{2})$ lies on a
+circle that is centred at the origin.  The radius of the circle is
+equivalent to the distance from the origin to the point $A$.  Use
+\Theorem{thm:convert_Cartesian_to_polar_coordinates} to write the
+radius $r$ as
+\[
+r
+=
+\sqrt{
+  (\sqrt{2})^2 + (\sqrt{2})^2
+}.
+\]
+Now use \Exercise{ex:square_root_of_a_squared} to simplify the latter
+equation to
 %%
 \begin{align*}
 r
-&=
-\sqrt{
-  (\sqrt{2})^2 + (\sqrt{2})^2
-} \\[4pt]
 &=
 \sqrt{2 + 2} \\[4pt]
 &=
 2.
 \end{align*}
 %%
-Since the point $(\sqrt{2}\comma \sqrt{2})$ makes an angle of
-$\pi / 4$ radians, you can write $\varphi$ as
+Since the point $A$ makes an angle of $\pi / 4$ radians with respect
+to the positive half of the $x$-axis, you can write
+$\varphi = \pi / 4$.  On the other hand, you can use
+\Theorem{thm:convert_Cartesian_to_polar_coordinates} to calculate the
+angle as
 %%
 \begin{align*}
 \varphi
@@ -647,6 +662,7 @@ $\pi / 4$ radians, you can write $\varphi$ as
 %%
 Therefore the Cartesian coordinates $(\sqrt{2}\comma \sqrt{2})$ can be
 represented as the polar coordinates $(2\comma \frac{\pi}{4})$.
+\end{solution}
 
 \begin{exercise}
 Refer to the unit circle in \Figure{fig:point_on_unit_circle}.
