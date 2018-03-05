@@ -590,6 +590,88 @@ r
 \]
 \end{theorem}
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/04/right-triangle-60-degree.pdf}
+\caption{%%
+  All internal angles of the right-triangle in
+  \Figure{fig:right_triangle_30_degrees} are labelled.
+}
+\label{fig:right_triangle_third_angle_60_degrees_labelled}
+\end{figure}
+
+\begin{example}
+Verify the law of sines for the triangle in
+\Figure{fig:right_triangle_30_degrees}.
+\end{example}
+
+\begin{solution}
+First, you need to know the degrees of all internal angles.  In
+\Figure{fig:right_triangle_30_degrees}, you have the given angles of
+$\degree{90}$~(or $\pi / 2$ radians) and
+$\degree{30}$~(or $\pi / 6$ radians).  If the third angle is $x$
+degrees, then the three angles must add up to
+%%
+\begin{align*}
+180
+&=
+90 + 30 + x \\[4pt]
+&=
+120 + x
+\end{align*}
+%%
+degrees.  The reason is that the three internal angles of any triangle
+must sum to $\degree{180}$.  Solve the equation $180 = 120 + x$ for
+$x$ to see that you have $x = 60$.  In other words, the third internal
+angle is $\degree{60}$ or $\pi / 3$ radians.  After labelling the
+third internal angle, you end up with
+\Figure{fig:right_triangle_third_angle_60_degrees_labelled}.
+
+Finally, you verify the law of sines for the triangle in
+\Figure{fig:right_triangle_third_angle_60_degrees_labelled}.  The side
+opposite the angle $\frac{\radian{\pi}}{6}$ has length $1$ and so you
+have the ratio
+\[
+\frac{1}{\sin\frac{\pi}{6}}
+=
+\frac{1}{1/2}
+=
+1 \times 2
+=
+2.
+\]
+The side opposite the angle $\frac{\radian{\pi}}{3}$ has length
+$\sqrt{3}$ and so you have the ratio
+\[
+\frac{\sqrt{3}}{\sin\frac{\pi}{3}}
+=
+\frac{\sqrt{3}}{\sqrt{3} / 2}
+=
+\sqrt{3} \times \frac{2}{\sqrt{3}}
+=
+2.
+\]
+The side opposite the angle $\frac{\radian{\pi}}{2}$ has length $2$
+and so you have the ratio
+\[
+\frac{2}{\sin\frac{\pi}{2}}
+=
+\frac{2}{2/2}
+=
+2.
+\]
+Therefore for the triangle in
+\Figure{fig:right_triangle_third_angle_60_degrees_labelled} you have
+\[
+\frac{1}{\sin\frac{\pi}{6}}
+=
+\frac{\sqrt{3}}{\sin\frac{\pi}{3}}
+=
+\frac{2}{\sin\frac{\pi}{2}}
+\]
+and the law of sines is verified for the given triangle.
+\end{solution}
+
 \begin{exercise}
 \label{ex:square_root_of_a_squared}
 Let $a \geq 0$ be a real number.  Explain why $(\sqrt{a})^2 = a$.
