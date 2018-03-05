@@ -673,6 +673,78 @@ and the law of sines is verified for the given triangle.
 \end{solution}
 
 \begin{exercise}
+Verify the law of sines for the triangle in
+\Figure{fig:right_triangle_45_degrees}.
+\end{exercise}
+%%
+\ifbool{showSolution}{
+\begin{solution}
+First, you must determine the third angle in the triangle of
+\Figure{fig:right_triangle_45_degrees}.  The two given angles are
+$\degree{45}$~(or $\pi / 4$ radians) and
+$\degree{90}$~(or $\pi / 2$ radians).  If $x$ degrees represents the
+third angle, then you have
+%%
+\begin{align*}
+180
+&=
+90 + 45 + x \\[4pt]
+&=
+135 + x.
+\end{align*}
+%%
+Solve the equation $180 = 135 + x$ for $x$ and you obtain
+$x = 45$.  In other words, the third angle is $\degree{45}$ or
+$\pi / 4$ radians.  After labelling the third angle, you end up with
+\Figure{fig:right_triangle_45_degrees_all_labelled}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/04/right-triangle-45-degree-all.pdf}
+\caption{%%
+  All internal angles of the triangle in
+  \Figure{fig:right_triangle_45_degrees} are labelled.
+}
+\label{fig:right_triangle_45_degrees_all_labelled}
+\end{figure}
+
+Now you can verify the law of sines for the triangle in
+\Figure{fig:right_triangle_45_degrees_all_labelled}.  The side
+opposite the angle $\pi / 4$ has length $\sqrt{2}$ and so you have the
+ratio
+\[
+\frac{\sqrt{2}}{\sin\frac{\pi}{4}}
+=
+\frac{\sqrt{2}}{\sqrt{2} / 2}
+=
+\sqrt{2} \times \frac{2}{\sqrt{2}}
+=
+2.
+\]
+Furthermore, the side opposite the angle $\pi / 2$ has length $2$,
+thus you have
+\[
+\frac{2}{\sin\frac{\pi}{2}}
+=
+\frac{2}{2/2}
+=
+\frac{2}{1}
+=
+2.
+\]
+Therefore for the triangle in
+\Figure{fig:right_triangle_45_degrees_all_labelled} you have
+\[
+\frac{\sqrt{2}}{\sin\frac{\pi}{4}}
+=
+\frac{2}{\sin\frac{\pi}{2}}
+\]
+and the law of sines is verified for the triangle under
+consideration.
+\end{solution}
+}{}
+
+\begin{exercise}
 \label{ex:square_root_of_a_squared}
 Let $a \geq 0$ be a real number.  Explain why $(\sqrt{a})^2 = a$.
 \end{exercise}

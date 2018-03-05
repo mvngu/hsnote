@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{angles}
+\usetikzlibrary{external}
+\usetikzlibrary{quotes}
+\tikzexternalize{right-triangle-45-degree-all}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A right-angled triangle with 45 degrees.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  lineStyle/.style={-,thick},%%
+  triangleStyle/.style={-,thick,draw}%%
+]
+%%
+%%
+\pgfmathsetmacro{\dx}{0.25}
+\pgfmathsetmacro{\dy}{\dx}
+\pgfmathsetmacro{\xhigh}{4}
+\pgfmathsetmacro{\xlow}{0}
+\pgfmathsetmacro{\yhigh}{\xhigh}
+\pgfmathsetmacro{\ylow}{\xlow}
+%%
+\coordinate (A) at (\xlow,\ylow);
+\coordinate (B) at (\xhigh,\ylow);
+\coordinate (C) at (\xhigh,\yhigh);
+%%
+%% A right-angled triangle.
+\path[triangleStyle] (A) -- (B) -- (C) -- cycle;
+\draw[lineStyle] (\xhigh-\dx,\ylow) rectangle (\xhigh,\dy);
+%% Label the angles.
+\path pic["$\frac{\pi}{4}$",draw,->,thick,angle radius=1cm] {angle=B--A--C};
+\path pic["$\frac{\pi}{4}$",draw,->,thick,angle radius=1cm] {angle=A--C--B};
+%% Label the base.
+\node at (\xhigh/2,-\dy) {$\sqrt{2}$};
+%% Label the height.
+\node at (\xhigh+\dx,\yhigh/2) {$\sqrt{2}$};
+%% Label the hypotenuse.
+\node at (\xhigh/2-\dx,\yhigh/2+\dy) {$2$};
+\end{tikzpicture}
+
+\end{document}
