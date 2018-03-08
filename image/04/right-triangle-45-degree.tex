@@ -4,6 +4,7 @@
 
 \usepackage{mathptmx}
 \usepackage{tikz}
+\usepackage{xspace}
 \usetikzlibrary{angles}
 \usetikzlibrary{external}
 \usetikzlibrary{quotes}
@@ -14,6 +15,8 @@
 \renewcommand{\ttdefault}{pcr}
 %% Enable Times/Palatino main text font.
 \normalfont\selectfont
+
+\newcommand{\radian}[1]{{#1}\ensuremath{^{\rm c}}\xspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% A right-angled triangle with 45 degrees.
@@ -42,7 +45,7 @@
 \path[triangleStyle] (A) -- (B) -- (C) -- cycle;
 \draw[lineStyle] (\xhigh-\dx,\ylow) rectangle (\xhigh,\dy);
 %% Label the angle.
-\path pic["$\frac{\pi}{4}$",draw,->,thick,angle radius=1.3cm] {angle=B--A--C};
+\path pic["$\frac{\radian{\pi}}{4}$",draw,->,thick,angle radius=1.3cm] {angle=B--A--C};
 %% Label the base.
 \node at (\xhigh/2,-\dy) {$\sqrt{2}$};
 %% Label the height.
