@@ -361,10 +361,21 @@ circle is a circle whose radius is one unit in length.  In this
 section, you will learn how a unit circle is related to the sine and
 cosine functions.
 
-Let $\tuple{a}{b}$ be a point on the circle.  Let $\varphi$ be the
+Let $\tuple{a}{b}$ be a point on the unit circle of
+\Figure{fig:point_on_unit_circle}.  Suppose you zoom in on the
+triangle in \Figure{fig:point_on_unit_circle} and end up with the
+right-triangle in \Figure{fig:right_triangle_in_unit_circle}.  The
+triangle has a base of length $a$ and a height of length $b$.  The
+hypotenuse is the radius of the unit circle.  Let $\varphi$ be the
 angle~(in radians) that spans from the positive half of the $x$-axis
-to the point $\tuple{a}{b}$, going anti-clockwise.  The values of $a$
-and $b$ can be written in terms of sine and cosine:
+to the point $\tuple{a}{b}$, going anti-clockwise.  From the angle
+$\varphi$, the side adjacent to $\varphi$ has a length of $a$.  The
+hypotenuse has a length of $1$ because the hypotenuse is the radius of
+the unit circle.  Then you have the equation
+$\cos\varphi = a / 1 = a$.  The side opposite $\varphi$ has a length
+of $b$.  As the hypotenuse has a length of $1$, you have the equation
+$\sin\varphi = b / 1 = b$.  In other words, the values of $a$ and $b$
+can be written in terms of sine and cosine as:
 %%
 \begin{equation}
 \label{eqn:value_of_x_y_on_unit_circle}
@@ -374,11 +385,16 @@ a = \cos\varphi
 %%
 b = \sin\varphi.
 \end{equation}
-%%
-You can interpret $a$ and $b$ as the lengths of the base and height,
-respectively, of the right-triangle in
-\Figure{fig:point_on_unit_circle}.  The hypotenuse is the radius of
-the unit circle.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/04/unit-circle-right-triangle.pdf}
+\caption{%%
+  The right-triangle from the unit circle of
+  \Figure{fig:point_on_unit_circle}.
+}
+\label{fig:right_triangle_in_unit_circle}
+\end{figure}
 
 Let's consider some special values of the sine and cosine functions.
 The point $\tuple{1}{0}$ in \Figure{fig:point_on_unit_circle} lies on
