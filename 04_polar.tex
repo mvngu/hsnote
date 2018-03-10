@@ -61,6 +61,7 @@ approximately $57.2958$ degrees, rounded to four decimal places.
 }{}
 
 \begin{example}
+\label{ex:90_degrees_to_radians}
 Convert $\degree{90}$ to radians.
 \end{example}
 
@@ -396,12 +397,6 @@ b = \sin\varphi.
 \label{fig:right_triangle_in_unit_circle}
 \end{figure}
 
-As another example, consider the point $\tuple{0}{1}$.
-From the positive half of the $x$-axis going anti-clockwise, the point
-$\tuple{0}{1}$ makes an angle of $\degree{90}$ or $\varphi = \pi / 2$
-radians.  So you can write $\cos\frac{\pi}{2} = 0$ and
-$\sin\frac{\pi}{2} = 1$.
-
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=1.1]{image/04/unit-circle.pdf}
@@ -434,6 +429,29 @@ $\cos(0) = 1 / 1$, which simplifies to $\cos(0) = 1$.  The side
 opposite the given angle has length $0$.  Since the hypotenuse has
 length $1$, you can write $\sin(0) = 0 / 1$, which simplifies to
 $\sin(0) = 0$.
+\end{solution}
+
+\begin{example}
+Use the point $\tuple{0}{1}$ in \Figure{fig:point_on_unit_circle} to
+derive the exact values $\cos\frac{\pi}{2} = 0$ and
+$\sin\frac{\pi}{2} = 1$.
+\end{example}
+
+\begin{solution}
+From the positive half of the $x$-axis, going anti-clockwise to the
+point $\tuple{0}{1}$ results in an angle of $\degree{90}$, which you
+know from \Example{ex:90_degrees_to_radians} is
+$\varphi = \pi / 2$ radians.  The right-triangle that the point makes
+with the $x$-axis has a base of length $0$ and a height of length
+$1$.  The hypotenuse of the triangle is the radius of the unit circle
+and hence is of length $1$.  From the angle $\pi / 2$, the side
+adjacent to the angle is the base of the triangle.  Since the
+hypotenuse has length $1$, you can write
+$\cos\frac{\pi}{2} = 0 / 1$, which can be simplified to
+$\cos\frac{\pi}{2} = 0$.  The side opposite the angle $\pi / 2$ is the
+height of the right-triangle, which you know to have length $1$.  Use
+the value of the hypotenuse to write $\sin\frac{\pi}{2} = 1 / 1$,
+which simplifies to $\sin\frac{\pi}{2} = 1$.
 \end{solution}
 
 \begin{exercise}
