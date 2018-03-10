@@ -396,11 +396,7 @@ b = \sin\varphi.
 \label{fig:right_triangle_in_unit_circle}
 \end{figure}
 
-Let's consider some special values of the sine and cosine functions.
-The point $\tuple{1}{0}$ in \Figure{fig:point_on_unit_circle} lies on
-the positive half of the $x$-axis so the angle is $\varphi = 0$
-radians.  In other words, you would expect that $\cos(0) = 1$ and
-$\sin(0) = 0$.  As another example, consider the point $\tuple{0}{1}$.
+As another example, consider the point $\tuple{0}{1}$.
 From the positive half of the $x$-axis going anti-clockwise, the point
 $\tuple{0}{1}$ makes an angle of $\degree{90}$ or $\varphi = \pi / 2$
 radians.  So you can write $\cos\frac{\pi}{2} = 0$ and
@@ -419,6 +415,26 @@ $\sin\frac{\pi}{2} = 1$.
 }
 \label{fig:point_on_unit_circle}
 \end{figure}
+
+\begin{example}
+Use the point $\tuple{1}{0}$ in \Figure{fig:point_on_unit_circle} to
+derive the exact values $\cos(0) = 1$ and $\sin(0) = 0$.
+\end{example}
+
+\begin{solution}
+From the positive half of the $x$-axis, going anti-clockwise to the
+point $\tuple{1}{0}$ you have an angle of $\varphi = 0$ radians
+because the point $\tuple{1}{0}$ lies on the $x$-axis.  If the point
+$\tuple{1}{0}$ makes a right-triangle, then the height of the triangle
+has length $0$, the base of the triangle has length $1$, and the
+hypotenuse has length $1$ because the hypotenuse is the radius of the
+unit circle.  From the angle of $0$ radians, the side adjacent to the
+angle is the base of the right-triangle so you can write
+$\cos(0) = 1 / 1$, which simplifies to $\cos(0) = 1$.  The side
+opposite the given angle has length $0$.  Since the hypotenuse has
+length $1$, you can write $\sin(0) = 0 / 1$, which simplifies to
+$\sin(0) = 0$.
+\end{solution}
 
 \begin{exercise}
 Explain why $\cos\pi = -1$ and $\sin\pi = 0$.
