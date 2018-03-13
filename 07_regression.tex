@@ -1120,4 +1120,69 @@ mean that you cause the rain.  You should have checked the weather
 forecast and choose a nice summer day.  Correlation is different from
 causation.
 
+\begin{table}[!htbp]
+\centering
+\input{table/07/height-weight-pearson.tex}
+\caption{%%
+  Detailed calculation of the Pearson correlation coefficient for the
+  data in \Table{tab:height_weight}.  All numbers have been rounded to
+  at most two decimal places in order to fit the table.  However, you
+  should avoid rounding intermediate results.  Only the final numbers
+  should be rounded.
+}
+\label{tab:height_weight_Pearson_r}
+\end{table}
+
+\begin{example}
+Calculate the Pearson correlation coefficient $r$ for the data in
+\Table{tab:height_weight}.  Interpret what the value of $r$ tells you
+about the data in \Table{tab:height_weight}.
+\end{example}
+
+\begin{solution}
+First, you use \Expression{eqn:Pearson_correlation_coefficient} to
+calculate the Pearson correlation coefficient $r$.  The mean height is
+approximately $\xbar \approx 173.8$ and the mean weight is
+approximately $\ybar \approx 59.4$.  You use these mean values and
+\Expression{eqn:Pearson_correlation_coefficient} to calculate the
+value of $r$ as shown in \Table{tab:height_weight_Pearson_r}.  From
+the values in \Table{tab:height_weight_Pearson_r}, you can calculate
+the sum
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+137.8
+\]
+and the sums
+\[
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+153.6
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (y_i - \ybar)^2
+\approx
+378.4.
+\]
+Then the value of $r$ is approximately
+%%
+\begin{align*}
+r
+&\approx
+\frac{137.8}{\sqrt{153.6 \times 378.4}} \\[4pt]
+&\approx
+0.57
+\end{align*}
+%%
+rounded to two decimal places.  The value of $r \approx 0.57$ has the
+following meaning.  Although there is a linear relationship between
+the heights and weights shown in \Table{tab:height_weight}, this
+linear relationship can be described as weak.  In other words, it does
+not appear to be convincing that the taller is a teenager the heavier
+the teenager weighs.
+\end{solution}
+
 \end{document}
