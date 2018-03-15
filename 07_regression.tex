@@ -1187,4 +1187,83 @@ convincing that the taller is a teenager the heavier the teenager
 weighs.
 \end{solution}
 
+\begin{exercise}
+Calculate the Pearson correlation coefficient $r$ for the data in
+\Table{tab:test_score}.  Provide an interpretation of the value of
+$r$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+First, you use \Expression{eqn:Pearson_correlation_coefficient} to
+calculate the Pearson correlation coefficient $r$.  The mean hours of
+study is $\xbar \approx 5.36$ and the mean test score is
+$\ybar \approx 6.73$, both rounded to two decimal places.  Use these
+mean values and \Expression{eqn:Pearson_correlation_coefficient} to
+calculate the values shown in \Table{tab:test_score_pearson}.  Use the
+values in \Table{tab:test_score_pearson} to calculate the sum
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+74.09
+\]
+and the sums
+\[
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+84.55
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (y_i - \ybar)^2
+\approx
+68.18
+\]
+all rounded to two decimal places.  Then the value of $r$ is
+approximately
+%%
+\begin{align*}
+r
+&\approx
+\frac{
+  74.09
+}{
+  \sqrt{84.55 \times 68.18}
+} \\[4pt]
+&\approx
+0.9759
+\end{align*}
+%%
+rounded to four decimal places.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/test-score-pearson.tex}
+\caption{%%
+  Detailed calculation of the Pearson correlation coefficient for the
+  data in \Table{tab:test_score}.  Most values have been rounded to
+  two decimal places so as to fit the table.  However, you should only
+  round the final results, not the intermediate values.
+}
+\label{tab:test_score_pearson}
+\end{table}
+
+The value of $r \geq 0.9$ suggests a strong linear correlation between
+the hours spent studying for a test and the test scores.  In
+particular, the correlation is positive, meaning that the more hours
+that a student spent on studying for a test the higher is the
+student's test score.  Note that correlation is not the same as
+causation.  The data in \Table{tab:test_score} suggests a strong
+positive linear correlation between hours spent studying for a test
+and the test scores.  You should not interpret the high value of $r$
+as saying that more hours spent studying for a test results in higher
+test scores.  Other factors not given by the data might have
+contributed to a student's test score.  For example, the students with
+high or perfect test scores might have been studying every day since
+the start of the school year.
+\end{solution}
+}{}
+
 \end{document}
