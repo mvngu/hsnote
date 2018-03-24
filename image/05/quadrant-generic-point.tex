@@ -4,6 +4,7 @@
 
 \usepackage{mathptmx}
 \usepackage{tikz}
+\usepackage{xspace}
 \usetikzlibrary{angles}
 \usetikzlibrary{external}
 \usetikzlibrary{quotes}
@@ -16,6 +17,7 @@
 \normalfont\selectfont
 
 \newcommand{\comma}{,\,}
+\newcommand{\radian}[1]{{#1}\ensuremath{^{\rm c}}\xspace}
 \newcommand{\tuple}[2]{\left( {#1}\comma {#2} \right)}
 
 %% The horizontal and vertical axes.
@@ -49,7 +51,7 @@
   \xyPoint{C}{\tuple{0}{1}}{below right}
   %% A generic angle.
   \draw[dashStyle] (origin) -- (B);
-  \path pic["$\frac{\pi}{2k}$",draw,->,thick,angle radius=1.3cm] {angle=A--origin--B};
+  \path pic["$\frac{\radian{\pi}}{2k}$",draw,->,thick,angle radius=1.3cm] {angle=A--origin--B};
 }
 
 %% Label a point.
