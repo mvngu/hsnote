@@ -1268,4 +1268,76 @@ of the school year.
 \end{solution}
 }{}
 
+\begin{exercise}
+Calculate the Pearson correlation coefficient $r$ for the data in
+\Table{tab:age_egg}.  Provide an interpretation of the value of $r$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+First, you use \Expression{eqn:Pearson_correlation_coefficient} to
+calculate the Pearson correlation coefficient.  The mean age is
+$\xbar \approx 10.5$ months and the mean number of eggs
+$\ybar \approx 3.9$, both figures rounded to one decimal place.  Use
+the mean values and \Expression{eqn:Pearson_correlation_coefficient}
+to calculate the values shown in \Table{tab:age_egg_pearson}.  Use the
+values in \Table{tab:age_egg_pearson} to calculate the sum
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+=
+-56
+\]
+and the sums
+\[
+\sum_{i=1}^n (x_i - \xbar)^2
+=
+227.5
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (y_i - \ybar)^2
+\approx
+17.71
+\]
+where the last sum has been rounded to two decimal places.  The value
+of $r$ is approximately
+%%
+\begin{align*}
+r
+&\approx
+\frac{
+  -56
+}{
+  \sqrt{
+    227.5 \times 17.71
+  }
+} \\[4pt]
+&\approx
+-0.8821
+\end{align*}
+%%
+rounded to four decimal places.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg-pearson.tex}
+\caption{%%
+  Detailed calculation of the Pearson correlation coefficient for the
+  data in \Table{tab:age_egg}.  The column for $x$ is for the age in
+  months and the column for $y$ is the number of eggs per week.  Note
+  that most values have been rounded to two decimal places in order to
+  fit the table.  However, you should only round the final result.
+}
+\label{tab:age_egg_pearson}
+\end{table}
+
+The value of $-0.9 < -0.8821 \leq -0.75$ tells you that there is
+moderate linear correlation in the data of \Table{tab:age_egg}.  In
+particular, the correlation coefficient tells you that as the hen gets
+older it tends to lay fewer eggs per week.
+\end{solution}
+}{}
+
 \end{document}
