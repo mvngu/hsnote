@@ -1346,4 +1346,59 @@ older it tends to lay fewer eggs per week.
 
 \section*{Problem}
 
+\begin{problem}
+\item\label{prob:sum_even_number_of_terms_20}
+  Consider the problem of summing the first $20$ positive integers:
+  \[
+  S
+  =
+  \sumseq{1 + 2}{3 + 4}{20}.
+  \]
+  What you want to do is calculate the value of the sum $S$ by means
+  of a formula.  The $20$ integers can be divided into two groups.
+  One group consists of the integers from $1$ to $10$, inclusive.  The
+  second group consists of the integers from $11$ to $20$, inclusive.
+  On one line, write the numbers from $1$ to $10$ in increasing order.
+  On the next line, write the numbers from $11$ to $20$ in decreasing
+  order.  What you should get is that $20$ is underneath $1$, $19$ is
+  underneath $2$, $18$ is underneath $3$, and so on, up to $11$ being
+  underneath $10$.  Thus you have ten columns and two rows.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:sum_even_number_add_column}
+    Add the two numbers in each column and write the sum underneath
+    the two numbers.  You should now have three rows, where the third
+    row gives you the column sums.
+
+  \item\label{subprob:sum_even_number_observation}
+    What do you notice about the numbers in the third row?
+
+  \item\label{subprob:sum_even_number_sum}
+    Use the numbers in the third row to calculate the value of the sum
+    $S$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:sum_even_number_add_column}
+After adding the two numbers in each column, you now have the
+following table:
+\[
+\begin{matrix}
+1  & 2  & 3  & 4  & 5  & 6  & 7  & 8  & 9  & 10 \\[4pt]
+20 & 19 & 18 & 17 & 16 & 15 & 14 & 13 & 12 & 11 \\\midrule
+21 & 21 & 21 & 21 & 21 & 21 & 21 & 21 & 21 & 21
+\end{matrix}
+\]
+
+\solutionpart{subprob:sum_even_number_observation}
+The numbers in the third row are all the same.
+
+\solutionpart{subprob:sum_even_number_sum}
+In the third row, the integer $21$ occurs ten times.  The sum of the
+numbers in the third row is $10 \times 21 = 210$.  Conclude that the
+value of the sum $S$ is $S = 210$.
+\end{solution}
+}{}
+\end{problem}
+
 \end{document}
