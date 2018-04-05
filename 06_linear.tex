@@ -1468,6 +1468,10 @@ ridiculous height value.
   circle centred at the origin.
   %%
   \begin{packedenum}
+  \item\label{subprob:ant_coordinates_of_points}
+    Calculate the Cartesian coordinates of the point $A$.  Do the same
+    for the point $B$.
+
   \item\label{subprob:ant_distance_travelled}
     Calculate the distance that the ant travelled.
 
@@ -1480,12 +1484,11 @@ ridiculous height value.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
-\solutionpart{subprob:ant_distance_travelled}
-First, you need to know the Cartesian coordinates of the points $A$
-and $B$.  The point $A$ makes an angle of $\degree{30}$~(or $\pi / 6$
-radians) with respect to the positive half of the $x$-axis.  Since $A$
-lies on a unit circle that is centred at the origin, the circle has a
-radius of $1$ and so $A$ can be described by the polar coordinates
+\solutionpart{subprob:ant_coordinates_of_points}
+The point $A$ makes an angle of $\degree{30}$~(or $\pi / 6$ radians)
+with respect to the positive half of the $x$-axis.  Since $A$ lies on
+the unit circle centred at the origin, the circle has a radius of $1$
+and so $A$ can be described by the polar coordinates
 $\tuple{1}{\frac{\pi}{6}}$.  In the Cartesian coordinate system, the
 $x$-coordinate of $A$ is
 %%
@@ -1508,10 +1511,11 @@ y
 \end{align*}
 %%
 The Cartesian coordinates of $A$ are
-$\tuple{\frac{\sqrt{3}}{2}}{\frac{1}{2}}$.  Similarly, the point $B$
-can be described by the polar coordinates $\tuple{1}{\frac{3\pi}{4}}$
-because $\degree{135}$ is equivalent to $\frac{3\pi}{4}$ radians.  The
-$x$-coordinate of $B$ is
+$\tuple{\frac{\sqrt{3}}{2}}{\frac{1}{2}}$.
+
+Similarly, the point $B$ can be described by the polar coordinates
+$\tuple{1}{\frac{3\pi}{4}}$ because $\degree{135}$ is equivalent to
+$\frac{3\pi}{4}$ radians.  The $x$-coordinate of $B$ is
 %%
 \begin{align*}
 x
@@ -1534,6 +1538,7 @@ y
 Thus $B$ has the Cartesian coordinates
 $\tuple{-\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}}$.
 
+\solutionpart{subprob:ant_distance_travelled}
 The distance $d$ between points $A$ and $B$ can be calculated as
 %%
 \begin{align*}
