@@ -44,17 +44,39 @@ does the function $f(x)$ look like?
 \end{figure}
 
 A quadratic function can be interpreted as a rectangle.  Suppose you
-have the quadratic function
-\[
+have the function
+%%
+\begin{equation}
+\label{eqn:quadratic_function_rectangle}
 f(x)
 =
 (x + a)(x + b)
-\]
-where $x \geq 0$ is a real variable.  The numbers $a \geq 0$ and
-$b \geq 0$ are fixed constants.  You can use the distributive laws to
-expand the quadratic function $f(x)$ and get the equation
-$(x + a)(x + b) = x^2 + (a + b)x + ab$.  You can also prove the last
-equation by using geometry.
+\end{equation}
+%%
+where $x \geq 0$ is a real variable and the numbers $a \geq 0$ and
+$b \geq 0$ are fixed constants.  You can interpret the factor
+$x + a$ as the length of a rectangle.  Hence the factor $x + b$ can be
+interpreted as the width of a rectangle.  This interpretation is
+illustrated in \Figure{fig:quadratic_as_rectangle}.
+Equation~\eqref{eqn:quadratic_function_rectangle} is indeed a
+quadratic function because you can use the distributive laws to expand
+the right-hand side to get
+%%
+\begin{equation}
+\label{eqn:rectangle_as_quadratic}
+\begin{aligned}
+f(x)
+&=
+x(x + b) + a(x + b) \\[4pt]
+&=
+x^2 + bx + ax + ab \\[4pt]
+&=
+x^2 + (a + b)x + ab.
+\end{aligned}
+\end{equation}
+%%
+You can also prove \Equation{eqn:rectangle_as_quadratic} by using
+geometry.
 
 To prove the equation $(x + a)(x + b) = x^2 + (a + b)x + ab$ by
 geometry, note that you can have $a = 0$ or $b = 0$ or even
