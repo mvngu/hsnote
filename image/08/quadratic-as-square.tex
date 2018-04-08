@@ -40,11 +40,6 @@
 \coordinate (upperRight) at (\sside,\sside);
 %%
 \normalsize
-%% The larger square.
-\draw[lineStyle] (lowerLeft) rectangle (upperRight);
-%% Divide the larger square into rectangles.
-\draw[lineStyle] (\xlow,\length) -- (\sside,\length);
-\draw[lineStyle] (\length,\ylow) -- (\length,\sside);
 %%
 %% The smaller square.
 %% Label the left side of the smaller square.
@@ -54,24 +49,33 @@
 \draw[arrowStyle] (\xlow,-\dy) -- (\length,-\dy);
 \node[labelStyle] at (\length/2,-\dy) {$x$};
 %% Label the area of the smaller square.
-\node[labelStyle] at (\length/2,\length/2) {$x^2$};
+\node at (\length/2,\length/2) {$x^2$};
 %%
 %% The top rectangle.
+\fill[green!20!white] (\xlow,\length) rectangle (\length,\sside);
 %% Label the left width.
 \draw[arrowStyle] (-\dx,\length) -- (-\dx,\sside);
 \node[labelStyle,rotate=90] at (-\dx,\length+\width/2) {$b$};
 %% Label the area of the top rectangle.
-\node[labelStyle] at (\length/2,\length+\width/2) {$bx$};
+\node at (\length/2,\length+\width/2) {$bx$};
 %%
 %% The right rectangle.
+\fill[blue!20!white] (\length,\ylow) rectangle (\sside,\length);
 %% Label the bottom width.
 \draw[arrowStyle] (\length,-\dy) -- (\sside,-\dy);
 \node[labelStyle] at (\length+\width/2,-\dy) {$a$};
 %% Label the area of the right rectangle.
-\node[labelStyle] at (\length+\width/2,\length/2) {$ax$};
+\node at (\length+\width/2,\length/2) {$ax$};
 %%
 %% The upper-right rectangle.
-\node[labelStyle] at (\length+\width/2,\length+\width/2) {$ab$};
+\fill[pink!50!white] (\length,\length) rectangle (upperRight);
+\node at (\length+\width/2,\length+\width/2) {$ab$};
+%%
+%% The larger square.
+\draw[lineStyle] (lowerLeft) rectangle (upperRight);
+%% Divide the larger square into rectangles.
+\draw[lineStyle] (\xlow,\length) -- (\sside,\length);
+\draw[lineStyle] (\length,\ylow) -- (\length,\sside);
 \end{tikzpicture}
 
 \end{document}
