@@ -392,6 +392,7 @@ which are the same as those given by~\eqref{eqn:running_ants_roots}.
 \section{Largest or smallest}
 
 \begin{example}
+\label{eg:largest_area_rectangle}
 \textbf{Largest area.}
 A rectangle has a perimeter of ten metres.
 %%
@@ -414,14 +415,13 @@ perimeter can be written as
 \[
 2\ell + 2w
 =
-10.
+10
 \]
-You can also write the last equation as $2(\ell + w) = 10$, which can
-be simplified to $\ell + w = 5$.  The length of the rectangle can now
-be written as $\ell = 5 - w$.  The length and width of the rectangle
-are illustrated in \Figure{fig:largest_area_rectangle}.  Using the
-information from \Figure{fig:largest_area_rectangle}, the area of the
-rectangle can be written as the function
+and thus the length can be written as $\ell = 5 - w$.  The length and
+width of the rectangle are illustrated in
+\Figure{fig:largest_area_rectangle}.  Using the information from
+\Figure{fig:largest_area_rectangle}, the area of the rectangle can be
+written as the function
 \[
 f(w)
 =
@@ -489,6 +489,26 @@ f(5/2)
 This tells you that the largest area the rectangle can have is
 $25 / 4 = 6.25$ metres squared.
 \end{solution}
+
+\begin{exercise}
+In \Example{eg:largest_area_rectangle}, explain why the length of the
+rectangle can be written as $\ell = 5 - w$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Note that the perimeter of the rectangle can be written as
+\[
+2\ell + 2w
+=
+10
+\]
+where $\ell$ and $w$ are the length and width, respectively, of the
+rectangle.  You can also write the last equation as
+$2(\ell + w) = 10$, which can be simplified to $\ell + w = 5$.  The
+length of the rectangle can now be written as $\ell = 5 - w$.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
