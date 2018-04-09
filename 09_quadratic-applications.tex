@@ -977,6 +977,73 @@ height of the triangle has a length of $b + 1 = 4$ units and the
 hypotenuse has a length of $b + 2 = 5$ units.
 \end{solution}
 }{}
+
+\item A triangle has a base of $b$ metres and a height of $b + 2$
+  metres.  Determine a positive value of $b$ such that the triangle
+  has an area of $3$ metres squared.
+\ifbool{showSolution}{
+\begin{solution}
+If you know the base $b$ and height $h$ of a triangle, then the
+triangle has an area of $\frac{bh}{2}$.  For the triangle in the
+problem statement, the area of the triangle can be written as the
+equation
+%%
+\begin{equation}
+\label{eqn:area_of_general_triangle}
+\frac{b(b+2)}{2}
+=
+3
+\end{equation}
+%%
+which can also be written as
+\[
+b(b + 2)
+=
+6.
+\]
+In the latter equation, use the distributive laws to expand the
+left-hand side to get
+\[
+b^2 + 2b
+=
+6.
+\]
+Upon moving everything to the left-hand side, you end up with
+\[
+b^2 + 2b - 6
+=
+0
+\]
+which is the same as \Equation{eqn:area_of_general_triangle}.  By
+defining the function
+\[
+f(b)
+=
+b^2 + 2b - 6
+\]
+\Equation{eqn:area_of_general_triangle} can be written as
+$f(b) = 0$, which asks you to determine all roots of $f(b)$.  Since
+$f(b)$ is a quadratic function, use the quadratic formula to see that
+the roots of $f(b)$ are
+\[
+b_1
+=
+\sqrt{7} - 1
+%%
+\qquad
+\text{and}
+\qquad
+%%
+b_2
+=
+-\sqrt{7} - 1
+\]
+of which only $b_1$ is positive.  Therefore if the base of the
+triangle is $b = \sqrt{7} - 1$ metres and the height is
+$b + 2 = \sqrt{7} + 1$ metres, then the triangle will have an area of
+$3$ metres squared.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
