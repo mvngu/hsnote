@@ -536,6 +536,7 @@ as required.
 }{}
 
 \begin{example}
+\label{eg:smallest_product}
 \textbf{Smallest product.}
 Let $x$ and $y$ be two numbers such that when you subtract $y$ from
 $x$ you get $1$.  Determine the smallest value of the product $xy$.
@@ -580,6 +581,19 @@ f(1/2)
 This tells you that the smallest value of the product $xy$ is
 $-\frac{1}{4}$ and this least value occurs when $x = 1/2$.
 \end{solution}
+
+\begin{exercise}
+In \Example{eg:smallest_product}, explain why $y$ can be written as
+$y = x - 1$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You have the equation $x - y = 1$.  Move everything to the left-hand
+side and you get $x - y - 1 = 0$.  Upon moving $y$ to the right-hand
+side you end up with $x - 1 = y$.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
