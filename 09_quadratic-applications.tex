@@ -1158,6 +1158,58 @@ $b + 2 = \sqrt{7} + 1$ metres, then the triangle will have an area of
 $3$ metres squared.
 \end{solution}
 }{}
+
+\item Let $x$ and $y$ be two numbers such that their sum is $2$.
+  Determine the maximum value of the product $xy$.
+\ifbool{showSolution}{
+\begin{solution}
+You have the equation $x + y = 2$, which after solving for $y$ results
+in $y = 2 - x$.  The product $xy$ can be written as
+\[
+xy
+=
+x(2 - x).
+\]
+Use the distributive laws to expand the right-hand side and you obtain
+the function $f(x) = -x^2 + 2x$, a graph of which is shown in
+\Figure{fig:largest_product_xy}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.2]{image/09/largest-product.pdf}
+\caption{%%
+  A graph of the function $f(x) = -x^2 + 2x$.  The vertex of the
+  function is the highest point in its graph.
+}
+\label{fig:largest_product_xy}
+\end{figure}
+
+From \Figure{fig:largest_product_xy}, you see that the largest value
+of the product $xy = f(x)$ occurs at the vertex of $f(x)$.  The
+horizontal coordinate of the vertex is
+\[
+x
+=
+-\frac{2}{2(-1)}
+=
+\frac{-2}{-2}
+=
+1.
+\]
+The vertical coordinate of the vertex is
+\[
+f(1)
+=
+-(1)^2 + 2(1)
+=
+-1 + 2
+=
+1.
+\]
+In other words, the largest value of the product $xy$ is $1$ and this
+maximum value occurs when $x = 1$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}

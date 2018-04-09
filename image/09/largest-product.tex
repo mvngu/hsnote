@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{largest-product}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  plotStyle/.style={%%
+    domain=-1:3,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style=right,%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $f(x)$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The function f(x).
+\addplot+ [plotStyle]
+{-x^2 + 2*x};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
