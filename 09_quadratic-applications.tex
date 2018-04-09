@@ -777,4 +777,76 @@ t_2
 
 \section*{Problem}
 
+\begin{problem}
+\item In your backyard, you want to create a rectangular plot of land
+  for some plants.  You want the area of the plot to be $8$ metres
+  squared.  You have not yet decided on the length of the plot of
+  land.  However, you know that if the plot has a length of $\ell$
+  metres, then you want the width to be $\ell - 3$ metres.  Calculate
+  the length of the rectangular plot of land for your plants such that
+  the area of the plot is $8$ metres squared.
+\ifbool{showSolution}{
+\begin{solution}
+You should first draw a picture to help you solve the problem.  The
+picture should be a rectangle whose length and width are $\ell$ and
+$\ell - 3$, respectively.  The area of the rectangle is then
+$(\ell - 3)\ell$.  Since you know that the plot of land has an area of
+$8$ metres squared, it follows that you have the equation
+%%
+\begin{equation}
+\label{eqn:area_rectangular_garden}
+(\ell - 3)\ell
+=
+8.
+\end{equation}
+%%
+Use the distributive laws to expand the left-hand side to get
+$\ell^2 - 3\ell = 8$.  In the latter equation, move everything to the
+left-hand side to get
+\[
+\ell^2 - 3\ell - 8
+=
+0.
+\]
+If you define the function $f(\ell) = \ell^2 - 3\ell - 8$, then the
+equation $f(\ell) = 0$ says that you want to determine all values of
+$\ell$ such that \Expression{eqn:area_rectangular_garden} is true.  In
+other words, you want to calculate all the roots of the quadratic
+function $f(\ell)$.  Use the quadratic formula to see that the roots
+of $f(\ell)$ are
+\[
+\ell_1
+=
+\frac{
+  3 + \sqrt{41}
+}{
+  2
+}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\ell_2
+=
+\frac{
+  3 - \sqrt{41}
+}{
+  2
+}
+\]
+of which only $\ell_1$ is positive.  Conclude that the required length
+of the rectangular plot of land is approximately
+$\frac{
+  3 + \sqrt{41}
+}{
+  2
+}
+\approx
+4.7016$
+metres, rounded to four decimal places.
+\end{solution}
+}{}
+\end{problem}
+
 \end{document}
