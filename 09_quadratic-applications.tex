@@ -1210,6 +1210,117 @@ In other words, the largest value of the product $xy$ is $1$ and this
 maximum value occurs when $x = 1$.
 \end{solution}
 }{}
+
+\item A rectangle has a perimeter of $p > 0$.  Its length and width
+  are $\ell$ and $w$, respectively.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:rectangle_length_w_p}
+    Express the length in terms of the perimeter and width of the
+    rectangle.
+
+  \item\label{subprob:rectangle_maximum_area}
+    Determine the maximum area of the rectangle.
+
+  \item\label{subprob:rectangle_maximum_area_is_square}
+    Show that the maximum area is obtained when the rectangle is a
+    square.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:rectangle_length_w_p}
+You know that the perimeter is a positive number $p$.  Then the
+perimeter can also be written as
+\[
+2w + 2\ell
+=
+p
+\]
+which factorises as $2(w + \ell) = p$.  Divide both sides by $2$ to
+get $w + \ell = p / 2$ and solving for $\ell$ results in
+$\ell = \frac{p}{2} - w$.
+
+\solutionpart{subprob:rectangle_maximum_area}
+The area of the rectangle can be written as $\ell w$.
+Use \Part{subprob:rectangle_length_w_p} to write the area as
+%%
+\begin{align*}
+f(w)
+&=
+w \parenthesis*{\frac{p}{2} - w} \\[4pt]
+&=
+-w^2 + \frac{p}{2}w.
+\end{align*}
+%%
+The maximum area occurs at the vertex of $f(w)$.  The horizontal
+coordinate of the vertex is
+%%
+\begin{align*}
+w
+&=
+-\frac{p/2}{2(-1)} \\[4pt]
+&=
+\frac{p/2}{2} \\[4pt]
+&=
+\frac{p}{2} \times \frac{1}{2} \\[4pt]
+&=
+\frac{p}{4}.
+\end{align*}
+%%
+The vertical coordinate of the vertex is
+%%
+\begin{align*}
+f(p/4)
+&=
+\frac{p}{4}
+\parenthesis*{
+  \frac{p}{2} - \frac{p}{4}
+} \\[4pt]
+&=
+\frac{p}{4}
+\parenthesis*{
+  \frac{2p}{4} - \frac{p}{4}
+} \\[4pt]
+&=
+\frac{p}{4} \times \frac{p}{4} \\[4pt]
+&=
+\frac{p}{16}.
+\end{align*}
+%%
+In other words, the maximum area of the rectangle is $p / 16$ and this
+value occurs when the width is $w = p / 4$.
+
+\solutionpart{subprob:rectangle_maximum_area_is_square}
+From \Part{subprob:rectangle_length_w_p}, you know that the length can
+be written as
+%%
+\begin{equation}
+\label{eqn:rectangle_length_as_width_and_perimeter}
+\ell
+=
+\frac{p}{2} - w.
+\end{equation}
+%%
+From \Part{subprob:rectangle_maximum_area}, you know that the
+rectangle attains its maximum area when its width is $w = p / 4$.
+Substitute the latter expression in
+\Equation{eqn:rectangle_length_as_width_and_perimeter} and you get
+%%
+\begin{align*}
+\ell
+&=
+\frac{p}{2} - \frac{p}{4} \\[4pt]
+&=
+\frac{2p}{4} - \frac{p}{4} \\[4pt]
+&=
+\frac{p}{4}.
+\end{align*}
+%%
+That is, when the area of the rectangle is maximised, the length and
+width of the rectangle are the same.  Therefore given a perimeter
+$p > 0$, the rectangle attains its maximum area when it is a square.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
