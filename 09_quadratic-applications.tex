@@ -1436,6 +1436,131 @@ substitution back into
 \Expressions{eqn:rectangle_perimeter}{eqn:rectangle_area}.
 \end{solution}
 }{}
+
+\item Recall your work on regression with the data set for
+  FantasicTV.  Let $x$ be the selling price in dollars of each unit of
+  FantasticTV.  Let $S(x)$ be the number of units of FantasticTV sold
+  at $x$ dollars each.  From your work on regression, you can
+  approximate $S(x)$ as the linear function
+  \[
+  S(x)
+  =
+  90 - \frac{1}{10}x.
+  \]
+  Let $R(x)$ be a function for the \emph{revenue} in dollars.  The
+  revenue is the amount of money you get from selling $S(x)$ units of
+  FantasticTV at $x$ dollars each.  Note that the revenue is not the
+  same as the profit you make from selling FantasticTV.  In order to
+  calculate the profit, you must subtract the cost from the revenue.
+  The cost includes money required for manufacturing and advertising
+  your TVs.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:FantasticTV_total_revenue}
+    Express the revenue as a quadratic function.
+
+  \item\label{subprob:FantasticTV_zero_revenue_exist}
+    Without calculating any specific selling prices, show that there
+    is at least one selling price of each unit of FantasticTV such
+    that the revenue is zero dollars.
+
+  \item\label{subprob:FantasticTV_zero_revenue}
+    Determine the selling prices of each unit of FantasticTV such that
+    the revenue is zero dollars.
+
+  \item\label{subprob:FantasticTV_maximize_revenue}
+    Determine the selling price that would result in the maximum
+    revenue.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:FantasticTV_total_revenue}
+The expression for revenue can be written as
+%%
+\begin{align*}
+R(x)
+&=
+x \cdot S(x) \\[4pt]
+&=
+x \parenthesis*{90 - \frac{1}{10}x} \\[4pt]
+&=
+90x - \frac{1}{10}x^2.
+\end{align*}
+
+\solutionpart{subprob:FantasticTV_zero_revenue_exist}
+The selling prices of each unit of FantasticTV such that the revenue
+is zero dollars is equivalent to the roots of the quadratic function
+$R(x)$.  Showing that such selling prices exist is equivalent to
+showing that the discriminant of $R(x)$ is non-negative.  The
+discriminant of $R(x)$ is given by
+\[
+\Delta
+=
+90^2 - 4\parenthesis*{-\frac{1}{10}}(0)
+=
+90^2
+\]
+which is positive.  Therefore there are two different selling prices
+such that the revenue is zero dollars.
+
+\solutionpart{subprob:FantasticTV_zero_revenue}
+The selling prices of each unit of FantasticTV such that the revenue
+is zero dollars is equivalent to the roots of the quadratic function
+$R(x)$.  The quadratic formula shows that the roots of $R(x)$ are
+given by
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -90 \pm \sqrt{\Delta}
+}{
+  2\parenthesis*{-\frac{1}{10}}
+} \\[4pt]
+&=
+\frac{
+  -90 \pm \sqrt{90^2}
+}{
+  2\parenthesis*{-\frac{1}{10}}
+} \\[4pt]
+&=
+\frac{
+  -90 \pm 90
+}{
+  -\frac{1}{5}
+}.
+\end{align*}
+%%
+The specific selling prices that would result in zero revenue are
+$x = 0$ dollars and $x = 900$ dollars.
+
+\solutionpart{subprob:FantasticTV_maximize_revenue}
+The selling price that would result in the highest revenue is
+equivalent to the vertex of the function $R(x)$.  The horizontal
+coordinate of the vertex is
+\[
+x
+=
+-\frac{
+  90
+}{
+  2\parenthesis*{-\frac{1}{10}}
+}
+=
+450
+\]
+and the vertical coordinate of the vertex is
+\[
+R(450)
+=
+90(450) - \frac{450^2}{10}
+=
+20,250.
+\]
+Therefore if each unit of FantasticTV is sold at $450$ dollars, then
+the maximum revenue would be $20,250$ dollars.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
