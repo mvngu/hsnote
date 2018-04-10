@@ -1188,10 +1188,20 @@ $3$ metres squared.
 \end{solution}
 }{}
 
-\item Let $x$ and $y$ be two numbers such that their sum is $2$.
-  Determine the maximum value of the product $xy$.
+\item Let $x$ and $y$ be real numbers with $x \geq 0$ and $y \geq 0$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:maximum_product_given_sum_2}
+    If the sum of $x$ and $y$ is $2$, determine the maximum value of
+    $xy$.
+
+  \item\label{subprob:maximum_product_given_sum_b}
+    Suppose $b > 0$ is a fixed number such that $x + y = b$.
+    Determine the maximum value of $xy$.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:maximum_product_given_sum_2}
 You have the equation $x + y = 2$, which after solving for $y$ results
 in $y = 2 - x$.  The product $xy$ can be written as
 \[
@@ -1237,6 +1247,46 @@ f(1)
 \]
 In other words, the largest value of the product $xy$ is $1$ and this
 maximum value occurs when $x = 1$.
+
+\solutionpart{subprob:maximum_product_given_sum_b}
+You know that $x + y = b$.  Solve the last equation for $y$ to get
+$y = b - x$ and you can now write the product $xy$ as the quadratic
+function
+\[
+f(x)
+=
+x(b - x).
+\]
+Use the distributive laws to write the function $f(x)$ as
+$f(x) = -x^2 + bx$.  You know that the vertex of $f(x)$ is the point
+at which the value of $f(x)$ is highest or lowest.  The horizontal
+coordinate of the vertex of $f(x)$ is
+%%
+\begin{align*}
+x
+&=
+-\frac{b}{2(-1)} \\[4pt]
+&=
+\frac{b}{2}
+\end{align*}
+%%
+so the corresponding vertical coordinate is
+%%
+\begin{align*}
+f(b/2)
+&=
+\frac{b}{2} \parenthesis*{b - \frac{b}{2}} \\[4pt]
+&=
+\frac{b}{2} \parenthesis*{\frac{2b}{2} - \frac{b}{2}} \\[4pt]
+&=
+\frac{b}{2} \parenthesis*{\frac{b}{2}} \\[4pt]
+&=
+\frac{b^2}{4}.
+\end{align*}
+%%
+Note that $f(b/2) = b^2 / 4$ is positive because you have assumed that
+$b > 0$.  Therefore the quadratic function $f(x)$ has a maximum value
+of $b^2 / 4$, which occurs when $x = b / 2$.
 \end{solution}
 }{}
 
@@ -1708,52 +1758,6 @@ $f(8/g) \approx 4.2653$ metres above the ground, rounded to four
 decimal places.  This occurs at approximately $t \approx 0.8163$
 seconds~(rounded to four decimal places) after the marble was thrown
 upward.
-\end{solution}
-}{}
-
-\item Let $x$ and $y$ be real numbers with $x \geq 0$ and $y \geq 0$.
-  Suppose $b > 0$ is a fixed number such that $x + y = b$.  Determine
-  the maximum value of $xy$.
-\ifbool{showSolution}{
-\begin{solution}
-You know that $x + y = b$.  Solve the last equation for $y$ to get
-$y = b - x$ and you can now write the product $xy$ as the quadratic
-function
-\[
-f(x)
-=
-x(b - x).
-\]
-Use the distributive laws to write the function $f(x)$ as
-$f(x) = -x^2 + bx$.  You know that the vertex of $f(x)$ is the point
-at which the value of $f(x)$ is highest or lowest.  The $x$-coordinate
-of the vertex of $f(x)$ is
-%%
-\begin{align*}
-x
-&=
--\frac{b}{2(-1)} \\[4pt]
-&=
-\frac{b}{2}
-\end{align*}
-%%
-so the corresponding $y$-coordinate is
-%%
-\begin{align*}
-f(b/2)
-&=
-\frac{b}{2} \parenthesis*{b - \frac{b}{2}} \\[4pt]
-&=
-\frac{b}{2} \parenthesis*{\frac{2b}{2} - \frac{b}{2}} \\[4pt]
-&=
-\frac{b}{2} \parenthesis*{\frac{b}{2}} \\[4pt]
-&=
-\frac{b^2}{4}.
-\end{align*}
-%%
-Note that $f(b/2) = b^2 / 4$ is positive because you have assumed that
-$b > 0$.  Therefore the quadratic function $f(x)$ has a maximum value
-of $b^2 / 4$, which occurs when $x = b / 2$.
 \end{solution}
 }{}
 \end{problem}
