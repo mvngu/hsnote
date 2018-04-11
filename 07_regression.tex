@@ -1399,6 +1399,75 @@ numbers in the third row is $10 \times 21 = 210$.  Conclude that the
 value of the sum $S$ is $S = 210$.
 \end{solution}
 }{}
+
+\item\label{prob:sum_even_number_of_terms_formula}
+  This problem will help you to derive a formula for the sum of the
+  first $n \geq 1$ positive integers, where $n$ is even.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:sum_even_number_50}
+    Use the technique from \Problem{prob:sum_even_number_of_terms_20}
+    to calculate the sum of all integers from $1$ up to $50$,
+    inclusive.
+
+  \item\label{subprob:sum_even_number_100}
+    Use the technique from \Problem{prob:sum_even_number_of_terms_20}
+    to calculate the sum of all integers from $1$ up to $100$,
+    inclusive.
+
+  \item\label{subprob:sum_even_number_formula}
+    Let $n \geq 1$ be an even integer.  Consider the problem of
+    calculating the sum
+    \[
+    S
+    =
+    \sumseq{1 + 2}{3 + 4}{n}.
+    \]
+    Derive a formula to calculate the sum $S$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:sum_even_number_50}
+The integers from $1$ to $50$ can be divided into two groups.  One
+group consists of the integers from $1$ to $25$, inclusive.  The other
+group consists of the integers from $26$ to $50$, inclusive.  What you
+end up with is the following table:
+\[
+\begin{matrix}
+1  & 2  & 3  & 4  & \cdots & 24 & 25 \\[4pt]
+50 & 49 & 48 & 47 & \cdots & 27 & 26
+\end{matrix}
+\]
+You have the sum $1 + 50 = 51$, which occurs as the column sum in each
+of the $25$ columns.  Then you have $51 \times 25 = 1275$, which is
+the sum of the integers from $1$ to $50$, inclusive.
+
+\solutionpart{subprob:sum_even_number_100}
+Divide the integers from $1$ to $100$ into two rows.  The first row
+consists of the integers from $1$ to $50$, inclusive.  In the second
+row, you have the integers from $51$ to $100$, inclusive.  You now
+have the following table:
+\[
+\begin{matrix}
+1   & 2  & 3  & 4  & \cdots & 49 & 50 \\[4pt]
+100 & 99 & 98 & 97 & \cdots & 52 & 51
+\end{matrix}
+\]
+You have the sum $1 + 100 = 101$, which occurs as the column sum in
+each of the $50$ columns.  Then $101 \times 50 = 5050$ is the sum of
+the positive integers from $1$ to $100$, inclusive.
+
+\solutionpart{subprob:sum_even_number_formula}
+Since $n$ is positive and even, you can write $n$ as the expression
+$n = 2k$, where $k$ is a positive integer.  Now divide the integers
+from $1$ to $n$, inclusive, into two rows.  In the first row, you have
+the integers from $1$ to $k$, inclusive.  In the second row, you have
+the integers from $k + 1$ to $n$, inclusive.  You have the sum
+$n + 1$, which is the column sum in each of the $k$ columns.  Thus
+$(n + 1) \times k$ is the sum of the positive integers from $1$ to
+$n$, inclusive, where $n \geq 1$ is even.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
