@@ -1808,6 +1808,118 @@ seconds~(rounded to four decimal places) after the marble was thrown
 upward.
 \end{solution}
 }{}
+
+\item A cannon is buried underground such that the tip of the cannon
+  is at ground level.  The canon fires a cannonball whose path through
+  the air is described by the function $f(x) = bx - x^2$.  Here $x$ is
+  the horizontal distance between the cannonball and the tip of the
+  cannon, $f(x)$ is the vertical distance from the cannonball to the
+  ground, and $b > 0$ is a constant.  Next to the cannon is a toy
+  rocket that is tilted at $\degree{45}$ with respect to ground level.
+  When the rocket is launched, it travels in a straight line whose
+  path is described by the function $g(x) = x$.  Here $x$ is the
+  horizontal distance between the rocket and its launch site and
+  $g(x)$ represents the vertical distance between the rocket and
+  ground level.  Suppose that all distances are measured in metres.
+  Further suppose that the rocket is launched at the same time as when
+  the cannonball is fired.  You may assume that the rocket has enough
+  fuel to propel itself even after the cannonball has reached the
+  ground.  Determine the horizontal distances at which both the rocket
+  and the cannonball are the same vertical distance from ground
+  level.
+\ifbool{showSolution}{
+\begin{solution}
+\Figure{fig:path_cannonball_rocket} shows a rough sketch of the paths
+of the cannonball and rocket.  The figure shows two points of
+intersection between the functions $f(x)$ and $g(x)$.  Each point of
+intersection represents the horizontal distance at which both the
+cannonball and the rocket are at the same distance from ground level.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.2]{image/09/rocket-cannonball.pdf}
+\caption{%%
+  The paths of two projectiles on one set of coordinate axes.  The
+  blue graph represents the path of the cannonball.  The red graph
+  represents the path of the rocket.  The variable $x$ represents the
+  horizontal distance between the projectile and the site from where
+  it was launched.  The function value~(i.e.~$f(x)$ or $g(x)$)
+  represents the vertical distance from the projectile to ground
+  level.
+}
+\label{fig:path_cannonball_rocket}
+\end{figure}
+
+To calculate the points of intersection, you equate the two functions
+and solve for $x$.  Equating the two functions shows that you have
+$f(x) = g(x)$, which can also be written as
+\[
+bx - x^2
+=
+x.
+\]
+Moving everything to the left-hand side results in
+$-x^2 + bx - x = 0$.  In the latter expression, you can factorise $x$
+to get
+%%
+\begin{equation}
+\label{eqn:quadratic_point_of_intersection}
+(b - 1 - x)x
+=
+0.
+\end{equation}
+%%
+If you define the function $h(x) = (b - 1 - x)x$, then
+\Expression{eqn:quadratic_point_of_intersection} can be written more
+compactly as $h(x) = 0$, which says that you want to determine all
+roots of $h(x)$.  As $h(x)$ is a quadratic function, you can use the
+quadratic formula to determine the roots.
+
+On the other hand, you can also determine the roots of $h(x)$ without
+using the quadratic formula.  This requires some close observation of
+$h(x)$.  Carefully note what
+\Expression{eqn:quadratic_point_of_intersection} is telling you.  In
+general, the expression says that when you multiply two numbers
+together you get zero.  If that is the case, then one~(or both) of
+those two numbers must be zero.  In
+\Expression{eqn:quadratic_point_of_intersection}, your two numbers are
+$x$ and $b - 1 - x$.  Which values of $x$ would make
+\Expression{eqn:quadratic_point_of_intersection} true?  If $x = 0$,
+then \Expression{eqn:quadratic_point_of_intersection} would certainly
+be true.  If $b - 1 - x = 0$, then
+\Expression{eqn:quadratic_point_of_intersection} would also be true.
+Solving $b - 1 - x = 0$ for $x$ yields $x = b - 1$.  In other words,
+one point of intersection is at $x = 0$ and the corresponding function
+value is
+\[
+f(0)
+=
+0
+=
+g(0).
+\]
+This tells you that when the cannonball and rocket are both on the
+ground, then they are at the same vertical distance~(which is zero
+metres) from ground level.  The other point of intersection occurs at
+$x = b - 1$ with the corresponding function value being
+%%
+\begin{align*}
+f(b - 1)
+&=
+(b - 1)\bigparen{b - (b - 1)} \\[4pt]
+&=
+(b - 1) (b - b + 1) \\[4pt]
+&=
+b - 1 \\[4pt]
+&=
+g(b - 1).
+\end{align*}
+%%
+This tells you that when the cannonball and rocket are at a horizontal
+distance of $b - 1$ metres from their site of launch, then they are
+both at a vertical distance of $b - 1$ metres from ground level.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}

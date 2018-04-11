@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{rocket-cannonball}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{\left({#1}\comma {#2}\right)}
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  legend pos=north east,%%
+  plotStyle/.style={%%
+    domain=-0.25:5.25,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  ticks=none,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style=right,%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $y$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The function f(x): path of the cannonball.
+\addplot+ [plotStyle]
+{x*(5-x)};
+\addlegendentry{$f(x)$}
+%%
+%% The function g(x): path of the rocket.
+\addplot+ [plotStyle]
+{x};
+\addlegendentry{$g(x)$}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
