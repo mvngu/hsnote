@@ -2202,6 +2202,69 @@ $a = b$, then both sides of \Inequality{eqn:AMGM_inequality} are the
 same.
 \end{solution}
 }{}
+
+\item Consider the function
+  \[
+  f(x)
+  =
+  x^2 - bx + 1
+  \]
+  where $b$ is a fixed number.  Determine all values of $b$ for which
+  the graph of $f(x)$ does not intersect the $x$-axis.
+\ifbool{showSolution}{
+\begin{solution}
+To determine whether the graph of a quadratic function intersects the
+horizontal axis, you must calculate the discriminant of the function.
+The discriminant of the given function is
+\[
+\Delta
+=
+(-b)^2 - 4(1)(1)
+=
+b^2 - 4.
+\]
+Note that if $\Delta < 0$, then the graph of $f(x)$ does not intersect
+the horizontal axis.  In other words, you want to determine all values
+of $b$ such that
+%%
+\begin{equation}
+\label{eqn:negative_discriminant_b}
+b^2 - 4
+<
+0.
+\end{equation}
+%%
+This is equivalent to determining all values of $b$ such that
+$b^2 < 4$.  You have three possibilities for $b$:
+%%
+\begin{packedenumeral}
+\item\label{case:b_zero}
+  The value of $b$ is zero.  If $b = 0$, then you have $0^2 < 4$,
+  which is true.  So $b$ can be zero.
+
+\item\label{case:b_positive}
+  The value of $b$ is positive.  If $b > 0$, then you know that
+  $2^2 = 4$, which is not what you want because you want $b^2$ to be
+  less than $4$.  That is, the value of $b$ must be less than $2$ but
+  greater than zero, or in symbols $0 < b < 2$.
+
+\item\label{case:b_negative}
+  The value of $b$ is negative.  If $b < 0$, then you know that
+  $(-2)^2 = 4$.  So $b$ cannot be $-2$.  If $b < -2$, then the square
+  $b^2$ would be a positive number that is greater than $4$.  So $b$
+  can be neither $-2$ nor less than $-2$.  The only possibility for
+  $b$ is to be greater than $-2$, but less than zero.  In symbols, you
+  have $-2 < b < 0$.
+\end{packedenumeral}
+%%
+According to the above three cases, in order for
+\Expression{eqn:negative_discriminant_b} to be true, the possible
+values of $b$ must be $-2 < b < 2$.  In terms of absolute values, the
+latter expression can be written as $\absoluteValue{b} < 2$.
+Therefore if the values of $b$ are given by $-2 < b < 2$, then the
+graph of the function $f(x)$ does not intersect the horizontal axis.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
