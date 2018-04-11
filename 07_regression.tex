@@ -1603,6 +1603,123 @@ n
 which is what you were required to prove.
 \end{solution}
 }{}
+
+\item You will derive a formula to sum the first $n$ positive
+  integers, regardless of whether $n$ is even or odd.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:sum_first_10}
+    As an example, consider the problem of summing the integers from
+    $1$ to $10$, inclusive.  That is, you want to calculate the sum
+    \[
+    S
+    =
+    \sumseq{1 + 2}{3}{10}.
+    \]
+    On one row, write the integers from $1$ to $10$ in increasing
+    order.  On the next row, write the same ten integers but in
+    decreasing order.  Now $10$ should be underneath $1$, $9$
+    underneath $2$, and so on, down to $1$ being underneath $10$.
+    Thus you have two rows and ten columns as in the following table:
+    \[
+    \begin{matrix}
+    1  & 2 & 3 & \cdots & 10 \\[4pt]
+    10 & 9 & 8 & \cdots & 1
+    \end{matrix}
+    \]
+    Note that if you add together the numbers in the first row, you
+    would get the sum $S$.  Adding the numbers in the second row would
+    also give you the sum $S$.  Calculate the column sum and note that
+    this number occurs as the sum in each column.  Multiplying the
+    column sum by $10$~(i.e.~the number of columns) and you get twice
+    the value of $S$, which is $2S$.  However, you want $S$, not $2S$
+    so you divide by $2$ to get $S$.  Use the above procedure to
+    determine the sum of the integers from $1$ to $10$, inclusive.
+
+  \item\label{subprob:sum_first_100}
+    Use the technique from \Part{subprob:sum_first_10} to sum the
+    integers from $1$ to $100$, inclusive.
+
+  \item\label{subprob:sum_first_n_positive}
+    Let $n \geq 1$ be an integer and consider the sum
+    \[
+    S
+    =
+    \sumseq{1 + 2}{3}{n}
+    \]
+    of the first $n$ positive integers.  Prove that $S$ can be written
+    as
+    \[
+    S
+    =
+    \frac{n(n + 1)}{2}.
+    \]
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:sum_first_10}
+Each column has a sum of $1 + 10 = 11$.  As there are $10$ columns,
+the sum of the third row is $11 \times 10 = 110$, which is twice of
+$S$.  That is, you have
+\[
+2S
+=
+110.
+\]
+Solving for $S$ shows that $S = 110 / 2 = 55$.  Therefore $S = 55$ is
+the sum of the integers from $1$ to $10$, inclusive.
+
+\solutionpart{subprob:sum_first_100}
+Let $S$ be the sum of the integers from $1$ to $100$, inclusive.  On
+the first row, you write the integers from $1$ to $100$ in increasing
+order.  On the next row, you write the integers from $1$ to $100$ in
+decreasing order.  What you end up with is the following table:
+\[
+\begin{matrix}
+1   & 2  & 3  & \cdots & 100 \\[4pt]
+100 & 99 & 98 & \cdots & 1
+\end{matrix}
+\]
+Each column has a sum of $1 + 100 = 101$.  Since there are $100$
+columns, the sum of the third row is $101 \times 100$, which is twice
+of $S$.  That is, you have $2S = 101 \times 100$.  Solving for $S$
+results in
+\[
+S
+=
+\frac{101 \times 100}{2}
+=
+101 \times 50
+=
+5050.
+\]
+Thus $S = 5050$ is the sum of the integers from $1$ to $100$,
+inclusive.
+
+\solutionpart{subprob:sum_first_n_positive}
+You use the same technique as
+in \Parts{subprob:sum_first_10}{subprob:sum_first_100}.  On one row,
+you write the integers from $1$ to $n$, inclusive, in increasing
+order.  On the next row, you write the integers from $1$ to $n$ in
+decreasing order.  You then have the following table:
+\[
+\begin{matrix}
+1 & 2   & 3   & \cdots & n \\[4pt]
+n & n-1 & n-2 & \cdots & 1
+\end{matrix}
+\]
+Each column has the sum $n + 1$.  Since there are $n$ columns, then
+the sum of the third row is $n(n + 1)$, which is twice the value of
+$S$.  That is, you have
+\[
+2S
+=
+n(n + 1).
+\]
+Solving the last equation for $S$ results in $S = \frac{n(n+1)}{2}$ as
+required.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
