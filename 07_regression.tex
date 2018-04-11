@@ -1468,6 +1468,138 @@ $(n + 1) \times k$ is the sum of the positive integers from $1$ to
 $n$, inclusive, where $n \geq 1$ is even.
 \end{solution}
 }{}
+
+\item This problem is similar to
+  \Problem{prob:sum_even_number_of_terms_formula}, but $n \geq 1$ is
+  now assumed to be an odd integer.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:sum_integers_from_1_to_35}
+    To sum all the positive integers from $1$ to $35$, inclusive, you
+    use the technique from
+    \Problem{prob:sum_even_number_of_terms_formula} to sum the
+    integers from $1$ to $34$, inclusive.  Then you add $35$ to your
+    result.  Use the above procedure to add up all the positive
+    integers from $1$ to $35$, inclusive.
+
+  \item\label{subprob:sum_integers_from_1_to_51}
+    Use the technique from \Part{subprob:sum_integers_from_1_to_35} to
+    calculate the sum of the integers from $1$ to $51$, inclusive.
+
+  \item\label{subprob:sum_integers_n_odd}
+    Let $n \geq 1$ be an odd integer and consider the sum
+    \[
+    S
+    =
+    \sumseq{1 + 2}{3}{n}.
+    \]
+    Prove that the sum can also be written as
+    \[
+    S
+    =
+    \frac{
+      n(n + 1)
+    }{
+      2
+    }.
+    \]
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:sum_integers_from_1_to_35}
+First, let's calculate the sum of the integers from $1$ to $34$,
+inclusive.  On one row, you have the integers from $1$ to $17$ in
+increasing order.  On the next row, you have the integers from $18$ to
+$34$ in decreasing order.  You have the sum $1 + 34 = 35$, which
+occurs as the column sum of each of $17$ columns.  Thus
+\[
+\sumseq{1 + 2}{3}{34}
+=
+35 \times 17
+=
+595.
+\]
+Finally, you add $35$ to your result to get
+\[
+(35 \times 17) + 35
+=
+595 + 35
+=
+630
+\]
+which is the sum of the integers from $1$ to $35$, inclusive.
+
+\solutionpart{subprob:sum_integers_from_1_to_51}
+To calculate the sum of the integers from $1$ to $51$, inclusive, you
+first use the technique from
+\Problem{prob:sum_even_number_of_terms_formula} to calculate the sum
+from $1$ to $50$, inclusive.  Then you add $51$ to your result.  The
+sum of the integers from $1$ to $50$, inclusive, is given by
+\[
+(1 + 50) \times 25
+=
+51 \times 25
+=
+1275
+\]
+because you have $25$ columns, each of which has the column sum of
+$51$.  Now add $51$ to your result to get
+\[
+(51 \times 25) + 51
+=
+1326
+\]
+which is the sum of the integers from $1$ to $51$, inclusive.
+
+\solutionpart{subprob:sum_integers_n_odd}
+Since $n \geq 1$ is odd, it can be written as $n = 2k + 1$, where $k$
+is a positive integer.  Then $n - 1 = 2k$ is even and solving the
+latter expression for $k$ shows that
+%%
+\begin{equation}
+\label{eqn:n_odd_define_k}
+k
+=
+\frac{n - 1}{2}.
+\end{equation}
+%%
+Use
+\Subproblem{prob:sum_even_number_of_terms_formula}{subprob:sum_even_number_formula}
+to calculate the sum of the integers from $1$ to $n - 1$, inclusive.
+The sum is
+\[
+\bigparen{(n - 1) + 1}k
+=
+nk.
+\]
+Now add $n$ to the result and use the definition of $k$ as in
+\Equation{eqn:n_odd_define_k} to get
+%%
+\begin{align*}
+nk + n
+&=
+n(k + 1) \\[4pt]
+&=
+n
+\parenthesis*{
+  \frac{n-1}{2}
+  +
+  1
+} \\[4pt]
+&=
+n
+\parenthesis*{
+  \frac{n-1}{2}
+  +
+  \frac{2}{2}
+} \\[4pt]
+&=
+\frac{n(n + 1)}{2}
+\end{align*}
+%%
+which is what you were required to prove.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
