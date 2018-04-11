@@ -1198,6 +1198,10 @@ $3$ metres squared.
   \item\label{subprob:maximum_product_given_sum_b}
     Suppose $b > 0$ is a fixed number such that $x + y = b$.
     Determine the maximum value of $xy$.
+
+  \item\label{subprob:minimum_product_given_difference_b}
+    Let $b > 0$ be a fixed number such that you have the difference
+    $x - y = b$.  Calculate the minimum value of $xy$.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -1287,6 +1291,50 @@ f(b/2)
 Note that $f(b/2) = b^2 / 4$ is positive because you have assumed that
 $b > 0$.  Therefore the quadratic function $f(x)$ has a maximum value
 of $b^2 / 4$, which occurs when $x = b / 2$.
+
+\solutionpart{subprob:minimum_product_given_difference_b}
+You must express $y$ in terms of $x$ and $b$.  Solving the equation
+$x - y = b$ for $y$ shows that you have $y = x - b$ and so the product
+$xy$ can be written as the function
+\[
+f(x)
+=
+x(x - b).
+\]
+Use the distributive laws to expand the right-hand side and you can
+write the latter expression as $f(x) = x^2 - bx$.  In the function
+$f(x)$, you assume that you know the value of $b$~(i.e.~it is a
+positive constant) and $x$ is the variable.  Since $f(x)$ represents
+the product $xy$, the minimum or maximum value of $xy$ is equivalent
+to the vertex of $f(x)$.  The horizontal coordinate of the vertex is
+given by
+%%
+\begin{align*}
+x
+&=
+-\frac{-b}{2(1)} \\[4pt]
+&=
+\frac{b}{2}.
+\end{align*}
+%%
+The vertical coordinate of the vertex is
+%%
+\begin{align*}
+f(b/2)
+&=
+\frac{b}{2}
+\parenthesis*{\frac{b}{2} - b} \\[4pt]
+&=
+\frac{b}{2}
+\parenthesis*{\frac{b}{2} - \frac{2b}{2}} \\[4pt]
+&=
+-\frac{b}{2} \cdot \frac{b}{2} \\[4pt]
+&=
+-\frac{b^2}{4}.
+\end{align*}
+%%
+Therefore the least value of the product $xy$ is $-\frac{b^2}{4}$ and
+this value occurs when $x = b/2$.
 \end{solution}
 }{}
 
