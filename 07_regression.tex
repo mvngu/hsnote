@@ -322,41 +322,6 @@ score.
 \end{solution}
 }{}
 
-\begin{table}[!htbp]
-\centering
-\input{table/07/age-egg.tex}
-\caption{%%
-  The age of a hen versus the number of eggs that she laid per week.
-  Age is measured in months.
-}
-\label{tab:age_egg}
-\end{table}
-
-\begin{exercise}
-\Table{tab:age_egg} shows the age of a hen and the number of eggs that
-she laid per week.  Graph the data in the table as a scatter plot.
-What can you conclude from the scatter plot?
-\end{exercise}
-%%
-\ifbool{showSolution}{
-\begin{solution}
-\Figure{fig:age_egg} shows a scatter plot of the data in
-\Table{tab:age_egg}.  Without any additional information, apart from
-what is presented in the table, the graph shows that as the hen gets
-older she lays fewer eggs per week.
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[scale=1]{image/07/age-eggs-scatterplot.pdf}
-\caption{%%
-  The number of eggs that a hen laid per week versus her age in
-  months.  The data are from \Table{tab:age_egg}.
-}
-\label{fig:age_egg}
-\end{figure}
-\end{solution}
-}{}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -926,90 +891,6 @@ regression function $f(x)$.
 \end{solution}
 }{}
 
-\begin{exercise}
-Use linear regression to model the data in \Table{tab:age_egg}.
-\end{exercise}
-%%
-\ifbool{showSolution}{
-\begin{solution}
-Let $x$ be the age~(in months) of the hen and let $y = f(x)$ be the
-number of eggs that the hen laid per week when she was at age $x$.
-Using the data in \Table{tab:age_egg}, the mean age is
-\[
-\xbar
-=
-\frac{147}{14}
-=
-10.5
-\]
-months and the mean number of eggs is
-\[
-\ybar
-=
-\frac{54}{14}
-\approx
-3.857143
-\]
-per week, rounded to six decimal places.  Use the formulae
-in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to obtain the
-values in \Table{tab:age_egg_regression}.  To approximate the value of
-$\alphahat$, sum the values along the column labelled $d(x_i) d(y_i)$,
-do the same for the column labelled $d(x_i) d(x_i)$, and divide the
-first sum by the second sum to obtain the approximation
-\[
-\alphahat
-=
-\frac{-56}{227.5}
-\approx
--0.246154
-\]
-rounded to six decimal places.  The value of $\betahat$ can be
-approximated as
-\[
-\betahat
-=
-\ybar - \alphahat \xbar
-\approx
-6.441758
-\]
-rounded to six decimal places.  Therefore the data in
-\Table{tab:age_egg} can be modelled as the linear function
-\[
-f(x)
-=
--0.246154 x + 6.441758
-\]
-where $x$ represents the age~(in months) of a hen and $f(x)$
-represents the number of eggs that she lay per week at $x$ months
-old.  \Figure{fig:age_eggs_regression} shows a scatter plot of the
-data in \Table{tab:age_egg} together with a graph of the function
-$f(x)$.
-
-\begin{table}[!htbp]
-\centering
-\input{table/07/age-egg-regression.tex}
-\caption{%%
-  Detailed calculation of the regression line for the data in
-  \Table{tab:age_egg}.  Note that most numbers have been rounded to
-  six decimal places in order to fit the table.  You should only do
-  the rounding for the final results.  Except for the first two
-  columns, the numbers in the table should be computed by using a
-  spreadsheet software package.
-}
-\label{tab:age_egg_regression}
-\end{table}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[scale=1]{image/07/age-eggs-regression.pdf}
-\caption{%%
-  A regression line through the data in \Table{tab:age_egg}.
-}
-\label{fig:age_eggs_regression}
-\end{figure}
-\end{solution}
-}{}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1265,78 +1146,6 @@ scores.  Other factors not given by the data might have contributed to
 a student's test score.  For example, the students with high or
 perfect test scores might have been studying every day since the start
 of the school year.
-\end{solution}
-}{}
-
-\begin{exercise}
-Calculate the Pearson correlation coefficient $r$ for the data in
-\Table{tab:age_egg}.  Provide an interpretation of the value of $r$.
-\end{exercise}
-
-\ifbool{showSolution}{
-\begin{solution}
-First, you use \Expression{eqn:Pearson_correlation_coefficient} to
-calculate the Pearson correlation coefficient.  The mean age is
-$\xbar \approx 10.5$ months and the mean number of eggs
-$\ybar \approx 3.9$, both figures rounded to one decimal place.  Use
-the mean values and \Expression{eqn:Pearson_correlation_coefficient}
-to calculate the values shown in \Table{tab:age_egg_pearson}.  Use the
-values in \Table{tab:age_egg_pearson} to calculate the sum
-\[
-\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
-=
--56
-\]
-and the sums
-\[
-\sum_{i=1}^n (x_i - \xbar)^2
-=
-227.5
-%%
-\qquad
-\text{and}
-\qquad
-%%
-\sum_{i=1}^n (y_i - \ybar)^2
-\approx
-17.71
-\]
-where the last sum has been rounded to two decimal places.  The value
-of $r$ is approximately
-%%
-\begin{align*}
-r
-&\approx
-\frac{
-  -56
-}{
-  \sqrt{
-    227.5 \times 17.71
-  }
-} \\[4pt]
-&\approx
--0.8821
-\end{align*}
-%%
-rounded to four decimal places.
-
-\begin{table}[!htbp]
-\centering
-\input{table/07/age-egg-pearson.tex}
-\caption{%%
-  Detailed calculation of the Pearson correlation coefficient for the
-  data in \Table{tab:age_egg}.  The column for $x$ is for the age in
-  months and the column for $y$ is the number of eggs per week.  Note
-  that most values have been rounded to two decimal places in order to
-  fit the table.  However, you should only round the final result.
-}
-\label{tab:age_egg_pearson}
-\end{table}
-
-The value of $-0.9 < -0.8821 \leq -0.75$ tells you that there is
-moderate linear correlation in the data of \Table{tab:age_egg}.  In
-particular, the correlation coefficient tells you that as the hen gets
-older it tends to lay fewer eggs per week.
 \end{solution}
 }{}
 
@@ -1718,6 +1527,193 @@ n(n + 1).
 \]
 Solving the last equation for $S$ results in $S = \frac{n(n+1)}{2}$ as
 required.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg.tex}
+\caption{%%
+  The age of a hen versus the number of eggs that she laid per week.
+  Age is measured in months.
+}
+\label{tab:age_egg}
+\end{table}
+
+\item \Table{tab:age_egg} shows the age of a hen and the number of
+  eggs that she laid per week.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:hen_eggs_scatterplot}
+    Graph the data in the table as a scatter plot.  What can you
+    conclude from the scatter plot?
+
+  \item\label{subprob:hen_eggs_regression}
+    Use linear regression to model the data in \Table{tab:age_egg}.
+
+  \item\label{subprob:hen_eggs_correlation}
+    Calculate the Pearson correlation coefficient $r$ for the data in
+    \Table{tab:age_egg}.  Provide an interpretation of the value of
+    $r$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:hen_eggs_scatterplot}
+\Figure{fig:age_egg} shows a scatter plot of the data in
+\Table{tab:age_egg}.  Without any additional information, apart from
+what is presented in the table, the graph shows that as the hen gets
+older she lays fewer eggs per week.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/age-eggs-scatterplot.pdf}
+\caption{%%
+  The number of eggs that a hen laid per week versus her age in
+  months.  The data are from \Table{tab:age_egg}.
+}
+\label{fig:age_egg}
+\end{figure}
+
+\solutionpart{subprob:hen_eggs_regression}
+Let $x$ be the age~(in months) of the hen and let $y = f(x)$ be the
+number of eggs that the hen laid per week when she was at age $x$.
+Using the data in \Table{tab:age_egg}, the mean age is
+\[
+\xbar
+=
+\frac{147}{14}
+=
+10.5
+\]
+months and the mean number of eggs is
+\[
+\ybar
+=
+\frac{54}{14}
+\approx
+3.857143
+\]
+per week, rounded to six decimal places.  Use the formulae
+in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} to obtain the
+values in \Table{tab:age_egg_regression}.  To approximate the value of
+$\alphahat$, sum the values along the column labelled $d(x_i) d(y_i)$,
+do the same for the column labelled $d(x_i) d(x_i)$, and divide the
+first sum by the second sum to obtain the approximation
+\[
+\alphahat
+=
+\frac{-56}{227.5}
+\approx
+-0.246154
+\]
+rounded to six decimal places.  The value of $\betahat$ can be
+approximated as
+\[
+\betahat
+=
+\ybar - \alphahat \xbar
+\approx
+6.441758
+\]
+rounded to six decimal places.  Therefore the data in
+\Table{tab:age_egg} can be modelled as the linear function
+\[
+f(x)
+=
+-0.246154 x + 6.441758
+\]
+where $x$ represents the age~(in months) of a hen and $f(x)$
+represents the number of eggs that she lay per week at $x$ months
+old.  \Figure{fig:age_eggs_regression} shows a scatter plot of the
+data in \Table{tab:age_egg} together with a graph of the function
+$f(x)$.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg-regression.tex}
+\caption{%%
+  Detailed calculation of the regression line for the data in
+  \Table{tab:age_egg}.  Note that most numbers have been rounded to
+  six decimal places in order to fit the table.  You should only do
+  the rounding for the final results.  Except for the first two
+  columns, the numbers in the table should be computed by using a
+  spreadsheet software package.
+}
+\label{tab:age_egg_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/age-eggs-regression.pdf}
+\caption{%%
+  A regression line through the data in \Table{tab:age_egg}.
+}
+\label{fig:age_eggs_regression}
+\end{figure}
+
+\solutionpart{subprob:hen_eggs_correlation}
+First, you use \Expression{eqn:Pearson_correlation_coefficient} to
+calculate the Pearson correlation coefficient.  The mean age is
+$\xbar \approx 10.5$ months and the mean number of eggs
+$\ybar \approx 3.9$, both figures rounded to one decimal place.  Use
+the mean values and \Expression{eqn:Pearson_correlation_coefficient}
+to calculate the values shown in \Table{tab:age_egg_pearson}.  Use the
+values in \Table{tab:age_egg_pearson} to calculate the sum
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+=
+-56
+\]
+and the sums
+\[
+\sum_{i=1}^n (x_i - \xbar)^2
+=
+227.5
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (y_i - \ybar)^2
+\approx
+17.71
+\]
+where the last sum has been rounded to two decimal places.  The value
+of $r$ is approximately
+%%
+\begin{align*}
+r
+&\approx
+\frac{
+  -56
+}{
+  \sqrt{
+    227.5 \times 17.71
+  }
+} \\[4pt]
+&\approx
+-0.8821
+\end{align*}
+%%
+rounded to four decimal places.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/age-egg-pearson.tex}
+\caption{%%
+  Detailed calculation of the Pearson correlation coefficient for the
+  data in \Table{tab:age_egg}.  The column for $x$ is for the age in
+  months and the column for $y$ is the number of eggs per week.  Note
+  that most values have been rounded to two decimal places in order to
+  fit the table.  However, you should only round the final result.
+}
+\label{tab:age_egg_pearson}
+\end{table}
+
+The value of $-0.9 < -0.8821 \leq -0.75$ tells you that there is
+moderate linear correlation in the data of \Table{tab:age_egg}.  In
+particular, the correlation coefficient tells you that as the hen gets
+older it tends to lay fewer eggs per week.
 \end{solution}
 }{}
 \end{problem}
