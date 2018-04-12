@@ -1716,6 +1716,193 @@ particular, the correlation coefficient tells you that as the hen gets
 older it tends to lay fewer eggs per week.
 \end{solution}
 }{}
+
+\item This problem will help you to understand the idea of the
+  \emph{convergence of an infinite sum}.  You know that you get a sum
+  when you add together a bunch of numbers.  An infinite sum is
+  similar.  However, the only difference is that an infinite sum has
+  an infinite number of terms.  Here, you will consider the infinite
+  sum
+  %%
+  \begin{equation}
+  \label{eqn:Basel_problem}
+  \sum_{k=1}^\infty \frac{1}{k^2}
+  =
+  \sumi{
+    \frac{1}{1^2}
+  }{
+    \frac{1}{2^2}
+  }{
+    \frac{1}{3^2}
+  }
+  \end{equation}
+  %%
+  which has the property that it does not grow as large as you want as
+  you add more and more terms to the sum.  This is counter-intuitive
+  because you know that if you add the first ten positive integers,
+  you get a sum.  If you add more and more positive integers together
+  you get a larger sum.  So it is rather strange that there are cases
+  where you can add together an infinite number of terms without the
+  sum ever becoming as large as you want.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:Basel_problem_sum_first_5}
+    Consider the first five terms in \Expression{eqn:Basel_problem}.
+    The sum of these first five terms would be written as
+    %%
+    \begin{equation}
+    \label{eqn:Basel_problem_sum_first_5}
+    \sum_{k=1}^5 \frac{1}{k^2}
+    =
+    \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2}
+    +
+    \frac{1}{4^2} + \frac{1}{5^2}.
+    \end{equation}
+    %%
+    Use Excel or any other computer program to calculate the
+    sum~\eqref{eqn:Basel_problem_sum_first_5}.
+
+  \item\label{subprob:Basel_problem_sum_first_10}
+    The sum of the first ten terms in \Expression{eqn:Basel_problem}
+    would be written as
+    %%
+    \begin{equation}
+    \label{eqn:Basel_problem_sum_first_10}
+    \sum_{k=1}^{10} \frac{1}{k^2}
+    =
+    \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2}
+    +
+    \frac{1}{4^2} + \frac{1}{5^2}
+    +
+    \frac{1}{6^2} + \frac{1}{7^2} + \frac{1}{8^2}
+    +
+    \frac{1}{9^2} + \frac{1}{10^2}.
+    \end{equation}
+    %%
+    Calculate the sum~\eqref{eqn:Basel_problem_sum_first_10}.
+
+  \item\label{subprob:Basel_problem_sum_first_100}
+    Calculate the sum of the first $100$ terms in
+    \Expression{eqn:Basel_problem}.
+
+  \item\label{subprob:Basel_problem_sum_first_1000}
+    Repeat \Part{subprob:Basel_problem_sum_first_100} for $200$ terms,
+    $300$ terms, $400$ terms, $500$ terms, $600$ terms, $700$ terms,
+    $800$ terms, $900$ terms, and $1000$ terms.  Organise your results
+    since \Part{subprob:Basel_problem_sum_first_5} into a table that
+    has two columns and $13$ rows.  The first row has the column
+    headings.  Produce a scatter plot of the data in your table.
+
+  \item\label{subprob:Basel_problem_approximate_value}
+    Carefully look over your table of values and the scatter plot.
+    Suppose that you sum not only $1000$ terms, but $10,000$ terms or
+    $100,000$ terms or as many terms as you want.  As the number of
+    terms increases, guess the value of the true sum.  The true value
+    of \Expression{eqn:Basel_problem} is a fixed number and you would
+    say that \Expression{eqn:Basel_problem} \emph{converges} to that
+    fixed number, whatever value it happens to be.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:Basel_problem_sum_first_5}
+The sum of the first five terms in \Expression{eqn:Basel_problem} is
+approximately
+\[
+\sum_{k=1}^5 \frac{1}{k^2}
+=
+\frac{1}{1^2}
++
+\frac{1}{2^2}
++
+\frac{1}{3^2}
++
+\frac{1}{4^2}
++
+\frac{1}{5^2}
+\approx
+1.463611
+\]
+rounded to six decimal places.
+
+\solutionpart{subprob:Basel_problem_sum_first_10}
+In \Expression{eqn:Basel_problem} the sum of the first ten terms is
+approximately
+\[
+\sum_{k=1}^{10} \frac{1}{k^2}
+=
+\sumseq{
+  \frac{1}{1^2}
+  +
+  \frac{1}{2^2}
+}{
+  \frac{1}{3^2}
+}{
+  \frac{1}{10^2}
+}
+\approx
+1.549768
+\]
+rounded to six decimal places.
+
+\solutionpart{subprob:Basel_problem_sum_first_100}
+In \Expression{eqn:Basel_problem} the sum of the first $100$ terms is
+approximately
+\[
+\sum_{k=1}^{100} \frac{1}{k^2}
+=
+\sumseq{
+  \frac{1}{1^2}
+  +
+  \frac{1}{2^2}
+}{
+  \frac{1}{3^2}
+}{
+  \frac{1}{100^2}
+}
+\approx
+1.634984
+\]
+rounded to six decimal places.
+
+\solutionpart{subprob:Basel_problem_sum_first_1000}
+\Table{tab:Basel_problem_approximate_sums} lists some approximate sums
+of \Expression{eqn:Basel_problem}.  See
+\Figure{fig:Basel_problem_approximate_sums} for a scatter plot of the
+data in the table.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/basel-problem.tex}
+\caption{%%
+  Approximate sums of \Expression{eqn:Basel_problem}.
+}
+\label{tab:Basel_problem_approximate_sums}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/basel-problem-scatterplot.pdf}
+\caption{%%
+  Scatter plot of the number of terms in
+  \Expression{eqn:Basel_problem} versus the corresponding approximate
+  sum.  The data are from \Table{tab:Basel_problem_approximate_sums}.
+}
+\label{fig:Basel_problem_approximate_sums}
+\end{figure}
+
+\solutionpart{subprob:Basel_problem_approximate_value}
+From \Table{tab:Basel_problem_approximate_sums} and
+\Figure{fig:Basel_problem_approximate_sums}, you would guess that as
+the number of terms in \Expression{eqn:Basel_problem} increases the
+sum of those terms will always be less than or equal to $1.65$.  It is
+also possible for the true sum to be approximately $1.65$, rounded to
+two decimal places.  In fact, the exact sum is $\frac{\pi^2}{6}$,
+which was found by Leonhard Euler in the year~1734.  The problem of
+calculating the exact value of \Expression{eqn:Basel_problem} is known
+as the \emph{Basel problem}.  You can read more about the Basel
+problem at Wikipedia.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
