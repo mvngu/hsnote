@@ -18,6 +18,7 @@
 
 %% Miscellaneous
 \usepackage{enumerate}
+\usepackage{epsdice}
 \usepackage{xparse}
 \usepackage{xspace}
 
@@ -122,6 +123,12 @@
 \newcommand{\radian}[1]{{#1}\ensuremath{^{\rm c}}\xspace}
 \newcommand{\sumi}[3]{{#1} + {#2} + {#3} + \cdots}
 \newcommand{\sumseq}[3]{{#1} + {#2} + \cdots + {#3}}
+
+%% Dice
+\newcommand{\dice}[1]{\epsdice{#1}}
+\newcommand{\diceOutcomes}{%%
+  \dice{1}\quad\dice{2}\quad\dice{3}\quad\dice{4}\quad\dice{5}\quad\dice{6}%%
+}
 
 %% Maths alphabet.
 \newcommand{\abar}{\overline{a}}
