@@ -46,6 +46,67 @@ $5 = 1 \times 5$ is correct because $5$ is a prime and has no factors
 other than $1$ and $5$.  The factorised form
 $5 = 1 \times 5 \times 1$ is also correct, but that's cheating.
 
+What about factoring quadratic functions?  Let's start with quadratic
+functions of the form $f(x) = ax^2 + bx$, where $a$ and $b$ are any
+real numbers such that $a \neq 0$.  Use the distributive laws to write
+$f(x)$ in the factorised form
+%%
+\begin{equation}
+\label{eqn:factorise_axx_bx}
+f(x)
+=
+(ax + b)x
+\end{equation}
+%%
+to see that $f(x)$ has the factors $x$ and $ax + b$.  Looking at the
+factored form~\eqref{eqn:factorise_axx_bx}, the roots of $f(x)$ are
+$x = 0$ and $x = -b/a$.  But how did you get those numbers?  To
+calculate the roots of $f(x)$ means to determine all values of $x$
+such that the expression $f(x) = 0$ is true.  In other words, you want
+to determine all values of $x$ such that the expression
+%%
+\begin{equation}
+\label{eqn:roots_of_axx_bx}
+(ax + b)x
+=
+0
+\end{equation}
+%%
+is true.  Expression~\eqref{eqn:roots_of_axx_bx} tells you that there
+are two numbers, i.e.~$x$ and $ax + b$, whose product is zero.  You
+have two cases:
+%%
+\begin{packedenumeral}
+\item If $x = 0$, then \Expression{eqn:roots_of_axx_bx} is true
+  because zero multiplied by another number is zero.  So one root of
+  $f(x)$ is $x = 0$.
+
+\item If $ax + b = 0$, then \Expression{eqn:roots_of_axx_bx} is also
+  true.  But for which values of $x$ would you have $ax + b = 0$?
+  Solving the latter expression for $x$ shows that $x = -b / a$.
+  Substitute the last expresssion into~\eqref{eqn:roots_of_axx_bx}
+  produces
+  %%
+  \begin{align*}
+  \squarebracket*{
+    a \parenthesis*{-\frac{b}{a}}
+    +
+    b
+  }
+  \parenthesis*{-\frac{b}{a}}
+  &=
+  (-b + b)
+  \parenthesis*{-\frac{b}{a}} \\[4pt]
+  &=
+  0 \times \parenthesis*{-\frac{b}{a}} \\[4pt]
+  &=
+  0
+  \end{align*}
+  %%
+  which is true.  Hence you have found that $x = -b / a$ is another
+  root of $f(x)$.
+\end{packedenumeral}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
