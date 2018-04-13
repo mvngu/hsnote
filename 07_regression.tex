@@ -17,6 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{The mean}
+\label{sec:mean}
 
 The goal of this document is to use statistics for prediction.  You
 will learn about a statistical model called linear regression.  Before
@@ -1901,6 +1902,76 @@ which was found by Leonhard Euler in the year~1734.  The problem of
 calculating the exact value of \Expression{eqn:Basel_problem} is known
 as the \emph{Basel problem}.  You can read more about the Basel
 problem at Wikipedia.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/vic-weather.tex}
+\caption{%%
+  The temperatures of various cities within Victoria, Australia during
+  an Autumn day.  Temperature is measured in Celsius.
+}
+\label{tab:Victoria_temperature}
+\end{table}
+
+\item This problem will consider three definitions of averages.  You
+  already know one definition of averages: the \emph{mean} as
+  explained in \Section{sec:mean}.  The other two definitions of
+  averages are: the \emph{median} and the \emph{mode}.  When you or
+  someone talks about the average of a bunch of numbers, you must be
+  careful about which definition of averages is used.
+  \Table{tab:Victoria_temperature} shows the temperatures of various
+  Victorian cities during an Autumn day.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:mean_temperature}
+    Suppose you have $n$ numbers.  The \emph{mean} of the numbers is
+    calculated by first summing the numbers and then divide the result
+    by $n$.  Use \Table{tab:Victoria_temperature} to determine the
+    mean temperature across Victoria during the particular day.
+
+  \item\label{subprob:median_temperature}
+    Suppose you have a bunch of numbers.  To calculate the
+    \emph{median} of the numbers, you first sort the numbers from
+    lowest to highest going from left to right~(or top to bottom).  In
+    the sorted list, the median is the middle value.  For example, if
+    your list is
+    %%
+    \begin{equation}
+    \label{eqn:median_of_numbers}
+    \septuple{2}{1}{3}{7}{7}{8}{5}
+    \end{equation}
+    %%
+    the sorted list would be
+    \[
+    \septuple{1}{2}{3}{5}{7}{7}{8}
+    \]
+    and the median would then be $5$, which is the middle value in the
+    sorted list.  Use \Table{tab:Victoria_temperature} to calculate
+    the median temperature for Victoria during the given day.
+
+  \item\label{subprob:mode_temperature}
+    Given a bunch of numbers, the \emph{mode} of the numbers is the
+    value that occurs the most often.  For example, in the
+    list~\eqref{eqn:median_of_numbers} the value $7$ occurs the most
+    often so you would say that $7$ is the mode of the list.  Use
+    \Table{tab:Victoria_temperature} to calculate the mode of the
+    temperatures across Victoria during the given day.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:mean_temperature}
+Using Excel, the mean temperature across Victoria during the given day
+was $\degree{22.6}$.
+
+\solutionpart{subprob:median_temperature}
+Using Excel, the median temperature across Victoria during the given
+day was $\degree{23}$.
+
+\solutionpart{subprob:mode_temperature}
+Using Excel, the mode temperature across Victoria during the given day
+was $\degree{24}$.
 \end{solution}
 }{}
 \end{problem}
