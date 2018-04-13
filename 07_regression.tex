@@ -1974,6 +1974,76 @@ Using Excel, the mode temperature across Victoria during the given day
 was $\degree{24}$.
 \end{solution}
 }{}
+
+\item This problem provides a brief introduction to
+  \emph{probability}.  The probability that something~(in other words,
+  an \emph{event}) will occur is the chance that the event will occur.
+  The probability of an event occurring is usually denoted by a number
+  between $0$ and $1$, inclusive.  If something can never, ever occur
+  you say that the event has a probability of zero of happening.  If
+  an event is certain to occur no matter what, you say that the event
+  has a probability of one of occurring.  All this sounds too abstract
+  so let's consider the example of rolling a die~(the plural is dice).
+  Consider a six-sided die, where each side is numbered with an
+  integer from one to six, inclusive.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:roll_die_possible_outcomes}
+    Suppose you roll the die.  When the die stops rolling, you note
+    the number on the top-most face of the die and you call this
+    number the outcome of rolling the die.  List all the possible
+    outcomes of rolling the die.  How many possible outcomes are
+    there?
+
+  \item\label{subprob:roll_die_probability}
+    Suppose the die is fair, i.e.~each face of the die is likely to be
+    the outcome of rolling the die.  In a fair die, you have the same
+    probability~(or chance) of getting a $\dice{1}$ as an outcome as
+    you do of getting a $\dice{5}$ as an outcome.  For a fair die, the
+    probability $p$ of each outcome is defined as $1$ divided by the
+    number of possible outcomes.  Write $p$ as a fraction.  Calculate
+    the sum of the probabilities of all outcomes.  Provide an
+    interpretation of the sum.
+
+  \item\label{subprob:roll_die_impossible_outcome}
+    Provide an example of an impossible outcome of rolling the die.
+    Write down the probability of this outcome.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:roll_die_possible_outcomes}
+The following is a list of all possible outcomes of rolling a die:
+\[
+\diceOutcomes
+\]
+Note that you have six possible outcomes.
+
+\solutionpart{subprob:roll_die_probability}
+Given a fair die, each outcome has the same probability of occurring.
+Thus each outcome has a probability of $p = 1/6$ because you have six
+possible outcomes.  Then the sum of the probabilities of all outcomes
+is
+\[
+\frac{1}{6} + \frac{1}{6} + \frac{1}{6}
++
+\frac{1}{6} + \frac{1}{6} + \frac{1}{6}
+=
+6 \times \frac{1}{6}
+=
+\frac{6}{6}
+=
+1.
+\]
+The sum of one means that when you roll a die you are
+certain~(i.e.~with probability $1$) to get a face of the die as an
+outcome.
+
+\solutionpart{subprob:roll_die_impossible_outcome}
+An impossible outcome of rolling a die would be to get the number $7$
+as an outcome.  You have a probability of zero of getting $7$ as an
+outcome of rolling the die.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
