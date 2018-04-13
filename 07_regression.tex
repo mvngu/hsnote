@@ -1975,15 +1975,16 @@ was $\degree{24}$.
 \end{solution}
 }{}
 
-\item This problem provides a brief introduction to
-  \emph{probability}.  The probability that something~(in other words,
-  an \emph{event}) will occur is the chance that the event will occur.
-  The probability of an event occurring is usually denoted by a number
-  between $0$ and $1$, inclusive.  If something can never, ever occur
-  you say that the event has a probability of zero of happening.  If
-  an event is certain to occur no matter what, you say that the event
-  has a probability of one of occurring.  All this sounds too abstract
-  so let's consider the example of rolling a die~(the plural is dice).
+\item\label{prob:fair_die}
+  This problem provides a brief introduction to \emph{probability}.
+  The probability that something~(in other words, an \emph{event})
+  will occur is the chance that the event will occur.  The probability
+  of an event occurring is usually denoted by a number between $0$ and
+  $1$, inclusive.  If something can never, ever occur you say that the
+  event has a probability of zero of happening.  If an event is
+  certain to occur no matter what, you say that the event has a
+  probability of one of occurring.  All this sounds too abstract so
+  let's consider the example of rolling a die~(the plural is dice).
   Consider a six-sided die, where each side is numbered with an
   integer from one to six, inclusive.
   %%
@@ -2042,6 +2043,122 @@ outcome.
 An impossible outcome of rolling a die would be to get the number $7$
 as an outcome.  You have a probability of zero of getting $7$ as an
 outcome of rolling the die.
+\end{solution}
+}{}
+
+\item Let's further explore the idea of probability.  However, this
+  time you will consider the example of flipping a coin, for example a
+  $\cent{20}$ coin.  Let's assume that by \emph{heads} you mean the
+  side of the coin that has the profile of the head of the Queen.  By
+  \emph{tails} you mean the side of the coin that has the number with
+  the monetary value of the coin~(e.g.~the number $20$ for twenty
+  cents).
+  %%
+  \begin{packedenum}
+  \item\label{subprob:flip_coin_possible_outcomes}
+    When you flip a coin, the outcome of the flip is the top-most side
+    once the coin lands on the ground.  List the possible outcomes of
+    flipping a coin.  How many possible outcomes are there?  Assume
+    that you have a fair coin so that each outcome has the same
+    probability $p$ of occurring.  Write $p$ as a fraction.
+
+  \item\label{subprob:flip_coin_empirical_probability_5}
+    You do not need to assume that the coin is fair in order to derive
+    the probability of each outcome.  You can derive this probability
+    by actually flipping the coin a given number of times.  For
+    example, let's derive the probability of getting heads.  Flip the
+    coin five times, each time noting the outcome of the flip.  How
+    many times did heads occur out of the five flips?  If heads
+    occurred $h$ times out of the five flips, then the probability of
+    getting heads is $p = h / 5$.
+
+  \item\label{subprob:flip_coin_empirical_probability_10}
+    Repeat \Part{subprob:flip_coin_empirical_probability_5}, but this
+    time you flip the coin ten times and note the outcome of each
+    flip.  If heads occurred $h$ times out of the ten flips, then the
+    probability of getting heads is $p = h / 10$.
+
+  \item\label{subprob:flip_coin_empirical_probability_15}
+    Repeat \Part{subprob:flip_coin_empirical_probability_5}, but this
+    time you flip the coin $15$ times and note the outcome of each
+    flip.  If heads occurred $h$ times out of the $15$ flips, then the
+    probability of getting heads is $p = h / 15$.
+
+  \item\label{subprob:flip_coin_empirical_probability_50}
+    Repeat \Part{subprob:flip_coin_empirical_probability_5} for $20$
+    flips, $25$ flips, $30$ flips, $35$ flips, $40$ flips, $45$ flips,
+    and $50$ flips.  After each batch of flips, note the number of
+    heads that occurred and write the probability of heads.  Organise
+    your results as a table that has two columns and as many rows as
+    necessary.
+
+  \item\label{subprob:flip_coin_scatter_plot}
+    Use the table
+    from \Part{subprob:flip_coin_empirical_probability_50} to produce
+    a scatter plot of the number of flips versus the resulting
+    probability of heads.  Suppose you continue the coin flipping
+    experiment for as many flips as you can, say $1000$ flips or
+    $10,000$ flips or $100,000$ flips.  Guess the probability of
+    getting heads.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:flip_coin_possible_outcomes}
+The possible outcomes of flipping a coin are heads and tails,
+altogether two possible outcomes.  Given a fair coin, the probability
+of each outcome is $p = 1 / 2$.
+
+\solutionpart{subprob:flip_coin_empirical_probability_5}
+Of the five flips of my $\cent{20}$ coin, heads occurred $3$ times.
+The probability of heads is $p = 3 / 5$.
+
+\solutionpart{subprob:flip_coin_empirical_probability_10}
+You have already flipped the coin five times so now you need only to
+flip the coin another five times in order to add up to ten flips.  Of
+the extra five flips of my $\cent{20}$ coin, heads occurred once.
+Thus I had another heads in addition to the three heads
+from \Part{subprob:flip_coin_empirical_probability_5}.  The
+probability of getting heads is now $p = 4 / 10$.
+
+\solutionpart{subprob:flip_coin_empirical_probability_15}
+As in \Part{subprob:flip_coin_empirical_probability_10} you need only
+to flip another five times in order to add up to $15$ flips.  Of the
+extra five flips of my $\cent{20}$ coin, heads occurred $4$ times.
+This brings the total number of heads to $8$.  The probability of
+heads is now $p = 8 / 15$.
+
+\solutionpart{subprob:flip_coin_empirical_probability_50}
+The results of $50$ flips are shown in
+\Table{tab:coin_flip_probability_heads}.  The probabilities reported
+in the table are called \emph{empirical} probabilities because these
+result from an experiment.  In the context of the problem, the
+empirical probabilities result from flipping a coin.
+
+\begin{table}[!htbp]
+\centering
+\input{table/07/coin-flip.tex}
+\caption{%%
+  The probability of heads after a given number of flips of a coin.
+}
+\label{tab:coin_flip_probability_heads}
+\end{table}
+
+\solutionpart{subprob:flip_coin_scatter_plot}
+\Figure{fig:coin_flip_scatter_plot} shows a scatter plot of the number
+of flips of a coin versus the probability of heads.  Note that the
+probability of heads seems to be around $p = 0.5$.  The longer that
+the coin flipping experiment runs, the closer will the probability of
+heads be to $p = 0.5$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/07/coin-flip-scatterplot.pdf}
+\caption{%%
+  A scatter plot of the data in
+  \Table{tab:coin_flip_probability_heads}.
+}
+\label{fig:coin_flip_scatter_plot}
+\end{figure}
 \end{solution}
 }{}
 \end{problem}
