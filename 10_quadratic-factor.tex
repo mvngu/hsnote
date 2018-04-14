@@ -604,6 +604,55 @@ The latter expression is the same as the original definition of
 $f(x)$.
 \end{solution}
 
+\begin{exercise}
+Factorise $f(x) = -x^2 + 1$ and check your result.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Note that the function $f(x)$ can be written as
+\[
+f(x)
+=
+-(x^2 - 1)
+=
+-(x^2 + 0 \cdot x - 1).
+\]
+Consider the function $g(x) = (x^2 + 0 \cdot x - 1)$.  You want two
+numbers that sum to zero and have a product of $-1$.  The integer
+factors of $-1$ are
+\[
+\pair{-1}{1}.
+\]
+Among these factors, $-1$ and $1$ are the required numbers because you
+have the sum $-1 + 1 = 0$ and the product $(-1) \times 1 = -1$.  Now
+write $g(x)$ in the factored form $g(x) = (x - 1) (x + 1)$ and
+therefore $f(x)$ can be written in factored form as
+\[
+f(x)
+=
+-(x - 1) (x + 1).
+\]
+Use the distributive laws to expand the multiplication in the last
+expression:
+%%
+\begin{align*}
+-(x - 1)(x + 1)
+&=
+-\bigparen{x(x + 1) - 1(x + 1)} \\[4pt]
+&=
+-(x^2 + x - x - 1) \\[4pt]
+&=
+-(x^2 - 1) \\[4pt]
+&=
+-x^2 + 1.
+\end{align*}
+%%
+The latter expression is the same as the original definition of
+$f(x)$.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
