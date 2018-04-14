@@ -413,6 +413,7 @@ determine the values of $\alpha$ and $\beta$.  The next example will
 help to clarify the theory.
 
 \begin{example}
+\label{eg:factorise_monic_a1_b2_c6}
 Consider the function $f(x) = x^2 + 5x + 6$.  Factorise $f(x)$ and
 check your result.
 \end{example}
@@ -472,6 +473,58 @@ x^2 + 7x + 12.
 The latter is the same as the definition of $f(x)$.
 \end{solution}
 }{}
+
+\begin{example}
+Consider the function $g(x) = 2x^2 + 16x + 30$.  Factorise the
+function and check your result.
+\end{example}
+
+\begin{solution}
+The function $g(x)$ looks like it is different from
+\Expression{eqn:monic_quadratic_function}, but not really.  The trick
+is to write $g(x)$ in such a way that allows you to use the technique
+in \Example{eg:factorise_monic_a1_b2_c6}.  Note that each of the three
+terms in $g(x)$ has a common factor, namely $2$.  Factoring out the
+$2$ and $g(x)$ can be written as
+\[
+g(x)
+=
+2 (x^2 + 8x + 15).
+\]
+The function $h(x) = x^2 + 8x + 15$ has a form similar to
+\Expression{eqn:monic_quadratic_function} so you can use the technique
+in \Example{eg:factorise_monic_a1_b2_c6}.  You want two numbers that
+add up to $8$ and have a product of $15$.  The positive integer
+factors of $15$ are
+\[
+\quadruple{1}{3}{5}{15}
+\]
+among which $3$ and $5$ are the required integers.  Now write $h(x)$
+in the factored form $h(x) = (x + 3) (x + 5)$ and therefore $g(x)$ can
+be written in the factored form
+\[
+g(x)
+=
+2 (x + 3) (x + 5).
+\]
+To check your result, use the distributive laws to expand the
+multiplication:
+%%
+\begin{align*}
+2 (x + 3) (x + 5)
+&=
+2 \bigparen{x(x + 5) + 3(x + 5)} \\[4pt]
+&=
+2 \bigparen{x^2 + 5x + 3x + 15} \\[4pt]
+&=
+2 (x^2 + 8x + 15) \\[4pt]
+&=
+2x^2 + 16x + 30.
+\end{align*}
+%%
+The latter expression is the same as how $g(x)$ was originally
+defined.
+\end{solution}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
