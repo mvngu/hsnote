@@ -55,21 +55,21 @@
 \fill[green!20!white] (\xlow,\length) rectangle (\length,\sside);
 %% Label the left width.
 \draw[arrowStyle] (-\dx,\length) -- (-\dx,\sside);
-\node[labelStyle,rotate=90] at (-\dx,\length+\width/2) {$b$};
+\node[labelStyle,rotate=90] at (-\dx,\length+\width/2) {$\beta$};
 %% Label the area of the top rectangle.
-\node at (\length/2,\length+\width/2) {$bx$};
+\node at (\length/2,\length+\width/2) {$\beta x$};
 %%
 %% The right rectangle.
 \fill[blue!20!white] (\length,\ylow) rectangle (\sside,\length);
 %% Label the bottom width.
 \draw[arrowStyle] (\length,-\dy) -- (\sside,-\dy);
-\node[labelStyle] at (\length+\width/2,-\dy) {$a$};
+\node[labelStyle] at (\length+\width/2,-\dy) {$\alpha$};
 %% Label the area of the right rectangle.
-\node at (\length+\width/2,\length/2) {$ax$};
+\node at (\length+\width/2,\length/2) {$\alpha x$};
 %%
 %% The upper-right rectangle.
 \fill[pink!50!white] (\length,\length) rectangle (upperRight);
-\node at (\length+\width/2,\length+\width/2) {$ab$};
+\node at (\length+\width/2,\length+\width/2) {$\alpha\beta$};
 %%
 %% The larger square.
 \draw[lineStyle] (lowerLeft) rectangle (upperRight);
