@@ -444,6 +444,35 @@ x^2 + 5x + 6
 which is the same as the definition of $f(x)$.
 \end{solution}
 
+\begin{exercise}
+Factorise the function $f(x) = x^2 + 7x + 12$ and check your result.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You want two numbers that sum to $7$ and have a product of $12$.  The
+integer factors of $12$ are
+\[
+\sextuple{1}{2}{3}{4}{6}{12}
+\]
+among which $3$ and $4$ are the required integers.  Thus you have the
+factored form $f(x) = (x + 3) (x + 4)$.  To check your result, use the
+distributive laws to expand the multiplication:
+%%
+\begin{align*}
+(x + 3) (x + 4)
+&=
+x(x + 4) + 3(x + 4) \\[4pt]
+&=
+x^2 + 4x + 3x + 12 \\[4pt]
+&=
+x^2 + 7x + 12.
+\end{align*}
+%%
+The latter is the same as the definition of $f(x)$.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
