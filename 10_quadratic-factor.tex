@@ -332,6 +332,83 @@ to two decimal places.
 
 \section{Factoring when $a = 1$}
 
+Given the quadratic function $f(x) = ax^2 + bx + c$, if $a = 1$ then
+the function simplifies to
+%%
+\begin{equation}
+\label{eqn:monic_quadratic_function}
+f(x)
+=
+x^2 + bx + c
+\end{equation}
+%%
+You have already seen examples of this function, especially when you
+were considering the interpretation of a quadratic function as the
+area of a rectangle.  This interpretation is illustrated in
+\Figure{fig:quadratic_as_rectangle}, which you have seen before.  From
+the figure, you can write the area of the larger rectangle as the
+expression
+%%
+\begin{equation}
+\label{eqn:monic_quadratic_function_factored}
+(x + \alpha) (x + \beta)
+=
+x^2 + (\alpha + \beta)x + \alpha\beta.
+\end{equation}
+%%
+How is \Expression{eqn:monic_quadratic_function_factored} related to
+the problem of factoring a quadratic function?
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/08/quadratic-as-square.pdf}
+\caption{%%
+  The quadratic function $f(x) = (x + \alpha)(x + \beta)$ can be
+  interpreted as a rectangle whose base and height have lengths
+  $x + \alpha$ and $x + \beta$, respectively.
+}
+\label{fig:quadratic_as_rectangle}
+\end{figure}
+
+The obvious answer is that
+\Expression{eqn:monic_quadratic_function_factored} gives you the
+factored form of the quadratic function
+%%
+\begin{equation}
+\label{eqn:monic_quadratic_function_roots}
+f(x)
+=
+x^2 + (\alpha + \beta)x + \alpha\beta.
+\end{equation}
+%%
+One factor is $x + \alpha$, the other factor is $x + \beta$, and
+therefore the roots of $f(x)$ are $x = -\alpha$ and $x = -\beta$.  In
+other words, when you have a quadratic function that can be written as
+in \Expression{eqn:monic_quadratic_function}, you can ask yourself:
+How do I factorise the function so that I end up with something like
+expressions~\eqref{eqn:monic_quadratic_function_factored}
+or~\eqref{eqn:monic_quadratic_function_roots}?  If you compare
+\Expressions{eqn:monic_quadratic_function}{eqn:monic_quadratic_function_factored},
+you will notice that you have two equations:
+\[
+\alpha + \beta
+=
+b
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\alpha\beta
+=
+c.
+\]
+These equations tell you that you want two numbers $\alpha$ and
+$\beta$ such that when they are added together you get $b$ and when
+they are multiplied together you get $c$.  The problem now is to
+determine the values of $\alpha$ and $\beta$.  The next example will
+help to clarify the theory.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
