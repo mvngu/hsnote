@@ -113,6 +113,7 @@ quadratic formula.  The above discussion is summarised in the
 following theorem.
 
 \begin{theorem}
+\label{thm:quadratic_function_vertical_intercept_zero}
 Consider the quadratic function $f(x) = ax^2 + bx$, where $a$ and $b$
 are any real numbers such that $a \neq 0$.  The roots of $f(x)$ are
 \[
@@ -125,6 +126,111 @@ x = 0
 x = -\frac{b}{a}.
 \]
 \end{theorem}
+
+\begin{example}
+At a particular toy store, the sales of a toy called AmazingCar is
+given by the sales function $S(x) = -3x + 40$.  Here $x$ represents
+the price in dollars of each unit of AmazingCar and so $x$ is the unit
+price.  The sales function $S(x)$ represents the number of units of
+AmazingCar sold during a week.
+%%
+\begin{packedenum}
+\item\label{subeg:AmazingCar_graph_sales_function}
+  Produce a graph of the sales function.  Use the graph to help you
+  explain the sales function.  Identify the unit prices at which the
+  number of units of AmazingCar sold is highest and lowest.
+
+\item\label{subeg:AmazingCar_revenue_function}
+  Derive an expression for the revenue from selling units of
+  AmazingCar during a particular week.  Produce a graph of the revenue
+  function.
+
+\item\label{subeg:AmazingCar_price_zero_revenue}
+  At which unit prices would the revenue from selling units of
+  AmazingCar be zero dollars during a week?
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:AmazingCar_graph_sales_function}
+\Figure{fig:AmazingCar_sales} shows a graph of the sales function
+$S(x)$.  The graph shows that as the price for each unit of AmazingCar
+increases the lower is the number of units sold during a week.  In
+other words, the lower is the unit price the higher is the number of
+units sold during the week.  This sounds reasonable because as the
+price of something decreases you would expect to sell more of the
+product.  Note the two points on the graph that show the lowest and
+highest number of units sold.  These are the intercepts of the axes.
+The horizontal intercept is the point $\tuple{\frac{40}{3}}{0}$, which
+tells you that when the unit price is approximately $\$13.33$ zero
+units of AmazingCar would be sold per week.  The lowest number of
+units sold per week is zero.  The vertical intercept $\tuple{0}{40}$
+tells you that when the unit price is zero dollars~(each unit of
+AmazingCar is given away free of charge), the number of units sold per
+week is $40$, which is also the highest number of units sold per
+week.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/10/amazingcar-sales.pdf}
+\caption{%%
+  Graph of the sales function $S(x) = -3x + 40$ for AmazingCar.  Here
+  $x$ represents the unit price in Australian dollars and $S(x)$
+  represents the number of units of AmazingCar sold at $x$ dollars
+  per unit.
+}
+\label{fig:AmazingCar_sales}
+\end{figure}
+
+\solutionpart{subeg:AmazingCar_revenue_function}
+Since $x$ is the unit price and $S(x)$ represents how many units were
+sold during a week, the revenue from selling AmazingCar is the
+expression
+\[
+R(x)
+=
+x S(x)
+=
+x(-3x + 40).
+\]
+The revenue function is graphed in \Figure{fig:AmazingCar_revenue}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/10/amazingcar-revenue.pdf}
+\caption{%%
+  Graph of the revenue function $R(x) = x(-3x + 40)$ for AmazingCar.
+  The function $R(x)$ represents the revenue~(in dollars) from selling
+  units of AmazingCar during a week at $x$ dollars per unit.
+}
+\label{fig:AmazingCar_revenue}
+\end{figure}
+
+\solutionpart{subeg:AmazingCar_price_zero_revenue}
+\Figure{fig:AmazingCar_revenue} shows that you have two unit prices at
+which the revenue from selling AmazingCar would be zero dollars during
+a week.  Those particular two unit prices are the roots of $R(x)$.
+You can use the quadratic formula to determine the roots of $R(x)$.
+However, note that you can use the distributive laws to write the
+revenue function as
+\[
+R(x)
+=
+-3x^2 + 40x.
+\]
+You then use \Theorem{thm:quadratic_function_vertical_intercept_zero}
+to conclude that the roots of $R(x)$ are $x = 0$ and
+\[
+x
+=
+-\frac{40}{-3}
+=
+\frac{40}{3}.
+\]
+In other words, the revenue during a week from selling units of
+AmazingCar would be zero dollars if the unit prices were either zero
+dollars or approximately $\$13.33$.
+\end{solution}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
