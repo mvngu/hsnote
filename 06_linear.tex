@@ -442,21 +442,61 @@ you determine the values of $a$ and $b$?  You can make two assumptions
 about the values in the given table.  Each assumption can be used to
 derive a technique that helps you to recover the function $f(x)$.
 
-The first assumption you can make is that the values of $x$ are evenly
-spaced and increase by one unit each time.  See the values in
-\Table{tab:function_values_a_2_b_minus_1}.  The difference
-$f(x + 1) - f(x)$ tells you how many units you add to $f(x)$ when $x$
-increases by one unit.  This difference is also the value of $a$ and
-for this reason $a$ is also called the \emph{rate of change} of the
-function $f(x) = ax + b$.  What remains is to determine the value of
-$b$.  From the given table, you pick a value of $x$ and the
-corresponding value $f(x)$, substitute those values and the value of
-$a$ into the function $f(x) = ax + b$, and solve the equation for
-$b$.  In particular, note that if $x = 0$ then
-$f(0) = a \times 0 + b = b$ and so the $y$-intercept is
-$\tuple{0}{b}$.  In other words, if the given table has the values
-$x = 0$ and $f(0)$, you read off the table to obtain $b = f(0)$.
-Let's apply the above technique to
+The first assumption you can make is that in a table of values, the
+values of $x$ are evenly spaced and increase by one unit each time.
+For example, in \Table{tab:function_values_a_2_b_minus_1} values in
+the column for $x$ increase by one as you move further down the table.
+First, let's determine the value of $a$ in the function $f(x) = ax +
+b$.  Once the value of $a$ is determined, you can easily work out the
+value of $b$ in the function $f(x)$.  Choose two points from the
+table, for example the points $\tuple{x_1}{f(x_1)}$ and
+$\tuple{x_2}{f(x_2)}$.  Since you assumed that the values for $x$
+increase by one unit each time, you can choose two points such that
+$x_2 = x_1 + 1$.  That is, the points are next to each other in the
+table.  Then $a$ can be defined as the ratio
+%%
+\begin{equation}
+\label{eqn:rate_of_change_unit_change}
+\begin{aligned}
+a
+&=
+\frac{
+  f(x_2) - f(x_1)
+}{
+  x_2 - x_1
+} \\[4pt]
+&=
+\frac{
+  f(x_1 + 1) - f(x_1)
+}{
+  (x_1 + 1) - x_1
+} \\[4pt]
+&=
+\frac{
+  f(x_1 + 1) - f(x_1)
+}{
+  1
+} \\[4pt]
+&=
+f(x_1 + 1) - f(x_1)
+\end{aligned}
+\end{equation}
+%%
+which tells you how many units you add to $f(x)$ when $x$ increases by
+one unit.  The value of $a$ as defined by the
+ratio~\eqref{eqn:rate_of_change_unit_change} is called the
+\emph{rate of change} of the function $f(x) = ax + b$.  What remains
+is to determine the value of $b$.
+
+How is the value of $b$ determined from the given table of values, for
+example \Table{tab:function_values_a_2_b_minus_1}?  From the given
+table, you pick a value of $x$ and the corresponding value $f(x)$,
+substitute those values and the value of $a$ into the function
+$f(x) = ax + b$, and solve the equation for $b$.  In particular, note
+that if $x = 0$ then $f(0) = a \times 0 + b = b$ and so the
+$y$-intercept is $\tuple{0}{b}$.  In other words, if the given table
+has the values $x = 0$ and $f(0)$, you read off the table to obtain
+$b = f(0)$.  Let's apply the above technique to
 \Table{tab:function_values_a_2_b_minus_1}.
 
 \begin{table}[!htbp]
