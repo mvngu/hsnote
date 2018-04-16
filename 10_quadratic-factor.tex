@@ -881,4 +881,83 @@ So far so good.  The next question is: How can you use
 \Theorem{thm:monic_quadratic_roots} to help you determine the roots of
 a quadratic function?
 
+\begin{example}
+Determine the roots of the function $f(x) = x^2 - 10x + 21$ and check
+your results.
+\end{example}
+
+\begin{solution}
+You can use the technique explained
+in \Section{sec:factor_quadratic_a_1} to factorise $f(x)$ and then
+read off its roots.  However, let's see how the roots of $f(x)$ can be
+determined by applying \Theorem{thm:monic_quadratic_roots}.  The
+function $f(x) = x^2 - 10x + 21$ has a form that is similar to the
+general quadratic function in \Theorem{thm:monic_quadratic_roots}
+because you have $b = -10$ and $c = 21$.  Use
+\Theorem{thm:monic_quadratic_roots} to write $f(x)$ in the completed
+square form
+%%
+\begin{align*}
+f(x)
+&=
+\parenthesis*{x + \frac{-10}{2}}^2
++
+21 - \parenthesis*{\frac{-10}{2}}^2 \\[4pt]
+&=
+(x - 5)^2
++
+21 - (-5)^2 \\[4pt]
+&=
+(x - 5)^2 + 21 - 25 \\[4pt]
+&=
+(x - 5)^2 - 4.
+\end{align*}
+%%
+The roots of $f(x)$ are all values of $x$ such that the expression
+$f(x) = 0$ is true.  That is, you want all values of $x$ such that the
+expression
+\[
+(x - 5)^2 - 4
+=
+0
+\]
+is true.  The latter expression can also be written as
+$(x - 5)^2 = 4$ and taking the square root of both sides results in
+$x - 5 = \pm\sqrt{4}$.  Now solve for $x$ to get the roots
+$x = 5 \pm 2$.  Therefore one root of $f(x)$ is $x = 7$ and the other
+root is $x = 3$.
+
+You can check your result by substituting each root into $f(x)$.
+Doing so should produce zero as the function value.  Substitute the
+root $x = 7$ into $f(x)$ results in
+%%
+\begin{align*}
+f(7)
+&=
+7^2 - 10(7) + 21 \\[4pt]
+&=
+49 - 70 + 21 \\[4pt]
+&=
+70 - 70 \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Substitute the root $x = 3$ into $f(x)$ to get
+%%
+\begin{align*}
+f(3)
+&=
+3^2 - 10(3) + 21 \\[4pt]
+&=
+9 - 30 + 21 \\[4pt]
+&=
+30 - 30 \\[4pt]
+&=
+0
+\end{align*}
+%%
+as required.
+\end{solution}
+
 \end{document}
