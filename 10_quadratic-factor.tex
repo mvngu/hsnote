@@ -669,6 +669,7 @@ $f(x)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Completing the square: special case}
+\label{sec:completing_the_square_special_case}
 
 The idea of \emph{completing the square} is to turn a quadratic
 function from the form $f(x) = ax^2 + bx + c$ into the form
@@ -1213,5 +1214,43 @@ in \Part{subeg:monic_quadratic_x2_x5_completing_square}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Completing the square: general case}
+
+The general case of completing the square is very similar to the
+special case explained
+in \Section{sec:completing_the_square_special_case}.  Given a
+quadratic function $f(x) = ax^2 + bx + c$, where $a \neq 0$, you can
+factor out the $a$ to get
+%%
+\begin{align*}
+f(x)
+&=
+a
+\parenthesis*{
+  x^2 + \frac{b}{a}x + \frac{c}{a}
+} \\[4pt]
+&=
+a \cdot g(x)
+\end{align*}
+%%
+where you have the function
+\[
+g(x)
+=
+x^2 + \frac{b}{a}x + \frac{c}{a}.
+\]
+Note that the roots of $g(x)$ are also the roots of $f(x)$.  The
+reason is because if $x = x_1$ is a root of $g(x)$, then you get
+$g(x_1) = 0$ and thus the expression $a \cdot g(x_1)$ is also zero.
+The upshot is that you need only to determine the roots of $g(x)$.  If
+$b / a$ and $c / a$ are both integers, you can try to use the
+technique explained in \Section{sec:factor_quadratic_a_1} to determine
+the roots of $g(x)$.  However, the technique of completing the square
+as explained in \Section{sec:completing_the_square_special_case} will
+work regardless of whether $b / a$ and $c / a$ are integers.  In
+general, you should use the technique of completing the square to
+determine the roots of $g(x)$.  To check your work, you can then
+use~(if possible) the technique explained
+in \Section{sec:factor_quadratic_a_1} or you can substitute the roots
+into $g(x)$ and derive a function value of zero.
 
 \end{document}
