@@ -1032,4 +1032,181 @@ as required.
 \end{solution}
 }{}
 
+\begin{exercise}
+Consider the function $f(x) = 4x^2 + 12x - 40$.
+%%
+\begin{packedenum}
+\item\label{subeg:monic_quadratic_x2_x5_completing_square}
+  Use \Theorem{thm:monic_quadratic_roots} to determine the roots of
+  $f(x)$.
+
+\item\label{subeg:monic_quadratic_x2_x5_factored_form}
+  Use the technique explained in \Section{sec:factor_quadratic_a_1} to
+  determine the roots of $f(x)$.
+\end{packedenum}
+%%
+Remember to check your results.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subeg:monic_quadratic_x2_x5_completing_square}
+The function $f(x)$ can be written in such a way that it resembles the
+function in \Theorem{thm:monic_quadratic_roots}.  Factoring out the
+$4$ to get
+%%
+\begin{align*}
+f(x)
+&=
+4(x^2 + 3x - 10) \\[4pt]
+&=
+4 g(x)
+\end{align*}
+%%
+where the function $g(x) = x^2 + 3x - 10$ is similar to the function
+in \Theorem{thm:monic_quadratic_roots} because you have $b = 3$ and
+$c = -10$.  Note that the roots of $g(x)$ are also the roots of
+$f(x)$.  The reason is that if $x = x_1$ is a value of $x$ such that
+$g(x_1) = 0$, then $4g(x_1)$ is also zero.  That is, you only need to
+determine the roots of $g(x)$, which is simpler than the original
+definition of $f(x)$.
+
+Use \Theorem{thm:monic_quadratic_roots} to write $g(x)$ as
+%%
+\begin{equation}
+\label{eqn:completed_square_form_b3_cminus10}
+\begin{aligned}
+g(x)
+&=
+\parenthesis*{x + \frac{3}{2}}^2
+-
+10 - \parenthesis*{\frac{3}{2}}^2 \\[4pt]
+&=
+\parenthesis*{x + \frac{3}{2}}^2
+-
+10 - \frac{9}{4} \\[4pt]
+&=
+\parenthesis*{x + \frac{3}{2}}^2
+-
+\frac{40}{4} - \frac{9}{4} \\[4pt]
+&=
+\parenthesis*{x + \frac{3}{2}}^2
+-
+\frac{49}{4}.
+\end{aligned}
+\end{equation}
+%%
+Now you determine the roots of $g(x)$.  In other words, you want all
+values of $x$ such that the expression $g(x) = 0$ is true.  Equate
+\Expression{eqn:completed_square_form_b3_cminus10} to zero to get
+\[
+\parenthesis*{x + \frac{3}{2}}^2
+-
+\frac{49}{4}
+=
+0
+\]
+which can also be written as
+\[
+\parenthesis*{x + \frac{3}{2}}^2
+=
+\frac{49}{4}.
+\]
+Take the square root of both sides and you have
+%%
+\begin{align*}
+x + \frac{3}{2}
+&=
+\pm\sqrt{\frac{49}{4}} \\[4pt]
+&=
+\pm\frac{\sqrt{49}}{\sqrt{4}} \\[4pt]
+&=
+\pm\frac{7}{2}.
+\end{align*}
+%%
+Solving the latter expression for $x$ produces
+\[
+x
+=
+\pm\frac{7}{2} - \frac{3}{2}.
+\]
+Therefore one root of $f(x)$ is
+\[
+x
+=
+\frac{7}{2} - \frac{3}{2}
+=
+\frac{7 - 3}{2}
+=
+2
+\]
+and the other root is
+\[
+x
+=
+-\frac{7}{2} - \frac{3}{2}
+=
+\frac{-7 - 3}{2}
+=
+-5.
+\]
+
+To check your results, substitute the roots into $f(x)$.  This should
+produce a function value of zero.  Substitute the root $x = 2$ into
+$f(x)$ to get
+%%
+\begin{align*}
+f(2)
+&=
+4(2^2) + 12(2) - 40 \\[4pt]
+&=
+16 + 24 - 40 \\[4pt]
+&=
+40 - 40 \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Next, substitute the root $x = -5$ into $f(x)$:
+%%
+\begin{align*}
+f(-5)
+&=
+4(-5)^2 + 12(-5) - 40 \\[4pt]
+&=
+100 - 60 - 40 \\[4pt]
+&=
+100 - 100 \\[4pt]
+&=
+0.
+\end{align*}
+%%
+
+\solutionpart{subeg:monic_quadratic_x2_x5_factored_form}
+Let's use the technique explained
+in \Section{sec:factor_quadratic_a_1} to determine the roots of
+$f(x)$.  As explained
+in \Part{subeg:monic_quadratic_x2_x5_completing_square}, you need only
+to determine the roots of the function $g(x) = x^2 + 3x - 10$.  You
+require two numbers that sum to $3$ and have a product of $-10$.  The
+positive integer factors of $-10$ are $1$, $2$, $5$, and $10$.
+Multiply each factor by $-1$ to get the negative factors.  Thus all
+integer factors of $-10$ are
+\[
+\octuple{1}{2}{5}{10}{-1}{-2}{-5}{-10}.
+\]
+Among these factors, the required numbers are $5$ and $-2$ because
+$5 + (-2) = 3$ and $5 \times (-2) = -10$.  Then $f(x)$ can be written
+in factored form as
+\[
+f(x)
+=
+4(x - 2) (x + 5).
+\]
+Therefore the roots of $f(x)$ are $x = 2$ and $x = -5$, which are the
+same as those
+in \Part{subeg:monic_quadratic_x2_x5_completing_square}.
+\end{solution}
+}{}
+
 \end{document}
