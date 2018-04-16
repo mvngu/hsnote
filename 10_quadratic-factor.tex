@@ -568,6 +568,7 @@ get the original expression for $g(x)$.
 }{}
 
 \begin{example}
+\label{eg:factored_form_bminus2_c1}
 Factorise $f(x) = x^2 - 2x + 1$ and check your result.
 \end{example}
 
@@ -981,6 +982,52 @@ can be written in the factored form
 $f(x) = (x - 3) (x - 7)$ and therefore the roots of $f(x)$ are
 $x = 3$ and $x = 7$.  These roots are the same as those in
 \Example{eg:completing_square_monic_bminus10_c21}.
+\end{solution}
+}{}
+
+\begin{exercise}
+Repeat \Example{eg:factored_form_bminus2_c1} by using
+\Theorem{thm:monic_quadratic_roots} to determine the roots of
+$f(x) = x^2 - 2x + 1$.  Check your result.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The function $f(x) = x^2 - 2x + 1$ has a form that is similar to the
+function in \Theorem{thm:monic_quadratic_roots} because you have
+$b = -2$ and $c = 1$.  Use \Theorem{thm:monic_quadratic_roots} to
+write $f(x)$ as the expression
+%%
+\begin{align*}
+f(x)
+&=
+\parenthesis*{x + \frac{-2}{2}}^2
++
+1 - \parenthesis*{\frac{-2}{2}}^2 \\[4pt]
+&=
+(x - 1)^2 + 1 - (-1)^2 \\[4pt]
+&=
+(x - 1)^2.
+\end{align*}
+%%
+Therefore $f(x)$ has the root $x = 1$.
+
+To check your result, substitute the root $x = 1$ into $f(x)$.  This
+should produce a function value of zero.  Substituting $x = 1$ into
+$f(x)$ yields
+%%
+\begin{align*}
+f(1)
+&=
+1^2 - 2(1) + 1 \\[4pt]
+&=
+1 - 2 + 1 \\[4pt]
+&=
+2 - 2 \\[4pt]
+&=
+0
+\end{align*}
+as required.
 \end{solution}
 }{}
 
