@@ -338,6 +338,126 @@ to two decimal places.
 \end{solution}
 }{}
 
+\begin{exercise}
+Consider the function $f(x) = 5x^2 - 3x$.
+%%
+\begin{packedenum}
+\item\label{subex:factorise_a5_bminus3_c0}
+  Factorise the function  and determine its roots.
+
+\item\label{subex:verify_roots_substitution_a5_bminus3_c0}
+  Verify the roots by substituting the roots into $f(x)$ and simplify.
+
+\item\label{subex:verify_roots_quadratic_formula_a5_bminus3_c0}
+  Verify the roots by using the quadratic formula.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:factorise_a5_bminus3_c0}
+For the function $f(x) = 5x^2 - 3x$, you can use the distributive laws
+to factor out the $x$ and you get
+\[
+f(x)
+=
+x(5x - 3).
+\]
+As for the roots of $f(x)$, you now set $f(x)$ to zero and determine
+for which values of $x$ would the expression $f(x) = 0$ be true.  In
+other words, you want all values of $x$ such that the expression
+$x(5x - 3) = 0$ is true.  The latter expression is true when $x = 0$
+because $0 \times (5x - 3)$ becomes zero.  So one root of $f(x)$
+occurs at $x = 0$.  If $5x - 3 = 0$, then $x \times 0 = 0$ is also
+true.  The expression $5x - 3 = 0$ can also be written as $5x = 3$ and
+solving for $x$ produces $x = 3 / 5$, which is another root of
+$f(x)$.  Therefore the roots of $f(x)$ are $x = 0$ and $x = 3 / 5$.
+
+\solutionpart{subex:verify_roots_substitution_a5_bminus3_c0}
+Let's check your results by substitution.  If you substitute each root
+into $f(x)$ and simplify, you should get zero as a function value.
+Substitute the root $x = 0$ into $f(x)$ and simplify to get
+\[
+f(0)
+=
+5(0^2) - 3(0)
+=
+0.
+\]
+Now substitute $x = 3 / 5$ into $f(x)$ and simplify to get
+%%
+\begin{align*}
+f(3 / 5)
+&=
+5\parenthesis*{\frac{3}{5}}^2
+-
+3\parenthesis*{\frac{3}{5}} \\[4pt]
+&=
+5 \times \frac{3}{5} \times \frac{3}{5}
+-
+3 \times \frac{3}{5} \\[4pt]
+&=
+3 \times \frac{3}{5}
+-
+3 \times \frac{3}{5} \\[4pt]
+&=
+0
+\end{align*}
+%%
+as required.
+
+\solutionpart{subex:verify_roots_quadratic_formula_a5_bminus3_c0}
+The quadratic formula shows that the roots of $f(x)$ are
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -(-3)
+  \pm
+  \sqrt{
+    (-3)^2 - 4(5)(0)
+  }
+}{
+  2(5)
+} \\[4pt]
+&=
+\frac{
+  3
+  \pm
+  \sqrt{9}
+}{
+  10
+} \\[4pt]
+&=
+\frac{3 \pm 3}{10}.
+\end{align*}
+%%
+Thus one root of $f(x)$ is
+\[
+x_1
+=
+\frac{3 + 3}{10}
+=
+\frac{6}{10}
+=
+\frac{3}{5}
+\]
+and the other root is
+\[
+x_2
+=
+\frac{3 - 3}{10}
+=
+\frac{0}{10}
+=
+0.
+\]
+These are the same as the roots you obtained
+in \Part{subex:factorise_a5_bminus3_c0}.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
