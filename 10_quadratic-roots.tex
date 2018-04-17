@@ -565,26 +565,75 @@ The function $f(x)$ has the form similar to
 \Expression{eqn:monic_quadratic_function} so you should consider the
 equations
 in~\eqref{eqn:monic_quadratic_function_factors_sum_product}.  That is,
-you want two numbers $\alpha$ and $\beta$ whose sum is $5$ and whose
-product is $6$.  You need to know the integer factors of $6$.  The
-positive factors of $6$ are $1$, $2$, $3$, and $6$.  Among these
-factors, choose two that sum to $5$ and have a product of $6$.  The
-required factors are $2$ and $3$ because $2 + 3 = 5$ and
-$2 \times 3 = 6$.  Therefore $f(x)$ can be written in factored form as
-$f(x) = (x + 2) (x + 3)$.  You can check your result by using the
-distributive laws to expand the multiplication.  Doing so produces
+you want two numbers whose sum is $5$ and whose product is $6$.  You
+need to know the integer factors of $6$.  The positive factors of $6$
+are $1$, $2$, $3$, and $6$.  The negative factors are obtained by
+multiplying each positive factor by $-1$.  Then the integer factors of
+$6$ are
+\[
+\octuple{1}{2}{3}{6}{-1}{-2}{-3}{-6}.
+\]
+Among these factors, choose two that sum to $5$ and have a product of
+$6$.  The required factors are $2$ and $3$ because $2 + 3 = 5$ and
+$2 \times 3 = 6$.  Thus $f(x)$ can be written in factored form as
+$f(x) = (x + 2) (x + 3)$.  If $x = -2$, then $f(x)$ simplifies to
+zero.  If $x = -3$, then $f(x)$ also becomes zero.  Therefore the
+roots of $f(x)$ are $x = -2$ and $x = -3$.
+
+You can verify the roots you obtained above by using the quadratic
+formula.  The quadratic formula shows that the roots of $f(x)$ are
 %%
 \begin{align*}
-(x + 2) (x + 3)
+x
 &=
-x(x + 3) + 2(x + 3) \\[4pt]
+\frac{
+  -5
+  \pm
+  \sqrt{
+    5^2 - 4(1)(6)
+  }
+}{
+  2(1)
+} \\[4pt]
 &=
-x^2 + 3x + 2x + 6 \\[4pt]
+\frac{
+  -5
+  \pm
+  \sqrt{
+    25 - 24
+  }
+}{
+  2
+} \\[4pt]
 &=
-x^2 + 5x + 6
+\frac{
+  -5 \pm 1
+}{
+  2
+}.
 \end{align*}
 %%
-which is the same as the definition of $f(x)$.
+Then one root of $f(x)$ is
+\[
+x_1
+=
+\frac{-5 + 1}{2}
+=
+\frac{-4}{2}
+=
+-2
+\]
+and the other root is
+\[
+x_2
+=
+\frac{-5 - 1}{2}
+=
+\frac{-6}{2}
+=
+-3.
+\]
+These are the same roots as obtained above.
 \end{solution}
 
 \begin{exercise}
