@@ -649,20 +649,64 @@ integer factors of $12$ are
 \sextuple{1}{2}{3}{4}{6}{12}
 \]
 among which $3$ and $4$ are the required integers.  Thus you have the
-factored form $f(x) = (x + 3) (x + 4)$.  To check your result, use the
-distributive laws to expand the multiplication:
+factored form $f(x) = (x + 3) (x + 4)$.  If $x = -3$, then $f(-3)$
+simplifies to zero.  If $x = -4$, then $f(-4)$ also becomes zero.
+Therefore the roots of $f(x)$ are $x = -3$ and $x = -4$.
+
+Now use the quadratic formula to verify the roots that you obtained
+above.  The quadratic formula shows that the roots of $f(x)$ are
 %%
 \begin{align*}
-(x + 3) (x + 4)
+x
 &=
-x(x + 4) + 3(x + 4) \\[4pt]
+\frac{
+  -7
+  \pm
+  \sqrt{
+    7^2 - 4(1)(12)
+  }
+}{
+  2(1)
+} \\[4pt]
 &=
-x^2 + 4x + 3x + 12 \\[4pt]
+\frac{
+  -7
+  \pm
+  \sqrt{
+    49 - 48
+  }
+}{
+  2
+} \\[4pt]
 &=
-x^2 + 7x + 12.
+\frac{
+  -7 \pm 1
+}{
+  2
+}.
 \end{align*}
 %%
-The latter is the same as the definition of $f(x)$.
+Thus one root of $f(x)$ is
+\[
+x_1
+=
+\frac{-7 + 1}{2}
+=
+\frac{-6}{2}
+=
+-3
+\]
+and the other root is
+\[
+x_2
+=
+\frac{-7 - 1}{2}
+=
+\frac{-8}{2}
+=
+-4.
+\]
+These are the same roots as obtained above.
 \end{solution}
 }{}
 
