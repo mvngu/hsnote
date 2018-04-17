@@ -1257,6 +1257,7 @@ below should help to clarify how to use the technique of completing
 the square to determine the roots of any quadratic  function.
 
 \begin{example}
+\label{eg:completing_square_a3_bminus7_c2}
 Use the technique of completing the square to determine the roots of
 the function $f(x) = 3x^2 - 7x + 2$.  Check your results.
 \end{example}
@@ -1439,5 +1440,77 @@ f(1/3)
 %%
 as required.
 \end{solution}
+
+\begin{exercise}
+Use the quadratic formula to verify the roots in
+\Example{eg:completing_square_a3_bminus7_c2}.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Using the quadratic formula, the roots of $f(x) = 3x^2 - 7x + 2$ are
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -(-7)
+  \pm
+  \sqrt{
+    (-7)^2 - 4(3)(2)
+  }
+}{
+  2(3)
+} \\[4pt]
+&=
+\frac{
+  7
+  \pm
+  \sqrt{
+    49 - 24
+  }
+}{
+  6
+} \\[4pt]
+&=
+\frac{
+  7
+  \pm
+  \sqrt{25}
+}{
+  6
+} \\[4pt]
+&=
+\frac{
+  7 \pm 5
+}{
+  6
+}.
+\end{align*}
+%%
+Therefore one root of $f(x)$ is
+\[
+x_1
+=
+\frac{7 + 5}{6}
+=
+\frac{12}{6}
+=
+2
+\]
+and the other root is
+\[
+x_2
+=
+\frac{7 - 5}{6}
+=
+\frac{2}{6}
+=
+\frac{1}{3}.
+\]
+These are the same roots as obtained in
+\Example{eg:completing_square_a3_bminus7_c2}.
+\end{solution}
+}{}
 
 \end{document}
