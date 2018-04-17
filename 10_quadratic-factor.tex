@@ -1251,6 +1251,191 @@ general, you should use the technique of completing the square to
 determine the roots of $g(x)$.  To check your work, you can then
 use~(if possible) the technique explained
 in \Section{sec:factor_quadratic_a_1} or you can substitute the roots
-into $g(x)$ and derive a function value of zero.
+into $g(x)$ and derive a function value of zero.  The examples below
+should help to clarify how to use the technique of completing the
+square to determine the roots of any quadratic  function.
+
+\begin{example}
+Use the technique of completing the square to determine the roots of
+the function $f(x) = 3x^2 - 7x + 2$.  Check your results.
+\end{example}
+
+\begin{solution}
+First, you factor out the $3$.  Doing so results in
+\[
+f(x)
+=
+3
+\parenthesis*{
+  x^2 - \frac{7}{3}x + \frac{2}{3}
+}.
+\]
+If you define the function $g(x) = x^2 - \frac{7}{3}x + \frac{2}{3}$,
+then you can write
+\[
+f(x)
+=
+3 \cdot g(x).
+\]
+In the last expression, if you want to determine the roots of $f(x)$,
+then this is the same as determining the roots of $g(x)$.
+
+Next, you use the technique of completing the square as explained in
+\Theorem{thm:monic_quadratic_roots} to determine the roots of $g(x)$.
+Use \Theorem{thm:monic_quadratic_roots} to write $g(x)$ as
+%%
+\begin{align*}
+g(x)
+&=
+\squarebracket*{
+  x
+  +
+  \parenthesis*{-\frac{7}{3}} \times \frac{1}{2}
+}^2
++
+\frac{2}{3}
+-
+\squarebracket*{
+  \parenthesis*{-\frac{7}{3}} \times \frac{1}{2}
+}^2 \\[4pt]
+&=
+\parenthesis*{
+  x
+  -
+  \frac{7}{6}
+}^2
++
+\frac{2}{3}
+-
+\parenthesis*{-\frac{7}{6}}^2 \\[4pt]
+&=
+\parenthesis*{
+  x
+  -
+  \frac{7}{6}
+}^2
++
+\frac{2}{3}
+-
+\frac{49}{36} \\[4pt]
+&=
+\parenthesis*{
+  x
+  -
+  \frac{7}{6}
+}^2
+-
+\frac{25}{36}.
+\end{align*}
+%%
+The roots of $g(x)$ are all values of $x$ such that the expression
+$g(x) = 0$ is true.  In other words, you want to determine all values
+of $x$ such that the expression
+\[
+\parenthesis*{
+  x
+  -
+  \frac{7}{6}
+}^2
+-
+\frac{25}{36}
+=
+0
+\]
+is true.  The last expression can also be written as
+\[
+\parenthesis*{
+  x
+  -
+  \frac{7}{6}
+}^2
+=
+\frac{25}{36}
+\]
+and taking the square root of both sides results in
+\[
+x - \frac{7}{6}
+=
+\pm
+\sqrt{\frac{25}{36}}
+=
+\pm
+\frac{5}{6}.
+\]
+Now solve for $x$ to get the roots
+\[
+x
+=
+\frac{7}{6} \pm \frac{5}{6}.
+\]
+Therefore one root of $g(x)$ is
+\[
+x_1
+=
+\frac{7}{6} + \frac{5}{6}
+=
+\frac{12}{6}
+=
+2
+\]
+and the other root is
+\[
+x_2
+=
+\frac{7}{6} - \frac{5}{6}
+=
+\frac{2}{6}
+=
+\frac{1}{3}.
+\]
+
+Finally, you check your results.  Substituting the roots of $g(x)$
+into $f(x)$ should produce the function value of zero.  Substitute the
+root $x_1 = 2$ into $f(x)$ to get
+%%
+\begin{align*}
+f(2)
+&=
+3(2)^2 - 7(2) + 2 \\[4pt]
+&=
+12 - 14 + 2 \\[4pt]
+&=
+14 - 14 \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Substitute the root $x_2 = 1 / 3$ into $f(x)$ to get
+%%
+\begin{align*}
+f(1/3)
+&=
+3\parenthesis*{\frac{1}{3}}^2
+-
+7\parenthesis*{\frac{1}{3}}
++
+2 \\[4pt]
+&=
+\frac{3}{9}
+-
+\frac{7}{3}
++
+2 \\[4pt]
+&=
+\frac{1}{3}
+-
+\frac{7}{3}
++
+2 \\[4pt]
+&=
+-\frac{6}{3} + 2 \\[4pt]
+&=
+-2 + 2 \\[4pt]
+&=
+0
+\end{align*}
+%%
+as required.
+\end{solution}
 
 \end{document}
