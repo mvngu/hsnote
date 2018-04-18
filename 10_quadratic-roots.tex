@@ -2047,6 +2047,56 @@ g(x)
 also has the same roots as $f(x)$.
 \end{solution}
 }{}
+
+\item Let $\alpha$ and $\beta$ be any real numbers.  Determine all
+  possible quadratic functions each of which has the roots
+  $x = \alpha$ and $x = \beta$.
+\ifbool{showSolution}{
+\begin{solution}
+The function $f(x) = (x - \alpha) (x - \beta)$ has the roots
+$x = \alpha$ and $x = \beta$.  If $\gamma$ is any real number such
+that $\gamma \neq 0$, then the function
+%%
+\begin{equation}
+\label{eqn:all_quadratics_with_given_roots}
+g(x)
+=
+\gamma \cdot f(x)
+=
+\gamma (x - \alpha) (x - \beta)
+\end{equation}
+%%
+also has the same roots as $f(x)$.  You can easily verify this by
+substituting the roots of $f(x)$ into $g(x)$ and simplify.
+Substituting the root $x = \alpha$ into $g(x)$ and you get
+%%
+\begin{align*}
+g(\alpha)
+&=
+\gamma (\alpha - \alpha) (\alpha - \beta) \\[4pt]
+&=
+\gamma \times 0 \times (\alpha - \beta) \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Substituting the root $x = \beta$ into $g(x)$ results in
+%%
+\begin{align*}
+g(\alpha)
+&=
+\gamma (\beta - \alpha) (\beta - \beta) \\[4pt]
+&=
+\gamma (\beta - \alpha) \times 0 \\[4pt]
+&=
+0.
+\end{align*}
+%%
+Therefore if $\gamma \neq 0$ is a real number, then the function
+$g(x)$ as defined in~\eqref{eqn:all_quadratics_with_given_roots} will
+have the roots $x = \alpha$ and $x = \beta$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
