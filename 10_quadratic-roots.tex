@@ -931,9 +931,17 @@ f(x)
 =
 -(x^2 + 0 \cdot x - 1).
 \]
-Consider the function $g(x) = (x^2 + 0 \cdot x - 1)$.  You want two
-numbers that sum to zero and have a product of $-1$.  The integer
-factors of $-1$ are
+If you define the function $g(x) = x^2 + 0 \cdot x - 1$, then $f(x)$
+can be written as
+\[
+f(x)
+=
+-g(x).
+\]
+In other words, you need only to determine the roots of $g(x)$.
+
+Let's factorise $g(x)$.  You want two numbers that sum to zero and
+have a product of $-1$.  The integer factors of $-1$ are
 \[
 \pair{-1}{1}.
 \]
@@ -946,23 +954,50 @@ f(x)
 =
 -(x - 1) (x + 1).
 \]
-Use the distributive laws to expand the multiplication in the last
-expression:
+If $x = 1$, then $f(1)$ simplifies to zero.  If $x = -1$, then $f(-1)$
+also becomes zero.  Therefore the roots of $f(x)$ are $x = -1$ and
+$x = 1$.
+
+Finally, you verify your results.  The quadratic formula shows that
+the roots of $f(x)$ are
 %%
 \begin{align*}
--(x - 1)(x + 1)
+x
 &=
--\bigparen{x(x + 1) - 1(x + 1)} \\[4pt]
+\frac{
+  -0
+  \pm
+  \sqrt{0^2 - 4(-1)(1)}
+}{
+  2(-1)
+} \\[4pt]
 &=
--(x^2 + x - x - 1) \\[4pt]
+\frac{
+  \pm \sqrt{4}
+}{
+  -2
+} \\[4pt]
 &=
--(x^2 - 1) \\[4pt]
-&=
--x^2 + 1.
+\frac{\pm 2}{-2}.
 \end{align*}
 %%
-The latter expression is the same as the original definition of
-$f(x)$.
+Then one root of $f(x)$ is
+\[
+x_1
+=
+\frac{2}{-2}
+=
+-1
+\]
+and the other root is
+\[
+x_2
+=
+\frac{-2}{-2}
+=
+1.
+\]
+These are the same roots as those you obtained above.
 \end{solution}
 }{}
 
