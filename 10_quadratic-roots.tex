@@ -2026,7 +2026,8 @@ x_2
 \end{solution}
 }{}
 
-\item Present two different quadratic functions each of which has the
+\item\label{prob:given_roots_x1_x2}
+  Present two different quadratic functions each of which has the
   roots $x = 1$ and $x = 2$.
 \ifbool{showSolution}{
 \begin{solution}
@@ -2048,7 +2049,8 @@ also has the same roots as $f(x)$.
 \end{solution}
 }{}
 
-\item Let $\alpha$ and $\beta$ be any real numbers.  Determine all
+\item\label{prob:given_roots_all_possible_quadratics}
+  Let $\alpha$ and $\beta$ be any real numbers.  Determine all
   possible quadratic functions each of which has the roots
   $x = \alpha$ and $x = \beta$.
 \ifbool{showSolution}{
@@ -2095,6 +2097,104 @@ g(\alpha)
 Therefore if $\gamma \neq 0$ is a real number, then the function
 $g(x)$ as defined in~\eqref{eqn:all_quadratics_with_given_roots} will
 have the roots $x = \alpha$ and $x = \beta$.
+\end{solution}
+}{}
+
+\item
+  \Problems{prob:given_roots_x1_x2}{prob:given_roots_all_possible_quadratics}
+  show that if you are given the roots of a quadratic function $f(x)$,
+  then there are many other quadratic functions that have the same
+  roots.  However, if you are given a third and different point on the
+  graph of $f(x)$, then you have enough information to determine
+  exactly one quadratic function whose graph passes through the given
+  three points.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:given_roots_x1_x5}
+    Let $f(x)$ be a quadratic function whose roots are $x = 1$ and
+    $x = -5$.  Show that $f(x) = (x - 1) (x + 5)$ and
+    $g(x) = 3(x - 1) (x + 5)$ have the same roots.
+
+  \item\label{subprob:given_roots_x1_x5_point_2_7}
+    Let $f(x)$ be a quadratic function that has the roots $x = 1$ and
+    $x = -5$.  Further suppose that $\tuple{2}{7}$ is a point on the
+    graph of $f(x)$.  Prove that there is exactly one quadratic
+    function that has the points $\tuple{1}{0}$, $\tuple{-5}{0}$, and
+    $\tuple{2}{7}$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:given_roots_x1_x5}
+To verify that $x = 1$ and $x = -5$ are the roots of $f(x)$, you
+substitute the roots into $f(x)$ and simplify.  Substituting $x = 1$
+into $f(x)$ results in $f(1) = (1 - 1) (1 + 5)$, which simplifies to
+zero.  Furthermore, substituting $x = -5$ into $f(x)$ and you get
+$f(-5) = (-5 - 1) (-5 + 5)$, which also simplifies to zero.  Now
+perform the same substitution for $g(x)$.  Substituting $x = 1$ into
+$g(x)$ produces $g(1) = 3(1 - 1) (1 + 5)$, which simplifies to zero.
+Finally, substituting $x = -5$ into $g(x)$ yields
+$g(-5) = 3(-5 - 1) (-5 + 5)$, which also simplifies to zero.  Conclude
+that $f(x)$ and $g(x)$ have the same roots.
+
+\solutionpart{subprob:given_roots_x1_x5_point_2_7}
+From \Part{subprob:given_roots_x1_x5} you know that
+$f(x) = (x - 1) (x + 5)$ has the roots $x = 1$ and $x = -5$.  Since
+you are also given the point $\tuple{2}{7}$, you can substitute
+$x = 2$ into $f(x)$ to get $f(2) = (2 - 1) (2 + 5)$, which simplifies
+to $f(2) = 7$.  Therefore the graph of the function
+$f(x) = (x - 1) (x + 5)$ passes through the points $\tuple{1}{0}$,
+$\tuple{-5}{0}$, and $\tuple{2}{7}$.
+
+Next, you prove that $f(x)$ is the only quadratic function whose graph
+passes through the given three points.  To do so, you let $\alpha$ and
+$\beta$ be any real numbers such that the graph of the function
+%%
+\begin{equation}
+\label{eqn:given_roots_x1_x5_point_2_7_another_quadratic}
+h(x)
+=
+\alpha (x - 1) (x + 5) + \beta
+\end{equation}
+%%
+also passes through the given three points.  That is, you assume that
+$h(x)$ has the roots $x = 1$ and $x = -5$.  Now you show that $f(x)$
+and $h(x)$ are the same.  To do so, you determine the values of
+$\alpha$ and $\beta$.  Since $x = 1$ is a root of $h(x)$, then the
+expression $h(1) = 0$ must be true.  You can write $h(1)$ as
+\[
+h(1)
+=
+\alpha (1 - 1) (1 + 5) + \beta
+=
+\alpha \times 0 + \beta
+=
+\beta.
+\]
+Since you must have $h(1) = 0$, then $h(1) = \beta = 0$ and so $\beta$
+is zero.  The function $h(x)$ now simplifies to
+\[
+h(x)
+=
+\alpha (x - 1) (x + 5).
+\]
+You assumed above that the graph of $h(x)$ passes through the point
+$\tuple{2}{7}$.  This means that the expression $h(2) = 7$ must be
+true.  You can write $h(2)$ as
+\[
+h(2)
+=
+\alpha (2 - 1) (2 + 5)
+=
+7 \alpha.
+\]
+Since you must have $h(2) = 7$, then $h(2) = 7\alpha = 7$.  In the
+expression $7\alpha = 7$, solving for $\alpha$ shows that
+$\alpha = 1$.  In other words, if the function $h(x)$ as defined
+in~\eqref{eqn:given_roots_x1_x5_point_2_7_another_quadratic} is
+another quadratic function whose graph passes through the given three
+points, then you must have $\alpha = 1$ and $\beta = 0$.  In that
+case, $h(x)$ simplifies to the function $f(x)$.  Conclude that $f(x)$
+is the only quadratic function that has the three given points.
 \end{solution}
 }{}
 \end{problem}
