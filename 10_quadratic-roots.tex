@@ -1466,25 +1466,26 @@ Consider the function $f(x) = 4x^2 + 12x - 40$.
 \solutionpart{subeg:monic_quadratic_x2_x5_completing_square}
 The function $f(x)$ can be written in such a way that it resembles the
 function in \Theorem{thm:monic_quadratic_roots}.  Factoring out the
-$4$ to get
+$4$ and you have
 %%
 \begin{align*}
 f(x)
 &=
 4(x^2 + 3x - 10) \\[4pt]
 &=
-4 g(x)
+4 \cdot g(x)
 \end{align*}
 %%
 where the function $g(x) = x^2 + 3x - 10$ is similar to the function
 in \Theorem{thm:monic_quadratic_roots} because you have $b = 3$ and
 $c = -10$.  Note that the roots of $g(x)$ are also the roots of
 $f(x)$.  The reason is that if $x = x_1$ is a value of $x$ such that
-$g(x_1) = 0$, then $4g(x_1)$ is also zero.  That is, you only need to
-determine the roots of $g(x)$, which is simpler than the original
-definition of $f(x)$.
+$g(x_1) = 0$, then $4 \cdot g(x_1)$ is also zero.  That is, you only
+need to determine the roots of $g(x)$, which is simpler than the
+original definition of $f(x)$.
 
-Use \Theorem{thm:monic_quadratic_roots} to write $g(x)$ as
+Use \Theorem{thm:monic_quadratic_roots} to write $g(x)$ as the
+expression
 %%
 \begin{equation}
 \label{eqn:completed_square_form_b3_cminus10}
@@ -1564,9 +1565,87 @@ x
 -5.
 \]
 
-To check your results, substitute the roots into $f(x)$.  This should
-produce a function value of zero.  Substitute the root $x = 2$ into
-$f(x)$ to get
+\solutionpart{subeg:monic_quadratic_x2_x5_factored_form}
+Let's use factorisation to determine the roots of $f(x)$.  As
+explained in \Part{subeg:monic_quadratic_x2_x5_completing_square}, you
+need only to determine the roots of the function
+$g(x) = x^2 + 3x - 10$.  You require two numbers that sum to $3$ and
+have a product of $-10$.  The positive integer factors of $-10$ are
+$1$, $2$, $5$, and $10$.  Multiply each factor by $-1$ to get the
+negative factors.  Thus all integer factors of $-10$ are
+\[
+\octuple{1}{2}{5}{10}{-1}{-2}{-5}{-10}.
+\]
+Among these factors, the required numbers are $5$ and $-2$ because you
+have the sum $5 + (-2) = 3$ and the product $5 \times (-2) = -10$.
+Then $f(x)$ can be written in factored form as
+\[
+f(x)
+=
+4(x - 2) (x + 5).
+\]
+Therefore the roots of $f(x)$ are $x = 2$ and $x = -5$, which are the
+same as those obtained
+in \Part{subeg:monic_quadratic_x2_x5_completing_square}.
+
+\solutionpart{subeg:monic_quadratic_x2_x5_quadratic_formula}
+The quadratic formula shows that the roots of $f(x)$ are
+%%
+\begin{align*}
+x
+&=
+\frac{
+  -12
+  \pm
+  \sqrt{
+    12^2 - 4(4)(-40)
+  }
+}{
+  2(4)
+} \\[4pt]
+&=
+\frac{
+  -12
+  \pm
+  \sqrt{144 + 640}
+}{
+  8
+} \\[4pt]
+&=
+\frac{
+  -12 \pm 28
+}{
+  8
+}.
+\end{align*}
+%%
+Thus one root of $f(x)$ is
+\[
+x_1
+=
+\frac{-12 + 28}{8}
+=
+\frac{16}{8}
+=
+2
+\]
+and the other root is
+\[
+x_2
+=
+\frac{-12 - 28}{8}
+=
+\frac{-40}{8}
+=
+-5.
+\]
+These are the same roots as those you obtained
+in \Part{subeg:monic_quadratic_x2_x5_completing_square}.
+
+\solutionpart{subeg:monic_quadratic_x2_x5_verify}
+To check your results, substitute the roots into $f(x)$ and simplify.
+This should produce a function value of zero.  Substitute the root
+$x = 2$ into $f(x)$ to get
 %%
 \begin{align*}
 f(2)
@@ -1593,32 +1672,6 @@ f(-5)
 &=
 0.
 \end{align*}
-%%
-
-\solutionpart{subeg:monic_quadratic_x2_x5_factored_form}
-Let's use the technique explained
-in \Section{sec:factor_quadratic_a_1} to determine the roots of
-$f(x)$.  As explained
-in \Part{subeg:monic_quadratic_x2_x5_completing_square}, you need only
-to determine the roots of the function $g(x) = x^2 + 3x - 10$.  You
-require two numbers that sum to $3$ and have a product of $-10$.  The
-positive integer factors of $-10$ are $1$, $2$, $5$, and $10$.
-Multiply each factor by $-1$ to get the negative factors.  Thus all
-integer factors of $-10$ are
-\[
-\octuple{1}{2}{5}{10}{-1}{-2}{-5}{-10}.
-\]
-Among these factors, the required numbers are $5$ and $-2$ because
-$5 + (-2) = 3$ and $5 \times (-2) = -10$.  Then $f(x)$ can be written
-in factored form as
-\[
-f(x)
-=
-4(x - 2) (x + 5).
-\]
-Therefore the roots of $f(x)$ are $x = 2$ and $x = -5$, which are the
-same as those
-in \Part{subeg:monic_quadratic_x2_x5_completing_square}.
 \end{solution}
 }{}
 
