@@ -918,6 +918,7 @@ which is the same as what you obtained above.
 \end{solution}
 
 \begin{exercise}
+\label{ex:factorise_aminus1_c1}
 Factorise $f(x) = -x^2 + 1$ and determine its roots.  Verify your
 results by means of the quadratic formula.
 \end{exercise}
@@ -2195,6 +2196,188 @@ another quadratic function whose graph passes through the given three
 points, then you must have $\alpha = 1$ and $\beta = 0$.  In that
 case, $h(x)$ simplifies to the function $f(x)$.  Conclude that $f(x)$
 is the only quadratic function that has the three given points.
+\end{solution}
+}{}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/10/difference-two-squares.pdf}
+\caption{%%
+  Visual proof of the identity called the
+  \emph{difference of two squares}.  A square is nested inside
+  another, larger square.  The larger square has a side length of $x$,
+  while the smaller square has a side length of $a$.
+}
+\label{fig:difference_two_squares}
+\end{figure}
+
+\item This problem will help you to derive another technique to
+  factorise a quadratic function.  The technique is called the
+  \emph{difference of two squares}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:difference_two_squares_areas_squares}
+    \Figure{fig:difference_two_squares} shows a square inside a larger
+    square.  Calculate the area $X$ of the square whose side length is
+    $x$.  Calculate the area $A$ of the square whose side length is
+    $a$.  Calculate the difference $X - A$ of the two areas.
+
+  \item\label{subprob:difference_two_squares_area_shaded}
+    Calculate the area of the shaded region in
+    \Figure{fig:difference_two_squares}.  Prove that the area of the
+    shaded region is the same as the difference $X - A$
+    from \Part{subprob:difference_two_squares_areas_squares}.
+
+  \item\label{subprob:difference_two_squares_identity}
+    Use \Part{subprob:difference_two_squares_area_shaded} to prove
+    that $x^2 - a^2 = (x - a) (x + a)$.
+
+  \item\label{subprob:difference_two_squares_repeat_exercise}
+    Use \Part{subprob:difference_two_squares_identity} to determine
+    the roots of the function from \Example{ex:factorise_aminus1_c1}.
+
+  \item\label{subprob:difference_two_squares_a_cminus}
+    Consider the function $f(x) = ax^2 - c$, where $a$ and $c$ are
+    any positive real numbers.
+    Use \Part{subprob:difference_two_squares_identity} to determine
+    the roots of $f(x)$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:difference_two_squares_areas_squares}
+In \Figure{fig:difference_two_squares}, the square whose side length
+is $x$ has an area of $x^2$ and the square whose side length is $a$
+has an area of $a^2$.  Then you have the difference $x^2 - a^2$.
+
+\solutionpart{subprob:difference_two_squares_area_shaded}
+The shaded region in \Figure{fig:difference_two_squares} is made up of
+two rectangles both of which have the same width and height, and a
+square in the lower-right corner.  Any of the shaded rectangles has a
+width and height of $a$ and $x - a$ and therefore an area of
+$a(x - a)$.  Since the two shaded rectangles have the same dimensions,
+then the total area of these rectangles is $2a(x - a)$.  The square in
+the lower-right corner has a side length of $x - a$ and thus an area
+of $(x - a)^2$.  Then the total area of the shaded region is
+%%
+\begin{equation}
+\label{eqn:difference_two_squares}
+\begin{aligned}
+(x - a)^2 + 2a(x - a)
+&=
+x^2 - 2ax + a^2 + 2ax - 2a^2 \\[4pt]
+&=
+x^2 + a^2 - 2a^2 \\[4pt]
+&=
+x^2 - a^2.
+\end{aligned}
+\end{equation}
+%%
+This is the same as the difference obtained
+in \Part{subprob:difference_two_squares_areas_squares}.
+
+\solutionpart{subprob:difference_two_squares_identity}
+Using \Part{subprob:difference_two_squares_area_shaded}, in the
+expression $(x - a)^2 + 2a(x - a)$ you can factor out the $(x - a)$ to
+get
+%%
+\begin{equation}
+\label{eqn:difference_two_squares_factorised}
+\begin{aligned}
+(x - a)^2 + 2a(x - a)
+&=
+(x - a) \bigsquare{(x - a) + 2a} \\[4pt]
+&=
+(x - a) (x - a + 2a) \\[4pt]
+&=
+(x - a) (x + a).
+\end{aligned}
+\end{equation}
+%%
+Equate
+\Expressions{eqn:difference_two_squares}{eqn:difference_two_squares_factorised}
+to see that $x^2 - a^2 = (x - a) (x + a)$.
+
+\solutionpart{subprob:difference_two_squares_repeat_exercise}
+In \Example{ex:factorise_aminus1_c1}, you have the quadratic function
+$f(x) = -x^2 + 1$, which can also be written as
+$f(x) = -(x^2 - 1) = -g(x)$, where $g(x) = x^2 - 1$.  Note that you
+can write $g(x)$ as
+%%
+\begin{align*}
+g(x)
+&=
+x^2 - 1 \\[4pt]
+&=
+x^2 - 1^2
+\end{align*}
+%%
+which is the difference of two squares.
+Use \Part{subprob:difference_two_squares_identity} to write $g(x)$ in
+factored form as $g(x) = (x - 1) (x + 1)$ and so $f(x)$ can be
+factorised as
+\[
+f(x)
+=
+-(x - 1) (x + 1).
+\]
+If $x = 1$, then $f(1)$ simplifies to zero.  If $x = -1$, then $f(-1)$
+also simplifies to zero.  Therefore the roots of $f(x)$ are $x = 1$
+and $x = -1$.
+
+\solutionpart{subprob:difference_two_squares_a_cminus}
+Factor out the $a$ to get
+%%
+\begin{align*}
+f(x)
+&=
+a
+\parenthesis*{
+  x^2 - \frac{c}{a}
+} \\[4pt]
+&=
+a \cdot g(x)
+\end{align*}
+%%
+where $g(x) = x^2 - \frac{c}{a}$.  Note that both $a$ and $c$ are
+positive numbers and so the ratio $c / a$ is also positive.  Then you
+have
+\[
+\frac{c}{a}
+=
+\parenthesis*{
+  \sqrt{
+    \frac{c}{a}
+  }
+}^2
+\]
+which can be used to write $g(x)$ as
+\[
+g(x)
+=
+x^2
+-
+\parenthesis*{
+  \sqrt{
+    \frac{c}{a}
+  }
+}^2
+\]
+which is the difference of two squares.
+Use \Part{subprob:difference_two_squares_identity} to factorise $f(x)$
+as
+\[
+f(x)
+=
+a
+\parenthesis*{
+  x - \sqrt{\frac{c}{a}}
+}
+\parenthesis*{
+  x + \sqrt{\frac{c}{a}}
+}
+\]
+and therefore the roots of $f(x)$ are $x = \sqrt{\frac{c}{a}}$ and
+$x = -\sqrt{\frac{c}{a}}$.
 \end{solution}
 }{}
 \end{problem}
