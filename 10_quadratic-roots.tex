@@ -2211,8 +2211,9 @@ is the only quadratic function that has the three given points.
 \label{fig:difference_two_squares}
 \end{figure}
 
-\item This problem will help you to derive another technique to
-  factorise a quadratic function.  The technique is called the
+\item\label{prob:difference_of_two_squares}
+  This problem will help you to derive another technique to factorise
+  a quadratic function.  The technique is called the
   \emph{difference of two squares}.
   %%
   \begin{packedenum}
@@ -2380,6 +2381,63 @@ a
 \]
 and therefore the roots of $f(x)$ are $x = \sqrt{\frac{c}{a}}$ and
 $x = -\sqrt{\frac{c}{a}}$.
+\end{solution}
+}{}
+
+\item You can use the difference of two squares identity from
+  \Problem{prob:difference_of_two_squares} to help you multiply two
+  integers.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:difference_two_squares_7_13}
+    Let's calculate the product $7 \times 13$.  You know that the
+    result is $91$.  But let's do the multiplication another way.
+    Show that you have the equality $7 \times 13 = (10 - 3) (10 + 3)$.
+    Use the latter equality to write $7 \times 13$ as the difference
+    of two squares and calculate the result of this difference.
+
+  \item\label{subprob:difference_two_squares_12_18}
+    Use the difference of two squares identity to calculate
+    $12 \times 18$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:difference_two_squares_7_13}
+You have $10 - 3 = 7$ and $10 + 3 = 13$ and so
+\[
+7 \times 13
+=
+(10 - 3) (10 + 3).
+\]
+Use
+\Subproblem{prob:difference_of_two_squares}{subprob:difference_two_squares_identity}
+to write
+%%
+\begin{align*}
+7 \times 13
+&=
+(10 - 3) (10 + 3) \\[4pt]
+&=
+10^2 - 3^2 \\[4pt]
+&=
+100 - 9 \\[4pt]
+&=
+91.
+\end{align*}
+
+\solutionpart{subprob:difference_two_squares_12_18}
+You have $15 - 3 = 12$ and $15 + 3 = 18$.  Then the product
+$12 \times 18$ can be written as the difference of two squares:
+%%
+\begin{align*}
+12 \times 18
+&=
+(15 - 3) (15 + 3) \\[4pt]
+&=
+15^2 - 3^2.
+\end{align*}
+%%
+The difference can be written as $225 - 9 = 216$.
 \end{solution}
 }{}
 \end{problem}
