@@ -2515,6 +2515,31 @@ odd integer, hence the result is odd.  Therefore $(n + k)^2 - n^2$ is
 odd.
 \end{solution}
 }{}
+
+\item Let $n$ and $k$ be any integers such that $k$ is even.  Use
+  \Problem{prob:difference_of_two_squares} to prove that
+  $(n + k)^2 - n^2$ is even.
+\ifbool{showSolution}{
+\begin{solution}
+The expression $(n + k)^2 - n^2$ is the difference of two squares.  Use
+\Subproblem{prob:difference_of_two_squares}{subprob:difference_two_squares_identity}
+to write the latter expression as
+%%
+\begin{align*}
+(n + k)^2 - n^2
+&=
+\bigsquare{(n + k) - n}
+\bigsquare{(n + k) + n} \\[4pt]
+&=
+(n + k - n) (n + k + n) \\[4pt]
+&=
+k (2n + k).
+\end{align*}
+%%
+Since $k$ is an even integer, then the integer $k (2n + k)$ is also
+even.  Therefore the integer $(n + k)^2 - n^2$ is even.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
