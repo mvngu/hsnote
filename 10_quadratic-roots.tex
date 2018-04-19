@@ -2447,6 +2447,11 @@ The difference can be written as $225 - 9 = 216$.
   \item\label{subprob:difference_two_consecutive_squares}
     Use \Problem{prob:difference_of_two_squares} to prove that
     $(n + 1)^2 - n^2$ is an odd integer.
+
+  \item\label{subprob:difference_two_integer_squares_odd}
+    If $k$ is an odd integer, use
+    \Problem{prob:difference_of_two_squares} to prove that
+    $(n + k)^2 - n^2$ is odd.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -2470,6 +2475,44 @@ to write the latter expression as
 %%
 The integer $2n$ is even so $2n + 1$ is odd.  Therefore
 $(n + 1)^2 - n^2$ is odd.
+
+\solutionpart{subprob:difference_two_integer_squares_odd}
+The expression $(n + k)^2 - n^2$ is a difference of two squares.  Use
+\Subproblem{prob:difference_of_two_squares}{subprob:difference_two_squares_identity}
+to write
+%%
+\begin{align*}
+(n + k)^2 - n^2
+&=
+\bigsquare{(n + k) - n}
+\bigsquare{(n + k) + n} \\[4pt]
+&=
+(n + k - n) (n + k + n) \\[4pt]
+&=
+k (2n + k) \\[4pt]
+&=
+2kn + k^2.
+\end{align*}
+%%
+Since $k$ is odd, then $k$ can be written as $k = 2p + 1$, where $p$
+is an integer.  Thus the square $k^2$ can be written as
+%%
+\begin{align*}
+k^2
+&=
+(2p + 1)^2 \\[4pt]
+&=
+(2p + 1) (2p + 1) \\[4pt]
+&=
+2p(2p + 1) + 1(2p + 1) \\[4pt]
+&=
+2p(2p + 1) + 2p + 1.
+\end{align*}
+%%
+Each of the integers $2p(2p + 1)$ and $2p$ is even and so $k^2$ is
+odd.  The expression $2kn + k^2$ is the sum of an even integer and an
+odd integer, hence the result is odd.  Therefore $(n + k)^2 - n^2$ is
+odd.
 \end{solution}
 }{}
 \end{problem}
