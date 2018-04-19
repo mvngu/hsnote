@@ -2540,6 +2540,123 @@ Since $k$ is an even integer, then the integer $k (2n + k)$ is also
 even.  Therefore the integer $(n + k)^2 - n^2$ is even.
 \end{solution}
 }{}
+
+\item Let $n$ be a positive integer such that $n \geq 2$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:difference_two_squares_reciprocal_product_k}
+    If $k \geq 2$ is an integer, show that
+    \[
+    1 - \frac{1}{k^2}
+    =
+    \frac{k - 1}{k}
+    \times
+    \frac{k + 1}{k}.
+    \]
+
+  \item\label{subprob:difference_two_squares_reciprocal_products}
+    Prove that
+    \[
+    \productseq{
+      \parenthesis*{1 - \frac{1}{2^2}}
+      \parenthesis*{1 - \frac{1}{3^2}}
+    }{
+      \parenthesis*{1 - \frac{1}{4^2}}
+    }{
+      \parenthesis*{1 - \frac{1}{n^2}}
+    }
+    =
+    \frac{n + 1}{2n}.
+    \]
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:difference_two_squares_reciprocal_product_k}
+You can write
+\[
+1 - \frac{1}{k^2}
+=
+1 - \parenthesis*{\frac{1}{k}}^2
+\]
+which is the difference of two squares.  Use
+\Subproblem{prob:difference_of_two_squares}{subprob:difference_two_squares_identity}
+to write the latter expression as
+%%
+\begin{align*}
+1 - \parenthesis*{\frac{1}{k}}^2
+&=
+\parenthesis*{1 - \frac{1}{k}}
+\parenthesis*{1 + \frac{1}{k}} \\[4pt]
+&=
+\parenthesis*{\frac{k}{k} - \frac{1}{k}}
+\parenthesis*{\frac{k}{k} + \frac{1}{k}} \\[4pt]
+&=
+\frac{k - 1}{k}
+\times
+\frac{k + 1}{k}
+\end{align*}
+%%
+as required.
+
+\solutionpart{subprob:difference_two_squares_reciprocal_products}
+Use \Part{subprob:difference_two_squares_reciprocal_product_k} to
+write
+\[
+1 - \frac{1}{2^2}
+=
+\frac{1}{2} \cdot \frac{3}{2},
+%%
+\qquad
+%%
+1 - \frac{1}{3^2}
+=
+\frac{2}{3} \cdot \frac{4}{3},
+%%
+\qquad
+%%
+1 - \frac{1}{4^2}
+=
+\frac{3}{4} \cdot \frac{5}{4}
+\]
+and in general you have
+\[
+1 - \frac{1}{(n - 1)^2}
+=
+\frac{n - 2}{n - 1} \cdot \frac{n}{n - 1},
+%%
+\qquad
+%%
+1 - \frac{1}{n^2}
+=
+\frac{n - 1}{n} \cdot \frac{n + 1}{n}.
+\]
+Thus you have the expression
+%%
+\begin{align*}
+&\productseq{
+  \parenthesis*{1 - \frac{1}{2^2}}
+  \parenthesis*{1 - \frac{1}{3^2}}
+}{
+  \parenthesis*{1 - \frac{1}{4^2}}
+}{
+  \parenthesis*{1 - \frac{1}{n^2}}
+} \\[4pt]
+&=
+\frac{1}{2} \cdot \frac{3}{2}
+\cdot
+\frac{2}{3} \cdot \frac{4}{3}
+\cdot
+\frac{3}{4} \cdot \frac{5}{4}
+\cdots
+\frac{n - 2}{n - 1} \cdot \frac{n}{n - 1}
+\cdot
+\frac{n - 1}{n} \cdot \frac{n + 1}{n}.
+\end{align*}
+%%
+Note that all the numerators and denominators cancel out, except for
+the factor $\frac{1}{2} \times \frac{n + 1}{n} = \frac{n + 1}{2n}$.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
