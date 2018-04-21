@@ -31,6 +31,7 @@ The following example should help you to understand the ideas
 presented above.
 
 \begin{example}
+\label{eg:Australian_population_2017}
 According to the Australian Bureau of Statistics~(ABS), at the end of
 September 2017 the population of Australia grew by $1.6\%$ since the
 previous year.\footnote{
@@ -290,6 +291,74 @@ $2017$ so the population in $2021$ is approximately
 million people.
 \end{solution}
 }{}
+
+Let's derive a general formula to model situations such as those
+presented in \Example{eg:Australian_population_2017}.  Denote by $a$
+the value of the initial population and assume that the initial
+population is $a \neq 0$.  Let $r$ be the percentage rate of change
+and define the growth factor by $b = 1 + r$.  The amount of time since
+the initial population is represented by $t$.  So you assume that
+$t \geq 0$ and at time $t = 0$ you have the initial population of
+$a$.  At time $t = 1$, the population would have changed by an amount
+of $ar$ since time $t = 0$.  You add this number to the population at
+time $t = 0$ to get the population at $t = 1$.  Then the population at
+time $t = 1$ is given by
+\[
+a + ar
+=
+a(1 + r)
+=
+ab.
+\]
+At time $t = 2$, the population would have changed by an amount of
+$abr$ since time $t = 1$.  You add this number to the population at
+time $t = 1$ to get the population at time $t = 2$.  That is, the
+population at time $t = 2$ is given by
+\[
+ab + abr
+=
+ab(1 + r)
+=
+abb
+=
+ab^2.
+\]
+Now you use the same technique as explained above to obtain the
+population at time $t = 3$.  At time $t = 3$, the population would
+have changed by an amount of $ab^2r$ since time $t = 2$.  Adding this
+number to the population at time $t = 2$ shows that the population at
+time $t = 3$ is given by
+\[
+ab^2 + ab^2r
+=
+ab^2 (1 + r)
+=
+ab^2b
+=
+ab^3.
+\]
+Use the same technique as explained above to see that the population
+at time $t = 4$ is given by the expression
+\[
+ab^3 + ab^3r
+=
+ab^3 (1 + r)
+=
+ab^3b
+=
+ab^4.
+\]
+From the above equations, you see that in general the population
+$Q(t)$ at time $t \geq 0$ is given by the formula
+%%
+\begin{align*}
+Q(t)
+&=
+a(1 + r)^t \\[4pt]
+&=
+ab^t.
+\end{align*}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
