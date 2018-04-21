@@ -176,6 +176,73 @@ illustrated in \Figure{fig:Australian_population_2017}.
 \label{fig:Australian_population_2017}
 \end{figure}
 
+The next question you might ask is:  Is there a formula to calculate
+the population of Australia for any number of years since $2017$?  The
+answer is yes, but you must assume that the population grows by a
+constant percentage rate each year.  Assume that you have an initial
+population of $24.7029$ million people in $2017$ and that the growth
+rate is $1.6\%$ or $0.016$ per annum.  According to
+\Equation{eqn:Australian_population_2018_calculation}, in
+$2018$~(i.e.~one year from $2017$) the population can be written as
+the expression
+\[
+24.7029 + 24.7029 \times 0.016
+=
+24.7029 \times 1.016.
+\]
+In $2019$~(i.e.~two years from $2017$) the population can be written
+as
+%%
+\begin{align*}
+&24.7029 \times 1.016 + 24.7029 \times 1.016 \times 0.016 \\[4pt]
+&=
+24.7029 \times 1.016 (1 + 0.016) \\[4pt]
+&=
+24.7029 \times 1.016 \times 1.016 \\[4pt]
+&=
+24.7029 \times 1.016^2.
+\end{align*}
+%%
+In $2020$~(i.e.~three years from $2017$) the population can be written
+as
+%%
+\begin{align*}
+&24.7029 \times 1.016^2 + 24.7029 \times 1.016^2 \times 0.016 \\[4pt]
+&=
+24.7029 \times 1.016^2 (1 + 0.016) \\[4pt]
+&=
+24.7029 \times 1.016^2 \times 1.016 \\[4pt]
+&=
+24.7029 \times 1.016^3.
+\end{align*}
+%%
+In $2021$~(i.e.~four years from $2017$) the population can be written
+as
+%%
+\begin{align*}
+&24.7029 \times 1.016^3 + 24.7029 \times 1.016^3 \times 0.016 \\[4pt]
+&=
+24.7029 \times 1.016^3 (1 + 0.016) \\[4pt]
+&=
+24.7029 \times 1.016^3 \times 1.016 \\[4pt]
+&=
+24.7029 \times 1.016^4.
+\end{align*}
+%%
+From the above equations, you can see that the only number that
+changes is the exponent or power of $1.016$.  If $t$ is the number of
+years since $2017$, then the population in $t$ years can be written as
+%%
+\begin{equation}
+\label{eqn:Australian_population_formula}
+24.7029 \times 1.016^t.
+\end{equation}
+%%
+You can see from \Expression{eqn:Australian_population_formula} that
+the initial population is $24.7029$ million people.  The number
+$1.016$ is called the \emph{growth factor} and can be written in terms
+of the growth rate as $1.016 = 1 + 0.016$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
