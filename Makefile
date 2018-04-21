@@ -53,8 +53,10 @@ clean:
 	rm -rfv *.out
 	rm -rfv data/07/*~
 	rm -rfv image/07/*~
+	rm -rfv image/11/*~
 	rm -rfv style/*~
 	rm -rfv table/06/*~
 	rm -rfv table/07/*~
+	rm -rfv table/11/*~
 
 .PHONY: all clean latex pdf-plot plot solution
