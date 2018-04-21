@@ -30,6 +30,150 @@ to calculate the population in the next year or the next three years.
 The next example should help you to understand the ideas presented
 above.
 
+\begin{example}
+According to the Australian Bureau of Statistics~(ABS), at the end of
+September 2017 the population of Australia grew by $1.6\%$ since the
+previous year.\footnote{
+  ``3101.0 - Australian Demographic Statistics, Sep 2017'',
+  \url{http://web.archive.org/web/20180420062713/http://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/3101.0Main+Features1Sep\%202017},
+  accessed 2018-04-20.
+}
+The population by the end of the given period was estimated to be
+$24.7029$ million people.  Assume that for the next few years the
+population of Australia will grow by a rate of $1.6\%$ per annum.
+%%
+\begin{packedenum}
+\item\label{subeg:Australian_population_2017_growth_rate}
+  Identify the rate of change.
+
+\item\label{subeg:Australian_population_2017_initial_population}
+  Determine the initial population.
+
+\item\label{subeg:Australian_population_2017_table_graph}
+  Provide a table of values for the projected population of Australia
+  from 2017 to 2021, inclusive.  Graph the data in the table as a
+  scatter plot.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:Australian_population_2017_growth_rate}
+By the end of September 2017, the population of Australia grew by
+$1.6\%$ from the previous year so the rate of change is $1.6\%$.
+Since we are concerned with population growth, the rate of change in
+this example is also called the \emph{growth rate}.  The growth rate
+can be written as a percentage or as a fraction.  To express the
+percentage of $1.6\%$ as a fraction, you divide the number $1.6$ by
+$100$ to get the fraction
+\[
+\frac{1.6}{100}
+=
+0.016.
+\]
+That is, you can also say that the growth rate is $0.016$.
+
+\solutionpart{subeg:Australian_population_2017_initial_population}
+The example does not explicitly state the value of the initial
+population.  However, the example does say that the population of
+Australia by the end of September 2017 was $24.7029$ million people so
+you can consider this number as the initial population.  The reason
+why you require an initial population is so that the population can
+grow or decline.  You need to start somewhere.
+
+\solutionpart{subeg:Australian_population_2017_table_graph}
+You are required to predict the population of Australia from $2018$ to
+$2021$, inclusive.  To calculate the projected~(or predicted)
+population in $2018$, you must know two numbers: the population in
+$2017$ and the growth rate.
+From \Part{subeg:Australian_population_2017_growth_rate} you know that
+the growth rate is $0.016$ per annum and
+from \Part{subeg:Australian_population_2017_initial_population} you
+know that the population of Australia for 2017 was $24.7029$ million
+people.  By $2018$, the population would have increased by
+%%
+\begin{equation}
+\label{eqn:Australian_population_2018}
+24.7029 \times 0.016
+=
+0.3952464
+\end{equation}
+%%
+million people.  To calculate the population for $2018$, you must add
+the number in~\eqref{eqn:Australian_population_2018} to the population
+in $2017$.  Then the projected population for $2018$ is
+%%
+\begin{equation}
+\label{eqn:Australian_population_2018_calculation}
+\begin{aligned}
+24.7029 + 24.7029 \times 0.016
+&=
+24.7029 (1 + 0.016) \\[4pt]
+&=
+24.7029 \times 1.016 \\[4pt]
+&=
+25.0981464
+\end{aligned}
+\end{equation}
+%%
+million people.
+
+Now use the same technique as explained above to calculate the
+projected population for $2019$.  You already know that the growth
+rate is $0.016$ per annum and that the population in $2018$ would be
+$25.0981464$ million people.  By $2019$, the population would have
+increased by
+%%
+\begin{equation}
+\label{eqn:Australian_population_2019}
+25.0981464 \times 0.016
+=
+0.4015703424
+\end{equation}
+%%
+million people.  The projected population for $2019$ is the number
+in~\eqref{eqn:Australian_population_2019} added to the population in
+$2018$.  By $2019$ Australia is projected to have a population of
+%%
+\begin{align*}
+25.0981464 + 25.0981464 \times 0.016
+&=
+25.0981464 (1 + 0.016) \\[4pt]
+&=
+25.0981464 \times 1.016 \\[4pt]
+&=
+25.4997167424
+\end{align*}
+%%
+million people.  Use the same technique as explained above to
+calculate the projected population in $2020$ and $2021$.  The
+projected populations through to the year $2021$ are shown in
+\Table{tab:Australian_population_2017}, a graph of which is
+illustrated in \Figure{fig:Australian_population_2017}.
+\end{solution}
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/australia-population.tex}
+\caption{%%
+  The projected population of Australia through to the year $2021$.
+  The population numbers are in terms of millions.  For example, the
+  population in $2017$ was estimated to be $24.7029$ million people.
+  The population is assumed to grow at a rate of $1.6\%$ per annum.
+}
+\label{tab:Australian_population_2017}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/11/australian-population.pdf}
+\caption{%%
+  The projected population~(in millions) of Australia through to the
+  year $2021$.  The population is assumed to grow at a rate of $1.6\%$
+  per annum.  Data are from \Table{tab:Australian_population_2017}.
+}
+\label{fig:Australian_population_2017}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
