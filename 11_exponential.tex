@@ -365,12 +365,128 @@ ab^t.
 The above discussion is summarised in the next theorem.
 
 \begin{theorem}
+\label{thm:exponential_growth}
 \textbf{Exponential growth.}
 Let $a \neq 0$ be the initial value of a population and assume that
 the population changes by a constant decimal rate of $r$ per unit
 time.  If $b = 1 + r$ is the growth factor and $Q(t)$ represents the
 population number at time $t$, then $Q(t) = ab^t$.
 \end{theorem}
+
+\begin{example}
+A Petri dish initially contains ten cells of a particular type of
+bacteria.  The bacteria population is known to have a constant
+percentage growth rate of $56\%$ per hour.
+%%
+\begin{packedenum}
+\item\label{subeg:bacteria_growth_rate}
+  Determine the growth rate and growth factor of the bacteria
+  population.
+
+\item\label{subeg:bacteria_initial_population}
+  Determine the initial population of bacteria in the Petri dish.
+
+\item\label{subeg:bacteria_growth_1_2_hours}
+  Use the same technique as in
+  \Expression{eqn:Australian_population_2018_calculation} to calculate
+  the number of bacteria in the Petri dish after one hour.  How many
+  bacteria would there be in the Petri dish after two hours?
+
+\item\label{subeg:bacteria_growth_formula}
+  Derive a formula for the number of bacteria in the Petri dish after
+  $t$ hours.  Use the formula to verify your results
+  from \Part{subeg:bacteria_growth_1_2_hours}.  Produce a graph of the
+  growth of the bacteria population within $24$ hours.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:bacteria_growth_rate}
+Since the bacteria population grows at a constant percentage rate of
+$56\%$ per hour, the growth rate is $r = 56 / 100 = 0.56$ per hour and
+hence the growth factor is $b = 1 + 0.56 = 1.56$.
+
+\solutionpart{subeg:bacteria_initial_population}
+The initial population of bacteria is $a = 10$ cells.
+
+\solutionpart{subeg:bacteria_growth_1_2_hours}
+You have an initial bacteria population of $10$ cells.  At time
+$t = 1$ hour, the bacteria population would have increased by
+$10 \times 0.56$ cells.  Add this number to the initial population to
+see that after one hour the bacteria population would be
+%%
+\begin{align*}
+10 + 10 \times 0.56
+&=
+10 (1 + 0.56) \\[4pt]
+&=
+10 \times 1.56 \\[4pt]
+&=
+15.6
+\end{align*}
+%%
+cells.  After two hours, the bacteria population would have increased
+by $15.6 \times 0.56$ cells.  Adding this number to the population at
+time $t = 1$ hour and you have
+%%
+\begin{align*}
+15.6 + 15.6 \times 0.56
+&=
+15.6 (1 + 0.56) \\[4pt]
+&=
+15.6 \times 1.56 \\[4pt]
+&=
+24.336
+\end{align*}
+%%
+cells at time $t = 2$ hours.
+
+\solutionpart{subeg:bacteria_growth_formula}
+From \Parts{subeg:bacteria_growth_rate}{subeg:bacteria_initial_population},
+you know the initial population to be $a = 10$ cells and the growth
+factor is $b = 1.56$.  If $Q(t)$ represents the number of bacteria
+cells in the Petri dish after $t$ hours, then use
+\Theorem{thm:exponential_growth} to write
+\[
+Q(t)
+=
+10 \times 1.56^t.
+\]
+Let's use the above formula to verify your results
+from \Part{subeg:bacteria_growth_1_2_hours}.  At time $t = 1$ hour,
+you have
+\[
+Q(1)
+=
+10 \times 1.56^1
+=
+15.6
+\]
+and at time $t = 2$ hours, you have
+\[
+Q(2)
+=
+10 \times 1.56^2
+=
+24.336.
+\]
+These are the same as the numbers you obtained
+in \Part{subeg:bacteria_growth_1_2_hours}.
+\Figure{fig:bacteria_population_24_hours} shows a plot of the bacteria
+population within $24$ hours.
+\end{solution}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/bacteria.pdf}
+\caption{%%
+  The bacteria population in a Petri dish within $24$ hours.
+  Initially, the Petri dish had a population of $10$ bacteria cells
+  and the bacteria population is assumed to grow at a constant
+  percentage rate of $56\%$ per hour.
+}
+\label{fig:bacteria_population_24_hours}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
