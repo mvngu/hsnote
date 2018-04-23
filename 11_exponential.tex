@@ -388,6 +388,7 @@ population number at time $t$, then $Q(t) = ab^t$.
 This section presents various examples of exponential growth and decay.
 
 \begin{example}
+\label{eg:bacterial_growth}
 \textbf{Bacterial growth.}
 A Petri dish initially contains ten cells of a type of bacteria.  The
 bacteria population is known to have a constant percentage growth rate
@@ -462,11 +463,14 @@ you know the initial population to be $a = 10$ cells and the growth
 factor is $b = 1.56$.  If $Q(t)$ represents the number of bacteria
 cells in the Petri dish after $t$ hours, then use
 \Theorem{thm:exponential_growth} to write
-\[
+%%
+\begin{equation}
+\label{eqn:bacterial_growth}
 Q(t)
 =
 10 \times 1.56^t.
-\]
+\end{equation}
+%%
 Let's use the above formula to verify your results
 from \Part{subeg:bacteria_growth_1_2_hours}.  At time $t = 1$ hour,
 you have
@@ -502,6 +506,37 @@ population within $24$ hours.
 }
 \label{fig:bacteria_population_24_hours}
 \end{figure}
+
+\begin{exercise}
+In \Example{eg:bacterial_growth}, how long must you wait for the
+bacteria population to be at least $100$ cells.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Using \Equation{eqn:bacterial_growth}, after $t = 5$ hours the
+bacteria population would be approximately
+\[
+Q(5)
+=
+10 \times 1.56^5
+\approx
+92
+\]
+cells, rounded to the nearest integer.  After $t = 6$ hours, the
+bacteria population would be approximately
+\[
+Q(6)
+=
+10 \times 1.56^6
+\approx
+144
+\]
+cells, rounded to the nearest integer.  Therefore you must wait
+approximately six hours in order for the bacteria population to be at
+least $100$ cells.
+\end{solution}
+}{}
 
 \begin{exercise}
 \textbf{Interest.}
