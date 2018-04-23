@@ -666,6 +666,116 @@ Note that \Equation{eqn:exponential_decay} is almost identical to the
 equation for exponential growth in \Theorem{thm:exponential_growth}.
 The next example should clarify the idea of exponential decay.
 
+\begin{example}
+\textbf{Radiocarbon dating.}
+The amount of carbon-$14$ found in a fossil~(e.g.~an ancient bone or
+wood) can be used to determine the age of the fossil.  Assume that the
+amount of carbon-$14$ in a fossil decreases by a constant percentage
+rate of $11.4\%$ every $1000$ years.\footnote{
+  The most accurate estimation is that the amount of carbon-$14$ in a
+  fossil decreases by $50\%$ approximately every $5,730$ years.  See
+  the following paper for further details:
+  \url{http://doi.org/10.1038/195984a0}.
+}
+Suppose that you start with $300$ microgram of carbon-$14$.
+%%
+\begin{packedenum}
+\item\label{subeg:carbon14_decay_rate}
+  Determine the decay rate.  Provide an interpretation of the decay
+  rate.
+
+\item\label{subeg:carbon14_decay_factor}
+  Calculate the decay factor.  Provide an interpretation of the decay
+  factor.
+
+\item\label{subeg:carbon14_after_1000_and_2000_years}
+  Determine the amount of carbon-$14$ after $1000$ years and after
+  $2000$ years.
+
+\item\label{subeg:carbon14_formula_graph}
+  Derive a formula for the amount of carbon-$14$ remaining.  Produce a
+  graph of the amount of carbon-$14$ remaining up to and including the
+  first $50,000$ years.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:carbon14_decay_rate}
+The constant percentage rate of decay is $11.4\%$ every $1000$ years.
+Divide the number $11.4$ by $100$ to get the constant decay rate of
+$r = 11.4 / 100 = 0.114$.  The decay rate of $0.114$ tells you that
+you lose $11.4\%$ of the amount of carbon-$14$ every $1000$ years.
+
+\solutionpart{subeg:carbon14_decay_factor}
+The decay factor is $b = 1 - 0.114 = 0.886$, which can be converted to
+a percentage as $0.886 \times 100 = 88.6\%$.  In other words, after
+every $1000$ years you lose $11.4\%$ of the amount of carbon-$14$ or
+that only about $88.6\%$ of the amount of carbon-$14$ remains.  You
+might lose $11.4\%$ of the amount, but you still have $88.6\%$ left.
+
+\solutionpart{subeg:carbon14_after_1000_and_2000_years}
+After $1000$ years, you would have lost $300 \times 0.114$ micrograms
+of carbon-$14$.  Subtract this number from the original amount to get
+%%
+\begin{align*}
+300 - 300 \times 0.114
+&=
+300 (1 - 0.114) \\[4pt]
+&=
+300 \times 0.886 \\[4pt]
+&=
+265.8.
+\end{align*}
+%%
+That is, after $1000$ years you would have $265.8$ micrograms of
+carbon-$14$ left.  At the end of $2000$ years, you would have lost
+$265.8 \times 0.114$ micrograms of carbon-$14$.  Subtract this amount
+from $265.8$ to get
+%%
+\begin{align*}
+265.8 - 265.8 \times 0.114
+&=
+265.8 (1 - 0.114) \\[4pt]
+&=
+265.8 \times 0.886 \\[4pt]
+&=
+235.4988.
+\end{align*}
+%%
+In other words, after $2000$ years you would have only $235.4988$
+micrograms of carbon-$14$ left.
+
+\solutionpart{subeg:carbon14_formula_graph}
+You have an initial amount of $300$ micrograms of carbon-$14$ and a
+decay factor of $0.886$.  If $A(t)$ represents the amount of
+carbon-$14$ remaining after $t \times 1000$ years, then
+$A(t) = 300 \times 0.886^t$.  Note that $t$ is in terms of $1000$
+years.  So $t = 1$ means $1 \times 1000 = 1000$ years, $t = 2$ means
+$2 \times 1000 = 2000$ years, $t = 3$ means
+$3 \times 1000 = 3000$ years, and so on.
+
+To produce a graph of the amount of carbon-$14$ left after $50,000$
+years, you must work out the minimum and maximum values for $t$.  The
+value of $t = 0$ means the time at which you have the initial amount
+of carbon-$14$ so you take $t = 0$ as the minimum value.  Since $t$ is
+in terms of $1000$ years, divide $50,000$ by $1000$ to get
+$t = 50000 / 1000 = 50$ so that the maximum value of $t$ is
+$t = 50$.  \Figure{fig:carbon14_decay} shows a graph of the amount of
+carbon-$14$ remaining up to $50,000$ years later.
+\end{solution}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/carbon14.pdf}
+\caption{%%
+  The amount~(in micrograms) of carbon-$14$ remainining after
+  $t \times 1000$ years.  You initially have $300$ micrograms of
+  carbon-$14$.  It is assumed that the constant percentage decay
+  rate of carbon-$14$ is $11.4\%$ per $1000$ years.
+}
+\label{fig:carbon14_decay}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
