@@ -646,6 +646,26 @@ balance to be at least $\$200$.
 \end{solution}
 }{}
 
+When a population or the amount of something decrease exponentially,
+instead of a growth rate you now have a \emph{decay rate} $r$.
+Furthermore, instead of a growth factor you now have a
+\emph{decay factor} $b$.  The decay factor is defined as one minus the
+decay rate so $b = 1 - r$.  You can think of the decay factor as the
+fraction of something remaining after unit time.  If $a$ is the
+initial population and $Q(t)$ represents the population at time $t$,
+then $Q(t)$ can be written as
+%%
+\begin{equation}
+\label{eqn:exponential_decay}
+Q(t)
+=
+ab^t.
+\end{equation}
+%%
+Note that \Equation{eqn:exponential_decay} is almost identical to the
+equation for exponential growth in \Theorem{thm:exponential_growth}.
+The next example should clarify the idea of exponential decay.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
