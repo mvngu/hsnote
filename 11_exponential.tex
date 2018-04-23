@@ -490,6 +490,149 @@ population within $24$ hours.
 \label{fig:bacteria_population_24_hours}
 \end{figure}
 
+\begin{exercise}
+\textbf{Interest.}
+At the start of a new year, you opened a savings account and deposited
+$\$100$ into the account.  The account earns an interest of $3\%$ per
+annum, where interest is compounded monthly.  Assume that once you
+have deposited the $\$100$, you leave the account alone to accrue
+interest and no longer deposit any more money into the account.
+%%
+\begin{packedenum}
+\item\label{subex:interest_initial_balance}
+  Determine the initial balance of the account.
+
+\item\label{subex:interest_growth_rate}
+  Determine the monthly interest rate.  Use this value to calculate
+  the monthly growth rate and hence the monthly growth factor of
+  your savings account.
+
+\item\label{subex:interest_balance_1month_2months}
+  Use the same technique as in
+  \Expression{eqn:Australian_population_2018_calculation} to calculate
+  the balance of your account at the end of the first month.
+  Calculate the balance of your account at the end of the second
+  month.
+
+\item\label{subex:interest_balance_formula}
+  Derive a formula for the balance of your account after $t$ months.
+  Use the formula to verify your results
+  from \Part{subex:interest_balance_1month_2months}.  Produce a graph
+  of the balance of your account within the first two years since you
+  opened the account.
+
+\item\label{subex:interest_200_dollars}
+  How long must you wait for the balance of your account to be at
+  least $\$200$?
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:interest_initial_balance}
+The account initially has a balance of $\$100$ so the initial balance
+of your account is $\$100$.
+
+\solutionpart{subex:interest_growth_rate}
+Since the yearly interest rate is $3\%$, divide the number $3$ by $12$
+months to see that the monthly interest rate is $3 / 12 = 0.25$ or
+$0.25\%$, which is less than one percent.  The monthly growth rate is
+obtained by dividing $0.25$ by $100$.  Doing so gives you a monthly
+growth rate of $r = 0.25 / 100 = 0.0025$ and hence the monthly growth
+factor is $b = 1 + 0.0025 = 1.0025$.
+
+\solutionpart{subex:interest_balance_1month_2months}
+At the end of the first month, your account would have accrued an
+interest of $100 \times 0.0025$ dollars.  Add this amount to the
+initial balance to see that by the end of the first month your account
+balance would be
+%%
+\begin{align*}
+100 + 100 \times 0.0025
+&=
+100 (1 + 0.0025) \\[4pt]
+&=
+100 \times 1.0025 \\[4pt]
+&=
+100.25
+\end{align*}
+%%
+dollars.  At the end of the second month, your account would have
+accrued $100.25 \times 0.0025$ dollars in interest.  Add this amount
+to the balance at the end of the first month to get the balance at the
+end of the second month.  By the end of the second month, your account
+balance would be
+%%
+\begin{align*}
+100.25 + 100.25 \times 0.0025
+&=
+100.25 (1 + 0.0025) \\[4pt]
+&=
+100.25 \times 1.0025 \\[4pt]
+&=
+100.500625
+\end{align*}
+%%
+dollars.
+
+\solutionpart{subex:interest_balance_formula}
+By \Parts{subex:interest_initial_balance}{subex:interest_growth_rate},
+you know that the initial balance is $a = 100$ dollars and the monthly
+growth factor is $b = 1.0025$.  If $B(t)$ represents the balance of
+your account at the end of $t$ months, use
+\Theorem{thm:exponential_growth} to write $B(t)$ as
+%%
+\begin{equation}
+\label{eqn:interest_formula_monthly_balance}
+B(t)
+=
+100 \times 1.0025^t.
+\end{equation}
+%%
+Using \Formula{eqn:interest_formula_monthly_balance}, you have a
+balance of $B(1) = 100 \times 1.0025^1 = 100.25$ dollars at the end of
+month $t = 1$.  Furthermore, by the end of month $t = 2$ your account
+balance would be $B(2) = 100 \times 1.0025^2 = 100.500625$ dollars.
+These values are the same as those obtained
+in \Part{subex:interest_balance_1month_2months}.
+\Figure{fig:interest_balance_24_months} shows a graph of the account
+balance within the first two years since the account was opened.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/interest.pdf}
+\caption{%%
+  A graph of the balance of a savings account for the first two years
+  since the account was opened.  The account has an initial balance of
+  $\$100$ and a monthly interest rate of $0.25\%$.
+}
+\label{fig:interest_balance_24_months}
+\end{figure}
+
+\solutionpart{subex:interest_200_dollars}
+After $t = 277$ months, your account balance would be approximately
+\[
+B(277)
+=
+100 \times 1.0025^{277}
+=
+199.6980
+\]
+dollars, rounded to four decimal places.  At the end of $t = 278$
+months, your account balance would be approximately
+\[
+B(278)
+=
+100 \times 1.0025^{278}
+=
+200.1972
+\]
+dollars, rounded to four decimal places.  Therefore you must wait
+$278$ months, or approximately $23$ years, in order for your account
+balance to be at least $\$200$.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
