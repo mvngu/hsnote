@@ -1209,4 +1209,114 @@ soup to be less than $15$ degrees Celsius.
 
 \section*{Problem}
 
+\begin{problem}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/chessboard.pdf}
+\caption{%%
+  A standard $8 \times 8$ chessboard.
+}
+\label{fig:chessboard}
+\end{figure}
+
+\item Consider the $64$ squares in the chessboard of
+  \Figure{fig:chessboard}, going from left to right, top to bottom.
+  You place one grain of sand on the first square.  The number of
+  grains of sand you place on the second square is doubled the number
+  of grains of sand on the first square.  On the third square, the
+  number of grains of sand you deposit is doubled the number of grains
+  of sand on the second square.  You continue this doubling process up
+  to and including the $64$-th square.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:sand_formula}
+    Derive a formula for the number of grains of sand on any given
+    square.  Use the formula to calculate the number of grains of sand
+    on the $64$-th square.
+
+  \item\label{subprob:sand_neurons_human_brain}
+    It is estimated that a human brain contains approximately
+    $86 \times 10^9 = 86,000,000,000$ neurons or $86$ billion
+    neurons.\footnote{
+      See the following paper for further details:
+      \url{https://doi.org/10.3389/neuro.09.031.2009}
+    }
+    How many times must you perform the doubling process above in
+    order for the number of grains of sand on a square to be greater
+    than $86$ billion?
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:sand_formula}
+Let $t \geq 0$ be the number of times that you perform the doubling
+process.  You start off with one grain of sand on the first square so
+the number of times you have performed the doubling process is zero.
+You perform the doubling process once to obtain the number of grains
+of sand for the second square.  To obtain the number of grains of sand
+for the third square, you must perform the doubling process three
+times.  In general, to obtain the number of grains of sand for the
+$n$-th square you must perform the doubling process a total of
+$t = n + 1$ times.
+
+Let $G(t)$ represent the number of grains of sand on square number
+$t + 1$.  For example, you have $G(0) = 1 = 2^0$ grain of sand on
+square number $0 + 1 = 1$.  You have $G(1) = 2 = 2^1$ grains of sand
+on square number $1 + 1 = 2$.  On square number $2 + 1 = 3$, you have
+$G(2) = 4 = 2^2$ grains of sand.  You have $G(3) = 8 = 2^3 = 8$ grains
+of sand on square number $3 + 1 = 4$.  Furthermore, you have
+$G(4) = 16 = 2^4$ grains of sand on square number $4 + 1 = 5$.  In
+general, you have $G(t) = 2^t$ grains of sand on square number
+$t + 1$.
+
+You can also derive the equation $G(t) = 2^t$ as follows.  The initial
+amount of sand is $a = 1$ grain.  The constant percentage rate of
+growth is $100\%$ so the rate of growth is $r = 1$, hence the growth
+factor is $b = 1 + 1 = 2$.  Using \Theorem{thm:exponential_growth},
+you can write
+\[
+G(t)
+=
+ab^t
+=
+1 \times 2^t
+=
+2^t.
+\]
+You have $G(63)$ grains of sand on square number $63 + 1 = 64$.
+Therefore the $64$-th square would have
+\[
+G(63)
+=
+2^{63}
+=
+9,223,372,036,854,775,808
+\]
+grains of sand.
+
+\solutionpart{subprob:sand_neurons_human_brain}
+For $t = 36$ you have
+\[
+G(36)
+=
+2^{36}
+=
+68,719,476,736
+\]
+grains of sand on square $36 + 1 = 37$.  For $t = 37$, you have
+\[
+G(37)
+=
+2^{37}
+=
+137,438,953,472
+\]
+grains of sand or over $137$ billion grains of sand on square
+$37 + 1 = 38$.  Therefore you must perform the doubling process at
+least $37$ times in order for a square to contain over $86$ billion
+grains of sand.
+\end{solution}
+}{}
+\end{problem}
+
 \end{document}
