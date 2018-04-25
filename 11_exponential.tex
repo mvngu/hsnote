@@ -547,6 +547,127 @@ least $100$ cells.
 \end{solution}
 }{}
 
+\begin{exercise}
+\textbf{Population of Sweden.}
+According to Statistiska centralbyr{\aa}n~(Statistics Sweden), by the
+end of February 2018 the population of Sweden was approximately
+$10.135303$ million people.\footnote{
+  Data are from the following website:
+  \url{https://web.archive.org/web/20180425041449/http://www.scb.se/BE0101-en},
+  accessed 2018-04-25.
+}
+This is an increase of $1.2\%$ since the same period in 2017.  Assume
+that the above figure is the population of Sweden in 2018.  Further
+assume that for the next few years the population of Sweden will
+increase by a constant percentage rate of $1.2\%$.
+%%
+\begin{packedenum}
+\item\label{subex:Sweden_population_growth_rate_factor}
+  Determine the constant growth rate and growth factor of the
+  population of Sweden.
+
+\item\label{subex:Sweden_population_2019_2020}
+  Calculate the projected population of Sweden in the years 2019 and
+  2020.
+
+\item\label{subex:Sweden_population_formula_graph}
+  Derive a formula for the population of Sweden after $t$ years since
+  2018.  Use the formula to check your results
+  from \Part{subex:Sweden_population_2019_2020}.  Produce a graph of
+  the population of Sweden from the year 2018 up to and including
+  2030.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:Sweden_population_growth_rate_factor}
+The constant percentage growth rate is $1.2\%$.  Divide this number by
+$100$ to get the constant growth rate of $r = 1.2 / 100 = 0.012$.
+Then the growth factor is $b = 1 + 0.012 = 1.012$.
+
+\solutionpart{subex:Sweden_population_2019_2020}
+At time $t = 0$, the year is 2018 and the population is assumed to be
+$10.135303$ million people.  At time $t = 1$, the year would be 2019
+and the population would have increased by $10.135303 \times 0.012$
+million people.  Add this number to the population at time $t = 0$ to
+get
+%%
+\begin{align*}
+&10.135303 + 10.135303 \times 0.012 \\[4pt]
+&=
+10.135303 (1 + 0.012) \\[4pt]
+&=
+10.135303 \times 1.012 \\[4pt]
+&=
+10.256926636
+\end{align*}
+%%
+million people, which is the projected population of Sweden in 2019.
+At time $t = 2$, the year would be 2020 and the population would have
+increased by
+\[
+10.256926636 \times 0.012
+\]
+million people.  Add this number to the population at time $t = 1$ and
+you obtain
+%%
+\begin{align*}
+&10.256926636 + 10.256926636 \times 0.012 \\[4pt]
+&=
+10.256926636 (1 + 0.012) \\[4pt]
+&=
+10.256926636 \times 1.012 \\[4pt]
+&=
+10.380009755632
+\end{align*}
+%%
+million people, which is the projected population of Sweden in 2020.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/population-sweden.pdf}
+\caption{%%
+  The projected population of Sweden from the year 2018 up to and
+  including 2030.  It is assumed that the population of Sweden in 2018
+  is $10.135303$ million people and that the population increases by a
+  constant percentage rate of $1.2\%$ per annum.
+}
+\label{fig:population_Sweden}
+\end{figure}
+
+\solutionpart{subex:Sweden_population_formula_graph}
+You assume that the population of $a = 10.135303$ million people in
+2018 is the initial population.
+From \Part{subex:Sweden_population_growth_rate_factor} you know that
+the growth factor is $b = 1.012$.  If $Q(t)$ represents the
+population~(in millions) of Sweden in $t$ years since 2018, use
+\Theorem{thm:exponential_growth} to write
+$Q(t) = 10.135303 \times 1.012^t$.  Using the latter formula, at
+$t = 1$ year since 2018 the population of Sweden is projected to be
+\[
+Q(1)
+=
+10.135303 \times 1.012^1
+=
+10.256926636
+\]
+million people.  At $t = 2$ years since 2018, the projected population
+of Sweden is
+\[
+Q(2)
+=
+10.135303 \times 1.012^2
+=
+10.380009755632
+\]
+million people.  These numbers are consistent with the results
+in \Part{subex:Sweden_population_2019_2020}.
+\Figure{fig:population_Sweden} shows a graph of the projected
+population of Sweden from 2018 up to and including the year 2030.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
