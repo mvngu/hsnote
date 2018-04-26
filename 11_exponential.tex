@@ -683,6 +683,12 @@ increase by a constant percentage rate of $1.2\%$ per annum.
   from \Part{subex:Sweden_population_2019_2020}.  Produce a graph of
   the population of Sweden from the year 2018 up to and including
   2030.
+
+\item\label{subex:Sweden_population_doubling_time}
+  Use the rule of $72$ to calculate a rough estimate of the doubling
+  time of the population of Sweden.  Verify your result with the
+  formula from \Part{subex:Sweden_population_formula_graph} and use
+  the formula to obtain an upper bound on the doubling time.
 \end{packedenum}
 \end{exercise}
 
@@ -750,8 +756,16 @@ From \Part{subex:Sweden_population_growth_rate_factor} you know that
 the growth factor is $b = 1.012$.  If $Q(t)$ represents the
 population~(in millions) of Sweden in $t$ years since 2018, use
 \Theorem{thm:exponential_growth} to write
-$Q(t) = 10.135303 \times 1.012^t$.  Using the latter formula, at
-$t = 1$ year since 2018 the population of Sweden is projected to be
+%%
+\begin{equation}
+\label{eqn:Sweden_population_formula}
+Q(t)
+=
+10.135303 \times 1.012^t.
+\end{equation}
+%%
+Using the latter formula, at $t = 1$ year since 2018 the population of
+Sweden is projected to be
 \[
 Q(1)
 =
@@ -772,6 +786,45 @@ million people.  These numbers are consistent with the results
 in \Part{subex:Sweden_population_2019_2020}.
 \Figure{fig:population_Sweden} shows a graph of the projected
 population of Sweden from 2018 up to and including the year 2030.
+
+\solutionpart{subex:Sweden_population_doubling_time}
+You want to determine the amount of time~(in years) required for the
+population of Sweden to increase from $10.135303$ million people to
+$10.135303 \times 2 = 20.270606$ million people.  Since the population
+is assumed to grow at a constant percentage rate of $1.2\%$ per annum,
+the rule of $72$ yields a doubling time of approximately
+$72 / 1.2 = 60$ years.  Substituting the value of $t = 60$ into
+\Equation{eqn:Sweden_population_formula} shows that after $60$ years
+since $2018$ the population of Sweden would have increased to
+approximately
+\[
+Q(60)
+=
+10.135303 \times 1.012^{60}
+\approx
+20.7332548929601
+\]
+million people, which is higher than the required number of
+$20.270606$ million people.  However, if you substitute $t = 59$ into
+\Equation{eqn:Sweden_population_formula} you get
+\[
+Q(59)
+=
+10.135303 \times 1.012^{59}
+\approx
+20.4874060207115
+\]
+and substituting $t = 58$ into
+\Equation{eqn:Sweden_population_formula} again shows that
+\[
+Q(58)
+=
+10.135303 \times 1.012^{58}
+\approx
+20.2444723524818.
+\]
+Therefore the required doubling time is approximately $60$ years and
+at most $59$ years.
 \end{solution}
 }{}
 
