@@ -622,6 +622,35 @@ Q(6)
 cells, rounded to the nearest integer.  Therefore you must wait at
 most six hours in order for the bacteria population to be at least
 $100$ cells.
+
+\solutionpart{subex:bacteria_doubling_time}
+You want to know the amount of time required for the bacteria
+population to increase from the initial population of $10$ cells to
+$20$ cells.  Since the bacteria population grows at a constant
+percentage rate of $56\%$ per hour, the rule of $72$ states that the
+doubling time of the population is approximately $72 / 56 = 1.2857$
+hours, rounded to four decimal places.  Substituting this value into
+\Equation{eqn:bacterial_growth} shows that after approximately
+$1.2857$ hours the number of bacteria cells has increased to
+\[
+Q(1.2857)
+=
+10 \times 1.56^{1.2857}
+\approx
+17.7133
+\]
+cells, rounded to four decimal places.  This is below $20$ cells.  If
+you substitute $t = 2$ hours into \Equation{eqn:bacterial_growth}, you
+obtain
+\[
+Q(2)
+=
+10 \times 1.56^2
+\approx
+24.336.
+\]
+In other words, the doubling time of the bacteria population is
+approximately $1.2857$ hours and at most $2$ hours.
 \end{solution}
 }{}
 
