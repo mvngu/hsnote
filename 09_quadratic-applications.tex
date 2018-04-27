@@ -945,6 +945,139 @@ t_2
 \end{solution}
 }{}
 
+\begin{exercise}
+You hold a small marble in your right hand.  The distance from your
+right hand to the ground is one metre.  You throw the marble upward at
+an initial velocity of eight metres per second.  Suppose that the
+marble travels in a straight line upward, then falls to the ground
+after a certain amount of time.
+%%
+\begin{packedenum}
+\item\label{subprob:marble_distance_function}
+  Write a function for the position~(in metres above the ground) of
+  the marble.
+
+\item\label{subprob:marble_time_to_land}
+  After you have thrown the marble upward, determine the amount of
+  time~(in seconds) required for the marble to reach the ground.
+
+\item\label{subprob:marble_maximum_height}
+  Calculate the maximum height~(in metres above the ground) that the
+  marble reaches.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:marble_distance_function}
+The initial height~(above the ground) of the marble is $h = 1$ metre
+and the initial velocity of the marble is $v = 8$ metres per second.
+Substitute these values into
+\Expression{eqn:position_of_object_under_free_fall} and you obtain
+\[
+f(t)
+=
+-\frac{1}{2}gt^2 + 8t + 1.
+\]
+Here $g = 9.8$ metres per second squared is the force of gravity, $t$
+represents time in seconds, and $f(t)$ is a function of the height~(in
+metres above the ground) of the marble.
+
+\solutionpart{subprob:marble_time_to_land}
+The amount of time required for the marble to reach the ground is
+equivalent to the roots of $f(t)$.  The quadratic formula shows that
+the roots of $f(t)$ are given by
+%%
+\begin{align*}
+t
+&=
+\frac{
+  -8
+  \pm
+  \sqrt{8^2 - 4\parenthesis*{-\frac{1}{2}g}(1)}
+}{
+  2\parenthesis*{-\frac{1}{2}g}
+} \\[4pt]
+&=
+\frac{
+  -8
+  \pm
+  \sqrt{64 + 2g}
+}{
+  -g
+}.
+\end{align*}
+%%
+One root is
+\[
+t_1
+=
+\frac{
+  -8
+  -
+  \sqrt{64 + 2g}
+}{
+  -g
+}
+\approx
+1.7493
+\]
+and the other root is
+\[
+t_2
+=
+\frac{
+  -8
+  +
+  \sqrt{64 + 2g}
+}{
+  -g
+}
+\approx
+-0.1167
+\]
+both rounded to four decimal places.  You reject the root $t_2$
+because it does not make sense in the context of the problem.
+Conclude that after you have thrown the marble upward, the marble
+requires approximately $1.7493$ seconds to reach the ground.
+
+\solutionpart{subprob:marble_maximum_height}
+The maximum height~(in metres above the ground) that the marble
+reaches is equivalent to the vertex of $f(t)$.  The horizontal
+coordinate of the vertex is
+\[
+t
+=
+\frac{
+  -8
+}{
+  2\parenthesis*{-\frac{1}{2}g}
+}
+=
+\frac{8}{g}
+\]
+and the vertical coordinate of the vertex is
+%%
+\begin{align*}
+f(8/g)
+&=
+-\frac{1}{2}g\parenthesis*{\frac{8}{g}}^2
++
+8\parenthesis*{\frac{8}{g}}
++
+1 \\[4pt]
+&=
+\frac{32}{g} + 1.
+\end{align*}
+%%
+In other words, the marble reaches a maximum height of approximately
+$f(8/g) \approx 4.2653$ metres above the ground, rounded to four
+decimal places.  This occurs at approximately $t \approx 0.8163$
+seconds~(rounded to four decimal places) after the marble was thrown
+upward.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1676,136 +1809,6 @@ R(450)
 \]
 Therefore if each unit of FantasticTV is sold at $450$ dollars, then
 the maximum revenue would be $20,250$ dollars.
-\end{solution}
-}{}
-
-\item You hold a small marble in your right hand.  The distance from
-  your right hand to the ground is one metre.  You throw the marble
-  upward at an initial velocity of eight metres per second.  Suppose
-  that the marble travels in a straight line upward, then falls to the
-  ground after a certain amount of time.
-  %%
-  \begin{packedenum}
-  \item\label{subprob:marble_distance_function}
-    Write a function for the position~(in metres above the ground) of
-    the marble.
-
-  \item\label{subprob:marble_time_to_land}
-    After you have thrown the marble upward, determine the amount of
-    time~(in seconds) required for the marble to reach the ground.
-
-  \item\label{subprob:marble_maximum_height}
-    Calculate the maximum height~(in metres above the ground) that the
-    marble reaches.
-  \end{packedenum}
-\ifbool{showSolution}{
-\begin{solution}
-\solutionpart{subprob:marble_distance_function}
-The initial height~(above the ground) of the marble is $h = 1$ metre
-and the initial velocity of the marble is $v = 8$ metres per second.
-Substitute these values into
-\Expression{eqn:position_of_object_under_free_fall} and you obtain
-\[
-f(t)
-=
--\frac{1}{2}gt^2 + 8t + 1.
-\]
-Here $g = 9.8$ metres per second squared is the force of gravity, $t$
-represents time in seconds, and $f(t)$ is a function of the height~(in
-metres above the ground) of the marble.
-
-\solutionpart{subprob:marble_time_to_land}
-The amount of time required for the marble to reach the ground is
-equivalent to the roots of $f(t)$.  The quadratic formula shows that
-the roots of $f(t)$ are given by
-%%
-\begin{align*}
-t
-&=
-\frac{
-  -8
-  \pm
-  \sqrt{8^2 - 4\parenthesis*{-\frac{1}{2}g}(1)}
-}{
-  2\parenthesis*{-\frac{1}{2}g}
-} \\[4pt]
-&=
-\frac{
-  -8
-  \pm
-  \sqrt{64 + 2g}
-}{
-  -g
-}.
-\end{align*}
-%%
-One root is
-\[
-t_1
-=
-\frac{
-  -8
-  -
-  \sqrt{64 + 2g}
-}{
-  -g
-}
-\approx
-1.7493
-\]
-and the other root is
-\[
-t_2
-=
-\frac{
-  -8
-  +
-  \sqrt{64 + 2g}
-}{
-  -g
-}
-\approx
--0.1167
-\]
-both rounded to four decimal places.  You reject the root $t_2$
-because it does not make sense in the context of the problem.
-Conclude that after you have thrown the marble upward, the marble
-requires approximately $1.7493$ seconds to reach the ground.
-
-\solutionpart{subprob:marble_maximum_height}
-The maximum height~(in metres above the ground) that the marble
-reaches is equivalent to the vertex of $f(t)$.  The horizontal
-coordinate of the vertex is
-\[
-t
-=
-\frac{
-  -8
-}{
-  2\parenthesis*{-\frac{1}{2}g}
-}
-=
-\frac{8}{g}
-\]
-and the vertical coordinate of the vertex is
-%%
-\begin{align*}
-f(8/g)
-&=
--\frac{1}{2}g\parenthesis*{\frac{8}{g}}^2
-+
-8\parenthesis*{\frac{8}{g}}
-+
-1 \\[4pt]
-&=
-\frac{32}{g} + 1.
-\end{align*}
-%%
-In other words, the marble reaches a maximum height of approximately
-$f(8/g) \approx 4.2653$ metres above the ground, rounded to four
-decimal places.  This occurs at approximately $t \approx 0.8163$
-seconds~(rounded to four decimal places) after the marble was thrown
-upward.
 \end{solution}
 }{}
 
