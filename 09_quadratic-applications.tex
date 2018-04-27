@@ -1923,6 +1923,141 @@ distance of $b - 1$ metres from their site of launch, then they are
 both at a vertical distance of $b - 1$ metres from ground level.
 \end{solution}
 }{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/09/planets-missing.tex}
+\caption{%%
+  The orbital period of a planet as a function of its distance~(in
+  gigametres) to the Sun.  The third, fourth, and fifth columns are
+  reserved for the orbital periods~(exact, Kepler's equation,
+  quadratic equation) of each planet.  The orbital period of a planet
+  is the number of Earth days required for the planet to complete one
+  orbit around the Sun.  The planet Earth has an orbital period of
+  $365.2$ Earth days.  The third column contains the exact orbital
+  period of each planet, as provided by NASA.  The fourth column
+  should contain the orbital periods as calculated by Kepler's
+  \Equation{eqn:Earth_days_orbit_Kepler}.  The fifth column should
+  contain the orbital periods as calculated by the quadratic
+  \Equation{eqn:Earth_days_orbit_approximation}.
+}
+\label{tab:planet_distance_to_Sun}
+\end{table}
+
+\item In the Solar System, the distance from any planet to the Sun is
+  measured in terms of astronomical unit~(in symbol AU).  One
+  astronomical unit~(or $1$~AU) is defined by the International
+  Astronomical Union as equivalent to exactly $149,597,870,700$
+  metres,\footnote{
+    See the following document for further details:
+    \url{http://web.archive.org/web/20180427004114/https://www.iau.org/static/resolutions/IAU2012_English.pdf},
+    accessed 2018-04-27.
+  }
+  which is roughly the average distance from Earth to the Sun.
+  Dividing one astronomical unit by $1000$ gives
+  %%
+  \begin{equation}
+  \label{eqn:astronomical_unit_over_1000}
+  149597870700 / 1000
+  =
+  149,597,870.7
+  \end{equation}
+  %%
+  kilometres.  You can also measure the distance from any planet to
+  the Sun in terms of gigametres~(or Gm).  One gigametre~(or $1$~Gm)
+  is equivalent to $10^6$ kilometres.  Dividing
+  \Expression{eqn:astronomical_unit_over_1000} by $10^6$ shows that
+  one astronomical unit is equivalent to
+  \[
+  149597870.7 / 10^6
+  =
+  149.5978707
+  \]
+  gigametres.  In other words, the average distance from Earth to the
+  Sun is approximately $149.6$ Gm, rounded to one decimal place.
+  Suppose $x$ represents the distance~(in gigametres) from a planet to
+  the Sun.  If $f(x)$ represents the number of Earth days required for
+  a planet to complete one orbit around the sun, then $f(x)$ can be
+  approximated as the quadratic function
+  %%
+  \begin{equation}
+  \label{eqn:Earth_days_orbit_approximation}
+  f(x)
+  =
+  0.0016x^2 + 6.3044x - 770.2297.
+  \end{equation}
+  %%
+  \begin{packedenum}
+  \item\label{subprob:planetary_orbit_quadratic}
+    \Table{tab:planet_distance_to_Sun} shows the distances~(in Gm) of
+    various planets to the Sun and the corresponding orbital periods.
+    The data are provided by NASA.\footnote{
+      See the following website:
+      \url{http://web.archive.org/web/20180427010804/https://nssdc.gsfc.nasa.gov/planetary/factsheet/},
+      accessed 2018-04-27.
+    }
+    Use \Expression{eqn:Earth_days_orbit_approximation} to fill in the
+    missing entries of column $5$ of
+    \Table{tab:planet_distance_to_Sun}.
+
+  \item\label{subprob:planetary_orbit_Kepler}
+    In the $17$-th century, Johannes Kepler discovered a formula to
+    determine the orbital period of planets in the Solar System.
+    Kepler found that if $x$ represents the distance~(in gigametres)
+    from a planet to the Sun, then the number $g(x)$ of Earth days
+    required for the planet to complete one orbit around the Sun is
+    given by\footnote{
+      The equation is from page~27 of the following book:
+      \url{http://web.archive.org/web/20180427045920/https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Practical_Meteorology-v1.02b-WholeBookColor.pdf},
+      accessed 2018-04-27.
+    }
+    %%
+    \begin{equation}
+    \label{eqn:Earth_days_orbit_Kepler}
+    g(x)
+    =
+    0.1996x^{1.5}.
+    \end{equation}
+    %%
+    Use \Equation{eqn:Earth_days_orbit_Kepler} to fill in the missing
+    entries of column $4$ of \Table{tab:planet_distance_to_Sun}.
+
+  \item\label{subprob:planetary_orbit_comparison}
+    Based on your results
+    from \Parts{subprob:planetary_orbit_quadratic}{subprob:planetary_orbit_Kepler},
+    explain which of the
+    \Equations{eqn:Earth_days_orbit_approximation}{eqn:Earth_days_orbit_Kepler}
+    provides a better approximation to the exact orbital periods of
+    the given planets.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:planetary_orbit_quadratic}
+\solutionpart{subprob:planetary_orbit_Kepler}
+\solutionpart{subprob:planetary_orbit_comparison}
+\Table{tab:planet_orbital_periods} shows the completed version of
+\Table{tab:planet_distance_to_Sun} with all missing entries filled
+in.  As can be seen from \Table{tab:planet_orbital_periods}, Kepler's
+\Formula{eqn:Earth_days_orbit_Kepler} generally provides a better
+approximation of the orbital periods than
+\Equation{eqn:Earth_days_orbit_approximation}, except for the planets
+Uranus and Neptune.
+
+\begin{table}[!htbp]
+\centering
+\input{table/09/planets-complete.tex}
+\caption{%%
+  The orbital period of a planet as a function of its distance~(in
+  gigametres) to the Sun.  This is the same as
+  \Table{tab:planet_distance_to_Sun}, but missing entries have been
+  filled in.  All numbers in the fourth and fifth columns have been
+  rounded to one decimal place.
+}
+\label{tab:planet_orbital_periods}
+\end{table}
+
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
