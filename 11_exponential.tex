@@ -1529,6 +1529,181 @@ pay.  In this case, you want the interest rate to be as low as
 possible and the time between interest calculation to be as long as
 possible.
 
+\begin{example}
+\textbf{Savings account.}
+At the start of a new year, you open a savings account and deposit
+$\$100$ into the account.  The account earns an interest of $3\%$ per
+annum, where interest is calculated every six months~(i.e.~the
+compounding period is half-yearly).  Assume that once you have
+deposited the $\$100$, you leave the account alone to accrue interest
+and no longer deposit any more money into the account.
+%%
+\begin{packedenum}
+\item\label{subeg:savings_6months_initial_balance}
+  Determine the initial balance of your account.
+
+\item\label{subeg:savings_6months_growth_rate}
+  Determine the half-yearly interest rate.  Use this value to
+  calculate the half-yearly growth rate and the half-yearly growth
+  factor of your savings account.
+
+\item\label{subeg:savings_6months_balance_first_year}
+  Use the same technique as in
+  \Expression{eqn:Australian_population_2018_calculation} to calculate
+  the balance of your account at the end of the first six months.
+  Calculate the balance of your account at the end of the first year.
+
+\item\label{subeg:savings_6months_balance_formula}
+  Derive a formula for the balance of your account after $t$
+  compounding periods.  Use the formula to verify your results
+  from \Part{subeg:savings_6months_balance_first_year}.  Produce a
+  graph of the balance of your account within the first two years
+  since you opened the account.
+
+\item\label{subeg:savings_6months_doubling_time}
+  Estimate the doubling time of your savings account.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:savings_6months_initial_balance}
+Your account has an initial balance of $\$100$.
+
+\solutionpart{subeg:savings_6months_growth_rate}
+The annual interest rate is $3\%$.  However, interest is calculated
+every six months.  That is, interest is compounded twice a year.
+Divide $3$ by the number of compounding periods per year to get
+$3 / 2 = 1.5$.  In other words, the half-yearly interest rate is
+$1.5\%$.  The half-yearly growth rate is $r = 0.015$, hence the
+half-yearly growth factor is $b = 1 + 0.015 = 1.015$.
+
+\solutionpart{subeg:savings_6months_balance_first_year}
+At the end of the first six months~(i.e.~$t = 1$, the time of the
+first compounding), you would have earned an interest of
+$100 \times 0.015$ dollars.  Add this amount to the initial balance to
+get
+%%
+\begin{align*}
+100 + 100 \times 0.015
+&=
+100 (1 + 0.015) \\[4pt]
+&=
+100 \times 1.015 \\[4pt]
+&=
+101.5.
+\end{align*}
+%%
+After the first six months, your account balance would be
+$\$101.50$.  At the end of the first year~(i.e.~$t = 2$, the time of
+the second compounding), you would earn $101.5 \times 0.015$ dollars
+in interest.  Add this amount to the balance at time $t = 1$ and you
+have
+%%
+\begin{align*}
+101.5 + 101.5 \times 0.015
+&=
+101.5 (1 + 0.015) \\[4pt]
+&=
+101.5 \times 1.015 \\[4pt]
+&=
+103.0225.
+\end{align*}
+%%
+At the end of the first year, your account balance would be
+approximately $\$103.02$, rounded to the nearest cent.
+
+\solutionpart{subeg:savings_6months_balance_formula}
+Let $t$ be the number of compounding periods, i.e.~the number of times
+interest has been calculated.  Since interest is calculated every six
+months, multiply $t$ by $6$ to see that when interest has been
+compounded $t$ times then $6t$ months would have elapsed.  The initial
+balance is $a = 100$ dollars and the constant growth factor is
+$b = 1.015$.  If $B(t)$ represents the balance of your account when
+interest has been compounded $t$ times, use
+\Theorem{thm:exponential_growth} to write
+%%
+\begin{equation}
+\label{eqn:compound_interest_a100_b1.015}
+B(t)
+=
+100 \times 1.015^t.
+\end{equation}
+%%
+The time of $t = 1$ corresponds to the end of the first six months.
+Substitute $t = 1$ into \Equation{eqn:compound_interest_a100_b1.015}
+to see that at the end of the first six months your account balance
+would be
+\[
+B(1)
+=
+100 \times 1.015^1
+=
+101.5
+\]
+dollars.  The time of $t = 2$ corresponds to the end of the first
+year.  Substituting $t = 2$ into
+\Equation{eqn:compound_interest_a100_b1.015} shows that at the end of
+the first year your account balance would be
+\[
+B(2)
+=
+100 \times 1.015^2
+=
+103.0225
+\]
+dollars.  These balance amounts are consistent with the results
+from \Part{subeg:savings_6months_balance_first_year}.
+\Figure{fig:compound_interest_a100_b1.015} shows a graph of the
+balance of the savings account over a period of two years.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/interest-half-yearly.pdf}
+\caption{%%
+  The balance of a savings account over a period of two years.  The
+  initial balance is $\$100$ with an interest rate of $3\%$ per annum,
+  compounded every six months.
+}
+\label{fig:compound_interest_a100_b1.015}
+\end{figure}
+
+\solutionpart{subeg:savings_6months_doubling_time}
+You can use the rule of $72$ to obtain a rough estimate of the time
+required for your account balance to double.  With a half-yearly
+interest rate of $1.5\%$, the rule of $72$ states that the initial
+balance would double roughly after $72 / 1.5 = 48$ compounding
+periods.  Substitute $t = 48$ into
+\Equation{eqn:compound_interest_a100_b1.015} and you have
+\[
+B(48)
+=
+100 \times 1.015^{48}
+\approx
+204.35
+\]
+dollars, rounded to the nearest cent.  Substituting $t = 47$ into
+\Equation{eqn:compound_interest_a100_b1.015} yields
+\[
+B(47)
+=
+100 \times 1.015^{47}
+\approx
+201.33
+\]
+dollars.  Repeat the above process for $t = 46$ to get
+\[
+B(46)
+=
+100 \times 1.015^{46}
+\approx
+198.35
+\]
+dollars.  That is, your account balance will double after at most
+$47$ compounding periods.  Since each interest calculation occurs
+every six months, $47$ compounding periods are equivalent to
+$47 \times 6 = 282$ months or $282 / 12 = 23.5$ years.
+\end{solution}
+
 \begin{exercise}
 \textbf{Interest.}
 At the start of a new year, you opened a savings account and deposited
