@@ -984,7 +984,85 @@ amount of water in the bucket to decrease to $50\%$ of the original
 quantity?  That is, how long would it require for the amount of water
 in the bucket to decrease to $3 / 2 = 1.5$ litres?  You can use the
 formula that models the amount of water in the bucket to estimate the
-half-life of the model.  The next example clarifies this point.
+half-life of the model.  \Example{eg:water_level} clarifies this
+point.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/water.pdf}
+\caption{%%
+  The amount~(in litres) of water remaining in the bucket after $t$
+  minutes.  The bucket has an initial amount of three litres of water
+  and water leaks out of the bucket at a constant percentage rate of
+  $5.6\%$ per minute.
+}
+\label{fig:bucket_water_level}
+\end{figure}
+
+\begin{example}
+\label{eg:water_level}
+\textbf{Water level.}
+A bucket contains three litres of water.  Water leaks out of the
+bucket at a constant percentage rate of $5.6\%$ per minute.
+%%
+\begin{packedenum}
+\item\label{subex:water_level_formula}
+  Derive a formula that models the amount~(in litres) of water in the
+  bucket after $t$ minutes.  Use the formula to produce a graph of the
+  amount of water in the bucket up to $t = 70$ minutes.
+
+\item\label{subex:water_level_half_life}
+  Use the formula from \Part{subex:water_level_formula} to estimate
+  the half-life of the exponential decay model.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:water_level_formula}
+The initial amount of water is $a = 3$ litres.  The constant decay
+rate is $r = 5.6 / 100 = 0.056$ per minute, thus the decay factor is
+$b = 1 - 0.056 = 0.944$.  If $W(t)$ represents the amount~(in litres)
+of water in the bucket after $t$ minutes, use
+\Theorem{thm:exponential_decay} to write
+%%
+\begin{equation}
+\label{eqn:bucket_water_level}
+W(t)
+=
+3 \times 0.944^t.
+\end{equation}
+%%
+See \Figure{fig:bucket_water_level} for a graph of the amount of water
+in the bucket up to $70$ minutes.
+
+\solutionpart{subex:water_level_half_life}
+The half-life of the exponential model~\eqref{eqn:bucket_water_level}
+is the amount of time~(in minutes) required for the quantity of water
+in the bucket to decrease to $50\%$ of the original amount.  The
+bucket originally has three litres of water.  You want to know how
+long you must wait for the quantity of water in the bucket to decrease
+to $3 / 2 = 1.5$ litres.  Substituting $t = 12$ into
+\Equation{eqn:bucket_water_level} yields
+\[
+W(12)
+=
+3 \times 0.944^{12}
+\approx
+1.5024
+\]
+litres, rounded to four decimal places.  Furthermore, substitute
+$t = 13$ into \Equation{eqn:bucket_water_level} and you get
+\[
+W(13)
+=
+3 \times 0.944^{13}
+\approx
+1.4183
+\]
+litres, also rounded to four decimal places.  Therefore the half-life
+of the model~\eqref{eqn:bucket_water_level} is approximately $12$
+minutes.
+\end{solution}
 
 \begin{example}
 \label{eg:radiocarbon_dating}
