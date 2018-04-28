@@ -636,7 +636,22 @@ pressure.  From the formulae
 in~\eqref{eqn:linear_regression_alpha_hat_beta_hat} you can
 approximate the values of $a$ and $b$ by $\alphahat$ and $\betahat$,
 respectively.  \Table{tab:blood_pressure_regression} shows the
-detailed calculation of the regression line.  Now you can approximate
+detailed calculation of the regression line.  In
+\Table{tab:blood_pressure_regression}, sum along the column labelled
+$d(x_i) d(y_i)$ to get
+\[
+\sum_{i=1}^n d(x_i) d(y_i)
+\approx
+6585.866667
+\]
+rounded to six decimal places.  Similarly, sum along the column
+labelled $d(x_i) d(x_i)$ and you have
+\[
+\sum_{i=1}^n d(x_i) d(x_i)
+\approx
+6783.466667
+\]
+also rounded to six decimal places.  Now you can approximate
 $\alphahat$ as
 \[
 \alphahat
@@ -684,7 +699,7 @@ f(70)
 167
 \end{align*}
 %%
-rounded to zero decimal places.
+rounded to the nearest integer.
 
 \begin{table}[!htbp]
 \centering
@@ -722,7 +737,7 @@ f(-3)
 96
 \end{align*}
 %%
-rounded to zero decimal places.  The value $f(-3) \approx 96$ does not
+rounded to the nearest integer.  The value $f(-3) \approx 96$ does not
 make sense because it predicts the systolic blood pressure of someone
 who is years before being born.  The data in
 \Table{tab:blood_pressure} cover people who are from $17$ to $69$
