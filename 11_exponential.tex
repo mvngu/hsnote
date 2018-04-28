@@ -1791,6 +1791,7 @@ time of your account balance is at most $24$ years.
 }{}
 
 \begin{example}
+\label{eg:savings_quarterly_compounding}
 \textbf{Quarterly compounding.}
 Suppose that in \Example{eg:savings_6months} interest is compounded
 once every three months.
@@ -1884,144 +1885,88 @@ $\frac{93 \times 3}{12} = 23.25$ years.
 
 \begin{exercise}
 \textbf{Monthly compounding.}
-At the start of a new year, you opened a savings account and deposited
-$\$100$ into the account.  The account earns an interest of $3\%$ per
-annum, where interest is calculated monthly.  Assume that once you
-have deposited the $\$100$, you leave the account alone to accrue
-interest and no longer deposit any more money into the account.
+Suppose that in \Example{eg:savings_6months} interest is calculated
+once per month.
 %%
 \begin{packedenum}
-\item\label{subex:interest_initial_balance}
-  Determine the initial balance of the account.
-
-\item\label{subex:interest_growth_rate}
-  Determine the monthly interest rate.  Use this value to calculate
-  the monthly growth rate and hence the monthly growth factor of
-  your savings account.
-
-\item\label{subex:interest_balance_1month_2months}
-  Use the same technique as in
-  \Expression{eqn:Australian_population_2018_calculation} to calculate
-  the balance of your account at the end of the first month.
-  Calculate the balance of your account at the end of the second
-  month.
-
-\item\label{subex:interest_balance_formula}
+\item\label{subex:savings_monthly_formula}
   Derive a formula for the balance of your account after $t$ months.
-  Use the formula to verify your results
-  from \Part{subex:interest_balance_1month_2months}.  Produce a graph
-  of the balance of your account within the first two years since you
-  opened the account.
+  Produce a graph of the balance of your account.  On the same set of
+  axes, draw the graphs from
+  \Subexample{eg:savings_6months}{subeg:savings_6months_balance_formula},
+  \Subexercise{ex:savings_once_annually}{subex:savings_1year_formula},
+  and
+  \Subexample{eg:savings_quarterly_compounding}{subeg:savings_quarterly_formula}.
+  The time frame on the horizontal axis should be from the $30$-th
+  month up to and including the $36$-th month since opening the
+  account.
 
-\item\label{subex:interest_200_dollars}
-  How long must you wait for the balance of your account to be at
-  least $\$200$?
+\item\label{subex:savings_monthly_doubling_time}
+  Estimate the doubling time of your account balance.
 \end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
-\solutionpart{subex:interest_initial_balance}
-The account initially has a balance of $\$100$ so the initial balance
-of your account is $\$100$.
-
-\solutionpart{subex:interest_growth_rate}
-Since the yearly interest rate is $3\%$, divide the number $3$ by $12$
-months to see that the monthly interest rate is $3 / 12 = 0.25$ or
-$0.25\%$, which is less than one percent.  The monthly growth rate is
-obtained by dividing $0.25$ by $100$.  Doing so gives you a monthly
-growth rate of $r = 0.25 / 100 = 0.0025$ and hence the monthly growth
-factor is $b = 1 + 0.0025 = 1.0025$.
-
-\solutionpart{subex:interest_balance_1month_2months}
-At the end of the first month, your account would have accrued an
-interest of $100 \times 0.0025$ dollars.  Add this amount to the
-initial balance to see that by the end of the first month your account
-balance would be
-%%
-\begin{align*}
-100 + 100 \times 0.0025
-&=
-100 (1 + 0.0025) \\[4pt]
-&=
-100 \times 1.0025 \\[4pt]
-&=
-100.25
-\end{align*}
-%%
-dollars.  At the end of the second month, your account would have
-accrued $100.25 \times 0.0025$ dollars in interest.  Add this amount
-to the balance at the end of the first month to get the balance at the
-end of the second month.  By the end of the second month, your account
-balance would be
-%%
-\begin{align*}
-100.25 + 100.25 \times 0.0025
-&=
-100.25 (1 + 0.0025) \\[4pt]
-&=
-100.25 \times 1.0025 \\[4pt]
-&=
-100.500625
-\end{align*}
-%%
-dollars.
-
-\solutionpart{subex:interest_balance_formula}
-By \Parts{subex:interest_initial_balance}{subex:interest_growth_rate},
-you know that the initial balance is $a = 100$ dollars and the monthly
-growth factor is $b = 1.0025$.  If $B(t)$ represents the balance of
-your account at the end of $t$ months, use
-\Theorem{thm:exponential_growth} to write $B(t)$ as
+\solutionpart{subex:savings_monthly_formula}
+The initial balance is $a = 100$ dollars and the interest rate is
+$3\%$ per annum.  Since interest is calculated once a month, the
+monthly interest rate is $3\% / 12 = 0.25\%$, the monthly growth rate
+is $r = 0.25 / 100 = 0.0025$, and the monthly growth factor is
+$b = 1 + 0.0025 = 1.0025$.  Each compounding period corresponds to one
+month.  If $B(t)$ represents the balance of your account at the end of
+$t$ months, use \Theorem{thm:exponential_growth} to write $B(t)$ as
 %%
 \begin{equation}
-\label{eqn:interest_formula_monthly_balance}
+\label{eqn:savings_monthly_balance}
 B(t)
 =
 100 \times 1.0025^t.
 \end{equation}
 %%
-Using \Formula{eqn:interest_formula_monthly_balance}, you have a
-balance of $B(1) = 100 \times 1.0025^1 = 100.25$ dollars at the end of
-month $t = 1$.  Furthermore, by the end of month $t = 2$ your account
-balance would be $B(2) = 100 \times 1.0025^2 = 100.500625$ dollars.
-These values are the same as those obtained
-in \Part{subex:interest_balance_1month_2months}.
-\Figure{fig:interest_balance_24_months} shows a graph of the account
-balance within the first two years since the account was opened.
+\Figure{fig:savings_monthly_comparison} shows a comparison of the
+account balance from the $30$-th month up to the $36$-th month since
+opening the account.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=1.1]{image/11/interest.pdf}
+\includegraphics[scale=1.1]{image/11/interest-monthly.pdf}
 \caption{%%
-  A graph of the balance of a savings account for the first two years
-  since the account was opened.  The account has an initial balance of
-  $\$100$ and a monthly interest rate of $0.25\%$.
+  The balance of a savings account from the $30$-th month up to and
+  including the $36$-th month since the account was opened.  The
+  account has an initial balance of $\$100$ and an interest rate of
+  $3\%$ per annum.
 }
-\label{fig:interest_balance_24_months}
+\label{fig:savings_monthly_comparison}
 \end{figure}
 
-\solutionpart{subex:interest_200_dollars}
-After $t = 277$ months, your account balance would be approximately
-\[
-B(277)
-=
-100 \times 1.0025^{277}
-=
-199.6980
-\]
-dollars, rounded to four decimal places.  At the end of $t = 278$
-months, your account balance would be approximately
+\solutionpart{subex:savings_monthly_doubling_time}
+You want to know the amount of time required for the initial account
+balance to double to $\$200$.  You can use the rule of $72$ to obtain
+a rough estimate of the doubling time.  Since the monthly interest
+rate is $0.25\%$, the rule of $72$ tells you that the doubling time is
+approximately $72 / 0.25 = 288$ months.  However, substituting
+$t = 278$ into \Equation{eqn:savings_monthly_balance} shows that
 \[
 B(278)
 =
 100 \times 1.0025^{278}
-=
-200.1972
+\approx
+200.20
 \]
-dollars, rounded to four decimal places.  Therefore you must wait
-$278$ months, or approximately $23$ years, in order for your account
-balance to be at least $\$200$.
+dollars, rounded to the nearest cent.  Furthermore, substituting
+$t = 277$ into \Equation{eqn:savings_monthly_balance} yields
+\[
+B(277)
+=
+100 \times 1.0025^{277}
+\approx
+199.70
+\]
+dollars, also rounded to the nearest cent.  Therefore the doubling
+time of your account balance is at most $278$ months, which is
+equivalent to approximately $278 / 12 \approx 23.1667$ years, rounded
+to four decimal places.
 \end{solution}
 }{}
 

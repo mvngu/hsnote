@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{interest-monthly}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotBlackStyle/.style={mark size=2.5,black,mark color=black,mark=*},%%
+  dotBlueStyle/.style={mark size=2.5,blue,mark color=blue,mark=*},%%
+  dotGreenStyle/.style={mark size=2.5,green,mark color=green,mark=*},%%
+  dotRedStyle/.style={mark size=2.5,red,mark color=red,mark=*},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=south east,%%
+  plotStyle/.style={%%
+    domain=4:17,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize Months},%%
+  xtick={30,31,32,33,34,35,36},%%
+  xticklabels={$30$,$31$,$32$,$33$,$34$,$35$,$36$},%%
+  %% y axis
+  ylabel={\normalsize Account balance~(dollars)},%%
+  scaled y ticks=false,%%
+  y tick label style=/pgf/number format/fixed%%
+]
+%%
+%%
+\addplot[dotRedStyle] coordinates {
+  % (0, 100.000000)
+  % (12, 103.000000)
+  % (24, 106.090000)
+  (36, 109.272700)
+};
+\addlegendentry{annual compounding}
+%%
+%%
+\addplot[dotBlueStyle] coordinates {
+  % (0, 100.000000)
+  % (6, 101.500000)
+  % (12, 103.022500)
+  % (18, 104.567837)
+  % (24, 106.136355)
+  (30, 107.728400)
+  (36, 109.344326)
+};
+\addlegendentry{half-yearly compounding}
+%%
+%%
+\addplot[dotGreenStyle] coordinates {
+  % (0, 100.000000)
+  % (3, 100.750000)
+  % (6, 101.505625)
+  % (9, 102.266917)
+  % (12, 103.033919)
+  % (15, 103.806673)
+  % (18, 104.585224)
+  % (21, 105.369613)
+  % (24, 106.159885)
+  % (27, 106.956084)
+  (30, 107.758255)
+  (33, 108.566441)
+  (36, 109.380690)
+};
+\addlegendentry{quarterly compounding}
+%%
+%%
+\addplot[dotBlackStyle] coordinates {
+  % (0, 100.000000)
+  % (1, 100.250000)
+  % (2, 100.500625)
+  % (3, 100.751877)
+  % (4, 101.003756)
+  % (5, 101.256266)
+  % (6, 101.509406)
+  % (7, 101.763180)
+  % (8, 102.017588)
+  % (9, 102.272632)
+  % (10, 102.528313)
+  % (11, 102.784634)
+  % (12, 103.041596)
+  % (13, 103.299200)
+  % (14, 103.557448)
+  % (15, 103.816341)
+  % (16, 104.075882)
+  % (17, 104.336072)
+  % (18, 104.596912)
+  % (19, 104.858404)
+  % (20, 105.120550)
+  % (21, 105.383352)
+  % (22, 105.646810)
+  % (23, 105.910927)
+  % (24, 106.175704)
+  % (25, 106.441144)
+  % (26, 106.707247)
+  % (27, 106.974015)
+  % (28, 107.241450)
+  % (29, 107.509553)
+  (30, 107.778327)
+  (31, 108.047773)
+  (32, 108.317892)
+  (33, 108.588687)
+  (34, 108.860159)
+  (35, 109.132309)
+  (36, 109.405140)
+};
+\addlegendentry{monthly compounding}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
