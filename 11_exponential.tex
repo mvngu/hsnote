@@ -1707,6 +1707,7 @@ $47 \times 6 = 282$ months or $282 / 12 = 23.5$ years.
 \end{solution}
 
 \begin{exercise}
+\label{ex:savings_once_annually}
 Suppose that in \Example{eg:savings_6months} interest is compounded
 once a year.
 %%
@@ -1787,6 +1788,98 @@ dollars, also rounded to the nearest cent.  Therefore the doubling
 time of your account balance is at most $24$ years.
 \end{solution}
 }{}
+
+\begin{example}
+\textbf{Quarterly compounding.}
+Suppose that in \Example{eg:savings_6months} interest is compounded
+once every three months.
+%%
+\begin{packedenum}
+\item\label{subeg:savings_quarterly_formula}
+  Derive a formula for the balance of your account after $t$
+  compounding periods.  Produce a graph of your account balance up to
+  and including the first three years since you opened the account.
+  On the same set of axes, draw the graphs from
+  \Subexample{eg:savings_6months}{subeg:savings_6months_balance_formula}
+  and
+  \Subexercise{ex:savings_once_annually}{subex:savings_1year_formula}
+  as comparison.
+
+\item\label{subeg:savings_quarterly_doubling_time}
+  Estimate the doubling time of the balance of your savings account.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:savings_quarterly_formula}
+The initial balance is $a = 100$ dollars and the interest rate is
+$3\%$ per annum.  Since interest is calculated once every three
+months, then within a year there would be $12 / 3 = 4$ compounding
+periods.  The quarterly interest rate is $3\% / 4 = 0.75\%$, the
+quarterly growth rate is $r = 0.75 / 100 = 0.0075$, and the quarterly
+growth factor is $b = 1 + 0.0075 = 1.0075$.  If $B(t)$ represents the
+account balance after $t$ compounding periods, use
+\Theorem{thm:exponential_growth} to write
+%%
+\begin{equation}
+\label{eqn:savings_quarterly_compounding}
+B(t)
+=
+100 \times 1.0075^t.
+\end{equation}
+%%
+The latter equation is graphed in \Figure{fig:savings_quarterly} for
+up to the first three years since opening the account.  As a
+comparison, the figure also shows the graphs of
+\Equation{eqn:compound_interest_a100_b1.015} and of the equation from
+\Subexercise{ex:savings_once_annually}{subex:savings_1year_formula}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/interest-quarterly.pdf}
+\caption{%%
+  The balance of a savings account up to the first three years since
+  being opened.  The interest rate is $3\%$ per annum.  The red, blue,
+  and black graphs show the account balance when interest is
+  compounded annually, half-yearly, or every three months,
+  respectively.
+}
+\label{fig:savings_quarterly}
+\end{figure}
+
+\solutionpart{subeg:savings_quarterly_doubling_time}
+You want to know the amount of time required for the initial balance
+of your account to double to $\$200$.  You can use the rule of $72$ to
+calculate a rough estimate of the doubling time of your account
+balance.  Since the quarterly interest rate is $0.75\%$, the rule of
+$72$ tells you that the doubling time of your account balance is
+approximately $72 / 0.75 = 96$ compounding periods.  Since each
+compounding period corresponds to three months, $96$ compounding
+periods translate to $96 \times 3 = 288$ months, which in turn is
+equivalent to $288 / 12 = 24$ years.  However, if you substitute
+$t = 93$ compounding periods into
+\Equation{eqn:savings_quarterly_compounding} you would get
+\[
+B(93)
+=
+100 \times 1.0075^{93}
+\approx
+200.35
+\]
+dollars, rounded to the nearest cent.  Substituting $t = 92$ into
+\Equation{eqn:savings_quarterly_compounding} yields
+\[
+B(92)
+=
+100 \times 1.0075^{92}
+\approx
+198.86
+\]
+dollars, also rounded to the nearest cent.  Therefore the doubling
+time of your account balance is at most $t = 93$ compounding periods,
+which is equivalent to $93 \times 3 = 279$ months or
+$\frac{93 \times 3}{12} = 23.25$ years.
+\end{solution}
 
 \begin{exercise}
 \textbf{Interest.}
