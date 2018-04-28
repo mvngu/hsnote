@@ -1707,6 +1707,88 @@ $47 \times 6 = 282$ months or $282 / 12 = 23.5$ years.
 \end{solution}
 
 \begin{exercise}
+Suppose that in \Example{eg:savings_6months} interest is compounded
+once a year.
+%%
+\begin{packedenum}
+\item\label{subex:savings_1year_formula}
+  Derive a formula for the balance of your account after $t$
+  compounding periods.  Produce a graph of your account balance within
+  the first two years since you opened the account.  On the same set
+  of axes, draw the graph from
+  \Subexample{eg:savings_6months}{subeg:savings_6months_balance_formula}
+  as a comparison.
+
+\item\label{subex:savings_1year_doubling_time}
+  Estimate the doubling time of your account balance.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:savings_1year_formula}
+From \Example{eg:savings_6months}, the initial balance is $a = 100$
+dollars and the interest rate is $3\%$ per annum.  Since interest is
+compounded once per year, the constant growth rate is
+$r = 3 / 100 = 0.03$ per annum and the growth factor is
+$b = 1 + 0.03 = 1.03$.  If $B(t)$ represents the account balance after
+$t$ compounding periods, use \Theorem{thm:exponential_growth} to write
+%%
+\begin{equation}
+\label{eqn:savings_1year_compounding}
+B(t)
+=
+100 \times 1.03^t.
+\end{equation}
+%%
+Note that in this case each compounding period corresponds to one
+year.  \Figure{fig:savings_1year_6months} shows a comparison of the
+account balance when interest is calculated once per year as opposed
+to twice per year.  The graph shows that when interest is calculated
+twice per year, the balance at the end of each compounding period is
+slightly higher than when interest is compounded once annually.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/interest-yearly.pdf}
+\caption{%%
+  The balance of a savings account within the first three years since
+  being opened.  The initial balance is $\$100$ with an interest rate
+  of $3\%$ per annum.  The red graph shows the balance when interest
+  is compounded once per year.  The blue graph shows the balance when
+  interest is compounded twice per year.
+}
+\label{fig:savings_1year_6months}
+\end{figure}
+
+\solutionpart{subex:savings_1year_doubling_time}
+Using the rule of $72$, the doubling time of your account balance is
+roughly $72 / 3 = 24$ compounding periods.  As each compounding period
+is equivalent to one year, then $24$ compounding periods translate to
+$24$ years.  Substitute $t = 24$ into
+\Equation{eqn:savings_1year_compounding} to get
+\[
+B(24)
+=
+100 \times 1.03^{24}
+\approx
+203.28
+\]
+dollars, rounded to the nearest cent.  Substituting $t = 23$ into
+\Equation{eqn:savings_1year_compounding} shows that
+\[
+B(23)
+=
+100 \times 1.03^{23}
+\approx
+197.36
+\]
+dollars, also rounded to the nearest cent.  Therefore the doubling
+time of your account balance is at most $24$ years.
+\end{solution}
+}{}
+
+\begin{exercise}
 \textbf{Interest.}
 At the start of a new year, you opened a savings account and deposited
 $\$100$ into the account.  The account earns an interest of $3\%$ per
