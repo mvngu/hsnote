@@ -2124,6 +2124,206 @@ least $37$ times in order for a square to contain over $86$ billion
 grains of sand.
 \end{solution}
 }{}
+
+\item Recall that the number $e = 2.718281\dots$ is an irrational
+  number, which means that there is no end to the number of digits
+  after the decimal point.  This problem will help you to understand
+  how the number $e$ is related to compound interest.  Suppose that at
+  the start of a year you opened a savings account and deposit $\$1$
+  into the account.  You leave the account open for a full year
+  without depositing any more money into it nor withdrawing any money
+  out of the account.  Suppose that the account has an interest rate
+  of $100\%$ per annum.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:e_balance_formula}
+    Let $n$ be the number of times that interest is calculated during
+    a year.  If $B(n)$ represents the balance of your account at the
+    end of the first year, show that $B(n)$ can be written as
+    %%
+    \begin{equation}
+    \label{eqn:e_savings_first_year_n_compounding}
+    B(n)
+    =
+    \parenthesis*{
+      1 + \frac{1}{n}
+    }^n.
+    \end{equation}
+
+  \item\label{subprob:e_balance_up_to_12_compounding}
+    You can use \Equation{eqn:e_savings_first_year_n_compounding} to
+    investigate the effect of the number $n$ of interest compounding
+    per annum on the balance $B(n)$ of your account at the end of the
+    first year.  Consider the case of $n = 1$ interest calculation per
+    annum.  What would be your account balance at the end of the first
+    year?  If interest is calculated $n = 2$ times per annum, what
+    would the value of $B(n)$ be?  Repeat the same calculation for
+    $n = 3$, $n = 4$, and so on, up to $n = 12$.  Organise your
+    results as a table with three columns and as many rows as
+    neccessary.  Going from left to right, the first column should
+    contain the numbers $n$ of times that interest is calculated per
+    annum.  Next, the second column should contain the corresponding
+    growth factors.  Finally, the third column should contain the
+    corresponding values of $B(n)$.  Produce two graphs of the data in
+    your table.  One graph should show the value of $n$ versus the
+    growth factor.  The second graph should show the value of $n$
+    versus $B(n)$.
+
+  \item\label{subprob:e_balance_up_to_1200_compounding}
+    Start at $n = 12$ compoundings per annum and increase $n$ by $12$
+    each time up to $100$ times.  Thus you would have the sequence
+    %%
+    \begin{equation}
+    \label{eqn:e_balance_up_to_1200_compounding}
+    \seq{\pair{12}{24}}{\pair{36}{48}}{1200}
+    \end{equation}
+    %%
+    of compoundings per annum.  For each of the numbers
+    in~\eqref{eqn:e_balance_up_to_1200_compounding}, calculate the
+    corresponding growth factor.  Use your results to produce a graph
+    of the number of compoundings per annum versus the growth factor.
+    Furthermore, for each of the numbers
+    in~\eqref{eqn:e_balance_up_to_1200_compounding}, calculate the
+    corresponding account balance at the end of the first year.  Also
+    use your results to produce a graph of the number of compoundings
+    per annum versus the account balance at the end of the first
+    year.
+
+  \item\label{subprob:e_balance_limit_of_growth_factor_balance}
+    Based on \Equation{eqn:e_savings_first_year_n_compounding} and
+    your graphs from \Part{subprob:e_balance_up_to_1200_compounding},
+    describe the value of the growth factor as the number $n$ of
+    compoundings per annum gets larger and larger.  Furthermore,
+    describe the value of $B(n)$ as $n$ gets larger and larger.
+    Provide an interpretation of your results.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:e_balance_formula}
+The initial balance is $a = 1$ dollar.  Since there are $n$
+compounding periods per year, at each compounding period the rate you
+use for interest calculation is $100 / n$ percent.  Divide this number
+by $100$ to get the constant growth rate of
+\[
+r
+=
+\frac{100}{n} \times \frac{1}{100}
+=
+\frac{1}{n}.
+\]
+Then the growth factor is $b = 1 + r = 1 + \frac{1}{n}$.  If $B(t)$
+represents the account balance at the end of the $t$-th compounding
+period, use \Theorem{thm:exponential_growth} to write
+%%
+\begin{align*}
+B(t)
+&=
+1 \times \parenthesis*{1 + \frac{1}{n}}^t \\[4pt]
+&=
+\parenthesis*{1 + \frac{1}{n}}^t.
+\end{align*}
+%%
+You have $n$ compounding periods per year, so the account balance at
+the end of the first year is $B(n)$, which can be written as
+\[
+B(n)
+=
+\parenthesis*{1 + \frac{1}{n}}^n
+\]
+as required.
+
+\solutionpart{subprob:e_balance_up_to_12_compounding}
+See \Table{tab:e_balance_up_to_12_compounding} and
+\Figure{fig:e_balance_up_to_12_compounding}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/e-12.tex}
+\caption{%%
+  The effect of the number $n$ of compounding periods per annum on the
+  account balance $B(n)$ at the end of the first year.  Here $B(n)$ is
+  defined as in \Equation{eqn:e_savings_first_year_n_compounding}.  The
+  number $1 + \frac{1}{n}$ is the growth factor.  All numbers in the
+  middle and right-most columns have been rounded to six decimal
+  places.
+}
+\label{tab:e_balance_up_to_12_compounding}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/11/e-12-growth-factor.pdf}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/11/e-12-balance.pdf}
+}
+\caption{%%
+  The effect of the number of compounding periods per annum on
+  (a)~the growth factor and (b)~the account balance at the end of the
+  first year.  Data are from
+  \Table{tab:e_balance_up_to_12_compounding}.
+}
+\label{fig:e_balance_up_to_12_compounding}
+\end{figure}
+
+\solutionpart{subprob:e_balance_up_to_1200_compounding}
+See \Figure{fig:e_savings_up_to_1200_compounding}.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/11/e-1200-growth-factor.pdf}
+  \label{subfig:e_savings_1200_growth_factor}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/11/e-1200-balance.pdf}
+  \label{subfig:e_savings_1200_balance}
+}
+\caption{%%
+  The effect of the number $n$ of compoundings per annum on (a)~the
+  growth factor and (b)~the account balance at the end of the first
+  year.  The number $n$ is up to $1200$ compoundings per annum.
+}
+\label{fig:e_savings_up_to_1200_compounding}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/e-1200-growth-rate.pdf}
+\caption{%%
+  The effect of the number $n$ of interest compoundings per annum on
+  the growth rate $f(n) = 1 / n$.  Since the interest rate is $100\%$
+  per annum, the interest rate as a decimal is $100 / 100 = 1$, which
+  is the numerator of $f(n)$.  In other words, the function $f(n)$
+  tells you the growth rate when interest is calculated $n$ times each
+  year.
+}
+\label{fig:e_saving_1200_growth_rate}
+\end{figure}
+
+\solutionpart{subprob:e_balance_limit_of_growth_factor_balance}
+Consider the growth factor $g(n) = 1 + \frac{1}{n}$, where $n$
+represents the number of interest compoundings per annum.  As $n$
+becomes larger and larger, the growth rate $1 / n$ becomes smaller and
+smaller and approaches zero.  This effect can be seen in
+\Figure{fig:e_saving_1200_growth_rate}.  That is, as $n$ gets larger
+and larger the growth factor $g(n)$ gets closer and closer to the
+value of $1$; see \Figure{subfig:e_savings_1200_growth_factor}.
+Therefore the account balance $B(n)$ at the end of the first year gets
+closer and closer to a fixed number.  From
+\Figure{subfig:e_savings_1200_balance}, the fixed number is
+approximately $2.72$.  What do these results mean?  Suppose you have a
+fixed annual interest rate and a fixed initial account balance.  No
+matter how many times that interest is calculated per year, your
+account balance at the end of the first year will never grow as large
+and you want.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
