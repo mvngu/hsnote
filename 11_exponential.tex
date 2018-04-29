@@ -2001,6 +2001,10 @@ once per month.
   month up to and including the $36$-th month since opening the
   account.
 
+\item\label{subex:savings_monthly_interest}
+  Calculate the amount of interest~(in dollars) that your account
+  would earn at the end of the first year.
+
 \item\label{subex:savings_monthly_doubling_time}
   Estimate the doubling time of your account balance.
 \end{packedenum}
@@ -2039,6 +2043,21 @@ opening the account.
 }
 \label{fig:savings_monthly_comparison}
 \end{figure}
+
+\solutionpart{subex:savings_monthly_interest}
+Each compounding period corresponds to one month, so within a year you
+have $12$ compounding periods.  Substitute $t = 12$ into
+\Equation{eqn:savings_monthly_balance} to see that at the end of the
+first year your account balance would be approximately
+\[
+B(12)
+=
+100 \times 1.0025^{12}
+\approx
+103.04
+\]
+dollars, rounded to the nearest cent.  The amount of interest that
+your account would have earned is $103.04 - 100 = 3.04$ dollars.
 
 \solutionpart{subex:savings_monthly_doubling_time}
 You want to know the amount of time required for the initial account
