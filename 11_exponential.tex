@@ -1960,6 +1960,30 @@ $\frac{93 \times 3}{12} = 23.25$ years.
 \end{solution}
 
 \begin{exercise}
+\textbf{How much interest?}
+In \Example{eg:savings_quarterly_compounding}, how much interest~(in
+dollars) would your account earn at the end of the first year?
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since each compounding period corresponds to three months, within a
+year you have $12 / 3 = 4$ compounding periods.  Substitute $t = 4$
+into \Equation{eqn:savings_quarterly_compounding} to see that your
+account balance at the end of the first year is approximately
+\[
+B(4)
+=
+100 \times 1.0075^4
+\approx
+103.03
+\]
+dollars, rounded to the nearest cent.  The amount of interest that
+your account would have earned is $103.03 - 100 = 3.03$ dollars.
+\end{solution}
+}{}
+
+\begin{exercise}
 \textbf{Monthly compounding.}
 Suppose that in \Example{eg:savings_6months} interest is calculated
 once per month.
