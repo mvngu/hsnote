@@ -2408,6 +2408,171 @@ account balance at the end of the first year will never grow as large
 and you want.
 \end{solution}
 }{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/frond-12-missing.tex}
+\caption{%%
+  The experimental number of fronds in a colony of duckweeds, counted
+  each day for nine consecutive days.  Before the first day, the
+  colony had been exposed to $12$ hours of light per day for three
+  consecutive days.  The missing entries should contain the daily
+  growth factors.
+}
+\label{tab:duckweed_frond12_missing}
+\end{table}
+
+\item The mathematical formula that governs compound interest is also
+  found in the growth of plants.  In~1929, Eric Ashby showed via a
+  number of experiments that the growth of duckweeds followed the
+  formula for compound interest.\footnote{
+    See the following paper for further details:
+    \url{http://www.jstor.org/stable/43237140}.
+  }
+  In one experiment, Ashby exposed a colony of duckweeds to $12$ hours
+  of light per day for three consecutive days.  After the three days,
+  the duckweeds were allowed to grow for nine consecutive days.
+  During each of the nine days, the number of fronds~(the leaves of
+  the duckweeds) were counted and the results are given in
+  \Table{tab:duckweed_frond12_missing}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:duckweeds_growth_factor}
+    From \Table{tab:duckweed_frond12_missing}, suppose that the
+    initial number of fronds is $a = 103$.  Starting from the second
+    day onwards, define the \emph{daily growth factor} as the number
+    of fronds of the current day divided by the number of fronds of
+    the previous day.  Use this procedure to fill in the missing
+    entries in \Table{tab:duckweed_frond12_missing}.  The daily growth
+    factor for day~$1$ should be blank.
+
+  \item\label{subprob:duckweeds_growth_factor_estimate}
+    Using the daily growth factors
+    from \Part{subprob:duckweeds_growth_factor}, you can obtain a
+    rough estimate of the growth factor of the frond numbers by
+    calculating the mean of the daily growth factors.  Use your
+    estimated growth factor to derive a formula for the growth of the
+    number of fronds.  Produce a graph of the day number versus the
+    experimental number of fronds.  On the same set of axes, draw a
+    graph of your growth formula.
+
+  \item\label{subprob:duckweeds_growth_factor_exponential}
+    Ashby calculated that given an initial population of $a = 100$
+    fronds and a growth rate of $r = 0.127$, the number $f(t)$ of
+    fronds on day $t$ can be written as
+    %%
+    \begin{equation}
+    \label{eqn:frond_numbers_Ashby_formula}
+    f(t)
+    =
+    100 e^{0.127t}.
+    \end{equation}
+    %%
+    Note the irrational number $e$.  Produce a table with four columns
+    and as many rows as necessary.  The first row should contain the
+    column headings.  Going from left to right, the first two columns
+    should contain the same data as in the first two columns of
+    \Table{tab:duckweed_frond12_missing}.  The third column should
+    contain the frond numbers as calculated using your formula
+    from \Part{subprob:duckweeds_growth_factor_estimate}.  Finally,
+    the fourth column should contain the frond numbers as calculated
+    using Ashby's \Equation{eqn:frond_numbers_Ashby_formula}.  Add to
+    the graph in \Part{subprob:duckweeds_growth_factor_estimate} a
+    graph of \Equation{eqn:frond_numbers_Ashby_formula}.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:duckweeds_growth_factor}
+See \Table{tab:duckweed_frond12_complete}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/frond-12-complete.tex}
+\caption{%%
+  The experimental number of fronds in a colony of duckweeds, counted
+  each day for nine consecutive days.  Before the first day, the
+  colony had been exposed to $12$ hours of light per day for three
+  consecutive days.  This is the same as
+  \Table{tab:duckweed_frond12_missing} except that missing entries
+  have been filled in.  All numbers in the column for daily growth
+  factor have been rounded to six decimal places.
+}
+\label{tab:duckweed_frond12_complete}
+\end{table}
+
+\solutionpart{subprob:duckweeds_growth_factor_estimate}
+You can estimate the growth factor for the number of fronds by
+calculating the mean of the daily growth factors.  Doing so, the
+growth factor is estimated to be $b = 1.158932$, rounded to six
+decimal places.  The initial number of fronds is $a = 103$.  If $F(t)$
+denotes the number of fronds on day $t$, then you can write $F(t)$ as
+%%
+\begin{equation}
+\label{eqn:fronds_formula_average_growth_factor}
+F(t)
+=
+103 \times 1.158932^{t - 1}.
+\end{equation}
+%%
+Note the exponent of $t - 1$.  You have this exponent because if you
+substitute $t = 1$ into
+\Equation{eqn:fronds_formula_average_growth_factor}, then you should
+obtain the initial number of fronds:
+%%
+\begin{align*}
+F(1)
+&=
+103 \times 1.158932^{1 - 1} \\[4pt]
+&=
+103 \times 1.158932^0 \\[4pt]
+&=
+103.
+\end{align*}
+%%
+\Figure{fig:frond12_theory_data} shows a graph of
+\Equation{eqn:fronds_formula_average_growth_factor} together with the
+experimental data from \Table{tab:duckweed_frond12_missing}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/frond12-estimated-b.pdf}
+\caption{%%
+  A comparison of the experimental frond numbers versus the predicted
+  frond numbers as given by
+  \Equations{eqn:frond_numbers_Ashby_formula}{eqn:fronds_formula_average_growth_factor}.
+  The black dots
+  represent the experimental data from
+  \Table{tab:duckweed_frond12_missing}.  The blue curve is a graph of
+  \Equation{eqn:fronds_formula_average_growth_factor}, which is based
+  on the mean growth rate.  The red curve is a graph of Ashby's
+  \Equation{eqn:frond_numbers_Ashby_formula}.
+}
+\label{fig:frond12_theory_data}
+\end{figure}
+
+\solutionpart{subprob:duckweeds_growth_factor_exponential}
+See \Table{tab:frond12_compare_mean_Ashby} and
+\Figure{fig:frond12_theory_data}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/frond-12-comparison.tex}
+\caption{%%
+  Comparison of the experimental frond numbers versus the frond
+  numbers as calculated using
+  \Equations{eqn:frond_numbers_Ashby_formula}{eqn:fronds_formula_average_growth_factor}.
+  The frond numbers as calculated by
+  \Equation{eqn:fronds_formula_average_growth_factor} are given in the
+  column with the heading ``Mean growth rate''.  Similarly, the frond
+  numbers as calculated by Ashby's
+  \Equation{eqn:frond_numbers_Ashby_formula} are listed in the column
+  with the heading ``Ashby's formula''.
+}
+\label{tab:frond12_compare_mean_Ashby}
+\end{table}
+
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
