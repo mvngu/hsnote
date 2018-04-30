@@ -2467,13 +2467,18 @@ dollars.
   %%
   \begin{packedenum}
   \item\label{subprob:duckweeds_growth_factor}
-    From \Table{tab:duckweed_frond12_missing}, suppose that the
-    initial number of fronds is $a = 103$.  Starting from the second
-    day onwards, define the \emph{daily growth factor} as the number
-    of fronds of the current day divided by the number of fronds of
-    the previous day.  Use this procedure to fill in the missing
-    entries in \Table{tab:duckweed_frond12_missing}.  The daily growth
-    factor for day~$1$ should be blank.
+    Graph the data in \Table{tab:duckweed_frond12_missing} as a
+    scatter plot.  From \Table{tab:duckweed_frond12_missing}, suppose
+    that the initial number of fronds is $a = 103$.  Starting from the
+    second day onwards, define the \emph{daily growth factor} as the
+    number of fronds of the current day divided by the number of
+    fronds of the previous day.  Use this procedure to fill in the
+    missing entries in \Table{tab:duckweed_frond12_missing}.  The
+    daily growth factor for day~$1$ should be blank.  If the data in
+    \Table{tab:duckweed_frond12_missing} perfectly follow the model of
+    exponential growth, what do you expect all the daily growth
+    factors to be like?  What can you conclude from the daily growth
+    factors of \Table{tab:duckweed_frond12_missing}?
 
   \item\label{subprob:duckweeds_growth_factor_estimate}
     Using the daily growth factors
@@ -2512,7 +2517,22 @@ dollars.
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subprob:duckweeds_growth_factor}
-See \Table{tab:duckweed_frond12_complete}.
+See \Figure{fig:frond12_theory_data} and
+\Table{tab:duckweed_frond12_complete}.  If the data in
+\Table{tab:duckweed_frond12_missing} were to perfectly follow the
+model of exponential growth, then the daily growth factors for the
+data should all be the same.  In fact, the daily growth factors would
+be the same as the growth factor of an exponential growth model.
+However, as shown in \Table{tab:duckweed_frond12_complete} the daily
+growth factors for the data are not all the same.  The daily growth
+factors are similar in terms of the first decimal digits, but they are
+not approximately the same in the second decimal digits.  You can
+conclude from the daily growth factors that the data in
+\Table{tab:duckweed_frond12_missing} do not perfectly follow an
+exponential growth model.  However, the daily growth factors are
+nearly the same in the first decimal digits, and the scatter plot of
+the data seems to show an exponential-like growth, that you can
+attempt to model the data with a formula for exponential growth.
 
 \begin{table}[!htbp]
 \centering
