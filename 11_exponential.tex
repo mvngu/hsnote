@@ -2280,6 +2280,21 @@ grains of sand.
     compoundings per annum gets larger and larger.  Furthermore,
     describe the value of $B(n)$ as $n$ gets larger and larger.
     Provide an interpretation of your results.
+
+  \item\label{subprob:e_balance_continuous_compounding}
+    As the number of compounding periods per annum continually grows
+    larger and larger, you have a situation called
+    \emph{continuous compounding}.  The formula for continuous
+    compounding is written as
+    \[
+    B(t)
+    =
+    P e^{rt}
+    \]
+    where $P$ is the initial balance or \emph{principal}, $r$ is the
+    interest rate per annum written as a decimal, and $t$ is the
+    number of years.  Calculate your account balance at the end of the
+    first year if interest is continuously compounded.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -2406,6 +2421,20 @@ fixed annual interest rate and a fixed initial account balance.  No
 matter how many times that interest is calculated per year, your
 account balance at the end of the first year will never grow as large
 and you want.
+
+\solutionpart{subprob:e_balance_continuous_compounding}
+The initial balance is $P = 1$ dollar, the annual interest rate is
+$100\%$ so that $r = 100 / 100 = 1$, and $t = 1$ year.  Using the
+formula for continuous compounding, your account balance at the end of
+the first year is
+\[
+B(1)
+=
+1 \times e^{1 \times 1}
+=
+e
+\]
+dollars.
 \end{solution}
 }{}
 
