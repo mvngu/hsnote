@@ -2452,7 +2452,8 @@ dollars.
 \label{tab:duckweed_frond12_missing}
 \end{table}
 
-\item The mathematical formulae that govern compound interest are also
+\item\label{prob:duckweeds}
+  The mathematical formulae that govern compound interest are also
   found in the growth of plants.  In~1929, Eric Ashby showed via a
   number of experiments that the growth of duckweeds followed the
   formula for continuous compounding.\footnote{
@@ -2624,11 +2625,201 @@ See \Table{tab:frond12_compare_mean_Ashby} and
 \end{solution}
 }{}
 
-\item Binary numbers.  How many possible non-negative integers with
-  $n$ bits?  How many possible subsets of a set with $n$ elements?
+\item A \emph{binary number} is a number that is written in terms of
+  $1$~(one) and $0$~(zero).  Something such as $10011010$ is a binary
+  number and can be used to represent a non-negative integer inside a
+  digital computer.  In fact, your computer and smart phone
+  essentially process binary numbers.  The number of digits in a
+  binary number is called the \emph{number of bits}.  For instance,
+  the binary number $10011010$ has eight bits.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:binary_to_decimal}
+    Here is a procedure to convert a binary number to a non-negative
+    integer.  Suppose you have a binary number written as
+    %%
+    \begin{equation}
+    \label{eqn:binary_general_number}
+    b_{n-1} b_{n-2} \cdots b_2 b_1 b_0
+    \end{equation}
+    %%
+    where the number of bits is $n$ and each $b_i$~(from $i = 0$ to
+    $i = n - 1$) is either $0$ or $1$.  In the case of the binary
+    $10011010$, you have $n = 8$ because there are eight bits and each
+    $b_i$ is
+    %%
+    \begin{equation}
+    \label{eqn:binary_10011010}
+    b_7 = 1\comma
+    b_6 = 0\comma
+    b_5 = 0\comma
+    b_4 = 1\comma
+    b_3 = 1\comma
+    b_2 = 0\comma
+    b_1 = 1\comma
+    b_0 = 0.
+    \end{equation}
+    %%
+    To convert the binary number~\eqref{eqn:binary_general_number} to
+    a non-negative integer, you calculate the sum
+    %%
+    \begin{equation}
+    \label{eqn:binary_to_decimal_formula}
+    \sum_{i=0}^{n-1} b_i 2^i
+    =
+    b_{n-1} 2^{n-1} + b_{n-2} 2^{n-2} + \cdots
+    + b_2 2^2 + b_1 2^1 + b_0 2^0.
+    \end{equation}
+    %%
+    For instance, the binary number $10011010$ as defined
+    in~\eqref{eqn:binary_10011010} can be converted to a non-negative
+    integer as
+    %%
+    \begin{align*}
+    &b_7 2^7 + b_6 2^6 + b_5 2^5 + b_4 2^4
+      + b_3 2^3 + b_2 2^2 + b_1 2^1 + b_0 2^0 \\[4pt]
+    &=
+    1 \times 2^7 + 0 \times 2^6 + 0 \times 2^5 + 1 \times 2^4
+    + 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 \\[4pt]
+    &=
+    2^7 + 2^4 + 2^3 + 2^1 \\[4pt]
+    &=
+    128 + 16 + 8 + 2 \\[4pt]
+    &=
+    154.
+    \end{align*}
+    %%
+    Thus the binary number $10011010$ represents the integer $154$.
+    Use \Equation{eqn:binary_to_decimal_formula} to convert the binary
+    numbers $10100101$, $1001$, and $00000000$ to non-negative
+    integers.
+
+  \item\label{subprob:binary_4_bits}
+    Given one bit, the possible non-negative integers that can be
+    represented with one bit are $0$ and $1$.  All possible binary
+    strings with two bits are: $00$, $01$, $10$, and $11$.  At three
+    bits, the possible binary strings are: $000$, $001$, $010$, $011$,
+    $100$, $101$, $110$, and $111$.  Determine all possible binary
+    strings with four bits and the corresponding non-negative integer
+    that each binary string represents.
+
+  \item\label{subprob:binary_how_many_integers}
+    If a binary number has one bit, how many possible non-negative
+    integers can be represented with one bit?  Consider the case of
+    two bits.  How many possible non-negative integers can be
+    represented with two bits?  How many possible non-negative
+    integers can be represented with three bits?  Consider the above
+    questions for the case of one, two, three, four, and so on, up to
+    ten bits.  Organise your results as a table with two columns and
+    as many rows as necessary.  The first row should contain the
+    column headings.  The left column should contain the number $n$ of
+    bits.  The right column should contain the number of possible
+    non-negative integers that can be represented with $n$ bits.
+    Analyse your data by using the technique described in
+    \Subproblem{prob:duckweeds}{subprob:duckweeds_growth_factor}.
+
+  \item\label{subprob:binary_how_many_integers_formula}
+    Use your results from \Part{subprob:binary_how_many_integers} to
+    derive a formula for the number of non-negative integers that can
+    be represented with $n$ bits.  Verify your formula with the data
+    in the table from \Part{subprob:binary_how_many_integers}.
+    Determine the largest non-negative integer that can be represented
+    with $n$ bits.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:binary_to_decimal}
+Using \Equation{eqn:binary_to_decimal_formula}, the binary number
+$10100101$ can be converted to a non-negative integer as
+%%
+\begin{align*}
+&b_7 2^7 + b_6 2^6 + b_5 2^5 + b_4 2^4
+  + b_3 2^3 + b_2 2^2 + b_1 2^1 + b_0 2^0 \\[4pt]
+&=
+1 \times 2^7 + 0 \times 2^6 + 1 \times 2^5 + 0 \times 2^4
+  + 0 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 \\[4pt]
+&=
+2^7 + 2^5 + 2^2 + 2^0 \\[4pt]
+&=
+128 + 32 + 4 + 1 \\[4pt]
+&=
+165.
+\end{align*}
+%%
+The binary number $1001$ represents the non-negative integer
+%%
+\begin{align*}
+&b_3 2^3 + b_2 2^2 + b_1 2^1 + b_0 2^0 \\[4pt]
+&=
+1 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 \\[4pt]
+&=
+2^3 + 2^0 \\[4pt]
+&=
+8 + 1 \\[4pt]
+&=
+9.
+\end{align*}
+%%
+The binary number $00000000$ represents the non-negative integer
+%%
+\begin{align*}
+&b_7 2^7 + b_6 2^6 + b_5 2^5 + b_4 2^4
+  + b_3 2^3 + b_2 2^2 + b_1 2^1 + b_0 2^0 \\[4pt]
+&=
+0 \times 2^7 + 0 \times 2^6 + 0 \times 2^5 + 0 \times 2^4
+  + 0 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 0 \times 2^0 \\[4pt]
+&=
+0.
+\end{align*}
 
+\solutionpart{subprob:binary_4_bits}
+See \Table{tab:binary_4_bits}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/binary-4bits.tex}
+\caption{%%
+  All possible binary strings with four bits.  Each binary string
+  corresponds to a non-negative integer.
+}
+\label{tab:binary_4_bits}
+\end{table}
+
+\solutionpart{subprob:binary_how_many_integers}
+See \Table{tab:binary_how_many_integers}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/binary.tex}
+\caption{%%
+  The number of non-negative integers that can be represented with a
+  given number of bits.  Going from left to right, the third column
+  contains the consecutive growth factors.  Starting from the row with
+  two bits downwards, the growth factor for the row is defined as the
+  number of non-negative integers that can be represented with $n$
+  bits divided by the number of non-negative integers that can be
+  represented with $n - 1$ bits.  The right-most column contains the
+  largest non-negative integer that can be represented with $n$ bits.
+}
+\label{tab:binary_how_many_integers}
+\end{table}
+
+\solutionpart{subprob:binary_how_many_integers_formula}
+\Table{tab:binary_how_many_integers} shows that adding an extra bit
+will increase the number of possible non-negative integers by a factor
+of $2$.  For instance, starting at $1$ bit you have $2$ possible
+non-negative integers.  Adding another bit will result in $2$ bits,
+but the number of possible non-negative integers is now
+$2 \times 2 = 2^2$.  Going to $3$ bits, the number of possible
+non-negative integers is now $2^2 \times 2 = 2^3$.  At $4$ bits, the
+number of possible non-negative integers is $2^3 \times 2 = 2^4$.  In
+general, the number of possible non-negative integers that can be
+represented with $n$ bits is $2^n$.  At $n$ bits, the integer
+$0$~(zero) is represented as $000 \cdots 0$, i.e.~a string of $n$
+zeros.  In counting the number of possible non-negative integers, you
+must take into account the integer zero.  Thus the largest
+non-negative integer that can be represented with $n$ bits is
+$2^n - 1$.
 \end{solution}
 }{}
 
