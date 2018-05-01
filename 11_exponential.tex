@@ -2439,11 +2439,48 @@ dollars.
 \end{solution}
 }{}
 
-\item Futurama and compound interest:
-  \url{https://youtu.be/f2Wi6AoArV0}.
+\item In episode~6, season~1 of \emph{Futurama}~(1999), Fry learnt
+  that due to compound interest his account balance had grown to
+  billions of dollars.  You can watch the relevant clip at:
+  \url{https://youtu.be/f2Wi6AoArV0}.  Determine the initial balance
+  of Fry's account, the annual growth rate of the account balance, and
+  the number of years for which the balance had been left to grow.
+  Determine the formula that the bank teller used to approximate Fry's
+  current account balance and use the formula to calculate Fry's
+  current account balance, rounded to the nearest cent.  If the
+  interest on Fry's account had been continuously compounded, what
+  would Fry's account balance be at the end of the given number of
+  compounding years?
 \ifbool{showSolution}{
 \begin{solution}
-
+Fry had an initial account balance of $\cent{93}$ or $\$0.93$.  The
+interest is $2.25\%$ per annum, so the annual growth rate is
+$r = 2.25 / 100 = 0.0225$.  The account balance had been left to
+grow for $1000$ years.  The bank teller used the following formula to
+approximate Fry's account balance:
+\[
+B(t)
+=
+0.93 \times 1.0225^t
+\]
+assuming that interest is calculated once per annum.  Using the above
+formula, Fry's account balance after $t = 1000$ years is
+\[
+B(1000)
+=
+0.93 \times 1.0225^{1000}
+\approx
+4,283,508,449.71
+\]
+dollars, rounded to the nearest cent.  This can also be rounded to
+$4.3$ billion dollars.  If interest had been continuously compounded,
+Fry's account balance at the end of $1000$ years would be
+\[
+0.93 e^{0.0225 \times 1000}
+\approx
+5,496,785,518.61
+\]
+dollars, rounded to the nearest cent.
 \end{solution}
 }{}
 
