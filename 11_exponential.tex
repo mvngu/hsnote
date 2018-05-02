@@ -2559,7 +2559,12 @@ dollars, rounded to the nearest cent.
     the fourth column should contain the frond numbers as calculated
     using Ashby's \Equation{eqn:frond_numbers_Ashby_formula}.  Add to
     the graph in \Part{subprob:duckweeds_growth_factor_estimate} a
-    graph of \Equation{eqn:frond_numbers_Ashby_formula}.
+    graph of \Equation{eqn:frond_numbers_Ashby_formula}.  By using the
+    root mean square error~(i.e.~the RMS error), explain which of
+    \Equation{eqn:frond_numbers_Ashby_formula} and your equation
+    from \Part{subprob:duckweeds_growth_factor_estimate} is better at
+    modelling the frond numbers listed in
+    \Table{tab:duckweed_frond12_missing}.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -2633,7 +2638,7 @@ experimental data from \Table{tab:duckweed_frond12_missing}.
 \centering
 \includegraphics[scale=1.1]{image/11/frond12-estimated-b.pdf}
 \caption{%%
-  A comparison of the experimental frond numbers versus the predicted
+  A comparison of the observed frond numbers versus the predicted
   frond numbers as given by
   \Equations{eqn:frond_numbers_Ashby_formula}{eqn:fronds_formula_average_growth_factor}.
   The black dots
@@ -2647,22 +2652,30 @@ experimental data from \Table{tab:duckweed_frond12_missing}.
 \end{figure}
 
 \solutionpart{subprob:duckweeds_growth_factor_exponential}
-See \Table{tab:frond12_compare_mean_Ashby} and
-\Figure{fig:frond12_theory_data}.
+\Table{tab:frond12_compare_mean_Ashby} and
+\Figure{fig:frond12_theory_data} compare the observed frond numbers
+with the predicted frond numbers.  The table also shows the squared
+errors of the predictions.  Using these squared errors, the RMS error
+of \Equation{eqn:fronds_formula_average_growth_factor} is
+$4.8256$, which is smaller than the RMS error of $8.2572$ of Ashby's
+\Equation{eqn:frond_numbers_Ashby_formula}, both numbers rounded to
+four decimal places.  Based on the RMS errors, you may conclude that
+\Equation{eqn:fronds_formula_average_growth_factor} is better than
+Ashby's formula at modelling the observed frond numbers.
 
 \begin{table}[!htbp]
 \centering
 \input{table/11/frond-12-comparison.tex}
 \caption{%%
-  Comparison of the experimental frond numbers versus the frond
-  numbers as calculated using
-  \Equations{eqn:frond_numbers_Ashby_formula}{eqn:fronds_formula_average_growth_factor}.
-  The frond numbers as calculated by
-  \Equation{eqn:fronds_formula_average_growth_factor} are given in the
-  column with the heading ``Mean growth rate''.  Similarly, the frond
-  numbers as calculated by Ashby's
-  \Equation{eqn:frond_numbers_Ashby_formula} are listed in the column
-  with the heading ``Ashby's formula''.
+  Comparison of the observed frond numbers versus the predicted frond
+  numbers.  The predicted frond numbers as calculated by
+  \Equations{eqn:fronds_formula_average_growth_factor}{eqn:frond_numbers_Ashby_formula}
+  are listed, respectively, in the third and fourth columns.  These
+  numbers have been rounded to one decimal place.  The fifth and sixth
+  columns show the squared errors of the predictions.  Although the
+  squared errors have been rounded to four decimal places in order to
+  fit the table, you should not round these intermediate results when
+  you calculate the RMS error.
 }
 \label{tab:frond12_compare_mean_Ashby}
 \end{table}
