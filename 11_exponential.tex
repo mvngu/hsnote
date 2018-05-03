@@ -298,6 +298,7 @@ million people.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Exponential growth}
+\label{sec:exponential_growth}
 
 Let's derive a general formula to model situations such as those
 presented in \Example{eg:Australian_population_2017}.  Denote by $a$
@@ -2893,6 +2894,211 @@ $2^n - 1$.
 \ifbool{showSolution}{
 \begin{solution}
 
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/yeast.tex}
+\caption{%%
+  The observed population size in an experimental colony of yeast.
+  The data are due to T.~Carlson, published in~1913.  The column for
+  hours lists the numbers of hours that the population had been
+  allowed to grow.  The column for observed numbers lists the counts
+  of the number of yeast cells that were found in the colony after a
+  given number of hours.
+}
+\label{tab:yeast}
+\end{table}
+
+\item In many situations, the exponential growth model as described
+  in \Section{sec:exponential_growth} can produce results that do not
+  make sense, are absurd, or just plain wrong.  Given a population of
+  a particular animal, e.g.~rabbits, common sense tells you that the
+  population number cannot keep on increasing larger and larger.  One
+  simple reason is that the environment within which the rabbits live
+  do not have an unlimited supply of food.  An implication is that
+  there must be a point at which the population cannot grow any larger
+  because there would not be enough food for every rabbit.  In
+  situations of limited resources, you can use a more realistic model
+  due to Pierre Fran\c{c}ois Verhulst called the \emph{logistic model}
+  to investigate the growth of a population subject to the limited
+  resources of its environment.  Let $A$ be the initial population
+  size and suppose that the environment within which the population
+  survives can support a maximum population size of $K$.  Assume that
+  the population grows at a constant rate~(written as a decimal) of
+  $r$ per unit time.  If $P(t)$ represents the population size at time
+  $t$, then you write the population number as the logistic equation
+  %%
+  \begin{equation}
+  \label{eqn:logistic_equation}
+  P(t)
+  =
+  \frac{
+    AK
+  }{
+    A + (K - A) \cdot e^{-rt}
+  }.
+  \end{equation}
+  %%
+  \begin{packedenum}
+  \item\label{subprob:yeast_data_mean_growth_factor}
+    \Table{tab:yeast} shows the population numbers of an experimental
+    colony of yeast that had been allowed to grow for up to $18$
+    hours.  Starting from the first hour onwards, define the
+    \emph{hourly growth factor} as the observed number of yeast cells
+    for the current hour divided by the observed number of yeast cells
+    in the previous hour.  Calculate the mean of the hourly growth
+    factors; call this the \emph{mean growth factor}.  Assuming that
+    the yeast population grew according to an exponential model, use
+    the mean growth factor to derive a formula for the number $Y(t)$
+    of yeast cells after $t$ hours have elapsed.  Produce a graph of
+    the experimental data in \Table{tab:yeast}.  On the same set of
+    axes, graph your formula $Y(t)$.  What do you notice?
+
+  \item\label{subprob:yeast_quintic_polynomial}
+    Suppose you model the data in \Table{tab:yeast} as a polynomial of
+    degree five.  A polynomial of degree five is also called a
+    \emph{quintic polynomial}.  If $f(t)$ represents the number of
+    yeast cells after $t$ hours, then write $f(t)$ as the quintic
+    polynomial
+    %%
+    \begin{equation}
+    \label{eqn:yeast_quintic_polynomial}
+    \begin{aligned}
+    f(t)
+    &=
+    0.0052x^5 - 0.2069x^4 + 2.3331x^3 \\[4pt]
+    \amptab-
+    3.2478x^2 + 2.6845x + 14.2567.
+    \end{aligned}
+    \end{equation}
+    %%
+    On the same set of axes, graph
+    \Equation{eqn:yeast_quintic_polynomial}, your formula
+    from \Part{subprob:yeast_data_mean_growth_factor}, and the data
+    from \Table{tab:yeast}.  What do you notice?
+
+  \item\label{subprob:yeast_logistic}
+    In~1927, Raymond Pearl used the logistic
+    \Equation{eqn:logistic_equation} to model the data in
+    \Table{tab:yeast}.\footnote{
+      See the following paper for further details:
+      \url{https://doi.org/10.1086/394288}.
+    }
+    If $P(t)$ represents the number of yeast cells after $t$ hours,
+    Pearl found that the data in the table can be modelled as
+    %%
+    \begin{equation}
+    \label{eqn:yeast_Pearl_logistic_equation}
+    P(t)
+    =
+    \frac{
+      665
+    }{
+      1 + e^{4.1896 - 0.5355t}
+    }.
+    \end{equation}
+    %%
+    Graph \Equation{eqn:yeast_Pearl_logistic_equation} on the same set
+    of axes as the graph in \Part{subprob:yeast_quintic_polynomial}.
+    What do you notice?  By using the root mean square error~(i.e.~the
+    RMS error), explain which of the equations
+    from \Part{subprob:yeast_data_mean_growth_factor},
+    \Part{subprob:yeast_quintic_polynomial}, and
+    \Equation{eqn:yeast_Pearl_logistic_equation} is more suitable at
+    modelling the data in \Table{tab:yeast}.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:yeast_data_mean_growth_factor}
+\Table{tab:yeast_hourly_growth_factors} shows the hourly growth
+factors of the experimental colony of yeast.  Using the hourly growth
+factors, the mean growth factor is calculated to be $1.2937$, rounded
+to four decimal places.  Suppose that the yeast population grew
+according to an exponential model.  Let $a = 9.6$ yeast cells be the
+initial population and let $b = 1.2937$ be the growth factor.  If
+$Y(t)$ represents the population size after $t$ hours, then the
+population size can be written as
+%%
+\begin{equation}
+\label{eqn:yeast_exponential_model}
+Y(t)
+=
+9.6 \times 1.2937^t.
+\end{equation}
+%%
+\Figure{fig:yeast_data_versus_models} shows a graph of the exponential
+model~\eqref{eqn:yeast_exponential_model} fitted to the experimental
+data given in \Table{tab:yeast}.  The figure clearly shows that an
+exponential growth model is not appropriate for the data set under
+consideration.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/yeast-growth-factor.tex}
+\caption{%%
+  The hourly growth factors of an experimental colony of yeast.  The
+  growth factors have been rounded to four decimal places.  The
+  experimental data are from \Table{tab:yeast}.
+}
+\label{tab:yeast_hourly_growth_factors}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/yeast.pdf}
+\caption{%%
+  The observed yeast population size versus the number of yeast cells
+  as predicted by the exponential
+  function~\eqref{eqn:yeast_exponential_model}, the quintic
+  polynomial~\eqref{eqn:yeast_quintic_polynomial}, and the logistic
+  function~\eqref{eqn:yeast_Pearl_logistic_equation}.  The
+  experimental data are from \Table{tab:yeast}.  The exponential
+  growth model is clearly unsuitable for the given data set.
+}
+\label{fig:yeast_data_versus_models}
+\end{figure}
+
+\solutionpart{subprob:yeast_quintic_polynomial}
+\Figure{fig:yeast_data_versus_models} shows a comparison of the
+experimental data given in \Table{tab:yeast}, the exponential
+model~\eqref{eqn:yeast_exponential_model}, and the quintic
+polynomial~\eqref{eqn:yeast_quintic_polynomial}.  The figure clearly
+shows that the quintic polynomial is better than the exponential
+function at modelling the given experimental data.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/yeast-squared-error.tex}
+\caption{%%
+  A comparison of three models of the data in \Table{tab:yeast}.  The
+  first is the exponential
+  function~\eqref{eqn:yeast_exponential_model}, the second is the
+  quintic polynomial~\eqref{eqn:yeast_quintic_polynomial}, and the
+  third is the logistic
+  function~\eqref{eqn:yeast_Pearl_logistic_equation}.  The predictions
+  of these models have been rounded to one decimal place.  Also shown
+  are the squared errors of each model.  These errors have been
+  rounded to three decimal places.  Note that most numbers have been
+  rounded so as to fit the table.  However, you should avoid rounding
+  any intermediate results.
+}
+\label{tab:yeast_compare_models}
+\end{table}
+
+\solutionpart{subprob:yeast_logistic}
+\Figure{fig:yeast_data_versus_models} shows a comparison of three
+functions for modelling the experimental data given in
+\Table{tab:yeast}.  Of the three functions, the logistic function
+seems to be better than the other two at modelling the data.  This
+observation is also confirmed by the root mean square errors of the
+three functions.  \Table{tab:yeast_compare_models} shows the squared
+errors of each of the three models.  Using these squared errors the
+exponential, quintic, and logistic functions have, respectively, RMS
+errors of $238.9384$, $19.9244$, and $3.5986$.  This clearly shows
+that the logistic function is better suited to modelling the given
+data than either of the exponential or quintic functions.
 \end{solution}
 }{}
 
