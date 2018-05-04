@@ -82,6 +82,8 @@
 
 %% Customize existing commands
 \renewcommand{\_}{\underline{{\color{white}w}}}  %% a long underscore
+\let\OldExp\exp
+\renewcommand{\exp}[1]{\OldExp\left\{#1\right\}}
 \renewcommand{\MakeUppercase}{}  %% no all-caps in page headers
 \renewcommand{\qed}{\hfill \mbox{\raggedright \rule{0.1in}{0.1in}}}
 
