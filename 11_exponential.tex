@@ -2892,6 +2892,245 @@ $2^n - 1$.
 
 \begin{table}[!htbp]
 \centering
+\input{table/11/water.tex}
+\caption{%%
+  The vapour pressure of water as temperature increases.  Temperature
+  is measured in degrees Celsius~($\degreec{}$) and the vapour
+  pressure of water is measured in millimetre of mercury~(mm Hg).  The
+  given vapour pressures cover only the case where water is in contact
+  with its own vapour.  Data are taken from the following book:
+  J.~G.~Speight. \emph{Lange's Handbook of Chemistry}. 16-th edition,
+  McGraw-Hill, 2005, pp.1.224--1.225.
+}
+\label{tab:water_vapour_pressure}
+\end{table}
+
+\item Suppose you put water in a container and then seal the
+  container.  As water evaporates inside the closed container, a layer
+  of vapour forms above the water and this layer of vapour exerts
+  pressure on the container.  As temperature increases so does the
+  pressure, which explains the ``hiss'' sound when you open a sealed
+  bottle of water.  \Table{tab:water_vapour_pressure} shows the vapour
+  pressures of water between the temperatures of $\degreec{0}$ and
+  $\degreec{100}$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:water_mean_growth_factor}
+    Graph the data in \Table{tab:water_vapour_pressure} as a scatter
+    plot.  Assume that the data in \Table{tab:water_vapour_pressure}
+    follow an exponential growth model.  Starting from $\degreec{1}$
+    onwards, define the \emph{relative pressure growth} as the vapour
+    pressure for the current temperature divided by the vapour
+    pressure for the previous temperature.  Calculate the mean of all
+    the relative pressure growths and let the result be an estimate of
+    the growth factor of the vapour pressure of water.  Derive a
+    formula to model the increase in the vapour pressure of water as
+    temperature rises.  Graph your formula together with the given
+    data set.  What do you notice?
+
+  \item\label{subprob:water_Wikipedia_formula}
+    The following is a simple exponential model of the data in
+    \Table{tab:water_vapour_pressure}:\footnote{
+      The formula is from the following website:
+      \url{https://web.archive.org/web/20180504010448/https://en.wikipedia.org/wiki/Vapour_pressure_of_water},
+      accessed 2018-05-04.
+    }
+    %%
+    \begin{equation}
+    \label{eqn:vapour_pressure_Wikipedia_formula}
+    g(t)
+    =
+    \exp{
+      20.386
+      -
+      \frac{5132}{273.15 + t}
+    }.
+    \end{equation}
+    %%
+    Here an expression such as $e^{\alpha + \beta}$ is also written as
+    $\exp{\alpha + \beta}$.  Graph
+    \Equation{eqn:vapour_pressure_Wikipedia_formula} together with the
+    graph from \Part{subprob:water_mean_growth_factor}.  What do you
+    notice?
+
+  \item\label{subprob:vapour_pressure_Tetens}
+    The \emph{Tetens equation}\footnote{
+      See page~13 of the following book:
+      J.~L.~Monteith and M.~H.~Unsworth.
+      \emph{Principles of Environmental Physics: Plants, Animals, and
+        the Atmosphere}. 4-th edition, Academic Press, 2013.
+    }
+    is one of the better formulae for approximating the vapour
+    pressure of water.  If $T(t)$ represents the vapour
+    pressure~(mm~Hg) of water at a temperature of $\degreec{t}$, then
+    the Tetens equation can be written as
+    %%
+    \begin{equation}
+    \label{eqn:vapour_pressure_Tetens}
+    T(t)
+    =
+    7.500638 \times 0.61078
+    \exp{
+      \frac{
+        17.27t
+      }{
+        237.3 + t
+      }
+    }.
+    \end{equation}
+    %%
+    The factor of $7.500638$ ensures that the result of the Tetens
+    equation is in units of mm~Hg.  Otherwise the result of the Tetens
+    equation would be in units of kilopascals~(kPa), where one~kPa is
+    approximately $7.500638$~mm~Hg.  Graph the Tetens
+    \Equation{eqn:vapour_pressure_Tetens} together with the graph
+    from \Part{subprob:water_Wikipedia_formula}.  What do you notice?
+
+  \item\label{subprob:vapour_pressure_Buck}
+    For temperatures greater than $\degree{0}$C, Arden Buck\footnote{
+      See the paper at
+      \url{https://doi.org/10.1175/1520-0450(1981)020<1527:NEFCVP>2.0.CO;2}
+      and the document at
+      \url{https://web.archive.org/web/20180504021107/http://www.hygrometers.com/wp-content/uploads/CR-1A-users-manual-2009-12.pdf},
+      accessed 2018-05-04.
+    }
+    developed the following formula to model the vapour pressure
+    $B(t)$ of water at $\degree{t}$C:
+    %%
+    \begin{equation}
+    \label{eqn:vapour_pressure_Buck}
+    \begin{aligned}
+    B(t)
+    &=
+    7.500638 \times 0.61121 \\[4pt]
+    \amptab
+    \times
+    \exp{
+      \frac{t}{257.14 + t}
+      \parenthesis*{
+        18.678 - \frac{t}{234.5}
+      }
+    }.
+    \end{aligned}
+    \end{equation}
+    %%
+    Similar to the Tetens equation, the factor of $7.500638$ ensures
+    that the Buck equation gives results in units of mm~Hg.  Graph the
+    Buck \Equation{eqn:vapour_pressure_Buck} together with the graph
+    from \Part{subprob:vapour_pressure_Tetens}.  What do you notice?
+
+  \item\label{subprob:vapour_pressure_RMS_error}
+    For each observed pressure number in
+    \Table{tab:water_vapour_pressure}, calculate the squared error
+    that results from using each of
+    equations~\eqref{eqn:vapour_pressure_Wikipedia_formula},
+    \eqref{eqn:vapour_pressure_Tetens},
+    and~\eqref{eqn:vapour_pressure_Buck} to predict the vapour
+    pressure at the given temperature.  Graph the temperatures versus
+    the squared errors.  Use the graph to identify which of the above
+    three equations is better at modelling vapour pressure for which
+    range of temperatures.  Use the root mean square error~(i.e.~the
+    RMS error) to explain which one of the three equations is better
+    at modelling the data in \Table{tab:water_vapour_pressure}.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:water_mean_growth_factor}
+Let $a = 4.579$~mm~Hg be the initial vapour pressure.  The mean of all
+the relative pressure growths is approximately $b = 1.0525$, rounded
+to four decimal places.  If $f(t)$ represents the vapour
+pressure~(mm~Hg) of water at a temperature of $\degreec{t}$, then you
+can write $f(t)$ as
+%%
+\begin{equation}
+\label{eqn:water_mean_growth_factor}
+f(t)
+=
+4.579 \times 1.0525^t.
+\end{equation}
+%%
+The latter equation is graphed in \Figure{fig:water_vapour_pressure}
+together with the data from \Table{tab:water_vapour_pressure}.  The
+figure shows that \Equation{eqn:water_mean_growth_factor} tends to
+underestimate the vapour pressure of water, especially within the
+region of $\degreec{20}$ to $\degreec{100}$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/vapour-pressure.pdf}
+\caption{%%
+  The vapour pressure of water as a function of temperature.  Vapour
+  pressure is measured in millimetre of mercury and temperature is
+  measured in degrees Celsius.  The experimental data are from
+  \Table{tab:water_vapour_pressure}.  The green curve is a graph of
+  \Equation{eqn:water_mean_growth_factor}.  The dashed curve is a
+  graph of \Equation{eqn:vapour_pressure_Wikipedia_formula}.  The blue
+  curve is a graph of the Tetens
+  \Equation{eqn:vapour_pressure_Tetens}.  The graph of the Buck
+  \Equation{eqn:vapour_pressure_Buck} is not shown because it overlaps
+  the curves for the experimental data and the Teten equation.
+}
+\label{fig:water_vapour_pressure}
+\end{figure}
+
+\solutionpart{subprob:water_Wikipedia_formula}
+\solutionpart{subprob:vapour_pressure_Tetens}
+\solutionpart{subprob:vapour_pressure_Buck}
+\Figure{fig:water_vapour_pressure} compares the graphs of
+\Equations{eqn:vapour_pressure_Wikipedia_formula}{eqn:water_mean_growth_factor}
+and the Tetens \Equation{eqn:vapour_pressure_Tetens}.  Note that the
+graph for the Buck \Equation{eqn:vapour_pressure_Buck} is not shown
+because it overlaps with the graphs of
+\Equation{eqn:vapour_pressure_Wikipedia_formula} and the Teten
+equation.  The figure shows that
+\Equation{eqn:vapour_pressure_Wikipedia_formula} is better suited to
+modelling the given data set than is
+\Equation{eqn:water_mean_growth_factor}.  The Tetens and Buck
+equations and the exponential
+model~\eqref{eqn:vapour_pressure_Wikipedia_formula} all seem to
+overlap the experimental data, which clearly suggests that you require
+another way to decide which one of the latter three equations is
+better suited to modelling the given data set.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/vapour-pressure-squared-errors.pdf}
+\caption{%%
+  The squared errors of each of the exponential
+  model~\eqref{eqn:vapour_pressure_Wikipedia_formula}, the Tetens
+  \Equation{eqn:vapour_pressure_Tetens}, and the Buck
+  \Equation{eqn:vapour_pressure_Buck}.
+}
+\label{fig:vapour_pressure_squared_errors}
+\end{figure}
+
+\solutionpart{subprob:vapour_pressure_RMS_error}
+\Figure{fig:vapour_pressure_squared_errors} compares the squared
+errors of the exponential
+model~\eqref{eqn:vapour_pressure_Wikipedia_formula}, the Tetens
+\Equation{eqn:vapour_pressure_Tetens}, and the Buck
+\Equation{eqn:vapour_pressure_Buck}.  The figure shows that the
+exponential \Equation{eqn:vapour_pressure_Wikipedia_formula} can be
+used to model the vapour pressure of water when the
+temperature $t$~($\degreec{}$) is within the range
+$0 \leq t \leq 40$.  From $\degreec{40}$ onwards, the quality of the
+prediction of \Equation{eqn:vapour_pressure_Wikipedia_formula}
+deteriorates.  Similarly, the Tetens
+\Equation{eqn:vapour_pressure_Tetens} can be used to predict vapour
+pressure for temperatures~($\degreec{}$) within the range
+$0 \leq t \leq 75$.  However, the quality of the prediction of the
+Buck \Equation{eqn:vapour_pressure_Buck} does not seem to deteriorate
+as the temperature increases from $\degreec{0}$ to $\degreec{100}$.
+This is further confirmed by the fact that of the three equations, the
+Buck equation has the lowest RMS error, namely~$0.2377$, rounded to
+four decimal places.  Therefore you may conclude that the Buck
+equation is better than the other two at modelling the data in
+\Table{tab:water_vapour_pressure}.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
 \input{table/11/yeast.tex}
 \caption{%%
   The observed population size in an experimental colony of yeast.
