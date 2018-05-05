@@ -51,6 +51,7 @@ clean:
 	rm -rfv *.log
 	rm -rfv *.md5
 	rm -rfv *.out
+	rm -rfv code/11/*~
 	rm -rfv data/07/*~
 	rm -rfv image/07/*~
 	rm -rfv image/11/*~
