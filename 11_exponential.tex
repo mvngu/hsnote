@@ -2900,11 +2900,298 @@ $2^n - 1$.
 \end{solution}
 }{}
 
-\item Formula for radioactive decay involving the number $e$.
-  Estimate the half-life.
+\begin{table}[!htbp]
+\centering
+\input{table/11/radioactive-dice.tex}
+\caption{%%
+  Experimental data for the decay of $1000$ ``radioactive'' dice,
+  simulated via a computer.  Time is measured in minutes.  After the
+  elapse of each minute, you have $d$ dice that have ``decayed'' since
+  the previous minute and the $r$ remaining dice are yet to
+  ``decay''.  Note that $d$ is not the same as the total number of
+  dice that have ``decayed'' up to the given time.  A die is
+  considered to have ``decayed'' if after a roll the top-most face of
+  the die shows six pips.
+}
+\label{tab:radioactive_dice}
+\end{table}
+
+\item You can obtain an understanding of radioactive decay and
+  half-life by performing a simple dice experiment.\footnote{
+    See for example the video:
+    \url{https://youtu.be/HRwey6cwGHo}.  The idea of using the
+    ``radioactive'' dice experiment to teach radioactive decay and
+    half-life seems to originate with J.~L.~Lewis; see the paper:
+    \url{https://doi.org/10.1088/0031-9112/13/1/003}.
+  }
+  For good experimental data, you should use at least $100$ dice.
+  However, you will be using the experimental data from $1000$ dice
+  that have been generated from a computer simulation.  The computer
+  simulation works as follows.  At time $t = 0$ minutes, you have
+  $1000$ dice.  After the elapse of one minute~(i.e.~at time $t = 1$
+  minute), the $1000$ dice are rolled and you note the number of pips
+  on the top-most face of each die.  If the top-most face of a die
+  shows six pips, then you move the die to a pile labelled
+  ``decayed''.  The remaining dice that do not have six pips on their
+  respective top-most faces are not yet ``decayed''.  After the elapse
+  of another minute~(i.e.~at time $t = 2$ minutes), the remaining
+  ``non-decayed'' dice from time $t = 1$ are rolled and you note the
+  number of pips on the top-most face of each die.  If a die shows six
+  pips on its top-most face, you move the die to the ``decayed'' pile
+  and the remaining dice are yet to ``decay''.  Repeat the process
+  until all dice have ``decayed''.  \Table{tab:radioactive_dice} shows
+  the data from one run of the above experiment with $1000$
+  ``radioactive'' dice~(the dice were not actually radioactive).
+  %%
+  \begin{packedenum}
+  \item\label{subprob:radioactive_dice_graph_remaining}
+    Produce a scatter plot of the number of minutes that have elapsed
+    versus the number of remaining ``undecayed'' dice.  How much time
+    was required for all the $1000$ dice to be in the ``decay'' state?
+
+  \item\label{subprob:radioactive_dice_cumulative_decayed}
+    In \Table{tab:radioactive_dice}, note the two columns with the
+    heading ``Decayed''.  Each row shows the number of dice that have
+    ``decayed'' since the previous minute.  For example, from time
+    $t = 4$ to $t = 5$ you have $72$ dice that have ``decayed'' during
+    that one minute interval.  However, what you want is the
+    cumulative~(or running) sum of all dice that have decayed up to
+    any given time.  Create a column for the cumulative sum of
+    ``decayed'' dice.  Plot the cumulative sum of ``decayed'' dice
+    versus time together with the graph
+    from \Part{subprob:radioactive_dice_graph_remaining}.
+
+  \item\label{subprob:radioactive_dice_decay_constant}
+    Let $t_{1/2}$ be the half-life of an exponential decay model.  If
+    $\lambda$ represents the constant decay rate, then the half-life
+    is related to the decay rate via the equation
+    %%
+    \begin{equation}
+    \label{eqn:half_life_related_to_decay_rate}
+    t_{1/2}
+    =
+    \frac{0.693147}{\lambda}
+    \end{equation}
+    %%
+    where the numerator of $0.693147$ is an approximation to six
+    decimal places.  Use your graph
+    from \Part{subprob:radioactive_dice_graph_remaining} to estimate
+    the half-life of the ``radioactive'' dice.  Use your estimate and
+    \Equation{eqn:half_life_related_to_decay_rate} to obtain an
+    approximation of the decay rate $\lambda$.  Derive a formula for
+    the number $R(t)$ of ``radioactive'' dice remaining after $t$
+    minutes.  Use the function $R(t)$ to derive a formula for the
+    total number $D(t)$ of dice that have ``decayed'' after $t$
+    minutes.  Graph your formulae together with the graph
+    from \Part{subprob:radioactive_dice_cumulative_decayed}.
+
+  \item\label{subprob:radioactive_dice_mean_decay_rate}
+    You can estimate the constant decay factor $b$ as the mean of the
+    relative decay factors.  Starting from time $t = 1$ onwards, the
+    \emph{relative decay factor} is defined as the number of dice
+    remaining after $t$ minutes divided by the number of dice
+    remaining after $t - 1$ minutes.  Calculate the mean of the
+    relative decay factors and let this mean be an estimate of $b$.
+    Use the estimate to derive a formula for the number  $M(t)$ of
+    dice remaining after $t$ minutes.
+
+  \item\label{subprob:radioactive_dice_probability}
+    Let's use probability to model the ``radioactive'' dice.  Assume
+    that each of the $1000$ dice is fair, meaning that each face of a
+    die has the same probability of being the top-most face after a
+    roll.  When you roll any of these $1000$ dice, the probability
+    that the top-most face has one pip is the same as the probability
+    that the face has six pips.  Suppose that a die has ``decayed''
+    when, as a result of a roll, the top-most face has six pips.
+    Determine the probability $p$ that a die will ``decay'' and use
+    $p$ to calculate the probability $q$ that the die will not decay.
+    Use $q$ to derive a formula for the number $P(t)$ of dice
+    remaining after $t$ minutes.
+
+  \item\label{subprob:radioactive_dice_error_analysis}
+    For each of the functions $R(t)$, $M(t)$, and $P(t)$ graph the
+    error of the function versus time $t$.  Put all three error graphs
+    on one set of axes.  What do you notice?  Use the root mean square
+    error to help you explain which one of the above three functions
+    is better than the other two at modelling the data in
+    \Table{tab:radioactive_dice}.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:radioactive_dice_graph_remaining}
+See \Figure{fig:radioactive_dice} for a scatter plot of the
+experimental data in \Table{tab:radioactive_dice}.  The table shows
+that after the elapse of $42$ minutes you have zero dice remaining.
+In other words, in this particular run of the experiment $42$ minutes
+were required in order for all the $1000$ ``radioactive'' dice to
+``decay''.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/radioactive-dice.pdf}
+\caption{%%
+  The decay of $1000$ ``radioactive'' dice.  The black graph
+  represents the actual number of remaining ``undecayed'' dice after
+  the elapse of the given number of minutes.  The red curve is a graph
+  of \Equation{eqn:radioactive_dice_decay_constant_formula}, which
+  predicts how many dice are yet to ``decay'' after $t$ minutes.
+  Similarly, the blue graph represents the actual cumulative number of
+  dice that have ``decayed'' after the elapse of a given number of
+  minutes.  This number is predicted by
+  \Equation{eqn:radioactive_dice_total_decayed}, which is represented
+  by the green curve.  The experimental data are from
+  \Table{tab:radioactive_dice}.
+}
+\label{fig:radioactive_dice}
+\end{figure}
+
+\solutionpart{subprob:radioactive_dice_cumulative_decayed}
+See \Table{tab:radioactive_dice_cumulative_decayed} and
+\Figure{fig:radioactive_dice}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/radioactive-dice-cumulative.tex}
+\caption{%%
+  This is the same as \Table{tab:radioactive_dice}, but with the
+  addition of columns for the cumulative sum of dice that have
+  ``decayed''.
+}
+\label{tab:radioactive_dice_cumulative_decayed}
+\end{table}
+
+\solutionpart{subprob:radioactive_dice_decay_constant}
+The half-life of the ``radioactive'' dice is the amount of time
+required for the dice to ``decay'' to half of their original quantity.
+The initial quantity of dice is $1000$ and half of this is
+$1000 / 2 = 500$ dice.  \Figure{fig:radioactive_dice} shows that the
+dice required approximately $4$ minutes in order to ``decay'' to $500$
+dice.  Thus the half-life of the dice is approximately $t_{1/2} = 4$
+minutes.  Substitute the latter value into
+\Equation{eqn:half_life_related_to_decay_rate} and you get
+$4 = \frac{0.693147}{\lambda}$, which upon solving for $\lambda$
+results in a constant decay rate of approximately
+%%
+\begin{align*}
+\lambda
+&=
+\frac{0.693147}{4} \\[4pt]
+&=
+0.17328675.
+\end{align*}
+%%
+Hence the decay factor is approximately
+$b = 1 - \lambda \approx 0.826713$, rounded to six decimal places.
+Note that you initially had $1000$ dice.  If $R(t)$ represents the
+number of ``radioactive'' dice remaining after $t$ minutes, you can
+write
+%%
+\begin{equation}
+\label{eqn:radioactive_dice_decay_constant_formula}
+R(t)
+=
+1000 \times 0.826713^t.
+\end{equation}
+%%
+Then the total number $D(t)$ of dice that have ``decayed'' after $t$
+minutes can be written as
+%%
+\begin{equation}
+\label{eqn:radioactive_dice_total_decayed}
+\begin{aligned}
+D(t)
+&=
+1000 - R(t) \\[4pt]
+&=
+1000 - 1000 \times 0.826713^t \\[4pt]
+&=
+1000(1 - 0.826713^t).
+\end{aligned}
+\end{equation}
+%%
+The functions $R(t)$ and $D(t)$ are graphed in
+\Figure{fig:radioactive_dice}.
+
+\solutionpart{subprob:radioactive_dice_mean_decay_rate}
+The mean of the relative decay factors is roughly $0.830929$, rounded
+to six decimal places, so the decay factor can be estimated as
+$b = 0.830929$.  If $M(t)$ represents the number of dice remaining
+after $t$ minutes, you can write
+%%
+\begin{equation}
+\label{eqn:radioactive_dice_mean_decay_rate}
+M(t)
+=
+1000 \times 0.830929^t.
+\end{equation}
+
+\solutionpart{subprob:radioactive_dice_probability}
+A die has six faces and the face with six pips is one among the six
+faces.  Since each die is fair, after a roll the probability that the
+top-most face of a die has six pips is $p = 1 / 6$ and you take this
+as the probability that a die will ``decay''.  The probability $q$
+that a die will not decay is $q = 1 - p$, which can also be written as
+$q = 1 - \frac{1}{6}$ and simplifies to $q = 5 / 6$.  Given a large
+number of dice, the probability of $q = 5 / 6$ is the same as the
+proportion of dice that will remain ``undecayed'' during the next unit
+of time.  That is, the probability of $q = 5 / 6$ is also the decay
+factor, which means that $p = 1 / 6$ is the decay rate.  If $P(t)$
+represents the number of dice remaining after $t$ minutes, you can
+write
+%%
+\begin{equation}
+\label{eqn:radioactive_dice_probability}
+P(t)
+=
+1000
+\times
+\parenthesis*{\frac{5}{6}}^t.
+\end{equation}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/radioactive-dice-error.pdf}
+\caption{%%
+  The errors of the functions
+  $R(t)$~(\Equation{eqn:radioactive_dice_decay_constant_formula}),
+  $M(t)$~(\Equation{eqn:radioactive_dice_mean_decay_rate}), and
+  $P(t)$~(\Equation{eqn:radioactive_dice_probability}).  Let
+  $\tuple{\tau}{\rho}$ be a data point from
+  \Table{tab:radioactive_dice}, where $\tau$ denotes time in minutes
+  and $\rho$ represents the number of dice remaining after $\tau$
+  minutes.  The error of the function $R(t)$ at time $t = \tau$ is
+  defined as the difference $R(\tau) - \rho$.  Furthermore, the error
+  of $R(t)$ is the error of $R(t)$ for time $t = \seq{1}{2}{42}$.  The
+  errors of $M(t)$ and $P(t)$ are similarly defined.
+}
+\label{fig:radioactive_dice_errors}
+\end{figure}
+
+\solutionpart{subprob:radioactive_dice_error_analysis}
+\Figure{fig:radioactive_dice_errors} shows the errors of the functions
+defined by
+equations~\eqref{eqn:radioactive_dice_decay_constant_formula},
+\eqref{eqn:radioactive_dice_mean_decay_rate}, and
+\eqref{eqn:radioactive_dice_probability}.  Note the horizontal line
+through the origin.  If an error value is above this line, then the
+corresponding function overestimates a data point.  Similary, when an
+error value is below the horizontal line, the corresponding function
+underestimates a data point.  If an error value lies on the line, then
+the corresponding function perfectly predicts the data point.  From
+time $t = 1$ up to approximately $t = 8$, all three functions seem to
+overestimate the experimental data.  The situation is reversed from
+$t = 9$ up to approximately $t = 40$, a time interval during which the
+functions underestimate the experimental data.  When the three
+functions overestimate the data, $R(t)$ gives estimates that are
+closer to zero than the other two functions.  However, when the
+functions underestimate the data, $P(t)$ yields estimates that are
+closer to zero than the other two functions.
+\Figure{fig:radioactive_dice_errors} shows that overall $P(t)$ seems
+to be better than the other two functions at modelling the data in
+\Table{tab:radioactive_dice}.  This observation is confirmed by the
+fact that of the root mean square errors of the three functions,
+$P(t)$ has the lowest RMS error at $7.890036$, rounded to six decimal
+places.
 \end{solution}
 }{}
 
