@@ -2571,11 +2571,11 @@ dollars, rounded to the nearest cent.
   \item\label{subprob:duckweeds_growth_factor_estimate}
     Using the daily growth factors
     from \Part{subprob:duckweeds_growth_factor}, you can estimate the
-    growth factor of the frond numbers by calculating the mean of the
-    daily growth factors.  Use your estimated growth factor to derive
-    a formula for the growth of the number of fronds.  Produce a graph
-    of the day number versus the experimental number of fronds.  On
-    the same set of axes, draw a graph of your growth formula.
+    growth factor of the frond numbers as the mean of the daily growth
+    factors.  Use your estimated growth factor to derive a formula for
+    the growth of the number of fronds.  Produce a graph of the day
+    number versus the experimental number of fronds.  On the same set
+    of axes, draw a graph of your growth formula.
 
   \item\label{subprob:duckweeds_growth_factor_exponential}
     Ashby calculated that given an initial population of $a = 100$
@@ -2599,8 +2599,17 @@ dollars, rounded to the nearest cent.
     the fourth column should contain the frond numbers as calculated
     using Ashby's \Equation{eqn:frond_numbers_Ashby_formula}.  Add to
     the graph in \Part{subprob:duckweeds_growth_factor_estimate} a
-    graph of \Equation{eqn:frond_numbers_Ashby_formula}.  By using the
-    root mean square error, explain which of
+    graph of \Equation{eqn:frond_numbers_Ashby_formula}.
+
+  \item\label{subprob:duckweeds_error_analysis}
+    For each observed frond number in
+    \Table{tab:duckweed_frond12_missing}, calculate the error that
+    results from using your formula
+    from \Part{subprob:duckweeds_growth_factor_estimate} to predict
+    the frond number.  Repeat the error calculation for
+    \Equation{eqn:frond_numbers_Ashby_formula}.  Produce a graph of
+    the day number versus the errors.  What do you notice?  By using
+    the root mean square error, explain which of
     \Equation{eqn:frond_numbers_Ashby_formula} and your formula
     from \Part{subprob:duckweeds_growth_factor_estimate} is better at
     modelling the frond numbers listed in
@@ -2694,14 +2703,7 @@ experimental data from \Table{tab:duckweed_frond12_missing}.
 \solutionpart{subprob:duckweeds_growth_factor_exponential}
 \Table{tab:frond12_compare_mean_Ashby} and
 \Figure{fig:frond12_theory_data} compare the observed frond numbers
-with the predicted frond numbers.  The table also shows the squared
-errors of the predictions.  Using these squared errors, the RMS error
-of \Equation{eqn:fronds_formula_average_growth_factor} is
-$4.8256$, which is smaller than the RMS error of $8.2572$ of Ashby's
-\Equation{eqn:frond_numbers_Ashby_formula}, both numbers rounded to
-four decimal places.  Based on the RMS errors, you may conclude that
-\Equation{eqn:fronds_formula_average_growth_factor} is better than
-Ashby's formula at modelling the observed frond numbers.
+with the predicted frond numbers.
 
 \begin{table}[!htbp]
 \centering
@@ -2711,15 +2713,51 @@ Ashby's formula at modelling the observed frond numbers.
   numbers.  The predicted frond numbers as calculated by
   \Equations{eqn:fronds_formula_average_growth_factor}{eqn:frond_numbers_Ashby_formula}
   are listed, respectively, in the third and fourth columns.  These
-  numbers have been rounded to one decimal place.  The fifth and sixth
-  columns show the squared errors of the predictions.  Although the
-  squared errors have been rounded to four decimal places in order to
-  fit the table, you should not round these intermediate results when
-  you calculate the RMS error.
+  numbers have been rounded to one decimal place.
 }
 \label{tab:frond12_compare_mean_Ashby}
 \end{table}
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/frond-errors.pdf}
+\caption{%%
+  The errors that result from using
+  \Equation{eqn:fronds_formula_average_growth_factor} and Ashby's
+  formula~\eqref{eqn:frond_numbers_Ashby_formula} to predict the
+  number of fronds during a given day.  Let $\tuple{i}{d_i}$ be a data
+  point from \Table{tab:duckweed_frond12_missing}, where $d_i$ denotes
+  the number of fronds observed during day $i$.  The prediction of
+  \Equation{eqn:fronds_formula_average_growth_factor} for day $i$ is
+  $F(i)$ and the prediction of Ashby's formula for this same day is
+  $f(i)$.  The error of
+  \Equation{eqn:fronds_formula_average_growth_factor} for day $i$ is
+  defined as the difference $F(i) - d_i$, which can be interpreted as
+  the predicted value minus the observed value.  Similarly, the error
+  of Ashby's formula for day $i$ is defined as the difference
+  $f(i) - d_i$.  Then the errors of
+  \Equation{eqn:fronds_formula_average_growth_factor} are the errors
+  $F(i) - d_i$ for $i = \seq{1}{2}{9}$ and similarly for Ashby's
+  formula.
+}
+\label{fig:frond_error_analysis}
+\end{figure}
+
+\solutionpart{subprob:duckweeds_error_analysis}
+\Figure{fig:frond_error_analysis} compares the errors that result from
+using \Equation{eqn:fronds_formula_average_growth_factor} and Ashby's
+formula~\eqref{eqn:frond_numbers_Ashby_formula} to predict the number
+of fronds on a given day.  The figure shows that Ashby's prediction
+for day $9$ grossly underestimates the number of fronds.  Apart from
+this unusual case, the errors shown in the figure does not seem to
+favour one function or the other.  However, the root mean square~(RMS)
+errors of these two functions are markedly different.  The RMS error
+of \Equation{eqn:fronds_formula_average_growth_factor} is $4.8256$,
+which is smaller than the RMS error of $8.2572$ of Ashby's
+\Equation{eqn:frond_numbers_Ashby_formula}, both numbers rounded to
+four decimal places.  Based on the RMS errors, you may conclude that
+\Equation{eqn:fronds_formula_average_growth_factor} is better than
+Ashby's formula at modelling the observed frond numbers.
 \end{solution}
 }{}
 
