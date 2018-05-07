@@ -2488,24 +2488,24 @@ dollars.
   the number of years for which the balance had been left to grow.
   Determine the formula that the bank teller used to approximate Fry's
   current account balance and use the formula to calculate Fry's
-  current account balance, rounded to the nearest cent.  If the
-  interest on Fry's account had been continuously compounded, what
-  would Fry's account balance be at the end of the given number of
-  compounding years?
+  current account balance, rounded to the nearest cent.  Estimate the
+  doubling time of Fry's account balance.  If the interest on Fry's
+  account had been continuously compounded, what would Fry's account
+  balance be at the end of the given number of compounding years?
 \ifbool{showSolution}{
 \begin{solution}
 Fry had an initial account balance of $\cent{93}$ or $\$0.93$.  The
-interest is $2.25\%$ per annum, so the annual growth rate is
-$r = 2.25 / 100 = 0.0225$.  The account balance had been left to
-grow for $1000$ years.  The bank teller used the following formula to
-approximate Fry's account balance:
+constant interest rate is $2.25\%$ per annum, so the annual growth
+rate is $r = 2.25 / 100 = 0.0225$.  The account balance had been left
+to grow for $1000$ years.  The bank teller used the following formula
+to approximate Fry's account balance:
 \[
 B(t)
 =
 0.93 \times 1.0225^t
 \]
 assuming that interest is calculated once per annum.  Using the above
-formula, Fry's account balance after $t = 1000$ years is
+formula, Fry's account balance after $t = 1000$ years is approximately
 \[
 B(1000)
 =
@@ -2514,8 +2514,31 @@ B(1000)
 4,283,508,449.71
 \]
 dollars, rounded to the nearest cent.  This can also be rounded to
-$4.3$ billion dollars.  If interest had been continuously compounded,
-Fry's account balance at the end of $1000$ years would be
+$4.3$ billion dollars.  The rule of $72$ tells you that the doubling
+time of Fry's account balance is approximately $72 / 2.25 = 32$
+years.  Note that twice the initial balance is
+$2 \times 0.93 = 1.86$ dollars.  After $t = 32$ years, Fry's account
+balance would be
+\[
+B(32)
+=
+0.93 \times 1.0225^{32}
+\approx
+1.90
+\]
+dollars, rounded to the nearest cent.  However, after $t = 31$ years
+the balance would be
+\[
+B(32)
+=
+0.93 \times 1.0225^{31}
+\approx
+1.85
+\]
+dollars, also rounded to the nearest cent.  You may conclude that the
+doubling time on Fry's account balance is at most $32$ years.  If
+interest had been continuously compounded, Fry's account balance at
+the end of $1000$ years would be
 \[
 0.93 e^{0.0225 \times 1000}
 \approx
