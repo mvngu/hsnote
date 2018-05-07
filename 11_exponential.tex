@@ -3351,17 +3351,17 @@ places.
 
   \item\label{subprob:vapour_pressure_RMS_error}
     For each observed pressure number in
-    \Table{tab:water_vapour_pressure}, calculate the squared error
-    that results from using each of
+    \Table{tab:water_vapour_pressure}, calculate the error that
+    results from using each of
     equations~\eqref{eqn:vapour_pressure_Wikipedia_formula},
     \eqref{eqn:vapour_pressure_Tetens},
     and~\eqref{eqn:vapour_pressure_Buck} to predict the vapour
     pressure at the given temperature.  Graph the temperatures versus
-    the squared errors.  Use the graph to identify which of the above
-    three equations is better at modelling vapour pressure for which
-    range of temperatures.  Use the root mean square error~(i.e.~the
-    RMS error) to explain which one of the three equations is better
-    at modelling the data in \Table{tab:water_vapour_pressure}.
+    the errors.  Use the graph to identify which of the above three
+    equations is better at modelling vapour pressure for which range
+    of temperatures.  Use the root mean square error to explain which
+    one of the three equations is better at modelling the data in
+    \Table{tab:water_vapour_pressure}.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -3424,37 +3424,36 @@ better suited to modelling the given data set.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=1.1]{image/11/vapour-pressure-squared-errors.pdf}
+\includegraphics[scale=1.1]{image/11/vapour-pressure-errors.pdf}
 \caption{%%
-  The squared errors of each of the exponential
+  The errors of each of the exponential
   model~\eqref{eqn:vapour_pressure_Wikipedia_formula}, the Tetens
   \Equation{eqn:vapour_pressure_Tetens}, and the Buck
   \Equation{eqn:vapour_pressure_Buck}.
 }
-\label{fig:vapour_pressure_squared_errors}
+\label{fig:vapour_pressure_errors}
 \end{figure}
 
 \solutionpart{subprob:vapour_pressure_RMS_error}
-\Figure{fig:vapour_pressure_squared_errors} compares the squared
-errors of the exponential
-model~\eqref{eqn:vapour_pressure_Wikipedia_formula}, the Tetens
-\Equation{eqn:vapour_pressure_Tetens}, and the Buck
+\Figure{fig:vapour_pressure_errors} compares the errors of the
+exponential model~\eqref{eqn:vapour_pressure_Wikipedia_formula}, the
+Tetens \Equation{eqn:vapour_pressure_Tetens}, and the Buck
 \Equation{eqn:vapour_pressure_Buck}.  The figure shows that the
 exponential \Equation{eqn:vapour_pressure_Wikipedia_formula} can be
 used to model the vapour pressure of water when the
-temperature $t$~($\degreec{}$) is within the range
-$0 \leq t \leq 40$.  From $\degreec{40}$ onwards, the quality of the
+temperature $t$~($\degreec{}$) is within the approximate range of
+$0 \leq t \leq 30$.  From $\degreec{30}$ onwards, the quality of the
 prediction of \Equation{eqn:vapour_pressure_Wikipedia_formula}
 deteriorates.  Similarly, the Tetens
 \Equation{eqn:vapour_pressure_Tetens} can be used to predict vapour
-pressure for temperatures~($\degreec{}$) within the range
-$0 \leq t \leq 75$.  However, the quality of the prediction of the
+pressure for temperatures~($\degreec{}$) within the approximate range
+of $0 \leq t \leq 70$.  However, the quality of the prediction of the
 Buck \Equation{eqn:vapour_pressure_Buck} does not seem to deteriorate
 as the temperature increases from $\degreec{0}$ to $\degreec{100}$.
 This is further confirmed by the fact that of the three equations, the
-Buck equation has the lowest RMS error, namely~$0.2377$, rounded to
-four decimal places.  Therefore you may conclude that the Buck
-equation is better than the other two at modelling the data in
+Buck equation has the lowest root mean square error, namely~$0.2377$,
+rounded to four decimal places.  Therefore you may conclude that the
+Buck equation is better than the other two at modelling the data in
 \Table{tab:water_vapour_pressure}.
 \end{solution}
 }{}
