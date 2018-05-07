@@ -995,8 +995,27 @@ amount of water in the bucket to decrease to $50\%$ of the original
 quantity?  That is, how long would it require for the amount of water
 in the bucket to decrease to $3 / 2 = 1.5$ litres?  You can use the
 formula that models the amount of water in the bucket to estimate the
-half-life of the model.  \Example{eg:water_level} clarifies this
-point.
+half-life of the model.  Or you can use the \emph{rule of 69} to
+calculate an approximation of the half-life.
+
+The rule of $69$ is a way to obtain a rough estimate of the half-life
+of an exponential decay model.  Let $a$ be the initial population or
+quantity.  If $r$ is the constant decay rate as a decimal, then
+$p = r \times 100\%$ is the constant decay rate as a percentage.
+According to the rule of $69$, the half-life of the decay model can be
+approximated as $69 / p$.  If you know a formula for the exponential
+decay, you can use the formula together with the rule of $69$ in order
+to calculate a better estimate of the half-life.
+\Example{eg:water_level} clarifies this point and the rule of $69$ is
+summarised in \Theorem{thm:rule_of_69}.
+
+\begin{theorem}
+\label{thm:rule_of_69}
+\textbf{Rule of $69$.}
+In an exponential decay model, let $p$ be the constant decay rate as a
+percentage.  The half-life of the model is approximately $69 / p$
+units of time.
+\end{theorem}
 
 \begin{figure}[!htbp]
 \centering
