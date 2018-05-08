@@ -1581,6 +1581,7 @@ soup to be less than $15$ degrees Celsius.
 }{}
 
 \begin{exercise}
+\label{ex:MnM_experiment}
 \textbf{An M\&M's experiment.}
 In this experiment, you will need $100$ M\&M's in order to generate
 your own experimental data.  Place the $100$ M\&M's in a plastic
@@ -3121,7 +3122,8 @@ $2^n - 1$.
 \label{tab:radioactive_dice}
 \end{table}
 
-\item You can obtain an understanding of radioactive decay and
+\item\label{prob:radioactive_dice}
+  You can obtain an understanding of radioactive decay and
   half-life by performing a simple dice experiment.\footnote{
     See for example the video:
     \url{https://youtu.be/HRwey6cwGHo}.  The idea of using the
@@ -3401,6 +3403,231 @@ to be better than the other two functions at modelling the data in
 fact that of the root mean square errors of the three functions,
 $P(t)$ has the lowest RMS error at $7.890036$, rounded to six decimal
 places.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/aluminium.tex}
+\caption{%%
+  The radioactive decay of a sample of aluminium.  The experiment was
+  performed by Steven Sahyun of the University of Wisconsin at
+  Whitewater, USA.  Time is measured in seconds.  After the elapse of
+  a given number of seconds, a Geiger counter was used to measure the
+  number of remaining radioactive isotopes in the sample of
+  aluminium.
+}
+\label{tab:aluminium_radioactive_decay}
+\end{table}
+
+\item The experiments from \Exercise{ex:MnM_experiment} and
+  \Problem{prob:radioactive_dice} can provide you a basic
+  understanding of radioactive decay and half-life.  However, these
+  kinds of experiments should be treated as analogies of how
+  radioactive decay actually work.\footnote{
+    The following paper explains in detail the difference between the
+    half-life of ``radioactive'' dice and the half-life of actual
+    radioactive substances:
+    \url{https://doi.org/10.1088/0031-9120/47/2/197}.
+  }
+  In this problem, you will analyse a data set~(see
+  \Table{tab:aluminium_radioactive_decay}) from an actual experiment
+  on the radioactive decay of aluminium.\footnote{
+    The experiment was performed by Steven Sahyun; see the following
+    video:
+    \url{https://streaming.uww.edu/embed?id=dec2c979-2ef0-4a87-bfa4-490b382bf0e0},
+    accessed 2018-05-08.  The data set is available at:
+    \url{http://web.archive.org/web/20180508043848/http://sahyun.net/physics/neutron/data/Al_data_2.xls},
+    accessed 2018-05-08.
+  }
+  %%
+  \begin{packedenum}
+  \item\label{subprob:aluminium_graph}
+    Graph the data in \Table{tab:aluminium_radioactive_decay} as a
+    scatter plot.  What do you notice?
+
+  \item\label{subprob:aluminium_mean_decay_factor}
+    Assume that the data of \Table{tab:aluminium_radioactive_decay}
+    follow the exponential decay model of
+    \Theorem{thm:exponential_decay}.  Starting from time $t = 30$
+    seconds onwards, define the \emph{relative decay factor} as the
+    count of radioactive isotopes for the current time divided by the
+    count of radioactive isotopes for the previous time.  For
+    instance, the relative decay factor at $t = 60$ seconds would be
+    $610 / 656$.  Except for the first row of data, calculate the
+    relative decay factor for each row.  Then calculate the mean of
+    the relative decay factors and use the mean as an estimate of the
+    decay factor $b$ of the data in
+    \Table{tab:aluminium_radioactive_decay}.  Use the estimate of $b$
+    to derive a formula for the number $M(\tau)$ of radioactive
+    isotopes remaining after $\tau$ units of time.  Note that $\tau$
+    should be $\tau = t / 30$ because the counts in
+    \Table{tab:aluminium_radioactive_decay} were taken approximately
+    after every $30$ seconds.  Graph the formula $M(\tau)$ together
+    with the graph from \Part{subprob:aluminium_graph}.  What do you
+    notice?
+
+  \item\label{subprob:aluminium_exponential_dice}
+    Radioactive decay is usually modelled as a formula that is
+    similar to the formula for continuous compound interest.  Let
+    $P_0$ be the initial count of radioactive isotopes at time
+    $t = 0$.  Let $r \geq 0$ be the decay rate as a decimal.  The
+    number $P(t)$ of remaining radioactive isotopes after $t$ units of
+    time can be written as
+    %%
+    \begin{equation}
+    \label{eqn:aluminium_exponential_model_e}
+    P(t)
+    =
+    P_0 e^{-rt}.
+    \end{equation}
+    %%
+    From \Table{tab:aluminium_radioactive_decay} you know that
+    $P_0 = 763$, so the problem now is to estimate the decay rate
+    $r$.  Suppose the probability that a radioactive isotope decays is
+    the same as the probability $p$ of a fair six-sided die showing
+    six pips on its top-most face after a throw.  Use the value of $p$
+    to derive a formula for the number $D(\tau)$ of remaining
+    radioactive isotopes after $\tau$ units of time.  As
+    in \Part{subprob:aluminium_mean_decay_factor}, note that
+    $\tau = t / 30$ for each time value $t$ in
+    \Table{tab:aluminium_radioactive_decay}.  Graph $D(\tau)$ together
+    with the graph from \Part{subprob:aluminium_mean_decay_factor}.
+    What do you notice?
+
+  \item\label{subprob:aluminium_mean_decay_rate}
+    Suppose that in \Equation{eqn:aluminium_exponential_model_e} the
+    decay rate is approximately $r = 0.004058$, rounded to six decimal
+    places.  Write a formula for the number $R(t)$ of remaining
+    radioactive isotopes after $t$ seconds.  Graph the formula
+    together with the graph
+    from \Part{subprob:aluminium_exponential_dice} and describe what
+    you notice.  Graph the errors of $M(t)$, $D(t)$, and $R(t)$ on one
+    set of axes.  What do you notice?  Use the root mean square error
+    to help you explain which one of the three functions is better
+    than the other two at predicting the number of remaining
+    radioactive isotopes.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:aluminium_graph}
+\Figure{fig:aluminium_radioactive_decay} shows a scatter plot of the
+data in \Table{tab:aluminium_radioactive_decay}.  The figure clearly
+shows that the radioactive decay of aluminium follows an exponential
+decay model.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/aluminium.pdf}
+\caption{%%
+  The radioactive decay of a sample of aluminium.  The black dots show
+  the experimental data from \Table{tab:aluminium_radioactive_decay}.
+  The blue curve is a graph of
+  \Equation{eqn:aluminium_mean_decay_factor}.  The green curve is a
+  graph of \Equation{eqn:aluminium_dice_probability}.  The red curve
+  is a graph of \Equation{eqn:aluminium_mean_decay_rate}.
+}
+\label{fig:aluminium_radioactive_decay}
+\end{figure}
+
+\solutionpart{subprob:aluminium_mean_decay_factor}
+The mean of the relative decay factors is approximately $0.927331$,
+rounded to six decimal places.  Let the mean be an estimate of the
+decay factor $b$ of the data so $b = 0.927331$.  Assuming that the
+data follow the exponential decay model of
+\Theorem{thm:exponential_decay}, the number $M(\tau)$ of remaining
+radioactive isotopes after $\tau$ units of time can be written as
+\[
+M(\tau)
+=
+763 \times 0.927331^{\tau}.
+\]
+Since you have $\tau = t / 30$, then $M(\tau)$ can also be written as
+%%
+\begin{equation}
+\label{eqn:aluminium_mean_decay_factor}
+\begin{aligned}
+M(t)
+&=
+763 \times 0.927331^{t / 30}.
+\end{aligned}
+\end{equation}
+%%
+\Figure{fig:aluminium_radioactive_decay} shows a graph of
+\Equation{eqn:aluminium_mean_decay_factor} together with a scatter
+plot of the experimental data.  The figure clearly shows that the
+function $M(t)$ tends to grossly overestimate the number of remaining
+radioactive isotopes.
+
+\solutionpart{subprob:aluminium_exponential_dice}
+Assume that the experimental data follow the exponential
+model~\eqref{eqn:aluminium_exponential_model_e}.  Each side of a fair
+six-sided die has a probability of $p = 1 / 6$ of being the top-most
+face after a throw.  Let this probability be the decay rate of the
+radioactive isotopes so $r = 1 / 6$.  Then the number $D(\tau)$ of
+remaining radioactive isotopes after $\tau$ units of time can be
+written as
+\[
+D(\tau)
+=
+763 e^{-\tau / 6}.
+\]
+Since $\tau = t / 30$, then $D(\tau)$ can also be written as
+%%
+\begin{equation}
+\label{eqn:aluminium_dice_probability}
+\begin{aligned}
+D(t)
+&=
+763 \exp{-\frac{t}{30} \times \frac{1}{6}} \\[4pt]
+&=
+763 e^{-t / 180}.
+\end{aligned}
+\end{equation}
+%%
+The function $D(t)$ is graphed in
+\Figure{fig:aluminium_radioactive_decay}.  The figure shows that
+$D(t)$ is better than $M(t)$ at predicting the number of remaining
+radioactive isotopes after $t$ seconds.  However, the function $D(t)$
+tends to underestimate the number of remaining radioactive isotopes.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/aluminium-error.pdf}
+\caption{%%
+  A comparison of the errors that result from using the functions
+  $M(t)$, $D(t)$, and $R(t)$ to predict the number of remaining
+  radioactive isotopes.
+}
+\label{fig:aluminium_error_analysis}
+\end{figure}
+
+\solutionpart{subprob:aluminium_mean_decay_rate}
+Assume that the experimental data follow the exponential
+model~\eqref{eqn:aluminium_exponential_model_e}.  Let $P_0 = 763$ be
+the initial count of radioactive isotopes and suppose that the decay
+rate is approximately $r = 0.004058$, rounded to six decimal places.
+The number $R(t)$ of remaining radioactive isotopes after $t$ seconds
+can be written as
+%%
+\begin{equation}
+\label{eqn:aluminium_mean_decay_rate}
+R(t)
+=
+763 e^{-0.004058 t}.
+\end{equation}
+%%
+\Figure{fig:aluminium_radioactive_decay} shows a graph of $R(t)$.  The
+figure shows that $R(t)$ seems to be better than the other two
+functions at modelling the experimental data.  This observation is
+confirmed by the error graphs in
+\Figure{fig:aluminium_error_analysis}, where the error graph for
+$R(t)$ is mostly closer to the horizontal axis than the other two
+error graphs.  Furthermore, the root mean square~(RMS) error of $R(t)$
+is $21.3485$, rounded to four decimal places, which is smaller than
+the RMS errors of $M(t)$ and $D(t)$.  Conclude that the function
+$R(t)$ is better than the other two functions at modelling the data in
+\Table{tab:aluminium_radioactive_decay}.
 \end{solution}
 }{}
 
