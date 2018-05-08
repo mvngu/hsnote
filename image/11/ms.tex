@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{ms}
+\pgfplotsset{compat=1.15}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotStyle/.style={mark size=2,black,mark color=black,mark=*,only marks},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north east,%%
+  plotStyle/.style={%%
+    domain=0:10,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize Time~(minutes)},%%
+  %% y axis
+  ylabel={\normalsize How many remaining M\&M's},%%
+  scaled y ticks=false,%%
+  y tick label style=/pgf/number format/fixed%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (0, 100)
+  (1, 51)
+  (2, 27)
+  (3, 13)
+  (4, 8)
+  (5, 5)
+  (6, 4)
+  (7, 4)
+  (8, 3)
+  (9, 1)
+  (10, 0)
+};
+\addlegendentry{experimental data}
+%%
+%%
+%% The probabilistic model.
+\addplot+ [plotStyle,blue]
+{100 * (0.5^x)};
+\addlegendentry{$M(t)$}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

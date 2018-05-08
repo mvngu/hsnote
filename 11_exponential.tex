@@ -1581,12 +1581,135 @@ soup to be less than $15$ degrees Celsius.
 }{}
 
 \begin{exercise}
-An M\&M's experiment to understand half-life.
+\textbf{An M\&M's experiment.}
+In this experiment, you will need $100$ M\&M's in order to generate
+your own experimental data.  Place the $100$ M\&M's in a plastic
+container and put a lid on the container.  Let the time be $t = 0$
+minute, the number of ``decayed'' M\&M's be zero, and the number of
+remaining M\&M's be $100$.  Shake the container three or four times
+while making sure not to break the M\&M's.  Open the lid and pour the
+M\&M's onto a flat surface.  Look for any M\&M's that has the letter
+``m'' on its top-most side and move any such M\&M's to a pile labelled
+``decayed''.  Let the time be $t = 1$ minute, the quantity of
+``decayed'' M\&M's be the number of M\&M's that you have moved to the
+``decayed'' pile, and the remaining M\&M's be the number of M\&M's you
+have not moved to the ``decayed'' pile.  Place the remaining M\&M's in
+the container and repeat the above process until all M\&M's have been
+moved to the ``decayed'' pile.  Each time you repeat the process, you
+increment the time by one minute.
+%%
+\begin{packedenum}
+\item\label{subex:MnM_data}
+  Organise your experimental data as a table with three columns and as
+  many rows as necessary.  The first row must contain the column
+  headings.  Going from left to right, the first column should list
+  the number of times you poured the content of the container onto a
+  flat surface.  The second column should list the number of M\&M's
+  that you moved to the ``decayed'' pile after time $t$.  This is not
+  the same as the total number of M\&M's that have been moved to the
+  ``decayed'' pile after time $t$.  Finally, the third column should
+  list the number of remaining M\&M's.  Graph the time versus the
+  number of remaining M\&M's.  What do you notice?
+
+\item\label{subex:MnM_decay_factor}
+  If the ``decay'' of the M\&M's were to follow an exponential decay
+  model, explain what you expect the decay factor of the model to be
+  like.
+
+\item\label{subex:MnM_probability}
+  Suppose that each M\&M's is fair in the sense that any of the two
+  sides of an M\&M's has the same probability of being the top-most
+  side after it is poured out of the container.  Calculate the
+  probability $p$ that an M\&M's has the letter ``m'' on its top-most
+  side.  Use $p$ to calculate the probability $q$ that the M\&M's does
+  not have the letter ``m'' on its top-most side.  The value of $p$ is
+  the probability of ``decay'' and $q$ is the probability of remaining
+  ``undecayed''.  Given a large number of M\&M's, $q$ can be
+  interpreted as the proportion of M\&M's remaining after $t$
+  minutes.  Use $q$ to derive a formula for the number $M(t)$ of
+  M\&M's remaining after $t$ minutes.  Graph your formula together
+  with the graph from \Part{subex:MnM_data}.  What do you notice?  Use
+  the root mean square error to help you decide how good is $M(t)$ at
+  modelling the experimental data.
+\end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subex:MnM_data}
+\Table{tab:MnM_data} shows the data for one run of the M\&M's
+experiment.  \Figure{fig:MnM_graph} shows a graph of the number of
+remaining M\&M's after $t$ minutes.  The figure shows that the
+``decay'' of the M\&M's seems to follow a model of exponential decay.
 
+\begin{table}[!htbp]
+\centering
+\input{table/11/ms.tex}
+\caption{%%
+  The ``decay'' of $100$ M\&M's.  Going from left to right, the first
+  column lists how many times M\&M's have been thrown onto a flat
+  surface.  The middle column shows after the $t$-th throw the number
+  of M\&M's that were moved to the ``decayed'' pile, not the
+  cumulative sum that were moved to the ``decayed'' pile.  Finally,
+  the third column lists the number of M\&M's remaining, i.e.~those
+  that are yet to be moved to the ``decayed'' pile.
+}
+\label{tab:MnM_data}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/ms.pdf}
+\caption{%%
+  The number of remaining M\&M's as a function of time.  Here time is
+  measured in minutes.  Originally, there were $100$ M\&M's.  The
+  black dots show the experimental data from \Table{tab:MnM_data}.
+  The blue curve is a graph of \Equation{eqn:MnM_probability_model}.
+}
+\label{fig:MnM_graph}
+\end{figure}
+
+\solutionpart{subex:MnM_decay_factor}
+If the ``decay'' of the M\&M's were to follow an exponential decay
+model, then the decay factor of the model should be a constant that is
+approximately $0.5$.  The reason is that after each throw you expect
+to move $50\%$ of the M\&M's to the ``decayed'' pile.  The other
+$50\%$ are considered the remaining M\&M's.
+
+\solutionpart{subex:MnM_probability}
+If each M\&M's is fair, then you have a probability of $p = 1 / 2$
+that after it is poured out of the container its top-most side has the
+letter ``m''.  Then you have a probability of $q = 1 - p = 1 / 2$ that
+the top-most side of the M\&M's does not have the letter ``m''.  The
+probability of $p = 1 / 2$ can be interpreted as the probability that
+an M\&M's will be moved to the ``decayed'' pile after $t$ minutes.
+The probability of $q = 1 / 2$ can be interpreted as the probability
+that an M\&M's will not be moved to the ``decayed'' pile after $t$
+minutes.  In a large number of M\&M's, the value of $q$ can be
+interpreted as the decay factor.  Assuming that the ``decay'' of the
+M\&M's follows a model of exponential decay, the decay factor is
+$b = 1 / 2$.  Since the initial quantity of M\&M's is $a = 100$, the
+number $M(t)$ of M\&M's remaining after $t$ minutes can be written as
+%%
+\begin{equation}
+\label{eqn:MnM_probability_model}
+M(t)
+=
+100
+\times
+\parenthesis*{
+  \frac{1}{2}
+}^t.
+\end{equation}
+%%
+\Figure{fig:MnM_graph} shows a graph of
+\Equation{eqn:MnM_probability_model}.  The figure shows that the
+function $M(t)$ seems to consistently underestimate the number of
+remaining M\&M's.  However, you have a root mean square~(RMS) error of
+$1.7989$, rounded to four decimal places, from using $M(t)$ to predict
+the number of remaining M\&M's.  Such a relatively low value of the
+RMS error indicates that \Equation{eqn:MnM_probability_model} is
+fairly good at modelling the experimental data.
 \end{solution}
 }{}
 
