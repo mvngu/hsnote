@@ -3747,12 +3747,11 @@ Buck equation is better than the other two at modelling the data in
     %%
     Graph \Equation{eqn:yeast_Pearl_logistic_equation} on the same set
     of axes as the graph in \Part{subprob:yeast_quintic_polynomial}.
-    What do you notice?  By using the root mean square error, explain
-    which one of the equations
-    from \Part{subprob:yeast_data_mean_growth_factor},
-    \Part{subprob:yeast_quintic_polynomial}, and
-    \Equation{eqn:yeast_Pearl_logistic_equation} is more suitable at
-    modelling the data in \Table{tab:yeast}.
+    What do you notice?  Graph the errors of the functions $Y(t)$,
+    $f(t)$, and $P(t)$ on one set of axes.  What do you notice?  Use
+    the root mean square error to help you explain which one of the
+    above three equations is more suitable at modelling the data in
+    \Table{tab:yeast}.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -3813,33 +3812,31 @@ polynomial~\eqref{eqn:yeast_quintic_polynomial}.  The figure clearly
 shows that the quintic polynomial is better than the exponential
 function at modelling the given experimental data.
 
-\begin{table}[!htbp]
+\begin{figure}[!htbp]
 \centering
-\input{table/11/yeast-squared-error.tex}
+\includegraphics[scale=1.1]{image/11/yeast-error.pdf}
 \caption{%%
-  A comparison of three models of the data in \Table{tab:yeast}.  The
-  first is the exponential
-  function~\eqref{eqn:yeast_exponential_model}, the second is the
-  quintic polynomial~\eqref{eqn:yeast_quintic_polynomial}, and the
-  third is the logistic
-  function~\eqref{eqn:yeast_Pearl_logistic_equation}.  The predictions
-  of these models have been rounded to one decimal place.  Also shown
-  are the squared errors of each model.  These errors have been
-  rounded to three decimal places.  Note that most numbers have been
-  rounded so as to fit the table.  However, you should avoid rounding
-  any intermediate results.
+  The errors of the functions $Y(t)$, $f(t)$, and $P(t)$ that result
+  from predicting the population size of the yeast cells.
 }
-\label{tab:yeast_compare_models}
-\end{table}
+\label{fig:yeast_error_analysis}
+\end{figure}
 
 \solutionpart{subprob:yeast_logistic}
 \Figure{fig:yeast_data_versus_models} shows a comparison of three
-functions for modelling the experimental data given in
-\Table{tab:yeast}.  Of the three functions, the logistic function
-seems to be better than the other two at modelling the data.  This
-observation is also confirmed by the root mean square errors of the
-three functions.  \Table{tab:yeast_compare_models} shows the squared
-errors of each of the three models.  Using these squared errors the
+functions $Y(t)$, $f(t)$, and $P(t)$ for modelling the experimental
+data given in \Table{tab:yeast}.  Of the three functions, the logistic
+function seems to be better than the other two at modelling the data.
+This observation is also confirmed by the error graphs shown in
+\Figure{fig:yeast_error_analysis}.  The figure shows that the function
+$Y(t)$ mostly underestimates the number of yeast cells.  The quintic
+polynomial $f(t)$ does a much better job than $Y(t)$ at predicting the
+yeast population.  However, from approximately $t = 12$ hours onwards
+$f(t)$ seems to overestimate the population size.  The error graph for
+$P(t)$ mostly wiggles around the horizontal axis.  Overall, the
+logistic function $P(t)$ is better than the other two functions at
+modelling the experimental data presented in \Table{tab:yeast}.  This
+conclusion is supported by the root mean square~(RMS) errors.  The
 exponential, quintic, and logistic functions have, respectively, RMS
 errors of $238.9384$, $19.9244$, and $3.5986$.  This clearly shows
 that the logistic function is better suited to modelling the given
