@@ -2027,16 +2027,37 @@ both at a vertical distance of $b - 1$ metres from ground level.
     functions~(i.e.~\Equations{eqn:Earth_days_orbit_approximation}{eqn:Earth_days_orbit_Kepler})
     that model the orbital period of a planet given the distance of
     the planet from the Sun.  How do you decide which of the two
-    functions is better?  One way to help you decide is to see which
-    of the two functions gives you the lowest
-    \emph{root mean square error}~or RMS error.  Here, the word
-    \emph{error} has the meaning: how far away is the predicted value
-    from the observed value.  In this case, an \emph{observed value}
-    is an exact value of an orbital period as given in
+    functions is better?  One way to help you decide is to graph the
+    \emph{errors} of each function.  Here, the word \emph{error}
+    means: how far away is the predicted value from the observed
+    value.  In this case, an \emph{observed value} is an exact value
+    of an orbital period as given in
     \Table{tab:planet_distance_to_Sun} and a \emph{predicted value} is
-    a value of the orbital period as calculated by some function.  The
-    better is a function at modelling the orbital periods given in
-    \Table{tab:planet_distance_to_Sun}, the lower should be the RMS
+    a value of the orbital period as calculated by some function.  Let
+    $\tuple{d}{p}$ be a data point from
+    \Table{tab:planet_distance_to_Sun}, where $d$ denotes the
+    distance~(in Gm) from a planet to the Sun and $p$ represents the
+    orbital period~(in Earth days) of the planet.  The observed
+    orbital period is $p$.  The orbital periods as predicted by
+    \Equations{eqn:Earth_days_orbit_approximation}{eqn:Earth_days_orbit_Kepler}
+    are, respectively, $f(d)$ and $g(d)$.  The error of $f(x)$ at
+    $x = d$ is $f(d) - p$ and the error of $g(x)$ at $x = d$ is
+    $g(d) - p$.  Then the errors of the functions $f(x)$ and $g(x)$
+    are, respectively, the errors $f(d) - p$ and $g(d) - p$ for each
+    data point $\tuple{d}{p}$.  Add another two columns to
+    \Table{tab:planet_distance_to_Sun}.  One column should list the
+    errors of $f(x)$ and the other column the errors of $g(x)$.  Graph
+    the distances versus the errors of $f(x)$.  On the same set of
+    axes, graph the distances versus the errors of $g(x)$.  What do
+    you notice when an error is negative?  How would you interpret a
+    positive error?
+
+  \item\label{subprob:planetary_orbit_RMS_error}
+    You can use the \emph{root mean square error}~(or RMS error) to
+    help you decide which function is better than the other at
+    modelling the observed orbital periods.  The better is a function
+    at modelling the orbital periods given in
+    \Table{tab:planet_distance_to_Sun}, the lower should be its RMS
     error.  Let $y_i$ be the observed~(i.e.~exact) orbital period of
     planet $i$ and suppose that $\widehat{y_i}$ is the predicted
     orbital period of planet $i$ as calculated by some function.  If
@@ -2044,27 +2065,28 @@ both at a vertical distance of $b - 1$ metres from ground level.
     predicted values
     $\seq{\widehat{y_1}}{\widehat{y_2}}{\widehat{y_n}}$, then the
     error of the $i$-th predicted value is given by
-    $y_i - \widehat{y_i}$, hence the squared error is
-    $(y_i - \widehat{y_i})^2$.  Calculate the mean of all the squared
-    errors and take the square root of the mean.  The result is the
-    RMS error, which can be written as the expression
+    $\widehat{y_i} - y_i$, which means ``prediction minus observed''.
+    Then the squared error is $(\widehat{y_i} - y_i)^2$.  Calculate
+    the mean of all the squared errors and take the square root of the
+    mean.  The result is the RMS error, which can be written as the
+    expression
     %%
     \begin{align*}
     \text{RMS error}
     &=
     \sqrt{
       \frac{1}{n}
-      \sum_{i=1}^n (y_i - \widehat{y_i})^2
+      \sum_{i=1}^n (\widehat{y_i} - y_i)^2
     } \\[4pt]
     &=
     \sqrt{
       \frac{
         \sumseq{
-          (y_1 - \widehat{y_1})^2
+          (\widehat{y_1} - y_1)^2
         }{
-          (y_2 - \widehat{y_2})^2
+          (\widehat{y_2} - y_2)^2
         }{
-          (y_n - \widehat{y_n})^2
+          (\widehat{y_n} - y_n)^2
         }
       }{
         n
@@ -2072,48 +2094,75 @@ both at a vertical distance of $b - 1$ metres from ground level.
     }.
     \end{align*}
     %%
-    By using the RMS error, explain which of
+    Use the RMS errors to help you explain which one of
     \Equations{eqn:Earth_days_orbit_approximation}{eqn:Earth_days_orbit_Kepler}
-    is better at modelling the orbital periods of the planets listed
-    in \Table{tab:planet_distance_to_Sun}.
+    is better than the other at modelling the orbital periods of the
+    planets listed in \Table{tab:planet_distance_to_Sun}.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subprob:planetary_orbit_quadratic}
 \solutionpart{subprob:planetary_orbit_Kepler}
 \solutionpart{subprob:planetary_orbit_comparison}
-\Table{tab:planet_orbital_periods} shows the completed version of
-\Table{tab:planet_distance_to_Sun} with all missing entries filled
-in.  The table also shows the squared errors of the predicted values
-from
-\Equations{eqn:Earth_days_orbit_approximation}{eqn:Earth_days_orbit_Kepler}.
-The RMS error of Kepler's \Equation{eqn:Earth_days_orbit_Kepler} is
-$132.9641$, which is smaller than the RMS error of $714.2830$ of the
-quadratic \Equation{eqn:Earth_days_orbit_approximation}, both numbers
-rounded to four decimal places.  Therefore you conclude that Kepler's
-equation provides a better model of the orbital periods of the given
-planets than does the quadratic function.
+\Table{tab:planet_orbital_periods_errors} shows the completed version
+of \Table{tab:planet_distance_to_Sun} with all missing entries filled
+in.  The table also shows the errors of the functions $f(x)$ and
+$g(x)$.  The errors are graphed in
+\Figure{fig:orbital_periods_error_analysis}.  Let $\tuple{d}{p}$ be a
+data point from \Table{tab:planet_distance_to_Sun}, where $d$ is the
+distance~(in Gm) from a planet to the Sun and $p$ is the orbital
+period of the planet.  If the error $f(d) - p$ is negative, then the
+predicted orbital period $f(d)$ underestimates the observed orbital
+period $p$.  On the other hand, if the error $f(d) - p$ is positive,
+the predicted orbital period $f(d)$ overestimates the observed orbital
+period $p$.  A similar comment applies to the function $g(x)$.  In
+terms of the error graphs in
+\Figure{fig:orbital_periods_error_analysis}, if part of an error graph
+is above the horizontal axis~(the horizontal line through the origin)
+then that part overestimates the observed orbital periods.  Similarly,
+if a part of the error graph is below the horizontal exis, then that
+part of the graph underestimates the observed orbital periods.  The
+closer is an error graph to the horizontal axis, the better is the
+corresponding function at predicting the orbital periods.
 
 \begin{table}[!htbp]
 \centering
-\input{table/09/planets-complete.tex}
+\input{table/09/planets-error.tex}
 \caption{%%
   The orbital period of a planet as a function of its distance~(in
   gigametres) to the Sun.  This is the same as
   \Table{tab:planet_distance_to_Sun}, but missing entries have been
   filled in.  All numbers in the fourth and fifth columns have been
   rounded to one decimal place.  The sixth and seventh columns list,
-  respectively, the squared errors of Kepler's
+  respectively, the errors of Kepler's
   \Equation{eqn:Earth_days_orbit_Kepler} and the quadratic
   \Equation{eqn:Earth_days_orbit_approximation}.  Numbers in these
-  columns have been rounded to four decimal places.  Note that most
+  columns have been rounded to two decimal places.  Note that most
   numbers in the table have been rounded in order to fit the table.
   However, you should not round these intermediate results when you
-  calculate the RMS errors.
+  use them to calculate the root mean square errors.
 }
-\label{tab:planet_orbital_periods}
+\label{tab:planet_orbital_periods_errors}
 \end{table}
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/09/period-error.pdf}
+\caption{%%
+  The errors of Kepler's function~\eqref{eqn:Earth_days_orbit_Kepler}
+  and the quadratic
+  function~\eqref{eqn:Earth_days_orbit_approximation}.
+}
+\label{fig:orbital_periods_error_analysis}
+\end{figure}
+
+\solutionpart{subprob:planetary_orbit_RMS_error}
+The RMS error of Kepler's \Equation{eqn:Earth_days_orbit_Kepler} is
+$132.9641$, which is smaller than the RMS error of $714.2830$ of the
+quadratic \Equation{eqn:Earth_days_orbit_approximation}, both numbers
+rounded to four decimal places.  Therefore you may conclude that
+Kepler's equation provides a better model of the orbital periods of
+the given planets than does the quadratic function.
 \end{solution}
 }{}
 \end{problem}
