@@ -1775,6 +1775,10 @@
 		\edef\pgfplots@RHS{{\pgf@sys@tonumber\pgf@x}{\pgf@sys@tonumber\pgf@y}}%
 		%
 		\pgfutilsolvetwotwoleq{\pgfplots@LEQ}{\pgfplots@RHS}%
+		\ifx\pgfmathresult\pgfutil@empty
+			\pgfplots@error{Singular matrix encountered while computing boundary anchor. Please choose different values.}%
+			\def\pgfmathresult{0}{0}%
+		\fi
 		\def\pgfplots@extract##1##2{%
 			\def\pgfplots@r{##1}%
 		}%
@@ -3082,6 +3086,12 @@
 }%
 \let\pgfplotsscanlinelength@nan@cleanup=\relax
 \def\pgfplotsscanlinelength@nan@pendingwork@PREPARED{%
+	\pgfplotsplothandlerappendjumpmarker`
+	%
+	\let\pgfplotsscanlinelength@nan@pendingwork=\relax
+}%
+
+\def\pgfplotsplothandlerappendjumpmarker{%
 	\ifpgfplots@LUA@backend@supported
 		\pgfplotsutil@directlua{pgfplots.texSurveyAddJump()}%
 	\else
@@ -3100,8 +3110,6 @@
 		\def\pgfplotsaxisplothasjumps{1}%
 		\pgfplotsaxisserializedatapoint
 	\fi
-	%
-	\let\pgfplotsscanlinelength@nan@pendingwork=\relax
 }%
 %
 % -------------------------------------------------------------------------------
@@ -3421,6 +3429,16 @@
 			\pgfplotscoordmath{meta}{parsenumber}{0}%
 		\fi
 	}%
+	\pgfmathredeclarefunction{thisrow}{%
+		\getthisrow{##1}\pgfmathresult
+		% XXX : this does NOT allow to return string values,
+		% unfortunately! the fpu makes garbage out of it.
+		% I already tried to parse it here and return special string
+		% markers, but that approach requires much more effort...
+	}%
+	\pgfmathredeclarefunction{thisrowno}{%
+		\getthisrowno{##1}\pgfmathresult
+	}%
 	%
 	% %%%%%%%%%%%%%%
 	%
@@ -3481,6 +3499,14 @@
 	\fi
 }%
 
+\def\pgfplots@define@dummies@for@pseudoconstants{%
+	\pgfmathdeclarefunction{thisrow}{1}{%
+		\pgfplots@error{You cannot use 'thisrow' in the current context.}%
+	}%
+	\pgfmathdeclarefunction{thisrowno}{1}{%
+		\pgfplots@error{You cannot use 'thisrowno' in the current context.}%
+	}%
+}%
 \def\pgfplotsaxisupdatelimitsforpointmeta#1{%
 	\begingroup
 	\def\pgfplots@current@point@meta{#1}%
@@ -6294,6 +6320,8 @@
 		 % I invoke the private '@opt@' method because the semicolon ';'
 		 % character may cause problems due to catcode mismatches.
 		 % *sigh*.
+		\let\pgfplots@addplotimpl@file@parsesingle@twodim=\pgfplots@addplotimpl@file@parsesingle@twodim@gnuplotformat
+		\let\pgfplots@addplotimpl@file@parsesingle@threedim=\pgfplots@addplotimpl@file@parsesingle@threedim@gnuplotformat
 		\pgfplots@addplotimpl@file@opt@@{}{}{#2}{#1}% this does not invoke the \pgfplots@start@plot@with@behavioroptions method.
 	\else
 		\expandafter\pgfplots@end@plot
@@ -6428,6 +6456,44 @@
 	\fi
 }%
 
+\def\pgfplots@gnuplot@unbounded{u}%
+\def\pgfplots@gnuplot@unbounded@handler@jump{jump}%
+\def\pgfplots@gnuplot@handle@unbounded{%
+	\pgfkeysgetvalue{/pgfplots/empty line}\pgfplots@loc@TMPa%
+	\ifx\pgfplots@loc@TMPa\pgfplots@gnuplot@unbounded@handler@jump
+		\pgfplotsplothandlerappendjumpmarker
+	\else
+		\ifpgfplots@curplot@threedim
+			\def\pgfplots@current@point@z{nan}%
+		\else
+			\def\pgfplots@current@point@y{nan}%
+		\fi
+		\pgfplots@coord@stream@coord%
+	\fi
+}
+\def\pgfplots@addplotimpl@file@parsesingle@threedim@gnuplotformat#1 #2 #3 #4 #5\pgfplots@EOI{%
+	\def\pgfplots@current@point@x{#1}%
+	\def\pgfplots@current@point@y{#2}%
+	\def\pgfplots@current@point@z{#3}%
+	\def\pgfplots@loc@TMPa{#4}%
+	\ifx\pgfplots@loc@TMPa\pgfplots@gnuplot@unbounded%
+		% a special gnuplot "unbounded" marker
+		\pgfplots@gnuplot@handle@unbounded
+	\else
+		\pgfplots@coord@stream@coord%
+	\fi
+}%
+\def\pgfplots@addplotimpl@file@parsesingle@twodim@gnuplotformat#1 #2 #3 #4\pgfplots@EOI{%
+	\def\pgfplots@current@point@x{#1}%
+	\def\pgfplots@current@point@y{#2}%
+	\def\pgfplots@loc@TMPa{#3}%
+	\ifx\pgfplots@loc@TMPa\pgfplots@gnuplot@unbounded
+		% a special gnuplot "unbounded" marker
+		\pgfplots@gnuplot@handle@unbounded
+	\else
+		\pgfplots@coord@stream@coord%
+	\fi
+}%
 \def\pgfplots@addplotimpl@file@parsesingle@threedim#1 #2 #3 #4\pgfplots@EOI{%
 	\def\pgfplots@current@point@x{#1}%
 	\def\pgfplots@current@point@y{#2}%
@@ -6676,14 +6742,14 @@
 	\let\pgfplotstable@coordindex@old=\coordindex
 	\def\coordindex{\pgfplotstablerow}%
 	\def\lineno{\coordindex}% is the same here
-	% These macros are-unfortunately- not accessable here. And the
+	% The normal implementation of \thisrow is not accessable here. And the
 	% worst is: error messages are impossible either because they are
-	% not executed... try to provide useful hints:
-	\def\thisrow##1{thisrow_unavailable_load_table_directly}%
-	\def\thisrowno##1{thisrowno_unavailable_load_table_directly}%
+	% not executed... we resort to the associated math functions:
+	\def\thisrow##1{thisrow("##1")}% let us hope that math parsing is active!
+	\def\thisrowno##1{thisrowno(##1)}%
 	% this should work.
-	\def\getthisrow##1##2{\pgfplotstablegetelem{\coordindex}{##1}\of{#3}{##2}}%
-	\def\getthisrowno##1##2{\pgfplotstablegetelem{\coordindex}{[index]##1}\of{#3}{##2}}%
+	\def\getthisrow##1##2{\pgfplotstablegetelem{\coordindex}{##1}\of{#3}\let##2=\pgfplotsretval}%
+	\def\getthisrowno##1##2{\pgfplotstablegetelem{\coordindex}{[index]##1}\of{#3}\let##2=\pgfplotsretval}%
 	%
 	\expandafter\pgfplotstablegetcolumnbyname\expandafter{\pgfplots@plot@tbl@x}\of#3\to\addplot@tbl@x
 	\expandafter\pgfplotstablegetcolumnbyname\expandafter{\pgfplots@plot@tbl@y}\of#3\to\addplot@tbl@y
@@ -7379,8 +7445,28 @@
 % #1 the target which will contain the filter
 % #2 a math expression.
 \def\pgfplots@install@filter@expression#1#2{%
-	\pgfkeysdef{/pgfplots/#1}{\pgfplots@filter@expression{#1}}%
+	\pgfkeysdef{/pgfplots/#1}{%
+		% DO NOT MODIFY THIS VALUE without also modifying 
+		%  \pgfplots@ifisfilterexpression!
+		\pgfplots@filter@expression{#1}%
+	}%
+	%
+	% remember for lua backend:
 	\pgfkeyssetvalue{/pgfplots/#1/@expressionvalue}{#2}%
+}%
+% #1 the target which will contain the filter
+% #2 a math expression.
+\def\pgfplots@install@filter@expression@append#1#2{%
+	\pgfkeysgetvalue{/pgfplots/#1/.@cmd}\pgfplots@loc@TMPc
+	\ifx\pgfplots@loc@TMPc\pgfplots@empty@command@key
+		% ok, this is the first filter. Make sure it can also be
+		% processed by the lua backend
+		\pgfplots@install@filter@expression{#1}{#2}%
+	\else
+		% there is a subtle difference to /.expression: this here CANNOT
+		% be processed by the lua backend!
+		\pgfkeysalso{/pgfplots/#1/.append code={\pgfplots@filter@expression@{#1}{#2}}}%
+	\fi
 }%
 
 % Executes #2 if the filter key was defined by
@@ -7399,14 +7485,18 @@
 	\fi
 }%
 
-% the key name (example: 'x filter')
+% #1 the key name (example: 'x filter')
 \def\pgfplots@filter@expression#1{%
+	\pgfplots@filter@expression@{#1}{\pgfkeysvalueof{/pgfplots/#1/@expressionvalue}}%
+}%
+% #1 the key name (example: 'x filter')
+% #2 the expression
+\def\pgfplots@filter@expression@#1#2{%
 	\begingroup
 	\pgfkeys{/pgf/fpu=true,%
 		/pgf/fpu/output format=float,%
 	}%
-	\pgfkeysgetvalue{/pgfplots/#1/@expressionvalue}\pgfplots@loc@TMPa
-	\pgfmathparse{\pgfplots@loc@TMPa}%
+	\pgfmathparse{#2}%
 	\pgfmath@smuggleone\pgfmathresult
 	\endgroup
 }%
@@ -7578,15 +7668,54 @@
 	\fi
 }%
 
-% Returns the current points into the keys
+% A command which returns high-level (logical) coordinates into the keys
 % /data point/x
 % /data point/y
 % /data point/z
 % /data point/meta
+% /data point/index
+%
+% The command has two modes:
+%
+% 1. without arguments. In this case, it reads the "current" point
+% from the plot handler.
+%
+% 2. with an argument in curly braces. In this case, it expects one of
+% the following:
+% a) a \pgfpoint instruction (i.e. some code which assigns \pgf@x and
+% \pgf@y) and returns the associated logical (high-level) coordinates.
+% b) a TikZ point starting with '('.
+%
+% Examples:
+% * \pgfplotspointgetcoordinates
+%  -> useful for nodes near coords
+% * \pgfplotspointgetcoordinates{\pgfpoint{200pt}{100pt}}
+% * \pgfplotspointgetcoordinates{(5,3)}
+%
+%
+% This works for 2D axes only.
+%
 \def\pgfplotspointgetcoordinates{%
+	\pgfutil@ifnextchar\bgroup{%
+		\pgfplotspointgetcoordinates@frompgfpoint
+	}{%	
+		\pgfplotspointgetcoordinates@currentpoint
+	}%
+}%
+\def\pgfplotspointgetcoordinates@frompgfpoint#1{%
+	\pgfplotspointgetnormalizedcoordinates{#1}%
+	\pgfplotspointgetcoordinatesfromnormalized
+}%
+\def\pgfplotspointgetcoordinates@currentpoint{%
 	\pgfplotspointgetnormalizedcoordinates
 	\pgfplotspointgetcoordinatesfromnormalized
 }%
+
+\def\pgfplotspointgetnormalizedcoordinates@@@x{undefined}
+\def\pgfplotspointgetnormalizedcoordinates@@@y{undefined}
+\def\pgfplotspointgetnormalizedcoordinates@@@z{undefined}
+\let\pgfplotspointgetnormalizedcoordinates@@@index=\pgfutil@empty
+\let\pgfplotspointgetnormalizedcoordinates@@@meta=\pgfutil@empty
 
 % PRECONDITION: \pgfplots@current@point@x and its variants is given in
 % TRANSFORMED format, i.e. we assume that we are in the visualization
@@ -7599,7 +7728,7 @@
 	% computation due to the LUA backend in which case remembering it
 	% leads to extensive (=expensive?) communication between lua and
 	% TeX. Does it hurt here? Scatter plots compute this stuff...
-	\expandafter\let\expandafter\pgfplotsretval\csname pgfplots@current@point@#1\endcsname
+	\expandafter\let\expandafter\pgfplotsretval\csname pgfplotspointgetnormalizedcoordinates@@@#1\endcsname
 	\ifx\pgfplotsretval\pgfutil@empty
 	\else
 		\pgfplots@if{pgfplots@apply@datatrafo@#1}{%
@@ -7612,6 +7741,52 @@
 % Same as \pgfplotspointgetcoordinates, but the resulting values are
 % for use in 'normalized axis cs'.
 \def\pgfplotspointgetnormalizedcoordinates{%
+	\pgfutil@ifnextchar\bgroup{%
+		\pgfplotspointgetnormalizedcoordinates@frompgfpoint
+	}{%
+		\pgfplotspointgetnormalizedcoordinates@currentpoint
+	}%
+}
+\def\pgfplotspointgetnormalizedcoordinates@frompgfpoint#1{%
+	\pgfplotspointgetnormalizedcoordinates@frompgfpoint@#1\pgfplots@EOI
+}
+\def\pgfplotspointgetnormalizedcoordinates@frompgfpoint@{%
+	\pgfutil@ifnextchar({\pgfplotspointgetnormalizedcoordinates@frompgfpoint@tikz}{\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@}%
+}%
+\def\pgfplotspointgetnormalizedcoordinates@frompgfpoint@tikz#1\pgfplots@EOI{%
+	\def\pgfplots@loc@TMPa{#1}%
+	\def\pgfplots@loc@TMPb{(.)}%
+	\ifx\pgfplots@loc@TMPa\pgfplots@loc@TMPb
+		\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@\tikz@last@position\pgfplots@EOI
+	\else
+		\tikz@scan@one@point\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@@#1\relax
+	\fi
+}%
+\def\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@@#1{%
+	\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@#1\pgfplots@EOI
+}
+\def\pgfplotspointgetnormalizedcoordinates@frompgfpoint@@#1\pgfplots@EOI{%
+	\pgf@process{#1}%
+	\pgfplotsconvertunittocoordinate{x}{\pgf@x}%
+	\let\pgfplotspointgetnormalizedcoordinates@@@x=\pgfmathresult
+	\pgfplotsconvertunittocoordinate{y}{\pgf@y}%
+	\let\pgfplotspointgetnormalizedcoordinates@@@y=\pgfmathresult
+	\let\pgfplotspointgetnormalizedcoordinates@@@z=\pgfutil@empty
+	\let\pgfplotspointgetnormalizedcoordinates@@@index=\pgfutil@empty
+	\let\pgfplotspointgetnormalizedcoordinates@@@meta=\pgfutil@empty
+	%
+	\pgfplotspointgetnormalizedcoordinates@internal%
+}%
+
+\def\pgfplotspointgetnormalizedcoordinates@currentpoint{%
+	\let\pgfplotspointgetnormalizedcoordinates@@@x=\pgfplots@current@point@x
+	\let\pgfplotspointgetnormalizedcoordinates@@@y=\pgfplots@current@point@y
+	\let\pgfplotspointgetnormalizedcoordinates@@@z=\pgfplots@current@point@z
+	\let\pgfplotspointgetnormalizedcoordinates@@@meta=\pgfplots@current@point@meta
+	\let\pgfplotspointgetnormalizedcoordinates@@@index=\pgfplots@current@point@coordindex
+	\pgfplotspointgetnormalizedcoordinates@internal
+}
+\def\pgfplotspointgetnormalizedcoordinates@internal{%
 	\pgfplotspointgetnormalizedcoordinates@ x%
 	\pgfkeyslet{/data point/x}\pgfplotsretval
 	%
@@ -7625,8 +7800,8 @@
 		\pgfkeyslet{/data point/z}\pgfutil@empty
 	\fi
 	%
-	\pgfkeyslet{/data point/meta}\pgfplots@current@point@meta
-	\edef\pgfplots@loc@TMPa{\pgfplots@current@point@coordindex}%
+	\pgfkeyslet{/data point/meta}\pgfplotspointgetnormalizedcoordinates@@@meta
+	\edef\pgfplots@loc@TMPa{\pgfplotspointgetnormalizedcoordinates@@@index}%
 	\pgfkeyslet{/data point/index}\pgfplots@loc@TMPa
 }%
 
@@ -7681,14 +7856,18 @@
 	\pgfplots@glob@TMPa
 }%
 \def\pgfplotspointgetcoordinatesfromnormalized@transform#1#2{%
-	\pgfplots@if{pgfplots@#1islinear}{%
-		\pgfplotscoordmath{#1}{tofixed}{#2}%
-	}{%
-		\pgfplotscoordmath{#1}{exp}{#2}%
-	}%
-	\let#2=\pgfmathresult
-	\pgfplots@coord@inv@trafo@apply{#1}{#2}%
-	\let#2=\pgfmathresult
+	\edef\pgfplots@loc@TMPa{#2}%
+	\ifx\pgfplots@loc@TMPa\pgfutil@empty
+	\else
+		\pgfplots@if{pgfplots@#1islinear}{%
+			\pgfplotscoordmath{#1}{tofixed}{#2}%
+		}{%
+			\pgfplotscoordmath{#1}{exp}{#2}%
+		}%
+		\let#2=\pgfmathresult
+		\pgfplots@coord@inv@trafo@apply{#1}{#2}%
+		\let#2=\pgfmathresult
+	\fi
 }%
 
 % Defines an optimized and matching \pgfplotsaxisvisphasetransformcoordinate
@@ -7857,6 +8036,8 @@
 		\noexpand\gdef\noexpand\pgfplotspointplotattimefirst{\pgfplotspointplotattimefirst}%
 		\noexpand\gdef\noexpand\pgfplotspointplotattimesecond{\pgfplotspointplotattimesecond}%
 		\noexpand\gdef\noexpand\pgfplotspointplotattimecoords{\pgfplotspointplotattimecoords}%
+		\noexpand\pgf@x=\the\pgf@x\space% attempt to fix bugs/94/ aka q/271792/.
+		\noexpand\pgf@y=\the\pgf@y\space% sometimes there are \noexpand sometimes there are not.
 	}%
 	\t@pgfplots@toka=\expandafter{\pgfplotspointplotattime@cache}%
 	\t@pgfplots@tokb=\expandafter{\pgfplots@loc@TMPa}%

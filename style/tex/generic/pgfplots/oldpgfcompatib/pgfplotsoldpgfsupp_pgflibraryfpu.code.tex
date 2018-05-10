@@ -19,7 +19,7 @@
 % with the deployment of this patch or partial content of PGF. Note that the author and/or maintainer of pgfplots has no obligation to fix anything:
 % This file comes without any warranty as the rest of pgfplots; there is no obligation for help.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Date of this copy: Do 31. Dez 19:01:21 CET 2015 %%%
+%%% Date of this copy: Fr 10. Nov 17:18:26 CET 2017 %%%
 
 
 
@@ -90,7 +90,7 @@
 			\pgfmathfloatparsenumber{#1}%
 		\fi
 		\let\pgfmathfloatscale=\pgfmathresult%
-	},%
+	},%		
 	% determines the output format of each complete expression parsing
 	% process. If 'scale results' is active, 'fixed' is assumed
 	% automatically.
@@ -192,7 +192,7 @@
 	\pgfutil@namelet{#1}{#2}%
 }
 \def\pgfmathfloat@install@unimplemented#1{%
-	\expandafter\pgfmathfloat@prepareuninstallcmd\csname pgfmath@#1@\endcsname%
+	\expandafter\pgfmathfloat@prepareuninstallcmd\csname pgfmath#1@\endcsname%
 	\expandafter\def\csname pgfmath#1@\endcsname##1{\pgfmathfloat@notimplemented{#1}}%
 }
 \def\pgfmathfloat@plots@install{%
@@ -288,6 +288,7 @@
 	\expandafter\pgfmathfloat@install\csname pgfmathatan2@\endcsname=\pgfmathfloatatantwo@
 	\pgfmathfloat@install@unimplemented{isprime}%
 	\pgfmathfloat@install@unimplemented{iseven}%
+	\pgfmathfloat@install@unimplemented{isodd}%
 	\pgfmathfloat@install@unimplemented{gcd}%
 	\pgfmathfloat@install@unimplemented{frac}%
 	\pgfmathfloat@install@unimplemented{random}%
@@ -325,6 +326,7 @@
 	\let\pgfmath@basic@parse@exponent=\pgfmath@parse@exponent%
 	\let\pgfmath@basic@stack@push@operand=\pgfmath@stack@push@operand
 	\pgfmathfloat@install\pgfmath@stack@push@operand=\pgfmathfloat@stack@push@operand
+	\pgfmathfloat@install\pgfmath@parse@operand@quote=\pgfmathfloat@parse@operand@quote
 	\pgfmathfloat@install\pgfmath@parse@exponent=\pgfmathfloat@parse@float@or@exponent
 	%
 	\pgfmathfloat@install\pgfmathparse=\pgfmathfloatparse%
@@ -350,7 +352,7 @@
 		\noexpand\def\expandafter\noexpand\csname pgfmath@parsefunction@#1\endcsname{%
 			\noexpand\let\noexpand\pgfmath@parsepostgroup\expandafter\noexpand\csname pgfmath@parsefunction@#1@\endcsname%
 			\noexpand\expandafter\noexpand\pgfmath@parse@}%
-		\noexpand\def\expandafter\noexpand\csname pgfmath@parsefunction@#1@\endcsname{%
+		\noexpand\def\expandafter\noexpand\csname pgfmath@parsefunction@#1@\endcsname{%	
 			\noexpand\expandafter\expandafter\noexpand\csname pgfmath#1@\endcsname\noexpand\expandafter{\noexpand\pgfmathresult}%
 			\noexpand\pgfmath@postfunction%
 		}%
@@ -510,6 +512,14 @@
 	\pgfmath@parse@@operator%
 }%
 
+\def\pgfmathfloat@parse@operand@quote#1"{%
+  \edef\pgfmathresult{\pgfmath@fpu@stringmarker #1}%
+  \expandafter\pgfmath@basic@stack@push@operand\expandafter{\pgfmathresult}%
+  \pgfmath@parse@@operator%
+}
+
+\def\pgfmath@fpu@stringmarker{@@str@@:}%
+
 % This extends the functionality of the basic level operand stack: it
 % assures every element on the stack is a float.
 \def\pgfmathfloat@stack@push@operand#1{%
@@ -526,9 +536,18 @@
 	\ifpgfutil@in@
 		\pgfmath@basic@stack@push@operand{#1}%
 	\else
-		\pgfmathfloatparsenumber{#1}%
-		\expandafter\pgfmath@basic@stack@push@operand\expandafter{\pgfmathresult}%
+		\expandafter\pgfutil@in@\expandafter{\pgfmath@fpu@stringmarker}{#1}%
+		\ifpgfutil@in@
+			\pgfmathfloat@stack@push@operand@single@str#1\relax
+		\else
+			\pgfmathfloatparsenumber{#1}%
+			\expandafter\pgfmath@basic@stack@push@operand\expandafter{\pgfmathresult}%
+		\fi
 	\fi
+}%
+
+\expandafter\def\expandafter\pgfmathfloat@stack@push@operand@single@str\pgfmath@fpu@stringmarker #1\relax{%
+	\pgfmath@basic@stack@push@operand{#1}%
 }%
 \def\pgfmathfloat@stack@push@operand@GOBBLE#1\relax{}%
 \def\pgfmathfloat@stack@push@operand@list#1{%
@@ -1636,8 +1655,14 @@
 %
 \def\pgfmathfloatmod@#1#2{%
 	\begingroup
-	\pgfmathfloatdivide@{#1}{#2}%
-	\pgfmathfloatint@{\pgfmathresult}%
+	\pgfmathfloattoint{#1}%
+	\let\pgfmathfloat@loc@TMPa=\pgfmathresult
+	\pgfmathfloattoint{#2}%
+	\let\pgfmathfloat@loc@TMPb=\pgfmathresult
+	\c@pgfmath@counta=\pgfmathfloat@loc@TMPa\relax
+	\divide\c@pgfmath@counta by\pgfmathfloat@loc@TMPb\relax
+	\expandafter\pgfmathfloatparsenumber\expandafter{\the\c@pgfmath@counta}%
+	%
 	\let\pgfmathfloat@loc@TMPa=\pgfmathresult
 	\pgfmathfloatmultiply@{\pgfmathfloat@loc@TMPa}{#2}%
 	\let\pgfmathfloat@loc@TMPb=\pgfmathresult
@@ -1651,15 +1676,20 @@
 % A modification of \pgfmathfloatmod@ where #3 = 1/#2 is already
 % known. This may be faster.
 \def\pgfmathfloatmodknowsinverse@#1#2#3{%
-	\begingroup
-	\pgfmathfloatmultiply@{#1}{#3}%
-	\pgfmathfloatint@{\pgfmathresult}%
-	\let\pgfmathfloat@loc@TMPa=\pgfmathresult
-	\pgfmathfloatmultiply@{\pgfmathfloat@loc@TMPa}{#2}%
-	\let\pgfmathfloat@loc@TMPb=\pgfmathresult
-	\pgfmathfloatsubtract@{#1}{\pgfmathfloat@loc@TMPb}%
-	\pgfmath@smuggleone\pgfmathresult
-	\endgroup
+	\pgfmathfloatmod@{#1}{#2}%
+	%--------------------------------------------------
+	% \begingroup
+	% % FIXME : is this function correct? \pgfmathfloatmod had a
+	% % rounding flaw...
+	% \pgfmathfloatmultiply@{#1}{#3}%
+	% \pgfmathfloatint@{\pgfmathresult}%
+	% \let\pgfmathfloat@loc@TMPa=\pgfmathresult
+	% \pgfmathfloatmultiply@{\pgfmathfloat@loc@TMPa}{#2}%
+	% \let\pgfmathfloat@loc@TMPb=\pgfmathresult
+	% \pgfmathfloatsubtract@{#1}{\pgfmathfloat@loc@TMPb}%
+	% \pgfmath@smuggleone\pgfmathresult
+	% \endgroup
+	%--------------------------------------------------
 }
 \let\pgfmathfloatmodknowsinverse=\pgfmathfloatmodknowsinverse@
 
@@ -2119,7 +2149,7 @@
 			\ifnum0=\c@pgfmath@counta
 				% ah: 0^0
 				\pgfmathfloatcreate{1}{1.0}{0}%
-			\else
+			\else	
 				% ah: 0^x with x!=0:
 				\pgfmathfloatcreate{0}{0.0}{0}%
 			\fi
