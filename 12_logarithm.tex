@@ -203,6 +203,74 @@ the year $2017 + 12 = 2029$ the population of Australia will be
 approximately $30$ million people.
 \end{solution}
 
+\begin{exercise}
+\textbf{Bacterial growth.}
+A Petri dish initially contains ten cells of a type of bacteria.  The
+bacteria population is known to have a constant percentage growth rate
+of $56\%$ per hour.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:bacterial_growth_at_least_100_cells}
+  Use logarithm to calculate the amount of time required for the
+  bacteria population to be at least $100$ cells.
+
+\item\label{subex:logarithm:bacterial_growth_doubling_time}
+  Use logarithm to calculate the doubling time of the bacteria
+  population.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:bacterial_growth_at_least_100_cells}
+From a previous example, you know that the bacteria population can be
+written as $Q(t) = 10 \times 1.56^t$.  Now you want to solve the
+equation
+\[
+100
+=
+10 \times 1.56^t
+\]
+for $t$.  Divide both sides of the latter equation by $10$ to get
+$\frac{100}{10} = 1.56^t$, which simplifies to $10 = 1.56^t$.  In the
+exponential function $1.56^t$, the base is $b = 1.56$.  Take the
+logarithm to base $b = 1.56$ of both sides of $10 = 1.56^t$ and you
+end up with $\log_{1.56} 10 = \log_{1.56} (1.56^t)$, which by
+\Theorem{thm:logarithm:lob_b_b_power_x} can be simplified as
+$\log_{1.56} 10 = t$.  Thus $t$ is approximately $t \approx 5.1780$,
+rounded to four decimal places.  As a check, note that
+$Q(5.1780) = 10 \times 1.56^{5.1780} \approx 99.9998$, rounded to four
+decimal places.  However, if $t = 5.1781$ then you have
+$Q(5.1781) = 10 \times 1.56^{5.1781} \approx 100.0043$, rounded to
+four decimal places.  In other words, you must wait a minimum of
+$5.1781$ hours in order for the bacteria population to be at least
+$100$ cells.
+
+\solutionpart{subex:logarithm:bacterial_growth_doubling_time}
+The initial bacteria population is $a = 10$ cells.  Double this and
+you get $2a = 2 \times 10 = 20$ cells.  You want to know the amount of
+time required in order for the bacteria population to double from $10$
+cells to $20$ cells.  That is, you want to solve the equation
+\[
+20
+=
+10 \times 1.56^t
+\]
+for $t$.  Divide both sides of the latter equation by $10$ to get
+$\frac{20}{10} = 1.56^t$, which simplifies to $2 = 1.56^t$.  Taking
+the logarithm to base $b = 1.56$ of both sides yields
+$\log_{1.56} 2 = \log_{1.56} (1.56^t)$ and use
+\Theorem{thm:logarithm:lob_b_b_power_x} to simplify the last equation
+to $\log_{1.56} 2 = t$.  Then $t$ is approximately
+$t \approx 1.5587$, rounded to four decimal places.  As a check, you
+have $Q(1.5587) = 10 \times 1.56^{1.5587} \approx 19.9997$, rounded to
+four decimal places.  However, if $t = 1.5588$ then you get
+$Q(1.5588) = 10 \times 1.56^{1.5588} \approx 20.0006$, rounded to four
+decimal places.  Conclude that the doubling time of the bacteria
+population is approximately $1.5588$ hours.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
