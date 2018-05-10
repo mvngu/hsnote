@@ -131,6 +131,65 @@ use a calculator or computer program to determine that
 $x = \log_2 64 = 6$.  As a check, you can see that $2^6 = 64$.
 \end{solution}
 
+\begin{example}
+\textbf{Population of Australia.}
+According to the Australian Bureau of Statistics~(ABS), at the end of
+September 2017 the population of Australia grew by $1.6\%$ since the
+previous year.\footnote{
+  ``3101.0 - Australian Demographic Statistics, Sep 2017'',
+  \url{http://web.archive.org/web/20180420062713/http://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/3101.0Main+Features1Sep\%202017},
+  accessed 2018-04-20.
+}
+The population by the end of the given period was estimated to be
+$24.7029$ million people.  Assume that for the next few years the
+population of Australia will grow by a constant rate of $1.6\%$ per
+annum.  When will the population of Australia be $30$ million people?
+\end{example}
+
+\begin{solution}
+You have seen this example before and know that the population~(in
+millions) in $t$ years from $2017$ onwards can be written as
+\[
+P(t)
+=
+24.7029 \times 1.016^t.
+\]
+Note that the base is $b = 1.016$.  You want to determine the number
+of years $t$ such that $P(t) = 30$ million people.  In other words,
+you want to solve the equation
+\[
+30
+=
+24.7029 \times 1.016^t
+\]
+for $t$.  Divide both sides by $24.7029$ to get
+$\frac{30}{24.7029} = 1.016^t$.  Now take the logarithm to base
+$b = 1.016$ of both sides and you end up with
+\[
+\log_{1.016} \frac{30}{24.7029}
+=
+\log_{1.016} (1.016^t).
+\]
+Use \Theorem{thm:logarithm:lob_b_b_power_x} to simplify the right-hand
+side to $\log_{1.016} (1.016^t) = t$ and you can now write
+\[
+\log_{1.016} \frac{30}{24.7029}
+=
+t.
+\]
+The latter expression evaluates to approximately $t = 12.2392$,
+rounded to four decimal places.  As a check, you can see that in
+approximately $t = 12.2392$ years the population of Australia will be
+\[
+24.7029 \times 1.016^{12.2392}
+\approx
+30.000011
+\]
+million people, rounded to six decimal places.  Therefore some time in
+the year $2017 + 12 = 2029$ the population of Australia will be
+approximately $30$ million people.
+\end{solution}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
