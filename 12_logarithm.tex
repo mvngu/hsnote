@@ -271,6 +271,60 @@ population is approximately $1.5588$ hours.
 \end{solution}
 }{}
 
+\begin{example}
+\textbf{Radiocarbon dating.}
+Carbon-$14$ decays at a rate of approximately $r = 0.00012097$ per
+annum, rounded to eight decimal places.  Calculate the half-life of
+$300$ isotopes of carbon-$14$.
+\end{example}
+
+\begin{solution}
+Radioactive decay follows an exponential decay model of the form
+\[
+A(t)
+=
+a e^{-rt}.
+\]
+Here, $a$ represents the initial number of radioactive isotopes, $r$
+denotes the decay rate as a decimal, and $A(t)$ represents the
+remaining number of radioactive isotopes after $t$ units of time.  In
+the example, you initially have $a = 300$ isotopes of carbon-$14$ and
+the decay rate is $r = 0.00012097$ per annum.  After $t$ years, the
+number of remaining carbon-$14$ isotopes can be written as
+\[
+A(t)
+=
+300 e^{-0.00012097 t}.
+\]
+You want to know the number of years required for the initial $300$
+isotopes to decay to $\frac{300}{2} = 150$ isotopes.  That is, you
+want to solve the equation
+\[
+150
+=
+300 e^{-0.00012097 t}
+\]
+for $t$.  Divide both sides by $300$ to get
+$\frac{150}{300} = e^{-0.00012097 t}$, which simplifies to
+$\frac{1}{2} = e^{-0.00012097 t}$.  In the exponential function
+$e^{-0.00012097 t}$, the base is the irrational number $e$.  Take the
+logarithm to base $e$ of both sides of
+$\frac{1}{2} = e^{-0.00012097 t}$ and you end up with
+$\log_e \bigparen{\frac{1}{2}} = \log_e \bigparen{e^{-0.00012097 t}}$,
+which by \Theorem{thm:logarithm:lob_b_b_power_x} simplifies to
+$\log_e \bigparen{\frac{1}{2}} = -0.00012097 t$.  Solving the latter
+equation for $t$ yields
+\[
+-\frac{1}{0.00012097}
+\log_e \parenthesis*{\frac{1}{2}}
+=
+t
+\]
+which evaluates to approximately $t \approx 5730$ years, rounded to
+the nearest integer.  Conclude that the initial $300$ carbon-$14$
+isotopes have a half-life of approximately $5730$ years.
+\end{solution}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
