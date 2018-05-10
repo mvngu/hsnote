@@ -104,9 +104,32 @@ logarithm because the base is $10$.  The right-hand side of
 \Equation{eqn:log10_100} simplifies to $x$ due to the next theorem.
 
 \begin{theorem}
+\label{thm:logarithm:lob_b_b_power_x}
 Let $b > 0$ be any real number such that $b \neq 1$ and let $x$ be a
 real variable.  Then $\log_b (b^x) = x$.
 \end{theorem}
+
+Why is \Theorem{thm:logarithm:lob_b_b_power_x} important?
+\Theorem{thm:logarithm:lob_b_b_power_x} is often used to solve
+equations that involve exponential functions.  In fact, you have
+already seen how the theorem was used to solve
+\Equation{eqn:exponential_growth_100_10_x} for $x$.  Here are some
+more examples.
+
+\begin{example}
+Solve the equation $2^x = 64$ for $x$.
+\end{example}
+
+\begin{solution}
+The equation $2^x = 64$ asks for a value of $x$ such that when $2$ is
+raised to the power of $x$, the result will be $64$.  Since the base
+is $2$, take the logarithm to base $2$ of both sides of the equation
+and you get $\log_2(2^x) = \log_2 64$.  Use
+\Theorem{thm:logarithm:lob_b_b_power_x} to simplify the left-hand side
+as $\log_2(2^x) = x$, hence you can write $x = \log_2 64$.  You can
+use a calculator or computer program to determine that
+$x = \log_2 64 = 6$.  As a check, you can see that $2^6 = 64$.
+\end{solution}
 
 
 \newpage
