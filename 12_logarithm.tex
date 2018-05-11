@@ -568,6 +568,7 @@ $x = \frac{1}{2} e^3$.
 }{}
 
 \begin{theorem}
+\label{thm:logarithm:properties}
 \textbf{Properties of logarithm.}
 Let $\triple{a}{b}{c}$ be positive numbers such that $b \neq 1$.
 %%
@@ -582,6 +583,37 @@ Let $\triple{a}{b}{c}$ be positive numbers such that $b \neq 1$.
   If $x$ is any real number, then $\log_b (a^x) = x \cdot \log_b a$.
 \end{packedenum}
 \end{theorem}
+
+\begin{theorem}
+\textbf{Change of base.}
+Let $b \neq 1$ and $k \neq 1$ be positive numbers.  If $x > 0$ is any
+number, then
+\[
+\log_b x
+=
+\frac{
+  \log_k x
+}{
+  \log_k b
+}.
+\]
+\end{theorem}
+
+\begin{proof}
+Use \Part{subthm:logarithm:cancellation_property_exponential_log} of
+\Theorem{thm:logarithm:cancellation_property} to write
+$b^{\log_b x} = x$.  Take the logarithm to base $k$ of both sides and
+you end up with
+$\log_k \parenthesis*{b^{\log_b x}} = \log_k x$, which
+by \Part{thm:logarithm:properties_multiplication} of
+\Theorem{thm:logarithm:properties} can also be written as
+\[
+\log_b x \times \log_k b
+=
+\log_k x.
+\]
+Solve the latter equation for $\log_b x$ to get the result.
+\end{proof}
 
 
 \newpage
