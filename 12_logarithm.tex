@@ -546,6 +546,27 @@ $x = 2^5 = 32$.
 \end{solution}
 }{}
 
+\begin{exercise}
+Solve the equation $\ln 2x = 3$ for $x$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You can treat both sides of the equation $\ln 2x = 3$ as exponents of
+the irrational number $e$.  This allows you to write the latter
+equation as
+\[
+e^{\ln 2x}
+=
+e^3.
+\]
+Use \Part{subthm:logarithm:cancellation_property_exponential_log} of
+\Theorem{thm:logarithm:cancellation_property} to simplify the last
+equation to $2x = e^3$, which upon solving for $x$ yields
+$x = \frac{1}{2} e^3$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
