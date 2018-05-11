@@ -497,11 +497,35 @@ operation.
 Let $b$ be a positive number such that $b \neq 1$.
 %%
 \begin{packedenum}
-\item If $x$ is any real number, then $\log_b (b^x) = x$.
+\item\label{subthm:logarithm:cancellation_property_log_exponential}
+  If $x$ is any real number, then $\log_b (b^x) = x$.
 
-\item If $x > 0$ is any positive number, then $b^{\log_b x} = x$.
+\item\label{subthm:logarithm:cancellation_property_exponential_log}
+  If $x > 0$ is any positive number, then $b^{\log_b x} = x$.
 \end{packedenum}
 \end{theorem}
+
+\begin{example}
+Solve the equation $\log_{10} x = \frac{1}{2}$ for $x$.
+\end{example}
+
+\begin{solution}
+The equation $\log_{10} x = \frac{1}{2}$ asks you to determine a value
+of $x$ such that $\log_{10} x$ evaluates to $1 / 2$.  You can
+use \Part{subthm:logarithm:cancellation_property_exponential_log} of
+\Theorem{thm:logarithm:cancellation_property} and consider both sides
+of $\log_{10} x = \frac{1}{2}$ as exponents of the base $10$.  Then
+the latter equation can be written as
+\[
+10^{\log_{10} x}
+=
+10^{1/2}
+=
+\sqrt{10}.
+\]
+The left-hand side simplifies to $x$.  The equation now becomes
+$x = \sqrt{10}$.
+\end{solution}
 
 
 \newpage
