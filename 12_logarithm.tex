@@ -325,6 +325,48 @@ the nearest integer.  Conclude that the initial $300$ carbon-$14$
 isotopes have a half-life of approximately $5730$ years.
 \end{solution}
 
+\begin{exercise}
+\textbf{Fermium-$250$.}
+Fermium-$250$ is known to have a decay rate of approximately $0.0231$
+per minute.  Calculate the half-life of $100$ isotopes of
+fermium-$250$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+If $A(t)$ represents the number of remaining fermium-$250$ isotopes
+after $t$ minutes, then $A(t)$ can be written as
+\[
+A(t)
+=
+100 e^{-0.0231 t}.
+\]
+Half of $100$ is $100 / 2 = 50$ and you want to solve the equation
+\[
+50
+=
+100 e^{-0.0231 t}
+\]
+for $t$.  In the latter equation, divide both sides by $100$ to get
+$\frac{50}{100} = e^{-0.0231 t}$, which simplifies to
+$\frac{1}{2} = e^{-0.0231 t}$.  Take the logarithm to base $e$ of both
+sides and you end up with
+$\log_e \parenthesis*{\frac{1}{2}} = \log_e \parenthesis*{e^{-0.0231 t}}$,
+which by \Theorem{thm:logarithm:lob_b_b_power_x} simplifies to
+$\log_e \parenthesis*{\frac{1}{2}} = -0.0231 t$.  The last equation
+can be solved for $t$ to get
+\[
+t
+=
+-\frac{1}{0.0231}
+\log_e \parenthesis*{\frac{1}{2}}
+\]
+which evaluates to approximately $t \approx 30$, rounded to the
+nearest integer.  Therefore the half-life of $100$ isotopes of
+fermium-$250$ is approximately $30$ minutes.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
