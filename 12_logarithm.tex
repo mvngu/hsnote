@@ -590,6 +590,144 @@ Let $\triple{a}{b}{c}$ be positive numbers such that $b \neq 1$.
 \end{packedenum}
 \end{theorem}
 
+\begin{proof}
+\solutionpart{thm:logarithm:properties_addition}
+Since $\triple{a}{b}{c}$ are positive numbers, there exist numbers $m$
+and $n$ such that $a = b^m$ and $c = b^n$.  By
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+you have the identities
+%%
+\begin{equation}
+\label{eqn:logarithm:log_b_a_m_log_b_c_n}
+\log_b a = \log_b (b^m) = m
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\log_b c = \log_b (b^n) = n.
+\end{equation}
+%%
+The product of $a$ and $c$ can be written as
+$a \cdot c = b^m \cdot b^n$, which simplifies to
+$a \cdot c = b^{m + n}$.  In the latter equation, taking the logarithm
+to base $b$ of both sides results in
+$\log_b (a \cdot c) = \log_b (b^{m+n})$.  Use
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+again to simplify the last equation to $\log_b (a \cdot c) = m+n$,
+which by the identities in~\eqref{eqn:logarithm:log_b_a_m_log_b_c_n}
+can be written as
+$\log_b (a \cdot c) = \log_b a + \log_b c$.
+
+\solutionpart{thm:logarithm:properties_subtraction}
+See \Exercise{ex:logarithm:properties_subtraction}.
+
+\solutionpart{thm:logarithm:properties_multiplication}
+Since $a$ and $b$ are positive numbers, there exists a number $n$ such
+that $a = b^n$.  If $x$ is any real number, raise both sides of the
+latter equation to the power of $x$ and you get
+$a^x = (b^n)^x$, which simplifies to $a^x = b^{nx}$.  In the last
+equation, take the logarithm to base $b$ of both sides and you obtain
+$\log_b (a^x) = \log_b (b^{nx})$, which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+can also be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:log_b_a_x_nx}
+\log_b (a^x)
+=
+nx.
+\end{equation}
+%%
+In the equation $a = b^n$, taking the logarithm to base $b$ of both
+sides produces $\log_b a = \log_b (b^n)$ and using
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+again shows that you can also write $\log_b a = n$.  Substitute the
+latter expression into \Equation{eqn:logarithm:log_b_a_x_nx} and you
+get $\log_b (a^x) = (\log_b a) \cdot x$, which you can also write as
+$\log_b (a^x) = x \cdot \log_b a$.
+
+\solutionpart{thm:logarithm:properties_log_1}
+See \Exercise{ex:logarithm:log_b_1_0}.
+
+\solutionpart{thm:logarithm:properties_log_b}
+As $b \neq 1$ is positive, use
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_exponential_log}
+to write $b^{\log_b b} = b$.  Taking the logarithm to base $b$ of both
+sides yields $\log_b (b^{\log_b b}) = \log_b b$, which by the power
+rule from \Part{thm:logarithm:properties_multiplication} can also be
+written as $\log_b b \cdot \log_b b = \log_b b$.  Since $b \neq 1$,
+by \Part{thm:logarithm:properties_log_1} you know that
+$\log_b b \neq 0$.  Thus in the equation
+$\log_b b \cdot \log_b b = \log_b b$ you can divide both sides by
+$\log_b b$ to get
+\[
+\frac{
+  \log_b b \cdot \log_b b
+}{
+  \log_b b
+}
+=
+\frac{\log_b b}{\log_b b}
+\]
+and simplify the latter expression to $\log_b b = 1$.
+\end{proof}
+
+\begin{exercise}
+\label{ex:logarithm:properties_subtraction}
+Prove
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_subtraction}.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Since $\triple{a}{b}{c}$ are positive numbers, there exist numbers $m$
+and $n$ such that $a = b^m$ and $c = b^n$.  Now use
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+to obtain the identities
+%%
+\begin{equation}
+\label{eqn:logarithm:ex_log_b_a_m_log_b_c_n}
+\log_b a = \log_b (b^m) = m
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\log_b c = \log_b (b^n) = n.
+\end{equation}
+%%
+You can write the fraction $a / c$ as
+$\frac{a}{c} = \frac{b^m}{b^n}$, which simplifies to
+$\frac{a}{c} = b^{m - n}$.  In the latter equation, take the logarithm
+to base $b$ of both sides and you end up with
+$\log_b \parenthesis*{\frac{a}{c}} = \log_b (b^{m - n})$.  Another
+application of
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+shows that the latter equation can be simplified as
+$\log_b \parenthesis*{\frac{a}{c}} = m - n$, which by the identities
+in~\eqref{eqn:logarithm:ex_log_b_a_m_log_b_c_n} can also be written as
+$\log_b \parenthesis*{\frac{a}{c}} = \log_b a - \log_b c$.
+\end{solution}
+}{}
+
+\begin{exercise}
+\label{ex:logarithm:log_b_1_0}
+Prove
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_log_1}.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Let $b > 0$ be any number such that $b \neq 1$.  You know that
+$b^0 = 1$.  Take the logarithm to base $b$ of both sides and you
+obtain $\log_b (b^0) = \log_b 1$, which by the power rule from
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_multiplication}
+can also be written as $0 \cdot \log_b b = \log_b 1$.  The latter
+equation simplifies to $0 = \log_b 1$.
+\end{solution}
+}{}
+
 \begin{theorem}
 \textbf{Change of base.}
 Let $b \neq 1$ and $k \neq 1$ be positive numbers.  If $x > 0$ is any
