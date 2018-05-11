@@ -437,7 +437,11 @@ produce the graph of $f(x)$ by reflecting the graph of $g(x)$ about
 the line $y = x$.  This means that, for example, given the point
 $\tuple{0}{1}$ on the graph of $g(x)$, the corresponding point on the
 graph of $f(x)$ is obtained by interchanging the $x$- and
-$y$-coordinates to get $\tuple{1}{0}$.
+$y$-coordinates to get $\tuple{1}{0}$.  In fact,
+\Theorem{thm:logarithm:lob_b_b_power_x} is part of another theorem
+that can be used to cancel exponentiation and logarithm whenever these
+two operations occur together.  This other result is
+\Theorem{thm:logarithm:cancellation_property} below.
 
 \begin{figure}[!htbp]
 \centering
@@ -486,6 +490,18 @@ Thus either operation can be used to undo the result of the other
 operation.
 \end{solution}
 }{}
+
+\begin{theorem}
+\label{thm:logarithm:cancellation_property}
+\textbf{Cancellation property.}
+Let $b$ be a positive number such that $b \neq 1$.
+%%
+\begin{packedenum}
+\item If $x$ is any real number, then $\log_b (b^x) = x$.
+
+\item If $x > 0$ is any positive number, then $b^{\log_b x} = x$.
+\end{packedenum}
+\end{theorem}
 
 
 \newpage
