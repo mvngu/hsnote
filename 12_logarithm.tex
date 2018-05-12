@@ -907,6 +907,123 @@ The right-hand side simplifies to $8$, hence $\log_2 256 = 8$.
 \end{solution}
 }{}
 
+\begin{exercise}
+\textbf{Newton's law of cooling.}
+Let $T_0$ be the original temperature of an object and suppose that
+$T_s$ represent the constant temperature of the environment
+surrounding the object, all temperatures measured in degrees Celsius.
+If $T(t)$ represents the temperature of an object after $t$ units of
+time, Newton's law of cooling states that $T(t)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:Newton_law_cooling}
+T(t)
+=
+T_s + (T_0 - T_s) e^{-kt}
+\end{equation}
+%%
+where $k > 0$ is the rate of cooling written as a decimal.  Here, it
+is assumed that the surrounding maintains a constant temperature.
+Suppose a pot of soup has a tempature of $\degreec{100}$ and that the
+temperature of the surrounding is $\degreec{15}$.  You place the pot
+of soup on the kitchen bench and let the soup cool.  After one hour, the
+temperature of the soup drops down to $\degreec{50}$.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:Newton_law_cooling_soup_formula}
+  Assume that the surrounding maintains a constant temperature of
+  $\degreec{15}$.  Derive a formula for the temperature $T(t)$ of the
+  soup after $t$ hours.
+
+\item\label{subex:logarithm:Newton_law_cooling_soup_20}
+  If the surrounding continues to maintain a constant temperature of
+  $\degreec{15}$, how long must you wait for the temperature of the
+  soup to be $\degreec{20}$?
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:Newton_law_cooling_soup_formula}
+First, you must determine the rate $k$ of cooling.  The original
+temperature of the pot of soup is $T_0 = 100$ degrees Celsius.  The
+surrounding maintains a constant temperature of $T_s = 15$ degrees
+Celsius.  After one hour, the temperature of the soup decreases to
+$\degreec{50}$, which you can write as the expression $T(1) = 50$.
+Substitute the known values into
+\Equation{eqn:logarithm:Newton_law_cooling} and you end up with
+%%
+\begin{align*}
+50
+&=
+15 + (100 - 15) e^{-k \times 1} \\[4pt]
+&=
+15 + 85 e^{-k}.
+\end{align*}
+%%
+You need to solve the latter equation for $k$.  The last equation can
+also be written as $50 - 15 = 85 e^{-k}$.  Divide both sides by $85$
+and you get $\frac{50 - 15}{85} = e^{-k}$, which simplifies to
+$\frac{7}{17} = e^{-k}$.  In the last equation, take the natural
+logarithm of both sides and you have
+$\ln \parenthesis*{\frac{7}{17}} = \ln (e^{-k})$, which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+can be simplified as $\ln \parenthesis*{\frac{7}{17}} = -k$.  Solve
+the last equation for $k$ and you get
+%%
+\begin{equation}
+\label{eqn:logarithm:Newton_law_cooling_rate_k}
+\begin{aligned}
+k
+&=
+-\ln \parenthesis*{\frac{7}{17}} \\[4pt]
+&=
+-(\ln 7 - \ln 17) \\[4pt]
+&=
+\ln 17 - \ln 7 \\[4pt]
+&=
+\ln \parenthesis*{\frac{17}{7}}.
+\end{aligned}
+\end{equation}
+%%
+You now have all information necessary to substitute into
+\Equation{eqn:logarithm:Newton_law_cooling}.  Substitution and
+simplifying yield the formula
+\[
+T(t)
+=
+15 + 85 e^{-kt}
+\]
+where $k$ is defined as per
+\Expression{eqn:logarithm:Newton_law_cooling_rate_k}.
+
+\solutionpart{subex:logarithm:Newton_law_cooling_soup_20}
+You want a value of $t$ such that $T(t) = 20$ degrees Celsius.  That
+is, you want to solve the equation $20 = 15 + 85 e^{-kt}$ for $t$,
+where $k$ is defined as in
+\Expression{eqn:logarithm:Newton_law_cooling_rate_k}.  The latter
+equation can be written as $20 - 15 = 85 e^{-kt}$ or
+$\frac{20 - 15}{85} = e^{-kt}$, which simplifies to
+$\frac{1}{17} = e^{-kt}$.  Take the natural logarithm of both sides
+and you have $\ln \parenthesis*{\frac{1}{17}} = \ln (e^{-kt})$, which
+by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+simplifies to $\ln \parenthesis*{\frac{1}{17}} = -kt$.  Solving the
+last equation for $t$ produces the expression
+%%
+\begin{align*}
+t
+&=
+-\frac{1}{k} \ln \parenthesis*{\frac{1}{17}} \\[4pt]
+&\approx
+3.1931
+\end{align*}
+%%
+rounded to four decimal places.  Therefore you must wait approximately
+$3.1931$ hours for the soup to cool down to $\degreec{20}$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
