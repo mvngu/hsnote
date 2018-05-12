@@ -849,6 +849,64 @@ t
 The latter expression can be evaluated by any calculator or computer
 program that implements the natural logarithm.
 
+\begin{exercise}
+Consider the expression $\log_2 256$.  Without using a calculator or
+computer program:
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:log_2_256_properties}
+  Simplify the expression by means of the properties of logarithm.
+
+\item\label{subex:logarithm:log_2_256_change_base}
+  Simplify the expression by first changing the base to base $e$.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:log_2_256_properties}
+Note that $256 = 2^8$.  You can write $\log_2 256 = \log_2 (2^8)$.
+Use the power rule of
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_multiplication}
+to write $\log_2 (2^8) = 8 \cdot \log_2 2$, which by the unit rule of
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_log_b}
+simplifies to $\log_2 (2^8) = 8 \cdot 1 = 8$.  Therefore $\log_2 256$
+evaluates to $\log_2 256 = 8$.
+
+\solutionpart{subex:logarithm:log_2_256_change_base}
+By using \Theorem{thm:logarithm:change_of_base}, you change the base
+of $\log_2 256$ to base $e$ as follows:
+\[
+\log_2 256
+=
+\frac{
+  \ln 256
+}{
+  \ln 2
+}.
+\]
+Since $\ln 256 = \ln (2^8)$, use the power rule of
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_multiplication}
+to write
+\[
+\log_2 256
+=
+\frac{
+  \ln (2^8)
+}{
+  \ln 2
+}
+=
+\frac{
+  8 \cdot \ln 2
+}{
+  \ln 2
+}.
+\]
+The right-hand side simplifies to $8$, hence $\log_2 256 = 8$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
