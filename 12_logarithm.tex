@@ -109,6 +109,75 @@ $x$ due to \Theorem{thm:logarithm:lob_b_b_power_x} below.
 \label{fig:logarithm:graphs}
 \end{figure}
 
+\begin{example}
+\textbf{Measuring acidity with pH.}
+The pH of a liquid~(or aqueous solution) is a numerical value that is
+used to classify whether the liquid is acidic, neutral, or
+basic~(alkaline).\footnote{
+  See page~670 of the book:
+  R.~Chang and K.~A.~Goldsby. \emph{Chemistry}. $12$-th edition,
+  McGraw-Hill Education, 2016.
+}
+If $\molarH$ represents the molar concentration of hygrogen ions, then
+the pH of $\molarH$ is defined as
+%%
+\begin{equation}
+\label{eqn:logarithm:pH}
+\text{pH}
+=
+-\log_{10} \molarH.
+\end{equation}
+%%
+If an aqueous solution has a pH $< 7$, the solution is classified as
+acidic.  If the solution has a pH $ = 7$, it is classified as
+neutral.  An aqueous solution that has a pH $> 7$ is classified as
+basic~(or alkaline).
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:pH_lemon}
+  A glass of lemon juice has a hydrogen ion concentration of
+  $5.4 \times 10^{-3}$ molar~(or $5.4 \times 10^{-3}$M).  Calculate
+  the pH of the lemon juice and classify its acidity.
+
+\item\label{subex:logarithm:pH_blood}
+  A specimen of blood has a hydrogen ion concentration of
+  $4 \times 10^{-8}$M.  Calculate the pH of the specimen and classify
+  its acidity.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:logarithm:pH_lemon}
+You have $\molarH = 5.4 \times 10^{-3}$M.  Substitute the number into
+\Equation{eqn:logarithm:pH} and you get
+%%
+\begin{align*}
+\text{pH}
+&=
+-\log_{10} (5.4 \times 10^{-3}) \\[4pt]
+&\approx
+2.3
+\end{align*}
+%%
+rounded to one decimal place.  Since the pH of the lemon juice is less
+than $7$, the lemon juice is classified as acidic.
+
+\solutionpart{subex:logarithm:pH_blood}
+Substitute the expression $\molarH = 4 \times 10^{-8}$M into
+\Equation{eqn:logarithm:pH} and you have
+%%
+\begin{align*}
+\text{pH}
+&=
+-\log_{10} (4 \times 10^{-8}) \\[4pt]
+&\approx
+7.4
+\end{align*}
+%%
+rounded to one decimal place.  As the pH of the blood specimen is
+greater than $7$, the specimen is classified as basic.
+\end{solution}
+
 \begin{theorem}
 \label{thm:logarithm:lob_b_b_power_x}
 Let $b > 0$ be any real number such that $b \neq 1$ and let $x$ be a
