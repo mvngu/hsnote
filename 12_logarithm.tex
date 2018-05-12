@@ -178,11 +178,14 @@ $b = 1.016$ of both sides and you end up with
 \]
 Use \Theorem{thm:logarithm:lob_b_b_power_x} to simplify the right-hand
 side to $\log_{1.016} (1.016^t) = t$ and you can now write
-\[
+%%
+\begin{equation}
+\label{eqn:logarithm:Australia_population_doubling_time}
 \log_{1.016} \frac{30}{24.7029}
 =
 t.
-\]
+\end{equation}
+%%
 The latter expression evaluates to approximately $t \approx 12.2392$,
 rounded to four decimal places.  As a check, you can see that in
 approximately $t = 12.2392$ years the population of Australia will be
@@ -728,6 +731,7 @@ equation simplifies to $0 = \log_b 1$.
 }{}
 
 \begin{theorem}
+\label{thm:logarithm:change_of_base}
 \textbf{Change of base.}
 Let $b \neq 1$ and $k \neq 1$ be positive numbers.  If $x > 0$ is any
 number, then
@@ -758,6 +762,89 @@ can also be written as
 \]
 Solve the latter equation for $\log_b x$ to get the result.
 \end{proof}
+
+\Theorem{thm:logarithm:change_of_base} is most useful in cases where
+an electronic calculator or computer program cannot directly evaluate
+the logarithm of a number to any positive base you want.  The reason
+might be that the calculator~(respectively, program) does not have a
+buttom or command to evaluate the logarithm to an arbitrary base.
+Consider again
+\Equation{eqn:logarithm:Australia_population_doubling_time}, which is
+repeated below for reference:
+\[
+\log_{1.016} \frac{30}{24.7029}
+=
+t.
+\]
+Here, the base of the logarithm is $b = 1.016$.  Use
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_subtraction}
+to write the latter equation as
+%%
+\begin{equation}
+\label{eqn:logarithm:Australia_population_doubling_time_change_of_base}
+\begin{aligned}
+\log_{1.016} \frac{30}{24.7029}
+&=
+\log_{1.016} 30 - \log_{1.016} 24.7029 \\[4pt]
+&=
+t.
+\end{aligned}
+\end{equation}
+%%
+If your calculator or computer program does not have a buttom or
+command for the logarithm to base $1.016$, use
+\Theorem{thm:logarithm:change_of_base} to change the base to a more
+convenient base such as base $e$.  With the base of $e$, you can now
+write
+\[
+\log_{1.016} 30
+=
+\frac{
+  \ln 30
+}{
+  \ln 1.016
+}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\log_{1.016} 24.7029
+=
+\frac{
+  \ln 24.7029
+}{
+  \ln 1.016
+}
+\]
+which can be used to write
+\Expression{eqn:logarithm:Australia_population_doubling_time_change_of_base}
+as
+%%
+\begin{align*}
+t
+&=
+\frac{
+  \ln 30
+}{
+  \ln 1.016
+}
+-
+\frac{
+  \ln 24.7029
+}{
+  \ln 1.016
+} \\[4pt]
+&=
+\frac{
+  \ln 30 - \ln 24.7029
+}{
+  \ln 1.016
+}.
+\end{align*}
+%%
+The latter expression can be evaluated by any calculator or computer
+program that implements the natural logarithm.
 
 
 \newpage
