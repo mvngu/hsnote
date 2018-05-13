@@ -1131,6 +1131,55 @@ $3.1931$ hours for the soup to cool down to $\degreec{20}$.
 
 \section{Logarithmic plots}
 
+Another useful property of logarithm is that it can scale down large
+numbers and scale up small numbers.  This is especially useful if your
+data set consists of, for example, numbers that range from the
+hundreds to the billions.  In that case, you should consider plotting
+your data set with a logarithmic axis.
+
+As an example, \Figure{fig:logarithm:Fortune100} shows two scatter
+plots of the same data set on the number of employees and revenue of
+the top $100$ companies in the USA.\footnote{
+  The data set was available at:
+  \url{http://fortune.com/fortune500/list/},
+  accessed 2018-05-13.
+}
+Note that the scatter plot in \Figure{fig:logarithm:Fortune100_linear}
+has the usual linear scale for the horizontal and vertical axes.  Up
+to now, you have been producing scatter plots with linear scaling.  In
+its present form, the scatter plot shows a cluster of points in the
+lower-left corner and one point in the upper-right corner.  What about
+the spacing of the points in the cluster?  Suppose you take the
+logarithm to base $10$ of each number on the horizontal and vertical
+axes.  The result is the scatter plot in
+\Figure{fig:logarithm:Fortune100_log}, which clearly shows the spacing
+of the points in terms of multiples of $10$.  The graph in
+\Figure{fig:logarithm:Fortune100_log} is called a \emph{log-log} plot
+because numbers on both the horizontal and vertical axes have been
+transformed to their equivalents under the common logarithm.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/fortune100-linear.pdf}
+  \label{fig:logarithm:Fortune100_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/fortune100-log.pdf}
+  \label{fig:logarithm:Fortune100_log}
+}
+\caption{%%
+  The number of employees versus the revenue of the top $100$ US
+  companies.  Revenue is in US dollars.  (a)~A scatter plot with
+  linear axes.  Each value on the horizontal and vertical axes should
+  be multiplied by, respectively, $10^6$ and $10^{11}$.  (b)~A scatter
+  plot with log-log axes.
+}
+\label{fig:logarithm:Fortune100}
+\end{figure}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
