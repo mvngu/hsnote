@@ -640,6 +640,37 @@ $x$ yields $x = \frac{1}{2} e^3$.
 \end{solution}
 }{}
 
+\begin{exercise}
+\textbf{Negative pH.}
+In the Richmond Mine at Iron Mountain, California, USA a team of
+researchers found that the underground water had a pH value as low as
+$-3.6$.\footnote{
+  See the paper: \url{https://doi.org/10.1021/es990646v}.
+}
+Suppose that the water had a pH value of $-3.6$.  Calculate the molar
+concentration of hydrogren ions in the water.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You have $\text{pH} = -3.6$.  Substitute the latter value into
+\Equation{eqn:logarithm:pH} to obtain the equation
+\[
+-3.6
+=
+-\log_{10} x
+\]
+where $x = \molarH$.  The above equation simplifies to
+$3.6 = \log_{10} x$, where you can consider both sides as exponents of
+$10$.  In other words, you have the equivalent equation
+$10^{3.6} = 10^{\log_{10} x}$, which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_exponential_log}
+can be simplified as $10^{3.6} = x$.  Conclude that if the underground
+water at Iron Mountain had a pH value of $-3.6$, then the water had a
+hydrogen ion concentration of $10^{3.6}$M.
+\end{solution}
+}{}
+
 \begin{theorem}
 \label{thm:logarithm:properties}
 \textbf{Properties of logarithm.}
