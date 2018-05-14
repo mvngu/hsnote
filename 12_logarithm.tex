@@ -1262,6 +1262,165 @@ $e^{\betahat}$ is an estimate of $a$
 in~\eqref{eqn:logarithm:exponential_model}.  The next example
 clarifies the technique described above.
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/rainbow-trout.tex}
+\caption{%%
+  The total length $x$ versus weight $w$ of $42$ rainbow trout.  Total
+  length is measured in millimetres and weight is measured in grams.
+  Each $y_i$ is the natural logarithm of $w_i$.  If $\xbar$ and
+  $\ybar$ are the means of the $x$ and $y$ columns, respectively, then
+  $d(x_i) = x_i - \xbar$ and $d(y_i) = y_i - \ybar$.  The whole table
+  shows the detailed calculation necessary for the linear regression
+  of the $x$ and $y$ columns.
+}
+\label{tab:logarithm:rainbow_trout}
+\end{table}
+
+\begin{example}
+Suppose that the rainbow trout data set shown in
+\Figure{fig:logarithm:rainbow_trout} follows the exponential
+model~\eqref{eqn:logarithm:exponential_model}.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:trout_logarithm}
+  Take the natural logarithm of each weight value.
+
+\item\label{subex:logarithm:trout_linear_regression}
+  Use linear regression to estimate the parameters $a$ and $r$.
+
+\item\label{subex:logarithm:trout_formula_graph}
+  Use your estimates
+  from \Part{subex:logarithm:trout_linear_regression} to write a
+  formula for the weight $Q(x)$~(in grams) of a rainbow trout that has
+  a total length of $x$ millimetres.  Graph your formula together with
+  the data in the $x$ and $w$ columns of
+  \Table{tab:logarithm:rainbow_trout}.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:logarithm:trout_logarithm}
+In \Table{tab:logarithm:rainbow_trout}, the $x$ and $w$ columns show
+the total length~(mm) and corresponding weight~(g) of $42$ rainbow
+trout.  \Figure{fig:logarithm:rainbow_trout_linear} is a scatter plot
+of the $x$ column versus the $w$ column.  If you transform each weight
+value to its equivalent under the natural logarithm, the result is
+shown in the $y$ column.  That is, if $w_i$ is the weight of trout
+$i$, then $y_i = \ln w_i$.  \Figure{fig:logarithm:rainbow_trout_log}
+is a scatter plot of the $x$ column versus the $y$ column.
+
+\solutionpart{subex:logarithm:trout_linear_regression}
+The linear regression function has the form
+\[
+y
+=
+\ln w
+=
+rx + \ln a
+\]
+where you want to estimate the parameters $r$ and $\ln a$.  Note that
+$y$ is the natural logarithm of the weight $w$.  If $\alphahat$ and
+$\betahat$ are estimates of $r$ and $\ln a$, respectively, then the
+estimates can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:linear_regression_alpha_hat_beta_hat}
+\begin{aligned}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+}{
+  \sum_{i=1}^n (x_i - \xbar)^2
+} \\[4pt]
+%%
+%%
+\betahat
+&=
+\ybar - \alphahat \xbar
+\end{aligned}
+\end{equation}
+%%
+where $n$ is the number of data points.  In this example, you have
+$n = 42$ data points for $42$ rainbow trout.  The means of the $x$ and
+$y$ columns are $\xbar \approx 352.8571$ and
+$\ybar \approx 6.1210$, respectively, each number rounded to four
+decimal places.  \Table{tab:logarithm:rainbow_trout} shows the
+detailed calculations of the numbers $d(x_i) = x_i - \xbar$ and
+$d(y_i) = y_i - \ybar$ and the products $d(x_i) d(y_i)$ and
+$d(x_i) d(x_i)$.  Numbers in the table have been rounded to four
+decimal places in order to fit the table.  However, when you do your
+own calculations you should use a spreadsheet software package and not
+round any intermediate results.  Using the numbers in the table, you
+have the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+1013.8665
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+132875.1429
+\]
+both numbers rounded to four decimal places.  Now use the equations
+in~\eqref{eqn:logarithm:linear_regression_alpha_hat_beta_hat} to
+estimate $\alphahat$ and $\betahat$ as
+\[
+\alphahat
+\approx
+0.0076
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\betahat
+\approx
+3.4286
+\]
+rounded to four decimal places.  Note that $\alphahat$ is an estimate
+of $r$ in the model $Q(x) = a \cdot e^{rt}$ and $\betahat$ is an
+estimate of $\ln a$.  Then you have the equation $\betahat = \ln a$.
+Treat both sides of the last equation as exponents of $e$ and you end
+up with $e^{\betahat} = e^{\ln a}$, which simplifies to
+$e^{\betahat} = a$.  Thus the parameter $r$ can be estimated as
+$r \approx 0.0076$ and $a$ can be estimated as $a \approx 30.8338$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/rainbow-trout.pdf}
+\caption{%%
+  The total length versus weight of $42$ rainbow trout.  The
+  experimental data are from \Table{tab:logarithm:rainbow_trout}.  The
+  red curve is a graph of
+  \Equation{eqn:logarithm:rainbow_trout_prediction}.
+}
+\label{fig:rainbow_trout_prediction}
+\end{figure}
+
+\solutionpart{subex:logarithm:trout_formula_graph}
+Using the estimates
+from \Part{subex:logarithm:trout_linear_regression}, if $Q(x)$
+represents the weight~(g) of a rainbow trout that has a total length
+of $x$~(mm), then $Q(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:rainbow_trout_prediction}
+Q(x)
+=
+30.8338 \cdot e^{0.0076 x}.
+\end{equation}
+%%
+\Figure{fig:rainbow_trout_prediction} shows a graph of
+\Equation{eqn:logarithm:rainbow_trout_prediction} together with the
+experimental data.
+\end{solution}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
