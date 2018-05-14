@@ -1219,6 +1219,49 @@ equivalent under the common logarithm.  The graph in
 plot because the common logarithm was taken of each value on only one
 axis.
 
+As you can see from \Figure{fig:logarithm:rainbow_trout_log}, a
+logarithmic plot can be used to linearise a data set.  If a data set
+approximately follows an exponential model $Q(x)$, a logarithmic plot
+should allow you to visualise the data set as points around a straight
+line.  This means that you can use linear regression to determine a
+linear function $f(x)$ that best fits the linearised data.  Then you
+can transform $f(x)$ into the exponential function $Q(x)$.  In
+particular, suppose that the data set approximately follows the
+exponential function
+%%
+\begin{equation}
+\label{eqn:logarithm:exponential_model}
+Q(x)
+=
+a \cdot e^{rx}.
+\end{equation}
+%%
+Here, you must determine the values of $a$ and $r$.  To linearise the
+data, take the natural logarithm of both sides of
+\Equation{eqn:logarithm:exponential_model} and you get
+$\ln Q(x) = \ln (a \cdot e^{rx})$.  Use the addition rule of
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_addition}
+to write the latter equation as $\ln Q(x) = \ln a + \ln (e^{rx})$,
+which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_log_exponential}
+simplifies to
+%%
+\begin{equation}
+\label{eqn:logarithm:exponential_linearised}
+\ln Q(x)
+=
+rx + \ln a.
+\end{equation}
+%%
+Note that~\eqref{eqn:logarithm:exponential_linearised} is a linear
+equation, where the vertical intercept and rate of change are,
+respectively, $\ln a$ and $r$.  Use linear regression to estimate $r$
+as $\alphahat$ and $\ln a$ as $\betahat$.  Now $\alphahat$ is an
+estimate of $r$ in \Equation{eqn:logarithm:exponential_model} and
+$e^{\betahat}$ is an estimate of $a$
+in~\eqref{eqn:logarithm:exponential_model}.  The next example
+clarifies the technique described above.
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
