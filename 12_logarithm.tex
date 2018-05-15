@@ -1395,6 +1395,186 @@ coefficient of $0.9792$, rounded to four decimal places.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/copper.tex}
+\caption{%%
+  The radioactive decay of a sample of $9.7656$ grams of copper.  The
+  sample was neutron activated for $66$ minutes.  Then a Geiger
+  counter was used to measure the number of radioactive isotopes after
+  the elapse of the listed number of seconds.  The experiment was
+  performed by Steven Sahyun at the University of Wisconsin at
+  Whitewater, USA on $13$-th January~$2005$.
+}
+\label{tab:logarithm:copper_radioactive_decay}
+\end{table}
+
+\begin{exercise}
+\textbf{Radioactive decay of copper.}
+\Table{tab:logarithm:copper_radioactive_decay} shows the radioactive
+decay of a sample of copper.\footnote{
+  The data set was available at:
+  \url{http://web.archive.org/web/20180515171532/http://sahyun.net/physics/neutron/data/Cu_data_2.xls},
+  accessed 2018-05-16.
+}
+The columns for ``Time'' list the elapsed time in seconds, while the
+columns for ``Count'' list the corresponding number of radioactive
+isotopes as measured by a Geiger counter.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:copper_decay_linear_log_plots}
+  Plot the data in the table by using a linear scale for both the
+  horizontal and vertical axes.  What do you notice in the linear
+  plot?  Now take the natural logarithm of each value in the ``Count''
+  columns and produce a semi-log plot.  What do you notice in the
+  semi-log plot?
+
+\item\label{subex:logarithm:copper_decay_regression}
+  Suppose that the data in
+  \Table{tab:logarithm:copper_radioactive_decay} follow the
+  exponential model $Q(x) = a \cdot e^{rx}$, whose logarithmic
+  transformation is $\ln Q(x) = rx + \ln a$.  Use linear regression to
+  estimate the parameters $r$ and $\ln a$.  Use the estimate for
+  $\ln a$ to calculate an estimation of $a$.  Graph the model $Q(x)$
+  together with the linear plot
+  from \Part{subex:logarithm:copper_decay_linear_log_plots}.
+
+\item\label{subex:logarithm:copper_decay_RMS_error_Pearson_rho}
+  Calculate the root mean square~(RMS) error of your model $Q(x)$
+  from \Part{subex:logarithm:copper_decay_regression}.  Determine the
+  Pearson correlation coefficient $\rho$ of the model.  Provide an
+  interpretation of the values of $\rho$ and the RMS error.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:copper_decay_linear_log_plots}
+\Figure{subfig:logarithm:copper_decay_linear} shows a scatter plot of
+the data in \Table{tab:logarithm:copper_radioactive_decay}, where the
+horizontal and vertical axes use linear scaling.  The graph suggests
+that the points roughly follow a model of exponential decay.
+\Figure{subfig:logarithm:copper_decay_log} shows a semi-log plot of
+the same data set, but with logarithmic scaling for the vertical
+axis.  The graph shows that the points seem to lie around a straight
+whose gradient is negative.  This further demonstrates that the data
+set might be modelled as a function for exponential decay.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.81]{image/12/copper-decay-linear.pdf}
+  \label{subfig:logarithm:copper_decay_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.81]{image/12/copper-decay-log.pdf}
+  \label{subfig:logarithm:copper_decay_log}
+}
+\caption{%%
+  The radioactive decay of a sample of copper that had been neutron
+  activated.  Data are from
+  \Table{tab:logarithm:copper_radioactive_decay}.  (a)~A scatter plot
+  of the time in seconds versus the count of radioactive isotopes with
+  linear axes.  (b)~A semi-log plot of the same data set, where the
+  vertical axis uses logarithmic scaling.
+}
+\label{fig:logarithm:copper_decay}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/copper-regression.tex}
+\caption{%%
+  Detailed calulation of the regression of the data in
+  \Table{tab:logarithm:copper_radioactive_decay}.  The column with the
+  heading $x$ lists the elapsed times in seconds.  The column with the
+  heading $y$ lists the natural logarithm of the data in the ``Count''
+  columns of \Table{tab:logarithm:copper_radioactive_decay}.  Let
+  $\xbar$ and $\ybar$ be the means of the $x$ and $y$ columns,
+  respectively.  Then $d(x_i) = x_i - \xbar$ and
+  $d(y_i) = y_i - \ybar$.  Most numbers have been rounded to four
+  decimal places so as to fit the table.  However, you should not
+  round any intermediate results.
+}
+\label{tab:logarithm:copper_decay_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/copper-decay.pdf}
+\caption{%%
+  The radioactive decay of a sample of copper that had been neutron
+  activated.  The black dots show the experimental data from
+  \Table{tab:logarithm:copper_radioactive_decay} and the red curve is
+  a graph of \Equation{eqn:logarithm:copper_decay_model}.
+}
+\label{fig:logarithm:copper_decay_data_versus_prediction}
+\end{figure}
+
+\solutionpart{subex:logarithm:copper_decay_regression}
+\Table{tab:logarithm:copper_decay_regression} shows the detailed
+calculation for the linear regression model
+$\ln Q(x) = rx + \ln a$.  From the table, you have the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+-9417.8213
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+4840149.975
+\]
+where $n = 40$ is the number of data points in the table.  Then $r$
+and $\ln a$ can be estimated as
+\[
+r
+\approx
+-0.0019
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\ln a
+\approx
+6.5903
+\]
+and hence the parameter $a$ can be estimated as
+$a \approx 727.9879$, with both $r$ and $a$ rounded to four decimal
+places.  If $Q(x)$ represents the number of remaining radioactive
+isotopes in the sample of copper after $x$ seconds, then the data in
+\Table{tab:logarithm:copper_radioactive_decay} can be modelled as the
+exponential decay function
+%%
+\begin{equation}
+\label{eqn:logarithm:copper_decay_model}
+Q(x)
+=
+727.9879 \cdot e^{-0.0019 x}.
+\end{equation}
+%%
+\Figure{fig:logarithm:copper_decay_data_versus_prediction} shows a
+graph of \Equation{eqn:logarithm:copper_decay_model} together with a
+scatter plot of the data from
+\Table{tab:logarithm:copper_radioactive_decay}.
+
+\solutionpart{subex:logarithm:copper_decay_RMS_error_Pearson_rho}
+The model in \Equation{eqn:logarithm:copper_decay_model} has a root
+mean square~(RMS) error of $22.7376$, rounded to four decimal places.
+Furthermore, the model has a Pearson correlation coefficient of
+$\rho \approx -0.9924$, also rounded to four decimal places.  The low
+values of the RMS error and $\rho$ suggest that
+\Equation{eqn:logarithm:copper_decay_model} is a good fit of the
+experimental data.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
