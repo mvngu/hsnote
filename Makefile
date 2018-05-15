@@ -53,6 +53,7 @@ clean:
 	rm -rfv *.out
 	rm -rfv code/11/*~
 	rm -rfv data/07/*~
+	rm -rfv data/12/*~
 	rm -rfv image/07/*~
 	rm -rfv image/11/*~
 	rm -rfv style/*~
