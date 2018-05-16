@@ -1580,6 +1580,60 @@ experimental data.
 
 \subsection{Logarithmic scaling on horizontal axis}
 
+In some cases, a scatter plot of a data set might suggest that the
+data follow a logarithmic function.  For instance,
+\Table{tab:logarithm:hinoki_cypress} lists the age versus height of a
+hinoki cypress tree.\footnote{
+  The data set was published in the following paper:
+  \url{https://doi.org/10.1093/treephys/tps127}.
+  The data in the table are for the hinoki cypress tree to which the
+  authors of the paper assigned the ID of ``Tree~1''.
+}
+The data set is illustrated as the scatter plot in
+\Figure{fig:logarithm:hinoki_cypress_linear} with linear scaling for
+both of the horizontal and vertical axes.  The figure seems to show
+that the dots follow a logarithmic function, although it is possible
+that the dots might follow a linear function.
+\Figure{fig:logarithm:hinoki_cypress_log} shows a scatter plot of the
+same data set, except that the horizontal axis now uses logarithmic
+scaling.  The semi-log plot in
+\Figure{fig:logarithm:hinoki_cypress_log} suggests that the dots
+follow a straight line.  In other words, the scatter plots in
+\Figure{fig:logarithm:hinoki_cypress} suggest that you might try to
+model the data in \Table{tab:logarithm:hinoki_cypress} as a
+logarithmic function.
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/hinoki-cypress.tex}
+\caption{%%
+  The age of a hinoki cypress tree versus its height.  Age is measured
+  in tree years and height is measured in metres.
+}
+\label{tab:logarithm:hinoki_cypress}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/hinoki-cypress-linear.pdf}
+  \label{fig:logarithm:hinoki_cypress_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/hinoki-cypress-log.pdf}
+  \label{fig:logarithm:hinoki_cypress_log}
+}
+\caption{%%
+  The age~(in tree years) of a hinoki cypress versus its height~(in
+  metres).  (a)~A scatter plot with linear scaling for both axes.
+  (b)~A scatter plot of the same data set, but with logarithmic
+  scaling for the horizontal axis.
+}
+\label{fig:logarithm:hinoki_cypress}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
