@@ -1665,6 +1665,146 @@ linear regression function of the linearised data and let the
 parameters $\alphahat$ and $\betahat$ of the regression function be
 estimates of $a$ and $b$, respectively.
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/hinoki-cypress-regression-log.tex}
+\caption{%%
+  Detailed calculations of the logarithmic regression of the hinoki
+  cypress data in \Table{tab:logarithm:hinoki_cypress}.  The tree age
+  column $t$ and the tree height column $y$ are the same as the
+  columns in \Table{tab:logarithm:hinoki_cypress}.  Each value in the
+  $x$ column is the natural logarithmic transformation of the
+  corresponding value in the age column $t$, i.e.~$x_i = \ln t_i$.  If
+  $\xbar$ and $\ybar$ are the means of the $x$ and $y$ columns,
+  respectively, then $d(x_i) = x_i - \xbar$ and
+  $d(y_i) = y_i - \ybar$.  Most values in the table have been rounded
+  to four decimal places in order to fit the table.  However, you
+  should not round these intermediate results when you do your own
+  calculations.
+}
+\label{tab:logarithm:hinoki_cypress_logarithmic_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/hinoki-cypress.pdf}
+\caption{%%
+  The height in metres of a hinoki cypress tree as a function of its
+  age in years.  The black dots show the experimental data from
+  \Table{tab:logarithm:hinoki_cypress}.  The red curve is a graph of
+  \Equation{eqn:logarithm:hinoki_cypress_log_regression}.
+}
+\label{fig:logarithm:hinoki_cypress_prediction}
+\end{figure}
+
+\begin{example}
+\textbf{Hinoki cypress tree.}
+Consider the data in \Table{tab:logarithm:hinoki_cypress}.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:hinoki_cypress_log_transformation}
+  Take the natural logarithm of each value in the ``Age'' column.
+
+\item\label{subex:logarithm:hinoki_cypress_log_regression}
+  Suppose that the data in \Table{tab:logarithm:hinoki_cypress} follow
+  the natural logarithmic function $H(t) = a \ln t + b$, where $H(t)$
+  represents the height in metres of a hinoki cypress tree at $t$
+  years old.  Use linear regression to estimate the parameters $a$ and
+  $b$.  Graph the function $H(t)$ together with the scatter plot in
+  \Figure{fig:logarithm:hinoki_cypress_linear}.
+
+\item\label{subex:logarithm:hinoki_cypress_correlation_r_RMS_error}
+  Calculate the Pearson correlation coefficient $\rho$ of the model
+  $H(t)$ from \Part{subex:logarithm:hinoki_cypress_log_regression} and
+  the root mean square~(RMS) error of the model.  Provide an
+  interpretation of the values of $\rho$ and the RMS error.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subex:logarithm:hinoki_cypress_log_transformation}
+See the $x$ column in
+\Table{tab:logarithm:hinoki_cypress_logarithmic_regression}.
+
+\solutionpart{subex:logarithm:hinoki_cypress_log_regression}
+First, you should linearise the data in
+\Table{tab:logarithm:hinoki_cypress}, which you have done
+in \Part{subex:logarithm:hinoki_cypress_log_transformation} by taking
+the natural logarithm of each value in the ``Age'' column.  The result
+is the $x$ column in
+\Table{tab:logarithm:hinoki_cypress_logarithmic_regression}.
+
+Second, you perform linear regression on the $x$ and $y$ columns of
+\Table{tab:logarithm:hinoki_cypress_logarithmic_regression}.  Results
+of the regression include the numbers $\alpha$ and $\beta$, which you
+treat as estimates of the parameters $a$ and $b$, respectively.  The
+means of the $x$ and $y$ columns are $\xbar \approx 3.3993$ and
+$\ybar \approx 8.3875$, both rounded to four decimal places.
+\Table{tab:logarithm:hinoki_cypress_logarithmic_regression} shows the
+detailed calculations of the linear regression, from which you obtain
+the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+2.3216
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+0.7529
+\]
+rounded to four decimal places, where $n = 20$ is the number of data
+points in \Table{tab:logarithm:hinoki_cypress}.  Then you have the
+numbers
+%%
+\begin{align*}
+\alpha
+&=
+\frac{
+  \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+}{
+  \sum_{i=1}^n (x_i - \xbar)^2
+}
+\approx
+3.0835 \\[4pt]
+%%
+%%
+\beta
+&=
+\ybar - \alpha\xbar
+\approx
+-2.0940
+\end{align*}
+%%
+both rounded to four decimal places.  Consider these two numbers as
+estimates of the parameters $a$ and $b$.  Hence the height $H(t)$ of
+the hinoki cypress tree at $t$ years old can be modelled as
+%%
+\begin{equation}
+\label{eqn:logarithm:hinoki_cypress_log_regression}
+H(t)
+=
+3.0835 \ln t - 2.0940.
+\end{equation}
+%%
+\Figure{fig:logarithm:hinoki_cypress_prediction} shows a graph of the
+model~\eqref{eqn:logarithm:hinoki_cypress_log_regression} together
+with a scatter plot of the data in
+\Table{tab:logarithm:hinoki_cypress}.
+
+\solutionpart{subex:logarithm:hinoki_cypress_correlation_r_RMS_error}
+The model~\eqref{eqn:logarithm:hinoki_cypress_log_regression} has a
+Pearson correlation coefficient of $\rho \approx 0.9641$ and a root
+mean square~(RMS) error of approximately $0.1649$, both numbers
+rounded to four decimal places.  The high value of $\rho$ and the low
+value of the RMS error both suggest that
+\Equation{eqn:logarithm:hinoki_cypress_log_regression} provide a good
+fit of the data in \Table{tab:logarithm:hinoki_cypress}.
+\end{solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
