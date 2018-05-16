@@ -1601,7 +1601,7 @@ scaling.  The semi-log plot in
 follow a straight line.  In other words, the scatter plots in
 \Figure{fig:logarithm:hinoki_cypress} suggest that you might try to
 model the data in \Table{tab:logarithm:hinoki_cypress} as a
-logarithmic function.
+logarithmic function.  But how?
 
 \begin{table}[!htbp]
 \centering
@@ -1633,6 +1633,37 @@ logarithmic function.
 }
 \label{fig:logarithm:hinoki_cypress}
 \end{figure}
+
+If a data set follows a logarithmic function, how can you determine a
+logarithmic function that best fits the data?  The first thing you
+need to do is to be precise about which logarithmic function you think
+the data follow.  Is it a natural logarithmic function?  A common
+logarithmic function?  A logarithmic function with base $2$.  Or a
+logarithmic function with some other base?  For now, suppose that your
+data set can be modelled as the natural logarithmic function
+%%
+\begin{equation}
+\label{eqn:logarithm:log_scaling_horizontal_axis}
+Q(x)
+=
+a \cdot \ln x + b
+\end{equation}
+%%
+where the parameters $a$ and $b$ are to be determined from the data.
+The assumption is that you take the natural logarithm of the values in
+the $x$ column; call this the natural logarithmic transformation of
+the $x$ column.  In the case of \Table{tab:logarithm:hinoki_cypress},
+the $x$ column is the column with the heading ``Age''.  You leave the
+$y$~(i.e.~the ``Height'') column alone with its linear scaling.  Thus
+you have linearised the data.  A scatter plot of the linearised data
+should show a bunch of points that seem to follow a straight line; see
+for example \Figure{fig:logarithm:hinoki_cypress_log}.  In that case,
+the linear regression function of the linearised data is in fact of
+the form shown in
+\Equation{eqn:logarithm:log_scaling_horizontal_axis}.  Determine the
+linear regression function of the linearised data and let the
+parameters $\alphahat$ and $\betahat$ of the regression function be
+estimates of $a$ and $b$, respectively.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
