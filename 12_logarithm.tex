@@ -1698,6 +1698,7 @@ estimates of $a$ and $b$, respectively.
 \end{figure}
 
 \begin{example}
+\label{eg:logarithm:hinoki_cypress_tree}
 \textbf{Hinoki cypress tree.}
 Consider the data in \Table{tab:logarithm:hinoki_cypress}.
 %%
@@ -1804,6 +1805,118 @@ value of the RMS error both suggest that
 \Equation{eqn:logarithm:hinoki_cypress_log_regression} provide a good
 fit of the data in \Table{tab:logarithm:hinoki_cypress}.
 \end{solution}
+
+\begin{exercise}
+\textbf{Hinoki cypress tree.}
+In \Example{eg:logarithm:hinoki_cypress_tree},
+\Figure{fig:logarithm:hinoki_cypress_linear} shows that the data in
+\Table{tab:logarithm:hinoki_cypress} seems to follow a straight line.
+Assume that the experimental data follow a linear function of the form
+$f(x) = ax + b$, where $f(x)$ represents the height of the hinoki
+cypress tree at $x$ years of age.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:hinoki_linear_regression}
+  Use linear regression to estimate the parameters $a$ and $b$.  Graph
+  the model $f(x)$ together with the graph in
+  \Figure{fig:logarithm:hinoki_cypress_prediction}.
+
+\item\label{subex:logarithm:hinoki_Pearson_rho_RMS_error}
+  Calculate the Pearson correlation coefficient $\rho$ of the model
+  $f(x)$ and the root mean square~(RMS) error of the model.  Use these
+  values, and the values of $\rho$ and the RMS error from
+  \Example{eg:logarithm:hinoki_cypress_tree}, to help you determine
+  which one of the functions $f(x)$ and $H(t)$ is better than the
+  other at modelling the data in
+  \Table{tab:logarithm:hinoki_cypress}.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:hinoki_linear_regression}
+\Table{tab:logarithm:hinoki_cypress_linear_regression} shows the
+detailed calculations for the linear regression of the data in
+\Table{tab:logarithm:hinoki_cypress}.  The means of the $x$ and $y$
+columns are $\xbar = 30.5$ and $\ybar = 8.3875$, respectively.  Use
+the values in \Table{tab:logarithm:hinoki_cypress_linear_regression}
+to obtain the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+68.1750
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2
+=
+665
+\]
+where $n = 20$ is the number of data points.  Then the parameters $a$
+and $b$ can be estimated as $a \approx 0.1025$ and $b \approx 5.2607$,
+respectively, both numbers rounded to four decimal places.  The data
+in \Table{tab:logarithm:hinoki_cypress} can now be modelled as
+%%
+\begin{equation}
+\label{eqn:logarithm:hinoki_cypress_linear_regression}
+f(x)
+=
+0.1025x + 5.2607.
+\end{equation}
+%%
+\Figure{fig:logarithm:hinoki_cypress_regression_comparison} compares
+\Equations{eqn:logarithm:hinoki_cypress_log_regression}{eqn:logarithm:hinoki_cypress_linear_regression}
+together with the data in \Table{tab:logarithm:hinoki_cypress}.
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/hinoki-cypress-regression-linear.tex}
+\caption{%%
+  Detailed calculations of the linear regression of the hinoki cypress
+  data in \Table{tab:logarithm:hinoki_cypress}.  Note that the $x$ and
+  $y$ columns are the same as the ``Age'' and ``Height'' columns in
+  \Table{tab:logarithm:hinoki_cypress}.  If $\xbar$ and $\ybar$ are
+  the means of the $x$ and $y$ columns, respectively, then
+  $d(x_i) = x_i - \xbar$ and $d(y_i) = y_i - \ybar$.  Most values in
+  the table have been rounded to four decimal places in order to fit
+  the table.  However, you should not round these intermediate results
+  when you perform your own calculations.
+}
+\label{tab:logarithm:hinoki_cypress_linear_regression}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/hinoki-cypress-linear-log.pdf}
+\caption{%%
+  A comparison of the logarithmic regression
+  function~\eqref{eqn:logarithm:hinoki_cypress_log_regression} and the
+  linear regression
+  function~\eqref{eqn:logarithm:hinoki_cypress_linear_regression}.
+  The black dots show the data from
+  \Table{tab:logarithm:hinoki_cypress}.
+}
+\label{fig:logarithm:hinoki_cypress_regression_comparison}
+\end{figure}
+
+\solutionpart{subex:logarithm:hinoki_Pearson_rho_RMS_error}
+The model~\eqref{eqn:logarithm:hinoki_cypress_linear_regression} has a
+Pearson correlation coefficient of $\rho \approx 0.9526$ and a root
+mean square~(RMS) error of $0.1888$, both numbers rounded to four
+decimal places.  The $\rho$ value of
+\Equation{eqn:logarithm:hinoki_cypress_linear_regression} is smaller
+than the $\rho$ value of the logarithmic regression from
+\Example{eg:logarithm:hinoki_cypress_tree}.  Furthermore, the RMS
+error of \Equation{eqn:logarithm:hinoki_cypress_linear_regression} is
+higher than the RMS error of
+\Equation{eqn:logarithm:hinoki_cypress_log_regression}.  Conclude that
+\Equation{eqn:logarithm:hinoki_cypress_log_regression} is better than
+\Equation{eqn:logarithm:hinoki_cypress_linear_regression} at modelling
+the hinoki cypress data set.
+\end{solution}
+}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
