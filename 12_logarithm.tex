@@ -1920,6 +1920,221 @@ the hinoki cypress data set.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/sombo.tex}
+\caption{%%
+  The mean diameter at breast height~(DBH) versus mean height of $35$
+  species of trees in a selective logging forest.  The study site was
+  called Sombo and the forest was located in the northern region of
+  the Republic of Congo, Africa.  The DBH of a tree is usually
+  measured at $1.3$ metres above ground level.  DBH is measured in
+  centimetres and tree height is measured in metres.
+}
+\label{tab:logarithm:Sombo}
+\end{table}
+
+\begin{exercise}
+\Table{tab:logarithm:Sombo} shows the mean diameter at breast
+height~(cm) versus the mean height~(m) of $35$ species of trees in a
+northern region of the Republic of Congo, Africa.\footnote{
+  The data set was published in the paper:
+  \url{https://doi.org/10.4236/oje.2018.83014}.
+}
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:Sombo_graph_linear_log}
+  Produce two graphs of the data in \Table{tab:logarithm:Sombo}.  One
+  graph is a scatter plot that uses linear scaling for both of the
+  horizontal and vertical axes.  The other graph is the same scatter
+  plot, but with logarithmic scaling on the horizontal axis.  What do
+  you notice about the two graphs?
+
+\item\label{subex:logarithm:Sombo_log_regression}
+  Suppose that the data in \Table{tab:logarithm:Sombo} follow a
+  logarithmic function of the form $H(x) = a \ln x + b$, where $H(x)$
+  represents the mean height~(in metres) of a species of tree that
+  have a mean DBH of $x$ centimetres.  Use logarithmic regression to
+  estimate the parameters $a$ and $b$.  Graph the function $H(x)$
+  together with a scatter plot of the data in
+  \Table{tab:logarithm:Sombo}.  Use linear scaling for both of the
+  horizontal and vertical axes.  Calculate the Pearson correlation
+  coefficient of the model $H(x)$ and the root mean square error of
+  the model.
+
+\item\label{subex:logarithm:Sombo_linear_regression}
+  Suppose that the data in \Table{tab:logarithm:Sombo} follow a
+  linear function of the form $f(x) = ax + b$, where $f(x)$ denotes
+  the mean height~(in metres) of a species of tree that have a mean
+  DBH of $x$ centimetres.  Use linear regression to estimate the
+  parameters $a$ and $b$.  Graph the function $f(x)$ together with the
+  graph from \Part{subex:logarithm:Sombo_log_regression}.  Calculate
+  the Pearson correlation coefficient and root mean square~(RMS) error
+  of the model.  Use the correlation coefficients and RMS errors to
+  help you determine which one of the functions $f(x)$ and $H(x)$ is
+  better suited to modelling the data in \Table{tab:logarithm:Sombo}.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:Sombo_graph_linear_log}
+\Figure{subfig:logarithm:sombo_linear} shows a scatter plot of the
+data in \Table{tab:logarithm:Sombo} with linear scaling for both of
+the horizontal and vertical axes.  The graph shows that the points
+seem to follow a logarithmic function.
+\Figure{subfig:logarithm:sombo_log} shows the same scatter plot, but
+using logarithmic scaling for the horizontal axis.  The graph suggests
+that the points follow a straight line.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/sombo-linear.pdf}
+  \label{subfig:logarithm:sombo_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/sombo-log.pdf}
+  \label{subfig:logarithm:sombo_log}
+}
+\caption{%%
+  The mean diameter at breast height~(DBH) versus the mean height of
+  $35$ species of trees.  The data are from
+  \Table{tab:logarithm:Sombo}.  (a)~A scatter plot with linear scaling
+  for both of the horizontal and vertical axes.  (b)~The same graph,
+  but with logarithmic scaling for the horizontal axis.
+}
+\label{fig:logarithm:sombo}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/sombo-log-regression.tex}
+\caption{%%
+  Detailed calculations of the logarithmic regression of the data in
+  \Table{tab:logarithm:Sombo}.  The $x$ and $y$ columns are the same
+  as the ``Mean DBH'' and ``Mean height'' columns of
+  \Table{tab:logarithm:Sombo}.  Each value in the $w$ column is the
+  natural logarithmic transformation of the corresponding value in the
+  $x$ column, i.e.~$w_i = \ln x_i$.  If $\wbar$ and $\ybar$ are the
+  means of the $w$ and $y$ columns, respectively, then
+  $d(w_i) = w_i - \wbar$ and $d(y_i) = y_i - \ybar$.  Most values in
+  the table have been rounded to four decimal places so as to fit the
+  table.  However, you should not round these intermediate results
+  when you do your own calculations.
+}
+\label{tab:logarithm:Sombo_log_regression}
+\end{table}
+
+\solutionpart{subex:logarithm:Sombo_log_regression}
+To perform a logarithmic regression of the data in
+\Table{tab:logarithm:Sombo}, first you must take the natural logarithm
+of each value in the ``Mean DBH'' columns.  The result is shown as the
+$w$ column of \Table{tab:logarithm:Sombo_log_regression}, where the
+$y$ column is the same as the ``Mean height'' columns of
+\Table{tab:logarithm:Sombo}.  Second, you perform linear regression on
+the $w$ and $y$ columns and let the estimates for $\alphahat$ and
+$\betahat$ be estimates of $a$ and $b$, respectively.
+\Table{tab:logarithm:Sombo_log_regression} shows the detailed
+calculations of the logarithmic regression, where you have the means
+$\wbar \approx 3.1351$ and $\ybar \approx 12.9911$, both numbers
+rounded to four decimal places.  From the table, you obtain the sums
+\[
+\sum_{i=1}^n (w_i - \wbar) (y_i - \ybar)
+\approx
+37.3604
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (w_i - \wbar)^2
+\approx
+3.7761
+\]
+and the estimates
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (w_i - \wbar) (y_i - \ybar)
+}{
+  \sum_{i=1}^n (w_i - \wbar)^2
+}
+\approx
+9.8940 \\[4pt]
+%%
+%%
+\betahat
+&=
+\ybar - \alphahat \wbar
+\approx
+-18.0274
+\end{align*}
+%%
+where $n = 35$ is the number of data points in
+\Table{tab:logarithm:Sombo}, all numbers rounded to four decimal
+places.  Hence you have the parameter estimations
+$a \approx 9.8940$ and $b \approx -18.0274$ so that the data in
+\Table{tab:logarithm:Sombo} can be modelled as
+%%
+\begin{equation}
+\label{eqn:logarithm:Sombo_log_regression}
+H(x)
+=
+9.8940 \ln x - 18.0274.
+\end{equation}
+%%
+\Figure{fig:logarithm:Sombo_log_regression} compares
+\Equation{eqn:logarithm:Sombo_log_regression} with the data in
+\Table{tab:logarithm:Sombo}.  The model has a Pearson correlation
+coefficient of $\rho \approx 0.9387$ and a root mean square error of
+approximately $1.1937$, both numbers rounded to four decimal places.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/sombo.pdf}
+\caption{%%
+  A comparison of experimental data versus predictions.  The black
+  dots show the data points from \Table{tab:logarithm:Sombo}.  The red
+  curve is a graph of the logarithmic regression
+  function~\eqref{eqn:logarithm:Sombo_log_regression}.
+}
+\label{fig:logarithm:Sombo_log_regression}
+\end{figure}
+
+\solutionpart{subex:logarithm:Sombo_linear_regression}
+A linear regression of the data in \Table{tab:logarithm:Sombo} shows
+that the data can be modelled as
+%%
+\begin{equation}
+\label{eqn:logarithm:Sombo_linear_regression}
+f(x)
+=
+0.3539 x + 4.3699
+\end{equation}
+%%
+where $f(x)$ represents the mean height~(m) of a species of tree that
+have a mean DBH of $x$ centimetres.  The parameters have been rounded
+to four decimal places.
+Equation~\eqref{eqn:logarithm:Sombo_linear_regression} is graphed in
+\Figure{fig:logarithm:Sombo_log_regression} together with
+\Equation{eqn:logarithm:Sombo_log_regression} and the experimental
+data in \Table{tab:logarithm:Sombo}.  The linear regression function
+$f(x)$ has a Pearson correlation coefficient of $\rho \approx 0.9240$,
+which is lower than the corresponding value for the logarithmic
+regression function $H(x)$.  Furthermore, $f(x)$ has a root mean
+square~(RMS) error of $1.3241$, which is higher than the RMS error of
+$H(x)$.  Therefore you may conclude that
+\Equation{eqn:logarithm:Sombo_log_regression} is better than
+\Equation{eqn:logarithm:Sombo_linear_regression} at modelling the data
+in \Table{tab:logarithm:Sombo}.
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
