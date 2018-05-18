@@ -1579,6 +1579,7 @@ experimental data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Logarithmic scaling on horizontal axis}
+\label{subsec:logarithm:logarithmic_scaling_on_horizontal_axis}
 
 In some cases, a scatter plot of a data set might suggest that the
 data follow a logarithmic function.  For instance,
@@ -2237,6 +2238,59 @@ figure seems to show that the data follow an exponential function.
 logarithmic scaling for both axes.  The figure shows that the points
 seem to follow a straight line.  So how would you use a linear
 function to model the dots in \Figure{fig:logarithm:shortleaf_log}?
+
+Let's start by defining some variables.  Denote by $Q(x)$ the
+volume~(in cubic feet) of a shortleaf pine tree that has a diameter of
+$x$ inches.  Suppose that the function $Q(x)$ models the points in
+\Figure{fig:logarithm:shortleaf_linear}.  When you go from the linear
+scaling in \Figure{fig:logarithm:shortleaf_linear} to the log-log
+scaling in \Figure{fig:logarithm:shortleaf_log}, assume that you take
+the natural logarithm of each value in the ``Diameter'' and ``Volume''
+columns of \Table{tab:logarithm:shortleaf}.  The function $Q(x)$ now
+becomes $\ln Q(x)$ and the variable $x$ now becomes $\ln x$.  As the
+points in \Figure{fig:logarithm:shortleaf_log} seem to follow a linear
+function, then you can model the points as
+%%
+\begin{equation}
+\label{eqn:logarithm:log_log_regression}
+\ln Q(x)
+=
+a \cdot \ln x + b
+\end{equation}
+%%
+where the parameters $a$ and $b$ are to be estimated from the data in
+\Table{tab:logarithm:shortleaf}.  Just as you have done
+in \Section{subsec:logarithm:logarithmic_scaling_on_horizontal_axis},
+the values of $a$ and $b$ are treated as the parameters $\alphahat$
+and $\betahat$, respectively, in the linear regression function.  Now
+suppose that you have estimated the parameters $a$ and $b$.  You still
+need to solve \Equation{eqn:logarithm:log_log_regression} for $Q(x)$.
+By treating both sides of \Equation{eqn:logarithm:log_log_regression}
+as exponents of $e$, you can write the equation as
+$e^{\ln Q(x)} = e^{a \cdot \ln x + b}$, which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_exponential_log}
+simplifies to $Q(x) = e^{a \cdot \ln x + b}$.  The latter equation can
+also be written as $Q(x) = e^{a \cdot \ln x} \cdot e^b$ and use the
+power rule of
+\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_multiplication}
+to write $Q(x) = e^{\ln(x^a)} \cdot e^b$, which by
+\Subtheorem{thm:logarithm:cancellation_property}{subthm:logarithm:cancellation_property_exponential_log}
+again simplifies to $Q(x) = x^a \cdot e^b$.  Therefore
+\Equation{eqn:logarithm:log_log_regression} can be solved for $Q(x)$
+to produce
+%%
+\begin{equation}
+\label{eqn:logarithm:power_regression}
+Q(x)
+=
+e^b x^a
+\end{equation}
+%%
+where the parameters $a$ and $b$ must be estimated from the data set.
+Note that $Q(x)$ as defined in~\eqref{eqn:logarithm:power_regression}
+is not a logarithmic function, but a power function.  When you use
+linear regression to estimate the parameters $a$ and $b$ of $Q(x)$,
+you are performing what is called \emph{power regression}.
 
 
 \newpage
