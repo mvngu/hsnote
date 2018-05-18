@@ -2292,6 +2292,110 @@ is not a logarithmic function, but a power function.  When you use
 linear regression to estimate the parameters $a$ and $b$ of $Q(x)$,
 you are performing what is called \emph{power regression}.
 
+\begin{example}
+\textbf{Shortleaf pine trees.}
+Consider the data in \Table{tab:logarithm:shortleaf} on the diameter
+versus volume of $70$ shortleaf pine trees.
+%%
+\begin{packedenum}
+\item\label{subeg:logarithm:shortleaf_power_regression}
+  Suppose that the data in the table follow the function
+  $V(x) = e^b x^a$, where $V(x)$ denotes the volume in cubic feet of a
+  shortleaf pine tree that has a diameter of $x$ inches.  Use power
+  regression to estimate the parameters $a$ and $b$.  Graph the model
+  $V(x)$ together with the scatter plot of
+  \Figure{fig:logarithm:shortleaf_linear}.
+
+\item\label{subeg:logarithm:shortleaf_Pearson_r_RMS_error}
+  Calculate the Pearson correlation coefficient $\rho$ and root mean
+  square~(RMS) error of the function $V(x)$
+  from \Part{subeg:logarithm:shortleaf_power_regression}.  Provide an
+  interpretation of the values of $\rho$ and the RMS error.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:logarithm:shortleaf_power_regression}
+First, you must take the natural logarithm of each value in the
+``Diameter'' columns of \Table{tab:logarithm:shortleaf} and store the
+results in a separate column; let's call this column $w$.  Do the same
+calculation for the ``Volume'' columns and store the results in
+another separate column; call this column $v$.  Second, perform linear
+regression on the numbers in the $w$ and $v$ columns.  The means of
+the $w$ and $v$ columns are $\wbar \approx 2.3407$ and
+$\vbar \approx 3.1307$, respectively.  If $w_i$ is the value in row
+$i$ of the $w$ column, then define $d(w_i) = w_i - \wbar$.  Similarly,
+define $d(v_i) = v_i - \vbar$.  You now have the sums
+\[
+\sum_{i=1}^n (w_i - \wbar) (v_i - \vbar)
+\approx
+28.3630
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (w_i - \wbar)^2
+\approx
+11.0602
+\]
+where $n = 70$ is the number of data points in
+\Table{tab:logarithm:shortleaf}.  Use the above sums to obtain the
+parameter estimates
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (w_i - \wbar) (v_i - \vbar)
+}{
+  \sum_{i=1}^n (w_i - \wbar)^2
+}
+\approx
+2.5644 \\[4pt]
+%%
+%%
+\betahat
+&=
+\vbar - \alphahat \wbar
+\approx
+-2.8718
+\end{align*}
+%%
+which yield the estimates $e^b \approx 0.0566$ and
+$a \approx 2.5644$.  If $V(x)$ represents the volume~(cubic feet) of a
+shortleaf pine tree that has a diameter of $x$ inches, then the volume
+can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:shortleaf_volume}
+V(x)
+=
+0.0566 x^{2.5644}.
+\end{equation}
+%%
+\Figure{fig:logarithm:shortleaf_volume} shows a graph of the model
+together with the data from \Table{tab:logarithm:shortleaf}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/shortleaf.pdf}
+\caption{%%
+  The diameter of a shortleaf pine tree versus its volume.  The black
+  dots show the data from \Table{tab:logarithm:shortleaf}.  The red
+  curve is a graph of \Equation{eqn:logarithm:shortleaf_volume}.
+}
+\label{fig:logarithm:shortleaf_volume}
+\end{figure}
+
+\solutionpart{subeg:logarithm:shortleaf_Pearson_r_RMS_error}
+The model~\eqref{eqn:logarithm:shortleaf_volume} has a Pearson
+correlation coefficient of $\rho \approx 0.9867$ and a root mean
+square~(RMS) error of approximately $5.7532$.  The high value of
+$\rho$ and the low value of the RMS error both suggest that
+\Equation{eqn:logarithm:shortleaf_volume} fits the data very well.
+\end{solution}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
