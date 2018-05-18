@@ -2187,6 +2187,57 @@ correlation coefficient.
 \label{fig:logarithm:Fortune100}
 \end{figure}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/shortleaf.tex}
+\caption{%%
+  The diameter versus volume of $70$ shortleaf pine trees.  The
+  diameter of a tree is measured in inches and the volume of a tree is
+  measured in cubic feet.
+}
+\label{tab:logarithm:shortleaf}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/shortleaf-linear.pdf}
+  \label{fig:logarithm:shortleaf_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/shortleaf-log.pdf}
+  \label{fig:logarithm:shortleaf_log}
+}
+\caption{%%
+  Graphs of the shortleaf pine data in
+  \Table{tab:logarithm:shortleaf}.  (a)~A scatter plot with linear
+  scaling on both of the horizontal and vertical axes.  (b)~The same
+  scatter plot, but with logarithmic scaling on both of the horizontal
+  and vertical axes.
+}
+\label{fig:logarithm:shortleaf_linear_log}
+\end{figure}
+
+Let's consider a data set that can be used to perform logarithmic
+regression.  \Table{tab:logarithm:shortleaf} lists the diameter~(inch)
+versus volume~(cubic feet) of $70$ shortleaf pine trees.\footnote{
+  The data set was published in the book:
+  D.~Bruce and F.~X.~Schumacher.  \emph{Forest mensuration}.
+  McGraw-Hill Book Company, 1935.
+  The data set was downloaded from
+  \url{http://web.archive.org/web/20180518051945/https://newonlinecourses.science.psu.edu/stat501/sites/onlinecourses.science.psu.edu.stat501/files/data/shortleaf/index.txt},
+  accessed 2018-05-18.
+}
+The data set is graphed in \Figure{fig:logarithm:shortleaf_linear}
+with linear scaling for both of the horizontal and vertical axes.  The
+figure seems to show that the data follow an exponential function.
+\Figure{fig:logarithm:shortleaf_log} shows the same graph, but using
+logarithmic scaling for both axes.  The figure shows that the points
+seem to follow a straight line.  So how would you use a linear
+function to model the dots in \Figure{fig:logarithm:shortleaf_log}?
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
