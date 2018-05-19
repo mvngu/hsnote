@@ -2295,6 +2295,7 @@ linear regression to estimate the parameters $a$ and $b$ of $Q(x)$,
 you are performing what is called \emph{power regression}.
 
 \begin{example}
+\label{eg:logarithm:shortleaf_pine_trees}
 \textbf{Shortleaf pine trees.}
 Consider the data in \Table{tab:logarithm:shortleaf} on the diameter
 versus volume of $70$ shortleaf pine trees.
@@ -2397,6 +2398,119 @@ square~(RMS) error of approximately $5.7532$.  The high value of $R^2$
 and the low value of the RMS error both suggest that
 \Equation{eqn:logarithm:shortleaf_volume} fits the data very well.
 \end{solution}
+
+\begin{exercise}
+\textbf{Shortleaf pine trees.}
+In \Example{eg:logarithm:shortleaf_pine_trees}, the plot of
+\Figure{fig:logarithm:shortleaf_volume} seems to suggest that the data
+on shortleaf pine trees follow an exponential function.  Assume that
+the data approximately follow the exponential function
+$f(x) = a \cdot e^{rx}$, where $f(x)$ represents the volume~(cubic
+feet) of a shortleaf pine tree that has a diameter of $x$ inches.
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:shortleaf_exponential_regression}
+  Use exponential regression to estimate the parameters $a$ and $r$.
+  Plot the function $f(x)$ together with the graph in
+  \Figure{fig:logarithm:shortleaf_volume}.
+
+\item\label{subex:logarithm:shortleaf_exponential_R^2_RMS_error}
+  Calculate the coefficient of determination and the root mean square
+  error of the function $f(x)$.  Compare these values with the
+  corresponding values in \Example{eg:logarithm:shortleaf_pine_trees}.
+  Explain which one of the functions $V(x)$ and $f(x)$ is better at
+  fitting the experimental data.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:shortleaf_exponential_regression}
+Let $x$ denote the ``Diameter'' columns of
+\Table{tab:logarithm:shortleaf}.  Take the natural logarithm of each
+value in the ``Volume'' columns of the table and store the results in
+a separate column; call this column $y$.  Since you assume that the
+data in the table follow an exponential function, the $y$ column is a
+linearisation of the data in the ``Volume'' columns and so
+$\ln f(x) = y$.  The $x$ and $y$ columns are related by the linear
+function $\ln f(x) = rx + \ln a$, where the parameters $r$ and
+$\ln a$ can be estimated by the parameters $\alphahat$ and $\betahat$
+of the linear regression of the $x$ and $y$ columns.  The means of the
+$x$ and $y$ columns are $\xbar \approx 11.1843$ and
+$\ybar \approx 3.1307$, respectively.  You have the sums
+\[
+\sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+\approx
+282.2806
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (x_i - \xbar)^2
+\approx
+1178.4727
+\]
+which can be used to produce the parameter estimates
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (x_i - \xbar) (y_i - \ybar)
+}{
+  \sum_{i=1}^n (x_i - \xbar)^2
+}
+\approx
+0.2395 \\[4pt]
+%%
+%%
+\betahat
+&=
+\ybar - \alphahat \xbar
+\approx
+0.4517
+\end{align*}
+%%
+where $n = 70$ is the number of data points in
+\Table{tab:logarithm:shortleaf}.  Then $f(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:shortleaf_compare_exponential_power}
+f(x)
+=
+1.571 e^{0.2395 x}.
+\end{equation}
+%%
+\Figure{fig:logarithm:shortleaf_compare_exponential_power} shows a
+graph of \Equation{eqn:logarithm:shortleaf_compare_exponential_power}
+together with the plot in \Figure{fig:logarithm:shortleaf_volume}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/shortleaf-compare.pdf}
+\caption{%%
+  Comparison of two prediction functions for the shortleaf pine data
+  in \Table{tab:logarithm:shortleaf}.  The red and blue curves are
+  graphs of
+  \Equations{eqn:logarithm:shortleaf_volume}{eqn:logarithm:shortleaf_compare_exponential_power},
+  respectively.
+}
+\label{fig:logarithm:shortleaf_compare_exponential_power}
+\end{figure}
+
+\solutionpart{subex:logarithm:shortleaf_exponential_R^2_RMS_error}
+The exponential model $f(x)$ as defined in
+\Equation{eqn:logarithm:shortleaf_compare_exponential_power} has a
+coefficient of determination of $R^2 \approx 0.9051$ and a root mean
+square~(RMS) error of approximately $33.3568$.  The value of $R^2$ of
+$f(x)$ is smaller than the corresponding value for the power model
+$V(x)$ as defined in \Equation{eqn:logarithm:shortleaf_volume}.
+Furthermore, the RMS error of $f(x)$ is higher than the RMS error of
+$V(x)$.  Based on these results, you may conclude that $V(x)$ is
+better than $f(x)$ at modelling the shortleaf pine data.
+\end{solution}
+}{}
 
 
 \newpage
