@@ -2512,6 +2512,181 @@ better than $f(x)$ at modelling the shortleaf pine data.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/bamboo.tex}
+\caption{%%
+  The average weight versus density of $13$ populations of bamboo.
+  Each average weight is measured in grams and is the mean of the
+  weight of the shoots of a bamboo population.  The density of a
+  population of bamboo is defined as the number of bamboo shoots per
+  square metre.
+}
+\label{tab:logarithm:bamboo}
+\end{table}
+
+\begin{exercise}
+\textbf{Bamboo.}
+\Table{tab:logarithm:bamboo} shows the average weight versus density
+of $13$ populations of bamboo in China and Japan.\footnote{
+  The data set was published in the paper:
+  \url{https://doi.org/10.1073/pnas.1205663109}
+}
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:bamboo_linear_log}
+  Produce two graphs of the average weight versus density.  One graph
+  uses linear scaling for both of the horizontal and vertical axes.
+  The other graph uses logarithmic scaling for both axes.  What do you
+  notice in both graphs?
+
+\item\label{subex:logarithm:bamboo_power_regression}
+  Denote by $D(x)$ the density of a bamboo population that has a mean
+  weight of $x$ grams.  Suppose that the data in
+  \Table{tab:logarithm:bamboo} follow a power function of the form
+  $D(x) = e^b x^a$.  Use power regression to estimate the parameters
+  $a$ and $b$.  Graph the function $D(x)$ together with the data from
+  the data.  Use logarithmic and linear scalings for the horizontal
+  and vertical axes, respectively.  Calculate the coefficient of
+  determination and the root mean square error of $D(x)$.
+
+\item\label{subex:logarithm:bamboo_explain}
+  Note that in \Table{tab:logarithm:bamboo} as the mean weight of a
+  bamboo population increases, the density of the population
+  decreases.  Explain why this happened for the $13$ bamboo
+  populations.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:logarithm:bamboo_linear_log}
+\Figure{subfig:logarithm:bamboo_linear} shows a scatter plot of the
+data in \Table{tab:logarithm:bamboo} using linear scaling for both of
+the horizontal and vertical axes.  The black dots seem to follow a
+steep curve that looks like the graph of an exponential decay
+function.  \Figure{subfig:logarithm:bamboo_log} shows a scatter plot
+of the same data set, but using logarithmic scaling for both axes.
+The log-log plot shows that the black dots seem to follow a straight
+line.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/bamboo-linear.pdf}
+  \label{subfig:logarithm:bamboo_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/bamboo-log.pdf}
+  \label{subfig:logarithm:bamboo_log}
+}
+\caption{%%
+  The average weight versus density of $13$ populations of bamboo.
+  The average weight is measured in grams.  For each bamboo
+  population, the density is defined as the number of bamboo shoots
+  per squared metre.  (a)~A scatter plot of the data in
+  \Table{tab:logarithm:bamboo}, where both of the horizontal and
+  vertical axes use linear scaling.  (b)~A scatter plot of the same
+  data set, but both axes use logarithmic scaling.
+}
+\label{fig:logarithm:bamboo_linear_log}
+\end{figure}
+
+\solutionpart{subex:logarithm:bamboo_power_regression}
+First, you linearise the data.  Take the natural logarithm of each
+value in the ``Average weight'' column and store the results in a
+separate column; call this column $v$.  Similarly, take the natural
+logarithm of each value in the ``Density'' column and store the
+results in another separate column called $w$.  Next, you perform
+linear regression on the $v$ and $w$ columns.  The means of the $v$
+and $w$ columns are $\vbar \approx 6.7899$ and
+$\wbar \approx 2.0469$, respectively.  If $v_i$ is the value in row
+$i$ of the $v$ column, then define $d(v_i) = v_i - \vbar$.  Similarly,
+define $d(w_i) = w_i - \wbar$.  You have the sums
+\[
+\sum_{i=1}^n (v_i - \vbar) (w_i - \wbar)
+\approx
+-86.0626
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\sum_{i=1}^n (v_i - \vbar)^2
+\approx
+109.4650
+\]
+which can be used to produce the estimates
+%%
+\begin{align*}
+\alphahat
+&=
+\frac{
+  \sum_{i=1}^n (v_i - \vbar) (w_i - \wbar)
+}{
+  \sum_{i=1}^n (v_i - \vbar)^2
+}
+\approx
+-0.7862 \\[4pt]
+%%
+%%
+\betahat
+&=
+\wbar - \alphahat \vbar
+\approx
+7.3852
+\end{align*}
+%%
+where $n = 13$ is the number of data points in
+\Table{tab:logarithm:bamboo}.  You treat $\alphahat$ and $\betahat$ as
+estimates of the parameters $a$ and $b$, respectively, so that
+$e^{\betahat} \approx 1611.9147$.  Thus the function $D(x)$ can be
+written as
+%%
+\begin{equation}
+\label{eqn:logarithm:bamboo_power_regression}
+D(x)
+=
+1611.9147 x^{-0.7862}.
+\end{equation}
+%%
+\Figure{fig:logarithm:bamboo} compares the prediction of
+\Equation{eqn:logarithm:bamboo_power_regression} against the
+experimental data.  Note that the horizontal axis uses logarithmic
+scaling, but the vertical axis uses linear scaling.  The function
+$D(x)$ has a coefficient of determination of $R^2 \approx 0.9624$ and
+a root mean square error of approximately $43.7429$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/bamboo.pdf}
+\caption{%%
+  The mean weight versus density of $13$ populations of bamboo.  The
+  black dots show the data from \Table{tab:logarithm:bamboo}.  The red
+  curve is a graph of
+  \Equation{eqn:logarithm:bamboo_power_regression}.
+}
+\label{fig:logarithm:bamboo}
+\end{figure}
+
+\solutionpart{subex:logarithm:bamboo_explain}
+\Figure{fig:logarithm:bamboo} shows that as the mean weight of a
+bamboo population increases the density of the population decreases.
+An increase in mean weight corresponds to, on average, an increase in
+the weight of individual bamboo shoots in a population.  As the bamboo
+shoots compete for resources to grow, the larger shoots require more
+resources than the smaller shoots, which translates to less resources
+for the smaller shoots.  In a bamboo population where the majority of
+shoots have low mean weight, you tend to have more shoots growing to
+maturity.  However, as the majority of bamboo shoots have higher and
+higher mean weight, you tend to have less and less shoots growing to
+maturity.  The competition for resources exerts pressure on and limits
+the population density of bamboos.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
