@@ -1,4 +1,7 @@
-Country Name,GDP per capita,Life expectancy at birth
+Data Source,World Development Indicators,
+Last Updated Date,2/05/2018,
+,,
+Country Name,GPD per capita,Life expectancy at birth
 Afghanistan,561.778746269502,63.673
 Angola,3308.70023298492,61.547
 Albania,4124.98239042866,78.345
@@ -226,5 +229,3 @@ Kosovo,3661.42984742258,71.6463414634147
 South Africa,5274.54600788616,62.774
 Zambia,1269.57353678771,61.874
 Zimbabwe,1029.07664867845,61.163
-,,
-Source: data for 2016 from the World Bank,,
