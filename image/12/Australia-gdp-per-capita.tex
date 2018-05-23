@@ -1,0 +1,120 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{Australia-gdp-per-capita}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotStyle/.style={mark size=1.5,black,mark color=black,mark=*,only marks},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north west,%%
+  plotStyle/.style={%%
+    domain=1960:2016,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize Year},%%
+  xtick={1960,1970,1980,1990,2000,2010,2020},%%
+  xticklabels={$1960$,$1970$,$1980$,$1990$,$2000$,$2010$,$2020$},%%
+  %% y axis
+  ylabel={\normalsize GDP per capita~(constant 2010 US\$)}%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (1960, 19306.5529749374)
+  (1961, 19394.6161728232)
+  (1962, 19178.0910100303)
+  (1963, 19982.6905301495)
+  (1964, 20961.1859037462)
+  (1965, 21783.2486768644)
+  (1966, 21794.9925819135)
+  (1967, 22876.9934362002)
+  (1968, 23621.3794608676)
+  (1969, 24763.0828899532)
+  (1970, 26020.2079448989)
+  (1971, 26162.3944449506)
+  (1972, 26690.6600382601)
+  (1973, 26968.9599418453)
+  (1974, 27372.1239058573)
+  (1975, 27397.5568726721)
+  (1976, 27827.0012360494)
+  (1977, 28507.9019111666)
+  (1978, 28431.4148379114)
+  (1979, 29266.6006557147)
+  (1980, 29794.5384628032)
+  (1981, 30309.7609697281)
+  (1982, 30797.9963904252)
+  (1983, 29736.6986278124)
+  (1984, 30763.4458550313)
+  (1985, 31938.6162017929)
+  (1986, 32707.6721962772)
+  (1987, 33044.5754166397)
+  (1988, 34386.2533573521)
+  (1989, 35121.2126875046)
+  (1990, 35827.0967196418)
+  (1991, 35240.582540066)
+  (1992, 34967.5177240199)
+  (1993, 36033.6358843432)
+  (1994, 37098.7987775714)
+  (1995, 38078.9039470847)
+  (1996, 39065.9243827866)
+  (1997, 40156.3352495743)
+  (1998, 41504.4958976453)
+  (1999, 43087.4467189905)
+  (2000, 44223.5912367361)
+  (2001, 44473.4086078834)
+  (2002, 45626.6220312733)
+  (2003, 46449.8451866154)
+  (2004, 47817.8992322005)
+  (2005, 48702.734693348)
+  (2006, 49418.6863195943)
+  (2007, 50952.4670378891)
+  (2008, 51788.4401480489)
+  (2009, 51651.2232575575)
+  (2010, 51874.0804819958)
+  (2011, 52372.1545375314)
+  (2012, 53315.0299153975)
+  (2013, 53732.0039694765)
+  (2014, 54293.7942049523)
+  (2015, 54800.3663958845)
+  (2016, 55478.5772943506)
+};
+\addlegendentry{data}
+%%
+%%
+\addplot+ [plotStyle,red]
+{665.2450*x - 1286630.9005};
+\addlegendentry{linear regression}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
