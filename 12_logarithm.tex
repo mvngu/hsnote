@@ -3243,10 +3243,366 @@ decade from $1980$ to $1990$.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/sunflower.tex}
+\caption{%%
+  The growth of sunflowers, an experiment in~1919 by H.~S.~Reed and
+  R.~H.~Holland.  The ``Day'' column lists how many days since the
+  start of the experiment.  The ``Mean height'' column lists the
+  average height of $58$ sunflowers as measured on the corresponding
+  day, where height is measured in centimetres.
+}
+\label{tab:logarithm:sunflower}
+\end{table}
+
 \item\emph{Logistic function.}
+  Recall that the logistic function can be written as
+  %%
+  \begin{equation}
+  \label{eqn:logarithm:logistic_function}
+  P(t)
+  =
+  \frac{
+    KP_0
+  }{
+    P_0 + (K - P_0) e^{-rt}
+  }.
+  \end{equation}
+  %%
+  The constants $K$, $P_0$, and $r$ are the parameters of the logistic
+  function.  Here, $P_0$ denotes the value of the function $P(t)$ at
+  time $t = 0$.  If $P(t)$ represents the size of a population at time
+  $t$, then $P_0$ is the initial population size.  The maximum value
+  of the function $P(t)$ is represented by $K$, i.e.~the population
+  size cannot exceed $K$.  Finally, $r$ represents the rate~(as a
+  decimal) at which the population size changes.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:logistic_equivalent_form}
+    Show that \Equation{eqn:logarithm:logistic_function} can also be
+    written as
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_equivalent_form}
+    P(t)
+    =
+    \frac{
+      K
+    }{
+      1 + \parenthesis{\frac{K}{P_0} - 1} e^{-rt}
+    }.
+    \end{equation}
+
+  \item\label{subprob:logarithm:logistic_Ecoli_example}
+    Suppose you initially have $4$ cells of \emph{E.~coli} in a Petri
+    dish.  Due to the conditions of the Petri dish, the colony of
+    \emph{E.~coli} grows at a rate of $50\%$ per hour, but at any time
+    the population size cannot exceed $100$ cells.  If the population
+    size of the \emph{E.~coli} colony follows a logistic function, use
+    the above information to write a formula for the population size
+    at any given time.  Graph your formula for time $t = 0$ up to and
+    including $t = 20$.  On the same graph, draw a horizontal line
+    through $K = 100$ on the vertical axis.  Explain what you notice
+    about the graph.
+
+  \item\label{subprob:logarithm:logistic_sunflower_data}
+    In some cases, you are given a data set and must work out whether
+    the data can be modelled as a logistic function.  If the data can
+    be modelled as a logistic function, you must then use the data to
+    estimate the values of the parameters $K$, $P_0$, and $r$.  For
+    example, \Table{tab:logarithm:sunflower} shows the mean heights of
+    $58$ sunflowers measured at a regular interval of seven
+    days.\footnote{
+      The data were published in the paper at
+      \url{https://doi.org/10.1073/pnas.5.4.135}.
+    }
+    Produce a scatter plot of the data.  Explain what you notice about
+    the trend that the graph shows.
+
+  \item\label{subprob:logarithm:logistic_sunflower_growth_rates}
+    As a first step to figuring out whether the data in
+    \Table{tab:logarithm:sunflower} can be modelled using a logistic
+    function, you must calculate the growth rate for each of the days
+    given in the table.  Given a logistic function $P(t)$ of the
+    form~\eqref{eqn:logarithm:logistic_function}
+    or~\eqref{eqn:logarithm:logistic_equivalent_form}, the rate of
+    change per unit time is\footnote{
+      Expression~\eqref{eqn:logarithm:logistic_differential_equation}
+      is known as the \emph{differential equation} of the logistic
+      function.  The solution of the differential equation is the
+      logistic function.
+    }
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_differential_equation}
+    R
+    =
+    r P
+    \parenthesis*{
+      1 - \frac{P}{K}
+    }.
+    \end{equation}
+    %%
+    In the case of the sunflower example, you do not know an exact
+    expression for the rate of change in the mean height per unit time
+    so you must use the given data set to estimate the rate of change
+    for each of the listed days.  Similar to
+    \Equations{eqn:logarithm:Australia_rate_of_change_life_expectancy}{eqn:logarithm:Australia_GDP_per_capita_rates},
+    you let $H(x)$ be the mean height~(cm) of a sunflower on day
+    $x \geq 0$ and consider the mean height from the previous
+    measurement and the mean height from the measurement following day
+    $x$.  Let $u$ and $v$ be the days before and after, respectively,
+    day $x$ at which the mean heights are known.  The rate of change
+    in $H(x)$ is defined as
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_sunflower_growth_rate}
+    \Delta H(x)
+    =
+    \frac{
+      H(v) - H(u)
+    }{
+      v - u
+    }
+    \end{equation}
+    %%
+    which provides an estimate of how much the mean height has changed
+    since the previous measurement.  Note that
+    \Equation{eqn:logarithm:logistic_sunflower_growth_rate} cannot be
+    used to estimate $\Delta H(0)$ and $\Delta H(84)$ because you
+    neither have data for the day before day $x = 0$ nor data for the
+    day after day $x = 84$.  Use
+    \Equation{eqn:logarithm:logistic_sunflower_growth_rate} to
+    estimate the rate of change in the mean heights for all days,
+    except for days $x = 0$ and $x = 84$.  Produce a scatter plot of
+    the day $x$ versus the rate of change $\Delta H(x)$.  Explain what
+    you notice about the graph.
+
+  \item\label{subprob:logarithm:logistic_sunflower_rate_over_function_value}
+    In \Equation{eqn:logarithm:logistic_differential_equation}, divide
+    both sides by $P$ to get
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_differential_equation_linear_in_P}
+    \begin{aligned}
+    \frac{R}{P}
+    &=
+    r \parenthesis*{1 - \frac{P}{K}} \\[4pt]
+    &=
+    r - \frac{r}{K} P.
+    \end{aligned}
+    \end{equation}
+    %%
+    Suppose that you know the values of the parameters $r$ and $K$.
+    Then
+    \Equation{eqn:logarithm:logistic_differential_equation_linear_in_P}
+    tells you that the ratio $R / P$ is a linear function of $P$.  Not
+    only that, but
+    \Equation{eqn:logarithm:logistic_differential_equation_linear_in_P}
+    tells you two other things in terms of the sunflower example.
+    First, for any day $x$ you divide the rate of change $\Delta H(x)$
+    in the mean height of a sunflower by the actual mean height
+    $H(x)$.  Then you produce a scatter plot of the mean height $H(x)$
+    versus the rate of change $\Delta H(x)$ in the mean height.  If
+    the plot shows that the dots follow a straight line, then you know
+    that the data set can be modelled as a logistic function.  Second,
+    if the dots follow a straight line, then use linear regression to
+    calculate the values of the vertical intercept $r$ and the
+    gradient $m = -r / K$.  Thus the value of $K$ is given by
+    $K = -r / m$.  In terms of
+    \Equations{eqn:logarithm:logistic_function}{eqn:logarithm:logistic_equivalent_form},
+    you have calculated the values of $r$ and $K$ and the initial
+    value $P_0$~(or $H_0$ in the sunflower example) can be read off
+    from the table of values.  Use the rates of change
+    from \Part{subprob:logarithm:logistic_sunflower_growth_rates} to
+    calculate the ratios $\frac{\Delta H(x)}{H(x)}$ and produce a
+    scatter plot of $H(x)$ versus $\frac{\Delta H(x)}{H(x)}$.  If the
+    mean height of a sunflower follows the logistic function
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_sunflower_formula}
+    H(x)
+    =
+    \frac{
+      K
+    }{
+      1 + \parenthesis*{\frac{K}{H_0} - 1} e^{-rx}
+    }
+    \end{equation}
+    %%
+    use linear regression on the known values of $H(x)$ and
+    $\frac{\Delta H(x)}{H(x)}$ to estimate the parameters $K$ and
+    $r$.  Use the known values of $H_0$, $K$, and $r$ to write a
+    formula for the mean height $H(x)$ of a sunflower on day $x$.
+    Graph your formula together with the scatter plot
+    from \Part{subprob:logarithm:logistic_sunflower_data}.  Calculate
+    the coefficient of determination and the root mean square error of
+    your formula.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logarithm:logistic_equivalent_form}
+In \Equation{eqn:logarithm:logistic_function}, the expression
+$(K - P_0)$ can be factorised as
+$P_0 \cdot \parenthesis*{\frac{K}{P_0} - 1}$.  Use the latter
+expression to write \Equation{eqn:logarithm:logistic_function} as
+%%
+\begin{align*}
+P(t)
+&=
+\frac{
+  KP_0
+}{
+  P_0 + P_0 \cdot \parenthesis*{\frac{K}{P_0} - 1} e^{-rt}
+} \\[4pt]
+&=
+\frac{P_0}{P_0}
+\times
+\frac{
+  K
+}{
+  1 + \parenthesis*{\frac{K}{P_0} - 1} e^{-rt}
+}
+\end{align*}
+%%
+which simplifies to
+\Equation{eqn:logarithm:logistic_equivalent_form}.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/ecoli.pdf}
+\caption{%%
+  The time in hours versus the number of cells in a colony of
+  \emph{E.~coli}.  The red horizontal line passes through the value of
+  $K = 100$ on the vertical axis.
+}
+\label{fig:logarithm:logistic_Ecoli_population}
+\end{figure}
+
+\solutionpart{subprob:logarithm:logistic_Ecoli_example}
+Let $P(t)$ be the population size of the \emph{E.~coli} colony at time
+$t$ hours, where $t \geq 0$.  You have an initial population size of
+$P_0 = 4$.  The growth rate is $50\%$ per hour, which can be written
+in decimal form as $r = 50 / 100 = 1 / 2$.  The upper limit on the
+population size is $K = 100$.  Substitute the above values into
+\Equation{eqn:logarithm:logistic_equivalent_form} and simplify to get
+%%
+\begin{align*}
+P(t)
+&=
+\frac{
+  100
+}{
+  1 + \parenthesis*{\frac{100}{4} - 1} e^{-\frac{1}{2}t}
+} \\[4pt]
+&=
+\frac{
+  100
+}{
+  1 + 24 e^{-t/2}
+}.
+\end{align*}
+%%
+\Figure{fig:logarithm:logistic_Ecoli_population} shows a graph of the
+function $P(t)$ for time from $t = 0$ up to and including $t = 20$
+hours.  The figure shows that from $t = 0$ up to $t = 100/2 = 50$, the
+\emph{E.~coli} population increases according to an exponential
+function.  From $t = 50$ onwards, the population levels off like a
+logarithmic function.  No matter how much time has passed, the
+population size is bounded above by $K = 100$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/sunflower.pdf}
+\caption{%%
+  The growth of $58$ sunflowers.  The black dots show the experimental
+  data in \Table{tab:logarithm:sunflower}.  The red curve is a graph
+  of
+  \Equation{eqn:logarithm:logistic_sunflower_formula_by_regression}.
+}
+\label{fig:logarithm:sunflower}
+\end{figure}
+
+\solutionpart{subprob:logarithm:logistic_sunflower_data}
+\Figure{fig:logarithm:sunflower} shows a scatter plot of the data in
+\Table{tab:logarithm:sunflower}.  The dots seem to follow an S-shaped
+curve that is characteristic of the logistic function.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/sunflower-delta.pdf}
+\caption{%%
+  The rate of change in the mean height of a sunflower.  The rates are
+  calculated based on the data in \Table{tab:logarithm:sunflower}.
+}
+\label{fig:logarithm:logistic_sunflower_delta}
+\end{figure}
+
+\solutionpart{subprob:logarithm:logistic_sunflower_growth_rates}
+\Figure{fig:logarithm:logistic_sunflower_delta} shows a scatter plot
+of the rate of change in the mean height of a sunflower.  The rate of
+change increases from day $x = 7$ up to day $x = 42$.  After day
+$x = 42$, the rate of change decreases.  The figure suggests that in
+the early stages of the growth of a sunflower, the sunflower grows at
+a higher and higher rate each day.  After a certain amount of time,
+the growth rate of the sunflower reaches a peak and from that time
+onwards the growth rate decreases.  That is, after a certain amount of
+time the sunflower still increases in height, but by a smaller and
+smaller amount each day.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/sunflower-regression.pdf}
+\caption{%%
+  Linear regression of the mean height $H(x)$ of a sunflower versus
+  the ratio $\frac{\Delta H(x)}{H(x)}$.  The black dots represent
+  calculations based on the data in \Table{tab:logarithm:sunflower}.
+  The red line shows a graph of
+  \Equation{eqn:logarithm:logistic_sunflower_regression}.
+}
+\label{fig:logarithm:logistic_sunflower_regression}
+\end{figure}
+
+\solutionpart{subprob:logarithm:logistic_sunflower_rate_over_function_value}
+\Figure{fig:logarithm:logistic_sunflower_regression} shows a scatter
+plot of the mean height $H(x)$ versus the ratio
+$\frac{\Delta H(x)}{H(x)}$.  The black dots in the figure seem to
+follow a straight line and linear regression results in the function
+%%
+\begin{equation}
+\label{eqn:logarithm:logistic_sunflower_regression}
+\frac{\Delta H(x)}{H(x)}
+=
+-0.0004 h + 0.1009
+\end{equation}
+%%
+where the variable $h$ denotes the mean height in centimetres.  The
+linear function is graphed in
+\Figure{fig:logarithm:logistic_sunflower_regression}.  If the
+sunflower data set follows the logistic
+\Equation{eqn:logarithm:logistic_sunflower_formula}, the parameters
+$r$ and $K$ can be estimated as $r \approx 0.1009$ and
+$K \approx 252.0837$ and the initial height is $H_0 = 10$ centimetres.
+Then the mean height $H(x)$ of a sunflower on day $x$ can be written
+as
+%%
+\begin{equation}
+\label{eqn:logarithm:logistic_sunflower_formula_by_regression}
+H(x)
+=
+\frac{
+  252.0837
+}{
+  1 + 24.2083 e^{-0.1009 x}
+}.
+\end{equation}
+%%
+The function is graphed in \Figure{fig:logarithm:sunflower} together
+with the experimental data from \Table{tab:logarithm:sunflower}.  The
+model~\eqref{eqn:logarithm:logistic_sunflower_formula_by_regression}
+has a coefficient of determination of $R^2 \approx 0.9472$ and a root
+mean square error of approximately $7.8097$.
 \end{solution}
 }{}
 \end{problem}
