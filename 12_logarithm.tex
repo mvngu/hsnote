@@ -2857,10 +2857,32 @@ data in \Table{tab:logarithm:orbital_period}.
 \end{solution}
 }{}
 
-\item Why can't the base be $b = 1$?
+\item Let $a$ and $b$ be numbers such that $a > 0$ and $b \geq 1$.
+  The logarithm of $a$ to base $b$ is defined as $\log_b a$.  Provide
+  two explanations as to why the base $b$ cannot be $b = 1$.
 \ifbool{showSolution}{
 \begin{solution}
+The first explanation uses the definition of logarithm.  Suppose that
+there is a fixed number $c$ such that $\log_1 a = c$.  By the
+definition of logarithm, the latter expression is equivalent to
+$a = 1^c$.  Note that there are infinitely many values of $c$ that
+satisfy the equation $a = 1^c$.  For example, you have
+$1^1 = 1^2 = 1^3 = \cdots$ and
+$1^{1/2} = 1^{1/3} = 1^{1/4} = \cdots$.  In other words, the logarithm
+$\log_1 a$ is infinite.
 
+The second explanation uses \Theorem{thm:logarithm:change_of_base}.
+Suppose that the logarithm $\log_1 a$ is a fixed number.  Changing the
+logarithm to base $e$~(or any other valid base), you can write
+\[
+\log_1 a
+=
+\frac{\ln a}{\ln 1}.
+\]
+By the zero rule of
+logarithm~(i.e.~\Subtheorem{thm:logarithm:properties}{thm:logarithm:properties_log_1}),
+the denominator simplifies to $\ln 1 = 0$.  You have a division by
+zero, which is undefined.
 \end{solution}
 }{}
 
