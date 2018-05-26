@@ -2880,10 +2880,79 @@ data in \Table{tab:logarithm:orbital_period}.
 \end{solution}
 }{}
 
-\item Newton's law of cooling to determine when someone died.
+\item\emph{Newton's law of cooling.}
+  A forensic team arrived at the scene of a crime and found the dead
+  body of an adult human.  The team measured the temperature of the
+  body to be $\degreec{26}$ and noted that the time was 3:25~pm.  One
+  hour later, the team again measured the temperature of the body and
+  found that the body had cooled down to $\degreec{24}$.  The body was
+  located in a room that was known to have a constant temperature of
+  $\degreec{15}$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:Newton_forensic_formula}
+    Let $T(t)$ be the temperature in degrees Celsius of the body at
+    $t$ hours since 3:25~pm.  Use Newton's law of cooling and the
+    above information to write a formula for $T(t)$.  The rate of
+    cooling is the constant $k$.  Solve your formula for $k$ to
+    determine the value of the rate of cooling.
+
+  \item\label{subprob:logarithm:Newton_forensic_time_of_death}
+    The normal body temperature of a live adult human is approximately
+    $\degreec{37}$.\footnote{
+      Further details are available in the paper
+      \url{https://doi.org/10.1046/j.1471-6712.2002.00069.x}.
+    }
+    Estimate the time of death of the victim.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logarithm:Newton_forensic_formula}
+Let $t$ be the number of hours since 3:25~pm so that the time of
+$t = 0$ corresponds to 3:25~pm itself.  The initial temperature of the
+body was $T_0 = 26$ degrees Celsius.  At time $t = 1$ hour after
+3:25~pm~(i.e.~at 4:25~pm), the temperature of the body was
+$T(1) = 24$ degrees Celsius.  The constant temperature of the
+surrounding was $T_s = 15$ degrees Celsius.  Substitute these values
+into \Equation{eqn:logarithm:Newton_law_cooling} to obtain
+%%
+\begin{align*}
+T(1)
+&=
+15 + (26 - 15) e^{-k \times 1} \\[4pt]
+&=
+15 + 11e^{-k} \\[4pt]
+&=
+24.
+\end{align*}
+%%
+The latter equation can also be written as
+$\frac{24 - 15}{11} = e^{-k}$, which simplifies to
+$\frac{9}{11} = e^{-k}$.  Take the natural logarithm of both sides to
+get $\ln \frac{9}{11} = -k$ and solving for $k$ shows that
+$k = -\ln \frac{9}{11}$.
 
+\solutionpart{subprob:logarithm:Newton_forensic_time_of_death}
+The temperature $T(t)$ of the body at $t$ hours since 3:25~pm is
+\[
+T(t)
+=
+15 + 11 e^{-kt}
+\]
+where $k = -\ln \frac{9}{11}$ is the rate of cooling.  You want to
+determine the value of $t$ such that $T(t) = 37$ degrees Celsius.
+That is, you want to solve the equation $37 = 15 + 11 e^{-kt}$ for
+$t$.  The equation can be written as
+$\frac{37 - 15}{11} = e^{-kt}$, which simplifies to $2 = e^{-kt}$.
+Take the natural logarithm of both sides to get $\ln 2 = -kt$ and
+solving for $t$ shows that
+$t = -\frac{1}{k} \ln 2 \approx -3.454152$.  That is, the victim died
+at approximately $3.454152$ hours before 3:25~pm.  Three hours before
+3:25~pm would be 12:25~noon.  Multiply the fractional part $0.454152$
+by $60$ minutes to get $0.454152 \times 60 = 27.24912 \approx 27$
+minutes.  The time of $27$ minutes before 12:25~noon would be
+11:58~am.  Thus the victim died at approximately 11:58~am on the day
+the body was discovered.
 \end{solution}
 }{}
 
