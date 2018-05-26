@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{interest}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north west,%%
+  plotStyle/.style={%%
+    domain=0:14,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize Year},%%
+  %% y axis
+  ylabel={\normalsize Account balance~(AU$\$$)}%%
+]
+%%
+%%
+\addplot+ [plotStyle,black]
+{100 * exp(0.04*x)};
+\addlegendentry{continuous compounding}
+%%
+%%
+\addplot+ [plotStyle,red]
+{100 + 5*x};
+\addlegendentry{simple interest}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

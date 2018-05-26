@@ -2949,11 +2949,92 @@ written as $t_d = \frac{\ln 2}{r}$.
 \end{solution}
 }{}
 
-\item Prove the doubling-time formula for an exponential growth
-  model.
+\item\emph{Compound or simple?}
+  At the start of the year, you opened a savings account at a bank and
+  deposited $\$100$ into the account.  The bank offered you two types
+  of interest plan.  The first plan is continuous compound interest at
+  a rate of $4\%$ per annum.  The second plan is simple interest,
+  which adds $\$5$ to your account each year.  Assume that you leave
+  the account alone to accrue interest and neither deposit additional
+  money into nor withraw money from your account.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:interest_formulae}
+    Let $P(t)$ and $Q(t)$ be the balance of your account after $t$
+    years for the compound and simple interest plan, respectively.
+    Write a formula for each of $P(t)$ and $Q(t)$.  On the same set of
+    axes, graph the functions $P(t)$ and $Q(t)$ for
+    $t = \seq{0}{1}{14}$.  Explain what you notice about the graph.
+
+  \item\label{subprob:logarithm:interest_table}
+    Produce a table that has three columns and as many rows as
+    necessary.  Going from left to right, the first column should have
+    the heading ``$t$~(year)'' and lists each whole year from $0$ up
+    to and including $14$.  The middle column should have the heading
+    ``$P(t)$'' and lists the account balance for each of the years
+    $t = \seq{0}{1}{14}$ under continuous compound interest.  Finally,
+    the right-most column should have the heading ``$Q(t)$'' and lists
+    the account balance for each of the years $t = \seq{0}{1}{14}$
+    under simple interest.
+
+  \item\label{subprob:logarithm:interest_continuous_compounding_overtaking}
+    Use your graph from \Part{subprob:logarithm:interest_formulae} and
+    the table from \Part{subprob:logarithm:interest_table} to estimate
+    the number of years required for the value of $P(t)$ to overtake
+    the value of $Q(t)$.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logarithm:interest_formulae}
+  The formula for continuous compound interest is $P(t) = a e^{rt}$,
+  where $a$ is the initial account balance, $r$ is the annual interest
+  rate written as a decimal, and $t$ represents the number of years
+  since opening the account.  The initial account balance is $a = 100$
+  dollars.  The annual interest rate is $4\%$, which can be written as
+  $r = 4 / 100 = 0.04$.  Thus you have the formula
+  $P(t) = 100 e^{0.04 t}$.
 
+  The formula for simple interest is $Q(t) = a + bt$, where $a$ and
+  $t$ are as above and $b$ represents the amount of interest per
+  annum.  Since $a = 100$ dollars and $b = 5$ dollars, then you can
+  write $Q(t) = 100 + 5t$.  \Figure{fig:logarithm:interest} shows a
+  comparison of the account balance under continuous compounding and
+  simple interest.  The graph shows that during the first decade after
+  opening the account, the plan of simple interest results in a higher
+  account balance than continuous compounding.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/interest.pdf}
+\caption{%%
+  The balance of an account that initially had $\$100$.  The black
+  curve is a graph of the function $P(t) = 100 e^{0.04 t}$ for
+  continuous compounding.  The red line is a graph of the function
+  $Q(t) = 100 + 5t$ for simple interest.
+}
+\label{fig:logarithm:interest}
+\end{figure}
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/interest.tex}
+\caption{%%
+  The account balance under continuous compound interest~(the middle
+  column) and simple interest~(the right-most column).  The time $t$
+  is in years and the account balance is in Australian dollars.
+}
+\label{tab:logarithm:interest}
+\end{table}
+
+\solutionpart{subprob:logarithm:interest_table}
+See \Table{tab:logarithm:interest}.
+
+\solutionpart{subprob:logarithm:interest_continuous_compounding_overtaking}
+As shown in \Table{tab:logarithm:interest}, after $t = 11$ years the
+account balance under continuous compounding overtakes the account
+balance under simple interest.  Thus you require approximately $11$
+years in order for the value of $P(t)$ to overtake the value of
+$Q(t)$.
 \end{solution}
 }{}
 
