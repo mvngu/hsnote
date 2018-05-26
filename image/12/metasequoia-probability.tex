@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{metasequoia-probability}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+%% The probability density function (pdf) of the normal distribution.
+%%
+%% #1 -- The mean of the pdf.
+%% #2 -- The standard deviation of the pdf.
+\pgfmathdeclarefunction{normdist}{2}{%%
+  \pgfmathparse{%%
+    (1 / (#2 * sqrt(2 * pi))) * exp(-((x - #1)^2) / (2 * (#2^2)))%%
+  }%%
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotStyle/.style={mark size=1.5,black,mark color=black,mark=*,only marks},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north east,%%
+  plotStyle/.style={%%
+    domain=18:46,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize Tree height~(m)},%%
+  %% y axis
+  ylabel={\normalsize Probability}%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (18, 0.004)
+  (19, 0.01)
+  (20, 0.03)
+  (21, 0.046)
+  (22, 0.062)
+  (23, 0.076)
+  (24, 0.06)
+  (25, 0.112)
+  (26, 0.064)
+  (27, 0.09)
+  (28, 0.084)
+  (29, 0.098)
+  (30, 0.044)
+  (31, 0.05)
+  (32, 0.048)
+  (33, 0.036)
+  (34, 0.028)
+  (35, 0.014)
+  (36, 0.018)
+  (37, 0.01)
+  (38, 0.002)
+  (39, 0.006)
+  (40, 0.002)
+  (41, 0.004)
+  (46, 0.002)
+};
+\addlegendentry{data}
+%%
+%%
+\addplot+ [plotStyle,red]
+{normdist(26.6913, 4.44614026279794)};
+\addlegendentry{prediction}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

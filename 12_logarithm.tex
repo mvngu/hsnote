@@ -3244,10 +3244,214 @@ decade from $1980$ to $1990$.
 \end{solution}
 }{}
 
-\item
+\item\emph{Metasequoia.}
+  Dawn redwood, otherwise known as \emph{Metasequoia}, is a type of
+  tree that is native to China.  In~2017, a group of researchers
+  published their findings on the diameter at breast height~(DBH)
+  versus height of $5503$ \emph{Metasequoia} trees found in Hubei,
+  China.\footnote{
+    The paper is available at
+    \url{https://doi.org/10.1371/journal.pone.0182170}.
+  }
+  The researchers have released a sample of measurements of $500$
+  trees; see the data file \code{metasequoia.csv}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logistic:metasequoia_height_distribution}
+    The heights in the data file \code{metasequoia.csv} range from a
+    minimum of $17.35$ metres to a maximum of $45.62$ metres.  To get
+    a rough idea of how the heights are spread across the $500$ trees,
+    you can place each height measurement in exactly one of several
+    classes.  The class $18$ contains all heights $h$ such that
+    $17 \leq h < 18$, i.e.~all heights that are at least $17$ metres
+    and less than $18$ metres.  The class $19$ contains all heights
+    $h$ such that $18 \leq h < 19$.  Similarly, the class $20$
+    contains all heights $h$ such that $19 \leq h < 20$.  And so on up
+    to and including the class $46$, which contains all heights $h$
+    such that $45 \leq h < 46$.  Produce a table that has three
+    columns and as many rows as necessary.  Going from left to right,
+    the first column should have a heading called ``Class'' and should
+    list each of the classes from class $18$ up to and including class
+    $46$.  The middle column should have a heading called ``Count''
+    and should list for each class the corresponding number of height
+    measurements that can be placed in the class.  Finally, the third
+    column should have a heading called ``Probability'' and should
+    list the corresponding count divided by $500$.  This is the
+    observed probability, i.e.~the probability value is derived from
+    the data.  For example, the class $18$ should have a count of $2$
+    because there are two height measurements that are at least $17$
+    metres but less than $18$ metres.  Furthermore, you have a
+    probability of $2 / 500 = 0.004$ that a \emph{Metasequoia} tree
+    has a height of $h$ metres such that $17 \leq h < 18$.  Remove any
+    row that has a count of zero.  Determine the range of tree heights
+    that occur the most often in the given sample of $500$ trees.
+
+  \item\label{subprob:logistic:metasequoia_height_mean_stdev}
+    Let's calculate some statistics on the heights of the
+    \emph{Metasequoia} trees.  First, calculate the mean $\mu$ of the
+    $500$ tree heights.  Next, calculate the \emph{standard deviation}
+    $\sigma$ of the $500$ tree heights.  Let $h_i$ be the height
+    measurement of tree $i$ for $i = \seq{1}{2}{500}$.  The difference
+    between the height of tree $i$ and the mean height is $h_i - \mu$.
+    Square the difference to get $(h_i - \mu)^2$.  Now add up all the
+    squared differences, divide the result by $n - 1$, and take the
+    square root to obtain the standard deviation
+    \[
+    \sigma
+    =
+    \sqrt{
+      \frac{1}{n - 1}
+      \sum_{i=1}^n (h_i - \mu)^2
+    }
+    \]
+    where $n = 500$ denotes the number of trees.  Note that the
+    standard deviation is similar to the definition of the root mean
+    square error.  The main difference is that in the standard
+    deviation you divide by $n - 1$, not $n$.  Like the root mean
+    square error, the standard deviation gives you an average of how
+    much any value~(or tree height) differs from the mean value~(or
+    mean tree height).  Determine the mean and standard deviation of
+    the $500$ tree heights.  Provide an interpretation of the standard
+    deviation of the tree heights.
+
+  \item\label{subprob:logistic:metasequoia_height_normal_plot}
+    If you plot the value of the class height versus the corresponding
+    observed probability, the points would seem to follow the shape of
+    a bell curve.  This bell curve shape is known as the
+    \emph{normal distribution} and is also called the
+    \emph{Gaussian distribution}.  You can use the following technique
+    to fit a normal distribution to your plot.  Let $\mu$ and $\sigma$
+    be the mean and standard deviation, respectively, of the tree
+    heights.  If the heights of \emph{Metasequoia} trees follow a
+    normal distribution, then the probability of observing a
+    \emph{Metasequoia} tree of $x$ metres high is
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:metasequoia_normal_distribution}
+    P(x)
+    =
+    \frac{1}{\sigma \sqrt{2 \pi}}
+    \exp{
+      -
+      \frac{
+        (x - \mu)^2
+      }{
+        2 \sigma^2
+      }
+    }.
+    \end{equation}
+    %%
+    Equation~\eqref{eqn:logarithm:metasequoia_normal_distribution}
+    gives you the predicted probability.  The equation can also be
+    used to predict the number of \emph{Metasequoia} trees of a
+    particular height.  If you have $N$ \emph{Metasequoia} trees,
+    \Equation{eqn:logarithm:metasequoia_normal_distribution} predicts
+    that you would have $N \cdot P(x)$ trees of height around $x$
+    metres.   Letting $x$ be the class height, use
+    \Equation{eqn:logarithm:metasequoia_normal_distribution} to fit a
+    normal distribution to your plot of class height versus observed
+    probability.  In a sample of $500$ \emph{Metasequoia} trees, use
+    \Equation{eqn:logarithm:metasequoia_normal_distribution} to
+    predict the number of trees that have a class height of $x$
+    metres for $x = \seq{18}{19}{46}$.  Calculate the root mean
+    square~(RMS) error of the predicted counts.  Provide an
+    interpretation of the RMS error.
+
+  \item\label{subprob:logistic:metasequoia_formula}
+    Let $H(x)$ be the height~(m) of a \emph{Metasequoia} tree that has
+    a DBH of $x$ centimetres.  Use regression to help you derive a
+    formula for $H(x)$.  Graph your formula together with a scatter
+    plot of the data in the file \code{metasequoia.csv}.  Calculate
+    the coefficient of determination and root mean square error of
+    your formula.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logistic:metasequoia_height_distribution}
+See \Table{tab:logarithm:Metaseqoia}.  The range of tree heights from
+at least $24$ metres up to less than $25$ metres occurs the most often
+at $56$ trees out of a total of $500$ trees.
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/metasequoia.tex}
+\caption{%%
+  The probability of each height class for $n = 500$
+  \emph{Metasequoia} trees.  Given a class $x$, the corresponding
+  count $c$ is the number of height measurements $h$ such that
+  $x - 1 \leq h < x$.  The observed probability for the class $x$ is
+  $c / n$.  The predicted probability is $P(x)$ as defined by the
+  normal distribution in
+  \Equation{eqn:logarithm:metasequoia_normal_distribution} with a mean
+  of $\mu = 26.6913$ and standard deviation $\sigma \approx 4.4461$.
+  The predicted count for the class $x$ is $n \cdot P(x)$.
+}
+\label{tab:logarithm:Metaseqoia}
+\end{table}
+
+\solutionpart{subprob:logistic:metasequoia_height_mean_stdev}
+The mean and standard deviation of the $500$ tree heights are
+$\mu = 26.6913$ and $\sigma \approx 4.4461$, respectively.  The
+standard deviation tells you that on average any given tree height is
+approximately $4.4461$ metres away from the mean height of $26.6913$
+metres.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/metasequoia-probability.pdf}
+\caption{%%
+  The probability of observing a \emph{Metasequoia} tree of a given
+  height.  The black dots show the probabilities as calculated using
+  the data file \code{metasequoia.csv}.  The red curve is a graph of
+  the normal distribution with mean $\mu = 26.6913$ and standard
+  deviation $\sigma \approx 4.4461$.
+}
+\label{fig:logarithm:Metasequoia_normal_distribution}
+\end{figure}
+
+\solutionpart{subprob:logistic:metasequoia_height_normal_plot}
+\Figure{fig:logarithm:Metasequoia_normal_distribution} shows a fit of
+a normal distribution to the empirical probabilities of observing a
+\emph{Metasequoia} tree of a given height.  The normal distribution
+has a mean of $\mu = 26.6913$ and standard deviation
+$\sigma \approx 4.4461$.  The predicted counts are shown in the
+right-most column of \Table{tab:logarithm:Metaseqoia}.  The predicted
+counts have a root mean square error of approximately $5.7481$.  This
+means that, on average, a prediction of the number of
+\emph{Metasequoia} trees whose heights belong to a particular class
+would differ from the observed number by approximately $5.7481$
+trees.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/metasequoia.pdf}
+\caption{%%
+  The diameter at breast height versus tree height for $500$
+  \emph{Metasequoia} trees.  The black dots show a scatter plot of the
+  data in the file \code{metasequoia.csv}.  The red curve is a graph
+  of \Equation{eqn:logarithm:Metasequoia_log_regression}.
+}
+\label{fig:logarithm:Metasequoia}
+\end{figure}
+
+\solutionpart{subprob:logistic:metasequoia_formula}
+Let $H(x)$ be the height in metres of a \emph{Metaseqoia} tree that
+has a DBH of $x$ centimetres.  Logarithmic regression on the data in
+the file \code{metasequoia.csv} shows that $H(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:Metasequoia_log_regression}
+H(x)
+=
+16.7208 \ln x - 39.3081.
+\end{equation}
+%%
+The function $H(x)$ is graphed in \Figure{fig:logarithm:Metasequoia}
+together with a scatter plot of the experimental data for $500$
+\emph{Metasequoia} trees.  The
+model~\eqref{eqn:logarithm:Metasequoia_log_regression} has a
+coefficient of determination of $R^2 \approx 0.8466$ and a root mean
+square error of approximately $1.7399$.
 \end{solution}
 }{}
 
