@@ -2886,11 +2886,66 @@ zero, which is undefined.
 \end{solution}
 }{}
 
-\item Prove the half-life formula for radioactive decay.  Derive the
-  rule of $69$ for the half-life of an exponential decay model.
+\item\emph{Half and double.}
+  Recall that an exponential model of decay has the concept of
+  half-life and an exponential model of growth has the concept of
+  doubling time.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:half_life}
+    Let $Q(t) = a e^{-\lambda t}$ be a model of exponential decay.
+    Here, $a > 0$ is the initial quantity, $\lambda > 0$ is the
+    constant rate of decay written as a decimal, and $t$ represents an
+    amount of time.  The half-life of $Q(t)$ is denoted $t_{1/2}$.
+    Prove that the half-life of the model $Q(t)$ can be written as
+    $t_{1/2} = \frac{\ln 2}{\lambda}$.
+
+  \item\label{subprob:logarithm:doubling_time}
+    Let $P(t) = a e^{rt}$ be a model of exponential growth.  Here,
+    $a > 0$ is the initial quantity, $r > 0$ is the constant rate of
+    growth written as a decimal, and $t$ represents an amount of
+    time.  The doubling time of $P(t)$ is written as $t_d$.  Prove
+    that the doubling time of the model $P(t)$ can be written as
+    $t_d = \frac{\ln 2}{r}$.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logarithm:half_life}
+The half-life of the model $Q(t)$ is the amount of time required for
+the initial quantity of $a$ to be $a / 2$.  In other words, you want
+to solve the equation
+\[
+\frac{a}{2}
+=
+a e^{-\lambda t}
+\]
+for $t$.  Divide both sides by $a$ to get
+$\frac{1}{2} = e^{-\lambda t}$.  Take the natural logarithm of both
+sides to produce $\ln \frac{1}{2} = -\lambda t$ and solving for $t$
+results in
+\[
+t_{1/2}
+=
+-\frac{1}{\lambda} \ln \frac{1}{2}.
+\]
+By the properties of logarithm, note that
+$\ln \frac{1}{2} = \ln 1 - \ln 2 = -\ln 2$.  Therefore the half-life
+of the model $Q(t)$ can be written as
+$t_{1/2} = \frac{\ln 2}{\lambda}$.
 
+\solutionpart{subprob:logarithm:doubling_time}
+The doubling time of the model $P(t)$ is the amount of time required
+for the initial quantity of $a$ to double to $2a$.  That is, you want
+to solve the equation
+\[
+2a
+=
+a e^{rt}
+\]
+for $t$.  Divide both sides by $a$ to get $2 = e^{rt}$.  Taking the
+natural logarithm of both sides yields $\ln 2 = rt$.  Solve the latter
+equation for $t$ to see that the doubling time of $P(t)$ can be
+written as $t_d = \frac{\ln 2}{r}$.
 \end{solution}
 }{}
 
