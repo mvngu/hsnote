@@ -2701,14 +2701,137 @@ the population density of bamboos.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/planets.tex}
+\caption{%%
+  The distance to the Sun versus the orbital period of a planet.
+  Distance is measured in gigametres, where one gigametre~(or $1$~Gm)
+  is equivalent to $10^6$ kilometres.  The orbital period of a planet
+  is the number of Earth days required for the planet to complete one
+  orbit around the Sun.
+}
+\label{tab:logarithm:orbital_period}
+\end{table}
+
 \begin{exercise}
 \textbf{Orbital period.}
-Log-log regression and Kepler's law on orbital period.
+\Table{tab:logarithm:orbital_period} lists for each planet the
+distance from the planet to the Sun and the planet's orbital period.
+The data are provided by NASA.\footnote{
+  See the following website:
+  \url{http://web.archive.org/web/20180427010804/https://nssdc.gsfc.nasa.gov/planetary/factsheet/},
+  accessed 2018-04-27.
+}
+%%
+\begin{packedenum}
+\item\label{subex:logarithm:planets_scatter_plots}
+  Produce two scatter plots of the data in
+  \Table{tab:logarithm:orbital_period}.  One graph should use linear
+  scaling for both of the horizontal and vertical axes.  The other
+  graph should use logarithmic scaling for both axes.  Explain what
+  you notice about the graphs.
+
+\item\label{subex:logarithm:planets_power_regression}
+  Let $P(x)$ be the orbital period of a planet that is $x$ gigametres
+  away from the Sun.  Use power regression to derive an expression for
+  $P(x)$.  Graph your formula together with a scatter plot of the data
+  in \Table{tab:logarithm:orbital_period}.  Calculate the coefficient
+  of determination of your formula.
+
+\item\label{subex:logarithm:planets_Kepler}
+  If $K(x)$ represents the orbital period of a planet that is at a
+  distance of $x$ gigametres from the Sun, then Kepler showed that
+  $K(x)$ can be written as
+  %%
+  \begin{equation}
+  \label{eqn:logarithm:planets_Kepler_formula}
+  K(x)
+  =
+  0.1996 x^{1.5}.
+  \end{equation}
+  %%
+  Use the root mean square error to help you decide which one of
+  $P(x)$ and $K(x)$ is better than the other at modelling the data in
+  \Table{tab:logarithm:orbital_period}.
+\end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subex:logarithm:planets_scatter_plots}
+\Figure{subfig:logarithm:planets_linear} shows a scatter plot of the
+data in \Table{tab:logarithm:orbital_period} and using linear scaling
+for both of the horizontal and vertical axes.  The graph shows that
+the dots seem to follow an exponential function.  The same scatter
+plot is shown in \Figure{subfig:logarithm:planets_log}, but using
+logarithmic scaling for the axes.  The log-log plot shows that the
+dots seem to follow a straight line, which suggests that you can use
+power regression to model the data.
 
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/planets-linear.pdf}
+  \label{subfig:logarithm:planets_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/planets-log.pdf}
+  \label{subfig:logarithm:planets_log}
+}
+\caption{%%
+  The distance of a planet to the Sun versus the planet's orbital
+  period.  Distance is measured in gigametres and orbital period is
+  measured in Earth days.  (a)~A scatter plot that uses linear scaling
+  for both of the horizontal and vertical axes.  Note that each value
+  on the vertical axis must be multiplied by $10^4$.  (b)~The same
+  scatter plot, but using logarithmic scaling for both axes.
+}
+\label{fig:logarithm:planets}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/planets.pdf}
+\caption{%%
+  The distance of a planet to the Sun versus the planet's orbital
+  period.  The black dots show a scatter plot of the data in
+  \Table{tab:logarithm:orbital_period}.  The red curve shows a graph
+  of \Equation{eqn:logarithm:planets_power_regression}.  Each value on
+  the vertical axis must be multiplied by $10^4$.
+}
+\label{fig:logarithm:planets_regression}
+\end{figure}
+
+\solutionpart{subex:logarithm:planets_power_regression}
+Let $P(x)$ be the orbital period of a planet that is at a distance of
+$x$ gigametres from the Sun.  Power regression on the data in
+\Table{tab:logarithm:orbital_period} shows that $P(x)$ can be written
+as
+%%
+\begin{equation}
+\label{eqn:logarithm:planets_power_regression}
+P(x)
+=
+0.2007 x^{1.4988}.
+\end{equation}
+%%
+The function is compared in \Figure{fig:logarithm:planets_regression}
+with the data in \Table{tab:logarithm:orbital_period}.
+Equation~\eqref{eqn:logarithm:planets_power_regression} has a
+coefficient of determination of $R^2 \approx 0.9999$.
+
+\solutionpart{subex:logarithm:planets_Kepler}
+The model~\eqref{eqn:logarithm:planets_power_regression} has a root
+mean square~(RMS) error of approximately $138.0027$.  This is slightly
+higher than the RMS error of
+\Equation{eqn:logarithm:planets_Kepler_formula}, which has an RMS
+error of approximately $132.9641$.  Conclude that Kepler's
+\Equation{eqn:logarithm:planets_Kepler_formula} is better than
+\Equation{eqn:logarithm:planets_power_regression} at modelling the
+data in \Table{tab:logarithm:orbital_period}.
 \end{solution}
 }{}
 
