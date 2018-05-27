@@ -4000,6 +4000,57 @@ square error of approximately $1.7399$.
     from \Part{subprob:logarithm:logistic_sunflower_data}.  Calculate
     the coefficient of determination and the root mean square error of
     your formula.
+
+  \item\label{subprob:logarithm:logistic_yeast}
+    Recall the experiment on a colony of yeast cells.  The
+    experimental data are listed in \Table{tab:logarithm:yeast} for
+    easy reference.  Let $Y(t)$ be the population size of the yeast
+    colony after $t \geq 0$ hours.  Suppose that $Y(t)$ can be written
+    as a logistic function of the form
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_yeast}
+    Y(t)
+    =
+    \frac{
+      K
+    }{
+      1
+      +
+      \parenthesis*{\frac{K}{Y_0} - 1}
+      e^{-rt}
+    }
+    \end{equation}
+    %%
+    where the constants $K$, $r$, and $Y_0$ are the parameters of
+    $Y(t)$.  Here, $K$ represents the maximum number of cells in the
+    yeast colony.  The parameter $r$ affects the steepness of the
+    logistic curve and consequently $r$ also affects the rate of
+    change in population size.  Finally, $Y_0$ represents the initial
+    population size at time $t = 0$.  Use the techniques
+    from \Parts{subprob:logarithm:logistic_sunflower_growth_rates}{subprob:logarithm:logistic_sunflower_rate_over_function_value}
+    to estimate the values of the parameters $K$ and $r$ for
+    \Equation{eqn:logarithm:logistic_yeast}.  Raymond Pearl suggested
+    in~1927 that the equation
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:logistic_Pearl}
+    P(t)
+    =
+    \frac{
+      665
+    }{
+      1 + e^{4.1896 - 0.5355t}
+    }
+    \end{equation}
+    %%
+    be used to model the experimental data in
+    \Table{tab:logarithm:yeast}.  Calculate the root mean square~(RMS)
+    errors of
+    \Equations{eqn:logarithm:logistic_yeast}{eqn:logarithm:logistic_Pearl}.
+    Use the RMS errors to help you decide which one of the two
+    equations is better than the other at modelling the experimental
+    data.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -4164,6 +4215,54 @@ with the experimental data from \Table{tab:logarithm:sunflower}.  The
 model~\eqref{eqn:logarithm:logistic_sunflower_formula_by_regression}
 has a coefficient of determination of $R^2 \approx 0.9472$ and a root
 mean square error of approximately $7.8097$.
+
+\solutionpart{subprob:logarithm:logistic_yeast}
+Logistic regression on the data in \Table{tab:logarithm:yeast}
+produces the parameter estimates $K \approx 666.5272$ and
+$r \approx 0.5315$.  Since the initial yeast population is
+$Y_0 = 9.6$ cells, you have the approximation
+\[
+\frac{K}{Y_0} - 1
+\approx
+68.4299.
+\]
+Thus using logistic regression you can model the experimental data as
+\[
+Y(t)
+=
+\frac{
+  666.5272
+}{
+  1 + 68.4299 e^{-0.5315 t}
+}.
+\]
+The latter function has an RMS error of approximately $6.5165$, while
+the equation suggested by Pearl has an RMS error of approximately
+$3.5986$.  Based on the RMS errors alone, you may conclude that
+Pearl's model is better than $Y(t)$ at modelling the experimental data
+in \Table{tab:logarithm:yeast}.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/yeast.tex}
+\caption{%%
+  The observed population size in an experimental colony of yeast.
+  The data are due to T.~Carlson, published in~1913.  The ``Hour''
+  column lists the numbers of hours that the population had been
+  allowed to grow.  The ``Observed'' column lists the count of the
+  number of yeast cells that were found in the colony after a given
+  number of hours.
+}
+\label{tab:logarithm:yeast}
+\end{table}
+
+\item\emph{Coin and cricket.}
+  In this problem, you will further explore the topic of probability
+\ifbool{showSolution}{
+\begin{solution}
+
 \end{solution}
 }{}
 \end{problem}
