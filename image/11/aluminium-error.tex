@@ -7,7 +7,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \tikzexternalize{aluminium-error}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
 %% These three commands make up the entire times.sty package.
@@ -36,8 +36,10 @@
   width=12cm,%%
   %% x axis
   xlabel={\normalsize Time~(seconds)},%%
+  xtick={0,200,400,600,800,1000,1200},%%
+  xticklabels={$0$,$200$,$400$,$600$,$800$,$1000$,$1200$},%%
   %% y axis
-  ylabel={\normalsize Error},%%
+  ylabel={\normalsize Prediction error},%%
   scaled y ticks=false,%%
   y tick label style=/pgf/number format/fixed%%
 ]

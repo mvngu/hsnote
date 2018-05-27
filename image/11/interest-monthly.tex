@@ -7,7 +7,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \tikzexternalize{interest-monthly}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
 %% These three commands make up the entire times.sty package.
@@ -28,23 +28,17 @@
 %%
 \begin{axis}[%%
   axis line style=very thick,%%
-  dotBlackStyle/.style={mark size=2.5,black,mark color=black,mark=*},%%
-  dotBlueStyle/.style={mark size=2.5,blue,mark color=blue,mark=*},%%
-  dotGreenStyle/.style={mark size=2.5,green,mark color=green,mark=*},%%
-  dotRedStyle/.style={mark size=2.5,red,mark color=red,mark=*},%%
+  dotBlackStyle/.style={mark size=1.5,black,mark color=black,mark=*},%%
+  dotBlueStyle/.style={mark size=1.5,blue,mark color=blue,mark=*},%%
+  dotGreenStyle/.style={mark size=1.5,green,mark color=green,mark=*},%%
+  dotRedStyle/.style={mark size=1.5,red,mark color=red,mark=*},%%
   enlargelimits=true,%%
   height=8cm,%%
   legend cell align=left,%%
-  legend pos=south east,%%
-  plotStyle/.style={%%
-    domain=4:17,%%
-    mark=none,%%
-    smooth,%%
-    thick%%
-  },%%
+  legend pos=north west,%%
   width=12cm,%%
   %% x axis
-  xlabel={\normalsize Months},%%
+  xlabel={\normalsize Month},%%
   xtick={30,31,32,33,34,35,36},%%
   xticklabels={$30$,$31$,$32$,$33$,$34$,$35$,$36$},%%
   %% y axis

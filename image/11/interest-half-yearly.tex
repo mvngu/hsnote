@@ -7,7 +7,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \tikzexternalize{interest-half-yearly}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
 %% These three commands make up the entire times.sty package.
@@ -28,18 +28,12 @@
 %%
 \begin{axis}[%%
   axis line style=very thick,%%
-  dotStyle/.style={mark size=2.5,black,mark color=black,mark=*},%%
+  dotStyle/.style={mark size=1.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   height=8cm,%%
-  plotStyle/.style={%%
-    domain=4:17,%%
-    mark=none,%%
-    smooth,%%
-    thick%%
-  },%%
   width=12cm,%%
   %% x axis
-  xlabel={\normalsize Months},%%
+  xlabel={\normalsize Month},%%
   xtick={0,6,12,18,24,30,36},%%
   xticklabels={$0$,$6$,$12$,$18$,$24$,$30$,$36$},%%
   %% y axis

@@ -7,7 +7,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \tikzexternalize{aluminium}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
 %% These three commands make up the entire times.sty package.
@@ -28,7 +28,7 @@
 %%
 \begin{axis}[%%
   axis line style=very thick,%%
-  dotStyle/.style={mark size=2,black,mark color=black,mark=*,only marks},%%
+  dotStyle/.style={mark size=1.5,black,mark color=black,mark=*,only marks},%%
   enlargelimits=true,%%
   height=8cm,%%
   legend cell align=left,%%
@@ -42,6 +42,8 @@
   width=12cm,%%
   %% x axis
   xlabel={\normalsize Time~(seconds)},%%
+  xtick={0,200,400,600,800,1000,1200},%%
+  xticklabels={$0$,$200$,$400$,$600$,$800$,$1000$,$1200$},%%
   %% y axis
   ylabel={\normalsize How many radioactive isotopes},%%
   scaled y ticks=false,%%
