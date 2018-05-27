@@ -58,6 +58,7 @@ clean:
 	rm -rfv image/11/*~
 	rm -rfv image/12/*~
 	rm -rfv style/*~
+	rm -rfv table/04/*~
 	rm -rfv table/06/*~
 	rm -rfv table/07/*~
 	rm -rfv table/09/*~
