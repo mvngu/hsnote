@@ -1275,7 +1275,7 @@ minutes.\footnote{
   \url{https://youtu.be/HRwey6cwGHo}.
 }
 That is, a given amount of fermium-$250$ will decrease by $50\%$ every
-$30$ minutes.  Suppose you start with $100$ micrograms of
+$30$ minutes.  Suppose that you initially have $100$ isotopes of
 fermium-$250$.
 %%
 \begin{packedenum}
@@ -1299,8 +1299,8 @@ fermium-$250$.
   hours.
 
 \item\label{subex:fermium250_less_than_1microgram}
-  How long must you wait for the amount of fermium-$250$ to be less
-  than one microgram?
+  How long must you wait for the number of fermium-$250$ isotopes to
+  be less than one?
 \end{packedenum}
 \end{exercise}
 
@@ -1308,22 +1308,22 @@ fermium-$250$.
 \begin{solution}
 \solutionpart{subex:fermium250_decay_rate}
 Since the constant percentage decay rate is $50\%$, the constant decay
-rate is $r = 50 / 100 = 0.5$.  This means that after each $30$ minutes
-the amount of fermium-$250$ decreases by a rate of $0.5$.
+rate is $r = 50 / 100 = 0.5$.  This means that after every $30$
+minutes the amount of fermium-$250$ decreases by a rate of $0.5$.
 
 \solutionpart{subex:fermium250_decay_factor}
 The decay factor is defined as one minus the decay rate so
 $b = 1 - 0.5 = 0.5$.  Multiply this number by $100\%$ to get
-$0.5 \times 100\% = 50\%$.  After each $30$ minutes only $50\%$ of the
-amount of fermium-$250$ remains.
+$0.5 \times 100\% = 50\%$.  After every $30$ minutes only $50\%$ of
+the amount of fermium-$250$ remains.
 
 \solutionpart{subex:fermium250_30minutes_60minutes}
 The unit of time $t$ is $30$ minutes.  An increase of $t$ by one unit
 means that time would have increased by $30$ minutes.  You start with
-$100$ micrograms of fermium-$250$ at time $t = 0$.  At time $t = 1$ or
-after $30$ minutes, the amount of fermium-$250$ would have decreased
-by $100 \times 0.5$ micrograms.  Subtract this number from the amount
-at time $t = 0$ to get
+$100$ isotopes of fermium-$250$ at time $t = 0$.  At time $t = 1$ or
+after $30$ minutes, the quantity of fermium-$250$ would have decreased
+by $100 \times 0.5$ isotopes.  Subtract this number from the amount at
+time $t = 0$ to get
 %%
 \begin{align*}
 100 - 100 \times 0.5
@@ -1335,10 +1335,10 @@ at time $t = 0$ to get
 50
 \end{align*}
 %%
-micrograms of fermium-$250$.  At time $t = 2$ or after an hour, the
-amount of fermium-$250$ would have decreased by $50 \times 0.5$
-micrograms.  Subtract this number from the amount at time $t = 1$ to
-get
+isotopes of fermium-$250$ remaining.  At time $t = 2$ or after an
+hour, the quantity of fermium-$250$ would have decreased by
+$50 \times 0.5$ isotopes.  Subtract this number from the amount at
+time $t = 1$ to get
 %%
 \begin{align*}
 50 - 50 \times 0.5
@@ -1350,30 +1350,29 @@ get
 25
 \end{align*}
 %%
-micrograms of fermium-$250$.
+isotopes of fermium-$250$ remaining.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=1.1]{image/11/fermium250.pdf}
 \caption{%%
-  A graph of the amount~(in micrograms) of the isotope fermium-$250$
-  after every $30$ minutes.  The unit of time $t$ is $30$ minutes so
-  multiply each number on the horizontal axis by $30$ to get the
-  number of minutes.  Here you start with $100$ micrograms of
-  fermium-$250$.  The isotope is known to decay at a constant
-  percentage rate of $50\%$ every $30$ minutes.
+  How many fermium-$250$ isotopes remaining after every $30$ minutes.
+  The unit of time $t$ is $30$ minutes so multiply each number on the
+  horizontal axis by $30$ to get the number of minutes.  Here, you
+  start with $100$ fermium-$250$ isotopes, where fermium-$250$ is
+  known to decay at a constant percentage rate of $50\%$ every $30$
+  minutes.
 }
 \label{fig:fermium250_decay}
 \end{figure}
 
 \solutionpart{subex:fermium250_decay_formula}
-You know that the initial amount of fermium-$250$ is $a = 100$
-micrograms and that the decay factor is $b = 0.5$.  Let each unit of
-time $t$ be $30$ minutes.  If $A(t)$ represents the amount of
-fermium-$250$ remaining after $t$ units of time, use
-\Theorem{thm:exponential_decay} to write $A(t) = 100 \times 0.5^t$.
-Let's use the latter formula to verify the results
-from \Part{subex:fermium250_30minutes_60minutes}.  The time of
+The initial quantity is $a = 100$ fermium-$250$ isotopes and that the
+decay factor is $b = 0.5$.  Let the unit of time $t$ be $30$ minutes.
+If $A(t)$ represents the number of fermium-$250$ isotopes remaining
+after $t$ units of time, use \Theorem{thm:exponential_decay} to write
+$A(t) = 100 \times 0.5^t$.  Let's use the latter formula to verify the
+results from \Part{subex:fermium250_30minutes_60minutes}.  The time of
 $t = 1$ translates to $30$ minutes so at time $t = 1$ you would have
 \[
 A(1)
@@ -1382,7 +1381,7 @@ A(1)
 =
 50
 \]
-micrograms of fermium-$250$.  The time of $t = 2$ translates to
+fermium-$250$ isotopes remaining.  The time of $t = 2$ translates to
 $2 \times 30 = 60$ minutes so at time $t = 2$ you would have
 \[
 A(2)
@@ -1391,34 +1390,33 @@ A(2)
 =
 25
 \]
-micrograms of fermium-$250$.  These are the same numbers as those
+fermium-$250$ isotopes remaining.  These are the same numbers as those
 obtained in \Part{subex:fermium250_30minutes_60minutes}.
 \Figure{fig:fermium250_decay} shows a graph of the decrease in the
 amount of fermium-$250$ after every $30$ minutes.
 
 \solutionpart{subex:fermium250_less_than_1microgram}
 At time $t = 6$, the elapsed time would be $6 \times 30 = 180$ minutes
-and the amount of fermium-$250$ remaining is
+and the number of fermium-$250$ isotopes remaining is
 \[
 A(6)
 =
 100 \times 0.5^6
 =
-1.5625
+1.5625.
 \]
-micrograms.  At time $t = 7$, the elapsed time would be
-$7 \times 30 = 210$ minutes and the amount of fermium-$250$ remaining
-is
+At time $t = 7$, the elapsed time would be $7 \times 30 = 210$ minutes
+and the number of fermium-$250$ isotopes remaining is
 \[
 A(7)
 =
 100 \times 0.5^7
 =
-0.78125
+0.78125.
 \]
-micrograms.  Divide $210$ by $60$ minutes to get $3.5$ hours.
-Therefore you must wait approximately $3.5$ hours in order for the
-amount of fermium-$250$ to be less than one microgram.
+Divide $210$ by $60$ minutes to get $3.5$ hours.  Therefore you must
+wait approximately $3.5$ hours in order for the number of
+fermium-$250$ isotopes to be less than one.
 \end{solution}
 }{}
 
