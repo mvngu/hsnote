@@ -2450,6 +2450,9 @@ The difference can be written as $225 - 9 = 216$.
     If $k$ is an odd integer, use
     \Problem{prob:difference_of_two_squares} to prove that
     $(n + k)^2 - n^2$ is odd.
+
+  \item\label{subprob:difference_two_integer_squares_even}
+    If $k$ is even, prove that $(n + k)^2 - n^2$ is even.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -2511,14 +2514,8 @@ Each of the integers $2p(2p + 1)$ and $2p$ is even and so $k^2$ is
 odd.  The expression $2kn + k^2$ is the sum of an even integer and an
 odd integer, hence the result is odd.  Therefore $(n + k)^2 - n^2$ is
 odd.
-\end{solution}
-}{}
 
-\item Let $n$ and $k$ be any integers such that $k$ is even.  Use
-  \Problem{prob:difference_of_two_squares} to prove that
-  $(n + k)^2 - n^2$ is even.
-\ifbool{showSolution}{
-\begin{solution}
+\solutionpart{subprob:difference_two_integer_squares_even}
 The expression $(n + k)^2 - n^2$ is the difference of two squares.  Use
 \Subproblem{prob:difference_of_two_squares}{subprob:difference_two_squares_identity}
 to write the latter expression as
