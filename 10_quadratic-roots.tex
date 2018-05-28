@@ -2593,6 +2593,65 @@ $x$-coordinate of the vertex of $f(x)$.
 \end{solution}
 }{}
 
+\item You will derive the quadratic formula via a technique that was
+  known to Hindu mathematicians since around the year {\sc ad}~1025.
+  % \footnote{
+  %   See the following paper for further details:
+  %   \url{http://www.jstor.org/stable/27965986}.
+  % }
+  Consider a quadratic function $f(x) = ax^2 + bx + c$, where $a$,
+  $b$, and $c$ are constants such that $a \neq 0$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:quadratic_roots:formula_Hindu_perfect_square}
+    Show that the expression $4a^2x^2 + 4abx + b^2$ can be written as
+    the perfect square $(2ax + b)^2$.
+
+  \item\label{subprob:quadratic_roots:formula_Hindu_multiply_4}
+    Multiply both sides of the equation $ax^2 + bx + c = 0$ by $4a$
+    and show that the resulting equation can be written as
+    $(2ax + b)^2 = b^2 - 4ac$.  Now solve the latter equation for
+    $x$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:quadratic_roots:formula_Hindu_perfect_square}
+You can write $(2ax + b)^2$ as
+%%
+\begin{align*}
+(2ax + b)^2
+&=
+(2ax + b) (2ax + b) \\[4pt]
+&=
+2ax(2ax + b) + b(2ax + b) \\[4pt]
+&=
+4a^2x^2 + 2abx + 2abx + b^2 \\[4pt]
+&=
+4a^2x^2 + 4abx + b^2
+\end{align*}
+%%
+which shows that $4a^2x^2 + 4abx + b^2$ is a perfect square.
+
+\solutionpart{subprob:quadratic_roots:formula_Hindu_multiply_4}
+Multiply the equation $ax^2 + bx + c = 0$ through by $4a$ to obtain
+the equation $4a^2x^2 + 4abx + 4ac = 0$.  Subtract $4ac$ from both
+sides to get $4a^2x^2 + 4abx = -4ac$ and add $b^2$ to both sides and
+you have
+\[
+4a^2x^2 + 4abx + b^2
+=
+b^2 - 4ac.
+\]
+By \Part{subprob:quadratic_roots:formula_Hindu_perfect_square}, you
+know that the left-hand side of the last equation is a perfect
+square.  That is, you can write the latter equation as
+$(2ax + b)^2 = b^2 - 4ac$.  Take the square root of both sides and you
+have $2ax + b = \pm \sqrt{b^2 - 4ac}$, which can also be written as
+$2ax = -b \pm \sqrt{b^2 - 4ac}$.  Now solve for $x$ to get the
+quadratic formula.
+\end{solution}
+}{}
+
 \item Let $n$ be a positive integer such that $n \geq 2$.
   %%
   \begin{packedenum}
