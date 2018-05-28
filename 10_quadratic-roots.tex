@@ -2539,6 +2539,63 @@ even.  Therefore the integer $(n + k)^2 - n^2$ is even.
 \end{solution}
 }{}
 
+\item Let $f(x) = ax^2 + bx + c$ be a quadratic function with
+  $\triple{a}{b}{c} \in \RR$ being fixed numbers such that
+  $a \neq 0$.  If $\alpha$ and $\beta$ are roots of $f(x)$, show that
+  the vertex of $f(x)$ has $x$-coordinate $\frac{\alpha + \beta}{2}$.
+\ifbool{showSolution}{
+\begin{solution}
+Let $\alpha$ and $\beta$ be roots of $f(x)$.  Suppose that the roots
+can be written as
+\[
+\alpha
+=
+\frac{-b + \sqrt{\Delta}}{2a}
+%%
+\qquad
+\text{and}
+\qquad
+%%
+\beta
+=
+\frac{-b - \sqrt{\Delta}}{2a}
+\]
+where the discriminant is $\Delta = b^2 - 4ac$.  The sum of the roots
+is
+%%
+\begin{align*}
+\alpha + \beta
+&=
+\frac{-b + \sqrt{\Delta}}{2a}
++
+\frac{-b - \sqrt{\Delta}}{2a} \\[4pt]
+&=
+\frac{
+  -b + \sqrt{\Delta} - b - \sqrt{\Delta}
+}{
+  2a
+} \\[4pt]
+&=
+\frac{
+  -2b
+}{
+  2a
+} \\[4pt]
+&=
+-
+\frac{
+  b
+}{
+  a
+}.
+\end{align*}
+%%
+Divide both sides by $2$ to see that
+$\frac{\alpha + \beta}{2} = -\frac{b}{2a}$, which is the
+$x$-coordinate of the vertex of $f(x)$.
+\end{solution}
+}{}
+
 \item Let $n$ be a positive integer such that $n \geq 2$.
   %%
   \begin{packedenum}
