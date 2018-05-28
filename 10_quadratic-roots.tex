@@ -1981,6 +1981,32 @@ These are the same roots as obtained in
 \end{solution}
 }{}
 
+\begin{exercise}
+\label{ex:quadratic_roots:given_roots_x1_x2}
+Provide two different quadratic functions each of which has the roots
+$x = 1$ and $x = 2$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The function $f(x) = (x - 1) (x - 2)$ has the roots $x = 1$ and
+$x = 2$.  This can be easily verified by substituting the roots into
+$f(x)$ and simplify.  Substituting $x = 1$ into $f(x)$ and you get
+$f(1) = (1 - 1) (1 - 2)$, which simplifies to zero.  Furthermore,
+substituting $x = 2$ into $f(x)$ and you get
+$f(2) = (2 - 1) (2 - 2)$, which also simplifies to zero.  Note that
+the function
+\[
+g(x)
+=
+-f(x)
+=
+(x - 1) (x - 2)
+\]
+also has the same roots as $f(x)$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2020,29 +2046,6 @@ x_2
 =
 -\sqrt{\frac{c}{a}}.
 \]
-\end{solution}
-}{}
-
-\item\label{prob:given_roots_x1_x2}
-  Present two different quadratic functions each of which has the
-  roots $x = 1$ and $x = 2$.
-\ifbool{showSolution}{
-\begin{solution}
-The function $f(x) = (x - 1) (x - 2)$ has the roots $x = 1$ and
-$x = 2$.  This can be easily verified by substituting the roots into
-$f(x)$ and simplify.  Substituting $x = 1$ into $f(x)$ and you get
-$f(1) = (1 - 1) (1 - 2)$, which simplifies to zero.  Furthermore,
-substituting $x = 2$ into $f(x)$ and you get
-$f(2) = (2 - 1) (2 - 2)$, which also simplifies to zero.  Note that
-the function
-\[
-g(x)
-=
--f(x)
-=
-(x - 1) (x - 2)
-\]
-also has the same roots as $f(x)$.
 \end{solution}
 }{}
 
@@ -2098,7 +2101,7 @@ have the roots $x = \alpha$ and $x = \beta$.
 }{}
 
 \item
-  \Problems{prob:given_roots_x1_x2}{prob:given_roots_all_possible_quadratics}
+  \Problems{ex:quadratic_roots:given_roots_x1_x2}{prob:given_roots_all_possible_quadratics}
   show that if you are given the roots of a quadratic function $f(x)$,
   then there are many other quadratic functions that have the same
   roots.  However, if you are given a third and different point on the
