@@ -7,7 +7,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{external}
 \tikzexternalize{height-weight-scatterplot}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
 %% These three commands make up the entire times.sty package.
@@ -28,7 +28,7 @@
 %%
 \begin{axis}[%%
   axis line style=very thick,%%
-  dotStyle/.style={only marks,mark size=2.5,black,mark color=black,mark=*},%%
+  dotStyle/.style={only marks,mark size=1.5,black,mark color=black,mark=*},%%
   enlargelimits=true,%%
   height=8cm,%%
   width=12cm,%%
