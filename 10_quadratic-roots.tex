@@ -2625,7 +2625,12 @@ quadratic formula.
 }{}
 
 \item This problem will help you to derive~(again!) the quadratic
-  formula by using a technique due to Fran\c{c}ois Vi\`ete.
+  formula by using a substitution technique due to Fran\c{c}ois
+  Vi\`ete.
+  % \footnote{
+  %   See the following paper for further details:
+  %   \url{http://www.jstor.org/stable/27965986}.
+  % }
   %%
   \begin{packedenum}
   \item\label{subprob:quadratic_roots:Viete_ax_square_minus_c}
@@ -2633,6 +2638,54 @@ quadratic formula.
     real numbers such that $a \neq 0$ and $c > 0$.  Determine the
     roots of $f(x)$ without using the quadratic formula, completing
     the square, or factorisation.
+
+  \item\label{subprob:quadratic_roots:Viete_substitution}
+    Let $f(x) = ax^2 + bx + c$ be a quadratic function with
+    $\triple{a}{b}{c} \in \RR$ being constants such that $a \neq 0$.
+    Let $y$ be a real variable.  Use the substitution
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_roots:Viete_substitution}
+    x
+    =
+    y - \frac{b}{2a}
+    \end{equation}
+    %%
+    to show that $f(x)$ can be written as
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_roots:Viete_substitution_expand}
+    g(y)
+    =
+    ay^2
+    +
+    \frac{-b^2 + 4ac}{4a}.
+    \end{equation}
+
+  \item\label{subprob:quadratic_roots:Viete_quadratic_formula}
+    Show that the quadratic function $g(y)$ as defined by
+    \Expression{eqn:quadratic_roots:Viete_substitution_expand} has the
+    roots
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_roots:Viete_quadratic_formula}
+    y
+    =
+    \pm
+    \frac{
+      \sqrt{b^2 - 4ac}
+    }{
+      2a
+    }.
+    \end{equation}
+
+  \item\label{subprob:quadratic_roots:Viete_quadratic_formula_verify}
+    From \Example{eg:completing_square_a3_bminus7_c2}, you know that
+    the function $f(x) = 3x^2 - 7x + 2$ has the roots $x_1 = 2$ and
+    $x_2 = 1/3$.  Use the
+    substitution~\eqref{eqn:quadratic_roots:Viete_substitution} and
+    \Expression{eqn:quadratic_roots:Viete_quadratic_formula} to verify
+    the given roots of $f(x)$.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -2656,6 +2709,116 @@ x_2
 =
 -\sqrt{\frac{c}{a}}.
 \]
+
+\solutionpart{subprob:quadratic_roots:Viete_substitution}
+By using the substitution $x = y - \frac{b}{2a}$, you can write $f(x)$
+as
+%%
+\begin{align*}
+a \parenthesis*{y - \frac{b}{2a}}^2
++
+b \parenthesis*{y - \frac{b}{2a}}
++
+c
+&=
+a \parenthesis*{y^2 - \frac{by}{a} + \frac{b^2}{4a^2}}
++
+by - \frac{b^2}{2a}
++
+c \\[4pt]
+&=
+ay^2 - by + \frac{b^2}{4a}
++
+by - \frac{b^2}{2a}
++
+c \\[4pt]
+&=
+ay^2 + \frac{b^2}{4a} - \frac{b^2}{2a} + c \\[4pt]
+&=
+ay^2
++
+\frac{b^2 - 2b^2 + 4ac}{4a} \\[4pt]
+&=
+ay^2
++
+\frac{-b^2 + 4ac}{4a}.
+\end{align*}
+
+\solutionpart{subprob:quadratic_roots:Viete_quadratic_formula}
+You want to solve the equation
+\[
+ay^2
++
+\frac{-b^2 + 4ac}{4a}
+=
+0
+\]
+for $y$.  The latter equation can be written as
+%%
+\begin{align*}
+ay^2
+&=
+-\frac{-b^2 + 4ac}{4a} \\[4pt]
+&=
+\frac{b^2 - 4ac}{4a}.
+\end{align*}
+%%
+Divide both sides by $a$ to obtain the equivalent expression
+\[
+y^2
+=
+\frac{b^2 - 4ac}{4a^2}.
+\]
+Take the square root of both sides and you have
+%%
+\begin{align*}
+y
+&=
+\pm\sqrt{
+  \frac{
+    b^2 - 4ac
+  }{
+    4a^2
+  }
+} \\[4pt]
+&=
+\pm
+\frac{
+  \sqrt{b^2 - 4ac}
+}{
+  2a
+}
+\end{align*}
+%%
+as required.
+
+\solutionpart{subprob:quadratic_roots:Viete_quadratic_formula_verify}
+Use \Equation{eqn:quadratic_roots:Viete_quadratic_formula} to write
+\[
+y
+=
+\pm
+\frac{
+  \sqrt{(-7)^2 - 4 \times 3 \times 2}
+}{
+  2 \times 3
+}
+=
+\pm\frac{5}{6}.
+\]
+Now use \Equation{eqn:quadratic_roots:Viete_substitution} to write
+\[
+x
+=
+\pm\frac{5}{6}
+-
+\frac{-7}{2 \times 3}
+=
+\frac{7 \pm 5}{6}.
+\]
+Hence one root of $f(x)$ is $x_1 = \frac{7 + 5}{6} = 2$ and the other
+root is $x_2 = \frac{7 - 5}{6} = 1/3$.  These are the same as in
+\Example{eg:completing_square_a3_bminus7_c2}.
 \end{solution}
 }{}
 
