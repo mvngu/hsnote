@@ -194,6 +194,114 @@ as required.
 \end{solution}
 }{}
 
+\begin{exercise}
+A rectangle has a perimeter of $14$ centimetres and an area of $12$
+centimetres squared.  Calculate the length and width of the
+rectangle.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+Let $\ell$ and $w$ be the length and width, respectively, of the
+rectangle.  The perimeter of the rectangle can be written as
+%%
+\begin{equation}
+\label{eqn:rectangle_perimeter}
+14
+=
+2(w + \ell)
+\end{equation}
+%%
+and the area of the rectangle can be written as
+%%
+\begin{equation}
+\label{eqn:rectangle_area}
+12
+=
+w\ell.
+\end{equation}
+%%
+Divide both sides of \Expression{eqn:rectangle_perimeter} by $2$ and
+the perimeter of the rectangle can also be written as $7 = w + \ell$.
+Solving the last equation for $\ell$ shows that the length of the
+rectangle can be written as
+%%
+\begin{equation}
+\label{eqn:rectangle_length}
+\ell
+=
+7 - w.
+\end{equation}
+%%
+Substitute \Expression{eqn:rectangle_length}
+into~\eqref{eqn:rectangle_area} to write the area of the rectangle as
+$12 = w(7 - w)$.  Use the distributive laws to expand the right-hand
+side and you get $12 = -w^2 + 7w$.  Now move everything to the
+left-hand side and you end up with
+%%
+\begin{equation}
+\label{eqn:rectangle_area_quadratic}
+w^2 - 7w + 12
+=
+0.
+\end{equation}
+%%
+If you define the function $f(w) = w^2 - 7w + 12$, then
+\Expression{eqn:rectangle_area_quadratic} can also be written as
+$f(w) = 0$, which asks for all roots of $f(w)$.  That is, you want to
+determine all values of $w$ such that
+\Expression{eqn:rectangle_area_quadratic} is true.  This is equivalent
+to determining all values of $w$ such that
+\Expression{eqn:rectangle_area} is true.  The quadratic formula shows
+that the roots of $f(w)$ are
+%%
+\begin{align*}
+w
+&=
+\frac{
+  -(-7) \pm \sqrt{(-7)^2 - 4(1)(12)}
+}{
+  2
+} \\[4pt]
+&=
+\frac{7 \pm 1}{2}
+\end{align*}
+%%
+both of which are positive.  One possible value for the width is
+$w_1 = 4$ and the other possibility is $w_2 = 3$.
+
+If the width is $w = 4$, substitute the latter expression into
+\Expression{eqn:rectangle_length} to get a length of
+$\ell = 7 - 4 = 3$.  Now you must check that a length of
+$\ell = 3$ and a width of $w = 4$ will result in the required
+perimeter and area for the rectangle.  Substitute the values
+$\ell = 3$ and $w = 4$ into \Expression{eqn:rectangle_perimeter} and
+you get
+\[
+14
+=
+2(4 + 3)
+=
+2 \times 7
+\]
+which is true.  Similarly, substitute the values $\ell = 3$ and
+$w = 4$ into \Expression{eqn:rectangle_area} and you have
+\[
+12
+=
+4 \times 3
+\]
+which is also true.  Therefore if the length and width are
+$\ell = 3$ and $w = 4$ centimetres, respectively, then you obtain the
+required perimeter and area for the rectangle.
+
+If the width is $w = 3$ centimetres, you can repeat the above process
+to determine the corresponding length.  You then check your answer by
+substitution back into
+\Expressions{eqn:rectangle_perimeter}{eqn:rectangle_area}.
+\end{solution}
+}{}
+
 \begin{example}
 \label{ex:running_ants}
 \textbf{Ant race.}
@@ -1576,111 +1684,6 @@ Substitute the latter expression in
 That is, when the area of the rectangle is maximised, the length and
 width of the rectangle are the same.  Therefore given a perimeter
 $p > 0$, the rectangle attains its maximum area when it is a square.
-\end{solution}
-}{}
-
-\item A rectangle has a perimeter of $14$ centimetres and an area of
-  $12$ centimetres squared.  Calculate the length and width of the
-  rectangle.
-\ifbool{showSolution}{
-\begin{solution}
-Let $\ell$ and $w$ be the length and width, respectively, of the
-rectangle.  The perimeter of the rectangle can be written as
-%%
-\begin{equation}
-\label{eqn:rectangle_perimeter}
-14
-=
-2(w + \ell)
-\end{equation}
-%%
-and the area of the rectangle can be written as
-%%
-\begin{equation}
-\label{eqn:rectangle_area}
-12
-=
-w\ell.
-\end{equation}
-%%
-Divide both sides of \Expression{eqn:rectangle_perimeter} by $2$ and
-the perimeter of the rectangle can also be written as $7 = w + \ell$.
-Solving the last equation for $\ell$ shows that the length of the
-rectangle can be written as
-%%
-\begin{equation}
-\label{eqn:rectangle_length}
-\ell
-=
-7 - w.
-\end{equation}
-%%
-Substitute \Expression{eqn:rectangle_length}
-into~\eqref{eqn:rectangle_area} to write the area of the rectangle as
-$12 = w(7 - w)$.  Use the distributive laws to expand the right-hand
-side and you get $12 = -w^2 + 7w$.  Now move everything to the
-left-hand side and you end up with
-%%
-\begin{equation}
-\label{eqn:rectangle_area_quadratic}
-w^2 - 7w + 12
-=
-0.
-\end{equation}
-%%
-If you define the function $f(w) = w^2 - 7w + 12$, then
-\Expression{eqn:rectangle_area_quadratic} can also be written as
-$f(w) = 0$, which asks for all roots of $f(w)$.  That is, you want to
-determine all values of $w$ such that
-\Expression{eqn:rectangle_area_quadratic} is true.  This is equivalent
-to determining all values of $w$ such that
-\Expression{eqn:rectangle_area} is true.  The quadratic formula shows
-that the roots of $f(w)$ are
-%%
-\begin{align*}
-w
-&=
-\frac{
-  -(-7) \pm \sqrt{(-7)^2 - 4(1)(12)}
-}{
-  2
-} \\[4pt]
-&=
-\frac{7 \pm 1}{2}
-\end{align*}
-%%
-both of which are positive.  One possible value for the width is
-$w_1 = 4$ and the other possibility is $w_2 = 3$.
-
-If the width is $w = 4$, substitute the latter expression into
-\Expression{eqn:rectangle_length} to get a length of
-$\ell = 7 - 4 = 3$.  Now you must check that a length of
-$\ell = 3$ and a width of $w = 4$ will result in the required
-perimeter and area for the rectangle.  Substitute the values
-$\ell = 3$ and $w = 4$ into \Expression{eqn:rectangle_perimeter} and
-you get
-\[
-14
-=
-2(4 + 3)
-=
-2 \times 7
-\]
-which is true.  Similarly, substitute the values $\ell = 3$ and
-$w = 4$ into \Expression{eqn:rectangle_area} and you have
-\[
-12
-=
-4 \times 3
-\]
-which is also true.  Therefore if the length and width are
-$\ell = 3$ and $w = 4$ centimetres, respectively, then you obtain the
-required perimeter and area for the rectangle.
-
-If the width is $w = 3$ centimetres, you can repeat the above process
-to determine the corresponding length.  You then check your answer by
-substitution back into
-\Expressions{eqn:rectangle_perimeter}{eqn:rectangle_area}.
 \end{solution}
 }{}
 
