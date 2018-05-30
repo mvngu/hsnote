@@ -2166,6 +2166,882 @@ Kepler's equation provides a better model of the orbital periods of
 the given planets than does the quadratic function.
 \end{solution}
 }{}
+
+\item\emph{Quadratic regression.}
+  Recall that linear regression allows you to determine a linear
+  function that best fits a given data set.  In this problem, you will
+  learn another technique called \emph{quadratic regression} that
+  allows you to determine a quadratic function that best fits a given
+  data set.  Quadratic regression requires a mathematical object
+  called \emph{matrices}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:quadratic_applications:matrix_sum}
+    A $2 \times 2$ matrix is an array that has $2$ rows and $2$
+    columns.  A $3 \times 3$ matrix is an array having $3$ rows and
+    $3$ columns.  In general, an $n \times m$ matrix is an array
+    containing $n$ rows and $m$ columns.  The following are examples
+    of matrices:
+    \[
+    \begin{bmatrix}
+    1 & 2 \\
+    3 & 4
+    \end{bmatrix},
+    %%
+    \qquad
+    %%
+    \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9
+    \end{bmatrix},
+    %%
+    \qquad
+    %%
+    \begin{bmatrix}
+    3 & 5 & 4 \\
+    1 & 9 & 2
+    \end{bmatrix}.
+    \]
+    Going from left to right, you have a $2 \times 2$ matrix, a
+    $3 \times 3$ matrix, and a $2 \times 3$ matrix.  Let $\matA$ and
+    $\matB$ be $2 \times 2$ matrices defined by
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_applications:2x2_matrices}
+    \matA
+    =
+    \begin{bmatrix}
+    a & b \\
+    c & d
+    \end{bmatrix}
+    %%
+    \qquad
+    \text{and}
+    \qquad
+    %%
+    \matB
+    =
+    \begin{bmatrix}
+    e & f \\
+    g & h
+    \end{bmatrix}
+    \end{equation}
+    %%
+    where $\octuple{a}{b}{c}{d}{e}{f}{g}{h}$ are any real numbers.
+    You add the matrices by adding the corresponding elements.  Thus
+    the matrix sum $\matA + \matB$ is defined as
+    \[
+    \matA + \matB
+    =
+    \begin{bmatrix}
+    a + e & b + f \\
+    c + g & d + h
+    \end{bmatrix}.
+    \]
+    Similarly, if $\matC$ and $\matD$ are $3 \times 3$ matrices
+    defined by
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_applications:3x3_matrices}
+    \matC
+    =
+    \begin{bmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+    \end{bmatrix}
+    %%
+    \qquad
+    \text{and}
+    \qquad
+    %%
+    \matD
+    =
+    \begin{bmatrix}
+    d_1 & e_1 & f_1 \\
+    d_2 & e_2 & f_2 \\
+    d_3 & e_3 & f_3
+    \end{bmatrix}
+    \end{equation}
+    %%
+    where the $\sextuple{a_i}{b_i}{c_i}{d_i}{e_i}{f_i}$ are any real
+    numbers, then the matrix sum $\matC + \matD$ is defined as
+    \[
+    \matC + \matD
+    =
+    \begin{bmatrix}
+    a_1 + d_1 & b_1 + e_1 & c_1 + f_1 \\
+    a_2 + d_2 & b_2 + e_2 & c_2 + f_2 \\
+    a_3 + d_3 & b_3 + e_3 & c_3 + f_3
+    \end{bmatrix}.
+    \]
+    Two matrices must have the same number of rows and columns in
+    order that they can be added together.\footnote{
+      See also the website
+      \url{http://web.archive.org/web/20180529163624/https://www.mathsisfun.com/algebra/matrix-introduction.html},
+      accessed 2018-05-29 and the video at
+      \url{https://youtu.be/WR9qCSXJlyY}.
+    }
+    Consider the matrices
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_applications:matrices_for_sum_product}
+    \begin{aligned}
+    \matE
+    =
+    \begin{bmatrix}
+    2 & 3 \\
+    5 & 7
+    \end{bmatrix},
+    %%
+    &\qquad
+    %%
+    \matF
+    =
+    \begin{bmatrix}
+    1 & 4 \\
+    6 & 8
+    \end{bmatrix}, \\[4pt]
+    %%
+    \matG
+    =
+    \begin{bmatrix}
+    10 & 3  & 5  \\
+    7  & 9  & 11 \\
+    13 & 15 & 17
+    \end{bmatrix},
+    %%
+    &\qquad
+    \matH
+    =
+    \begin{bmatrix}
+    4 & 13 & 2  \\
+    6 & 9  & 10 \\
+    8 & 5  & 3
+    \end{bmatrix}.
+    \end{aligned}
+    \end{equation}
+    %%
+    Calculate the matrix sums $\matE + \matF$, $\matG + \matH$, and
+    $\matE + \matG$.
+
+  \item\label{subprob:quadratic_applications:matrix_product}
+    You can also multiply matrices, but there are restrictions on
+    which matrices can be multiplied by which other matrices.  The
+    usual matrix product is called the \emph{dot product}.  If you
+    have an $m \times n$ matrix $\alpha$ and an $n \times p$ matrix
+    $\beta$, then you can perform the dot product
+    $\alpha \times \beta = \alpha\beta$ because the number of columns
+    in $\alpha$ is the same as the number of rows in $\beta$.  The dot
+    product $\alpha\beta$ is an $m \times p$ matrix.\footnote{
+      See also the website
+      \url{http://web.archive.org/web/20180529165826/https://www.mathsisfun.com/algebra/matrix-multiplying.html},
+      accessed 2018-05-29 and the video at
+      \url{https://youtu.be/OMA2Mwo0aZg}.
+    }
+    Given the $2 \times 2$ matrices $\matA$ and $\matB$ as defined
+    in~\eqref{eqn:quadratic_applications:2x2_matrices}, the dot
+    product $\matA \matB$ is defined as
+    \[
+    \matA \matB
+    =
+    \begin{bmatrix}
+    ae + bg & af + bh \\
+    ce + dg & cf + dh
+    \end{bmatrix}.
+    \]
+    Given the $3 \times 3$ matrices $\matC$ and $\matD$ as defined
+    in~\eqref{eqn:quadratic_applications:3x3_matrices}, the dot
+    product $\matC \matD$ is defined by
+    \[
+    \matC \matD
+    =
+    \begin{bmatrix}
+    a_1d_1 + b_1d_2 + c_1d_3 & a_1e_1 + b_1e_2 + c_1e_3 & a_1f_1 + b_1f_2 + c_1f_3 \\
+    a_2d_1 + b_2d_2 + c_2d_3 & a_2e_1 + b_2e_2 + c_2e_3 & a_2f_1 + b_2f_2 + c_2f_3 \\
+    a_3d_1 + b_3d_2 + c_3d_3 & a_3e_1 + b_3e_2 + c_3e_3 & a_3f_1 + b_3f_2 + c_3f_3
+    \end{bmatrix}.
+    \]
+    Let $\quadruple{\matE}{\matF}{\matG}{\matH}$ be matrices as
+    defined
+    in~\eqref{eqn:quadratic_applications:matrices_for_sum_product}.
+    Calculate the dot products $\matE \matF$, $\matF \matE$,
+    $\matG \matH$, and $\matE \matG$.
+
+  \item\label{subprob:quadratic_applications:matrix_determinant}
+    Matrices have an operation called the \emph{determinant}, which is
+    defined only for any matrix whose number of rows is the same as
+    its number of columns.\footnote{
+      See the website
+      \url{http://web.archive.org/web/20180529190146/https://www.mathsisfun.com/algebra/matrix-determinant.html},
+      accessed 2018-05-29 and the video at
+      \url{https://youtu.be/0c7dt2SQfLw}.
+    }
+    Consider the $2 \times 2$ matrix $\matA$ as defined
+    in~\eqref{eqn:quadratic_applications:2x2_matrices}.  The
+    determinant of $\matA$ is written as $\det(\matA)$ and is defined
+    as
+    %%
+    \begin{align*}
+    \det(\matA)
+    &=
+    \begin{vmatrix}
+    a & b \\
+    c & d
+    \end{vmatrix} \\[4pt]
+    &=
+    ad - bc.
+    \end{align*}
+    %%
+    The determinant of a $3 \times 3$ matrix can be defined in terms
+    of the determinant of $2 \times 2$ matrices.  Consider the
+    $3 \times 3$ matrix $\matC$ as defined
+    in~\eqref{eqn:quadratic_applications:3x3_matrices}.  The
+    determinant of $\matC$ is defined as
+    %%
+    \begin{align*}
+    \det(\matC)
+    &=
+    \begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+    \end{vmatrix} \\[4pt]
+    &=
+    a_1
+    \begin{vmatrix}
+    b_2 & c_2 \\
+    b_3 & c_3
+    \end{vmatrix}
+    -
+    b_1
+    \begin{vmatrix}
+    a_2 & c_2 \\
+    a_3 & c_3
+    \end{vmatrix}
+    +
+    c_1
+    \begin{vmatrix}
+    a_2 & b_2 \\
+    a_3 & b_3
+    \end{vmatrix}.
+    \end{align*}
+    %%
+    Calculate the determinant of each matrix
+    in~\eqref{eqn:quadratic_applications:matrices_for_sum_product}.
+
+  \item\label{subprob:quadratic_applications:bluegill_data}
+    The file \code{bluegill.csv} contains data on the age and length
+    of $78$ bluegill sunfish that were sampled from Lake Mary,
+    Minnesota, USA during June of~1981.\footnote{
+      The data set is due to Richard V. Frie in the paper
+      \url{https://doi.org/10.1577/1548-8446(1982)007<0005:MOFSAB>2.0.CO;2},
+      but the full data set was published in the paper
+      \url{https://doi.org/10.1080/01621459.1986.10478351}.
+    }
+    The age of a bluegill sunfish is the measured age~(in years) at
+    the time the fish was captured and the length of the fish is
+    measured in millimetres.  Produce a scatter plot of the age versus
+    length of the bluegill sunfish.  Explain what you notice about the
+    graph.
+
+  \item\label{subprob:quadratic_applications:bluegill_regression}
+    For the data set \code{bluegill.csv}, let $x$ and $y$ denote the
+    age and length, respectively.  Then $x_i$ denotes the $i$-th row
+    in the age column and $y_i$ represents the $i$-th row in the
+    length column.  Let $f(x)$ be the length~(mm) of a bluegill
+    sunfish whose age at capture is $x$ years.  Assuming that the data
+    set can be modelled as a quadratic function, then $f(x)$ can be
+    written as $f(x) = ax^2 + bx + c$ with $a \neq 0$.  Here, the
+    parameters $\triple{a}{b}{c}$ must be estimated by using the given
+    data.  The parameters and the data can be written as the matrix
+    equation
+    %%
+    \begin{equation}
+    \label{eqn:quadratic_applications:bluegill_matrix_equation}
+    \begin{bmatrix}
+    \sum_{i=1}^n x_i^4 & \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 \\[4pt]
+    \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   \\[4pt]
+    \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   & n
+    \end{bmatrix}
+    %%
+    \begin{bmatrix}
+    a \\[4pt]
+    b \\[4pt]
+    c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    \sum_{i=1}^n x_i^2 y_i \\[4pt]
+    \sum_{i=1}^n x_i y_i \\[4pt]
+    \sum_{i=1}^n y_i
+    \end{bmatrix}
+    \end{equation}
+    %%
+    where $n = 78$ is the number of data points.  You can use a
+    technique called \emph{Cramer's rule} to determine the values of
+    the parameters $\triple{a}{b}{c}$.  Define the determinants
+    %%
+    \begin{align*}
+    &D
+    =
+    \begin{vmatrix}
+    \sum_{i=1}^n x_i^4 & \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 \\[4pt]
+    \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   \\[4pt]
+    \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   & n
+    \end{vmatrix},
+    %%
+    \quad
+    %%
+    D_a
+    =
+    \begin{vmatrix}
+    \sum_{i=1}^n x_i^2y_i & \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 \\[4pt]
+    \sum_{i=1}^n x_iy_i   & \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   \\[4pt]
+    \sum_{i=1}^n y_i      & \sum_{i=1}^n x_i   & n
+    \end{vmatrix}, \\[4pt]
+    %%
+    &D_b
+    =
+    \begin{vmatrix}
+    \sum_{i=1}^n x_i^4 & \sum_{i=1}^n x_i^2y_i & \sum_{i=1}^n x_i^2 \\[4pt]
+    \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_iy_i   & \sum_{i=1}^n x_i   \\[4pt]
+    \sum_{i=1}^n x_i^2 & \sum_{i=1}^n y_i      & n
+    \end{vmatrix},
+    %%
+    \quad
+    %%
+    D_c
+    =
+    \begin{vmatrix}
+    \sum_{i=1}^n x_i^4 & \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2y_i \\[4pt]
+    \sum_{i=1}^n x_i^3 & \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_iy_i   \\[4pt]
+    \sum_{i=1}^n x_i^2 & \sum_{i=1}^n x_i   & y_i
+    \end{vmatrix}.
+    \end{align*}
+    %%
+    Cramer's rule states that the values of $\triple{a}{b}{c}$ in
+    \Equation{eqn:quadratic_applications:bluegill_matrix_equation} can
+    be written as
+    \[
+    a
+    =
+    \frac{D_a}{D},
+    %%
+    \qquad
+    %%
+    b
+    =
+    \frac{D_b}{D},
+    %%
+    \qquad
+    %%
+    c
+    =
+    \frac{D_c}{D}
+    \]
+    provided that the determinant $D \neq 0$.  Use the given data set
+    to estimate the values of $\triple{a}{b}{c}$ in the function
+    $f(x) = ax^2 + bx + c$.  Graph your formula together with the
+    scatter plot
+    from \Part{subprob:quadratic_applications:bluegill_data}.
+
+  \item\label{subprob:quadratic_applications:bluegill_coefficient_determination}
+    Given a regression function of a data set, the
+    \emph{coefficient of determination} is a number that measures how
+    well the regression function fits the data.  This is similar to
+    the way the Pearson correlation coefficient measures how well a
+    linear regression function fits a data set.  The coefficient of
+    determination is denoted by $R^2$ and is always between $0$ and
+    $1$, inclusive.  The closer is $R^2$ to $1$, the better is the fit
+    of a regression function to the given data.  The value of $R^2$
+    for linear regression is calculated by squaring the Pearson
+    correlation coefficient.  In the case of quadratic regression, the
+    value of $R^2$ is defined as follows.  Given a data point
+    $\tuple{x_i}{y_i}$ and a quadratic regression function
+    $f(x) = ax^2 + bx + c$, the error of $f(x)$ at the point
+    $\tuple{x_i}{y_i}$ is defined as the difference between $f(x_i)$
+    and $y_i$.  The error of $f(x)$ at $\tuple{x_i}{y_i}$ can be
+    written as $y_i - f(x_i) = y_i - ax_i^2 - bx_i - c$.  The sum of
+    the squared errors~(SSE) is written as
+    \[
+    \text{SSE}
+    =
+    \sum_{i=1}^n (y_i - ax_i^2 - bx_i - c)^2
+    \]
+    where $n$ denotes the number of data points.  If $\ybar$ is the
+    mean of the $y_i$, the total sum of squares~(TSS) is defined as
+    \[
+    \text{TSS}
+    =
+    \sum_{i=1}^n (y_i - \ybar)^2.
+    \]
+    The SSE and TSS can be used to write the coefficient of
+    determination of $f(x)$ as
+    \[
+    R^2
+    =
+    1
+    -
+    \frac{\text{SSE}}{\text{TSS}}
+    =
+    1
+    -
+    \frac{
+      \sum_{i=1}^n (y_i - ax_i^2 - bx_i - c)^2
+    }{
+      \sum_{i=1}^n (y_i - \ybar)^2
+    }.
+    \]
+    Calculate the coefficient of determination of your quadratic
+    regression function
+    from \Part{subprob:quadratic_applications:bluegill_regression}.
+
+  \item\label{subprob:quadratic_applications:bluegill_linear_regression}
+    Suppose that the data in the file \code{bluegill.csv} can be
+    modelled as a linear function $g(x)$.  Use linear regression on
+    the data set to estimate the parameters of $g(x)$.  Plot the
+    function $g(x)$ together with the graph
+    from \Part{subprob:quadratic_applications:bluegill_regression}.
+    Calculate the coefficient of determination of $g(x)$.  Use the
+    values of $R^2$ and the root mean square errors for $f(x)$ and
+    $g(x)$ to help you decide which one of the two functions is better
+    than the other at modelling the given data set.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:quadratic_applications:matrix_sum}
+The matrices $\matE$ and $\matF$ as defined
+in~\eqref{eqn:quadratic_applications:matrices_for_sum_product} have
+the sum
+%%
+\begin{align*}
+\matE + \matF
+&=
+\begin{bmatrix}
+2 & 3 \\
+5 & 7
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 4 \\
+6 & 8
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+2 + 1 & 3 + 4 \\
+5 + 6 & 7 + 8
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+3 & 7 \\
+11 & 15
+\end{bmatrix}.
+\end{align*}
+%%
+Similarly, the matrices $\matG$ and $\matH$ as defined
+in~\eqref{eqn:quadratic_applications:matrices_for_sum_product} have
+the sum
+%%
+\begin{align*}
+\matG + \matH
+&=
+\begin{bmatrix}
+10 & 3  & 5  \\
+7  & 9  & 11 \\
+13 & 15 & 17
+\end{bmatrix}
++
+\begin{bmatrix}
+4 & 13 & 2  \\
+6 & 9  & 10 \\
+8 & 5  & 3
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+10 + 4 & 3 + 13 & 5 + 2   \\
+7 + 6  & 9 + 9  & 11 + 10 \\
+13 + 8 & 15 + 5 & 17 + 3
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+14 & 16 & 7  \\
+13 & 18 & 21 \\
+21 & 20 & 20
+\end{bmatrix}.
+\end{align*}
+%%
+The matrices $\matE$ and $\matG$ cannot be added together because they
+do not have the same number of rows and columns.
+
+\solutionpart{subprob:quadratic_applications:matrix_product}
+Let $\matE$ and $\matF$ be $2 \times 2$ matrices as defined
+in~\eqref{eqn:quadratic_applications:matrices_for_sum_product}.  The
+dot product $\matE \matF$ is given by
+%%
+\begin{align*}
+\matE \matF
+&=
+\begin{bmatrix}
+2 & 3 \\
+5 & 7
+\end{bmatrix}
+%%
+\begin{bmatrix}
+1 & 4 \\
+6 & 8
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+2 \cdot 1 + 3 \cdot 6 & 2 \cdot 4 + 3 \cdot 8 \\
+5 \cdot 1 + 7 \cdot 6 & 5 \cdot 4 + 7 \cdot 8
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+20 & 32 \\
+47 & 76
+\end{bmatrix}.
+\end{align*}
+%%
+The dot product $\matF \matE$ is given by
+%%
+\begin{align*}
+\matF \matE
+&=
+\begin{bmatrix}
+1 & 4 \\
+6 & 8
+\end{bmatrix}
+%%
+\begin{bmatrix}
+2 & 3 \\
+5 & 7
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+1 \cdot 2 + 4 \cdot 5 & 1 \cdot 3 + 4 \cdot 7 \\
+6 \cdot 2 + 8 \cdot 5 & 6 \cdot 3 + 8 \cdot 7
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+22 & 31 \\
+52 & 74
+\end{bmatrix}.
+\end{align*}
+%%
+Similarly, let $\matG$ and $\matH$ be $3 \times 3$ matrices as defined
+in~\eqref{eqn:quadratic_applications:matrices_for_sum_product}.  The
+dot product $\matG \matH$ is given by
+%%
+\begin{align*}
+\matG \matH
+&=
+\begin{bmatrix}
+10 & 3  & 5  \\
+7  & 9  & 11 \\
+13 & 15 & 17
+\end{bmatrix}
+%%
+\begin{bmatrix}
+4 & 13 & 2  \\
+6 & 9  & 10 \\
+8 & 5  & 3
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+10 \cdot 4 + 3 \cdot 6 + 5 \cdot 8 & 10 \cdot 13 + 3 \cdot 9 + 5 \cdot 5 & 10 \cdot 2 + 3 \cdot 10 + 5 \cdot 3 \\
+7 \cdot 4 + 9 \cdot 6 + 11 \cdot 8 & 7 \cdot 13 + 9 \cdot 9 + 11 \cdot 5 & 7 \cdot 2 + 9 \cdot 10 + 11 \cdot 3 \\
+13 \cdot 4 + 15 \cdot 6 + 17 \cdot 8 & 13 \cdot 13 + 15 \cdot 9 + 17 \cdot 5 & 13 \cdot 2 + 15 \cdot 10 + 17 \cdot 3
+\end{bmatrix} \\[4pt]
+&=
+\begin{bmatrix}
+98  & 182 & 65  \\
+170 & 227 & 137 \\
+278 & 389 & 227
+\end{bmatrix}.
+\end{align*}
+%%
+The dot product $\matE \matG$ is undefined because the number of
+columns in $\matE$ is different from the number of rows in $\matG$.
+
+\solutionpart{subprob:quadratic_applications:matrix_determinant}
+Consider the matrices $\quadruple{\matE}{\matF}{\matG}{\matH}$ as
+defined
+in~\eqref{eqn:quadratic_applications:matrices_for_sum_product}.  The
+determinant of $\matE$ is
+%%
+\begin{align*}
+\det(\matE)
+&=
+\begin{vmatrix}
+2 & 3 \\
+5 & 7
+\end{vmatrix} \\[4pt]
+&=
+2 \cdot 7 - 3 \cdot 5 \\[4pt]
+&=
+-1.
+\end{align*}
+%%
+The determinant of $\matF$ is
+%%
+\begin{align*}
+\det(\matF)
+&=
+\begin{vmatrix}
+1 & 4 \\
+6 & 8
+\end{vmatrix} \\[4pt]
+&=
+1 \cdot 8 - 4 \cdot 6 \\[4pt]
+&=
+-16.
+\end{align*}
+%%
+The matrix $\matG$ has determinant
+%%
+\begin{align*}
+\det(\matG)
+&=
+\begin{vmatrix}
+10 & 3  & 5  \\
+7  & 9  & 11 \\
+13 & 15 & 17
+\end{vmatrix} \\[4pt]
+&=
+10
+\begin{vmatrix}
+9  & 11 \\
+15 & 17
+\end{vmatrix}
+-
+3
+\begin{vmatrix}
+7  & 11 \\
+13 & 17
+\end{vmatrix}
++
+5
+\begin{vmatrix}
+7  & 9 \\
+13 & 15
+\end{vmatrix} \\[4pt]
+&=
+10(153 - 165) - 3(119 - 143) + 5(105 - 117) \\[4pt]
+&=
+-120 + 72 - 60 \\[4pt]
+&=
+-108.
+\end{align*}
+%%
+Finally, the matrix $\matH$ has determinant
+%%
+\begin{align*}
+\det(\matH)
+&=
+\begin{vmatrix}
+4 & 13 & 2  \\
+6 & 9  & 10 \\
+8 & 5  & 3
+\end{vmatrix} \\[4pt]
+&=
+4
+\begin{vmatrix}
+9  & 10 \\
+5  & 3
+\end{vmatrix}
+-
+13
+\begin{vmatrix}
+6  & 10 \\
+8  & 3
+\end{vmatrix}
++
+2
+\begin{vmatrix}
+6  & 9 \\
+8  & 5
+\end{vmatrix} \\[4pt]
+&=
+4(27 - 50) - 13(18 - 80) + 2(30 - 72) \\[4pt]
+&=
+-92 + 806 - 84 \\[4pt]
+&=
+630.
+\end{align*}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/09/bluegill.pdf}
+\caption{%%
+  The age versus length of $78$ bluegill sunfish.  The age of a fish
+  is measured in years at the time of capture.  The length of the fish
+  is measured in millimetres.  The black dots show the data in the
+  file \code{bluegill.csv}.  The red curve is a graph of
+  \Equation{eqn:quadratic_applications:bluegill_quadratic}.  The blue
+  line is a graph of
+  \Equation{eqn:quadratic_applications:bluegill_linear_regression}.
+}
+\label{fig:quadratic_applications:bluegill}
+\end{figure}
+
+\solutionpart{subprob:quadratic_applications:bluegill_data}
+\Figure{fig:quadratic_applications:bluegill} shows a scatter plot of
+the age versus length of the sampled bluegill sunfish.  The graph
+shows that the dots seem to follow a straight line.  You can also
+notice that the dots seem to follow a quadratic function.
+
+\solutionpart{subprob:quadratic_applications:bluegill_regression}
+You have the sums
+%%
+\begin{align*}
+&\sum_{i=1}^n x_i^4
+=
+18445,
+\qquad
+%%
+\sum_{i=1}^n x_i^3
+=
+4411,
+\qquad
+%%
+\sum_{i=1}^n x_i^2
+=
+1093,
+\qquad
+%%
+\sum_{i=1}^n x_i
+=
+283, \\[4pt]
+%%
+&\sum_{i=1}^n x_i^2 y_i
+=
+166265,
+\qquad
+%%
+\sum_{i=1}^n x_i y_i
+=
+42117,
+\qquad
+%%
+\sum_{i=1}^n y_i
+=
+11201.
+\end{align*}
+%%
+The above sums can be used to calculate the determinants
+%%
+\begin{align*}
+&D
+=
+689448,
+\qquad
+%%
+D_a
+=
+-3253274, \\[4pt]
+\qquad
+%%
+&D_b
+=
+37264190,
+\qquad
+%%
+D_c
+=
+9391920.
+\end{align*}
+%%
+The parameters $\triple{a}{b}{c}$ can be estimated as
+%%
+\begin{align*}
+a
+&=
+\frac{D_a}{D}
+=
+\frac{-3253274}{689448}
+\approx
+-4.7187 \\[4pt]
+%%
+%%
+b
+&=
+\frac{D_b}{D}
+=
+\frac{37264190}{689448}
+\approx
+54.0493 \\[4pt]
+%%
+%%
+c
+&=
+\frac{D_c}{D}
+=
+\frac{9391920}{689448}
+\approx
+13.6224
+\end{align*}
+%%
+and thus the given data set can be modelled as the quadratic function
+%%
+\begin{equation}
+\label{eqn:quadratic_applications:bluegill_quadratic}
+f(x)
+=
+-4.7187x^2 + 54.0493x + 13.6224.
+\end{equation}
+%%
+\Figure{fig:quadratic_applications:bluegill} compares
+\Equation{eqn:quadratic_applications:bluegill_quadratic} with the data
+set.
+
+\solutionpart{subprob:quadratic_applications:bluegill_coefficient_determination}
+The sum of the squared errors is $\text{SSE} \approx 8920.6956$ and
+the total sum of squares is $\text{TSS} \approx 44858.6795$.  Then the
+regression
+function~\eqref{eqn:quadratic_applications:bluegill_quadratic} has a
+coefficient of determination of approximately
+\[
+R^2
+=
+1
+-
+\frac{\text{SSE}}{\text{TSS}}
+\approx
+1
+-
+\frac{8920.6956}{44858.6795}
+\approx
+0.8011.
+\]
+
+\solutionpart{subprob:quadratic_applications:bluegill_linear_regression}
+Suppose that the data set can be modelled as a linear function
+$g(x)$.  Then linear regression on the given data shows that the
+linear regression function can be written as
+%%
+\begin{equation}
+\label{eqn:quadratic_applications:bluegill_linear_regression}
+g(x)
+=
+22.3123x + 62.6490
+\end{equation}
+%%
+which is graphed in \Figure{fig:quadratic_applications:bluegill}
+together with the quadratic regression function and the given data
+set.  The function $g(x)$ has a Pearson correlation coefficient of
+$\rho \approx 0.8573$ and hence a coefficient of determination of
+$R^2 = \rho^2 \approx 0.7349$.  The quadratic regression function
+$f(x)$ has a root mean square error~(RMSE) of
+$R^2 \approx 10.6943$.  The corresponding value for $g(x)$ is
+$R^2 \approx 12.3480$.  As you can see, quadratic regression results
+in a higher value of $R^2$ than does linear regression.  Furthermore,
+the function $f(x)$ has a lower RMSE value than does $g(x)$.  Based on
+the values of $R^2$ and the RMSE, you may conclude that $f(x)$ is
+better than $g(x)$ at modelling the given data.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
