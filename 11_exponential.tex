@@ -3134,22 +3134,6 @@ $2^n - 1$.
 \end{solution}
 }{}
 
-\begin{table}[!htbp]
-\centering
-\input{table/11/radioactive-dice.tex}
-\caption{%%
-  Experimental data for the decay of $1000$ ``radioactive'' dice,
-  simulated via a computer.  Time is measured in minutes.  After the
-  elapse of each minute, you have $d$ dice that have ``decayed'' since
-  the previous minute and the $r$ remaining dice are yet to
-  ``decay''.  Note that $d$ is not the same as the total number of
-  dice that have ``decayed'' up to the given time.  A die is
-  considered to have ``decayed'' if after a roll the top-most face of
-  the die shows six pips.
-}
-\label{tab:radioactive_dice}
-\end{table}
-
 \item\label{prob:radioactive_dice}
   \emph{``Radioactive'' dice.}
   You can obtain an understanding of radioactive decay and half-life
@@ -3160,41 +3144,80 @@ $2^n - 1$.
     half-life seems to originate with J.~L.~Lewis; see the paper at
     \url{https://doi.org/10.1088/0031-9112/13/1/003}.
   }
-  For good experimental data, you should use at least $100$ dice.
-  However, you will be using the experimental data from $1000$ dice
-  that have been generated from a computer simulation.  The computer
-  simulation works as follows.  At time $t = 0$ minutes, you have
-  $1000$ dice.  After the elapse of one minute~(i.e.~at time $t = 1$
-  minute), the $1000$ dice are rolled and you note the number of pips
-  on the top-most face of each die.  If the top-most face of a die
-  shows six pips, then you move the die to a pile labelled
-  ``decayed''.  The remaining dice that do not have six pips on their
-  respective top-most faces are not yet ``decayed''.  After the elapse
-  of another minute~(i.e.~at time $t = 2$ minutes), the remaining
-  ``non-decayed'' dice from time $t = 1$ are rolled and you note the
-  number of pips on the top-most face of each die.  If a die shows six
-  pips on its top-most face, you move the die to the ``decayed'' pile
-  and the remaining dice are yet to ``decay''.  Repeat the process
-  until all dice have ``decayed''.  \Table{tab:radioactive_dice} shows
-  the data from one run of the above experiment with $1000$
-  ``radioactive'' dice~(the dice were not actually radioactive).
+  In this problem, you will write a Python program to simulate $1000$
+  dice, generate experimental data from the dice, and analyse the
+  data.  The computer simulation should work as follows.  At time
+  $t = 0$ minutes, you have $1000$ dice.  After the elapse of one
+  minute~(i.e.~at time $t = 1$ minute), the $1000$ dice are rolled and
+  you note the number of pips on the top-most face of each die.  If
+  the top-most face of a die shows six pips, then you move the die to
+  a pile labelled ``decayed''.  The remaining dice that do not have
+  six pips on their respective top-most faces are not yet ``decayed''.
+  After the elapse of another minute~(i.e.~at time $t = 2$ minutes),
+  the remaining ``non-decayed'' dice from time $t = 1$ are rolled and
+  you note the number of pips on the top-most face of each die.  If a
+  die shows six pips on its top-most face, you move the die to the
+  ``decayed'' pile and the remaining dice are yet to ``decay''.
+  Repeat the process until all dice have ``decayed''.
   %%
   \begin{packedenum}
+  \item\label{subprob:radioactive_dice_simulation_roll_dice}
+    Write a Python function that has the following name and signature:
+    %%
+    \begin{center}
+    \code{roll\_dice(n\comma decay\_state)}
+    \end{center}
+    %%
+    The first argument \code{n} specifies how many dice to roll.  The
+    second argument \code{decay\_state} specifies the number of pips
+    that indicates the ``decay'' state of a die.  The purpose of the
+    function \code{roll\_dice()} is to roll the given number of dice
+    one at a time and keep track of how many dice have ``decayed''.
+    The function should return the number of dice that have
+    ``decayed'' and the number of dice that are yet to ``decay''.
+
+  \item\label{subprob:radioactive_dice_simulation_main}
+    Your main Python function should have the following name and
+    signature:
+    %%
+    \begin{center}
+    \code{main()}
+    \end{center}
+    %%
+    The purpose of \code{main()} is to implement the simulation as
+    described above.  The function \code{main()} should invoke the
+    function \code{roll\_dice()} as many times as necessary until all
+    dice have ``decayed''.  Each call to \code{roll\_dice()}
+    corresponds to an increment of one minute.  After each invocation
+    of \code{roll\_dice()}, the function \code{main()} should note the
+    time $t$, the number $d$ of dice that have ``decayed'', and the
+    number $r$ of remaining dice that are yet to ``decay''.  At the
+    end of the simulation, \code{main()} should write the experimental
+    data to a comma-separated values~(CSV) file.  The data should be
+    structured as a table that has three columns and as many rows as
+    necessary.  Each row corresponds to the triple
+    $(\triple{t}{d}{r})$.  The very first line of the data file should
+    be the table headers:
+    %%
+    \begin{center}
+    \code{Time (minutes),How many decayed,How many remaining}
+    \end{center}
+
   \item\label{subprob:radioactive_dice_graph_remaining}
-    Produce a scatter plot of the number of minutes that have elapsed
-    versus the number of remaining ``undecayed'' dice.  How much time
-    was required for all the $1000$ dice to be in the ``decay'' state?
+    Run your computer simulation of the $1000$ ``radioactive'' dice.
+    Use your experimental data to produce a scatter plot of the number
+    of minutes that have elapsed versus the number of remaining
+    ``undecayed'' dice.  How much time was required for all the $1000$
+    dice to be in the ``decay'' state?
 
   \item\label{subprob:radioactive_dice_cumulative_decayed}
-    In \Table{tab:radioactive_dice}, note the two columns with the
-    heading ``Decayed''.  Each row shows the number of dice that have
-    ``decayed'' since the previous minute.  For example, from time
-    $t = 4$ to $t = 5$ you have $72$ dice that have ``decayed'' during
-    that one minute interval.  However, what you want is the
-    cumulative~(or running) sum of all dice that have decayed up to
-    any given time.  Create a column for the cumulative sum of
-    ``decayed'' dice.  Plot the cumulative sum of ``decayed'' dice
-    versus time together with the graph
+    Note the column that lists the number of dice that have
+    ``decayed''.   Each row of the column gives the number of dice
+    that have ``decayed'' since the previous minute.  However, what
+    you want is the cumulative~(or running) sum of all dice that have
+    decayed up to any given time.  Create a column for the cumulative
+    sum of ``decayed'' dice.  Plot the cumulative sum of ``decayed''
+    dice versus time together with the graph
     from \Part{subprob:radioactive_dice_graph_remaining}.
 
   \item\label{subprob:radioactive_dice_decay_constant}
@@ -3253,18 +3276,36 @@ $2^n - 1$.
     errors of the function versus time $t$.  Put all three error
     graphs on one set of axes.  What do you notice?  Use the root mean
     square error to help you explain which one of the above three
-    functions is better than the other two at modelling the data in
-    \Table{tab:radioactive_dice}.
+    functions is better than the other two at modelling your
+    experimental data.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subprob:radioactive_dice_graph_remaining}
-See \Figure{fig:radioactive_dice} for a scatter plot of the
-experimental data in \Table{tab:radioactive_dice}.  The table shows
-that after the elapse of $42$ minutes you have zero dice remaining.
-In other words, in this particular run of the experiment $42$ minutes
-were required in order for all the $1000$ ``radioactive'' dice to
-``decay''.
+\Table{tab:radioactive_dice} shows the data from one run of the above
+experiment with $1000$ ``radioactive'' dice~(the dice were not
+actually radioactive).  See \Figure{fig:radioactive_dice} for a
+scatter plot of the experimental data in \Table{tab:radioactive_dice}.
+The table shows that after the elapse of $42$ minutes you have zero
+dice remaining.  In other words, in this particular run of the
+experiment $42$ minutes were required in order for all the $1000$
+``radioactive'' dice to ``decay''.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/radioactive-dice.tex}
+\caption{%%
+  Experimental data for the decay of $1000$ ``radioactive'' dice,
+  simulated via a computer.  Time is measured in minutes.  After the
+  elapse of each minute, you have $d$ dice that have ``decayed'' since
+  the previous minute and the $r$ remaining dice are yet to
+  ``decay''.  Note that $d$ is not the same as the total number of
+  dice that have ``decayed'' up to the given time.  A die is
+  considered to have ``decayed'' if after a roll the top-most face of
+  the die shows six pips.
+}
+\label{tab:radioactive_dice}
+\end{table}
 
 \begin{figure}[!htbp]
 \centering
