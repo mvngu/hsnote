@@ -1977,9 +1977,8 @@ northern region of the Republic of Congo, Africa.\footnote{
   estimate the parameters $a$ and $b$.  Graph the function $H(x)$
   together with a scatter plot of the data in
   \Table{tab:logarithm:Sombo}.  Use linear scaling for both of the
-  horizontal and vertical axes.  Calculate the Pearson correlation
-  coefficient of the model $H(x)$ and the root mean square error of
-  the model.
+  horizontal and vertical axes.  Calculate the coefficient of
+  determination and the root mean square error of the model $H(x)$.
 
 \item\label{subex:logarithm:Sombo_linear_regression}
   Suppose that the data in \Table{tab:logarithm:Sombo} follow a
@@ -1988,9 +1987,9 @@ northern region of the Republic of Congo, Africa.\footnote{
   DBH of $x$ centimetres.  Use linear regression to estimate the
   parameters $a$ and $b$.  Graph the function $f(x)$ together with the
   graph from \Part{subex:logarithm:Sombo_log_regression}.  Calculate
-  the Pearson correlation coefficient and root mean square~(RMS) error
-  of the model.  Use the correlation coefficients and RMS errors to
-  help you determine which one of the functions $f(x)$ and $H(x)$ is
+  the coefficient of determination $R^2$ and root mean square
+  error~(RMSE) of the model.  Use the values of $R^2$ and the RMSE to
+  help you explain which one of the functions $f(x)$ and $H(x)$ is
   better suited to modelling the data in \Table{tab:logarithm:Sombo}.
 \end{packedenum}
 \end{exercise}
@@ -2109,9 +2108,9 @@ H(x)
 %%
 \Figure{fig:logarithm:Sombo_log_regression} compares
 \Equation{eqn:logarithm:Sombo_log_regression} with the data in
-\Table{tab:logarithm:Sombo}.  The model has a Pearson correlation
-coefficient of $\rho \approx 0.9387$ and a root mean square error of
-approximately $1.1937$, both numbers rounded to four decimal places.
+\Table{tab:logarithm:Sombo}.  The model has a coefficient of
+determination of $R^2 \approx 0.8811$ and a root mean square error of
+approximately $1.1937$.
 
 \begin{figure}[!htbp]
 \centering
@@ -2145,14 +2144,14 @@ Equation~\eqref{eqn:logarithm:Sombo_linear_regression} is graphed in
 \Figure{fig:logarithm:Sombo_log_regression} together with
 \Equation{eqn:logarithm:Sombo_log_regression} and the experimental
 data in \Table{tab:logarithm:Sombo}.  The linear regression function
-$f(x)$ has a Pearson correlation coefficient of $\rho \approx 0.9240$,
+$f(x)$ has a coefficient of determination of $R^2 \approx 0.8537$,
 which is lower than the corresponding value for the logarithmic
 regression function $H(x)$.  Furthermore, $f(x)$ has a root mean
-square~(RMS) error of $1.3241$, which is higher than the RMS error of
-$H(x)$.  Therefore you may conclude that
-\Equation{eqn:logarithm:Sombo_log_regression} is better than
-\Equation{eqn:logarithm:Sombo_linear_regression} at modelling the data
-in \Table{tab:logarithm:Sombo}.
+square error~(RMSE) of approximately $1.3241$, which is higher than
+the RMSE of $H(x)$.  Based on the values of $R^2$ and the RMSE, you
+may conclude that \Equation{eqn:logarithm:Sombo_log_regression} is
+better than \Equation{eqn:logarithm:Sombo_linear_regression} at
+modelling the data in \Table{tab:logarithm:Sombo}.
 \end{solution}
 }{}
 
