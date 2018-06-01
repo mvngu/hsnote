@@ -1737,10 +1737,10 @@ Consider the data in \Table{tab:logarithm:hinoki_cypress}.
   \Figure{fig:logarithm:hinoki_cypress_linear}.
 
 \item\label{subex:logarithm:hinoki_cypress_correlation_r_RMS_error}
-  Calculate the Pearson correlation coefficient $\rho$ of the model
-  $H(t)$ from \Part{subex:logarithm:hinoki_cypress_log_regression} and
-  the root mean square~(RMS) error of the model.  Provide an
-  interpretation of the values of $\rho$ and the RMS error.
+  Calculate the coefficient of determination of the function $H(t)$
+  from \Part{subex:logarithm:hinoki_cypress_log_regression} and the
+  root mean square error~(RMSE) of the model.  Provide an
+  interpretation of the value of the RMSE.
 \end{packedenum}
 \end{example}
 
@@ -1820,12 +1820,12 @@ with a scatter plot of the data in
 
 \solutionpart{subex:logarithm:hinoki_cypress_correlation_r_RMS_error}
 The model~\eqref{eqn:logarithm:hinoki_cypress_log_regression} has a
-Pearson correlation coefficient of $\rho \approx 0.9641$ and a root
-mean square~(RMS) error of approximately $0.1649$, both numbers
-rounded to four decimal places.  The high value of $\rho$ and the low
-value of the RMS error both suggest that
-\Equation{eqn:logarithm:hinoki_cypress_log_regression} provide a good
-fit of the data in \Table{tab:logarithm:hinoki_cypress}.
+coefficient of determination of $R^2 \approx 0.9294$ and a root mean
+square error~(RMSE) of approximately $0.1649$.  The value of the RMSE
+suggests that when
+\Equation{eqn:logarithm:hinoki_cypress_log_regression} is used to
+predict the height of a hinoki cypress tree, the prediction is on
+average $0.1649$ metres away from the observed height.
 \end{solution}
 
 \begin{exercise}
