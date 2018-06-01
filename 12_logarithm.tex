@@ -1831,11 +1831,11 @@ average $0.1649$ metres away from the observed height.
 \begin{exercise}
 \textbf{Hinoki cypress tree.}
 In \Example{eg:logarithm:hinoki_cypress_tree},
-\Figure{fig:logarithm:hinoki_cypress_linear} shows that the data in
-\Table{tab:logarithm:hinoki_cypress} seems to follow a straight line.
-Assume that the experimental data follow a linear function of the form
-$f(x) = ax + b$, where $f(x)$ represents the height of the hinoki
-cypress tree at $x$ years of age.
+\Figure{fig:logarithm:hinoki_cypress_linear} shows that the data set
+in \Table{tab:logarithm:hinoki_cypress} seems to follow a straight
+line.  Assume that the experimental data follow a linear function of
+the form $f(x) = ax + b$, where $f(x)$ represents the height in metres
+of a hinoki cypress tree at $x$ years of age.
 %%
 \begin{packedenum}
 \item\label{subex:logarithm:hinoki_linear_regression}
@@ -1844,9 +1844,9 @@ cypress tree at $x$ years of age.
   \Figure{fig:logarithm:hinoki_cypress_prediction}.
 
 \item\label{subex:logarithm:hinoki_Pearson_rho_RMS_error}
-  Calculate the Pearson correlation coefficient $\rho$ of the model
-  $f(x)$ and the root mean square~(RMS) error of the model.  Use these
-  values, and the values of $\rho$ and the RMS error from
+  Calculate the coefficient of determination $R^2$ and the root mean
+  square error~(RMSE) of the model $f(x)$.  Use these values, and the
+  values of $R^2$ and the RMSE from
   \Example{eg:logarithm:hinoki_cypress_tree}, to help you determine
   which one of the functions $f(x)$ and $H(t)$ is better than the
   other at modelling the data in
@@ -1925,14 +1925,13 @@ together with the data in \Table{tab:logarithm:hinoki_cypress}.
 
 \solutionpart{subex:logarithm:hinoki_Pearson_rho_RMS_error}
 The model~\eqref{eqn:logarithm:hinoki_cypress_linear_regression} has a
-Pearson correlation coefficient of $\rho \approx 0.9526$ and a root
-mean square~(RMS) error of $0.1888$, both numbers rounded to four
-decimal places.  The $\rho$ value of
+coefficient of determination of $R^2 \approx 0.9075$ and a root mean
+square error~(RMSE) of approximately $0.1888$.  The $R^2$ value of
 \Equation{eqn:logarithm:hinoki_cypress_linear_regression} is smaller
-than the $\rho$ value of the logarithmic regression from
-\Example{eg:logarithm:hinoki_cypress_tree}.  Furthermore, the RMS
-error of \Equation{eqn:logarithm:hinoki_cypress_linear_regression} is
-higher than the RMS error of
+than the $R^2$ value of the logarithmic regression from
+\Example{eg:logarithm:hinoki_cypress_tree}.  Furthermore, the RMSE of
+\Equation{eqn:logarithm:hinoki_cypress_linear_regression} is higher
+than the RMSE of
 \Equation{eqn:logarithm:hinoki_cypress_log_regression}.  Conclude that
 \Equation{eqn:logarithm:hinoki_cypress_log_regression} is better than
 \Equation{eqn:logarithm:hinoki_cypress_linear_regression} at modelling
