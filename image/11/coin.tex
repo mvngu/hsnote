@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{coin}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotStyle/.style={mark size=1.5,black,mark color=black,mark=*,only marks},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north east,%%
+  plotStyle/.style={%%
+    domain=1:15,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %% x axis
+  xlabel={\normalsize How many coin tosses to first heads},%%
+  %% y axis
+  ylabel={\normalsize Probability},%%
+  scaled y ticks=false,%%
+  y tick label style=/pgf/number format/fixed%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (1, 0.5084)
+  (2, 0.2412)
+  (3, 0.1277)
+  (4, 0.059)
+  (5, 0.0323)
+  (6, 0.0148)
+  (7, 0.0089)
+  (8, 0.0033)
+  (9, 0.0022)
+  (10, 0.0009)
+  (11, 0.0005)
+  (12, 0.0005)
+  (13, 0.0002)
+  (15, 0.0001)
+};
+\addlegendentry{data}
+%%
+%%
+\addplot+ [plotStyle,red]
+{0.501680630110871 * ((1 - 0.501680630110871)^(x-1))};
+\addlegendentry{prediction}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

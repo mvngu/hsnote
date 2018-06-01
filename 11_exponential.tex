@@ -4150,6 +4150,256 @@ logistic function is better suited to modelling the given data than
 either of the exponential or quintic functions.
 \end{solution}
 }{}
+
+\item\emph{Geometric distribution.}
+  In this problem, you will investigate exponential functions in the
+  context of probability and in particular a function called the
+  \emph{geometric distribution}.  The geometric distribution is
+  commonly applied to situations where a process has only two
+  outcomes: either success or failure.  As an example, consider the
+  tossing of a coin, the outcomes of which are either heads or
+  tails.\footnote{
+    There is also a third outcome of tossing a coin.  The coin can
+    land on its side, but for now you may ignore this third
+    possibility.  See the following papers for the probability of a
+    coin landing on its side:
+    \url{https://doi.org/10.1103/PhysRevE.48.2547} and
+    \url{https://doi.org/10.1119/1.3630934}.
+  }
+  If after a toss the top-most face of a coin shows heads, you may
+  define this outcome as a success.  If the top-most face shows tails,
+  you may define this outcome as a failure.  Now consider the
+  question: How many tosses of a coin must you perform in order for
+  heads to show up for the first time?  Answering this question
+  requires the geometric distribution.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:coin_simulation_fair_coin}
+    Write a Python function that has the following name and signature:
+    %%
+    \begin{center}
+    \code{toss\_coin()}
+    \end{center}
+    %%
+    The purpose of the function \code{toss\_coin()} is to simulate the
+    toss of a fair coin.  A coin is said to be \emph{fair} if each of
+    heads and tails is equally likely to come up after a toss.  The
+    function should return \code{True} if the result of the coin toss
+    is heads.  If the result of the coin toss is tails, the function
+    should return \code{False}.
+
+  \item\label{subprob:coin_simulation_time_to_heads}
+    Write a Python function that has the following name and signature:
+    %%
+    \begin{center}
+    \code{time\_to\_heads()}
+    \end{center}
+    %%
+    The function \code{time\_to\_heads()} should simulate the number
+    of coin tosses required in order for heads to occur for the first
+    time.  To do so, the function should repeatedly call the function
+    \code{toss\_coin()} until heads occurs for the first time.  The
+    function \code{time\_to\_heads()} should return the number of coin
+    tosses to reach the first heads.
+
+  \item\label{subprob:coin_simulation_main}
+    Your main Python function should have the following name and
+    signature:
+    %%
+    \begin{center}
+    \code{main()}
+    \end{center}
+    %%
+    The purpose of the function \code{main()} is to control your coin
+    simulation.  The function should perform $10,000$ rounds of the
+    coin tossing experiment.  Each round of the experiment consists of
+    repeatedly tossing a fair coin until heads occurs for the first
+    time.  Thus each time you invoke the function
+    \code{time\_to\_heads()}, you perform one round of the
+    experiment.  The result of each round is the number of coin tosses
+    required in order for heads to show up for the first time.  At the
+    end of the simulation, \code{main()} should write to a file the
+    result of each round of the coin tossing experiment.  Write the
+    $10,000$ numbers one per line so that the numbers form a column.
+    The column header should be
+    %%
+    \begin{center}
+    \code{Time to heads}
+    \end{center}
+
+  \item\label{subprob:coin_simulation_frequency_distribution}
+    Run your coin tossing simulation and save your experimental data
+    to a file.  From your experimental data, note the smallest number
+    $m$ and the largest number $n$ of coin tosses required for the
+    first occurrence of heads.  Create a table that has three columns
+    and as many rows as necessary.  Going from left to right, the
+    column headers should be ``Toss'', ``Count'', and
+    ``Probability''.  The ``Toss'' column lists all the possible
+    number of coin tosses from $m$ to $n$, inclusive.  The ``Count''
+    column lists for each number $k$ of coin toss the number of times
+    that $k$ tosses were required in order for heads to occur for the
+    first time.  Finally, the ``Probability'' column lists the
+    observed probability of $k$ coin tosses.  Let $c$ be the count of
+    the number of times that $k$ coin tosses were required for the
+    first occurrence of heads.  The sum of all the counts must be
+    $10,000$ and is also the number of rounds in your coin tossing
+    experiment.  The probability that you require $k$ coin tosses to
+    reach the first heads is defined as the ratio $c / 10000$.  Delete
+    any row that has a count of zero.  Produce a scatter plot of the
+    number $i$ of coin tosses to the first heads versus the
+    probability of $i$.  Explain what you notice about the graph.
+
+  \item\label{subprob:coin_simulation_estimate_probability}
+    If $\Pr(k)$ denotes the probability of $k$ coin tosses to get the
+    first occurrence of heads, then $\Pr(k)$ can be written as
+    %%
+    \begin{equation}
+    \label{eqn:coin_simulation_geometric_distribution}
+    \Pr(k)
+    =
+    (1 - p)^{k-1} p.
+    \end{equation}
+    %%
+    Expression~\eqref{eqn:coin_simulation_geometric_distribution} is
+    the geometric distribution for the number of coin tosses required
+    to get heads for the first time.  Here, $k$ is an integer that is
+    bounded as $m \leq k \leq n$, where $m$ and $n$ are as
+    in \Part{subprob:coin_simulation_frequency_distribution}.  Note
+    that $p$ represents the probability of getting heads as a result
+    of each toss of a coin.  The value of $p$ is assumed to be the
+    same no matter how many times you have tossed the coin.  If you
+    assume that the simulated coin is fair, then the probability of
+    getting heads as a result of each toss would be $1 / 2$.  On the
+    other hand, if you do not assume that the simulated coin is fair,
+    or you do not know the probability of getting heads after each
+    coin toss, then you must use your experimental data to estimate
+    the value of $p$.  Let $N$ be the number of times that you tossed
+    the coin during your computer simulation and let $h$ be the number
+    of times that heads occurred.  Then the value of $p$ can be
+    estimated as
+    %%
+    \begin{equation}
+    \label{eqn:coin_simulation_estimate_p}
+    \phat
+    =
+    \frac{h}{N}.
+    \end{equation}
+    %%
+    Use your experimental data to calculate $\phat$.  Use the value of
+    $\phat$ and
+    \Equation{eqn:coin_simulation_geometric_distribution}
+    to calculate the predicted probability $\Pr(k)$.  Organise your
+    results as another column in the table
+    from \Part{subprob:coin_simulation_frequency_distribution}.
+    Plot the predicted probabilities together with the graph
+    from \Part{subprob:coin_simulation_frequency_distribution}.
+
+  \item\label{subprob:coin_simulation_mean_tosses}
+    Let $\mu$ be the mean number of coin tosses required for the first
+    occurrence of heads.  If $\phat$ is as in
+    \Equation{eqn:coin_simulation_estimate_p}, explain why the mean
+    can be written as $\mu = 1 / \phat$.  Use the latter expression to
+    calculate~(for your experimental data) the mean number of coin
+    tosses required in order to get heads for the first time.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:coin_simulation_frequency_distribution}
+See \Table{tab:coin_simulation_frequency_distribution} for a summary
+of the experimental data from one run of the coin tossing simulation.
+See \Figure{fig:coin_simulation_probability} for the corresponding
+probability plot.  As the figure shows, the probability distribution
+of $k$ coin tosses to the first heads seems to follow an exponential
+decay model.
+
+\begin{table}[!htbp]
+\centering
+\input{table/11/coin.tex}
+\caption{%%
+  The number $k$ of coin tosses to the first heads versus the
+  probability of $k$.  The values in the ``Count'' column should sum
+  to $10,000$.  The predicted probability values in the
+  ``Pred. prob.'' column were calculated using
+  \Equation{eqn:coin_simulation_predicted_probability}.
+}
+\label{tab:coin_simulation_frequency_distribution}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/11/coin.pdf}
+\caption{%%
+  The probability distribution of $k$ coin tosses to the first heads.
+  The black dots show a graph of the data from
+  \Table{tab:coin_simulation_frequency_distribution}.  The red curve
+  shows a graph of
+  \Equation{eqn:coin_simulation_predicted_probability}.
+}
+\label{fig:coin_simulation_probability}
+\end{figure}
+
+\solutionpart{subprob:coin_simulation_estimate_probability}
+Let $k$ be the number of coin tosses required for the first occurrence
+of heads.  Let $c_k$ be the number of times where you required exactly
+$k$ coin tosses to get the first heads.  Then you would toss the coin
+$k c_k$ times.  The total number of times that you tossed the coin
+during your computer simulation can be written as
+\[
+\sum_{k=1}^n k c_k
+\]
+where $n$ is as
+in \Part{subprob:coin_simulation_frequency_distribution}.  Using the
+experimental data in
+\Table{tab:coin_simulation_frequency_distribution}, you have
+%%
+\begin{align*}
+\sum_{k=1}^{15} k c_k
+&=
+1 \times 5084 + 2 \times 2412 + 3 \times 1277 + \cdots
++
+15 \times 1 \\[4pt]
+&=
+19933.
+\end{align*}
+%%
+This means that during the above run of the computer simulation, the
+coin was tossed a total of $19,933$ times.  The number of times that
+heads occurred during the simulation is the sum of the ``Count''
+column in \Table{tab:coin_simulation_frequency_distribution}.  In
+other words, heads occurred $10,000$ times during the simulation.
+Using \Equation{eqn:coin_simulation_estimate_p}, the probability that
+heads occurred as a result of each toss is estimated as
+$\phat \approx 0.5017$.  Hence the predicted probability $\Pr(k)$ for
+the number of $k$ tosses to the first heads can be written as
+%%
+\begin{equation}
+\label{eqn:coin_simulation_predicted_probability}
+\Pr(k)
+=
+(1 - \phat)^{k-1} \phat
+\end{equation}
+%%
+which is graphed in \Figure{fig:coin_simulation_probability}.
+See \Table{tab:coin_simulation_frequency_distribution} for values of
+the predicted probability calculated by using the estimate $\phat$.
+
+\solutionpart{subprob:coin_simulation_mean_tosses}
+Let $N$ be the total number of coin tosses in the coin simulation and
+denote by $h$ the number of heads that occurred.  Then the mean number
+of coin tosses to get a heads is $N / h$.  Take the reciprocal of the
+last expression and you have
+\[
+\frac{1}{N / h}
+=
+\frac{h}{N}
+\]
+which is the same as in \Equation{eqn:coin_simulation_estimate_p}.
+For the experimental data in
+\Table{tab:coin_simulation_frequency_distribution}, the mean $\mu$ of
+coin tosses required for the first occurrence of heads is
+$\mu = 1.9933$ coin tosses.
+\end{solution}
+}{}
 \end{problem}
 
 \end{document}
