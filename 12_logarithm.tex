@@ -1429,27 +1429,28 @@ isotopes as measured by a Geiger counter.
 %%
 \begin{packedenum}
 \item\label{subex:logarithm:copper_decay_linear_log_plots}
-  Plot the data in the table by using a linear scale for both the
-  horizontal and vertical axes.  What do you notice in the linear
+  Plot the data in the table by using a linear scale for both of the
+  horizontal and vertical axes.  What do you notice about the linear
   plot?  Now take the natural logarithm of each value in the ``Count''
-  columns and produce a semi-log plot.  What do you notice in the
+  columns and produce a semi-log plot.  What do you notice about the
   semi-log plot?
 
 \item\label{subex:logarithm:copper_decay_regression}
   Suppose that the data in
   \Table{tab:logarithm:copper_radioactive_decay} follow the
   exponential model $Q(x) = a \cdot e^{rx}$, whose logarithmic
-  transformation is $\ln Q(x) = rx + \ln a$.  Use linear regression to
-  estimate the parameters $r$ and $\ln a$.  Use the estimate for
-  $\ln a$ to calculate an estimation of $a$.  Graph the model $Q(x)$
-  together with the linear plot
-  from \Part{subex:logarithm:copper_decay_linear_log_plots}.
+  transformation is $\ln Q(x) = rx + \ln a$.  Here, $Q(x)$ denotes the
+  number of radioactive isotopes remaining in the copper sample after
+  $x$ seconds.  Use linear regression to estimate the parameters $r$
+  and $\ln a$.  Use the estimate for $\ln a$ to calculate an
+  estimation of $a$.  Graph the model $Q(x)$ together with the linear
+  plot from \Part{subex:logarithm:copper_decay_linear_log_plots}.
 
 \item\label{subex:logarithm:copper_decay_RMS_error_Pearson_rho}
-  Calculate the root mean square~(RMS) error of your model $Q(x)$
-  from \Part{subex:logarithm:copper_decay_regression}.  Determine the
-  Pearson correlation coefficient $\rho$ of the model.  Provide an
-  interpretation of the values of $\rho$ and the RMS error.
+  Calculate the root mean square error~(RMSE) of your model $Q(x)$
+  from \Part{subex:logarithm:copper_decay_regression} and the
+  coefficient of determination $R^2$ of the model.  Provide an
+  interpretation of the value of the RMSE.
 \end{packedenum}
 \end{exercise}
 
@@ -1571,13 +1572,13 @@ scatter plot of the data from
 \Table{tab:logarithm:copper_radioactive_decay}.
 
 \solutionpart{subex:logarithm:copper_decay_RMS_error_Pearson_rho}
-The model in \Equation{eqn:logarithm:copper_decay_model} has a root
-mean square~(RMS) error of $22.7376$, rounded to four decimal places.
-Furthermore, the model has a Pearson correlation coefficient of
-$\rho \approx -0.9924$, also rounded to four decimal places.  The low
-values of the RMS error and $\rho$ suggest that
-\Equation{eqn:logarithm:copper_decay_model} is a good fit of the
-experimental data.
+The model~\eqref{eqn:logarithm:copper_decay_model} has a root mean
+square error~(RMSE) of approximately $21.7101$ and a coefficient of
+determination of $R^2 \approx 0.9848$.  The value of the RMSE suggests
+that when \Equation{eqn:logarithm:copper_decay_model} is used to
+predict the number of radioactive isotopes remaining in the sample of
+copper, the prediction is on average $21.7101$ radioactive isotopes
+away from the observed count.
 \end{solution}
 }{}
 
