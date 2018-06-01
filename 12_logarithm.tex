@@ -1383,17 +1383,21 @@ experimental data.
 
 \begin{exercise}
 In \Example{ex:logarithm:rainbow_trout}, calculate the root mean
-square error of
-\Equation{eqn:logarithm:rainbow_trout_prediction} and the Pearson
-correlation coefficient of the model.
+square error~(RMSE) of
+\Equation{eqn:logarithm:rainbow_trout_prediction} and the coefficient
+of determination of the model.  Provide an interpretation of the value
+of the RMSE.
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
-The root mean square error of
-\Equation{eqn:logarithm:rainbow_trout_prediction} is $50.1968$,
-rounded to four decimal places.  The model has a correlation
-coefficient of $0.9792$, rounded to four decimal places.
+The root mean square error~(RMSE) of
+\Equation{eqn:logarithm:rainbow_trout_prediction} is approximately
+$51.8289$.  The model has a coefficient of determination of
+$R^2 \approx 0.9588$.  The value of the RMSE suggests that when
+\Equation{eqn:logarithm:rainbow_trout_prediction} is used to predict
+the weight of a rainbow trout, the predicted weight is on average
+$51.8289$ millimetres away from the observed weight.
 \end{solution}
 }{}
 
