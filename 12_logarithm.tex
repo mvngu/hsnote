@@ -3618,20 +3618,21 @@ decade from $1980$ to $1990$.
     such that $45 \leq h < 46$.  Produce a table that has three
     columns and as many rows as necessary.  Going from left to right,
     the first column should have a heading called ``Class'' and should
-    list each of the classes from class $18$ up to and including class
-    $46$.  The middle column should have a heading called ``Count''
-    and should list for each class the corresponding number of height
-    measurements that can be placed in the class.  Finally, the third
-    column should have a heading called ``Probability'' and should
-    list the corresponding count divided by $500$.  This is the
-    observed probability, i.e.~the probability value is derived from
-    the data.  For example, the class $18$ should have a count of $2$
-    because there are two height measurements that are at least $17$
-    metres but less than $18$ metres.  Furthermore, you have a
-    probability of $2 / 500 = 0.004$ that a \emph{Metasequoia} tree
-    has a height of $h$ metres such that $17 \leq h < 18$.  Remove any
-    row that has a count of zero.  Determine the range of tree heights
-    that occur the most often in the given sample of $500$ trees.
+    list each of the height classes from class $18$ up to and
+    including class $46$.  The middle column should have a heading
+    called ``Count'' and should list for each class the corresponding
+    number of height measurements that can be placed in the class.
+    Finally, the third column should have a heading called
+    ``Probability'' and should list the corresponding count divided by
+    $500$.  This is the observed probability, i.e.~the probability
+    value is derived from the data.  For example, the class $18$
+    should have a count of $2$ because there are two height
+    measurements that are at least $17$ metres but less than $18$
+    metres.  Furthermore, you have a probability of $2 / 500 = 0.004$
+    that a \emph{Metasequoia} tree has a height of $h$ metres such
+    that $17 \leq h < 18$.  Remove any row that has a count of zero.
+    Determine the range of tree heights that occur the most often in
+    the given sample of $500$ trees.
 
   \item\label{subprob:logistic:metasequoia_height_mean_stdev}
     Let's calculate some statistics on the heights of the
@@ -3675,7 +3676,7 @@ decade from $1980$ to $1990$.
     %%
     \begin{equation}
     \label{eqn:logarithm:metasequoia_normal_distribution}
-    P(x)
+    \Pr(x)
     =
     \frac{1}{\sigma \sqrt{2 \pi}}
     \exp{
@@ -3693,7 +3694,7 @@ decade from $1980$ to $1990$.
     used to predict the number of \emph{Metasequoia} trees of a
     particular height.  If you have $N$ \emph{Metasequoia} trees,
     \Equation{eqn:logarithm:metasequoia_normal_distribution} predicts
-    that you would have $N \cdot P(x)$ trees of height around $x$
+    that you would have $N \cdot \Pr(x)$ trees of height around $x$
     metres.   Letting $x$ be the height class, use
     \Equation{eqn:logarithm:metasequoia_normal_distribution} to fit a
     normal distribution to your plot of height class versus observed
@@ -3701,8 +3702,8 @@ decade from $1980$ to $1990$.
     \Equation{eqn:logarithm:metasequoia_normal_distribution} to
     predict the number of trees that have a height class of $x$
     metres for $x = \seq{18}{19}{46}$.  Calculate the root mean
-    square~(RMS) error of the predicted counts.  Provide an
-    interpretation of the RMS error.
+    square error~(RMSE) of the predicted counts.  Provide an
+    interpretation of the value of the RMSE.
 
   \item\label{subprob:logistic:metasequoia_formula}
     Let $H(x)$ be the height~(m) of a \emph{Metasequoia} tree that has
