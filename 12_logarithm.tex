@@ -3603,12 +3603,12 @@ decade from $1980$ to $1990$.
     a rough idea of how the heights are spread across the $500$ trees,
     you can place each height measurement in exactly one of several
     classes.  The class $18$ contains all heights $h$ such that
-    $17 \leq h < 18$, i.e.~all heights that are at least $17$ metres
-    and less than $18$ metres.  The class $19$ contains all heights
-    $h$ such that $18 \leq h < 19$.  Similarly, the class $20$
-    contains all heights $h$ such that $19 \leq h < 20$.  And so on up
+    $17 < h \leq 18$, i.e.~all heights that are greater than $17$
+    metres and at most $18$ metres.  The class $19$ contains all
+    heights $h$ such that $18 < h \leq 19$.  Similarly, the class $20$
+    contains all heights $h$ such that $19 < h \leq 20$.  And so on up
     to and including the class $46$, which contains all heights $h$
-    such that $45 \leq h < 46$.  Produce a table that has three
+    such that $45 < h \leq 46$.  Produce a table that has three
     columns and as many rows as necessary.  Going from left to right,
     the first column should have a heading called ``Class'' and should
     list each of the height classes from class $18$ up to and
@@ -3620,10 +3620,10 @@ decade from $1980$ to $1990$.
     $500$.  This is the observed probability, i.e.~the probability
     value is derived from the data.  For example, the class $18$
     should have a count of $2$ because there are two height
-    measurements that are at least $17$ metres but less than $18$
+    measurements that are greater than $17$ metres but at most $18$
     metres.  Furthermore, you have a probability of $2 / 500 = 0.004$
     that a \emph{Metasequoia} tree has a height of $h$ metres such
-    that $17 \leq h < 18$.  Remove any row that has a count of zero.
+    that $17 < h \leq 18$.  Remove any row that has a count of zero.
     Determine the range of tree heights that occur the most often in
     the given sample of $500$ trees.
 
@@ -3709,9 +3709,9 @@ decade from $1980$ to $1990$.
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subprob:logistic:metasequoia_height_distribution}
-See \Table{tab:logarithm:Metaseqoia}.  The range of tree heights from
-at least $24$ metres up to less than $25$ metres occurs the most often
-at $56$ trees out of a total of $500$ trees.
+See \Table{tab:logarithm:Metaseqoia}.  Tree heights that are greater
+than $24$ metres and at most $25$ metres occur the most often at $56$
+trees out of a total of $500$ trees.
 
 \begin{table}[!htbp]
 \centering
@@ -3720,7 +3720,7 @@ at $56$ trees out of a total of $500$ trees.
   The probability of each height class for $n = 500$
   \emph{Metasequoia} trees.  Given a height class $x$, the
   corresponding count $c$ is the number of height measurements $h$
-  such that $x - 1 \leq h < x$.  The observed probability for the
+  such that $x - 1 < h \leq x$.  The observed probability for the
   height class $x$ is $c / n$.  The predicted probability is $\Pr(x)$
   as defined by the normal distribution in
   \Equation{eqn:logarithm:metasequoia_normal_distribution} with a mean
