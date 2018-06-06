@@ -4263,11 +4263,229 @@ modelling the experimental data in \Table{tab:logarithm:yeast}.
 \label{tab:logarithm:yeast}
 \end{table}
 
-\item\emph{Coin and cricket.}
+\item\emph{Ducks in Test cricket.}
   In this problem, you will further explore the topic of probability
+  by analysing a data set on the game of cricket.  The file
+  \code{cricket.csv} contains a data set on the batting records of all
+  players during Test matches.\footnote{
+    The data set was downloaded from the following website:
+    \url{http://web.archive.org/web/20180604040251/http://stats.espncricinfo.com/england/engine/records/index.html?class=1},
+    accessed 2018-06-04.
+  }
+  The data set covers only statistics for Test matches from $1877$ up
+  to $2018$, inclusive.  Going from left to right in the data table of
+  \code{cricket.csv}, the ``Player'' column lists the name of the
+  players and the ``Span'' column lists the years during which they
+  played Test matches.  The ``Mat'' column lists the number of matches
+  played, the ``Inns'' column lists the number of innings batted, the
+  ``NO'' column lists the number of not outs, and the ``Runs'' column
+  lists the number of runs scored.  The ``HS'' column lists the
+  highest innings score, the ``Ave'' lists the batting average, the
+  ``Hundred'' column lists the number of times a player scored more
+  than $100$ runs, the ``Fifty'' column lists the number of times a
+  player scored $50$ runs, and the ``Duck'' column lists how many
+  times a player was dismissed for a score of zero.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:cricket_ducks_count}
+    Consider the ``Duck'' column in the data table of
+    \code{cricket.csv}.  Let $m$ and $n$ be the minimum and maximum,
+    respectively, integers in the column.  You may ignore any entry in
+    the column that has missing numbers.  You have $N = 2910$ integer
+    entries in the ``Duck'' column.  Create a table that has three
+    columns and as many rows as necessary.  Going from left to right
+    in the new table, the ``Duck'' column should list all the possible
+    number of ducks between the minimum of $m$ and the maximum of $n$,
+    inclusive.  The ``Count'' column should list for each number $d$
+    of ducks the number of times that $d$ occurs in the ``Duck''
+    column in the data table of \code{cricket.csv}.  You may remove
+    any row that has a count of zero.  Finally, the ``Obs prob''
+    column should list for each number $d$ of ducks the
+    \emph{observed probability} of $d$ ducks.  Let $d$ be the number
+    of ducks and let $c$ be the count of how many times $d$ occurred
+    in the ``Duck'' column in the data table of \code{cricket.csv}.
+    The observed probability of $d$ ducks is defined as the ratio
+    $c / N$.  For example, at $d = 18$ ducks you have $c = 2$ times
+    that $18$ occurred in the ``Duck'' column in the data table of
+    \code{cricket.csv}, hence the observed probability of $18$ ducks
+    is $2 / 2910 = 1 / 1455$.
+
+  \item\label{subprob:logarithm:cricket_ducks_graphs}
+    Produce two scatter plots of the number $d$ of ducks versus the
+    observed probability of $d$ ducks.  One scatter plot uses linear
+    scaling for both of the horizontal and vertical axes.  The other
+    graph uses linear and logarithmic scalings for the horizontal and
+    vertical axes, respectively.  Explain what you notice about the
+    graphs.  Which function, and why, would be suitable for modelling
+    the data on the number $d$ of ducks and the observed probability
+    of $d$ ducks?
+
+  \item\label{subprob:logarithm:cricket_ducks_exponential_regression}
+    Let $P(d)$ be the probability of $d$ ducks.  Suppose that $P(d)$
+    can be written as an exponential function of the form
+    $P(d) = a e^{rd}$, where $a$ and $r$ are the parameters of the
+    function $P(d)$.  Use exponential regression to estimate the
+    parameters $a$ and $r$.  Graph the function $P(d)$ together with
+    a scatter plot of the number $d$ of ducks versus the observed
+    probability of $d$ ducks.  Explain what you notice about the
+    graph.  Calculate the coefficient of determination of $P(d)$.
+
+  \item\label{subprob:logarithm:cricket_ducks_exponential_distribution}
+    You can use the \emph{exponential distribution} to model the
+    probability of ducks.  The exponential distribution for the number
+    $d$ of ducks can be written as $Q(d) = \lambda e^{-\lambda d}$,
+    where it is assumed that $\lambda > 0$ and $d \geq 0$.  The
+    constant $\lambda$ is the parameter of the exponential
+    distribution and must be estimated by using the data.  The
+    ``Duck'' column in the data table of \code{cricket.csv} should
+    have $N = 2910$ integers.  If $S$ is the sum of all integers in
+    the ``Duck'' column in the data table of \code{cricket.csv}, then
+    the parameter $\lambda$ can be estimated as $\lambdahat = N / S$.
+    Use the ``Duck'' column in the data table of \code{cricket.csv} to
+    calculate the estimate $\lambdahat$.  Graph the exponential
+    distribution $Q(d)$ together with the plot
+    from \Part{subprob:logarithm:cricket_ducks_exponential_regression}.
+    Explain what you notice about the graph.
+
+  \item\label{subprob:logarithm:cricket_ducks_RMSE}
+    If $N$ is the number of integer entries in the ``Duck'' column of
+    the data table in \code{cricket.csv}, then the functions $P(d)$
+    and $Q(d)$ predict that $N \cdot P(d)$ and $N \cdot Q(d)$,
+    respectively, of the $N$ integers are for $d$ ducks.  For each
+    duck $d$ from the minimum $m$ to the maximum $n$, calculate the
+    predicted counts $N \cdot P(d)$ and $N \cdot Q(d)$.  Then
+    calculate the root mean square errors~(RMSE) of the predicted
+    counts.  Provide an interpretation of the values of the RMSE.  Use
+    the values of the RMSE to help you explain which one of the
+    functions $P(d)$ and $Q(d)$ is better than the other at modelling
+    the probability of $d$ ducks.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:logarithm:cricket_ducks_count}
+See \Table{tab:logarithm:cricket_ducks}.
 
+\begin{table}[!htbp]
+\centering
+\input{table/12/cricket.tex}
+\caption{%%
+  For each number $d$ of ducks, the table lists how many times that
+  $d$ occurs in the ``Duck'' column of the data table
+  \code{cricket.csv}.  Also shown is the observed probability of $d$
+  ducks.
+}
+\label{tab:logarithm:cricket_ducks}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/cricket-duck-linear.pdf}
+  \label{subfig:logarithm:cricket_ducks_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/cricket-duck-log.pdf}
+  \label{subfig:logarithm:cricket_ducks_log}
+}
+\caption{%%
+  Graphs of the number $d$ of ducks versus the observed probability of
+  $d$ ducks.  The black dots show data from
+  \Table{tab:logarithm:cricket_ducks}.  (a)~A scatter plot that uses
+  linear scaling for both of the horizontal and vertical axes.
+  (b)~The same scatter plot, but using linear and logarithmic scalings
+  for the horizontal and vertical axes, respectively.
+}
+\label{fig:logarithm:cricket_ducks}
+\end{figure}
+
+\solutionpart{subprob:logarithm:cricket_ducks_graphs}
+\Figure{fig:logarithm:cricket_ducks} shows scatter plots of the number
+$d$ of ducks versus the observed probability of $d$ ducks.  As can be
+seen in \Figure{subfig:logarithm:cricket_ducks_log}, the dots seem to
+follow a straight line when the scatter plot uses logarithmic scaling
+for the vertical axis.  This suggests that you may use an exponential
+function to model the observed probability of $d$ ducks.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/cricket-duck.pdf}
+\caption{%%
+  The probability of $d$ ducks.  The black dots show the observed
+  probability from \Table{tab:logarithm:cricket_ducks}.  The blue
+  curve shows a graph of
+  \Equation{eqn:logarithm:cricket_ducks_exponential_regression}.  The
+  red curve shows a graph of
+  \Equation{eqn:logarithm:cricket_ducks_exponential_distribution}.
+}
+\label{fig:logarithm:cricket_ducks}
+\end{figure}
+
+\solutionpart{subprob:logarithm:cricket_ducks_exponential_regression}
+Suppose that $P(d)$ can be written as an exponential function of the
+form $P(d) = a e^{rd}$, where $a$ and $r$ are the parameters of
+$P(d)$.  Using exponential regression on the data in the ``Duck'' and
+``Obs prob'' columns of \Table{tab:logarithm:cricket_ducks}, the
+parameters can be estimated as $a \approx 0.0914$ and
+$r \approx -0.1799$.  Then $P(d)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:cricket_ducks_exponential_regression}
+P(d)
+=
+0.0914 e^{-0.1799 d}.
+\end{equation}
+%%
+\Figure{fig:logarithm:cricket_ducks} compares a graph of
+\Equation{eqn:logarithm:cricket_ducks_exponential_regression} with a
+scatter plot of the ``Duck'' column versus the ``Obs prob'' column
+from \Table{tab:logarithm:cricket_ducks}.  As shown in
+\Figure{fig:logarithm:cricket_ducks},
+\Equation{eqn:logarithm:cricket_ducks_exponential_regression} does not
+seem to fit the data very well.  This is confirmed by the fact that
+$P(d)$ has a coefficient of determination of $R^2 \approx 0.8823$.
+
+\solutionpart{subprob:logarithm:cricket_ducks_exponential_distribution}
+The ``Duck'' column in the data table of \code{cricket.csv} has
+$N = 2910$ integers and the sum of the integers in the column is
+$S = 8737$.  Then the parameter $\lambda$ can be estimated as
+%%
+\begin{equation}
+\label{eqn:logarithm:cricket_ducks_lambda_hat}
+\lambdahat
+=
+\frac{N}{S}
+=
+\frac{2910}{8737}.
+\end{equation}
+%%
+Hence the exponential distribution $Q(d)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:cricket_ducks_exponential_distribution}
+Q(d)
+=
+\lambdahat e^{-\lambdahat d}
+\end{equation}
+%%
+where $\lambdahat$ is defined by
+\Equation{eqn:logarithm:cricket_ducks_lambda_hat}.  The function is
+graphed in \Figure{fig:logarithm:cricket_ducks} together with the
+function $P(d)$ that was obtained via exponential regression.  The
+figure shows that $Q(d)$ seems to be better than $P(d)$ at modelling
+the data in \Table{tab:logarithm:cricket_ducks}.
+
+\solutionpart{subprob:logarithm:cricket_ducks_RMSE}
+The predicted counts $N \cdot P(d)$ and $N \cdot Q(d)$ have root mean
+square errors~(RMSE) of approximately $127.5192$ and $44.3307$,
+respectively.  That is, the predicted count $N \cdot P(d)$ of $d$
+ducks is on average approximately $127.5192$ away from the observed
+count.  Similarly, the predicted count $N \cdot Q(d)$ of $d$ ducks is
+on average approximately $44.3307$ away from the observed count.
+Based on the values of the RMSE, you may conclude that the exponential
+distribution $Q(d)$ is better than the exponential regression function
+$P(d)$ at modelling the data in \Table{tab:logarithm:cricket_ducks}.
 \end{solution}
 }{}
 \end{problem}
