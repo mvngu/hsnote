@@ -4256,7 +4256,8 @@ modelling the experimental data in \Table{tab:logarithm:yeast}.
 \label{tab:logarithm:yeast}
 \end{table}
 
-\item\emph{Ducks in Test cricket.}
+\item\label{prob:logarithm:cricket_ducks}
+  \emph{Ducks in Test cricket.}
   In this problem, you will further explore the topic of probability
   by analysing a data set on the game of cricket.  The file
   \code{cricket.csv} contains a data set on the batting records of all
@@ -4479,6 +4480,381 @@ on average approximately $44.3307$ away from the observed count.
 Based on the values of the RMSE, you may conclude that the exponential
 distribution $Q(d)$ is better than the exponential regression function
 $P(d)$ at modelling the data in \Table{tab:logarithm:cricket_ducks}.
+\end{solution}
+}{}
+
+\item\emph{Runs in Test cricket.}
+  This is a continuation of \Problem{prob:logarithm:cricket_ducks}.
+  In this problem, you will continue to analyse the data in the file
+  \code{cricket.csv}, in particular the data in the ``Runs'' column.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:logarithm:cricket_run_table}
+    For the data table in \code{cricket.csv}, the integers in the
+    ``Runs'' column range from a minimum of $0$ up to a maximum of
+    $15,921$.  Create a table that has three columns and as many rows
+    as necessary.  Going from left to right, the first column should
+    have the header ``Runs'' and lists runs classes in increment of
+    $100$.  The first entry in the column should be the runs class of
+    $100$, the second entry should be the runs class of $200$, the
+    third entry should be the runs class of $300$, and so on up to and
+    including the runs class of $16,000$.  The middle column should
+    have the header ``Count''.  For each runs class $x$, the ``Count''
+    column should list the number $c$ of runs $r$ such that
+    $x - 100 < r \leq x$.  You may remove any row that has a count of
+    zero.  Finally, the third column should have the header
+    ``Obs prob'' and should list for each runs class $x$ the osbserved
+    probability of a runs score being in the class $x$.  The ``Runs''
+    column of the data table in \code{cricket.csv} has $N = 2910$
+    integers.  If $c$ is the number of runs that belong to the runs
+    class $x$, then the observed probability of the runs class $x$ is
+    defined as $c / N$.  For example, the runs class of $x = 600$ has
+    a count of $c = 82$ because there are $82$ integers in the
+    ``Runs'' column of the data table in \code{cricket.csv}, where
+    each of the $82$ integers are greater than $500$ and at most
+    $600$.  Thus the observed probability for the runs class of $600$
+    is approximately $0.028179$.
+
+  \item\label{subprob:logarithm:cricket_run_scatter_plots}
+    Using your table from \Part{subprob:logarithm:cricket_run_table},
+    produce two scatter plots of the runs class $x$ versus the
+    observed probability that a runs score belongs to the class $x$.
+    One plot should use linear scaling for both of the horizontal and
+    vertical axes.  The other plot should use logarithmic scaling for
+    both axes.  Explain what you notice about both graphs and which
+    function might be used to model the data in your table
+    from \Part{subprob:logarithm:cricket_run_table}.
+
+  \item\label{subprob:logarithm:cricket_run_power_regression}
+    Let $P(x)$ be the probability that a cricket player scored a total
+    of $x$ runs during all of the player's Test matches.  Suppose that
+    $P(x)$ can be written as a power function of the form
+    $P(x) = e^b x^a$, where the parameters $a$ and $b$ are to be
+    estimated from the data.  Use power regression on your table
+    from \Part{subprob:logarithm:cricket_run_table} to estimate the
+    parameters $a$ and $b$.  Graph your formula $P(x)$ together with a
+    scatter plot of the runs class $x$ versus the observed probability
+    of $x$.  Use logarithmic scaling for both axes.  Calculate the
+    coefficient of determination of $P(x)$.  Calculate the root mean
+    square error~(RMSE) of $P(x)$ and provide an interpretation of the
+    value of the RMSE.
+
+  \item\label{subprob:logarithm:cricket_run_power_law_xmin_1}
+    A better technique for modelling the probability of total runs in
+    all of a cricket player's Test matches is to use a
+    \emph{power law} distribution.  Let $Q(x)$ be the probability that
+    a cricket player scored a total of $x$ runs during all of the
+    player's Test matches.  If the probability follows a power law
+    distribution, then $Q(x)$ has the form
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:cricket_run_power_law_form}
+    Q(x)
+    =
+    e^b x^{-a}
+    \end{equation}
+    %%
+    with $a$ and $b$ being parameters that must estimated from data.
+    Since $Q(x)$ follows a power law distribution, then you can write
+    $Q(x)$ as the linear equation
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:cricket_run_power_law_linear}
+    \ln Q(x)
+    =
+    -a \ln x + b.
+    \end{equation}
+    %%
+    The parameter $a$ can be estimated as
+    %%
+    \begin{equation}
+    \label{eqn:logarithm:cricket_run_power_parameter_a}
+    a
+    =
+    1
+    +
+    \frac{
+      n
+    }{
+      \sum_{i=1}^n \ln \frac{x_i}{\xmin}
+    }
+    \end{equation}
+    %%
+    where $n = 2910$ is the number of rows in your table
+    from \Part{subprob:logarithm:cricket_run_table} and $x_i$ is the
+    runs class in row $i$ of the latter table.  The value of $\xmin$
+    cannot be zero and $x_i$ also cannot be zero.  The number $\xmin$
+    is the minimum number of total runs from which the power law
+    distribution takes effect.  Thus the value of $\xmin$ can be as
+    low as $1$ and as high as $15921$, which is the highest number of
+    total runs in Test matches.  Suppose that $\xmin = 1$.  Use your
+    table from \Part{subprob:logarithm:cricket_run_table} to estimate
+    the parameter $a$, then use the estimated value of $a$ to estimate
+    the parameter $b$.  Plot your power law distribution $Q(x)$
+    together with the graph
+    from \Part{subprob:logarithm:cricket_run_power_regression}.
+    Explain what you notice about the graph.
+
+  \item\label{subprob:logarithm:cricket_run_power_law_R_squared}
+    Let's calculate the coefficient of determination of your formula
+    from \Part{subprob:logarithm:cricket_run_power_law_xmin_1}.
+    Suppose $Q(x)$ is defined as in
+    \Equation{eqn:logarithm:cricket_run_power_law_form}, with $a$ and
+    $b$ being estimated from the data in the table
+    from \Part{subprob:logarithm:cricket_run_table}.  Let $x_i$ be a
+    runs class in your table
+    from \Part{subprob:logarithm:cricket_run_table} and let $y_i$ be
+    the observed probability of $x_i$.  The error of $Q(x)$ at the
+    point $\tuple{x_i}{y_i}$ is defined as the difference
+    $y_i - Q(x_i) = y_i - e^b x_i^{-a}$.  The sum of the squared
+    errors~(SSE) can be written as
+    \[
+    \text{SSE}
+    =
+    \sum_{i=1}^k (y_i - e^b x_i^{-a})^2
+    \]
+    where $k$ is the number of rows in your table
+    from \Part{subprob:logarithm:cricket_run_table}.  If $\ybar$ is
+    the mean of the $y_i$~(i.e.~the average of all the observed
+    probabilities), the total sum of squares~(TSS) is defined as
+    \[
+    \text{TSS}
+    =
+    \sum_{i=1}^k (y_i - \ybar)^2.
+    \]
+    Then the coefficient of determination of $Q(x)$ can be written as
+    \[
+    R^2
+    =
+    1 - \frac{\text{SSE}}{\text{TSS}}
+    =
+    1
+    -
+    \frac{
+      \sum_{i=1}^k (y_i - e^b x_i^{-a})^2
+    }{
+      \sum_{i=1}^k (y_i - \ybar)^2
+    }.
+    \]
+    Calculate the coefficient of determination and the root mean
+    square error of your formula
+    from \Part{subprob:logarithm:cricket_run_power_law_xmin_1}.
+
+  \item\label{subprob:logarithm:cricket_run_power_law_vary_xmin}
+    The root mean square error~(RMSE) of your formula
+    from \Part{subprob:logarithm:cricket_run_power_law_xmin_1} should
+    be higher than the RMSE value of the function $P(x)$
+    from \Part{subprob:logarithm:cricket_run_power_regression}.  This
+    suggests that a value of $\xmin = 1$ is not a good choice and you
+    must choose a different value for $\xmin$.  In general, you want a
+    value for $\xmin$ such that
+    \Equation{eqn:logarithm:cricket_run_power_law_form} has as high a
+    value for its $R^2$ as possible and as low a value for its RMSE as
+    possible.  Create a table that has six columns and as many rows as
+    necessary.  Going from left to right, the first column should have
+    the header ``$\xmin$'' and lists integer values of $\xmin$ from
+    $1$ up to and including $40$.  The second column should have the
+    header ``$a$'' and lists the estimated values of $a$ corresponding
+    to given values of $\xmin$.  The third column should have the
+    header ``$b$'' and lists the estimated values of $b$ corresponding
+    to given values of $\xmin$.  The fourth column should have the
+    header ``$A$'' and lists values of the factor $e^b$ in
+    \Equation{eqn:logarithm:cricket_run_power_law_form}.  The fifth
+    column should have the header ``$R^2$'' and lists the coefficients
+    of determination.  Finally, the sixth column should have the
+    header ``RMSE'' and lists values of the root mean square error.
+    For example, the first row should have $\xmin = 1$,
+    $a \approx 1.201042$, $b \approx 4.670675$,
+    $A \approx 106.769772$, $R^2 \approx 0.949798$, and
+    $\text{RMSE} \approx 0.010163$.  Use your table to produce two
+    graphs.  One graph is a scatter plot of the values of $\xmin$
+    versus values of $R^2$.  The other graph is a scatter plot of the
+    values of $\xmin$ versus values of the RMSE.  Explain what you
+    notice about the graphs.
+
+  \item\label{subprob:logarithm:cricket_run_power_law_best_xmin}
+    Use your table and graphs
+    from \Part{subprob:logarithm:cricket_run_power_law_vary_xmin} to
+    determine the value of $\xmin$ that result in a highest possible
+    value of $R^2$ and a lowest possible value of the RMSE.  Based on
+    the values of $R^2$ and the RMSE, explain which one of the
+    functions $P(x)$ and $Q(x)$ is better than the other at modelling
+    the observed probability of a total of $x$ runs in all of a
+    cricket player's Test matches.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:logarithm:cricket_run_scatter_plots}
+\Figure{fig:logarithm:cricket_run_linear_log_graphs} shows two scatter
+plots of the number of runs $x$ versus the observed probability of $x$
+runs.  With linear scaling for both axes~(see
+\Figure{subfig:logarithm:cricket_run_linear}), the dots seem to follow
+a steep exponential function.  When both axes use logarithmic
+scaling~(see \Figure{subfig:logarithm:cricket_run_log}), the dots seem
+to follow a straight line.  Based on the graph in
+\Figure{subfig:logarithm:cricket_run_log}, it seems that the dots can
+modelled as a power function.
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/cricket-run-linear.pdf}
+  \label{subfig:logarithm:cricket_run_linear}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.8]{image/12/cricket-run-log.pdf}
+  \label{subfig:logarithm:cricket_run_log}
+}
+\caption{%%
+  Graphs of the number of runs $x$ versus the observed probability of
+  $x$ runs.  (a)~A scatter plot that uses linear scaling for both of
+  the horizontal and vertical axes.  Note that each value on the
+  horizontal axis should be multiplied by $10^4$.  (b)~The same
+  scatter plot, but using logarithmic scaling for both axes.
+}
+\label{fig:logarithm:cricket_run_linear_log_graphs}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/12/cricket-run.pdf}
+\caption{%%
+  A log-log plot of the probability that a cricket player scored a
+  total of $x$ runs during all of the player's Test matches.  The
+  black dots show the data from the table
+  in \Part{subprob:logarithm:cricket_run_table}.  The blue curve is a
+  graph of \Equation{eqn:logarithm:cricket_run_power_regression}.  The
+  red curve is a graph of
+  \Equation{eqn:logarithm:cricket_run_power_law_xmin_1}.
+}
+\label{fig:logarithm:cricket_run}
+\end{figure}
+
+\solutionpart{subprob:logarithm:cricket_run_power_regression}
+Let $P(x)$ be the probability that a cricket player scored $x$ runs
+during all of the player's Test matches.  Suppose that $P(x)$ can be
+written as a power function of the form $P(x) = e^b x^a$, with $a$ and
+$b$ being parameters of the function.  Power regression shows that the
+parameters can be estimated as $a \approx -1.4832$ and
+$b \approx 5.9085$ and so you have the approximation
+$e^b \approx 368.1593$.  That is, $P(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:logarithm:cricket_run_power_regression}
+P(x)
+=
+368.1593 x^{-1.4832}
+\end{equation}
+%%
+which is graphed in \Figure{fig:logarithm:cricket_run}.  The function
+$P(x)$ has a coefficient of determination of $R^2 \approx 0.9186$ and
+a root mean square error~(RMSE) of approximately $0.003962$.  The
+value of the RMSE means that the probability as predicted by
+\Equation{eqn:logarithm:cricket_run_power_regression} is on average
+approximately $0.003962$ away from the observed probability.
+
+\solutionpart{subprob:logarithm:cricket_run_power_law_xmin_1}
+Assume that $\xmin = 1$.  Using the ``Runs'' column in the
+data table of \code{cricket.csv}, the parameter $a$ can be estimated
+as $a \approx 1.2010$.  Using the table
+from \Part{subprob:logarithm:cricket_run_table}, at the runs class of
+$100$ you have the observed probability of approximately $0.4230$.
+Thus you can assume that at $x = 100$ you have
+$Q(100) \approx 0.4230$.  Using
+\Equation{eqn:logarithm:cricket_run_power_law_linear}, you can write
+$\ln Q(100) = - a \ln 100 + b$ and solving for $b$ results in
+$b = \ln Q(100) + a \ln 100$.  Substitute in the estimated value of
+$a$ and obtain the approximation $b \approx 4.6707$.  In other words,
+assuming that $\xmin = 1$, the data in the table
+from \Part{subprob:logarithm:cricket_run_table} can be modelled as the
+power law distribution
+%%
+\begin{equation}
+\label{eqn:logarithm:cricket_run_power_law_xmin_1}
+Q(x)
+=
+106.7698 x^{-1.2010}.
+\end{equation}
+%%
+The function $Q(x)$ is graphed in \Figure{fig:logarithm:cricket_run}
+together with \Equation{eqn:logarithm:cricket_run_power_regression}.
+The graph shows that $Q(x)$ seems to be worse than $P(x)$ at modelling
+the probability of $x$ runs.
+
+\solutionpart{subprob:logarithm:cricket_run_power_law_R_squared}
+Equation~\eqref{eqn:logarithm:cricket_run_power_law_xmin_1} has a sum
+of squared errors of approximately $\text{SSE} \approx 0.009813$.
+Furthermore, the total sum of squares is approximately
+$\text{TSS} \approx 0.195471$.  Thus the coefficient of determination
+of \Equation{eqn:logarithm:cricket_run_power_law_xmin_1} is
+\[
+R^2
+=
+1 - \frac{\text{SSE}}{\text{TSS}}
+\approx
+0.949798.
+\]
+The model~\eqref{eqn:logarithm:cricket_run_power_law_xmin_1} has a
+root mean square error of approximately $0.010163$.
+
+\begin{table}[!htbp]
+\centering
+\input{table/12/cricket-run.tex}
+\caption{%%
+  The effect of the value of $\xmin$ on the estimated values of the
+  parameters $a$ and $b$ of the power law distribution $Q(x)$ defined
+  in \Equation{eqn:logarithm:cricket_run_power_law_form}.  The value
+  of $\xmin$ also affects the coefficient of determination and root
+  mean square error of $Q(x)$.  Note that most numbers have been
+  rounded to six decimal places in order to fit the table.
+}
+\label{tab:logarithm:cricket_run_vary_values_of_xmin}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=0.798]{image/12/cricket-run-rsquared.pdf}
+  \label{subfig:logarithm:cricket_run_coefficient_of_determination}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=0.798]{image/12/cricket-run-rmse.pdf}
+  \label{subfig:logarithm:cricket_run_root_mean_square_error}
+}
+\caption{%%
+  The effect of the value of $\xmin$ on the coefficient of
+  determination and the root mean square error of the power law
+  distribution $Q(x)$ as defined
+  in~\eqref{eqn:logarithm:cricket_run_power_law_form}.
+}
+\label{fig:logarithm:cricket_run_xmin_rsquared_rmse}
+\end{figure}
+
+\solutionpart{subprob:logarithm:cricket_run_power_law_vary_xmin}
+\Table{tab:logarithm:cricket_run_vary_values_of_xmin} shows how values
+of $\xmin$ affect the values of the parameters of the power law
+distribution $Q(x)$.
+\Figure{fig:logarithm:cricket_run_xmin_rsquared_rmse} shows how values
+of $\xmin$ affect the values of the coefficient of determination and
+the root mean square error~(RMSE) of $Q(x)$.  The graphs in
+\Figure{fig:logarithm:cricket_run_xmin_rsquared_rmse} show that there
+is a value of $\xmin$ somewhere between $20$ and $30$ such that $Q(x)$
+achieves its highest value of $R^2$ and its lowest value of RMSE.
+
+\solutionpart{subprob:logarithm:cricket_run_power_law_best_xmin}
+\Table{tab:logarithm:cricket_run_vary_values_of_xmin} shows that at
+$\xmin = 28$ the function $Q(x)$ has its high value of
+$R^2 \approx 0.994869$ and its low value of
+$\text{RMSE} \approx 0.003249$.  The $R^2$ value of $Q(x)$ is higher
+than the corresponding value for $P(x)$ and the RMSE of $Q(x)$ is
+lower than the corresponding value for $P(x)$.  Based on the values of
+$R^2$ and the RMSE, you may conclude that the power law distribution
+$Q(x)$ is better than the power regression function $P(x)$ at
+modelling the observed probability of a total of $x$ runs.
 \end{solution}
 }{}
 \end{problem}
