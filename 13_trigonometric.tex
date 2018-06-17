@@ -134,4 +134,80 @@ $f(x)$.  Draw a wave through the points and you obtain the graph in
 \Figure{fig:trigonometric:sine_3_sin_1}.
 \end{solution}
 
+\begin{exercise}
+Consider the function $f(x) = 4 \sin x + 2$.  Determine the midline
+and amplitude of $f(x)$.  Calculate the highest and lowest values of
+the function.  Draw a graph of $f(x)$ from $x = 0$ to $x = 2\pi$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The midline of $f(x)$ is the horizontal line $y = 2$.  The amplitude
+of $f(x)$ is $4$.  To obtain the highest value of $f(x)$, you add the
+amplitude $4$ to the value of the midline and get $2 + 4 = 6$.  To
+obtain the lowest value of $f(x)$, you subtract the amplitude $4$ from
+the value of the midline and get $2 - 4 = -2$.  That is, the highest
+and lowest values of $f(x)$ are $6$ and $-2$, respectively.
+
+To graph $f(x)$ from $x = 0$ to $x = 2\pi$, you should first determine
+those values of $x$ for which the graph of $f(x)$ intersects the
+midline.  This is the same as determining all values of $x$ such that
+$\sin x = 0$.  You know that $\sin 0 = \sin \pi = \sin 2\pi = 0$ so
+that when $x = \triple{0}{\pi}{2\pi}$ you have
+$f(0) = f(\pi) = f(2\pi) = 4 \times 0 + 2 = 2$.  Thus the graph of
+$f(x)$ intersects the midline at the points $\tuple{0}{2}$,
+$\tuple{\pi}{2}$, and $\tuple{2\pi}{2}$.
+
+Next, you determine the highest and lowest points of $f(x)$ within the
+range $0 \leq x \leq 2\pi$.  You know that the highest value of
+$\sin x$ is $1$, which occurs when $x = \frac{\pi}{2}$.  Substitute
+the latter value into $f(x)$ and you obtain
+%%
+\begin{align*}
+f(\pi/2)
+&=
+4 \sin \frac{\pi}{2} + 2 \\[4pt]
+&=
+4 \times 1 + 2 \\[4pt]
+&=
+6.
+\end{align*}
+%%
+The lowest value of $\sin x$ is $-1$, which occurs when
+$x = \frac{3\pi}{2}$.  Substitute the latter value into the function
+$f(x)$ and simplify to obtain
+%%
+\begin{align*}
+f(3\pi / 2)
+&=
+4 \sin \frac{3\pi}{2} + 2 \\[4pt]
+&=
+4 (-1) + 2 \\[4pt]
+&=
+-4 + 2 \\[4pt]
+&=
+-2.
+\end{align*}
+%%
+In other words, the highest point of $f(x)$ is
+$\tuple{\frac{\pi}{2}}{6}$ and the lowest point of $f(x)$ is
+$\tuple{\frac{3\pi}{2}}{-2}$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/4-sin-2.pdf}
+\caption{%%
+  A graph of the function $f(x) = 4 \sin x + 2$ from $x = 0$ to
+  $x = 2\pi$.
+}
+\label{fig:trigonometric:4_sinx_2}
+\end{figure}
+
+Finally, draw a wave through the above points and you obtain the graph
+shown in \Figure{fig:trigonometric:4_sinx_2}.  The black dots show the
+points at which the graph of $f(x)$ intersects the midline $y = 2$.
+The red dots show the highest and lowest points of $f(x)$.
+\end{solution}
+}{}
+
 \end{document}
