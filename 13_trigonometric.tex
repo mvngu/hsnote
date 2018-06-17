@@ -74,4 +74,64 @@ line $y = b$ on a graph of $f(x)$~(e.g.~the dashed horizontal line in
 \Figure{fig:trigonometric:general_sine}) you will see that $f(x) = b$
 whenever $a \sin x = 0$.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/3-sin-1.pdf}
+\caption{%%
+  A graph of the sine function $f(x) = 3 \sin x + 1$ from
+  $x = -2\pi$ to $x = 2\pi$.
+}
+\label{fig:trigonometric:sine_3_sin_1}
+\end{figure}
+
+\begin{example}
+Consider the sine function $f(x) = 3 \sin x + 1$.  Draw a graph of the
+function from $x = -2\pi$ to $x = 2\pi$.  Determine the midline and
+amplitude of $f(x)$.  Calculate the highest and lowest values of the
+function.
+\end{example}
+
+\begin{solution}
+The first thing you should do is work out the midline and amplitude of
+the function $f(x)$.  The midline of the function is $y = 1$.  The
+amplitude is $3$, which means that the highest value of $f(x)$ is
+$1 + 3 = 4$ and the lowest value of $f(x)$ is $1 - 3 = -2$.
+\Figure{fig:trigonometric:sine_3_sin_1} shows the midline
+$y = 1$ as a dashed horizontal line.
+
+Next, consider the values of $\sin x$ for
+$x = \quintuple{0}{\frac{\pi}{2}}{\pi}{\frac{3\pi}{2}}{2\pi}$.  At
+$x = \triple{0}{\pi}{2\pi}$, you have
+$\sin 0 = \sin \pi = \sin 2\pi = 0$ and so
+$f(0) = f(\pi) = f(2\pi) = 3 \times 0 + 1 = 1$.  That is, the points
+$\tuple{0}{1}$, $\tuple{\pi}{1}$, and $\tuple{2\pi}{1}$ lie on the
+midline $y = 1$ and are shown in
+\Figure{fig:trigonometric:sine_3_sin_1} as black dots.  At
+$x = \frac{\pi}{2}$, you have $\sin \frac{\pi}{2} = 1$ and so
+$f(\pi/2) = 3 \times 1 + 1 = 4$, which is the highest value of
+$f(x)$.  At $x = \frac{3\pi}{2}$, you have
+$\sin \frac{3\pi}{2} = -1$ so that
+$f(3\pi / 2) = 3 \times (-1) + 1 = -2$, which is the lowest value of
+$f(x)$.  That is, the point $\tuple{\frac{\pi}{2}}{4}$ is the peak~(or
+highest value) of $f(x)$ and the point
+$\tuple{\frac{3\pi}{2}}{-2}$ is the valley~(or lowest point) of
+$f(x)$.  \Figure{fig:trigonometric:sine_3_sin_1} shows the highest and
+lowest points as red dots.
+
+Finally, note that the graph of $f(x)$ from $x = -2\pi$ to
+$x = 0$ is a copy of the graph of $f(x)$ from $x = 0$ to $x = 2\pi$.
+That is, the angle of $-\pi$ randians is the same as
+$2\pi - \pi = \pi$ radians.  Furthermore, $-2\pi$ radians is the same
+as $2\pi - 2\pi = 0$ radians.  In other words, the points
+$\tuple{-2\pi}{1}$ and $\tuple{-\pi}{1}$ lie on the midline
+$y = 1$.  You know that $-\frac{3\pi}{2}$ radians is the same as
+$2\pi - \frac{3\pi}{2} = \frac{\pi}{2}$ radians, which means that
+$\tuple{-\frac{3\pi}{2}}{4}$ is also the highest point of $f(x)$.  You
+also know that $-\frac{\pi}{2}$ radians is the same as
+$2\pi - \frac{\pi}{2} = \frac{3\pi}{2}$ radians and consequently the
+point $\tuple{-\frac{\pi}{2}}{-2}$ is also the lowest point of
+$f(x)$.  Draw a wave through the points and you obtain the graph in
+\Figure{fig:trigonometric:sine_3_sin_1}.
+\end{solution}
+
 \end{document}
