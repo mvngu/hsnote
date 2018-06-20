@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{minus4-cos-3}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=2,mark=*},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:2*pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style={right},%%
+  xtick={%%
+    0,1.570796,3.141592,4.712388,6.283185%%
+  },%%
+  xticklabels={%%
+    0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$%%
+  },%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $y$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The general sine function f(x) = -4 cos(x) + 3.
+\addplot+ [plotStyle]
+{-4 * cos(deg(x)) + 3};
+%%
+%%
+%% Horizontal line through the number b, which is the midline.
+\draw[thin,dashed] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},3) -- (axis cs:\pgfkeysvalueof{/pgfplots/xmax},3);
+%%
+%%
+%% Special points of the function.
+\addplot[dotStyle,black,mark color=black] coordinates {
+  (pi/2,3)
+  (3*pi/2,3)
+};
+\addplot[dotStyle,red,mark color=red] coordinates {
+  (0,-1)
+  (pi,7)
+  (2*pi,-1)
+};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

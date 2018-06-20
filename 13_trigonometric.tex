@@ -438,4 +438,60 @@ graph in \Figure{fig:trigonometric:3half_cos_minus1}.
 \end{solution}
 }{}
 
+\begin{exercise}
+Consider the function $f(x) = -4 \cos x + 3$.  Determine the midline
+and amplitude of $f(x)$.  Calculate the highest and lowest values of
+the function.  Draw a graph of $f(x)$ from $x = 0$ to $x = 2\pi$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The midline of the function $f(x)$ is $y = 3$, which is shown in
+\Figure{fig:trigonometric:minus4_cos_3} as a dashed horizontal line.
+The amplitude of the function is the absolute value
+$\absoluteValue{-4} = 4$.  The highest value of $f(x)$ is obtained by
+adding the amplitude to the value of the midline.  Thus the highest
+value of $f(x)$ is $3 + 4 = 7$.  The lowest value of $f(x)$ is
+obtained by subtracting the amplitude from the value of the midline.
+That is, the lowest value of $f(x)$ is $3 - 4 = -1$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/minus4-cos-3.pdf}
+\caption{%%
+  A graph of the function $f(x) = -4 \cos x + 3$ from $x = 0$ to
+  $x = 2\pi$.
+}
+\label{fig:trigonometric:minus4_cos_3}
+\end{figure}
+
+To draw a graph of $f(x)$ from $x = 0$ to $x = 2\pi$, you should first
+determine all points at which the graph of $f(x)$ intersects the
+midline.  This occurs for all values of $x$ such that $\cos x = 0$
+because if $\cos x = 0$ then the function $f(x)$ simplifies to
+$f(x) = 3$, which is the value of the midline.  You know that
+$\cos x = 0$ whenever $x = \pair{\frac{\pi}{2}}{\frac{3\pi}{2}}$.
+Then you have $f(\pi/2) = f(3\pi/2) = -4 \times 0 + 3 = 3$ and so the
+graph of $f(x)$ intersects the midline at the points
+$\tuple{\frac{\pi}{2}}{3}$ and $\tuple{\frac{3\pi}{2}}{3}$.  The
+points of intersection are shown in
+\Figure{fig:trigonometric:minus4_cos_3} as black dots.
+
+Next, you should determine the highest and lowest points of $f(x)$.
+Note that the highest value of $\cos x$ is $1$, which occurs whenever
+$x = \pair{0}{2\pi}$.  Then you have
+$f(0) = f(2\pi) = -4 \times 1 + 3 = -1$, which is the lowest value of
+$f(x)$.  Thus the lowest points of $f(x)$ are $\tuple{0}{-1}$ and
+$\tuple{2\pi}{-1}$.  Furthermore, the lowest value of $\cos x$ is
+$-1$, which occurs whenever $x = \pi$.  Then you have
+$f(\pi) = -4 (-1) + 3 = 7$, which is the highest value of $f(x)$.  In
+other words, the highest point of $f(x)$ is $\tuple{\pi}{7}$.  The
+highest and lowest points of $f(x)$ are shown in
+\Figure{fig:trigonometric:minus4_cos_3} as red dots.
+
+Finally, draw a wave through the above five points and you obtain the
+graph shown in \Figure{fig:trigonometric:minus4_cos_3}.
+\end{solution}
+}{}
+
 \end{document}
