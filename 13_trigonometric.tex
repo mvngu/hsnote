@@ -362,4 +362,80 @@ Finally, draw a wave through the five points above to obtain the graph
 shown in \Figure{fig:trigonometric:2_cos_1}.
 \end{solution}
 
+\begin{exercise}
+Consider the function $f(x) = \frac{3}{2} \cos x - 1$.  Determine the
+midline and amplitude of the function.  Calculate the highest and
+lowest values of $f(x)$.  Sketch a graph of $f(x)$ from $x = 0$ to
+$x = 2\pi$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The function $f(x)$ has a midline of $y = -1$ and an amplitude of
+$3/2$.  \Figure{fig:trigonometric:3half_cos_minus1} shows the midline
+as a dashed horizontal line.  The highest value of $f(x)$ is obtained
+by adding the amplitude to the value of the midline.  That is, the
+highest value of $f(x)$ is
+%%
+\begin{align*}
+-1 + \frac{3}{2}
+&=
+\frac{-2}{2} + \frac{3}{2} \\[4pt]
+&=
+\frac{-2 + 3}{2} \\[4pt]
+&=
+\frac{1}{2}.
+\end{align*}
+%%
+The lowest value of $f(x)$ is obtained by subtracting the amplitude
+from the value of the midline.  In other words, the lowest value of
+$f(x)$ is
+%%
+\begin{align*}
+-1 - \frac{3}{2}
+&=
+\frac{-2}{2} - \frac{3}{2} \\[4pt]
+&=
+\frac{-2 - 3}{2} \\[4pt]
+&=
+-\frac{5}{2}.
+\end{align*}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/3half-cos-minus1.pdf}
+\caption{%%
+  A graph of the function $f(x) = \frac{3}{2} \cos x - 1$ from $x = 0$
+  to $x = 2\pi$.
+}
+\label{fig:trigonometric:3half_cos_minus1}
+\end{figure}
+
+To sketch a graph of $f(x)$ from $x = 0$ to $x = 2\pi$, first you
+should determine all points at which the graph of $f(x)$ intersects
+the midline.  This is the same as determining all values of $x$ such
+that $\cos x = 0$.  You know that $\cos x = 0$ whenever
+$x = \pair{\frac{\pi}{2}}{\frac{3\pi}{2}}$ and so you have
+$f(\pi/2) = f(3\pi/2) = \frac{3}{2} \times 0 - 1 = -1$.  Thus the
+graph of $f(x)$ intersects the midline at the points
+$\tuple{\frac{\pi}{2}}{-1}$ and $\tuple{\frac{3\pi}{2}}{-1}$.  The
+points of intersection are shown in
+\Figure{fig:trigonometric:3half_cos_minus1} as black dots.
+
+Next, you determine the highest and lowest points of $f(x)$.  The
+highest value of $\cos x$ is $1$, which occurs whenever
+$x = \pair{0}{2\pi}$.  Then you have
+$f(0) = f(2\pi) = \frac{3}{2} \times 1 - 1 = \frac{1}{2}$.  The lowest
+value of $\cos x$ is $-1$, which occurs whenever $x = \pi$.  Then you
+have $f(\pi) = \frac{3}{2} (-1) - 1 = -\frac{5}{2}$.  In other words,
+the highest points of $f(x)$ are $\tuple{0}{\frac{1}{2}}$ and
+$\tuple{2\pi}{\frac{1}{2}}$.  The lowest point of $f(x)$ is
+$\tuple{\pi}{-\frac{5}{2}}$.  The highest and lowest points are shown
+in \Figure{fig:trigonometric:3half_cos_minus1} as red dots.
+
+Finally, draw a wave through the above five points and you obtain the
+graph in \Figure{fig:trigonometric:3half_cos_minus1}.
+\end{solution}
+}{}
+
 \end{document}
