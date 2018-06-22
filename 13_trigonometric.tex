@@ -609,4 +609,62 @@ function $f(x) = \frac{1}{2} \cos x + \frac{5}{2}$.
 \end{solution}
 }{}
 
+\begin{exercise}
+A cosine function $f(x) = a \cos x + b$ has $\tuple{0}{\frac{11}{2}}$
+and $\tuple{\pi}{\frac{1}{2}}$ as some of its highest and lowest
+points, respectively.  Determine the amplitude and midline of $f(x)$.
+Sketch a graph of $f(x)$ from $x = 0$ to $x = 2\pi$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The highest and lowest values of $f(x)$ are $\frac{11}{2}$ and
+$\frac{1}{2}$, respectively.  The value of the midline of $f(x)$ is
+the average of the highest and lowest values of $f(x)$.  Thus the
+midline of $f(x)$ is
+%%
+\begin{align*}
+y
+&=
+\frac{1}{2} \parenthesis*{\frac{11}{2} + \frac{1}{2}} \\[4pt]
+&=
+\frac{1}{2} \parenthesis*{\frac{11 + 1}{2}} \\[4pt]
+&=
+\frac{1}{2} \times 6 \\[4pt]
+&=
+3.
+\end{align*}
+%%
+The amplitude of $f(x)$ is the difference between the highest value of
+$f(x)$ and the value of the midline.  The amplitude can also be
+calculated as the difference between the value of the midline and the
+lowest value of $f(x)$.  That is, the amplitude of $f(x)$ is
+%%
+\begin{align*}
+\frac{11}{2} - 3
+&=
+\frac{11}{2} - \frac{6}{2} \\[4pt]
+&=
+\frac{11 - 6}{2} \\[4pt]
+&=
+\frac{5}{2}.
+\end{align*}
+%%
+Then the function $f(x)$ can be written as
+$f(x) = \frac{5}{2} \cos x + 3$, which is graphed in
+\Figure{fig:trigonometric:5half_cos_3}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/5half-cos-3.pdf}
+\caption{%%
+  A graph of the function $f(x) = \frac{5}{2} \cos x + 3$ from $x = 0$
+  to $x = 2\pi$.
+}
+\label{fig:trigonometric:5half_cos_3}
+\end{figure}
+
+\end{solution}
+}{}
+
 \end{document}
