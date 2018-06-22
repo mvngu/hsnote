@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cos-vertical-stretch}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:2*pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style={right},%%
+  xtick={%%
+    0,1.570796,3.141592,4.712388,6.283185%%
+  },%%
+  xticklabels={%%
+    0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$%%
+  },%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $y$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The cosine function f(x) = a cos(x).
+\addplot+ [plotStyle,black]
+{cos(deg(x))};
+\node[fill=white] at (pi,-1) {$a = 1$};
+%%
+%%
+\addplot+ [plotStyle,blue]
+{(3/2) * cos(deg(x))};
+\node[fill=white] at (pi,-1.5) {$a = \frac{3}{2}$};
+%%
+%%
+\addplot+ [plotStyle,red]
+{2 * cos(deg(x))};
+\node[fill=white] at (pi,-2) {$a = 2$};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
