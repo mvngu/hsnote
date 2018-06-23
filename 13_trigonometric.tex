@@ -1034,4 +1034,21 @@ $\frac{3\pi}{2}$ units of time to complete one cycle.
 \end{solution}
 }{}
 
+\begin{exercise}
+Let $c > 0$ be a fixed real number and consider the functions
+$f(x) = \sin(cx)$ and $g(x) = \cos(-cx)$.  Prove that $f(x)$ and
+$g(x)$ have the same period.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The period of $f(x)$ is $2\pi / \absoluteValue{c}$, which simplifies
+to $2\pi / c$ because $c$ is assumed to be positive.  The period of
+$g(x)$ is $2\pi / \absoluteValue{-c}$.  Since $c$ is positive, then
+$-c$ is negative and you have $\absoluteValue{-c} = c$.  Thus the
+period of $g(x)$ is $2\pi / \absoluteValue{-c} = 2\pi / c$, which is
+the same as the period of $f(x)$.
+\end{solution}
+}{}
+
 \end{document}
