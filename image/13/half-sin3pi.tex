@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{half-sin3pi}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=0.7},%%
+  scale=0.7%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\large}%%
+}
+
+\begin{axis}[%%
+  axis line style=very thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:3*pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\large $x$},%%
+  xlabel style=right,%%
+  xtick={0,3.141592,6.283185,9.424778},%%
+  xticklabels={0,$\pi$,$2\pi$,$3\pi$},%%
+  %%
+  %% y-axis
+  ylabel={\large $y$},%%
+  ylabel style=above,%%
+  ytick={-0.5,0.5},%%
+  yticklabels={$-\frac{1}{2}$,$\frac{1}{2}$}%%
+]
+%%
+%%
+%% The sine function f(x) = 1/2 sin(2/3 x).
+\addplot+ [plotStyle]
+{0.5 * sin(deg((2/3) * x))};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
