@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{3quarter-cos-5pi}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=0.7},%%
+  scale=0.7%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\Large}%%
+}
+
+\begin{axis}[%%
+  axis line style=very thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:5*pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\Large $x$},%%
+  xlabel style=right,%%
+  xtick={3.141592,9.424778,15.707963},%%
+  xticklabels={$\pi$,$3\pi$,$5\pi$},%%
+  %%
+  %% y-axis
+  ylabel={\Large $y$},%%
+  ylabel style=above,%%
+  ytick={-0.75,0.75},%%
+  yticklabels={$-\frac{3}{4}$,$\frac{3}{4}$}%%
+]
+%%
+%%
+%% The cosine function f(x) = 3/4 sin(2/5 x).
+\addplot+ [plotStyle]
+{0.75 * cos(deg((2/5) * x))};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
