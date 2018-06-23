@@ -6,7 +6,7 @@
 \usepackage{mathptmx}
 \usepackage{pgfplots}
 \usetikzlibrary{external}
-\tikzexternalize{half-sin3pi}
+\tikzexternalize{half-sin-3pi}
 \pgfplotsset{compat=1.16}
 
 %% IEEE uses Times Roman font, so we'll default to Times.
@@ -23,7 +23,7 @@
   scale=0.7%%
 }
 \pgfplotsset{%%
-  every axis/.append style={font=\large}%%
+  every axis/.append style={font=\Large}%%
 }
 
 \begin{axis}[%%
@@ -40,13 +40,13 @@
   width=12cm,%%
   %%
   %% x-axis
-  xlabel={\large $x$},%%
+  xlabel={\Large $x$},%%
   xlabel style=right,%%
   xtick={0,3.141592,6.283185,9.424778},%%
   xticklabels={0,$\pi$,$2\pi$,$3\pi$},%%
   %%
   %% y-axis
-  ylabel={\large $y$},%%
+  ylabel={\Large $y$},%%
   ylabel style=above,%%
   ytick={-0.5,0.5},%%
   yticklabels={$-\frac{1}{2}$,$\frac{1}{2}$}%%
