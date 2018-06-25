@@ -1223,12 +1223,68 @@ a \cos(cx) + b
 \]
 each of which has a period of $p = 2 \pi / \absoluteValue{c}$.  The
 \emph{frequency} of $f(x)$ and $g(x)$ is the number
+%%
+\begin{equation}
+\label{eqn:trigonometric:frequency_sin_cos}
+\frac{1}{p}
+=
+\frac{\absoluteValue{c}}{2\pi}.
+\end{equation}
+\end{definition}
+
+\begin{example}
+Let $c$ be a real constant and consider the function
+$f(x) = \cos(cx)$.  Suppose that the graph of $f(x)$ completes one
+cycle in $0.25$ seconds.
+%%
+\begin{packedenum}
+\item\label{subeg:trigonometric:cos_1_cycle_0.25_seconds_period}
+  Determine the period and frequency of $f(x)$.
+
+\item\label{subeg:trigonometric:cos_1_cycle_0.25_seconds_c_factor}
+  Calculate the possible values for $c$.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:trigonometric:cos_1_cycle_0.25_seconds_period}
+The period of $f(x)$ is the amount of time required for the graph of
+$f(x)$ to complete one cycle.  Since it is assumed that the graph of
+$f(x)$ completes one cycle in $0.25 = 1/4$ seconds, then $f(x)$ has a
+period of $p = 1/4$ seconds.  The frequency of $f(x)$ is
+%%
+\begin{align*}
+\frac{1}{p}
+&=
+1 \div \frac{1}{4} \\[4pt]
+&=
+1 \times \frac{4}{1} \\[4pt]
+&=
+4
+\end{align*}
+%%
+cycles per second or $4$~Hz.
+
+\solutionpart{subeg:trigonometric:cos_1_cycle_0.25_seconds_c_factor}
+Let $p$ be the period of $f(x)$ so that the frequency of $f(x)$ is
+$1 / p$.  From \Equation{eqn:trigonometric:frequency_sin_cos}, you
+know that the frequency of $f(x)$ is related to the value
+$\absoluteValue{c}$ as follows:
 \[
 \frac{1}{p}
 =
 \frac{\absoluteValue{c}}{2\pi}.
 \]
-\end{definition}
+From \Part{subeg:trigonometric:cos_1_cycle_0.25_seconds_period} you
+know that $f(x)$ has a frequency of $4$~Hz, which can be used to
+simplify the latter equation to $4 = \frac{\absoluteValue{c}}{2\pi}$.
+Solve the last equation for $\absoluteValue{c}$ to get
+$\absoluteValue{c} = 4 \times 2\pi = 8\pi$.  If $c = 8\pi$ then you
+would get $\absoluteValue{c} = \absoluteValue{8\pi} = 8\pi$.
+Furthermore, if $c = -8\pi$ then you would have
+$\absoluteValue{c} = \absoluteValue{-8\pi} = 8\pi$.  Therefore the
+possible values for $c$ are $c = \pm 8\pi$.
+\end{solution}
 
 
 \newpage
