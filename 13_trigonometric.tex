@@ -1329,6 +1329,44 @@ $1/p = \frac{1}{4\pi}$.
 \end{solution}
 }{}
 
+\begin{exercise}
+A trigonometric function $f(x)$ has an amplitude of $3$, a midline of
+$y = 4$, and a period of $\frac{4\pi}{3}$.  Determine two possible
+formulae for $f(x)$.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+You are given an amplitude of $\absoluteValue{a} = 3$ and the midline
+value $b = 4$.  If $c$ is a real constant, then $f(x)$ is possibly a
+sine function that can be written as $f(x) = \pm 3 \sin(cx) + 4$ or a
+cosine function of the form $f(x) = \pm 3 \cos(cx) + 4$.  The
+remaining problem is to determine a value for $c$.
+
+The period is related to the value of $c$ via the equation
+$\frac{2\pi}{\absoluteValue{c}} = \frac{4\pi}{3}$.  Multiply both
+sides by $\absoluteValue{c}$ and simplify to get
+$2\pi = \frac{4\pi}{3} \absoluteValue{c}$.  To solve for
+$\absoluteValue{c}$, first multiply both sides by $3$, then divide
+both sides by $4\pi$, and finally simplify to obtain
+%%
+\begin{align*}
+\absoluteValue{c}
+&=
+\frac{3}{4\pi} \times 2\pi \\[4pt]
+&=
+\frac{3 \times 2\pi}{4\pi} \\[4pt]
+&=
+\frac{3}{2}.
+\end{align*}
+%%
+The possible values for $c$ are $c = \pm \frac{3}{2}$.  If you assume
+that $c > 0$, then you have $c = \frac{3}{2}$ so that $f(x)$ is
+possibly the sine function $f(x) = \pm 3 \sin(\frac{3}{2}x) + 4$ or
+the cosine function $f(x) = \pm 3 \cos(\frac{3}{2}x) + 4$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
