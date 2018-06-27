@@ -1473,6 +1473,55 @@ $f(x)$ can be written in terms of the cosine function as
 $h(x) = \cos(x - \frac{\pi}{2})$.  Therefore you might conclude that
 $\sin x = \cos(x - \frac{\pi}{2})$.
 
+\begin{exercise}
+You will verify that the equation $\sin x = \cos(x - \frac{\pi}{2})$
+is true, especially for certain special values of $x$.
+%%
+\begin{packedenum}
+\item\label{subex:trigonometric:cos_right_shift_0}
+  If $x = 0$, calculate the exact values of $\sin x$ and
+  $\cos(x - \frac{\pi}{2})$.
+
+\item\label{subex:trigonometric:cos_right_shift_pi_half}
+  If $x = \frac{\pi}{2}$, calculate the exact values of $\sin x$ and
+  $\cos(x - \frac{\pi}{2})$.
+
+\item\label{subex:trigonometric:cos_right_shift_pi}
+  If $x = \pi$, calculate the exact values of $\sin x$ and
+  $\cos(x - \frac{\pi}{2})$.
+
+\item\label{subex:trigonometric:cos_right_shift_3pi_half}
+  If $x = \frac{3\pi}{2}$, calculate the exact values of $\sin x$ and
+  $\cos(x - \frac{\pi}{2})$.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:trigonometric:cos_right_shift_0}
+If $x = 0$, then $\sin 0 = 0$.  Note that
+$0 - \frac{\pi}{2} = -\frac{\pi}{2}$ radians is equivalent to
+$\frac{3\pi}{2}$ radians.  Then
+$\cos(0 - \frac{\pi}{2}) = \cos \frac{3\pi}{2} = 0$.
+
+\solutionpart{subex:trigonometric:cos_right_shift_pi_half}
+If $x = \frac{\pi}{2}$, then $\sin \frac{\pi}{2} = 1$.  Note that you
+have $\frac{\pi}{2} - \frac{\pi}{2} = 0$.  Then you have
+$\cos(\frac{\pi}{2} - \frac{\pi}{2}) = \cos 0 = 1$.
+
+\solutionpart{subex:trigonometric:cos_right_shift_pi}
+If $x = \pi$, then $\sin \pi = 0$.  Note that
+$\pi - \frac{\pi}{2} = \frac{\pi}{2}$, which can be used to write
+$\cos(\pi - \frac{\pi}{2}) = \cos \frac{\pi}{2} = 0$.
+
+\solutionpart{subex:trigonometric:cos_right_shift_3pi_half}
+If $x = \frac{3\pi}{2}$, then $\sin \frac{3\pi}{2} = -1$.  Note that
+you have $\frac{3\pi}{2} - \frac{\pi}{2} = \pi$.  Use the latter
+result to write
+$\cos(\frac{3\pi}{2} - \frac{\pi}{2}) = \cos \pi = -1$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
