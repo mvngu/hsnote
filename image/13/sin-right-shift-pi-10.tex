@@ -58,13 +58,13 @@
 %% The sine function f(x).
 \addplot+ [plotStyle,black]
 {(3/2) * sin(deg(2*x)) + 0.5};
-\node[fill=white,left] at (0.785398,2) {$g(x)$};
+\node[fill=white,inner sep=1pt,left] at (0.785398,2) {$g(x)$};
 %%
 %%
 %% The function f(x) but shifted horizontally.
 \addplot+ [plotStyle,blue]
 {(3/2) * sin(deg(2*x - (pi/5))) + 0.5};
-\node[fill=white,right] at (1.099557,2) {$f(x)$};
+\node[fill=white,inner sep=1pt,right] at (1.099557,2) {$f(x)$};
 \end{axis}
 \end{tikzpicture}
 

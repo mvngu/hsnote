@@ -41,7 +41,7 @@
   %%
   %% x-axis
   xlabel={\normalsize $x$},%%
-  xlabel style={right},%%
+  xlabel style=right,%%
   xtick={%%
     0,1.570796,3.141592,4.712388,6.283185%%
   },%%
@@ -58,17 +58,17 @@
 %% The cosine function f(x) = a cos(x).
 \addplot+ [plotStyle,black]
 {cos(deg(x))};
-\node[fill=white] at (pi,-1) {$a = 1$};
+\node[fill=white,inner sep=1pt] at (pi,-1) {$a = 1$};
 %%
 %%
 \addplot+ [plotStyle,blue]
 {(3/2) * cos(deg(x))};
-\node[fill=white] at (pi,-1.5) {$a = \frac{3}{2}$};
+\node[fill=white,inner sep=1pt] at (pi,-1.5) {$a = \frac{3}{2}$};
 %%
 %%
 \addplot+ [plotStyle,red]
 {2 * cos(deg(x))};
-\node[fill=white] at (pi,-2) {$a = 2$};
+\node[fill=white,inner sep=1pt] at (pi,-2) {$a = 2$};
 \end{axis}
 \end{tikzpicture}
 

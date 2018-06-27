@@ -41,7 +41,7 @@
   %%
   %% x-axis
   xlabel={\normalsize $x$},%%
-  xlabel style={right},%%
+  xlabel style=right,%%
   xtick={%%
     0,1.570796,3.141592,4.712388,6.283185%%
   },%%
@@ -58,27 +58,27 @@
 %% Vertical shift of the cosine function f(x) = cos(x).
 \addplot+ [plotStyle,black]
 {cos(deg(x))};
-\node[fill=white] at (pi,-1) {$\cos x$};
+\node[fill=white,inner sep=1pt] at (pi,-1) {$\cos x$};
 %%
 %%
 \addplot+ [plotStyle,blue]
 {cos(deg(x)) + 1};
-\node[fill=white] at (3*pi/2,1) {$\cos x + 1$};
+\node[fill=white,inner sep=1pt] at (3*pi/2,1) {$\cos x + 1$};
 %%
 %%
 \addplot+ [plotStyle,blue]
 {cos(deg(x)) + 2};
-\node[fill=white] at (3*pi/2,2) {$\cos x + 2$};
+\node[fill=white,inner sep=1pt] at (3*pi/2,2) {$\cos x + 2$};
 %%
 %%
 \addplot+ [plotStyle,red]
 {cos(deg(x)) - 1};
-\node[fill=white] at (pi,-2) {$\cos x - 1$};
+\node[fill=white,inner sep=1pt] at (pi,-2) {$\cos x - 1$};
 %%
 %%
 \addplot+ [plotStyle,red]
 {cos(deg(x)) - 2};
-\node[fill=white] at (pi,-3) {$\cos x - 2$};
+\node[fill=white,inner sep=1pt] at (pi,-3) {$\cos x - 2$};
 \end{axis}
 \end{tikzpicture}
 

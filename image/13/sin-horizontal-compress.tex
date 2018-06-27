@@ -41,7 +41,7 @@
   %%
   %% x-axis
   xlabel={\normalsize $x$},%%
-  xlabel style={right},%%
+  xlabel style=right,%%
   xtick={%%
     0,1.570796,3.141592,4.712388,6.283185%%
   },%%
@@ -58,17 +58,17 @@
 %% The sine function f(x) = sin(cx).
 \addplot+ [plotStyle,black]
 {sin(deg(x))};
-\node[fill=white,right] at (pi/2,1) {$c = 1$};
+\node[fill=white,inner sep=1pt,right] at (pi/2,1) {$c = 1$};
 %%
 %%
 \addplot+ [plotStyle,blue]
 {sin(deg(2*x))};
-\node[fill=white,right] at (5/4*pi,1) {$c = 2$};
+\node[fill=white,inner sep=1pt,right] at (5/4*pi,1) {$c = 2$};
 %%
 %%
 \addplot+ [plotStyle,red]
 {sin(deg((3/2)*x))};
-\node[fill=white] at (7/4*pi,1) {$c = \frac{3}{2}$};
+\node[fill=white,inner sep=1pt] at (7/4*pi,1) {$c = \frac{3}{2}$};
 \end{axis}
 \end{tikzpicture}
 

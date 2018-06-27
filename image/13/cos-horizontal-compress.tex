@@ -41,14 +41,12 @@
   %%
   %% x-axis
   xlabel={\normalsize $x$},%%
-  xlabel style={right},%%
+  xlabel style=right,%%
   xtick={%%
-    0,1.570796,3.141592,4.712388,6.283185,%%
-    7.853982,9.424778,10.995574,12.566371%%
+    0,1.570796,3.141592,4.712388,6.283185%%
   },%%
   xticklabels={%%
-    0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$,%%
-    $\frac{5\pi}{2}$,$3\pi$,$\frac{7\pi}{2}$,$4\pi$%%
+    0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$%%
   },%%
   %%
   %% y-axis
@@ -60,17 +58,17 @@
 %% The cosine function f(x) = cos(cx).
 \addplot+ [plotStyle,black]
 {cos(deg(x))};
-\node[fill=white,right] at (7/4*pi,1) {$c = 1$};
+\node[fill=white,inner sep=1pt,right] at (7/4*pi,1) {$c = 1$};
 %%
 %%
 \addplot+ [plotStyle,blue]
 {cos(deg((4/3)*x))};
-\node[fill=white] at (3*pi/2,1) {$c = \frac{4}{3}$};
+\node[fill=white,inner sep=1pt,left] at (3*pi/2,1) {$c = \frac{4}{3}$};
 %%
 %%
 \addplot+ [plotStyle,red]
 {cos(deg(2*x))};
-\node[fill=white] at (pi,1) {$c = 2$};
+\node[fill=white,inner sep=1pt,right] at (pi,1) {$c = 2$};
 \end{axis}
 \end{tikzpicture}
 

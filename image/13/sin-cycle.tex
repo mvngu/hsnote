@@ -60,19 +60,19 @@
 %% The sine function f(x) = a sin(x) + b.
 \addplot+ [plotStyle,black]
 {sin(deg(x))};
-\node[fill=white] at (pi/2,1) {$c = 1$};
+\node[fill=white,inner sep=1pt] at (pi/2,1) {$c = 1$};
 %%
 %%
 %% The sine function f(x) = a sin(2x) + b.
 \addplot+ [plotStyle,blue]
 {sin(deg(2*x))};
-\node[fill=white,left] at (pi/4,1) {$c = 2$};
+\node[fill=white,inner sep=1pt,left] at (pi/4,1) {$c = 2$};
 %%
 %%
 %% The sine function f(x) = a sin(0.5x) + b.
 \addplot+ [plotStyle,red]
 {sin(deg(0.5*x))};
-\node[fill=white] at (pi,1) {$c = \frac{1}{2}$};
+\node[fill=white,inner sep=1pt] at (pi,1) {$c = \frac{1}{2}$};
 \end{axis}
 \end{tikzpicture}
 
