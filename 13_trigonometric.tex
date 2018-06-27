@@ -1557,6 +1557,71 @@ $F(x) = a \sin(cx) + b$ and $G(x) = a \cos(cx) + b$, respectively,
 that have been shifted horizontally by $h$ units.
 \end{definition}
 
+\begin{example}
+Consider the function
+$f(x) = \frac{3}{2} \sin(2x - \frac{\pi}{5}) + \frac{1}{2}$.
+%%
+\begin{packedenum}
+\item\label{subeg:trigonometric:sin_horizontal_shift_standard_form}
+  Write the function $f(x)$ in the form
+  $f(x) = a \sin\bigparen{c (x - h)} + b$.
+
+\item\label{subeg:trigonometric:sin_horizontal_shift_describe}
+  Describe the graph of the function $f(x)$.
+
+\item\label{subeg:trigonometric:sin_horizontal_shift_graph_unshifted}
+  Let $g(x) = a \sin(cx) + b$ be the function $f(x)$ that has not been
+  shifted horizontally.  On the same set of axes, graph $f(x)$ and
+  $g(x)$ from $x = 0$ to $x = \pi$.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:trigonometric:sin_horizontal_shift_standard_form}
+To write the function $f(x)$ in the form
+$f(x) = a \sin\bigparen{c (x - h)} + b$, you must factorise the $2$ in
+the expression $2x - \frac{\pi}{5}$.  Then you have the factorisation
+\[
+2x - \frac{\pi}{5}
+=
+2
+\parenthesis*{x - \frac{\pi}{10}}
+\]
+which can be used to write $f(x)$ as
+%%
+\begin{align*}
+f(x)
+&=
+\frac{3}{2} \sinp{2x - \frac{\pi}{5}} + \frac{1}{2} \\[4pt]
+&=
+\frac{3}{2} \sinp{2 \parenthesis*{x - \frac{\pi}{10}}} + \frac{1}{2}.
+\end{align*}
+%%
+Here, you have $h = \frac{\pi}{10}$.
+
+\solutionpart{subeg:trigonometric:sin_horizontal_shift_describe}
+Let $g(x) = \frac{3}{2} \sin(2x) + \frac{1}{2}$.  The graph of the
+function $f(x)$ is obtained by shifting the graph of $g(x)$ along the
+horizontal axis.  The amount of horizontal shift is $\frac{\pi}{10}$
+units to the right.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/sin-right-shift-pi-10.pdf}
+\caption{%%
+  Graphs of the sine functions
+  $f(x) = \frac{3}{2} \sin(2x - \frac{\pi}{5}) + \frac{1}{2}$ and
+  $g(x) = \frac{3}{2} \sin(2x) + \frac{1}{2}$.  The graph of $f(x)$ is
+  obtained by shifting the graph of $g(x)$ along the horizontal axis
+  by $\pi/10$ units to the right.
+}
+\label{fig:trigonometric:sin_right_shift_pi_10}
+\end{figure}
+
+\solutionpart{subeg:trigonometric:sin_horizontal_shift_graph_unshifted}
+See \Figure{fig:trigonometric:sin_right_shift_pi_10}.
+\end{solution}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

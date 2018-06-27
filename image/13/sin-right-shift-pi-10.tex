@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{sin-right-shift-pi-10}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style=right,%%
+  xtick={%%
+    0,0.785398,1.570796,2.356194,3.141592%%
+  },%%
+  xticklabels={%%
+    0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$%%
+  },%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $y$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The sine function f(x).
+\addplot+ [plotStyle,black]
+{(3/2) * sin(deg(2*x)) + 0.5};
+\node[fill=white,left] at (0.785398,2) {$g(x)$};
+%%
+%%
+%% The function f(x) but shifted horizontally.
+\addplot+ [plotStyle,blue]
+{(3/2) * sin(deg(2*x - (pi/5))) + 0.5};
+\node[fill=white,right] at (1.099557,2) {$f(x)$};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
