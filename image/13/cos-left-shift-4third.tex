@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cos-left-shift-4third}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:4*pi,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $x$},%%
+  xlabel style=right,%%
+  xtick={%%
+    0,3.141593,6.283185,9.424778,12.566371%%
+  },%%
+  xticklabels={%%
+    0,$\pi$,$2\pi$,$3\pi$,$4\pi$%%
+  },%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $y$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The cosine function f(x).
+\addplot+ [plotStyle,black]
+{cos(deg(0.5*x)) + (3/4)};
+\node[fill=white,inner sep=1pt] at (1.5708,1.5) {$g(x)$};
+%%
+%%
+%% The function f(x) but shifted horizontally.
+\addplot+ [plotStyle,blue]
+{cos(deg(0.5*x + (2/3))) + (3/4)};
+\node[fill=white,inner sep=1pt] at (1.5708,1) {$f(x)$};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
