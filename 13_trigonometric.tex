@@ -1775,6 +1775,91 @@ $g(x)$ be can be written as the expression
 $f(x)$ and $g(x)$.
 \end{solution}
 
+\begin{exercise}
+Consider the function
+$f(x) = \frac{3}{5} \sin(3x + \frac{2\pi}{3}) + \frac{1}{4}$.
+%%
+\begin{packedenum}
+\item\label{subex:trigonometric:sin_left_shift_2pi_9_standard_form}
+  Write $f(x)$ in the form $f(x) = a \sin\bigparen{c (x - h)} + b$.
+
+\item\label{subex:trigonometric:sin_left_shift_2pi_9_describe}
+  Describe the graph of the function $f(x)$.
+
+\item\label{subex:trigonometric:sin_left_shift_2pi_9_graph}
+  Let $g(x) = a \sin(cx) + b$ be the function $f(x)$ that has not been
+  shifted horizontally.  On the same set of axes, graph $f(x)$ and
+  $g(x)$ from $x = 0$ to $x = p$, where $p$ is the period of both
+  $f(x)$ and $g(x)$.
+
+\item\label{subex:trigonometric:sin_left_shift_2pi_9_frequency}
+  Calculate the frequency of both $f(x)$ and $g(x)$.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:trigonometric:sin_left_shift_2pi_9_standard_form}
+To write $f(x)$ in the form $f(x) = a \sin\bigparen{c (x - h)} + b$,
+you must factorise the $3$ in the expression $3x + \frac{2\pi}{3}$.
+Doing so yields the factorisation
+\[
+3x + \frac{2\pi}{3}
+=
+3 \parenthesis*{x + \frac{2\pi}{9}}
+\]
+which can be used to write $f(x)$ as
+%%
+\begin{align*}
+f(x)
+&=
+\frac{3}{5} \sinp{3x + \frac{2\pi}{3}} + \frac{1}{4} \\[4pt]
+&=
+\frac{3}{5} \sinp{3 \parenthesis*{x + \frac{2\pi}{9}}} + \frac{1}{4}.
+\end{align*}
+%%
+From the latter expression you have $h = -\frac{2\pi}{9}$.
+
+\solutionpart{subex:trigonometric:sin_left_shift_2pi_9_describe}
+Let $g(x) = \frac{3}{5} \sin(3x) + \frac{1}{4}$.  The graph of $f(x)$
+is obtained by shifting the graph of $g(x)$ along the horizontal
+axis.  The amount of horizontal shift is $\frac{2\pi}{9}$ units to the
+left.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/sin-left-shift-2pi-9.pdf}
+\caption{%%
+  Graphs of the sine functions
+  $f(x) = \frac{3}{5} \sin(3x + \frac{2\pi}{3}) + \frac{1}{4}$ and
+  $g(x) = \frac{3}{5} \sin(3x) + \frac{1}{4}$ from $x = 0$ to
+  $x = \frac{2\pi}{3}$.
+}
+\label{fig:trigonometric:sin_left_shift_2pi_9}
+\end{figure}
+
+\solutionpart{subex:trigonometric:sin_left_shift_2pi_9_graph}
+Your $c$ value is $c = 3$.  The period of both $f(x)$ and $g(x)$ is
+$p = 2\pi / 3$.  \Figure{fig:trigonometric:sin_left_shift_2pi_9} shows
+graphs of $f(x)$ and $g(x)$ from $x = 0$ to $x = \frac{2\pi}{3}$.
+
+\solutionpart{subex:trigonometric:sin_left_shift_2pi_9_frequency}
+The frequency of both $f(x)$ and $g(x)$ can be calculated as
+%%
+\begin{align*}
+\frac{1}{p}
+&=
+\frac{1}{2\pi/3} \\[4pt]
+&=
+1 \times \frac{3}{2\pi} \\[4pt]
+&=
+\frac{3}{2\pi}.
+\end{align*}
+%%
+Thus $f(x)$ and $g(x)$ both have a frequency of $\frac{3}{2\pi}$.
+\end{solution}
+}{}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
