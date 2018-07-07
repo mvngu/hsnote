@@ -1389,6 +1389,57 @@ $p = \frac{4\pi}{3}$, then $f(x)$ has a frequency of
 \end{solution}
 }{}
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/blinking-light.pdf}
+\caption{%%
+  A graph of a function that models the behaviour of a blinking light
+  bulb.
+}
+\label{fig:trigonometric:blinking_light}
+\end{figure}
+
+\begin{example}
+\textbf{Blinking light.}
+A light bulb is switched on and alternates between on and off.  Thus
+the light bulb goes on, off, on, off, on, off, etc.  The light bulb is
+on for a brief moment, then goes off for one second, and is on again.
+The cycle repeats for as long as electricity is connected to the light
+bulb.  Use a trigonometric function to model the blinking light bulb.
+Produce a graph of your function from zero up to $\pi$ seconds.
+\end{example}
+
+\begin{solution}
+Suppose that $1$~(one) means that the light bulb is on and $0$~(zero)
+means that the light bulb is off.  The behaviour of the blinking light
+bulb can be described as a sequence of $1$ and $0$:
+\[
+\seqi{\pair{1}{0}}{\pair{1}{0}}{\pair{1}{0}}
+\]
+The sequence can be modelled as a function of the form
+$f(x) = a \cos(cx) + b$.  The highest and lowest values of $f(x)$ are
+$1$ and $0$, respectively.  The average of these two extreme values is
+the value of the midline.  That is, the value of $b$ is
+\[
+b
+=
+\frac{1 + 0}{2}
+=
+\frac{1}{2}.
+\]
+The amplitude is the difference between the highest value and the
+value of the midline, hence
+$a = 1 - \frac{1}{2} = \frac{1}{2}$.  The time between two consecutive
+on is one second so the period is one second.  Using the definition of
+the period, you have
+$\frac{2\pi}{\absoluteValue{c}} = 1$.  Solve the latter equation for
+$\absoluteValue{c}$ to get $\absoluteValue{c} = 2\pi$.  Assuming that
+$c$ is positive, then you have $c = 2\pi$.  Conclude that the blinking
+light bulb can be modelled as the function
+$f(x) = \frac{1}{2} \cos(2\pi x) + \frac{1}{2}$, which is graphed in
+\Figure{fig:trigonometric:blinking_light}.
+\end{solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
