@@ -64,5 +64,6 @@ clean:
 	rm -rfv table/09/*~
 	rm -rfv table/11/*~
 	rm -rfv table/12/*~
+	rm -rfv table/13/*~
 
 .PHONY: all clean latex pdf-plot plot solution
