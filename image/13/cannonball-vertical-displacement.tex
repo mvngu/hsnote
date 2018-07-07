@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cannonball-vertical-displacement}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=0.8%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\Large}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:3.5,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\Large time~(seconds)},%%
+  %%
+  %% y-axis
+  ylabel={\Large vertical distance~(metres)},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% The vertical displacement.
+\addplot+ [plotStyle]
+{50 - 4.9*x^2};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

@@ -1875,6 +1875,339 @@ Thus $f(x)$ and $g(x)$ both have a frequency of $\frac{3}{2\pi}$.
     \url{https://www.jstor.org/stable/20876798}.
   }
 
+\item\emph{Projectile motion.}
+  You have learnt that when an object is launched upward and allowed
+  to travel freely along the vertical direction, the motion of the
+  object is an example of free fall.  Now consider the case of an
+  object that moves in both the horizontal and vertical directions.
+  Examples include a car that runs off a cliff\footnote{
+    See the video at
+    \url{https://youtu.be/XKwrMzcnxmg}.
+  }
+  or a bomb that is dropped from an aeroplane.\footnote{
+    See the video at
+    \url{https://youtu.be/IhY9LBNVroo}.
+  }
+  The object will travel horizontally and at the same time it is being
+  pulled towards the centre of the Earth by the force of gravity.  The
+  path that the object traces out is parabolic and the movement of the
+  object is an example of \emph{projectile motion}.  As an example,
+  suppose that a cannon is placed at the top of a cliff.  Let $h > 0$
+  be the vertical distance~(in metres) from the top of the cliff to
+  ground level.  The cannon fires a cannonball along the horizontal
+  direction at a velocity of $v_x$ metres per second.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:cannon_cliff_horizontal_displacement}
+    Let $t \geq 0$ be the amount of time in seconds since the
+    cannonball was fired.  After $t$ seconds, the cannonball would
+    have covered a horizontal distance of $v_xt$ metres.  Suppose that
+    the cannonball was fired along the horizontal direction at a
+    velocity of $v_x = 10$~metres per second.  If $X(t)$ represents
+    the amount of horizontal distance that the cannonball covered
+    after $t$ seconds, write an equation for $X(t)$.  Graph your
+    function $X(t)$ from $t = 0$ to $t = 3$.  How long must you wait
+    for the cannonball to have covered a horizontal distance of $25$
+    metres?
+
+  \item\label{subprob:trigonometric:cannon_cliff_vertical_displacement}
+    The cannonball is propelled only along the horizontal direction.
+    As the cannonball travels along the horizontal direction, it is
+    acted upon by the force of gravity, which is the constant of
+    $g = 9.8$~metres per second squared.  Recall that when an object
+    travels vertically under free fall, the vertical distance $Y(t)$
+    in metres between the object and ground level after $t$ seconds
+    can be approximated as the quadratic function
+    $Y(t) = -\frac{1}{2} gt^2 + v_yt + h$, where air drag has been
+    ignored.  Here, $v_y$ is the initial velocity with which the
+    object is launched along the vertical direction and $h$ is the
+    initial height in metres between the object and ground level.
+    Since the cannonball is propelled only along the horizontal
+    direction, the vertical velocity is $v_y = 0$.  Thus you can
+    simplify $Y(t)$ as
+    %%
+    \begin{equation}
+    \label{eqn:trigonometric:cannon_cliff_vertical_displacement}
+    Y(t)
+    =
+    h - \frac{1}{2}gt^2.
+    \end{equation}
+    %%
+    In other words, at any time $t \geq 0$ after the cannonball has
+    been fired the function $X(t)$ describes the horizontal
+    distance~(metres) from the cannonball to the tip of the cannon.
+    Furthermore, the function $Y(t)$ describes the vertical
+    distance~(metres) from the cannonball to ground level.  Suppose
+    that the distance from the top of the cliff to ground level is
+    $50$~metres.  Produce a graph of
+    \Equation{eqn:trigonometric:cannon_cliff_vertical_displacement}
+    from time $t = 0$ to $t = 3.5$~seconds.  At $t = 2$ seconds after
+    the cannonball has been fired, how far in metres is the cannonball
+    to ground level?  How much time is required for the cannonball to
+    be at a vertical distance of $25$~metres from ground level?
+
+  \item\label{subprob:trigonometric:cannon_cliff_time_to_ground}
+    Let the value of $h$ be as
+    in \Part{subprob:trigonometric:cannon_cliff_vertical_displacement}
+    and let $Y(t)$ be defined by
+    \Equation{eqn:trigonometric:cannon_cliff_vertical_displacement}.
+    Produce a table that has three columns and as many rows as
+    necessary.  Going from left to right, the first column has the
+    header $t$ and lists the time from $t = 0$ to $t = 3.5$ seconds
+    with an increment of $0.1$ seconds.  The second column lists
+    values of $X(t)$.  Finally, the third column lists values of
+    $Y(t)$.  Graph values of $X(t)$ versus values of $Y(t)$, where
+    values of $X(t)$ are on the horizontal axis and values of $Y(t)$
+    are on the vertical axis.  Describe your graph.  After being
+    fired, calculate the amount of time~(in seconds) required for the
+    cannonball to land on the ground.  When the cannonball lands on
+    the ground, determine the horizontal distance from the cannonball
+    to the tip of the cannon.
+
+  \item\label{subprob:trigonometric:cannon_cliff_intersection}
+    On the same set of axes, graph the functions $X(t)$ and $Y(t)$
+    from $t = 0$ to $t = \sqrt{50 / 4.9}$.  Use your graph to explain
+    why, after the cannonball is fired, there is a positive value of
+    $t$ such that $X(t) = Y(t)$.  Explain what the latter equality
+    means.  Calculate a positive value of $t$ such that
+    $X(t) = Y(t)$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:trigonometric:cannon_cliff_horizontal_displacement}
+Let $X(t)$ be the horizontal distance in metres that the cannonball
+covers $t$ seconds after it is being fired.  Then you have the
+expression $X(t) = v_x t$, where $v_x$ is the velocity with which the
+cannonball was fired.  Since you have assumed that $v_x = 10$ metres
+per second, then $X(t)$ can be written as
+%%
+\begin{equation}
+\label{eqn:trigonometric:horizontal_distance_to_cannon}
+X(t)
+=
+10t.
+\end{equation}
+%%
+\Figure{fig:trigonometric:cannon_cliff_horizontal_displacement} shows
+a graph of $X(t)$ from $t = 0$ to $t = 3$.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/13/cannonball-horizontal-displacement.pdf}
+\caption{%%
+  The horizontal distance~(metres) that a cannonball covers $t$
+  seconds after being fired.
+}
+\label{fig:trigonometric:cannon_cliff_horizontal_displacement}
+\end{figure}
+
+Suppose that the cannonball has covered a horizontal distance of
+$25$~metres and you want to calculate the amount of time required to
+cover the given distance.  You can write the problem as the equation
+$X(t) = 25$ or equivalently as $10t = 25$.  Solving for $t$ shows that
+you have $t = 25 / 10 = 2.5$.  That is, you must wait $2.5$ seconds in
+order for the cannonball to travel a horizontal distance of $25$
+metres.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1]{image/13/cannonball-vertical-displacement.pdf}
+\caption{%%
+  The distance $Y(t)$ from the cannonball to ground level at $t$
+  seconds after the cannonball has been fired.
+}
+\label{fig:trigonometric:cannon_cliff_vertical_displacement}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:cannon_cliff_vertical_displacement}
+You have $g = 9.8$~metres per second squared and $h = 50$~metres.
+Then \Equation{eqn:trigonometric:cannon_cliff_vertical_displacement}
+can be simplified to
+%%
+\begin{equation}
+\label{eqn:trigonometric:cannon_vertical_distance_h_50}
+\begin{aligned}
+Y(t)
+&=
+50 - \frac{9.8}{2} t^2 \\[4pt]
+&=
+50 - 4.9 t^2.
+\end{aligned}
+\end{equation}
+%%
+The latter expression is graphed in
+\Figure{fig:trigonometric:cannon_cliff_vertical_displacement} from
+$t = 0$ to $t = 3.5$.  When $t = 2$, you have
+%%
+\begin{align*}
+Y(2)
+&=
+50 - 4.9 \cdot 2^2 \\[4pt]
+&=
+30.4.
+\end{align*}
+%%
+In other words, at $t = 2$~seconds after being fired the cannonball
+would be at a distance of $30.4$~metres to ground level.
+
+Now suppose that the cannonball is at a distance of $25$~metres to
+ground level.  To calculate the amount of time required, substitute
+the expression $Y(t) = 25$ into
+\Equation{eqn:trigonometric:cannon_vertical_distance_h_50} to obtain
+the expression $50 - 4.9t^2 = 25$, which can also be written as
+$4.9t^2 = 50 - 25$.  The last equation can be simplified to
+$4.9t^2 = 25$.  Divide both sides by $4.9$ and then solve for $t$ to
+obtain $t = \pm\sqrt{25 / 4.9}$.  Since $-\sqrt{25 / 4.9}$ is
+negative, you may ignore this solution.  Conclude that at
+approximately $t = \sqrt{25 / 4.9} \approx 2.26$~seconds after being
+fired, the cannonball would be at a distance of $25$~metres to ground
+level.
+
+\begin{table}[!htbp]
+\centering
+\input{table/13/cannon.tex}
+\caption{%%
+  The path of the cannonball after it is fired from the cannon.
+  Values of $X(t)$ give the horizontal distances~(metres) from the
+  cannonball to the tip of the cannon at $t$ seconds after being
+  fired.  Similarly, values of $Y(t)$ represent the vertical
+  distances~(metres) from the cannonball to ground level at $t$
+  seconds after being fired.  Some values in the right-most column
+  have been rounded to three decimal places.
+}
+\label{tab:trigonometric:cannon_cliff_path}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/cannonball-trajectory.pdf}
+\caption{%%
+  The path of the cannonball after it is fired from the cannon.  The
+  horizontal axis represents the horizontal distance between the
+  cannonball and the cannon.  The vertical axis represents the
+  vertical distance from the cannonball to ground level.  All
+  distances are measured in metres.
+}
+\label{fig:trigonometric:cannon_cliff_trajectory}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:cannon_cliff_time_to_ground}
+\Table{tab:trigonometric:cannon_cliff_path} shows values of $X(t)$ and
+$Y(t)$ from $t = 0$ to $t = 3.5$ at an increment of $0.1$ seconds.
+\Figure{fig:trigonometric:cannon_cliff_trajectory} shows a scatter
+plot of values of $X(t)$ versus values of $Y(t)$.  The horizontal axis
+represents the horizontal distance $X(t)$ from the cannonball to the
+tip of the cannon, while the vertical axis represents the vertical
+distance $Y(t)$ from the cannonball to ground level.  Values of
+$t \geq 0$ represent time in seconds since the cannonball was fired.
+Since the cannon is at a vertical distance of $50$~metres from ground
+level, the point $\tuple{0}{50}$ represents where the tip of the
+cannon is located.  The horizontal axis represents the ground level
+and the vertical axis represents the cliff.
+
+Let's determine the amount of time required for the fired cannonball
+to reach ground level.  You have the expression $Y(t) = 0$, which asks
+for all values of $t$ such that the equation is true.  Substitute the
+latter expression into
+\Equation{eqn:trigonometric:cannon_vertical_distance_h_50} to obtain
+$50 - 4.9 t^2 = 0$ or equivalently the expression $4.9t^2 = 50$.
+Divide both sides by $4.9$ and solving for $t$ shows that you have
+$t = \pm\sqrt{50 / 4.9}$.  Since $-\sqrt{50 / 4.9}$ is negative, you
+may ignore this solution.  Therefore at approximately
+$t = \sqrt{50 / 4.9} \approx 3.19$~seconds after being fired, the
+cannonball would land on the ground.
+
+Finally, let's calculate the horizontal distance from the cannonball
+to the tip of the cannon when the cannonball reaches ground level.
+The function $X(t)$ models the horizontal distance from the cannonball
+to the tip of the cannon at $t$ seconds after being fired.  Since the
+cannonball requires $\sqrt{50 / 4.9}$ seconds to reach ground level,
+then you have $X(\sqrt{50 / 4.9}) \approx 31.94$.  That is, when the
+cannonball lands on the ground, the cannonball would be at a
+horizontal distance of approximately $31.94$~metres from the tip of
+the cannon.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/cannonball-intersection.pdf}
+\caption{%%
+  The intersection of the functions $X(t)$ and $Y(t)$ as defined by
+  \Equations{eqn:trigonometric:horizontal_distance_to_cannon}{eqn:trigonometric:cannon_vertical_distance_h_50},
+  respectively.
+}
+\label{fig:trigonometric:cannonball_intersection}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:cannon_cliff_intersection}
+\Figure{fig:trigonometric:cannonball_intersection} shows the graphs of
+\Equations{eqn:trigonometric:horizontal_distance_to_cannon}{eqn:trigonometric:cannon_vertical_distance_h_50}
+on the same set of axes.  The figure clearly shows that the graphs of
+the functions $X(t)$ and $Y(t)$ intersect each other at a positive
+value of $t$.  The horizontal coordinate of the point of intersection
+is bounded by the inequality $2 \leq t \leq 2.5$.  At the given
+positive value of $t$, whatever it may be, you have the equality
+$X(t) = Y(t)$.  The latter equality means that at $t$ seconds after
+the cannonball is fired the horizontal distance $X(t)$ from the
+cannonball to the tip of the cannon is the same as the vertical
+distance $Y(t)$ from the cannonball to ground level.
+
+Let's determine a positive value of $t$ such that $X(t) = Y(t)$.  Note
+that the latter equality can be written as
+$10t = 50 - 4.9t^2$ and moving everything to the left-hand side
+results in the equation
+\[
+4.9t^2 + 10t - 50
+=
+0.
+\]
+The latter equation asks for the roots of the quadratic function
+$f(t) = 4.9t^2 + 10t - 50$.  You have the discriminant
+$\Delta = 10^2 - 4(4.9)(-50) = 1080$.  Using the quadratic formula,
+the roots of $f(t)$ are
+%%
+\begin{align*}
+t
+&=
+\frac{
+  -10 \pm \sqrt{\Delta}
+}{
+  2(4.9)
+} \\[4pt]
+&=
+\frac{
+  -10 \pm \sqrt{1080}
+}{
+  9.8
+}.
+\end{align*}
+%%
+Note that
+\[
+t
+=
+\frac{
+  -10 - \sqrt{1080}
+}{
+  9.8
+}
+\]
+is a negative number, whereas
+\[
+t
+=
+\frac{
+  -10 + \sqrt{1080}
+}{
+  9.8
+}
+\approx
+2.332995.
+\]
+In other words, at approximately $t \approx 2.33$ seconds after the
+cannonball is fired you have $X(t) = Y(t)$.
+\end{solution}
+}{}
+
 \item Equations of parabolic motion for projectiles.  See
   pages~99--107 of the book:  N.~J.~Giordano.
   \emph{College Physics: Reasoning and Relationships}.

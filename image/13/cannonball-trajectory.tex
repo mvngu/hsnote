@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cannonball-trajectory}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=1.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $X(t)$},%%
+  xlabel style=right,%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $Y(t)$},%%
+  ylabel style=above%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (0, 50.000)
+  (1, 49.951)
+  (2, 49.804)
+  (3, 49.559)
+  (4, 49.216)
+  (5, 48.775)
+  (6, 48.236)
+  (7, 47.599)
+  (8, 46.864)
+  (9, 46.031)
+  (10, 45.100)
+  (11, 44.071)
+  (12, 42.944)
+  (13, 41.719)
+  (14, 40.396)
+  (15, 38.975)
+  (16, 37.456)
+  (17, 35.839)
+  (18, 34.124)
+  (19, 32.311)
+  (20, 30.400)
+  (21, 28.391)
+  (22, 26.284)
+  (23, 24.079)
+  (24, 21.776)
+  (25, 19.375)
+  (26, 16.876)
+  (27, 14.279)
+  (28, 11.584)
+  (29, 8.791)
+  (30, 5.900)
+  (31, 2.911)
+  (32, -0.176)
+  (33, -3.361)
+  (34, -6.644)
+  (35, -10.025)
+};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cannonball-horizontal-displacement}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=0.8%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\Large}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:3,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\Large time~(seconds)},%%
+  xtick={0,1,2,3},%%
+  xticklabels={$0$,$1$,$2$,$3$},%%
+  %%
+  %% y-axis
+  ylabel={\Large horizontal distance~(metres)},%%
+  ylabel style=above,%%
+  ytick={0,10,20,30},%%
+  yticklabels={$0$,$10$,$20$,$30$}%%
+]
+%%
+%%
+%% The horizontal displacement.
+\addplot+ [plotStyle]
+{10*x};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

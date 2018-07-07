@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{cannonball-intersection}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=very thick,%%
+  dotStyle/.style={only marks,mark size=1.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  legend cell align=left,%%
+  legend pos=north east,%%
+  plotStyle/.style={%%
+    domain=0:sqrt(50/4.9),%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize time~(seconds)},%%
+  %%
+  %% y-axis
+  ylabel={\normalsize distance~(metres)},%%
+]
+%%
+%%
+%% The horizontal distance X(t).
+\addplot+ [plotStyle,black]
+{10*x};
+\addlegendentry{$X(t)$}
+%%
+%%
+%% The vertical distance Y(t).
+\addplot+ [plotStyle,blue]
+{50 - 4.9*x^2};
+\addlegendentry{$Y(t)$}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
