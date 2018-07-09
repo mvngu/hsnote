@@ -854,6 +854,7 @@ direction the graph of the cosine function.
 \end{figure}
 
 \begin{example}
+\label{eg:trigonometric:mean_maximum_temperature}
 \textbf{Mean maximum temperature.}
 \Table{tab:trigonometric:mean_maximum_temperature} shows the mean
 maximum temperature~($\degreec{}$) of each month for
@@ -1909,6 +1910,204 @@ $g(x)$ can be written as
 %%
 \Figure{fig:trigonometric:cos_right_shift_5pi_3} shows graphs of
 $f(x)$ and $g(x)$ from $x = 0$ to $x = \frac{4\pi}{3}$.
+\end{solution}
+}{}
+
+\begin{table}[!htbp]
+\centering
+\input{table/13/mean-min-temperature.tex}
+\caption{%%
+  The mean minimum temperature~($\degreec{}$) of each month for the
+  city of Melbourne, Victoria, Australia.  The mean was calculated
+  using temperature data for the years from $1855$ to $2015$.  The
+  mean temperatures are provided by the Bureau of Meteorology of
+  Australia.
+}
+\label{tab:trigonometry:mean_min_temperature}
+\end{table}
+
+\begin{exercise}
+\textbf{Mean minimum temperature.}
+\Table{tab:trigonometry:mean_min_temperature} shows the mean minimum
+temperature~($\degreec{}$) for Melbourne for each month of the
+year.\footnote{
+  The data are available at
+  \url{http://web.archive.org/web/20180709173611/http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml},
+  accessed 2018-07-09.
+}
+%%
+\begin{packedenum}
+\item\label{subex:trigonometric:mean_min_temperature_graph}
+  As in \Part{subeg:trigonometric:mean_max_temperature_graph} of
+  \Example{eg:trigonometric:mean_maximum_temperature}, associate each
+  month of the year with a value from $0$ to $2\pi$.  Produce a
+  scatter plot of the data in
+  \Table{tab:trigonometry:mean_min_temperature}, where the horizontal
+  axis represents a time of the year and the vertical axis represents
+  the mean minimum temperature~($\degreec{}$).  Explain what you
+  notice about the graph.
+
+\item\label{subex:trigonometric:mean_min_temperature_cos}
+  Suppose that the data in
+  \Table{tab:trigonometry:mean_min_temperature} can be modelled as a
+  cosine function of the form $f(x) = a \cos(cx) + b$, where $x$
+  represents a time of the year and $f(x)$ represents the mean minimum
+  temperature~($\degreec{}$) at $x$.  As in
+  \Example{eg:trigonometric:mean_maximum_temperature}, use the data to
+  estimate the values of $\triple{a}{b}{c}$.  You may assume that the
+  period of $f(x)$ is $2\pi$ and $c > 0$.  Graph $f(x)$ together with
+  the scatter plot
+  from \Part{subex:trigonometric:mean_min_temperature_graph}.
+  Calculate the root mean square error~(RMSE) and coefficient of
+  determination $R^2$ of $f(x)$.
+
+\item\label{subex:trigonometric:mean_min_temperature_cos_right_shift}
+  Notice in \Table{tab:trigonometry:mean_min_temperature} that the
+  temperature starts with $14.3$, followed by the highest value of
+  $14.6$.  This suggests that the data can be modelled as a cosine
+  function that has been right-shifted.  Suppose that the data in
+  \Table{tab:trigonometry:mean_min_temperature} can be modelled as a
+  function of the form $g(x) = a \cos\bigparen{c(x - h)} + b$.  Use
+  the data in \Table{tab:trigonometry:mean_min_temperature} to
+  estimate the values of $\quadruple{a}{b}{c}{h}$.  You may assume
+  that the period of $g(x)$ is $2\pi$ and that $c > 0$.  Graph $g(x)$
+  together with the graph
+  from \Part{subex:trigonometric:mean_min_temperature_cos}.  Calculate
+  the RMSE and $R^2$ of $g(x)$.  Use the values of the RMSE and $R^2$
+  to help you decide which one of the functions $f(x)$ and $g(x)$ is
+  better than the other at modelling the data in
+  \Table{tab:trigonometry:mean_min_temperature}.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:trigonometric:mean_min_temperature_graph}
+\Figure{fig:trigonometric:mean_min_temperature} shows a scatter plot
+of the data in \Table{tab:trigonometry:mean_min_temperature}.  The
+graph shows that the black dots seem to follow the graph of a cosine
+function that has been shifted to the right.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/mean-min-temperature.pdf}
+\caption{%%
+  The mean minimum temperature~($\degreec{}$) for Melbourne.  Each
+  tick on the horizontal axis represents a month of the year.  So $0$
+  corresponds to January, $\frac{\pi}{6}$ corresponds to February, and
+  so on.  The black dots show the data in
+  \Table{tab:trigonometry:mean_min_temperature}.  The blue curve is a
+  graph of \Equation{eqn:trigonometric:mean_min_temperature_cos}.  The
+  red curve is a graph of
+  \Equation{eqn:trigonometric:mean_min_temperature_cos_right_shift}.
+}
+\label{fig:trigonometric:mean_min_temperature}
+\end{figure}
+
+\solutionpart{subex:trigonometric:mean_min_temperature_cos}
+Suppose that the data in \Table{tab:trigonometry:mean_min_temperature}
+can be modelled as a function of the form $f(x) = a \cos(cx) + b$.
+The value $b$ of the midline is the mean of the minimum and maximum
+values in \Table{tab:trigonometry:mean_min_temperature}.  The minimum
+and maximum values are $6$ and $14.6$, respectively, hence the value
+of the midline is
+\[
+b
+=
+\frac{6 + 14.6}{2}
+=
+10.3.
+\]
+The amplitude $a$ is the absolute value of the difference between the
+maximum value and the value of the midline.  Thus you have
+\[
+a
+=
+\absoluteValue{14.6 - 10.3}
+=
+\absoluteValue{4.3}
+=
+4.3.
+\]
+Since the period of $f(x)$ is assumed to be $2\pi$, then the period
+can be written as $\frac{2\pi}{\absoluteValue{c}} = 2\pi$.  Multiply
+both sides by $\absoluteValue{c}$ to get
+$2\pi = 2\pi\absoluteValue{c}$.  Solving the latter equation for
+$\absoluteValue{c}$ shows that $\absoluteValue{c} = 1$.  As you have
+assumed that $c > 0$, it follows that $c = 1$.  Thus the function
+$f(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:trigonometric:mean_min_temperature_cos}
+f(x)
+=
+4.3 \cos x + 10.3
+\end{equation}
+%%
+and graphed in \Figure{fig:trigonometric:mean_min_temperature}.  The
+function $f(x)$ has a root mean square error of
+$\text{RMSE} \approx 0.631172$.  The sum of squared errors is
+$\text{SSE} \approx 4.780541$ and the total sum of squares is
+$\text{TSS} = 102.57$.  Then the coefficient of determination of
+$f(x)$ is
+%%
+\begin{align*}
+R^2
+&=
+1 - \frac{\text{SSE}}{\text{TSS}} \\[4pt]
+&\approx
+0.953392.
+\end{align*}
+
+\solutionpart{subex:trigonometric:mean_min_temperature_cos_right_shift}
+Suppose that the data in \Table{tab:trigonometry:mean_min_temperature}
+can be modelled as a cosine function of the form
+$g(x) = a \cos\bigparen{c (x - h)} + b$.  Notice that the graph of
+$g(x)$ can be obtained by shifting the graph of $f(x)$ along the
+horizontal axis.  The amount of horizontal shift is $h$ units to the
+right.  Since the data in
+\Table{tab:trigonometry:mean_min_temperature} starts with $14.3$
+followed by the maximum of $14.6$, you may assume that the amount by
+which to right shift is
+%%
+\begin{align*}
+h
+&=
+\absoluteValue{14.3 - 14.6} \\[4pt]
+&=
+\absoluteValue{-0.3} \\[4pt]
+&=
+0.3.
+\end{align*}
+%%
+Thus $g(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:trigonometric:mean_min_temperature_cos_right_shift}
+g(x)
+=
+4.3 \cos(x - 0.3) + 10.3
+\end{equation}
+%%
+and graphed in \Figure{fig:trigonometric:mean_min_temperature}.  The
+function $g(x)$ has a root mean square error of
+$\text{RMSE} \approx 0.485174$.  The sum of squared errors is
+$\text{SSE} \approx 2.824728$ and the total sum of squares is
+$\text{TSS} = 102.57$.  The coefficient of determination of $g(x)$ is
+%%
+\begin{align*}
+R^2
+&=
+1 - \frac{\text{SSE}}{\text{TSS}} \\[4pt]
+&\approx
+0.972460.
+\end{align*}
+%%
+Notice that the RMSE of $g(x)$ is lower than the RMSE of $f(x)$.
+Furthermore, $g(x)$ has a higher value of $R^2$ than does $f(x)$.
+Based on the values of the RMSE and $R^2$, you may conclude that
+$g(x)$ is better than $f(x)$ at modelling the data in
+\Table{tab:trigonometry:mean_min_temperature}.
 \end{solution}
 }{}
 
