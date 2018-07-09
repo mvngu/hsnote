@@ -823,6 +823,162 @@ direction the graph of the cosine function.
 \end{solution}
 }{}
 
+\begin{table}[!htbp]
+\centering
+\input{table/13/mean-max-temperature.tex}
+\caption{%%
+  The mean maximum temperature~($\degreec{}$) of each month for the city of
+  Melbourne, Victoria, Australia.  The mean was calculated using
+  temperature data during the years from $1855$ to $2015$.  The mean
+  temperatures are provided by the Bureau of Meteorology of
+  Australia.
+}
+\label{tab:trigonometric:mean_maximum_temperature}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/mean-max-temperature.pdf}
+\caption{%%
+  The mean maximum temperature~($\degreec{}$) versus time of the year
+  for the city of Melbourne, Victoria, Australia.  Each tick on the
+  horizontal axis corresponds to a month of the year.  So $0$
+  corresponds to January, $\frac{\pi}{6}$ corresponds to February,
+  $\frac{\pi}{3}$ corresponds to March, and so on, up to
+  $\frac{11\pi}{6}$ corresponding to December.  The black dots show
+  the data from \Table{tab:trigonometric:mean_maximum_temperature}.
+  The red curve is a graph of the prediction function as defined by
+  \Equation{eqn:trigonometric:mean_max_temperature_prediction}.
+}
+\label{fig:trigonometric:mean_max_temperature}
+\end{figure}
+
+\begin{example}
+\textbf{Mean maximum temperature.}
+\Table{tab:trigonometric:mean_maximum_temperature} shows the mean
+maximum temperature~($\degreec{}$) of each month for
+Melbourne.\footnote{
+  The data are taken from the website
+  \url{http://web.archive.org/web/20180708014708/http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml},
+  accessed 2018-07-08.
+}
+%%
+\begin{packedenum}
+\item\label{subeg:trigonometric:mean_max_temperature_graph}
+  Let the twelve months correspond to equally spaced numbers from $0$
+  to $2\pi$.  Divide $2\pi$ by $12$ months to get
+  $\delta = \frac{2\pi}{12} = \frac{\pi}{6}$.  Starting from $i = 0$,
+  let $0 \times \delta = 0$ represent January, let
+  $1 \times \delta = \delta$ represent February, let
+  $2 \times \delta = 2\delta$ represent March, and so on, up to
+  $11 \times \delta = 11\delta$ representing December.  Values of
+  $i\delta$, for $i = \seq{0}{1}{11}$, can now be interpreted as time.
+  Produce a graph of $i\delta$ versus the mean maximum temperature
+  corresponding to $i\delta$.  Explain what you notice about your
+  graph.
+
+\item\label{subeg:trigonometric:mean_max_temperature_midline}
+  Suppose that the data in
+  \Table{tab:trigonometric:mean_maximum_temperature} can be modelled
+  as a function of the form $f(x) = a \cos(cx) + b$, where $x$
+  represents a time of the year and $f(x)$ represents the mean maximum
+  temperature~($\degreec{}$) corresponding to $x$.  Use your graph and
+  the data table to estimate the value of the midline $b$.
+
+\item\label{subeg:trigonometric:mean_max_temperature_amplitude}
+  Estimate the value of the amplitude $a$.
+
+\item\label{subeg:trigonometric:mean_max_temperature_c}
+  Assume that the period of the function $f(x)$ is $2\pi$.  Estimate
+  the value of $c$.  Graph your function $f(x)$ together with the
+  graph from \Part{subeg:trigonometric:mean_max_temperature_graph}.
+
+\item\label{subeg:trigonometric:mean_max_temperature_RMSE_R2}
+  Calculate the root mean square error~(RMSE) and the coefficient of
+  determination $R^2$ of the prediction function $f(x)$.  Use the
+  values of the RMSE and $R^2$ to explain how well the function $f(x)$
+  models the given data.
+\end{packedenum}
+\end{example}
+
+\begin{solution}
+\solutionpart{subeg:trigonometric:mean_max_temperature_graph}
+\Figure{fig:trigonometric:mean_max_temperature} shows a graph of the
+data from \Table{tab:trigonometric:mean_maximum_temperature}.  The
+dots in the figure seem to follow the graph of a cosine function.
+This suggests that the mean maximum temperature~($\degreec{}$) can be
+modelled as a function of the form $f(x) = a \cos(cx) + b$, where the
+parameters $\triple{a}{b}{c}$ are to be estimated from the given
+data.
+
+\solutionpart{subeg:trigonometric:mean_max_temperature_midline}
+The value of the midline $b$ of a cosine function is the mean of the
+lowest and highest values of the function.  From
+\Table{tab:trigonometric:mean_maximum_temperature} you see that the
+lowest and highest temperature values are $13.5$ and $26$,
+respectively.  The mean of these two values is
+\[
+\frac{13.5 + 26}{2}
+=
+19.75
+\]
+so that the value of the midline of $f(x)$ can be estimated as
+$b = 19.75$.
+
+\solutionpart{subeg:trigonometric:mean_max_temperature_amplitude}
+The amplitude of a cosine function is the absolute value of the
+difference between the highest value of the function and the value of
+the midline.
+From \Part{subeg:trigonometric:mean_max_temperature_midline} you know
+that the highest temperature value is $26$ and the value of the
+midline is estimated to be $b = 19.75$.  Then the amplitude can be
+estimated as
+\[
+a
+=
+\absoluteValue{26 - 19.75}
+=
+\absoluteValue{6.25}
+=
+6.25.
+\]
+
+\solutionpart{subeg:trigonometric:mean_max_temperature_c}
+By definition, the period of the cosine function $f(x)$ is
+$\frac{2\pi}{\absoluteValue{c}} = 2\pi$.  Multiply both sides by
+$\absoluteValue{c}$ to get $2\pi = 2\pi\absoluteValue{c}$.  Solve the
+latter equation for $\absoluteValue{c}$ to see that
+$\absoluteValue{c} = 1$.  Assuming that $c$ is positive, the value of
+$c$ can be estimated as $c = 1$.  Thus the mean maximum temperature
+can be modelled as the function
+%%
+\begin{equation}
+\label{eqn:trigonometric:mean_max_temperature_prediction}
+f(x)
+=
+6.25 \cos(x) + 19.75
+\end{equation}
+%%
+which is graphed in \Figure{fig:trigonometric:mean_max_temperature}.
+
+\solutionpart{subeg:trigonometric:mean_max_temperature_RMSE_R2}
+The root mean square error of $f(x)$ is approximately $0.606277$.  The
+sum of squared errors is $\text{SSE} \approx 4.410863$ and the total
+sum of squares is $\text{TSS} \approx 226.7225$.  The coefficient of
+determination is
+%%
+\begin{align*}
+R^2
+&=
+1 - \frac{\text{SSE}}{\text{TSS}} \\[4pt]
+&\approx
+0.9805.
+\end{align*}
+%%
+The low value of the RMSE and the high value of $R^2$ suggest that the
+function $f(x)$ models the given data pretty well.
+\end{solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
