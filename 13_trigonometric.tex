@@ -1353,6 +1353,147 @@ The low value of the RMSE and the high value of $R^2$ suggest that the
 function $f(x)$ models the given data pretty well.
 \end{solution}
 
+\begin{table}[!htbp]
+\centering
+\input{table/13/mean-9am-temperature.tex}
+\caption{%%
+  The mean temperature~($\degreec{}$) at $9$~am of each month for the
+  city of Melbourne, Victoria, Australia.  The mean was calculated
+  using temperature data for the years from $1955$ to $2010$.  The
+  mean temperatures are provided by the Bureau of Meteorology of
+  Australia.
+}
+\label{tab:trigonometric:mean_9am_temperature}
+\end{table}
+
+\begin{exercise}
+\textbf{Mean $9$~am temperature.}
+\Table{tab:trigonometric:mean_9am_temperature} shows the mean
+temperature~($\degreec{}$) at $9$~am of each month for
+Melbourne.\footnote{
+  The data are available at
+  \url{http://web.archive.org/web/20180710193217/http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml},
+  accessed 2018-07-10.
+}
+%%
+\begin{packedenum}
+\item\label{subex:trigonometric:mean_9am_temperature_graph}
+  As in \Part{subeg:trigonometric:mean_max_temperature_graph} of
+  \Example{eg:trigonometric:mean_maximum_temperature}, associate the
+  months with equally spaced numbers from $0$ to $2\pi$.  Produce a
+  scatter plot of the data in
+  \Table{tab:trigonometric:mean_9am_temperature}, where the horizontal
+  axis represents a time of the year and the vertical axis represents
+  the mean temperature~($\degreec{}$) at $9$~am.  Explain what you
+  notice about the graph.
+
+\item\label{subex:trigonometric:mean_9am_temperature_model}
+  Suppose that the data in
+  \Table{tab:trigonometric:mean_9am_temperature} can be modelled as a
+  function of the form $f(x) = a \cos(cx) + b$, where $x$ represents a
+  time of the year and $f(x)$ represents the mean $9$~am
+  temperature~($\degreec{}$) corresponding to $x$.  Use the given data
+  to estimate the values of the parameters $\triple{a}{b}{c}$.  You
+  may assume that the period of $f(x)$ is $2\pi$ and that $c > 0$.
+  Graph the function $f(x)$ together with the scatter plot
+  from \Part{subex:trigonometric:mean_9am_temperature_graph}.
+
+\item\label{subex:trigonometric:mean_9am_temperature_assess}
+  Calculate the root mean square error~(RMSE) and the coefficient of
+  determination $R^2$ of $f(x)$.  Use the values of the RMSE and $R^2$
+  to help you decide how well the function $f(x)$ models the data in
+  \Table{tab:trigonometric:mean_9am_temperature}.
+\end{packedenum}
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subex:trigonometric:mean_9am_temperature_graph}
+\Figure{fig:trigonometric:mean_9am_temperature} shows a scatter plot
+of the data in \Table{tab:trigonometric:mean_9am_temperature}.  As can
+be seen from the figure, the black dots seem to follow the graph of a
+cosine function.  This suggests that the given data can be modelled as
+a function of the form $f(x) = a \cos(cx) + b$, where the parameters
+$\triple{a}{b}{c}$ are to be estimated from the data.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/mean-9am-temperature.pdf}
+\caption{%%
+  The mean temperature~($\degreec{}$) at $9$~am for each time of the
+  year for the city of Melbourne, Victoria, Australia.  Each tick on
+  the horizontal axis corresponds to a month of the year.  So $0$
+  corresponds to January, $\frac{\pi}{6}$ corresponds to February, and
+  so on.  The black dots show the data in
+  \Table{tab:trigonometric:mean_9am_temperature}.  The red curve is a
+  graph of the prediction function as defined by
+  \Equation{eqn:trigonometric:mean_9am_temperature}.
+}
+\label{fig:trigonometric:mean_9am_temperature}
+\end{figure}
+
+\solutionpart{subex:trigonometric:mean_9am_temperature_model}
+Suppose that the data in
+\Table{tab:trigonometric:mean_9am_temperature} can be modelled as a
+function of the form $f(x) = a \cos(cx) + b$, where $x$ represents a
+time of the year and $f(x)$ represents the mean $9$~am
+temperature~($\degreec{}$) corresponding to $x$.  The value $b$ of the
+midline is the average of the lowest and highest values in the table.
+The minimum and maximum values in the table are $8.7$ and $19.1$,
+respectively, so
+\[
+b
+=
+\frac{8.7 + 19.1}{2}
+=
+13.9.
+\]
+The value of the amplitude $a$ is the absolute value of the difference
+between the highest value in the table and the value of the midline.
+So you have
+\[
+a
+=
+\absoluteValue{19.1 - 13.9}
+=
+\absoluteValue{5.2}
+=
+5.2.
+\]
+The period of $f(x)$ can be written as the equation
+$\frac{2\pi}{\absoluteValue{c}} = 2\pi$, which can be solved for
+$\absoluteValue{c}$ to obtain $\absoluteValue{c} = 1$.  As you have
+assumed that $c > 0$, it follows that $c = 1$.  Therefore the function
+$f(x)$ can be written as
+%%
+\begin{equation}
+\label{eqn:trigonometric:mean_9am_temperature}
+f(x)
+=
+5.2 \cos x + 13.9
+\end{equation}
+%%
+which is graphed in \Figure{fig:trigonometric:mean_9am_temperature}.
+
+\solutionpart{subex:trigonometric:mean_9am_temperature_assess}
+The root mean square error of $f(x)$ is
+$\text{RMSE} \approx 0.641875$.  The sum of squared errors is
+$\text{SSE} \approx 4.944043$, the total sum of squares is
+$\text{TSS} = 156.03$, so the coefficient of determination of $f(x)$
+is
+\[
+R^2
+=
+1 - \frac{\text{SSE}}{\text{TSS}}
+\approx
+0.968314.
+\]
+The low value of the RMSE and the high value of $R^2$ suggest that the
+function $f(x)$ models the data in
+\Table{tab:trigonometric:mean_9am_temperature} very well.
+\end{solution}
+}{}
+
 The \emph{frequency} of a sine or cosine function is a concept that is
 closely related to the period.  The frequency counts the number of
 cycles per unit time.  For example, if the graph of a sine function
