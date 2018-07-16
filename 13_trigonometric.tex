@@ -2422,7 +2422,8 @@ Thus $f(x)$ and $g(x)$ both have a frequency of $\frac{3}{2\pi}$.
     \url{https://www.jstor.org/stable/20876798}.
   }
 
-\item\emph{Projectile motion.}
+\item\label{prob:trigonometric:cannon_cliff}
+  \emph{Projectile motion.}
   You have learnt that when an object is launched upward and allowed
   to travel freely along the vertical direction, the motion of the
   object is an example of free fall.  Now consider the case of an
@@ -2755,12 +2756,279 @@ cannonball is fired you have $X(t) = Y(t)$.
 \end{solution}
 }{}
 
-\item Equations of parabolic motion for projectiles.  See
-  pages~99--107 of the book:  N.~J.~Giordano.
-  \emph{College Physics: Reasoning and Relationships}.
+\item\emph{Trajectory of a baseball.}
+  You are standing at ground level.\footnote{
+    See for example the video at
+    \url{https://youtu.be/pXhIGo9179s}.
+    A similar example is a cannon firing a cannonball at an angle; see
+    the video at
+    \url{https://youtu.be/1TOu4WLnb6k}.
+    The same principles can also be found in the game
+    ``Angry Birds''; see the video at
+    \url{https://youtu.be/WrNP1oAmDGw}.
+  }
+  Suppose that ground level is interpreted as the horizontal axis and
+  that vertical height is interpreted as the vertical axis.  You hit a
+  baseball at an angle of $\varphi$ radians with respect to the
+  positive half of the horizontal axis.\footnote{
+    Different angles will result in different trajectories for the
+    baseball.  See the video at
+    \url{https://youtu.be/N0H-rv9XFHk}.
+  }
+  The ball is hit with an initial speed of $v \geq 0$ metres per
+  second.  When the ball is hit, the distance from the ball to ground
+  level is $h \geq 0$ metres.  The initial velocity of the baseball
+  along the horizontal axis is $v_x = v \cos\varphi$ and the initial
+  velocity along the vertical axis is $v_y = v \sin\varphi$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:baseball_X(t)}
+    Let $t \geq 0$ be the amount of time in seconds since the baseball
+    was hit.  After $t$ seconds, the baseball would have covered a
+    horizontal distance of $v_x t$ metres.  Suppose you hit the
+    baseball with an initial speed of $v = 40$~metres per second at an
+    angle of $\degree{45}$.  If $X(t)$ represents the amount of
+    horizontal distance~(metres) that the baseball covers after $t$
+    seconds, write an equation for $X(t)$.  Graph your function from
+    $t = 0$ up to $t = 6$ seconds.  After you hit the baseball, how
+    long must you wait for the baseball to cover a horizontal distance
+    of $100$ metres?
+
+  \item\label{subprob:trigonometric:baseball_Y(t)}
+    As the baseball traces out its trajectory, the vertical distance
+    from the baseball to ground level changes with time.  If $Y(t)$
+    represents the vertical distance from the baseball to ground level
+    at $t$ seconds after being hit, then you can write
+    $Y(t) = -\frac{1}{2} g t^2 + v_y t + h$.  Here, you have ignored
+    the effect of air drag and only consider the effect of gravity on
+    the baseball, where $g$ is the gravitational constant.  As
+    in \Part{subprob:trigonometric:baseball_X(t)}, suppose that you
+    hit the baseball with an initial speed of $v = 40$ metres per
+    second at an angle of $\degree{45}$.  Further suppose that when
+    you hit the baseball, it is at a height of one metre to ground
+    level.  Use the above information to write an equation for
+    $Y(t)$.  Graph your function $Y(t)$ together with the graph
+    from \Part{subprob:trigonometric:baseball_X(t)}.  After you hit
+    the baseball, how long must you wait for the baseball to be at a
+    vertical distance of $40$ metres to ground level?
+
+  \item\label{subprob:trigonometric:baseball_trajectory}
+    Let $X(t)$ and $Y(t)$ be as
+    in \Parts{subprob:trigonometric:baseball_X(t)}{subprob:trigonometric:baseball_Y(t)},
+    respectively.  Construct a table similar to the table in
+    \Subproblem{prob:trigonometric:cannon_cliff}{subprob:trigonometric:cannon_cliff_time_to_ground}.
+    Use the time values from $t = 0$ to $t = 6$ seconds with an
+    increment of $0.25$ seconds.  Graph values of $X(t)$ versus values
+    of $Y(t)$.  Here, values of $X(t)$ and $Y(t)$ are on the
+    horizontal and vertical axes, respectively.  Explain what you
+    notice about the graph.  Using your graph, determine an
+    approximate value for the maximum height above ground level that
+    the baseball reaches after you hit the baseball.  When the
+    baseball is at the given maximum height, use your graph to
+    determine an approximate value for horizontal distance from the
+    baseball to you.  When the baseball lands on the ground, determine
+    an approximate distance between you and the baseball.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:trigonometric:baseball_X(t)}
+You have $X(t) = v_x t$ and $v = 40$~metres per second.  The angle of
+$\degree{45}$ is equivalent to $\varphi = \frac{\pi}{4}$ radians.
+Since $v_x = v \cos\varphi$, you can write
+$X(t) = (v \cos\varphi) t$.  Substitute in the values for $v$ and
+$\varphi$ and you obtain
+%%
+\begin{equation}
+\label{eqn:trigonometric:baseball_x_displacement}
+\begin{aligned}
+X(t)
+&=
+\parenthesis*{40 \cos\frac{\pi}{4}} t \\[4pt]
+&=
+40 \frac{\sqrt{2}}{2} t \\[4pt]
+&=
+20 \sqrt{2} t
+\end{aligned}
+\end{equation}
+%%
+which is graphed in
+\Figure{fig:trigonometric:baseball_x_y_displacement}.  To calculate
+the amount of time required for the baseball to cover a horizontal
+distance of $100$ metres, consider the equation
+$100 = 20 \sqrt{2} t$.  Divide both sides by $20 \sqrt{2}$ and you end
+up with
+\[
+t
+=
+\frac{100}{20 \sqrt{2}}
+=
+\frac{5}{\sqrt{2}}
+\approx
+3.5355.
+\]
+That is, after you hit the baseball you must wait approximately $3.5$
+seconds in order for the baseball to cover a horizontal distance of
+$100$ metres.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/baseball-x-y-displacement.pdf}
+\caption{%%
+  The horizontal and vertical distances~(in metres) of the baseball
+  after it is hit.  The black line shows the horizontal distance
+  $X(t)$ that the baseball covers at $t$ seconds after being hit.  The
+  blue curve shows the vertical distance $Y(t)$ from the baseball to
+  ground level at $t$ seconds after being hit.  The functions $X(t)$
+  and $Y(t)$ are defined in
+  \Equations{eqn:trigonometric:baseball_x_displacement}{eqn:trigonometric:baseball_y_displacement},
+  respectively.
+}
+\label{fig:trigonometric:baseball_x_y_displacement}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:baseball_Y(t)}
+You have the expression $Y(t) = -\frac{1}{2} g t^2 + v_y t + h$.
+Furthermore, you have the gravitational constant of $g = 9.8$~metres
+per second squared.  The initial speed with which you hit the ball is
+$v = 40$~metres per second at an angle of $\degree{45}$ or
+$\varphi = \frac{\pi}{4}$ radians.  The initial velocity along the
+vertical axis is $v_y = v \sin\varphi$.  Substitute in the values for
+$v$ and $\varphi$ and simplify to get
+\[
+v_y
+=
+40 \sin\frac{\pi}{4}
+=
+40 \frac{\sqrt{2}}{2}
+=
+20 \sqrt{2}.
+\]
+As you have assumed that $h = 1$~metre, substitute the known constants
+into $Y(t)$ to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:baseball_y_displacement}
+\begin{aligned}
+Y(t)
+&=
+-\frac{9.8}{2} t^2 + 20\sqrt{2} t + 1 \\[4pt]
+&=
+-4.9 t^2 + 20 \sqrt{2} t + 1
+\end{aligned}
+\end{equation}
+%%
+which is graphed in
+\Figure{fig:trigonometric:baseball_x_y_displacement}.
+
+Let's calculate the amount of time required for the baseball to be a
+vertical distance of $40$~metres to ground level.  Using
+\Equation{eqn:trigonometric:baseball_y_displacement} you have
+\[
+-4.9 t^2 + 20 \sqrt{2} t + 1
+=
+40
+\]
+which after moving everything to the left-hand side results in
+\[
+f(t)
+=
+-4.9 t^2 + 20 \sqrt{2} t - 39
+=
+0.
+\]
+The latter expression asks you to determine all roots of the quadratic
+function $f(t) = -4.9 t^2 + 20 \sqrt{2} t - 39$.  The function $f(t)$
+has discriminant
+\[
+\Delta
+=
+(20\sqrt{2})^2 - 4\parenthesis*{-\frac{49}{10}} (-39)
+=
+\frac{178}{5}.
+\]
+Using the quadratic formula, the roots of $f(t)$ are
+\[
+t
+=
+\frac{
+  -20\sqrt{2} \pm \sqrt{\Delta}
+}{
+  2(-4.9)
+}
+=
+\frac{
+  -20\sqrt{2} \pm \sqrt{\Delta}
+}{
+  -9.8
+}.
+\]
+One root is
+\[
+t
+=
+\frac{
+  -20\sqrt{2} + \sqrt{\Delta}
+}{
+  -9.8
+}
+\approx
+2.2773
+\]
+and the other root is
+\[
+t
+=
+\frac{
+  -20\sqrt{2} - \sqrt{\Delta}
+}{
+  -9.8
+}
+\approx
+3.4950.
+\]
+That is, after you hit the baseball you must wait either
+approximately $2.2$ seconds or $3.5$ seconds in order for the baseball
+to be a vertical distance of $40$ metres above ground level.
+
+\begin{table}[!htbp]
+\centering
+\input{table/13/baseball.tex}
+\caption{%%
+  The path of the baseball after you hit the baseball.  Values of
+  $X(t)$ represent the horizontal distances~(metres) from the baseball
+  to you at $t$ seconds after you hit the baseball.  Similarly, values
+  of $Y(t)$ represent the vertical distances~(metres) from the
+  baseball to ground level at $t$ seconds after you hit the baseball.
+  Most values have been rounded to six decimal places.
+}
+\label{tab:trigonometry:baseball_trajectory}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/baseball-trajectory.pdf}
+\caption{%%
+  The trajectory of the baseball at $t$ seconds after you hit the
+  baseball.  The horizontal axis gives the horizontal distance $X(t)$
+  between you and the baseball.  You can interpret the horizontal axis
+  as representing ground level.  The vertical axis gives the vertical
+  distance $Y(t)$ from the baseball to ground level.  All distances
+  are in metres.
+}
+\label{fig:trigonometric:baseball_trajectory}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:baseball_trajectory}
+\Table{tab:trigonometry:baseball_trajectory} shows the horizontal and
+vertical distances of the baseball after you hit the baseball.
+\Figure{fig:trigonometric:baseball_trajectory} shows a scatter plot of
+values of $X(t)$ versus values of $Y(t)$.  The graph shows that the
+baseball reaches a maximum height of approximately $41$~metres above
+ground level.  When the baseball is at its maximum height above ground
+level, the baseball would be at a horizontal distance of approximately
+$80$ metres from you.  When the baseball lands on the ground, the ball
+would have covered a horizontal distance of approximately $162$ metres
+from where it was hit.
 \end{solution}
 }{}
 

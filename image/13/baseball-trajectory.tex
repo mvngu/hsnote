@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{baseball-trajectory}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+%%
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  dotStyle/.style={only marks,mark size=1.5,black,mark color=black,mark=*},%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $X(t)$},%%
+  xlabel style=right,%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $Y(t)$},%%
+  ylabel style=above%%
+]
+%%
+%%
+\addplot[dotStyle] coordinates {
+  (0.000000, 1.000000)
+  (7.071068, 7.764818)
+  (14.142136, 13.917136)
+  (21.213203, 19.456953)
+  (28.284271, 24.384271)
+  (35.355339, 28.699089)
+  (42.426407, 32.401407)
+  (49.497475, 35.491225)
+  (56.568542, 37.968542)
+  (63.639610, 39.833360)
+  (70.710678, 41.085678)
+  (77.781746, 41.725496)
+  (84.852814, 41.752814)
+  (91.923882, 41.167632)
+  (98.994949, 39.969949)
+  (106.066017, 38.159767)
+  (113.137085, 35.737085)
+  (120.208153, 32.701903)
+  (127.279221, 29.054221)
+  (134.350288, 24.794038)
+  (141.421356, 19.921356)
+  (148.492424, 14.436174)
+  (155.563492, 8.338492)
+  (162.634560, 1.628310)
+  (169.705627, -5.694373)
+};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
