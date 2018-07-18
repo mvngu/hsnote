@@ -2828,6 +2828,15 @@ cannonball is fired you have $X(t) = Y(t)$.
     determine an approximate value for horizontal distance from the
     baseball to you.  When the baseball lands on the ground, determine
     an approximate distance between you and the baseball.
+
+  \item\label{subprob:trigonometric:baseball_trajectory_30_degree}
+    You hit a baseball at an angle of $\degree{30}$ with an initial
+    speed of $50$ metres per second.  At the time that the baseball is
+    hit, the ball is $1$ metre from ground level.  Calculate the
+    amount of time~(seconds) required for the baseball to land on the
+    ground.  When the baseball lands on the ground, determine the
+    horizontal distance~(metres) from the baseball to its original
+    position.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -3029,6 +3038,114 @@ level, the baseball would be at a horizontal distance of approximately
 $80$ metres from you.  When the baseball lands on the ground, the ball
 would have covered a horizontal distance of approximately $162$ metres
 from where it was hit.
+
+\solutionpart{subprob:trigonometric:baseball_trajectory_30_degree}
+At $t$ seconds after you hit the baseball, the vertical distance
+between the baseball and ground level can be written as
+$Y(t) = -\frac{1}{2}g t^2 + v_y t + h$.  You have the gravitational
+constant of $g = 9.8$ metres per second squared, so that
+$-\frac{1}{2}g = -\frac{9.8}{2} = -4.9$.  The angle of $\degree{30}$
+is equivalent to $\frac{\pi}{6}$ radians, hence you have
+$v_y = 50 \sin\frac{\pi}{6}$.  Since
+$\sin\frac{\pi}{6} = \frac{1}{2}$, it follows that
+$v_y = 50 \times \frac{1}{2} = 25$.  The initial height of the
+baseball to ground level is $h = 1$ metre.  Substitute these known
+constants into the expression for $Y(t)$ and you obtain
+\[
+Y(t)
+=
+-4.9t^2 + 25t + 1.
+\]
+When $Y(t) = 0$, this means that the baseball has landed on the
+ground.  To calculate the values of $t$ such that the expression
+$Y(t) = 0$ is true, you must determine the roots of the quadratic
+function $f(t) = -4.9t^2 + 25t + 1$.  The discriminant of $f(t)$ is
+\[
+\Delta
+=
+25^2 - 4(-4.9)(1)
+=
+644.6.
+\]
+Use the quadratic formula to see that the roots of $f(t)$ are
+\[
+t
+=
+\frac{
+  -25 \pm \sqrt{\Delta}
+}{
+  2(-4.9)
+}
+=
+\frac{
+  -25 \pm \sqrt{\Delta}
+}{
+  -9.8
+}.
+\]
+One root of $f(t)$ is
+\[
+t
+=
+\frac{
+  -25 + \sqrt{\Delta}
+}{
+  -9.8
+}
+\approx
+-0.039691
+\]
+which is negative so you may reject this root as non-sense in the
+context of the problem.  The other root of $f(t)$ is
+%%
+\begin{equation}
+\label{eqn:trigonometric:baseball_30_degree_root}
+\begin{aligned}
+t
+&=
+\frac{
+  -25 - \sqrt{\Delta}
+}{
+  -9.8
+} \\[4pt]
+&\approx
+5.141732.
+\end{aligned}
+\end{equation}
+%%
+That is, after you hit the baseball you must wait approximately
+$5.14$ seconds for the baseball to land on the ground.
+
+At $t$ seconds after you hit the baseball, the horizontal
+distance~(metres) from the baseball to its original position can be
+written as $X(t) = v_x t$.  You have
+\[
+v_x
+=
+50 \cos\frac{\pi}{6}
+=
+50 \times \frac{\sqrt{3}}{2}
+=
+25\sqrt{3}
+\]
+and hence $X(t) = 25\sqrt{3} t$.  The exact time at which the baseball
+lands on the ground is given by
+\Equation{eqn:trigonometric:baseball_30_degree_root}.  Use
+\Equation{eqn:trigonometric:baseball_30_degree_root} to write
+\[
+X(t)
+=
+\frac{
+  25\sqrt{3} (-25 - \sqrt{\Delta})
+}{
+  -9.8
+}
+\approx
+222.643528.
+\]
+That is, when the baseball lands on the ground the ball would be a
+horizontal distance of approximately $222.64$ metres away from its
+original position.
 \end{solution}
 }{}
 
