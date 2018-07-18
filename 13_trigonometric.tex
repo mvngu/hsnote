@@ -3682,11 +3682,149 @@ $b = 6 \sin\varphi$.
 \end{solution}
 }{}
 
-\item Rolling motion.  See pages~267--269 of the book:
-  N.~J.~Giordano.  \emph{College Physics: Reasoning and Relationships}.
+\item\emph{Ferris wheel.}
+  London Eye is a giant Ferris wheel that is located in London,
+  UK.\footnote{
+    See following video for some basic information about London Eye:
+    \url{https://youtu.be/DIB_vr-txEs}.
+  }
+  The whole structure is $135$ metres tall and the wheel itself is
+  $120$ metres in diameter.  You may assume that the edge of the wheel
+  is at least $135 - 120 = 15$ metres above ground level.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:London_Eye_speed}
+    Suppose that one complete rotation of London Eye requires $30$
+    minutes.  Calculate the speed~(in centimetres per second) of
+    London Eye.
+
+  \item\label{subprob:trigonometric:London_Eye_height}
+    London Eye has $32$ capsules, each of which can hold up to $25$
+    people.  Assume that a capsule is initially at a height of $15$
+    metres above ground level.  As the wheel rotates anti-clockwise,
+    the height of the capsule above ground level changes.  Let $x$ be
+    an angle~(radian) with respect to the positive half of the
+    horizontal axis and let $h(x)$ be the height~(metres) above ground
+    level.  Derive an expression for the height function $h(x)$.
+    Graph your function from $x = 0$ to $x = 2\pi$.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:trigonometric:London_Eye_speed}
+First, you should convert all distances to centimetres and all time
+values to seconds.  The circumference of London Eye is equivalent to
+the distance covered in one complete rotation.  As the Ferris wheel is
+$120$ metres in diameter, the circumference is $120\pi$ metres or
+$120 \times 100\pi$ centimetres.  One complete rotation requires $30$
+minutes or $30 \times 60$ seconds.  If $v$ represents the
+speed~(centimetres per second) of London Eye, then the time to
+complete one rotation can be written as
+\[
+30 \times 60
+=
+\frac{120 \times 100\pi}{v}
+\]
+which upon solving for $v$ results in
+\[
+v
+=
+\frac{120 \times 100\pi}{30 \times 60}
+=
+\frac{20\pi}{3}
+\approx
+20.943951.
+\]
+That is, the speed of London Eye is approximately $20.94$ centimetres
+per second.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/london-eye-fx.pdf}
+\caption{%%
+  A graph of the height function $f(x)$ as defined by
+  \Equation{eqn:trigonometric:london_eye_f(x)}.  The horizontal axis
+  represents the angle~(radians) that a capsule makes with respect to
+  the positive half of the horizontal axis.  The vertical axis
+  represents the height~(metres) above ground level of a capsule as a
+  function of the angle.
+}
+\label{fig:trigonometric:london_eye_f(x)}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:London_Eye_height}
+Suppose that the height~(metres) of each capsule above ground level
+can be modelled as a function of the form
+$h(x) = a \sin(x - c) + b$.  The height of each capsule above ground
+level is at least $15$ metres so you may assume that $b \geq 15$.  The
+wheel has a diameter of $120$ metres, hence a radius of $60$ metres so
+the midline has the value $b = 15 + 60 = 75$.  You can also derive the
+value of the midline as follows.  The value of the midline is the mean
+of the lowest and highest values of $h(x)$.  The minimum and maximum
+heights above ground level that a capsule can reach are $15$ and $135$
+metres, respectively.  Then the value of the midline is
+\[
+b
+=
+\frac{15 + 135}{2}
+=
+75.
+\]
+The amplitude is the absolute value of the difference between the
+maximum value of $h(x)$ and the value of the midline.  Thus you have
+\[
+a
+=
+\absoluteValue{135 - 75}
+=
+\absoluteValue{60}
+=
+60.
+\]
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/london-eye-height.pdf}
+\caption{%%
+  A graph of the height function $h(x)$ as defined by
+  \Equation{eqn:trigonometric:london_eye_height}.  The horizontal axis
+  represents the angle~(radians) that a capsule makes with respect to
+  the negative half of the vertical axis.  The vertical axis
+  represents the height~(metres) above ground level of a capsule as a
+  function of the angle.
+}
+\label{fig:trigonometric:london_eye_height}
+\end{figure}
+
+Now consider the height function
+%%
+\begin{equation}
+\label{eqn:trigonometric:london_eye_f(x)}
+f(x)
+=
+60 \sin x + 75
+\end{equation}
+%%
+a graph of which is given in
+\Figure{fig:trigonometric:london_eye_f(x)} for $x$ from $x = -2\pi$ to
+$x = 2\pi$.  As the figure shows, when the angle is $x = 0$ the height
+is $f(0) = 75$.  This is not what you want because the initial height
+of a capsule should be $15$ metres above ground level.  Note that when
+$x = -\frac{\pi}{2}$ then the height is $f(-\frac{\pi}{2}) = 15$.  In
+other words, if you shift the graph of $f(x)$ by $\frac{\pi}{2}$ units
+to the right, then you should obtain the graph of $h(x)$.  The
+functions $f(x)$ and $h(x)$ both have the same amplitude and midline,
+so $h(x) = 60 + \sin(x - c) + 75$.  The amount of right shift is
+$c = \frac{\pi}{2}$ units, hence you can write $h(x)$ as
+%%
+\begin{equation}
+\label{eqn:trigonometric:london_eye_height}
+h(x)
+=
+60 + \sinp{x - \frac{\pi}{2}} + 75
+\end{equation}
+%%
+which is graphed in \Figure{fig:trigonometric:london_eye_height} from
+$x = 0$ to $x = 2\pi$.
 \end{solution}
 }{}
 
