@@ -3503,11 +3503,182 @@ number of hours of sunshine in Melbourne.
 \end{solution}
 }{}
 
-\item Uniform circular motion.  See pages~131 and~241 of the book:
-  N.~J.~Giordano.  \emph{College Physics: Reasoning and Relationships}.
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/ant-circle.pdf}
+\caption{%%
+  An ant starts at the point $\tuple{6}{0}$.  It travels at a constant
+  speed along the edge of a Blu-ray disc that has a radius of $r = 6$
+  centimetres.  The disc is interpreted as a circle that is centred at
+  the origin.  If the ant stops at the point $\tuple{a}{b}$, the path
+  of the ant is represented by the red arc.
+}
+\label{fig:trigonometric:ant_on_disc}
+\end{figure}
+
+\item\emph{Ant on a disc.}
+  A Blu-ray disc has a radius of $6$ centimetres.  An ant travels at a
+  constant speed along the edge of the disc.  Suppose that the centre
+  of the disc is at the origin $\tuple{0}{0}$ of the Cartesian
+  coordinate system.  At any time the position of the ant along the
+  edge of the disc can be illustrated as in
+  \Figure{fig:trigonometric:ant_on_disc}.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:ant_distance}
+    The ant is initially at the point $\tuple{6}{0}$  in
+    \Figure{fig:trigonometric:ant_on_disc}.  It walks all the way
+    around the edge of the disc and returns to its starting position.
+    Calculate the distance~(centimetres) that the ant travelled.
+
+  \item\label{subprob:trigonometric:ant_time}
+    If the ant travelled a distance of $d > 0$ centimetres at a
+    constant speed of $v > 0$ centimetres per second, the total amount
+    of time $T$ required to cover the given distance is $T = d / v$
+    seconds.  Suppose that the ant runs at a constant speed of $2$
+    centimetres per second.  How much time is required for the ant to
+    go around the edge of the disc once?
+
+  \item\label{subprob:trigonometric:ant_speed}
+    In $18$ seconds the ant makes $3$ complete trips around the edge
+    of the disc.  Calculate the speed of the ant.
+
+  \item\label{subprob:trigonometric:ant_angle}
+    Suppose that the ant is originally at the point $\tuple{6}{0}$ in
+    \Figure{fig:trigonometric:ant_on_disc}.  It travels a distance of
+    $d$ centimetres along the edge of the disc and makes an angle of
+    $\varphi$ radians with respect to the positive half of the
+    horizontal axis.  As the radius of the disc is $r = 6$
+    centimetres, the angle $\varphi$ can be written in terms of the
+    radius and distance as
+    \[
+    \varphi
+    =
+    \frac{d}{6}.
+    \]
+    If the ant travels a distance of $\pi$ centimetres along the edge
+    of the disc, calculate the angle between the ant and the positive
+    half of the horizontal axis.  If the ant travels a distance of $d$
+    centimetres along the edge of the disc and makes an angle of
+    $\degree{75}$ with respect to the positive half of the horizontal
+    axis, how far in centimetres did the ant travel?
+
+  \item\label{subprob:trigonometric:ant_x_y_distances}
+    The ant starts at the point $\tuple{6}{0}$, travels along the edge
+    of the disc, and stops at the point $\tuple{a}{b}$ as shown in
+    \Figure{fig:trigonometric:ant_on_disc}.  Write an expression for
+    each of $a$ and $b$ in terms of trigonometric functions.
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:trigonometric:ant_distance}
+Assume that the ant makes one full trip around the edge of the disc.
+The distance that the ant travelled is equivalent to the circumference
+of the disc.  Since the disc has a radius of $6$ centimetres, the
+circumference of the disc is
+\[
+2\pi \times 6
+=
+12\pi
+\approx
+37.6991
+\]
+centimetres.  If the ant makes one complete trip around the edge of
+the disc, then it would have travelled a distance of approximately
+$37.6991$~cm.
 
+\solutionpart{subprob:trigonometric:ant_time}
+Suppose that the ant runs around the edge of the disc once.  You know
+from \Part{subprob:trigonometric:ant_distance} that the distance the
+ant covers would be $d = 12\pi$ centimetres.  Since the ant runs at a
+constant speed of $v = 2$ centimetres per second, the time required to
+complete one trip around the edge of the disc is
+\[
+T
+=
+\frac{12\pi}{2}
+=
+6\pi
+\approx
+18.8496
+\]
+seconds.
+
+\solutionpart{subprob:trigonometric:ant_speed}
+If the ant requires $18$ seconds to make $3$ complete trips around the
+edge of the disc, then each complete trip requires
+$18 / 3 = 6$ seconds.  That is, in $6$ seconds the ant covers a
+distance of $12\pi$ centimetres.  If $v$ is the speed~(cm per second)
+of the ant, then the total time can be written as
+$6 = \frac{12\pi}{v}$.  Multiply both sides by $v$ to get
+$6v = 12\pi$.  Now divide both sides by $6$ to get
+$v = \frac{12\pi}{6}$, which can be simplified to
+$v = 2\pi \approx 6.2832$.  Thus the speed of the ant is approximately
+$6.2832$ centimetres per second.
+
+The speed of the ant can also be calculated as follows.  Each complete
+trip around the edge of the disc translates to $12\pi$ centimetres.
+So $3$ complete trips would mean that the ant covers a total distance
+of $3 \times 12\pi = 36\pi$ centimetres.  If $v$ is the speed~(cm per
+second) of the ant, the time required to complete $3$ trips can be
+written as $18 = \frac{36\pi}{v}$.  Solve for $v$ to get
+$v = \frac{36\pi}{18} = 2\pi$, which is the same as above.
+
+\solutionpart{subprob:trigonometric:ant_angle}
+The ant starts at the point $\tuple{6}{0}$ and travels a distance of
+$d = \pi$ centimetres along the edge of the disc.  The angle $\varphi$
+that the ant makes with respect to the positive half of the horizontal
+axis can be written as $\varphi = \frac{\pi}{6}$ radians, which is
+equivalent to $\degree{30}$.
+
+Suppose that the ant starts at the point $\tuple{6}{0}$.  It travels a
+distance of $d$ centimetres along the edge of the disc and makes an
+angle of $\degree{75}$ with respect to the positive half of the
+horizontal axis.  You can write the given angle as
+$\degree{75} = \degree{30} + \degree{45}$.  You know that
+$\degree{30}$ and $\degree{45}$ are equivalent to $\frac{\pi}{6}$ and
+$\frac{\pi}{4}$ radians, respectively.  Then $\degree{75}$ is
+equivalent to
+\[
+\frac{\pi}{6} + \frac{\pi}{4}
+=
+\frac{2\pi}{12} + \frac{3\pi}{12}
+=
+\frac{5\pi}{12}
+\]
+radians.  The distance travelled can be written in terms of the angle
+as the expression $\frac{5\pi}{12} = \frac{d}{6}$.  Solve for $d$ and
+simplify to get
+\[
+d
+=
+\frac{6 \times 5\pi}{12}
+=
+\frac{5\pi}{2}
+\approx
+7.853982.
+\]
+Thus the ant travelled a distance of approximately $7.85$
+centimetres.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/right-triangle.pdf}
+\caption{%%
+  The coordinate $\tuple{a}{b}$ of the ant can be visualised as a
+  point on a right-angled triangle.
+}
+\label{fig:trigonometric:ant_coordinate}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:ant_x_y_distances}
+The coordinate $\tuple{a}{b}$ of the ant can be interpreted as a point
+on a right-angled triangle, as shown in
+\Figure{fig:trigonometric:ant_coordinate}.  Note that you have the
+expression $\cos\varphi = \frac{a}{6}$, which can be solved for $a$ to
+get $a = 6 \cos\varphi$.  Furthermore, you have
+$\sin\varphi = \frac{b}{6}$ and solving for $b$ results in
+$b = 6 \sin\varphi$.
 \end{solution}
 }{}
 
