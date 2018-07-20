@@ -3837,13 +3837,321 @@ $x = 0$ to $x = 2\pi$.
 \end{solution}
 }{}
 
-\item Simple harmonic motion and damped motion.  See page~287 of the
-  book: M.~Sullivan.  \emph{Trigonometry: A Unit Circle Approach}.
-  See also chapter~11 of the book:  N.~J.~Giordano.
-  \emph{College Physics: Reasoning and Relationships}.
+\item\emph{Weight attached to a spring.}
+  You attach an object to one end of a spring.  The other end of the
+  spring is attached to a horizontal platform such as the ceiling of
+  your house.\footnote{
+    See the following video for a visualisation:
+    \url{https://youtu.be/tudxily5Qu0}.
+    You can also play with the simulation at
+    \url{http://www.physicsclassroom.com/Physics-Interactives/Waves-and-Sound/Mass-on-a-Spring/Mass-on-a-Spring-Interactive},
+    accessed 2018-07-19.
+  }
+  You pull the object down a certain amount of distance and let go of
+  the object.  You notice that the object bounces up and down due to
+  the pulling and stretching of the spring.  The above situation can
+  also be found in bungee jumping.  As the object bounces up and down,
+  it goes from a minimum height to a maximum height and oscillates
+  between these two extreme heights.  One complete \emph{cycle}
+  consists of the object starting at its minimum height, goes up to
+  its maximum height, and reaching down to its minimum height again.
+  The \emph{period} of the object is the amount of time required for
+  the object to complete one cycle.  The \emph{frequency} of the
+  object is the number of cycles per second.  You may assume that
+  there is no friction so that the object keeps on bouncing up and
+  down between its minimum and maximum heights.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:spring_frequency}
+    The frequency $f$ of the object depends on two factors: the spring
+    constant and the mass of the object.  The spring constant $k > 0$
+    is a measure of the stiffness of the spring and is expressed in
+    terms of Newtons per metre~(N/m).  The higher is the spring
+    constant the shorter the spring will stretch.  The lower is the
+    spring constant the longer the spring will stretch.  The mass
+    $m > 0$ of the object is how much the object weighs and is
+    expressed in terms of kilograms~(kg).  The frequency can be
+    written in terms of the spring constant and the object's mass as
+    %%
+    \begin{equation}
+    \label{eqn:trigonometric:spring_frequency}
+    f
+    =
+    \frac{1}{2\pi}
+    \sqrt{
+      \frac{k}{m}
+    }
+    \end{equation}
+    %%
+    and is expressed in terms of Hertz~(Hz).  First, set $k = 1$ in
+    \Equation{eqn:trigonometric:spring_frequency} and graph the
+    equation from $m = 0.01$ up to and including $m = 4$.  Explain
+    what you notice about the frequency as the mass increases.  Next,
+    set $m = 1$ in \Equation{eqn:trigonometric:spring_frequency} and
+    graph the equation from $k = 0$ up to and including $k = 4$.
+    Explain what you notice about the frequency as the spring constant
+    increases.
+
+  \item\label{subprob:trigonometric:spring_slinky}
+    From \Equation{eqn:trigonometric:spring_frequency} you can see
+    that the period is $p = 1 / f$.  Instead of a spring, now imagine
+    two slinkies are suspended from a horizontal platform.  Slinky $A$
+    has a spring constant of $0.69$~N/m and an object of mass $0.3$~kg
+    attached to its lower end.  Slinky $B$ has a spring constant of
+    $0.22$~N/m and an object of mass $0.05$~kg attached to its lower
+    end.\footnote{
+      The given spring constants are for two real slinkies and are
+      taken from the paper at
+      \url{https://doi.org/10.1119/1.4750489}.
+    }
+    Calculate the frequency and period for the object at the lower end
+    of each slinky.  Explain what your results mean.  Suppose you want
+    the object at the lower end of each slinky to have the same
+    frequency.  Calculate the mass of the object attached to slinky
+    $A$ and the mass of the object attached to slinky $B$ such that
+    both objects have the same frequency of $0.3$~Hz.
+
+  \item\label{subprob:trigonometric:spring_displacement}
+    You attach an object to a spring that is suspended from a
+    horizontal platform.  The object is not bouncing up and down and
+    this position is called the rest position of the object.  While
+    the spring is attached, you pull the object down a distance of
+    $0.2$~metres from its rest position.  You release the object,
+    observe it bouncing up and down, and notice that the object has a
+    period of $4$ seconds.  Suppose there is no friction so that the
+    object continues to oscillate up and down forever.  Derive a
+    function $d(t)$ for the distance~(metres) of the object from its
+    rest position at time $t$ seconds.  Graph your function from
+    $t = 0$ to $t = 4$ seconds.  Within the time interval from $0$ to
+    $4$ seconds, at which values of $t$ would the object be at its
+    rest position?
+
+  \item\label{subprob:trigonometric:spring_no_friction}
+    {\color{red}
+      You have assumed that there is no friction so that the object
+      attached to the end of a spring or slinky continues to oscillate
+      up and down forever.  Is there anything wrong with this
+      assumption?  If you take friction into account when the object
+      bounces up and down, what do you expect the distance from the
+      object's rest position to be like as time increases?
+    }
+  \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
+\solutionpart{subprob:trigonometric:spring_frequency}
+First, you fix the spring constant at $k = 1$~N/m and vary the mass of
+the object.  \Figure{fig:trigonometric:spring_frequency_vary_mass}
+shows the effect on the object's frequency as the mass increases.
+With the spring constant being fixed, as the mass of the object
+increases the frequency decreases.  The reason is that as the object
+becomes heavier the spring is stretched longer, so the object requires
+more time to oscillate between its minimum and maximum heights.  Hence
+the number of cycles per second becomes smaller and smaller, which
+means more and more time is required to complete one cycle.
 
+\begin{figure}[!htbp]
+\centering
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/13/spring-mass-frequency.pdf}
+  \label{fig:trigonometric:spring_frequency_vary_mass}
+}
+%%
+%%
+\subfigure[]{
+  \includegraphics[scale=1.1]{image/13/spring-constant-frequency.pdf}
+  \label{fig:trigonometric:spring_frequency_vary_spring_constant}
+}
+\caption{%%
+  The effects of the object mass and spring constant on the frequency
+  of the object.  (a)~The spring constant is set to $k = 1$~N/m and
+  the object mass varies.  (b)~The object mass is set to $m = 1$~kg
+  and the spring constant varies.
+}
+\label{fig:trigonometric:spring_frequency}
+\end{figure}
+
+Next, you fix the object mass at $m = 1$~kg and vary the spring
+constant.
+\Figure{fig:trigonometric:spring_frequency_vary_spring_constant} shows
+the effect of the increasing spring constant on the object's
+frequency.  With the mass of the object fixed, as the spring constant
+increases the distance that the spring can stretch decreases, so the
+object requires smaller and smaller amount of time to complete one
+cycle.  Hence the number of cycles per second increases, which means
+less and less time is required to complete one cycle.
+
+\solutionpart{subprob:trigonometric:spring_slinky}
+Slinky $A$ has a spring constant of $k = 0.69$~N/m and the object
+attached to the lower end of the slinky has a mass of $m = 0.3$~kg.
+Substitute these numbers into
+\Equation{eqn:trigonometric:spring_frequency} and you get
+\[
+f
+=
+\frac{1}{2\pi}
+\sqrt{
+  \frac{0.69}{0.3}
+}
+\approx
+0.241370
+%%
+\qquad
+\text{and}
+\qquad
+%%
+p
+=
+1 / f
+\approx
+4.143010.
+\]
+That is, the object attached to the lower end of slinky $A$ completes
+approximately $0.24$ cycles per second and the object requires
+approximately $4.14$ seconds to complete one cycle.
+
+Furthermore, slinky $B$ has a spring constant of $k = 0.22$~N/m and
+the object attached to the slinky's lower end has a mass of
+$m = 0.05$~kg.  Substitute these numbers into
+\Equation{eqn:trigonometric:spring_frequency} and you obtain
+\[
+f
+=
+\frac{1}{2\pi}
+\sqrt{
+  \frac{0.22}{0.05}
+}
+\approx
+0.333846
+%%
+\qquad
+\text{and}
+\qquad
+%%
+p
+=
+1 / f
+\approx
+2.995391.
+\]
+In other words, the object attached to the lower end of slinky $B$
+completes approximately $0.33$ cycles per second and the object
+requires approximately $3$ seconds to complete one cycle.  These
+results mean that the object attached to slinky $B$ is faster than the
+object attached to slinky $A$ at completing one cycle.
+
+Suppose you want the objects attached to both slinkies to have the
+same frequency.  What would be the masses of these objects?  In the
+context of \Equation{eqn:trigonometric:spring_frequency}, you assume
+that you know the values of $k$ and $f$ and you want to use these two
+numbers to calculate the value of $m$.  Since you have
+$f = 0.3$~Hz, \Equation{eqn:trigonometric:spring_frequency} now
+becomes $\frac{1}{2\pi} \sqrt{\frac{k}{m}} = 0.3$ and you want to
+solve the equation for $m$.  Multiply both sides by $2\pi$ to get
+$\sqrt{\frac{k}{m}} = 0.3 \times 2\pi$, which can be simplified to
+$\sqrt{\frac{k}{m}} = 0.6\pi$.  Now square both sides and you have
+$\frac{k}{m} = (0.6\pi)^2$, which after solving for $m$ results in
+\[
+m
+=
+\frac{k}{(0.6\pi)^2}.
+\]
+Slinky $A$ has a spring constant of $k = 0.69$~N/m.  For the attached
+object to have a frequency of $0.3$~Hz, the mass of the object must be
+\[
+m
+=
+\frac{0.69}{(0.6\pi)^2}
+\approx
+0.194199.
+\]
+Slinky $B$ has a spring constant of $k = 0.22$~N/m.  If you want the
+attached object to have a frequency of $0.3$~Hz, then the mass of the
+object must be
+\[
+m
+=
+\frac{0.22}{(0.6\pi)^2}
+\approx
+0.061919.
+\]
+Thus given the spring constants of the slinkies, if you want the
+attached objects to have the same frequency of $0.3$~Hz, then the
+objects attached to slinkies $A$ and $B$ must have masses of
+approximately $0.1942$~kg and $0.0619$~kg, respectively.
+
+\solutionpart{subprob:trigonometric:spring_displacement}
+Let $d(t)$ be the distance of the object at time $t$ from its rest
+position.  Initially, the object is $0.2$~metres down from its rest
+position so at time $t = 0$ you have $d(0) = -0.2$.  This suggests
+that the function $d(t)$ has the expression
+\[
+d(t)
+=
+-a \cos(ct)
+\]
+which is the same as the function $f(t) = a \cos(ct)$ but reflected
+along the horizontal axis.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/spring-displacement.pdf}
+\caption{%%
+  The position $d(t)$ in metres of an object at time $t$ seconds with
+  respect to the rest position of the object.  The graph shows one
+  cycle of the object.  The function $d(t)$ is defined by
+  \Equation{eqn:trigonometric:spring_displacement}.
+}
+\label{fig:trigonometric:spring_displacement}
+\end{figure}
+
+In the Cartesian coordinate system, you may assume that the rest
+position of the object is the horizontal line through the origin
+$\tuple{0}{0}$ so the midline is $y = 0$.  Anything below the
+horizontal axis means the the object is some distance below its rest
+position because the spring is stretching down.  Similarly, anything
+above the horizontal axis means that the object is some distance above
+its rest position because the spring is contracting up.  If the
+initial position of the object is $0.2$ metres below its rest
+position, you may assume that when the spring contracts up the object
+would reach a maximum height of $0.2$ metres above its rest position.
+Thus the amplitude is $a = 0.2$.  As the object has a period of $4$
+seconds, use \Definition{def:trigonometric:sine_cosine_period} to
+write the period in terms of $c$ as
+$\frac{2\pi}{\absoluteValue{c}} = 4$.  Multiply both sides by
+$\absoluteValue{c}$ to get $2\pi = 4\absoluteValue{c}$ and dividing
+both sides by $4$ results in $\absoluteValue{c} = \frac{2\pi}{4}$,
+which simplifies to $\absoluteValue{c} = \frac{\pi}{2}$.  Assuming
+that $c > 0$, you have $c = \frac{\pi}{2}$.  Thus $d(t)$ can be
+written as
+%%
+\begin{equation}
+\label{eqn:trigonometric:spring_displacement}
+d(t)
+=
+-0.2 \cosp{\frac{\pi}{2} t}
+\end{equation}
+%%
+which is graphed in \Figure{fig:trigonometric:spring_displacement}
+from $t = 0$ to $t = 4$ seconds.
+
+The rest position of the object is represented by the horizontal axis
+in \Figure{fig:trigonometric:spring_displacement}.  You want to
+determine values of $0 \leq t \leq 4$ such that $d(t) = 0$.  As the
+figure shows, you have $d(t) = 0$ when $t$ is approximately
+$t \approx 1$ second or $t \approx 3$ seconds.  The precise values of
+$t$ such that $d(t) = 0$ can be calculated as follows.  Given a cosine
+function of the form $\cos t$, you know that $\cos t = 0$ whenever
+$t = \pair{\frac{\pi}{2}}{\frac{3\pi}{2}}$.  For the cosine function
+$\cosp{\frac{\pi}{2} t}$ in
+\Equation{eqn:trigonometric:spring_displacement}, you want to
+determine a value of $t$ such that $\frac{\pi}{2} t = \frac{\pi}{2}$
+and another value of $t$ such that
+$\frac{\pi}{2} t = \frac{3\pi}{2}$.  For the equation
+$\frac{\pi}{2} t = \frac{\pi}{2}$ to be true, you must have $t = 1$.
+Similarly, for the equation $\frac{\pi}{2} t = \frac{3\pi}{2}$ to be
+true, you must have $t = 3$.  In terms of
+\Equation{eqn:trigonometric:spring_displacement}, you have
+$d(t) = 0$ whenever $t = 1$ or $t = 3$ seconds.
 \end{solution}
 }{}
 
