@@ -3853,7 +3853,11 @@ $x = 0$ to $x = 2\pi$.
     \url{https://youtu.be/tudxily5Qu0}.
     You can also play with the simulation at
     \url{http://www.physicsclassroom.com/Physics-Interactives/Waves-and-Sound/Mass-on-a-Spring/Mass-on-a-Spring-Interactive},
-    accessed 2018-07-19.
+    accessed 2018-07-19.  In the absence of friction, the motion of
+    the object attached to the spring is an example of
+    \emph{simple harmonic motion}.  See the following video for an
+    introduction:
+    \url{https://youtu.be/BkAnmKI_4Io}.
   }
   You pull the object down a certain amount of distance and let go of
   the object.  You notice that the object bounces up and down due to
@@ -3900,14 +3904,27 @@ $x = 0$ to $x = 2\pi$.
     Explain what you notice about the frequency as the spring constant
     increases.
 
-  \item\label{subprob:trigonometric:spring_slinky}
+  \item\label{subprob:trigonometric:spring_model}
     From \Equation{eqn:trigonometric:spring_frequency} you can see
-    that the period is $p = 1 / f$.  Instead of a spring, now imagine
-    two slinkies are suspended from a horizontal platform.  Slinky $A$
-    has a spring constant of $0.69$~N/m and an object of mass $0.3$~kg
-    attached to its lower end.  Slinky $B$ has a spring constant of
-    $0.22$~N/m and an object of mass $0.05$~kg attached to its lower
-    end.\footnote{
+    that the period is $p = 1 / f$.  If $d(t)$ represents the
+    distance~(metres) of the object from its rest position at $t$
+    seconds, then $d(t)$ is a cosine function whose period is $p$.
+    Let $A \neq 0$ be a real number such that $\absoluteValue{A}$ is
+    the amplitude of $d(t)$.  Show that $d(t)$ can be written as
+    \[
+    d(t)
+    =
+    A \cos(\omega t)
+    \]
+    where $\omega$ is defined as the number
+    $\omega = 2\pi f = \sqrt{\frac{k}{m}}$.
+
+  \item\label{subprob:trigonometric:spring_slinky}
+    Instead of a spring, now imagine two slinkies are suspended from a
+    horizontal platform.  Slinky $A$ has a spring constant of
+    $0.69$~N/m and an object of mass $0.3$~kg attached to its lower
+    end.  Slinky $B$ has a spring constant of $0.22$~N/m and an object
+    of mass $0.05$~kg attached to its lower end.\footnote{
       The given spring constants are for two real slinkies and are
       taken from the paper at
       \url{https://doi.org/10.1119/1.4750489}.
@@ -3948,14 +3965,18 @@ $x = 0$ to $x = 2\pi$.
 \begin{solution}
 \solutionpart{subprob:trigonometric:spring_frequency}
 First, you fix the spring constant at $k = 1$~N/m and vary the mass of
-the object.  \Figure{fig:trigonometric:spring_frequency_vary_mass}
-shows the effect on the object's frequency as the mass increases.
-With the spring constant being fixed, as the mass of the object
-increases the frequency decreases.  The reason is that as the object
-becomes heavier the spring is stretched longer, so the object requires
-more time to oscillate between its minimum and maximum heights.  Hence
-the number of cycles per second becomes smaller and smaller, which
-means more and more time is required to complete one cycle.
+the object.  The function for the frequency is
+$f(m) = \frac{1}{2\pi} \sqrt{\frac{1}{m}}$, where $m$ is positive.  As
+you increase the value of $m$, the value of $f(m)$ decreases according
+to the square root function $\sqrt{\frac{1}{m}}$.
+\Figure{fig:trigonometric:spring_frequency_vary_mass} shows the effect
+on the object's frequency as the mass increases.  With the spring
+constant being fixed, as the mass of the object increases the
+frequency decreases.  The reason is that as the object becomes heavier
+the spring is stretched longer, so the object requires more time to
+oscillate between its minimum and maximum heights.  Hence the number
+of cycles per second becomes smaller and smaller, which means more and
+more time is required to complete one cycle.
 
 \begin{figure}[!htbp]
 \centering
@@ -3979,7 +4000,10 @@ means more and more time is required to complete one cycle.
 \end{figure}
 
 Next, you fix the object mass at $m = 1$~kg and vary the spring
-constant.
+constant.  The function for the frequency is now
+$f(k) = \frac{1}{2\pi} \sqrt{k}$, where $k$ is positive.  As you
+increase the value of $k$, the value of $f(k)$ increases according to
+the square root function $\sqrt{k}$.
 \Figure{fig:trigonometric:spring_frequency_vary_spring_constant} shows
 the effect of the increasing spring constant on the object's
 frequency.  With the mass of the object fixed, as the spring constant
@@ -3987,6 +4011,47 @@ increases the distance that the spring can stretch decreases, so the
 object requires smaller and smaller amount of time to complete one
 cycle.  Hence the number of cycles per second increases, which means
 less and less time is required to complete one cycle.
+
+\solutionpart{subprob:trigonometric:spring_model}
+Let $d(t)$ be the distance~(metres) of the attached object from its
+rest position at $t$ seconds.  If $A \neq 0$ is a real number such
+that $\absoluteValue{A}$ is the amplitude of $d(t)$, then you can
+write $d(t) = A \cos(\omega t)$, where the value of $\omega$ is yet to
+be determined.  If the frequency of $d(t)$ is given by
+\Equation{eqn:trigonometric:spring_frequency}, then the period of
+$d(t)$ can be written as
+%%
+\begin{align*}
+p
+&=
+\frac{1}{f} \\[4pt]
+&=
+1
+\div
+\frac{
+  \sqrt{k}
+}{
+  2\pi \sqrt{m}
+} \\[4pt]
+&=
+\frac{2\pi\sqrt{m}}{\sqrt{k}} \\[4pt]
+&=
+2\pi \sqrt{\frac{m}{k}}.
+\end{align*}
+%%
+By \Definition{def:trigonometric:sine_cosine_period}, the period can
+be written in terms of $\omega$ as
+$\frac{2\pi}{\absoluteValue{\omega}} = 2\pi \sqrt{\frac{m}{k}}$, which
+simplifies to
+$\frac{1}{\absoluteValue{\omega}} = \sqrt{\frac{m}{k}}$.  You can
+write
+$\frac{1}{\absoluteValue{\omega}} = \frac{\sqrt{m}}{\sqrt{k}}$ and
+solving for $\absoluteValue{\omega}$ shows that
+$\absoluteValue{\omega}
+=
+\frac{\sqrt{k}}{\sqrt{m}} = \sqrt{\frac{k}{m}}$.  Since $k$ and $m$
+are both positive, then $\sqrt{\frac{k}{m}}$ is also positive.  It
+follows that $\omega = \sqrt{\frac{k}{m}}$.
 
 \solutionpart{subprob:trigonometric:spring_slinky}
 Slinky $A$ has a spring constant of $k = 0.69$~N/m and the object
