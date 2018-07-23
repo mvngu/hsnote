@@ -3845,7 +3845,8 @@ $x = 0$ to $x = 2\pi$.
 \end{solution}
 }{}
 
-\item\emph{Weight attached to a spring.}
+\item\label{prob:trigonometric:spring_oscillation}
+  \emph{Weight attached to a spring.}
   You attach an object to one end of a spring.  The other end of the
   spring is attached to a horizontal platform such as the ceiling of
   your house.\footnote{
@@ -4225,6 +4226,425 @@ Similarly, for the equation $\frac{\pi}{2} t = \frac{3\pi}{2}$ to be
 true, you must have $t = 3$.  In terms of
 \Equation{eqn:trigonometric:spring_displacement}, you have
 $d(t) = 0$ whenever $t = 1$ or $t = 3$ seconds.
+\end{solution}
+}{}
+
+\item\emph{Damped oscillation.}
+  If you actually perform the experiment described in
+  \Problem{prob:trigonometric:spring_oscillation}, you will notice one
+  thing.  As the object bounces up and down, the maximum distance of
+  the object from its rest position gets smaller and smaller as time
+  increases.  If you wait long enough, the object would eventually
+  reach its rest position and stop bouncing up and down.  The above is
+  an example of what is known as \emph{damped oscillation}.\footnote{
+    See the following video for a basic introduction to damped
+    oscillation:
+    \url{https://youtu.be/y0YFw9ZzSyM}.
+    The following video provides some animation of a damped
+    oscillator:
+    \url{https://youtu.be/qgTQO2LqxaM}.
+  }
+  For the case of an object attached to a suspended spring, you get a
+  damped oscillation due to various factors such as friction.  How
+  would you model the distance of the object with respect to its rest
+  position?  As in \Problem{prob:trigonometric:spring_oscillation},
+  let the spring constant be $k$~N/m and let the mass of the object be
+  $m$~kg.  Let $d(t)$ be the distance~(metres) of the object with
+  respect to its rest position at $t$ seconds and suppose that
+  $A \neq 0$ is a real number such that $\absoluteValue{A}$ is the
+  amplitude of $d(t)$ at time $t = 0$.  Then $d(t)$ can be written as
+  %%
+  \begin{equation}
+  \label{eqn:trigonometric:damped_model}
+  d(t)
+  =
+  A e^{-bt / 2m} \cos(\omega t)
+  \end{equation}
+  %%
+  where the number $\omega$ is defined as
+  %%
+  \begin{equation}
+  \label{eqn:trigonometric:damped_omega}
+  \omega
+  =
+  \sqrt{
+    \frac{k}{m}
+    -
+    \parenthesis*{\frac{b}{2m}}^2
+  }
+  \end{equation}
+  %%
+  and the amplitude of $d(t)$ is given by
+  %%
+  \begin{equation}
+  \label{eqn:trigonometric:damped_amplitude}
+  \alpha(t)
+  =
+  A e^{-bt / 2m}.
+  \end{equation}
+  %%
+  The number $b$ is called the \emph{damping coefficient} because it
+  can affect the behaviour of the function $d(t)$.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:damped_b_constant}
+    Consider slinky $A$ from
+    \Subproblem{prob:trigonometric:spring_oscillation}{subprob:trigonometric:spring_slinky}.
+    The slinky is suspended from a horizontal platform.  It has a
+    spring constant of $k = 0.69$~N/m and the object attached to its
+    lower end has a mass of $m = 0.3$~kg.  You pull the object down by
+    $0.2$ metres from its rest position and release the object.  Write
+    an expression for the function $d(t)$ of the object.
+
+  \item\label{subprob:trigonometric:damped_amplitude_halflife}
+    Suppose that $b > 0$.  Calculate the half-life of the amplitude.
+    That is, how long must you wait for the amplitude to be half of
+    its original value?  Describe the behaviour of the amplitude when
+    $b > 0$.
+
+  \item\label{subprob:trigonometric:damped_no_friction}
+    Consider
+    \Equations{eqn:trigonometric:damped_model}{eqn:trigonometric:damped_omega}
+    and suppose that $b = 0$.  The values of $k$ and $m$ and the
+    amplitude are as
+    in \Part{subprob:trigonometric:damped_b_constant}.  Simplify the
+    function $d(t)$ as defined by
+    \Equation{eqn:trigonometric:damped_model}.  Graph the function
+    $d(t)$ from $t = 0$ to $t = 10$ seconds.  If $b = 0$, explain what
+    you notice about the behaviour of the function $d(t)$.
+
+  \item\label{subprob:trigonometric:damped_underdamped}
+    Consider
+    \Equations{eqn:trigonometric:damped_model}{eqn:trigonometric:damped_omega},
+    where the values of $\triple{A}{k}{m}$ are as
+    in \Part{subprob:trigonometric:damped_b_constant}.  Suppose that
+    you have a value of $b$ such that
+    $\frac{b}{2m} < \sqrt{\frac{k}{m}}$.  In particular, assume that
+    $b = km$.  Verify that you do indeed have the inequality
+    $\frac{b}{2m} < \sqrt{\frac{k}{m}}$.  Use the values of
+    $\quadruple{A}{b}{k}{m}$ to simplify the functions $d(t)$ and
+    $\alpha(t)$ defined by
+    \Equations{eqn:trigonometric:damped_model}{eqn:trigonometric:damped_amplitude},
+    respectively.  Graph $d(t)$ together with the graph
+    from \Part{subprob:trigonometric:damped_no_friction}.  Calculate
+    the half-life of the amplitude of $d(t)$.  If $b = km$, explain
+    what you notice about the behaviour of $d(t)$.
+
+  \item\label{subprob:trigonometric:damped_critically_damped}
+    Consider
+    \Equations{eqn:trigonometric:damped_model}{eqn:trigonometric:damped_omega},
+    where the values of $\triple{A}{k}{m}$ are as
+    in \Part{subprob:trigonometric:damped_b_constant} and assume that
+    $\frac{b}{2m} = \sqrt{\frac{k}{m}}$.  Solving the latter equation
+    for $b$ results in $b = 2m \sqrt{\frac{k}{m}}$.  Use the values of
+    $\quadruple{A}{b}{k}{m}$ to simplify the function $d(t)$ defined
+    by \Equation{eqn:trigonometric:damped_model}.  Graph $d(t)$
+    together with the graph
+    from \Part{subprob:trigonometric:damped_underdamped}.  Calculate
+    the half-life of the amplitude of $d(t)$.  If
+    $b = 2m \sqrt{\frac{k}{m}}$, explain what you notice about the
+    behaviour of $d(t)$.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:trigonometric:damped_b_constant}
+Let the horizontal axis be the line through the rest position of the
+object.  If the object is pulled down by $0.2$ metres from its rest
+position, then the starting position of the object is $d(0) = -0.2$
+metres at time $t = 0$ and so the amplitude is
+$\absoluteValue{-0.2} = 0.2$.  The value of $A$ in
+\Equation{eqn:trigonometric:damped_model} is $A = -0.2$.  You know
+that $k = 0.69$ and $m = 0.3$.  You are not given the value of $b$,
+but you know that it is a constant.  Substitute the given constants
+into \Equation{eqn:trigonometric:damped_omega} and simplify to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_omega_b_constant}
+\begin{aligned}
+\omega
+&=
+\sqrt{
+  \frac{0.69}{0.3}
+  -
+  \parenthesis*{\frac{b}{2 \times 0.3}}^2
+} \\[4pt]
+&=
+\sqrt{
+  2.3
+  -
+  \parenthesis*{\frac{b}{0.6}}^2
+}.
+\end{aligned}
+\end{equation}
+Also substitute the given constants into
+\Equation{eqn:trigonometric:damped_model} and simplify to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_model_b_constant}
+\begin{aligned}
+d(t)
+&=
+-0.2 e^{-bt / (2 \times 0.3)} \cos(\omega t) \\[4pt]
+&=
+-0.2 e^{-bt / 0.6} \cos(\omega t)
+\end{aligned}
+\end{equation}
+%%
+where $\omega$ is defined by
+\Equation{eqn:trigonometric:damped_omega_b_constant}.
+
+\solutionpart{subprob:trigonometric:damped_amplitude_halflife}
+From \Equation{eqn:trigonometric:damped_amplitude}, the half-life of
+the amplitude can be written as the expression
+$\frac{A}{2} = A e^{-bt / 2m}$.  To determine the half-life of the
+amplitude, you must solve the equation for $t$.  The last equation
+simplifies to $\frac{1}{2} = e^{-bt / 2m}$.  Take the natural
+logarithm of both sides and you have
+$\ln\frac{1}{2} = -\frac{bt}{2m}$.  Multiply both sides by $2m$ to get
+$2m \ln\frac{1}{2} = -bt$.  Finally, you solve for $t$ to get
+$t_{1/2} = -\frac{2m}{b} \ln\frac{1}{2}$.  Now substitute in the value
+of $m$ and you see that the half-life of the amplitude is
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_amplitude_halflife}
+t_{1/2}
+=
+-\frac{0.6}{b} \ln\frac{1}{2}
+\end{equation}
+%%
+seconds.  That is, assuming that $b > 0$ in
+\Equation{eqn:trigonometric:damped_amplitude} the amplitude of the
+object decreases according to an exponential decay model that has a
+half-life of $t_{1/2} = -\frac{0.6}{b} \ln\frac{1}{2}$ seconds.
+
+\solutionpart{subprob:trigonometric:damped_no_friction}
+Suppose that $b = 0$.  You know that $k = 0.69$, $m = 0.3$, and
+$A = -0.2$.  Substitute $b = 0$ into
+\Equation{eqn:trigonometric:damped_omega_b_constant} and simplify to
+get
+\[
+\omega
+=
+\sqrt{
+  2.3
+  -
+  \parenthesis*{\frac{0}{0.6}}^2
+}
+=
+\sqrt{2.3}.
+\]
+Furthermore, substitute $b = 0$ into
+\Equation{eqn:trigonometric:damped_model_b_constant} and simplify to
+get
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_b_zero}
+\begin{aligned}
+d(t)
+&=
+-0.2 e^{(-0 \times t) / 0.6} \cos(\omega t) \\[4pt]
+&=
+-0.2 e^0 \cos(\omega t) \\[4pt]
+&=
+-0.2 \times 1 \times \cos(\omega t) \\[4pt]
+&=
+-0.2 \cos(\omega t)
+\end{aligned}
+\end{equation}
+%%
+where $\omega = \sqrt{2.3}$.  The function is graphed in
+\Figure{fig:trigonometric:damped_no_friction}.  As the figure shows,
+when the damping coefficient is $b = 0$ the object attached to the
+lower end of the slinky will continue to bounce up and down forever.
+That is, a damping coefficient of $b = 0$ means that you assume there
+are no friction and other forces to stop the movement of the slinky.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/damped.pdf}
+\caption{%%
+  The behaviour of the distance function $d(t)$ as defined by
+  \Equation{eqn:trigonometric:damped_model}.  Here, you have
+  $A = -0.2$, $k = 0.69$, and $m = 0.3$.  The number $b$ is called the
+  \emph{damping coefficient}.  The dashed horizontal line represents
+  the rest position of the object attached to the lower end of a
+  suspended slinky.  The black curve shows the graph of $d(t)$ when
+  $b = 0$, as defined by \Equation{eqn:trigonometric:damped_b_zero}.
+  The blue curve shows the graph of $d(t)$ when $b = km$, as defined
+  by \Equation{eqn:trigonometric:damped_underdamped_b_km}.  The red
+  curve shows the graph of $d(t)$ when $b = 2m \sqrt{\frac{k}{m}}$, as
+  defined by \Equation{eqn:trigonometric:damped_critically_damped}.
+}
+\label{fig:trigonometric:damped_no_friction}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:damped_underdamped}
+Assume that $b = km = 0.207$.  Then you have
+$\frac{b}{2m} < \sqrt{\frac{k}{m}}$, which after substituting in the
+known constants becomes $\frac{0.207}{0.6} < \sqrt{2.3}$.  The latter
+expression simplifies to $0.345 < \sqrt{2.3}$.  You have
+$\sqrt{2.3} \approx 1.516575$ and so the expression
+$0.345 < \sqrt{2.3}$ is true.  Hence
+$\frac{b}{2m} < \sqrt{\frac{k}{m}}$ is also true.
+
+Now substitute the known constants into
+\Equation{eqn:trigonometric:damped_omega} and simplify to get
+\[
+\omega
+=
+\sqrt{
+  \frac{0.69}{0.3}
+  -
+  \parenthesis*{\frac{0.69 \times 0.3}{2 \times 0.3}}^2
+}
+=
+\sqrt{
+  2.3
+  -
+  \parenthesis*{\frac{0.69}{2}}^2
+}
+=
+\sqrt{
+  2.3
+  -
+  0.345^2
+}.
+\]
+Furthermore, substitute the known constants into
+\Equation{eqn:trigonometric:damped_model} and after simplifying you
+have
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_underdamped_b_km}
+\begin{aligned}
+d(t)
+&=
+A e^{-kmt / 2m} \cos(\omega t) \\[4pt]
+&=
+-0.2 e^{-kt / 2} \cos(\omega t) \\[4pt]
+&=
+-0.2 e^{-0.69t / 2} \cos(\omega t) \\[4pt]
+&=
+-0.2 e^{-0.345t} \cos(\omega t)
+\end{aligned}
+\end{equation}
+%%
+where $\omega = \sqrt{2.3 - 0.345^2}$ and the amplitude of $d(t)$ is
+$\alpha(t) = -0.2 e^{-0.345t}$.  The function $d(t)$ is graphed in
+\Figure{fig:trigonometric:damped_no_friction}.  Substitute
+$b = km = 0.207$ into
+\Equation{eqn:trigonometric:damped_amplitude_halflife} and simplify to
+see that the half-life of the amplitude is
+\[
+t_{1/2}
+=
+-\frac{0.6}{0.207} \ln\frac{1}{2}
+\approx
+2.009122
+\]
+seconds.  That is, when the damping coefficient is $b = km$, the
+distance function $d(t)$ behaves similar to how you would expect the
+object to bounce when there is friction.  Furthermore, the amplitude
+of $d(t)$ loses half of its original length in about $2$ seconds,
+which means that eventually the attached object would seem to be
+suspended at its rest position.
+
+\solutionpart{subprob:trigonometric:damped_critically_damped}
+Substitute the given values into
+\Equation{eqn:trigonometric:damped_omega} and simplify to get
+%%
+\begin{align*}
+\omega
+&=
+\sqrt{
+  \frac{0.69}{0.3}
+  -
+  \parenthesis*{
+    \frac{
+      2 \times 0.3 \sqrt{0.69 / 0.3}
+    }{
+      2 \times 0.3
+    }
+  }^2
+} \\[4pt]
+&=
+\sqrt{
+  2.3
+  -
+  \bigparen{\sqrt{0.69 / 0.3}}^2
+} \\[4pt]
+&=
+\sqrt{
+  2.3
+  -
+  2.3
+} \\[4pt]
+&=
+0.
+\end{align*}
+%%
+As you have assumed that $b = 2m \sqrt{\frac{k}{m}}$, then you have
+\[
+-\frac{bt}{2m}
+=
+\frac{
+  -2mt \sqrt{\frac{k}{m}}
+}{
+  2m
+}
+=
+-t \sqrt{\frac{k}{m}}
+=
+-2.3 t.
+\]
+Substitute into \Equation{eqn:trigonometric:damped_model} and simplify
+to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:damped_critically_damped}
+\begin{aligned}
+d(t)
+&=
+-0.2 e^{-2.3 t} \cos(0 \times t) \\[4pt]
+&=
+-0.2 e^{-2.3 t}
+\end{aligned}
+\end{equation}
+because $\cos(0 \times t) = \cos 0 = 1$.  The function is graphed in
+\Figure{fig:trigonometric:damped_no_friction}.  The number $b$ is
+defined as
+\[
+b
+=
+2m \sqrt{\frac{k}{m}}
+=
+0.6 \sqrt{2.3}.
+\]
+Substitute the value of $b$ into
+\Equation{eqn:trigonometric:damped_amplitude_halflife} and simplifying
+shows that the half-life of the amplitude is
+\[
+t_{1/2}
+=
+-\frac{0.6}{0.6 \sqrt{2.3}} \ln\frac{1}{2}
+=
+-\frac{1}{\sqrt{2.3}} \ln\frac{1}{2}
+\approx
+0.457048
+\]
+seconds.  In other words, when $b = 2m\sqrt{\frac{k}{m}}$ the distance
+function $d(t)$ behaves like a model of exponential decay.  In terms
+of the object attached to the lower end of a suspended slinky, it is
+as if after you released the object it quickly goes to its rest
+position and stays there.  The rate at which the object goes to its
+rest position can be understood in terms of the half-life of the
+amplitude, which is approximately $0.4570$ seconds.  The object is
+initially $0.2$ metres below its rest position.  Once released, the
+object requires approximately $0.4570$ seconds to be at $0.1$ metres
+below its rest position.  As
+\Figure{fig:trigonometric:damped_no_friction} shows, at approximately
+$2$ seconds after release the object seems to be at its rest position
+and stays there.
 \end{solution}
 }{}
 
