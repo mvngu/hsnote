@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\tikzexternalize{pendulum-L05-theta09}
+\pgfplotsset{compat=1.16}
+
+%% IEEE uses Times Roman font, so we'll default to Times.
+%% These three commands make up the entire times.sty package.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+\normalfont\selectfont
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{%%
+  every mark/.append style={scale=1.0},%%
+  scale=1.0%%
+}
+\pgfplotsset{%%
+  every axis/.append style={font=\normalsize}%%
+}
+
+\begin{axis}[%%
+  axis line style=thick,%%
+  axis lines=center,%%
+  enlargelimits=true,%%
+  height=8cm,%%
+  plotStyle/.style={%%
+    domain=0:3,%%
+    mark=none,%%
+    smooth,%%
+    thick%%
+  },%%
+  width=12cm,%%
+  %%
+  %% x-axis
+  xlabel={\normalsize $t$},%%
+  xlabel style=right,%%
+  %%
+  %% y-axis
+  ylabel={\normalsize $\varphi(t)$},%%
+  ylabel style=above%%
+]
+%%
+%%
+%% Change in the angle of a simple pendulum.
+\addplot+ [plotStyle]
+{0.157079632679490 * sin(deg(4.42718872423573 * x))};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

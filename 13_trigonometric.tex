@@ -3819,15 +3819,6 @@ $x = 0$ to $x = 2\pi$.
 \end{solution}
 }{}
 
-\item The physics of waves.  See chapter~15 of the book:
-  W.~T.~Griffith and J.~W.~Brosing.  \emph{The Physics of Everyday
-    Phenomena: A Conceptual Introduction to Physics}.
-\ifbool{showSolution}{
-\begin{solution}
-
-\end{solution}
-}{}
-
 \item\label{prob:trigonometric:spring_oscillation}
   \emph{Weight attached to a spring.}
   You attach an object to one end of a spring.  The other end of the
@@ -4628,6 +4619,287 @@ below its rest position.  As
 \Figure{fig:trigonometric:damped_no_friction} shows, at approximately
 $2$ seconds after release the object seems to be at its rest position
 and stays there.
+\end{solution}
+}{}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.5]{image/13/pendulum.pdf}
+\caption{%%
+  A simple pendulum that consists of an object of a given mass.  The
+  object is attached to the lower end of a suspended cord, which is in
+  turn attached to a horizontal platform.  The object is assumed to
+  swing back and forth in the absence of friction and air resistance.
+  The trajectory of the object is the red arc shown.  As the object
+  swings back and forth, the cord makes an angle of $\varphi$ radians
+  with respect to the dashed vertical line shown that is perpendiular
+  to the horizontal platform.
+}
+\label{fig:trigonometric:pendulum}
+\end{figure}
+
+\item\emph{Simple pendulum.}
+  \Figure{fig:trigonometric:pendulum} shows a model of a simple
+  pendulum.\footnote{
+    See the following video for a visualisation:
+    \url{https://youtu.be/tudxily5Qu0}.
+  }
+  The pendulum consists of an object of a given mass that is attached
+  to a cord of length $L$ metres.  You assume that gravity is the only
+  force that acts on the object.  In the model of a simple pendulum,
+  you ignore friction and air resistance.  As the object swings back
+  and forth, the cord makes an angle of $\varphi$ radians as shown in
+  the figure.  Suppose that if the object is on the right side of the
+  dashed vertical line, then the angle $\varphi$ is positive.
+  Similarly, if the object is on the left side of the dashed vertical
+  line, then the angle $\varphi$ is negative.  Let $\theta$ be the
+  maximum angle that the pendulum can make.
+
+  How would you determine how fast the object is swinging?  The term
+  \emph{speed} is often used to refer to how fast an object travels.
+  You would say that the speed of a car is $60$~km per hour or
+  $100$~km per hour.  A car can travel at different speed at different
+  time.  To understand the idea that the speed of a car can change
+  from one moment to the next, you use a concept called
+  \emph{acceleration}.  The acceleration of a car~(or anything that
+  moves) is the rate at which the speed of the car changes.  There is
+  a difference between speed and acceleration.  The speed of a car is
+  a measure of how fast the car travels.  However, the acceleration of
+  the car is a measure of how fast the speed of the car changes.
+
+  How does acceleration relate to the simple pendulum?  To determine
+  how fast the object in the simple pendulum is swinging, you measure
+  the acceleration at which the angle $\varphi$ changes.  Let $f(t)$
+  be the acceleration of the angle $\varphi$ at time $t$ seconds.  If
+  the length of the cord is $L$ metres and the gravitational constant
+  is $g = 9.8$ metres per second squared, then the acceleration of
+  $\varphi$ at $t$ seconds can be written as\footnote{
+    The expression for $f(t)$ is an example of a second-order
+    differential equation.
+  }
+  \[
+  f(t)
+  =
+  -\frac{g}{L} \sin\varphi.
+  \]
+  For small values of $\varphi$, the value of $\sin\varphi$ is
+  approximately the same as $\varphi$.  Thus you may assume that if
+  $\varphi$ is small, then the acceleration $f(t)$ of the object can
+  be approximated as
+  \[
+  f(t)
+  =
+  -\frac{g}{L} \varphi.
+  \]
+  If $\theta$ is the maximum angle that the pendulum can make, then
+  the latter equation can be solved for $\varphi$ to give the function
+  %%
+  \begin{equation}
+  \label{eqn:trigonometric:pendulum_angle}
+  \varphi(t)
+  =
+  \theta \sin(\omega t)
+  \end{equation}
+  %%
+  where $\omega = \sqrt{\frac{g}{L}}$.
+  Equation~\eqref{eqn:trigonometric:pendulum_angle} tells you the
+  angle of the cord at $t$ seconds.
+  %%
+  \begin{packedenum}
+  \item\label{subprob:trigonometric:pendulum_angle_approximation}
+    Equation~\eqref{eqn:trigonometric:pendulum_angle} depends on the
+    idea that if the value of $\varphi$ is small, you may approximate
+    $\sin\varphi$ by $\varphi$.  The angle $\varphi$ is usually
+    assumed to be from zero to $\degree{10}$ or at most
+    $\frac{\pi}{18}$ radians.  Create a table that has four columns
+    and as many rows as necessary.  Going from left to right, the
+    first column should have the header ``Degrees'' and lists the
+    angles as degrees $\degree{0}$, $\degree{1}$, $\degree{2}$, and so
+    on, up to $\degree{10}$.  The second column should have the header
+    ``Radians'' and lists the radians corresponding to each given
+    degree.  The third column should have the header ``$\sin\varphi$''
+    and lists the sine of each given angle.  Finally, the fourth
+    column should have the header ``$\%$ error'' and lists the
+    percentage error between the angle~(radians) and the sine of
+    the angle.  Let $a$ and $b$ be two numbers such that $a \neq 0$.
+    If $a$ is the exact value and $b$ is an approximation of $a$, then
+    the error between $a$ and $b$ is the difference $a - b$.  However,
+    you want the absolute value of the error, i.e.~the number
+    $\absoluteValue{a - b}$.  Here, $\sin\varphi$ is the exact value
+    and $\varphi$ is an approximation of $\sin\varphi$.  The
+    \emph{percentage error} between $a$ and $b$ is defined as
+    \[
+    \frac{
+      \absoluteValue{a - b}
+    }{
+      a
+    }
+    \times
+    100\%.
+    \]
+    The percentage error between two numbers gives you the error of
+    the two numbers as a percentage of the exact value.  Explain what
+    you notice about the numbers in your table.  Suppose that a given
+    angle is between $\degree{0}$ and $\degree{10}$, inclusive, and
+    that $\varphi$ is the angle in radians.  On average, how much
+    error would there be when you use $\varphi$ as an approximation of
+    $\sin\varphi$?
+
+  \item\label{subprob:trigonometric:pendulum_period_frequency}
+    Calculate the period and frequency of
+    \Equation{eqn:trigonometric:pendulum_angle}.
+
+  \item\label{subprob:trigonometric:pendulum_graph}
+    You have a simple pendulum whose cord has a length of
+    $L = 0.5$ metres.  You give the attached object a little push.  As
+    the object swings back and forth, you notice that the maximum
+    angle that the pendulum makes is $\degree{9}$.  Use the given
+    constants to graph \Equation{eqn:trigonometric:pendulum_angle}
+    from $t = 0$ up to $t = 3$ seconds.  Calculate the period and
+    frequency of the pendulum.  Which factor(s) affect the period and
+    frequency of your simple pendulum?  Explain what this result
+    means.
+  \end{packedenum}
+\ifbool{showSolution}{
+\begin{solution}
+\solutionpart{subprob:trigonometric:pendulum_angle_approximation}
+\Table{tab:trigonometric:pendulum_angle_approximation} shows the
+percentage errors when using $\varphi$ as an approximation of
+$\sin\varphi$.  The table shows that when the angle is between
+$\degree{0}$ and $\degree{10}$, inclusive, the numerical values of
+$\varphi$~(in radians) and $\sin\varphi$ are the same up to at least
+the second decimal digit.  In fact, the percentage error between
+$\varphi$ and $\sin\varphi$ is less than $0.6\%$.  The root mean
+square error is $\text{RMSE} \approx 0.000375$.  This means that if
+you use the value of $\varphi$~(in radians) as an approximation of
+$\sin\varphi$, then on average the approximation has an error of less
+than $0.0004$.
+
+\begin{table}[!htbp]
+\centering
+\input{table/13/angle.tex}
+\caption{%%
+  Approximation of $\sin\varphi$ when the angle is between
+  $\degree{0}$ and $\degree{10}$.  The angle $\varphi$ is in radians
+  and its value is used as an approximation of the exact value of
+  $\sin\varphi$.  The percentage error tells you the number
+  $\absoluteValue{\sin\varphi - \varphi}$ as a percentage of
+  $\sin\varphi$.
+}
+\label{tab:trigonometric:pendulum_angle_approximation}
+\end{table}
+
+\solutionpart{subprob:trigonometric:pendulum_period_frequency}
+The period $p$ of \Equation{eqn:trigonometric:pendulum_angle} can be
+written in terms of $\omega$ as $p = \frac{2\pi}{\omega}$.  Substitute
+in the value of $\omega$ and simplify to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:pendulum_period}
+\begin{aligned}
+p
+&=
+\frac{
+  2\pi
+}{
+  \sqrt{\frac{g}{L}}
+} \\[4pt]
+&=
+2\pi \div \sqrt{\frac{g}{L}} \\[4pt]
+&=
+2\pi \sqrt{\frac{L}{g}}.
+\end{aligned}
+\end{equation}
+%%
+The frequency $f$ of \Equation{eqn:trigonometric:pendulum_angle} can
+be written in terms of the period as $f = \frac{1}{p}$.  Use
+\Equation{eqn:trigonometric:pendulum_period} and simplify to get
+%%
+\begin{equation}
+\label{eqn:trigonometric:pendulum_frequency}
+\begin{aligned}
+f
+&=
+\frac{1}{2\pi \sqrt{\frac{L}{g}}} \\[4pt]
+&=
+1 \div 2\pi \sqrt{\frac{L}{g}} \\[4pt]
+&=
+\frac{1}{2\pi} \sqrt{\frac{g}{L}} \\[4pt]
+&=
+\frac{\omega}{2\pi}.
+\end{aligned}
+\end{equation}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/13/pendulum-L05-theta09.pdf}
+\caption{%%
+  The change in the angle for a simple pendulum whose cord has a
+  length of $0.5$~metres.  The pendulum is known to make a maximum
+  angle of $\degree{9}$.  The value $\varphi(t)$ represents the angle
+  at $t$ seconds.  This is a graph of
+  \Equation{eqn:trigonometric:pendulum_graph}.
+}
+\label{fig:trigonometric:pendulum_graph}
+\end{figure}
+
+\solutionpart{subprob:trigonometric:pendulum_graph}
+You know that the cord of the simple pendulum has a length of
+$L = 0.5$ metres.  The maximum angle that the pendulum can make is
+$\degree{9}$.  To convert $\degree{9}$ to radians, multiple $9$ by
+$\frac{\pi}{180}$ and simplify to get
+\[
+9 \times \frac{\pi}{180}
+=
+\frac{\pi}{20}
+\]
+radians.  Thus $\theta = \frac{\pi}{20}$ radians.  The gravitational
+constant is $g = 9.8$ metres per second squared.  Substitute the known
+constants into \Equation{eqn:trigonometric:pendulum_angle} and you see
+that the angle of the cord at $t$ seconds is given by the function
+%%
+\begin{equation}
+\label{eqn:trigonometric:pendulum_graph}
+\varphi(t)
+=
+\frac{\pi}{20} \sin(\omega t)
+\end{equation}
+%%
+where $\omega = \sqrt{\frac{9.8}{0.5}} = \sqrt{19.6}$.  The function
+$\varphi(t)$ is graphed in \Figure{fig:trigonometric:pendulum_graph}.
+Substitute the values of $L$ and $g$ into
+\Equation{eqn:trigonometric:pendulum_period} to see that the period of
+\Equation{eqn:trigonometric:pendulum_graph} is approximately
+\[
+p
+=
+2\pi \sqrt{\frac{0.5}{9.8}}
+\approx
+1.419227
+\]
+seconds.  Use \Equation{eqn:trigonometric:pendulum_frequency} to see
+that the frequency of \Equation{eqn:trigonometric:pendulum_graph} is
+approximately
+\[
+f
+=
+\frac{\sqrt{19.6}}{2\pi}
+\approx
+0.704609
+\]
+seconds.  In other words, the pendulum requires approximately $1.4$
+seconds to complete one cycle and the frequency is approximately
+$0.7$~Hz.
+
+As
+\Equations{eqn:trigonometric:pendulum_period}{eqn:trigonometric:pendulum_frequency}
+show, the period and frequency of the simple pendulum depends only on
+the length of the cord and the gravitational constant.  The mass of
+the attached object does not matter.  What does this mean?  Suppose
+you place two simple pendula at the same location.  If the cords of
+the pendula have the same length, but their attached objects have
+different masses, then the pendula will have the same period and
+frequency.
 \end{solution}
 }{}
 
