@@ -67,6 +67,63 @@ Mars for $85$ Earth days.\footnote{
   \url{http://web.archive.org/web/20180729072504/http://science.sciencemag.org/content/sci/278/5344/1758.full.pdf}.
 }
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/14/robot-path-points.pdf}
+\caption{%%
+  Points on a flat surface.  A robot is initially placed at the
+  origin.  How would you program the robot to visit all the given
+  points?
+}
+\label{fig:conic:robot_points}
+\end{figure}
+
+How would you program a robot such as Sojourner to move around a flat
+surface?  One way is to interpret each location of the flat surface as
+a point $\tuple{x}{y}$ in the Cartesian coordinate system.  The
+$x$-coordinate would tell the robot to move in the east-west
+direction.  The $y$-coordinate would tell the robot to move in the
+north-south direction.  As an example, consider the points in
+\Figure{fig:conic:robot_points} and suppose that the robot is
+initially placed at the point $\tuple{0}{0}$.  How would you program
+the robot to visit all of the given points and finally arrive at its
+original location?  You can specify the points in the order in which
+the robot is to visit the points.  Suppose that you specify the path
+of the robot as the points in the sequence
+%%
+\begin{equation}
+\label{eqn:conic:robot_path_sequence}
+\tuple{0}{0}\comma
+\tuple{4}{0}\comma
+\tuple{4}{4}\comma
+\tuple{0}{4}\comma
+\tuple{0}{0}\comma
+\tuple{-3}{-3}\comma
+\tuple{-3}{0}\comma
+\tuple{0}{0}.
+\end{equation}
+%%
+The sequence~\eqref{eqn:conic:robot_path_sequence} means that the
+robot starts off at the point $\tuple{0}{0}$ and travels directly to
+the point $\tuple{4}{0}$.  From $\tuple{4}{0}$ the robot then travels
+directly to $\tuple{4}{4}$.  And so on until the robot arrives at its
+original location of $\tuple{0}{0}$.
+\Figure{fig:conic:robot_path_square_triangle} illustrates the path of
+the robot as given by the points in the
+sequence~\eqref{eqn:conic:robot_path_sequence}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/14/robot-path-square-triangle.pdf}
+\caption{%%
+  A robot is initially placed at the origin.  The red lines highlight
+  the path of the robot, where the path is given by the points in the
+  sequence~\eqref{eqn:conic:robot_path_sequence}.
+}
+\label{fig:conic:robot_path_square_triangle}
+\end{figure}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
