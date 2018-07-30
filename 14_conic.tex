@@ -133,6 +133,53 @@ See \Figure{fig:conic:robot_another_path}.
 \end{solution}
 }{}
 
+\begin{exercise}
+\textbf{Visit once.}
+Consider again the points in \Figure{fig:conic:robot_points}.  A robot
+is initially placed at the origin.  Determine a path for the robot
+such that the robot visits each point exactly once and then return to
+its original location.  Specify the path as a sequence of points and
+as an illustration similar to
+\Figure{fig:conic:robot_path_square_triangle}.
+\end{exercise}
+
+\ifbool{showSolution}{
+\begin{solution}
+The robot is initially at the origin.  The robot is to visit each
+point exactly once and then return to its original location.  Thus you
+may assume that the robot will visit the origin two times: once
+because the origin is the robot's initial location; and a second time
+because the robot must return to the origin after it has visited all
+the other points.  This means that the robot may visit any of the
+points, besides $\tuple{0}{0}$, exactly once.  The following is a
+sequence of points that satisfy the above requirements:
+%%
+\begin{equation}
+\label{eqn:conic:robot_visit_once}
+\tuple{0}{0}\comma
+\tuple{4}{0}\comma
+\tuple{4}{4}\comma
+\tuple{0}{4}\comma
+\tuple{-3}{3}\comma
+\tuple{-3}{0}\comma
+\tuple{0}{0}.
+\end{equation}
+%%
+The above path is illustrated in \Figure{fig:conic:robot_visit_once}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=1.1]{image/14/robot-path-visit-once.pdf}
+\caption{%%
+  A robot is initially placed at the origin.  The red lines highlight
+  the path of the robot, where the path is given by the points in the
+  sequence~\eqref{eqn:conic:robot_visit_once}.
+}
+\label{fig:conic:robot_visit_once}
+\end{figure}
+\end{solution}
+}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

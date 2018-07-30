@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{standalone}
+
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize{robot-path-visit-once}
+
+%% We default to Times.
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+%% Enable Times/Palatino main text font.
+\normalfont\selectfont
+
+\newcommand{\comma}{,\,}
+\newcommand{\tuple}[2]{(#1\comma #2)}
+
+%% A tick on the x-axis.
+%%
+%% #1 -- A point on the x-axis.
+\newcommand{\xtick}[1]{%%
+  \draw[tickStyle] (#1,\tickdx) -- (#1,-\tickdx);
+  \node at (#1,-\tickdx) [below] {$#1$};
+}
+
+%% A tick on the y-axis.
+%%
+%% #1 -- A point on the y-axis.
+\newcommand{\ytick}[1]{%%
+  \draw[tickStyle] (-\tickdx,#1) -- (\tickdx,#1);
+  \node at (-\tickdx,#1) [left] {$#1$};
+}
+
+%% The Cartesian coordinate system.
+\newcommand{\cartesianCoordinate}{%%
+  %% The x-axis.
+  \draw[axisStyle] (xstart) -- (xend);
+  \foreach \x in {-4,-3,-2,-1,1,2,3,4}{
+    \xtick{\x}
+  };
+  \node at (xend) [right] {$x$};
+  %% The y-axis.
+  \draw[axisStyle] (ystart) -- (yend);
+  \foreach \y in {1,2,3,4}{
+    \ytick{\y}
+  };
+  \node at (yend) [above] {$y$};
+}
+
+%% Trace out the path of the robot.
+\newcommand{\tracePath}{%%
+  \draw[redStyle] (origin) -- (4,0) -- (4,4) -- (0,4) -- (-3,3) --
+  (-3,0) -- cycle;
+}
+
+%% The points to visit.
+\newcommand{\visitPoints}{%%
+  %% The labelled points.
+  \node[nodeStyle] at (-3,3) {};
+  \node at (-3,3) [above] {$\tuple{-3}{3}$};
+  \node[nodeStyle] at (4,4) {};
+  \node at (4,4) [above] {$\tuple{4}{4}$};
+  %% The unlabelled points.
+  \node[nodeStyle] at (origin) {};
+  \node[nodeStyle] at (0,4) {};
+  \node[nodeStyle] at (4,0) {};
+  \node[nodeStyle] at (-3,0) {};
+}
+
+
+%% The Cartesian coordinate system.
+
+\begin{document}
+
+\begin{tikzpicture}[%%
+  axisStyle/.style={->,thick},%%
+  redStyle/.style={-,red,very thick},%%
+  nodeStyle/.style={circle,inner sep=2pt,fill=black,black},%%
+  tickStyle/.style={-,thick}
+]
+%%
+%%
+\pgfmathsetmacro{\tickdx}{0.1}
+\pgfmathsetmacro{\xhigh}{4.5}
+\pgfmathsetmacro{\xlow}{-4.5}
+\pgfmathsetmacro{\yhigh}{4.5}
+\pgfmathsetmacro{\ylow}{-0.5}
+\coordinate (origin) at (0,0);
+\coordinate (xend) at (\xhigh,0);
+\coordinate (xstart) at (\xlow,0);
+\coordinate (yend) at (0,\yhigh);
+\coordinate (ystart) at (0,\ylow);
+%%
+%% The Cartesian coordinate system.
+\cartesianCoordinate
+%%
+%% Paths on the Cartesian plane.
+\tracePath
+\visitPoints
+\end{tikzpicture}
+
+\end{document}
