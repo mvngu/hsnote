@@ -356,37 +356,43 @@ Consider the function $f(x) = 5x^2 - 3x$.
   Factorise the function  and determine its roots.
 
 \item\label{subex:verify_roots_substitution_a5_bminus3_c0}
-  Verify the roots by substituting the roots into $f(x)$ and simplify.
+  Verify the roots from \Part{subex:factorise_a5_bminus3_c0} by
+  substituting the roots into $f(x)$ and simplify.
 
 \item\label{subex:verify_roots_quadratic_formula_a5_bminus3_c0}
-  Verify the roots by using the quadratic formula.
+  Verify the roots from \Part{subex:factorise_a5_bminus3_c0} by using
+  the quadratic formula.
 \end{packedenum}
 \end{exercise}
 
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subex:factorise_a5_bminus3_c0}
-For the function $f(x) = 5x^2 - 3x$, you can use the distributive laws
-to factor out the $x$ and you get
+For the function $f(x) = 5x^2 - 3x$, you may use the distributive laws
+to factor out the $x$ and obtain
 \[
 f(x)
 =
 x(5x - 3).
 \]
-As for the roots of $f(x)$, you now set $f(x)$ to zero and determine
-for which values of $x$ would the expression $f(x) = 0$ be true.  In
-other words, you want all values of $x$ such that the expression
-$x(5x - 3) = 0$ is true.  The latter expression is true when $x = 0$
-because $0 \times (5x - 3)$ becomes zero.  So one root of $f(x)$
-occurs at $x = 0$.  If $5x - 3 = 0$, then $x \times 0 = 0$ is also
-true.  The expression $5x - 3 = 0$ can also be written as $5x = 3$ and
-solving for $x$ produces $x = 3 / 5$, which is another root of
-$f(x)$.  Therefore the roots of $f(x)$ are $x = 0$ and $x = 3 / 5$.
+As for the roots of $f(x)$, you may use
+\Theorem{thm:quadratic_function_vertical_intercept_zero}.  However,
+you may also reason as follows.  Let's set $f(x)$ to zero and
+determine for which values of $x$ would the expression $f(x) = 0$ be
+true.  In other words, you want all values of $x$ such that the
+expression $x(5x - 3) = 0$ is true.  The latter expression is true
+when $x = 0$ because $0 \times (5x - 3)$ becomes zero.  So one root of
+$f(x)$ occurs at $x = 0$.  If $5x - 3 = 0$, then $x \times 0 = 0$ is
+also true.  The expression $5x - 3 = 0$ can also be written as
+$5x = 3$ and solving for $x$ produces $x = 3 / 5$, which is another
+root of $f(x)$.  Therefore the roots of $f(x)$ are $x = 0$ and
+$x = 3 / 5$.
 
 \solutionpart{subex:verify_roots_substitution_a5_bminus3_c0}
-Let's check your results by substitution.  If you substitute each root
-into $f(x)$ and simplify, you should get zero as a function value.
-Substitute the root $x = 0$ into $f(x)$ and simplify to get
+Let's check your results from \Part{subex:factorise_a5_bminus3_c0} by
+substitution.  If you substitute each root into $f(x)$ and simplify,
+you should get zero as a function value.  Substitute the root $x = 0$
+into $f(x)$ and simplify to get
 \[
 f(0)
 =
@@ -417,7 +423,9 @@ f(3 / 5)
 as required.
 
 \solutionpart{subex:verify_roots_quadratic_formula_a5_bminus3_c0}
-The quadratic formula shows that the roots of $f(x)$ are
+The discriminant of $f(x)$ is
+$\Delta = (-3)^2 - 4(5)(0) = 3^2$.  The quadratic formula shows that
+the roots of $f(x)$ are
 %%
 \begin{align*}
 x
@@ -425,9 +433,7 @@ x
 \frac{
   -(-3)
   \pm
-  \sqrt{
-    (-3)^2 - 4(5)(0)
-  }
+  \sqrt{\Delta}
 }{
   2(5)
 } \\[4pt]
@@ -435,7 +441,7 @@ x
 \frac{
   3
   \pm
-  \sqrt{9}
+  \sqrt{3^2}
 }{
   10
 } \\[4pt]
