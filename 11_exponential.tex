@@ -321,21 +321,23 @@ representation of this percentage rate of change is
 $r = 2.3 / 100 = 0.023$ and the growth factor is
 $b = 1 + 0.023 = 1.023$.  The amount of time since the initial
 population is represented by $t$.  So you assume that $t \geq 0$ and
-at time $t = 0$ you have the initial population of $a$.  At time
-$t = 1$, the population would have changed by an amount of $ar$ since
-time $t = 0$.  You add this number to the population at time $t = 0$
-to get the population at $t = 1$.  Then the population at time $t = 1$
-is given by
+at time $t = 0$ you have the initial population of $a$.
+
+At time $t = 1$, the population would have changed by an amount of
+$ar$ since time $t = 0$.  Add this number to the population at time
+$t = 0$ to get the population at $t = 1$.  Then the population at time
+$t = 1$ is given by
 \[
 a + ar
 =
 a(1 + r)
 =
-ab.
+ab
 \]
-At time $t = 2$, the population would have changed by an amount of
-$abr$ since time $t = 1$.  You add this number to the population at
-time $t = 1$ to get the population at time $t = 2$.  That is, the
+where $b = 1 + r$.  Apply the same argument as above to the case of
+$t = 2$.  At time $t = 2$, the population would have changed by an
+amount of $abr$ since time $t = 1$.  Add this number to the population
+at time $t = 1$ to get the population at time $t = 2$.  That is, the
 population at time $t = 2$ is given by
 \[
 ab + abr
@@ -346,7 +348,7 @@ abb
 =
 ab^2.
 \]
-Now you use the same technique as explained above to obtain the
+Again, use the same technique as explained above to obtain the
 population at time $t = 3$.  At time $t = 3$, the population would
 have changed by an amount of $ab^2r$ since time $t = 2$.  Adding this
 number to the population at time $t = 2$ shows that the population at
