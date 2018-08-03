@@ -2680,8 +2680,8 @@ quadratic formula.
   %%
   \begin{packedenum}
   \item\label{subprob:quadroots:quadratic_roots:Viete_ax_square_minus_c}
-    Consider the function $f(x) = ax^2 - c$, where $a$ and $c$ are any
-    real numbers such that $a \neq 0$ and $c > 0$.  Determine the
+    Consider the function $f(x) = ax^2 - c$, where $a$ and $c$ are
+    real constants such that $a \neq 0$ and $c > 0$.  Determine the
     roots of $f(x)$ without using the quadratic formula, completing
     the square, or factorisation.
 
@@ -2737,11 +2737,12 @@ quadratic formula.
 \ifbool{showSolution}{
 \begin{solution}
 \solutionpart{subprob:quadroots:quadratic_roots:Viete_ax_square_minus_c}
-The roots of $f(x)$ are all values of $x$ such that the expression
-$f(x) = 0$ is true.  That is, you want all values of $x$ such that the
-expression $ax^2 - c = 0$ is true.  The last expression can be written
-as $ax^2 = c$, which in turn can be written as $x^2 = c / a$.  Take
-the square root of both sides to get $x = \pm \sqrt{\frac{c}{a}}$.
+The roots of $f(x) = ax^2 - c$ are all values of $x$ such that the
+expression $f(x) = 0$ is true.  That is, you want all values of $x$
+such that the expression $ax^2 - c = 0$ is true.  In the last
+expression, adding $c$ to both sides results in $ax^2 = c$.  Now
+divide both sides by $a$ to produce $x^2 = c / a$.  Take the square
+root of both sides and you have $x = \pm \sqrt{\frac{c}{a}}$.
 Therefore the roots of $f(x)$ are
 \[
 x_1
@@ -2758,8 +2759,8 @@ x_2
 \]
 
 \solutionpart{subprob:quadroots:quadratic_roots:Viete_substitution}
-By using the substitution $x = y - \frac{b}{2a}$, you can write $f(x)$
-as
+Let $f(x) = ax^2 + bx + c$.  By using the substitution
+$x = y - \frac{b}{2a}$, you can write $f(x)$ as
 %%
 \begin{align*}
 a \parenthesis*{y - \frac{b}{2a}}^2
@@ -2840,8 +2841,9 @@ y
 as required.
 
 \solutionpart{subprob:quadroots:quadratic_roots:Viete_quadratic_formula_verify}
-Use \Equation{eqn:quadroots:quadratic_roots:Viete_quadratic_formula}
-to write
+Consider the function $f(x) = 3x^2 - 7x + 2$.  Use
+\Equation{eqn:quadroots:quadratic_roots:Viete_quadratic_formula} to
+write
 \[
 y
 =
