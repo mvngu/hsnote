@@ -2830,14 +2830,16 @@ cent.
     %%
     Note the irrational number $e$.  Produce a table with four columns
     and as many rows as necessary.  The first row should contain the
-    column headings.  Going from left to right, the first two columns
-    should contain the same data as in the first two columns of
+    column headers.  Going from left to right, the first column should
+    have the header ``Day'' and the second column the header
+    ``Observed''.  The first two columns should contain the same data
+    as in the first two columns of
     \Table{tab:exponential:duckweed_frond12_missing}.  The third
-    column should contain the frond numbers as calculated using your
-    formula
+    column should have the header ``$F(t)$'' and lists the frond
+    numbers as calculated using your formula
     from \Part{subprob:exponential:duckweeds_growth_factor_estimate}.
-    Finally, the fourth column should contain the frond numbers as
-    calculated using Ashby's
+    Finally, the fourth column should have the header ``Ashby'' and
+    lists the frond numbers as calculated using Ashby's
     \Equation{eqn:exponential:frond_numbers_Ashby_formula}.  Add to
     the graph
     in \Part{subprob:exponential:duckweeds_growth_factor_estimate} a
@@ -2871,12 +2873,12 @@ growth model.  However, as shown in
 \Table{tab:exponential:duckweed_frond12_complete} the daily growth
 factors for the data are not all the same.  The daily growth factors
 are similar in terms of the first decimal digits, but they are not
-approximately the same in the second decimal digits.  You can conclude
+approximately the same in the second decimal digits.  You may conclude
 from the daily growth factors that the data in
 \Table{tab:exponential:duckweed_frond12_missing} do not perfectly
 follow an exponential growth model.  However, the daily growth factors
 are nearly the same in the first decimal digits, and the scatter plot
-of the data seems to show an exponential-like growth, that you can
+of the data seems to show an exponential-like growth, that you may
 attempt to model the data with a formula for exponential growth.
 
 \begin{table}[!htbp]
@@ -2895,9 +2897,9 @@ attempt to model the data with a formula for exponential growth.
 \end{table}
 
 \solutionpart{subprob:exponential:duckweeds_growth_factor_estimate}
-You can estimate the growth factor for the number of fronds by
+You may estimate the growth factor for the number of fronds by
 calculating the mean of the daily growth factors.  Doing so, the
-growth factor is estimated to be $b = 1.158932$, rounded to six
+growth factor is estimated to be $b \approx 1.158932$, rounded to six
 decimal places.  The initial number of fronds is $a = 103$.  If $F(t)$
 denotes the number of fronds on day $t$, then you can write $F(t)$ as
 %%
@@ -3002,10 +3004,10 @@ does not seem to favour one function or the other.  However, the root
 mean square errors~(RMSE) of these two functions are markedly
 different.  The RMSE of
 \Equation{eqn:exponential:fronds_formula_average_growth_factor} is
-$4.8256$, which is smaller than the RMSE of $8.2572$ of Ashby's
-\Equation{eqn:exponential:frond_numbers_Ashby_formula}, both numbers
-rounded to four decimal places.  Based on the values of the RMSE, you
-may conclude that
+approximately $4.8256$, which is smaller than the RMSE of $8.2572$ of
+Ashby's \Equation{eqn:exponential:frond_numbers_Ashby_formula}, both
+numbers rounded to four decimal places.  Based on the values of the
+RMSE, you may conclude that
 \Equation{eqn:exponential:fronds_formula_average_growth_factor} is
 better than Ashby's formula at modelling the observed frond numbers.
 \end{solution}
