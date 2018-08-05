@@ -2437,21 +2437,23 @@ dollars, rounded to the nearest cent.
 \begin{solution}
 \solutionpart{subprob:exponential:sand_formula}
 Let $t \geq 0$ be the number of times that you perform the doubling
-process.  You start off with one grain of sand on the first square so
-the number of times you have performed the doubling process is zero.
-You perform the doubling process once to obtain the number of grains
-of sand for the second square.  To obtain the number of grains of sand
-for the third square, you must perform the doubling process three
-times.  In general, to obtain the number of grains of sand for the
-$n$-th square you must perform the doubling process a total of
-$t = n + 1$ times.
+process.  Going from left to right, top to bottom on the chessboard in
+\Figure{fig:exponential:chessboard} you may identify each square with
+an integer from $1$ up to $64$, inclusive.  You start off with one
+grain of sand on the first square so the number of times you have
+performed the doubling process is zero.  You perform the doubling
+process once to obtain the number of grains of sand for the second
+square.  To obtain the number of grains of sand for the third square,
+you must perform the doubling process two times.  In general, to
+obtain the number of grains of sand for the $n$-th square you must
+perform the doubling process a total of $t = n - 1$ times.
 
 Let $G(t)$ represent the number of grains of sand on square number
-$t + 1$.  For example, you have $G(0) = 1 = 2^0$ grain of sand on
+$t + 1$.  For example, you have $G(0) = 1 = 2^0$ grains of sand on
 square number $0 + 1 = 1$.  You have $G(1) = 2 = 2^1$ grains of sand
 on square number $1 + 1 = 2$.  On square number $2 + 1 = 3$, you have
-$G(2) = 4 = 2^2$ grains of sand.  You have $G(3) = 8 = 2^3 = 8$ grains
-of sand on square number $3 + 1 = 4$.  Furthermore, you have
+$G(2) = 4 = 2^2$ grains of sand.  You have $G(3) = 8 = 2^3$ grains of
+sand on square number $3 + 1 = 4$.  Furthermore, you have
 $G(4) = 16 = 2^4$ grains of sand on square number $4 + 1 = 5$.  In
 general, you have $G(t) = 2^t$ grains of sand on square number
 $t + 1$.
