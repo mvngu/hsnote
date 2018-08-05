@@ -2514,14 +2514,15 @@ grains of sand.
   related to compound interest.  Suppose that at the start of a year
   you opened a savings account and deposit $\$1$ into the account.
   You leave the account open for a full year without depositing any
-  more money into it nor withdrawing any money out of the account.
+  more money into nor withdrawing any money out of the account.
   Suppose that the account has an interest rate of $100\%$ per annum.
   %%
   \begin{packedenum}
   \item\label{subprob:exponential:e_balance_formula}
-    Let $n$ be the number of times that interest is calculated during
-    a year.  If $B(n)$ represents the balance of your account at the
-    end of the first year, show that $B(n)$ can be written as
+    Let $n \geq 1$ be an integer that represents the number of times
+    that interest is calculated during a year.  If $B(n)$ represents
+    the balance of your account at the end of the first year, show
+    that $B(n)$ can be written as
     %%
     \begin{equation}
     \label{eqn:exponential:e_savings_first_year_n_compounding}
@@ -2535,7 +2536,7 @@ grains of sand.
   \item\label{subprob:exponential:e_balance_up_to_12_compounding}
     You can use
     \Equation{eqn:exponential:e_savings_first_year_n_compounding} to
-    investigate the effect of the number $n$ of interest compounding
+    investigate the effect of the number $n$ of interest compoundings
     per annum on the balance $B(n)$ of your account at the end of the
     first year.  Consider the case of $n = 1$ interest calculation per
     annum.  What would be your account balance at the end of the first
@@ -2543,14 +2544,15 @@ grains of sand.
     would the value of $B(n)$ be?  Repeat the same calculation for
     $n = 3$, $n = 4$, and so on, up to $n = 12$.  Organise your
     results as a table with three columns and as many rows as
-    necessary.  Going from left to right, the first column should
-    contain the numbers $n$ of times that interest is calculated per
-    annum.  Next, the second column should contain the corresponding
-    growth factors.  Finally, the third column should contain the
-    corresponding values of $B(n)$.  Produce two graphs of the data in
-    your table.  One graph should show the value of $n$ versus the
-    growth factor.  The second graph should show the value of $n$
-    versus $B(n)$.
+    necessary.  Going from left to right, the first column should have
+    the header ``$n$'' and lists the number of times that interest is
+    calculated per annum.  The second column should have the header
+    ``$1 + \frac{1}{n}$'' and lists the corresponding growth factors.
+    Finally, the third column should have the header ``$B(n)$'' and
+    lists the corresponding values of $B(n)$.  Produce two graphs of
+    the data in your table.  One graph should show the value of $n$
+    versus the growth factor.  The second graph should show the value
+    of $n$ versus $B(n)$.  Explain what you notice about the graphs.
 
   \item\label{subprob:exponential:e_balance_up_to_1200_compounding}
     Start at $n = 12$ compoundings per annum and increase $n$ by $12$
@@ -2568,9 +2570,9 @@ grains of sand.
     growth factor.  Furthermore, for each of the numbers
     in~\eqref{eqn:exponential:e_balance_up_to_1200_compounding},
     calculate the corresponding account balance at the end of the
-    first year.  Also use your results to produce a graph of the
-    number of compoundings per annum versus the account balance at the
-    end of the first year.
+    first year.  Use your results to produce a graph of the number of
+    compoundings per annum versus the account balance at the end of
+    the first year.  Explain what you notice about the graphs.
 
   \item\label{subprob:exponential:e_balance_limit_of_growth_factor_balance}
     Based on
@@ -2602,9 +2604,10 @@ grains of sand.
 \begin{solution}
 \solutionpart{subprob:exponential:e_balance_formula}
 The initial balance is $a = 1$ dollar.  Since there are $n$
-compounding periods per year, at each compounding period the rate you
-use for interest calculation is $100 / n$ percent.  Divide this number
-by $100$ to get the constant growth rate of
+compounding periods per year and the interest rate is $100\%$ per
+annum, at each compounding period the rate you use for interest
+calculation is $100 / n$ percent.  Divide this number by $100$ to get
+the constant growth rate of
 \[
 r
 =
@@ -2636,6 +2639,12 @@ as required.
 \solutionpart{subprob:exponential:e_balance_up_to_12_compounding}
 See \Table{tab:exponential:e_balance_up_to_12_compounding} and
 \Figure{fig:exponential:e_balance_up_to_12_compounding}.
+\Figure{subfig:exponential:e_compoundings_vs_growth_factor} shows that
+as the number of compoundings per annum increases, the growth factor
+decreases.  Furthermore,
+\Figure{subfig:exponential:e_compoundings_vs_balance} shows that as
+the number of compoundings per annum increases the account balance at
+the end of the year increases.
 
 \begin{table}[!htbp]
 \centering
@@ -2656,11 +2665,13 @@ See \Table{tab:exponential:e_balance_up_to_12_compounding} and
 \centering
 \subfigure[]{
   \includegraphics[scale=1.1]{image/11/e-12-growth-factor.pdf}
+  \label{subfig:exponential:e_compoundings_vs_growth_factor}
 }
 %%
 %%
 \subfigure[]{
   \includegraphics[scale=1.1]{image/11/e-12-balance.pdf}
+  \label{subfig:exponential:e_compoundings_vs_balance}
 }
 \caption{%%
   The effect of the number of compounding periods per annum on
@@ -2673,6 +2684,14 @@ See \Table{tab:exponential:e_balance_up_to_12_compounding} and
 
 \solutionpart{subprob:exponential:e_balance_up_to_1200_compounding}
 See \Figure{fig:exponential:e_savings_up_to_1200_compounding}.
+\Figure{subfig:e_savings_1200_growth_factor} shows that as the number
+of compoundings per annum increases, the growth factor decreases.  The
+decrease is steep at first, but then levels off after about $200$
+compoundings per annum.  Furthermore,
+\Figure{subfig:e_savings_1200_balance} shows that as the number of
+compoundings per annum increases, the account balance at the end of
+the year increases.  The increase is steep at first, but then levels
+off after about $200$ compoundings per annum.
 
 \begin{figure}[!htbp]
 \centering
@@ -2737,7 +2756,8 @@ B(1)
 =
 e
 \]
-dollars.
+dollars.  This is approximately $\$2.72$, rounded to the nearest
+cent.
 \end{solution}
 }{}
 
