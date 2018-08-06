@@ -150,14 +150,14 @@
 %% The number R(t) of dice remaining after t minutes.  The prediction
 %% function was obtained by estimating the decay constant.
 \addplot+ [plotStyle,red]
-{1000 * (0.826713^x)};
-\addlegendentry{$R(t) = 1000 \times 0.826713^t$}
+{1000 * (0.82671325^x)};
+\addlegendentry{$R(t) = 1000 \times 0.82671325^t$}
 %%
 %%
 %% The total number D(t) of dice that have "decayed" after t minutes.
 %% The prediction function was derived as D(t) = 1000 - R(t).
 \addplot+ [plotStyle,green]
-{1000 * (1 - 0.826713^x)};
+{1000 * (1 - 0.82671325^x)};
 \addlegendentry{$D(t) = 1000 - R(t)$}
 \end{axis}
 \end{tikzpicture}
