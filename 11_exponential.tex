@@ -3227,7 +3227,7 @@ $2^n - 1$.
     \url{https://doi.org/10.1088/0031-9112/13/1/003}.
   }
   In this problem, you will write a Python program to simulate $1000$
-  dice, generate experimental data from the dice, and analyse the
+  dice, generate experimental data using the dice, and analyse the
   data.  The computer simulation should work as follows.  At time
   $t = 0$ minutes, you have $1000$ dice.  After the elapse of one
   minute~(i.e.~at time $t = 1$ minute), the $1000$ dice are rolled and
@@ -3251,12 +3251,13 @@ $2^n - 1$.
     \end{center}
     %%
     The first argument \code{n} specifies how many dice to roll.  The
-    second argument \code{decay\_state} specifies the number of pips
-    that indicates the ``decay'' state of a die.  The purpose of the
-    function \code{roll\_dice()} is to roll the given number of dice
-    one at a time and keep track of how many dice have ``decayed''.
-    The function should return the number of dice that have
-    ``decayed'' and the number of dice that are yet to ``decay''.
+    value of \code{n} must be a positive integer.  The second argument
+    \code{decay\_state} specifies the number of pips that indicates
+    the ``decay'' state of a die.  The purpose of the function
+    \code{roll\_dice()} is to roll the given number of dice one at a
+    time and keep track of how many dice have ``decayed''.  The
+    function should return the number of dice that have ``decayed''
+    and the number of dice that are yet to ``decay''.
 
   \item\label{subprob:exponential:radioactive_dice_simulation_main}
     Your main Python function should have the following name and
@@ -3357,10 +3358,10 @@ $2^n - 1$.
   \item\label{subprob:exponential:radioactive_dice_error_analysis}
     For each of the functions $R(t)$, $M(t)$, and $P(t)$ graph the
     errors of the function versus time $t$.  Put all three error
-    graphs on one set of axes.  What do you notice?  Use the root mean
-    square error to help you explain which one of the above three
-    functions is better than the other two at modelling your
-    experimental data.
+    graphs on one set of axes.  Explain what you notice about the
+    graph.  Use the root mean square error to help you explain which
+    one of the above three functions is better than the other two at
+    modelling your experimental data.
   \end{packedenum}
 \ifbool{showSolution}{
 \begin{solution}
@@ -3447,7 +3448,17 @@ results in a constant decay rate of approximately
 \end{align*}
 %%
 Hence the decay factor is approximately
-$b = 1 - \lambda \approx 0.826713$, rounded to six decimal places.
+%%
+\begin{align*}
+b
+&=
+1 - \lambda \\[4pt]
+&=
+1 - 0.17328675 \\[4pt]
+&=
+0.82671325.
+\end{align*}
+%%
 Note that you initially had $1000$ dice.  If $R(t)$ represents the
 number of ``radioactive'' dice remaining after $t$ minutes, you can
 write
@@ -3456,7 +3467,7 @@ write
 \label{eqn:exponential:radioactive_dice_decay_constant_formula}
 R(t)
 =
-1000 \times 0.826713^t.
+1000 \times 0.82671325^t.
 \end{equation}
 %%
 Then the total number $D(t)$ of dice that have ``decayed'' after $t$
@@ -3469,9 +3480,9 @@ D(t)
 &=
 1000 - R(t) \\[4pt]
 &=
-1000 - 1000 \times 0.826713^t \\[4pt]
+1000 - 1000 \times 0.82671325^t \\[4pt]
 &=
-1000(1 - 0.826713^t).
+1000(1 - 0.82671325^t).
 \end{aligned}
 \end{equation}
 %%
@@ -3481,8 +3492,8 @@ The functions $R(t)$ and $D(t)$ are graphed in
 \solutionpart{subprob:exponential:radioactive_dice_mean_decay_rate}
 The mean of the relative decay factors is roughly $0.830929$, rounded
 to six decimal places, so the decay factor can be estimated as
-$b = 0.830929$.  If $M(t)$ represents the number of dice remaining
-after $t$ minutes, you can write
+$b \approx 0.830929$.  If $M(t)$ represents the number of dice
+remaining after $t$ minutes, you can write
 %%
 \begin{equation}
 \label{eqn:exponential:radioactive_dice_mean_decay_rate}
@@ -3559,7 +3570,7 @@ that overall $P(t)$ seems to be better than the other two functions at
 modelling the data in \Table{tab:exponential:radioactive_dice}.  This
 observation is confirmed by the fact that of the root mean square
 errors~(RMSE) of the three functions, $P(t)$ has the lowest value of
-RMSE at $7.890036$, rounded to six decimal places.
+RMSE at approximately $7.890036$, rounded to six decimal places.
 \end{solution}
 }{}
 
